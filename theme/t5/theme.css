@@ -1,0 +1,55 @@
+/*###########################
+   @Name:恋爱时刻 
+#############################*/
+body{ background-color:#F5F5E9; background-image:url(images/themebg.jpg);background-position:0px 0px;background-repeat:no-repeat;background-attachment:fixed;}
+a:link{color:#5C2C27;text-decoration:none;}
+a:visited{color:#5C2C27;text-decoration:none;}
+a:hover{color:#5C2C27;text-decoration:none;}
+.headerBg { background:#600012;}
+.headerNav{ color:#fff;}
+.headerNav a:link {color:#fff;text-decoration:none;}
+.headerNav a:hover {color:#fff;text-decoration:underline;}
+.headerNav a:visited {color:#fff;text-decoration:none;}
+.main{ background:url(images/rightbg.gif) repeat-y right center}
+.top_nav2 { background:#fff}
+.top_nav2 li .m_r0 a{ color:#fff;}
+.person_atten_l{ border-right:#DECEB5 1px solid}
+.sideBox .sTitle{ background-image:url(images/side_bg.gif)}
+.boxRNav2 li,.boxRNav2 li a{ background-image:url(images/sideLb.png);color:#5C2C27;}
+.boxRNav2 li.current{background-image:url(images/sideLb.png);}
+.boxRNav2 li.current a:hover{ color:#fff;}
+.ts3_mbtn1{border:1px solid #b86b72; border-bottom:none;}
+.ts3_mbtn2{border:1px solid #b86b72; border-bottom:none;background:#e7a5a5;}
+.boxRNav2 li.myfav .anoTh{color:#C3E9FF}
+.boxRNav2 li.letter .anoTf{color:#C3E9FF}
+.boxRNav2 li.mailBox .anoTv{ color:#C3E9FF}
+.boxRNav2 li.actBox .anoTv{ color:#C3E9FF}
+.vDateBox{background:#ECF5F9; border:1px solid #B0C9D8;}
+.rbt_2 a{ color:#fff;}
+.boxRNav3 li,.boxRNav3 li a{background-image:url(images/sideLb.png);color:#5C2C27;}
+.boxRNav3 li.current{background-image:url(images/sideLb.png);}
+.sideBox{ color:#6C6351;}
+.sideBox a:link,.sideBox a:visited,.sideBox a:hover{color:#5C2C27;}
+.bottomLinks{ background:url(images/foot_bg.png); color:#555;}
+.bottomLinks a:link,.bottomLinks a:visited,.bottomLinks a:hover{color:#5C2C27;}
+/*新增侧栏部分*/
+.SC{border-top:none;}
+.SC h3{border-top:none; color:#666}
+.rught_tj_box{color:#666;}
+.rught_tj_box span{ background:#ecf5f9;border:#B0C9D8 1px solid; border-top:none;}
+/*三栏部分*/
+.t_col_main{background:url(images/rightbg2.gif) repeat-y;}
+.FTL li{color:#666;}
+.FTL li a:link,.FTL li a:visited,.FTL li a:hover{color:#5C2C27;}
+.r_replace a:link,.r_replace a:visited,.r_replace a:hover{color:#5C2C27;}
+.SC_woguanzhu_box li a:link,.SC_woguanzhu_box li a:visited,.SC_woguanzhu_box li a:hover{color:#5C2C27;}
+/*三栏左边导航*/
+.t_col_main_fl .boxRNav2 li,.t_col_main_fl .boxRNav2 li a{background-image:url(images/sideLb.png);}
+.t_col_main_fl .boxRNav2 li.current,.t_col_main_fl .boxRNav2 li.current:hover{background-image:url(images/sideLb.png);}
+.t_col_main_fl .boxRNav2 li.current a{color:#fff;}
+.FTL .thread_add a{color:#6C6351;}
+.followList li .fBox_R .ff_1{color:#6C6351;}
+.m_m2 a{color:#fff;}
+#interestUid .media_user_list,.SC_renqituijian_box{color:#333;}
+#interestUid .media_user_list a,.SC_renqituijian_box a{color:#6C6351;}
+.f14B a:link, .f14B a:visited, .f14B a:hover{ color:#333;}

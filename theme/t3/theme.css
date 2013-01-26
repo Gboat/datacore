@@ -1,0 +1,82 @@
+/*###########################
+   @Name:色彩 
+#############################*/
+body{ background-color:#fcc000; background-image:url(images/themebg.jpg);background-position:center bottom;background-repeat:repeat;background-attachment:fixed;}
+a:link{color:#2965B1;text-decoration:none;}
+a:visited{color:#2965B1;text-decoration:none;}
+a:hover{color:#2965B1;text-decoration:underline;}
+.headerBg { background:#207A00;}
+.top_nav2 .home_1{color:#FFD050;}
+.top_nav2 .home_1 a{color:#FFD050;}
+.headerNav{ color:#516000;}
+.headerNav a:link {color:#2965B1;text-decoration:none;}
+.headerNav a:hover {color:#2965B1;text-decoration:underline;}
+.headerNav a:visited {color:#2965B1;text-decoration:none;}
+.main{ background:url(images/rightbg.png) repeat-y right center;}
+.top_nav2 { background:#516000;}
+.top_nav2 li .m_r0 a{ color:#fff;}
+.sideBox .sTitle{ background:url(images/side_bg.gif) no-repeat 0 0 }
+.boxRNav2 li,.boxRNav2 li a{background-image:url(images/sideLb.png);}
+.boxRNav2 li.current{background-image:url(images/sideLb.png);}
+.boxRNav2 li.current a:hover{ color:#fff;}
+.boxRNav2 li a:hover{text-decoration:none;color:#2965B1} 
+.sendMail{ width:100%;background-image:url(images/sideLb.png);}
+.ts_menu_2{background:url(../images/theme/t5/hotb_1.gif) repeat-x bottom;}
+.ts3_mbtn1{border:1px solid #b86b72; border-bottom:none}
+.ts3_mbtn2{border:1px solid #b86b72; border-bottom:none;background:#ffaac7;}
+.bottomLinks{ background:url(images/foot_bg.png); color:#fff;}
+.bottomLinks a:link,.bottomLinks a:visited,.bottomLinks a:hover{color:#fff;}
+.nfBox .left a{ color:#2965B1;}
+.sideBox{ color:#fff;}
+.sideBox a:link,.sideBox a:visited,.sideBox a:hover{color:#fff;}
+.layS2{color:#2965B1;}
+.layS2 a:link,.layS2 a:visited,.layS2 a:hover{color:#fff;}
+.rught_tj_box{background:url(images/right_tj_t.gif) no-repeat;}
+.rught_tj_box span{ background:#C3E892; border:#8EB757 1px solid; border-top:none;}
+.searchTool .btnSearch .lbl{ color:#FFD050;}
+.searchTool .selOption a:hover{color:#b72222;}
+.num {color:#207A00;}
+.alert_follower_menu{ color:#333;}
+.alertBox{ color:#333;}
+.alertBox a:link,.alertBox a:visited,.alertBox a:hover{color:#207A00;}
+.vDateBox{background:#ECF5F9; border:1px solid #B0C9D8;}
+.rbt_2{ background:url(images/rbg_r2_c1.gif) no-repeat; width:180px; height:30px;}
+.sideBox .rbt_2 a{ color:#fff;}
+.boxRNav3 li,.boxRNav3 li a{background-image:url(images/sideLb.png);}
+.boxRNav3 li.current{background-image:url(images/sideLb.png);}
+ul.t_c1_box{box-shadow:none;}
+ul.t_c2_box{box-shadow:none;}
+/*新增侧栏部分*/
+.SC{border-top:none;}
+.SC h3{border-top:none; color:#fff;}
+.rught_tj_box{background:url(images/right_tj_t.gif) no-repeat; color:#666;}
+.rught_tj_box span{ background:#ecf5f9;border:#B0C9D8 1px solid; border-top:none;}
+.r_replace a:link,.r_replace a:visited,.r_replace a:hover{ color:#fff;}
+/*三栏部分*/
+.t_col_main{background:url(images/rightbg2.png) repeat-y;}
+.SC,.FTL{color:#fff;}
+.FTL li{color:#fff;}
+.FTL li a:link,.FTL li a:visited,.FTL li a:hover{color:#fff;}
+.FTL li ul.tipsBox .tips_nn .tips_nn14 a{ color:#2965B1;}
+.FTL li ul.tipsBox{ color:#333;}
+.FTL li ul.tipsBox a:link,.FTL li ul.tipsBox a:visited,.FTL li ul.tipsBox a:hover{ color:#2965B1;}
+.SC .btn{background:url(images/b1_c2.gif) no-repeat;}
+/*三栏左边导航*/
+.t_col_main_fl .boxRNav2 li,.boxRNav2 li a{ background-image:url(images/sideLb.png);color:#fff;}
+.t_col_main_fl .boxRNav2 li a:hover{text-decoration:none;color:#2965B1} 
+.t_col_main_fl .boxRNav2 li.current,.t_col_main_fl .boxRNav2 li.current:hover{ background-image:url(images/sideLb.png); color:#fff;}
+.t_col_main_fl .sendMail{background-image:url(images/sideLb.png);}
+.FTL .thread_add a{color:#fff;}
+.SC_taguanzhu_box p.m_m2 a{color:#fff;}
+.followList li .fBox_R .ff_1{ color:#fff;}
+.sideBox .f14B a{ color:#444;}
+/*110913模板更换*/
+#add_ajax_favorite_tags span{ background:#666; }
+ul.tipsBox a:link,ul.tipsBox a:visited,ul.tipsBox a:hover{color:#2965B1;}
+.SC_taguanzhu_box .media_user_list{ margin:0px 0 0 -4px;*margin:69px 0 0 -4px;}
+.nleftLskill #add_ajax_favorite_tags span{ background:#E9F9FF;}
+.person_atten_l{border-right-color:#FFF}
+.t_col_main_fl .boxRNav2 li.current a{color:#FFF}
+
+.main3Box_m .SC h3,.main3Box_m .FTL li{color:#333;}
+.main3Box_m .FTL li a:link, .main3Box_m .FTL li a:visited,.main3Box_m .FTL li a:hover{ color:#2965B1;}

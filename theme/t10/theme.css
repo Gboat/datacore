@@ -1,0 +1,23 @@
+/*###########################
+   @Name:叶子 
+#############################*/
+body{ background-color:#b2dfda; background-image:url(images/themebg.jpg);background-position:left 0px;background-repeat:no-repeat;background-attachment:fixed;}
+a:link{color:#93a644;text-decoration:none;}
+a:visited{color:#93a644;text-decoration:none;}
+a:hover{color:#93a644;text-decoration:underline;}
+.headerBg { background:#1288B7;}
+.headerNav{ color:#fff;}
+.headerNav a:link {color:#fff;text-decoration:none;}
+.headerNav a:hover {color:#fff;text-decoration:underline;}
+.headerNav a:visited {color:#fff;text-decoration:none;}
+.main{ background:url(images/rightbg.png) repeat-y right center}
+.top_nav2 { background:#c4def0}
+.top_nav2 li .m_r0 a{ color:#fff;}
+.person_atten_l{ border-right:#ccc 1px solid}
+.bottomLinks{ background:#d3e9f2;}
+.vDateBox{background:#ECF5F9; border:1px solid #B0C9D8;}
+.rbt_2{ background:url(../images/rbg_r2_c1.gif) no-repeat; width:180px; height:30px;}
+.rbt_2 a{ color:#fff;}
+.SC h3{ color:#333}
+/*三栏部分*/
+.t_col_main{background:url(images/rightbg2.gif) repeat-y;}

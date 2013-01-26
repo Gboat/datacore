@@ -1,0 +1,30 @@
+Zjblog安装使用方法
+
+1、首先到sae注册一个帐号
+2、由于sae python目前仍在内测阶段，所以先到这里http://appstack.sinaapp.com/apply 去排队申请
+3、申请成功后，到http://sae.sina.com.cn/?m=myapp&a=create创建新应用，开发语言选择python
+4、创建后，回到应用列表，点击你的应用名，进入应用管理界面
+5、左侧栏->应用管理->代码管理，点击“通过这里创建一个版本”，版本号为1，创建。
+6、svn的安装使用看这里http://sae.sina.com.cn/?m=devcenter&content_id=215&catId=212
+7、使用svn检出代码到本地你喜欢的目录下，然后你会看到目录下有一个以版本号1为名字的文件夹。
+8、直接把你所下载的zjblog压缩包解压，解压后，将zjblog1.x文件夹下所有文件复制粘贴到文件夹1下（提示覆盖时，选择“是”即可）。
+9、重新登录到sae，选择应用管理界面的左侧栏->服务管理->MySQL，然后在出现的页面中点击“点此初始化Mysql”。
+10、然后选择SAE的应用管理页面->服务管理->MySQL->管理MySQL，进入SAE的mysql管理页面。点击顶部的导入->选择文件（选择本地文件夹zjblog1.x下的z_db2）->执行，即完成了数据库的导入。
+11、zjblog1.2\mysite\zjblog下的toemail.py的功能是一旦有新的评论，则发送邮件通知博主。其中需要修改的内容如下：
+    "taker@qq.com"：   改成你的接受邮箱；
+    'smtp.sina.com'：  改成你的发送邮箱的smtp服务器
+     25：              改成你的发件箱的smtp服务器所用的端口号
+    'sender@sina.com'：改成你的发送邮箱
+    'password'：       改成你的发送邮箱的密码
+默认该功能没有使用，如果要使用，请将models.py中的#from mysite.zjblog import toemail前的#去掉
+
+12、使用svn将本地文件夹1下的所有文件提交到sae上即完成了zjblog的安装。
+13、在浏览器中输入http://你的应用名.sinaapp.com/admin，回车，然后使用默认管理员帐号admin123，密码123登录后，新建一个管理员帐号，删除默认的管理员帐号即可。然后增加一个Base information(对Base information项的配置是必须的，否则“http://你的应用名.sinaapp.com/”会显示错误。)，Base information项用于对站点进行必要的基本配置，其中的当前主题填写你要使用的templates文件夹下的主题文件夹名，如"zjblog"；你可以使用你自己的主题，只需要将主题文件夹放置到templates文件夹下，并修改当前主题为该文件夹名即可。
+14、templates\zjblog\下的文件分别说明如下：
+    style文件夹：存放的是样式文件
+    blog_list.html：首页模板
+    ctob.html：显示相应分类的日志列表模板
+    ttob.html：显示相应标签的日志列表模板
+    detail.html：单个日志内容页模板
+
+如有疑问，请咨询zjblog官方主页：http://zhangzhaojun.sinaapp.com
