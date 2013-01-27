@@ -3,7 +3,6 @@ if(!defined('IN_JISHIGOU'))
 {
     exit('invalid request');
 }
-
 $sql = "select t.*,m.province,m.city,m.area from ".TABLE_PREFIX."topic AS t, ".TABLE_PREFIX."members AS m WHERE t.uid = m.uid AND t.uid IN(SELECT uid FROM ".TABLE_PREFIX."members WHERE province <>'' OR city <>'') ORDER BY t.tid DESC LIMIT 20";
 $query = $this->DatabaseHandler->Query($sql);
 $list = array();

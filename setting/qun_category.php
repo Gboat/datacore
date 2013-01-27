@@ -1,18 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename qun_category.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:12 62479571 842660658 2218 $
- *******************************************************************/
-
- 
-  
 $config['qun_category']=array (
   'first' => 
   array (

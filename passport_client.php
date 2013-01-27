@@ -1,17 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename passport_client.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:12 1426081768 727974064 7648 $
- *******************************************************************/
-
-
 define('ROOT_PATH',dirname(__FILE__) . '/');
 define('IN_JISHIGOU',true);
 $action = isset($_POST['action']) ? $_POST['action'] : $_GET['action'];

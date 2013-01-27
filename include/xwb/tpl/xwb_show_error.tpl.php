@@ -5,23 +5,16 @@
 <title>错误提示</title>
 <link type="text/css" rel="stylesheet" href="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/xwb_'. XWB_S_VERSION .'.css');?>" />
 </head>
-
 <body>
 <div class="bind-setting xwb-plugin">
-	<p class="alert-tips">出错啦！</p>
-	<div class="bing-text">
-		<p><?php echo $info; ?></p>
+    <p class="alert-tips">出错啦！</p>
+    <div class="bing-text">
+        <p><?php echo $info; ?></p>
     </div>
-    
     <div class="setting-box">
-		<p><a href="<?php echo XWB_plugin::siteUrl(); ?>">返回首页</a></p>
-		<p><a href="http://inet.hitwh.edu.cn/" target="_blank">我是站长，寻求帮助</a></p>
+        <p><a href="<?php echo XWB_plugin::siteUrl(); ?>">返回首页</a></p>
+        <p><a href="http://inet.hitwh.edu.cn/" target="_blank">我是站长，寻求帮助</a></p>
     </div>
-    
-    
 </div>
-
-
-
 </body>
 </html>

@@ -1,18 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename search_admin_menu_index.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:13 1910768231 1213096970 128019 $
- *******************************************************************/
-
- 
-  
 $config['search_admin_menu_index']=array (
   0 => 
   array (
@@ -3343,10 +3329,10 @@ $config['search_admin_menu_index']=array (
       6 => '防灌水验证码',
       7 => '技巧提示',
       8 => '可在下面自定义用户传播邀请链接时候的描述内容，可使用如下标签：',
-      9 => '#nickname# 		=> 		用户昵称',
-      10 => '#inviteurl# 	=> 		邀请链接',
-      11 => '#invite_num#	=>		可邀请人数',
-      12 => '#site_name#		=>		站点名称',
+      9 => '#nickname#         =>         用户昵称',
+      10 => '#inviteurl#     =>         邀请链接',
+      11 => '#invite_num#    =>        可邀请人数',
+      12 => '#site_name#        =>        站点名称',
       13 => '邀请语设置',
     ),
   ),

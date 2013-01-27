@@ -1,5 +1,4 @@
 <?php 
-  
 $config['search_admin_menu_click']=array (
   126 => 1,
   95 => 0,

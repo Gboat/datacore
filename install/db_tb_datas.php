@@ -1,16 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename db_tb_datas.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:05 1606310512 614239918 116840 $
- *******************************************************************/
-
  $db_tb_datas=array (
   'role' => 
   array (

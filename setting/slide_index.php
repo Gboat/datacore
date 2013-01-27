@@ -1,5 +1,4 @@
 <?php 
-  
 $config['slide_index']=array (
   'list' => 
   array (

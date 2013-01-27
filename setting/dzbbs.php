@@ -1,5 +1,4 @@
 <?php 
-  
 $config['dzbbs']=array (
   'enable' => 0,
   'db_host' => 'localhost',

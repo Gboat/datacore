@@ -1,18 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename ucenter.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:13 967216336 1266906043 487 $
- *******************************************************************/
-
- 
-  
 $config['ucenter']=array (
   'user_merge' => '0',
   'enable' => '0',

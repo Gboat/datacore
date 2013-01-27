@@ -38,7 +38,6 @@ $config['ad']=array (
       'middle_right' => '我的首页页面的右侧广告
 ',
       'middle_right1' => '我的首页页面的右侧广告1
-
 ',
       'footer' => '我的首页页面的底部横幅广告
 ',

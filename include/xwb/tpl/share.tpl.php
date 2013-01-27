@@ -23,47 +23,46 @@
 <link href="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/shareout.css');?>" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
 <div class="reg_wrap">
-	<!-- 顶部 LOGO -->
-	<div class="TopName">
+    <!-- 顶部 LOGO -->
+    <div class="TopName">
         <div class="logo"></div>
         <a href="http://weibo.com/u/<?php echo $rst['id'];?>" target="_blank" class="logoLink"></a>
         <div class="op">
-        	<span>你正在使用 <a href="http://weibo.com/u/<?php echo $rst['id'];?>" target="_blank"  class="userID"><?php echo $rst['screen_name'];?></a> 帐号</span>
+            <span>你正在使用 <a href="http://weibo.com/u/<?php echo $rst['id'];?>" target="_blank"  class="userID"><?php echo $rst['screen_name'];?></a> 帐号</span>
             <span class="line">|</span>
             <span><a href="http://v.t.sina.com.cn/share/sharechg.php?appkey=<?php echo XWB_APP_KEY;?>&url=<?php echo urlencode($shareData['url']);?>&title=<?php echo urlencode($shareData['title']);?>&source=&sourceUrl=&%20content=gb2312&pic=">换个帐号？</a></span>
         </div>
     </div>
     <!-- /顶部 LOGO -->
     <div class="reg_main">
-    	<b class="bg_regTop">&nbsp;</b>
+        <b class="bg_regTop">&nbsp;</b>
         <b class="bg_deco_b">&nbsp;</b>
         <div class="reg_pub">
             <form id="shareForm" action="<?php echo XWB_plugin::URL("xwbSiteInterface.doShare");?>" method="POST">
-			<input type="hidden" name="FORMHASH" value="<?php echo FORMHASH; ?>" />
-        	<div class="notice">
-            	<h2><img src="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/shareimg/transparent.gif');?>" class="wbIcon iconMsg" alt="" title=""/>转发到我的微博，顺便说点什么吧</h2>
+            <input type="hidden" name="FORMHASH" value="<?php echo FORMHASH; ?>" />
+            <div class="notice">
+                <h2><img src="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/shareimg/transparent.gif');?>" class="wbIcon iconMsg" alt="" title=""/>转发到我的微博，顺便说点什么吧</h2>
               <span id="txt_count_msg">还可以输入<em>140</em>字</span>
             </div>
             <div class="inputTxt">
-            	<textarea cols="20" rows="5" id="fw_content" name="message"><?php echo $shareData['message'] . ' ';?></textarea>
-            	<dl>
+                <textarea cols="20" rows="5" id="fw_content" name="message"><?php echo $shareData['message'] . ' ';?></textarea>
+                <dl>
                     <?php if ( ! empty($shareData['pics'])):?>
                     <dt><img src="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/shareimg/transparent.gif');?>" class="wbIcon iconImg" alt="" title="" /><a href="javascript:;" id="btn_forward">请选择一张图片转发</a></dt>
                     <!-- 附带转发图片 -->
                     <dd id="pic_ct">
                     <div class="picList">
-                    	<ul id="pic_lst_ul"></ul>
+                        <ul id="pic_lst_ul"></ul>
                         <p style="display: none;" id="nopic" class="nopic">
-                        	<img width="14" height="14" title="" alt="" class="iconWarn" src="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/shareimg/transparent.gif');?>"/>
+                            <img width="14" height="14" title="" alt="" class="iconWarn" src="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/shareimg/transparent.gif');?>"/>
                             页面上没有可转发的图片.
                         </p>
                     </div>
                     <div class="pageNum">
-                    	<a href="javascript:;" class="cancel" id="cancel">取消添加</a>
+                        <a href="javascript:;" class="cancel" id="cancel">取消添加</a>
                         <span>
-                        	<a href="javascript:;" id="pre">&lt;&lt;上一页</a>
+                            <a href="javascript:;" id="pre">&lt;&lt;上一页</a>
                             <strong>共<?php echo count($shareData['pics']);?>张</strong>
                             <a href="javascript:;" id="next">下一页&gt;&gt;</a>
                         </span>
@@ -77,7 +76,7 @@
                 </dl>
             </div>
             <div class="submit">
-            	<p style="display:none" id="repeatTip">不要太贪心哦，发一次就够啦。</p>
+                <p style="display:none" id="repeatTip">不要太贪心哦，发一次就够啦。</p>
                 <span class="btn_turn"><a class="MIB_bigBtn MIB_bigBtnB" id="submitBtn" href="javascript:;"><cite id="siteText">转发</cite></a></span>
             </div>
             </form>
@@ -92,29 +91,20 @@
         var Util = XWBcontrol.util;
         var trimReg = new RegExp("(?:^\\s*)|(?:\\s*$)", "g");
         var selectedIndex  = 0;
-        
         function trim(s){
             return s.replace(trimReg, "");
         }
-        
-	    /**
-	    * 检查输入的字数
-	    *@return {Number}  返回剩余的字数
-	    *@param {Number} limit  限制字数
-	    */
-	    function checkText(text, limit) {
-	        var limit = limit || 140;
-	        text = trim( text );
-	        var matcher = text.match(/[^\x00-\xff]/g), 
-	            cLen  = (matcher && matcher.length || 0),
-	            last = Math.floor((limit*2 - text.length - cLen)/2);
-	        return last;
-	    }
-    
+        function checkText(text, limit) {
+            var limit = limit || 140;
+            text = trim( text );
+            var matcher = text.match(/[^\x00-\xff]/g), 
+                cLen  = (matcher && matcher.length || 0),
+                last = Math.floor((limit*2 - text.length - cLen)/2);
+            return last;
+        }
     var tip = Util.$('txt_count_msg'),
         area = Util.$('fw_content'),
         warnCleaned = true;
-    
     function checkWords(){
         var left = checkText(area.value);
         if(left<0){
@@ -127,14 +117,12 @@
         if(!warnCleaned)
             warn('');
     }
-
     function warn(text){
         var t = Util.$('repeatTip');
         t.innerHTML = '<font color="red">'+text+'</font>';
         t.style.display = '';
         warnCleaned = !text;
     }
-    
     function shareSubmit(){
         checkWords.apply(area);
         var v = area.value;
@@ -155,7 +143,6 @@
             Util.$('shareForm').submit();
         }, 0);
     }
-    
     function tagUp(nd, tagName, p){
         var deep = 10;
         while(nd && nd != p && deep>0){
@@ -165,23 +152,15 @@
             nd = nd.parentNode;
         }
     }
-    
     checkWords.apply(area);
-    
     Util.domEvent(area, 'keyup', checkWords);
-    
     Util.$('submitBtn').onclick = shareSubmit;
-    
     // 图片处理
     var list = Util.$('pic_lst_ul');
-    
     if(list){
         var page = {
-            
             items : picList,
-            
             pageSize : 5,
-    
             go : function(current){
                 var len = this.items.length, 
                     total = parseInt(len/this.pageSize);
@@ -194,9 +173,7 @@
                 var beg = (current - 1) * this.pageSize;
                 var end = Math.min(beg + this.pageSize, this.items.length) - 1;
                 var htmls = [];
-                
                 while(beg <= end){
-                  
                   htmls[htmls.length] = [
                     '<li rel="'+beg+'" ' + (selectedIndex==beg ? 'class="on"':'') + '>',
                         '<a onclick="return false;" href="javascript:;" hidefocus="true">',
@@ -212,23 +189,17 @@
                 Util.$('pic_lst_ul').innerHTML = htmls.join('');
                 Util.$('pre').style.display = current>1 ? '':'none';
                 Util.$('next').style.display = (current!= total) ? '':'none';
-                
                 this.current = current;
             }
         };
-        
         page.go(1);
-        
         Util.$('pre').onclick = function(){
             page.go(page.current-1);
         };
-        
         Util.$('next').onclick = function(){
             page.go(page.current+1);
         };
-        
         var chs = list.childNodes;
-        
         function onItemClick(event){
             var chs = list.childNodes;
             for(var i=0,len=chs.length;i<len;i++){
@@ -243,15 +214,11 @@
                 Util.$('share_pic').value = page.items[selectedIndex];
             }
         }
-        
         list.onclick = onItemClick;
-        
         var isSndImgBnd = false;
-        
         Util.$('cancel').onclick = function(){
             Util.$('pic_ct').style.display = 'none';
             Util.$('share_pic').value = '';
-            
             if(!isSndImgBnd){
                 Util.$('btn_forward').onclick = function(){
                     Util.$('pic_ct').style.display = '';
@@ -262,9 +229,7 @@
                 };
                 isSndImgBnd = true;
             }
-            
             return false;
         };
     }
-    
 </script>

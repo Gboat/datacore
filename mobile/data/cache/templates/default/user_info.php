@@ -1,6 +1,6 @@
 <?php /* 2013-01-26 in jishigou invalid request template */ if(!defined("IN_JISHIGOU")) exit("invalid request"); ?><!DOCTYPE html>
 <html>
-	<head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=0.67,maximum-scale=0.67,minimum-scale=0.67" />
         <title>
@@ -12,145 +12,116 @@
         <link href="templates/default/styles/common.css?v=build+20120428" rel="stylesheet" type="text/css" />
         <script src="templates/default/js/jquery-1.6.2.min.js?v=build+20120428"></script>
         <!--
-		<script>
+        <script>
             $(document).bind("mobileinit", function(){
                 $.mobile.ajaxLinksEnabled(false);
             });
         </script>
         <script src="templates/default/js/jquery.mobile.min.js?v=build+20120428"></script>-->
         <script src="templates/default/js/iscroll.js?v=build+20120428"></script>
-		<script src="templates/default/js/common.js?v=build+20120428"></script>
+        <script src="templates/default/js/common.js?v=build+20120428"></script>
     </head>
 <body>
 <script>
-	//一些初始化操作
-	var PerPage_MBlog = parseInt("<?php echo $this->Config['perpage_mblog']; ?>");
-	var PerPage_Pm = parseInt("<?php echo $this->Config['perpage_pm']; ?>");
-	var PerPage_Member = parseInt("<?php echo $this->Config['perpage_member']; ?>");
-	var PerPage_Def = parseInt("<?php echo $this->Config['perpage_def']; ?>");
-	var Code = "<?php echo $this->Code; ?>";
-	var Module = "<?php echo $this->Module; ?>";
-	var Uid = "<?php echo MEMBER_ID; ?>";
+    //一些初始化操作
+    var PerPage_MBlog = parseInt("<?php echo $this->Config['perpage_mblog']; ?>");
+    var PerPage_Pm = parseInt("<?php echo $this->Config['perpage_pm']; ?>");
+    var PerPage_Member = parseInt("<?php echo $this->Config['perpage_member']; ?>");
+    var PerPage_Def = parseInt("<?php echo $this->Config['perpage_def']; ?>");
+    var Code = "<?php echo $this->Code; ?>";
+    var Module = "<?php echo $this->Module; ?>";
+    var Uid = "<?php echo MEMBER_ID; ?>";
 <?php if($this->Config['is_mobile_client']) { ?>
-		var MobileClient = true;
+        var MobileClient = true;
 <?php } else { ?>var MobileClient = false;
-	
 <?php } ?>
-
 <?php if(!$this->Config['is_mobile_client'] && !in_array($_GET['code'], array('3g', 'publish', 'login'))) { ?>
-		var myScroll;
-		function loaded() {
-			var scrollName = "g_isrcollWrapper";
-			if (Module == "topic" && Code == "detail") {
-				//scrollName = "";
-			}
-			if (scrollName != "") {
-				myScroll = new iScroll(scrollName, {checkDOMChanges:true});
-			}
-		}
-		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-		document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
-	
+        var myScroll;
+        function loaded() {
+            var scrollName = "g_isrcollWrapper";
+            if (Module == "topic" && Code == "detail") {
+                //scrollName = "";
+            }
+            if (scrollName != "") {
+                myScroll = new iScroll(scrollName, {checkDOMChanges:true});
+            }
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
 <?php } ?>
 </script>
-
-
 <div data-role="page" data-theme="f" class="page">
 <?php if(!$this->Config['is_mobile_client']) { ?>
 <div id="g_header">
 <?php if($this->Code != "at_my" && $this->Code != "comment_my") { ?>
-	<div class="g_left_nav_toolbar">
-    	<ul>
-        
+    <div class="g_left_nav_toolbar">
+        <ul>
 <?php if($this->Code=='publish') { ?>
-            	<li><button class="g_nav_btn" onclick="history.go(-1);">取消</button></li><?php } elseif(in_array($this->Module, array('search')) || in_array($this->Code, array('detail', 'hot_comments', 'hot_forwards', 'new', 'comment', 'follow', 'fans', 'my_blog', 'list', 'blacklist', 'my_favorite', 'tag', 'about'))) { ?>            	<li><button class="g_nav_btn" onclick="history.go(-1);">返回</button></li>
-           <?php } elseif($this->Code == 'userinfo' && $_GET['uid'] != MEMBER_ID) { ?>            	<li><button class="g_nav_btn" onclick="history.go(-1);">返回</button></li>
-           <?php } elseif($this->Code=='login') { ?>           		<li>&nbsp;</li>
-            
+                <li><button class="g_nav_btn" onclick="history.go(-1);">取消</button></li><?php } elseif(in_array($this->Module, array('search')) || in_array($this->Code, array('detail', 'hot_comments', 'hot_forwards', 'new', 'comment', 'follow', 'fans', 'my_blog', 'list', 'blacklist', 'my_favorite', 'tag', 'about'))) { ?>                <li><button class="g_nav_btn" onclick="history.go(-1);">返回</button></li>
+           <?php } elseif($this->Code == 'userinfo' && $_GET['uid'] != MEMBER_ID) { ?>                <li><button class="g_nav_btn" onclick="history.go(-1);">返回</button></li>
+           <?php } elseif($this->Code=='login') { ?>                   <li>&nbsp;</li>
 <?php } else { ?>                <li><button class="g_nav_btn_edit" onclick="openPublishBox(PUBLISH_NEW)">&nbsp;</button></li>
-            
 <?php } ?>
         </ul>
     </div>
-	
 <?php } ?>
-    
     <div class="
 <?php if($this->Code != "at_my" && $this->Code != "comment_my") { ?>
 g_middle_nav_toolbar
 <?php } else { ?>g_middle_nav_toolbar_message
 <?php } ?>
 ">
-    
 <?php if($this->Code == "home") { ?>
-    
 <?php echo Mobile::convert($this->MemberHandler->MemberFields['nickname']) ?><?php } elseif($this->Code == "at_my" || $this->Code == "comment_my") { ?>    
 <?php $tab_msg_actives[$this->Code] = "g_middle_chute_on"; ?>
-    	<div class="g_middle_chute">
-        	<ul>
-            	<li class="<?php echo $tab_msg_actives['at_my']; ?>" onclick="changeMessageTab(TAB_MESSAGE_AT);">@我</li>
-            	<li class="s <?php echo $tab_msg_actives['comment_my']; ?>" onclick="changeMessageTab(TAB_MESSAGE_COMMENT);">评论</li>
+        <div class="g_middle_chute">
+            <ul>
+                <li class="<?php echo $tab_msg_actives['at_my']; ?>" onclick="changeMessageTab(TAB_MESSAGE_AT);">@我</li>
+                <li class="s <?php echo $tab_msg_actives['comment_my']; ?>" onclick="changeMessageTab(TAB_MESSAGE_COMMENT);">评论</li>
             </ul>
         </div><?php } elseif($this->Module == "search") { ?>    
 <?php $s_title_ary = array('user'=>'找人','topic'=>'搜索微博') ?>
-
 <?php echo $s_title_ary[$this->Code] ?>
     <?php } elseif($this->Code == "userinfo") { ?>    
 <?php if($_GET['uid'] == MEMBER_ID) { ?>
-    		我的资料
-        
-<?php } else { ?>        	资料
-        
+            我的资料
+<?php } else { ?>            资料
 <?php } ?>
     <?php } elseif($this->Module == "more") { ?>    
 <?php if($this->Code == "about") { ?>
-        	关于
-        
-<?php } else { ?>        	更多
-        
+            关于
+<?php } else { ?>            更多
 <?php } ?>
-    <?php } elseif($this->Code == "3g") { ?>    	广场
+    <?php } elseif($this->Code == "3g") { ?>        广场
     <?php } elseif($this->Code == "publish") { ?>    
 <?php if($_GET['pt'] == "new") { ?>
-        	新微博
-        <?php } elseif($_GET['pt'] == "reply") { ?>        	评论
-        <?php } elseif($_GET['pt'] == "forward") { ?>        	转发
-        
+            新微博
+        <?php } elseif($_GET['pt'] == "reply") { ?>            评论
+        <?php } elseif($_GET['pt'] == "forward") { ?>            转发
 <?php } ?>
-<?php } elseif($this->Code == "detail") { ?>    	微博正文<?php } elseif($this->Code == 'hot_comments') { ?>    	热门评论<?php } elseif($this->Code == "new") { ?>    	随便看看
-    <?php } elseif($this->Code == "hot_forwards") { ?>    	热门转发
-    
+<?php } elseif($this->Code == "detail") { ?>        微博正文<?php } elseif($this->Code == 'hot_comments') { ?>        热门评论<?php } elseif($this->Code == "new") { ?>        随便看看
+    <?php } elseif($this->Code == "hot_forwards") { ?>        热门转发
 <?php } else { ?><?php $_title_ary = array('follow'=>'关注','fans'=>'粉丝','my_blog'=>'我的微博','list'=>'话题','blacklist'=>'黑名单','my_favorite'=>'收藏','tag'=>'话题', 'comment'=>'评论', 'login'=>'登录') ?>
-
 <?php echo $_title_ary[$this->Code] ?>
-    
 <?php } ?>
 </div>
-    
-    
 <?php if($this->Code != "at_my" && $this->Code != "comment_my") { ?>
     <div class="g_right_nav_toolbar">
-    	<ul>
-        
+        <ul>
 <?php if($this->Code=='publish') { ?>
-            <?php } elseif($this->Code=='comment') { ?>            	<li><button class="g_nav_btn_edit" onclick="openPublishBox(PUBLISH_COMMENT, {totid:'<?php echo $tid; ?>'});">&nbsp;</button></li>
-            <?php } elseif($this->Code=='login') { ?>            	<li>&nbsp;</li>
-            
-<?php } else { ?>               	<li><button class="g_nav_btn_ref" onclick="location.reload();">&nbsp;</button></li>
-          	
+            <?php } elseif($this->Code=='comment') { ?>                <li><button class="g_nav_btn_edit" onclick="openPublishBox(PUBLISH_COMMENT, {totid:'<?php echo $tid; ?>'});">&nbsp;</button></li>
+            <?php } elseif($this->Code=='login') { ?>                <li>&nbsp;</li>
+<?php } else { ?>                   <li><button class="g_nav_btn_ref" onclick="location.reload();">&nbsp;</button></li>
 <?php } ?>
         </ul>
     </div>
-    
 <?php } ?>
-    
 </div>
-
 <!--全局提示-->
 <div id="g_tips" onclick="closeTipsExp();">
 </div>
 <?php if($_GET['code'] == 'login') { ?>
-	<style>
+    <style>
         #g_isrcollWrapper {
             bottom:0px;
         }
@@ -159,93 +130,80 @@ g_middle_nav_toolbar
 <div id="g_isrcollWrapper">
 <?php } ?>
 <div data-role="content" >
-	<div class="profile">
-		<div class="user_info">
-			<div class="vf s_info">
-				<div class="b_author"><img src="<?php echo $member['face_original']; ?>" style="width:128px; height:128px;"/></div>
-				<div class="b_info">
-					<span class="u_name"><?php echo $member['nickname']; ?></span>
-					<span class="u_sex">
+    <div class="profile">
+        <div class="user_info">
+            <div class="vf s_info">
+                <div class="b_author"><img src="<?php echo $member['face_original']; ?>" style="width:128px; height:128px;"/></div>
+                <div class="b_info">
+                    <span class="u_name"><?php echo $member['nickname']; ?></span>
+                    <span class="u_sex">
 <?php if($member['gender'] == 1) { ?>
 <img src="templates/default/./images/icon_male.png"/>
 <?php } else { ?><img src="templates/default/./images/icon_female.png"/>
 <?php } ?>
 </span>
-                    
 <?php if($member['uid'] == MEMBER_ID) { ?>
-                    
 <?php if($this->Config['is_mobile_client']) { ?>
-							<span class="u_edit"><a href="javascript:goToEditProfile('<?php echo $member['uid']; ?>');" class="btn_edit">编辑</a></span>
-                    	
+                            <span class="u_edit"><a href="javascript:goToEditProfile('<?php echo $member['uid']; ?>');" class="btn_edit">编辑</a></span>
 <?php } ?>
-                    
-<?php } else { ?>                    	<span class="u_edit">
-                        
+<?php } else { ?>                        <span class="u_edit">
 <?php if($is_follow) { ?>
-                        		<a href="javascript:;" class="btn_y" onclick="delFollow(this, <?php echo $member['uid']; ?>)">取消关注</a>
-                            
+                                <a href="javascript:;" class="btn_y" onclick="delFollow(this, <?php echo $member['uid']; ?>)">取消关注</a>
 <?php } else { ?>                            
 <?php if($is_blacklist) { ?>
-                            		<a href="javascript:;" class="btn_y" onclick="delFromBlackList(this, <?php echo $member['uid']; ?>)">解除黑名单</a>
-                              
-<?php } else { ?>                                	<a href="javascript:;" class="btn_g" onclick="addFollow(this, <?php echo $member['uid']; ?>)">关注</a>
-                                
+                                    <a href="javascript:;" class="btn_y" onclick="delFromBlackList(this, <?php echo $member['uid']; ?>)">解除黑名单</a>
+<?php } else { ?>                                    <a href="javascript:;" class="btn_g" onclick="addFollow(this, <?php echo $member['uid']; ?>)">关注</a>
 <?php } ?>
-                            
 <?php } ?>
-                     	</span>
-                    
+                         </span>
 <?php } ?>
 </div>
-			</div>
-			<div class="other">
-				<ul class="lv_1"> 
-				  <li><span class="t">个性签名：</span><span class="c">
+            </div>
+            <div class="other">
+                <ul class="lv_1"> 
+                  <li><span class="t">个性签名：</span><span class="c">
 <?php if($member['signature']) { ?>
 <?php echo $member['signature']; ?>
 <?php } else { ?>
 <?php } ?>
 </span></li> 
-				  <li><span class="t">常住地址：</span><span class="c"><?php echo $member['province']; ?> <?php echo $member['city']; ?></span></li> 
-				  <li class="nb"><span class="t">电子邮件：</span><span class="c"><?php echo $member['email']; ?></span></li> 
-				</ul> 
-			</div>
-		</div>
-		
-		<div class="topic_info">
-			<ul class="lv_2"> 
-			  <li>
-				<div class="col bl" onClick="goToFwList('<?php echo $member['uid']; ?>');">
-					<div class="mid">
-						<span class="ct"><?php echo $member['follow_count']; ?></span>
-						<span class="t">关注</span>
-					</div>
-				</div>
-				<div class="col" onClick="goToMyMbList('<?php echo $member['uid']; ?>');">
-					<div class="mid">
-						<span class="ct"><?php echo $member['topic_count']; ?></span>
-						<span class="t">微博</span>
-					</div>
-				</div>
-			  </li> 
-			  <li class="nb">
-				<div class="col bl" onClick="goToFansList('<?php echo $member['uid']; ?>');">
-					<div class="mid">
-						<span class="ct"><?php echo $member['fans_count']; ?></span>
-						<span class="t">粉丝</span>
-					</div>
-				</div>
-				<div class="col" onclick="goToTagList('<?php echo $member['uid']; ?>');">
-					<div class="mid">
-						<span class="ct"><?php echo $member['tag_favorite_count']; ?></span>
-						<span class="t">话题</span>
-					</div>
-				</div>
-			  </li> 
-			</ul> 
-		</div>
-        
-        
+                  <li><span class="t">常住地址：</span><span class="c"><?php echo $member['province']; ?> <?php echo $member['city']; ?></span></li> 
+                  <li class="nb"><span class="t">电子邮件：</span><span class="c"><?php echo $member['email']; ?></span></li> 
+                </ul> 
+            </div>
+        </div>
+        <div class="topic_info">
+            <ul class="lv_2"> 
+              <li>
+                <div class="col bl" onClick="goToFwList('<?php echo $member['uid']; ?>');">
+                    <div class="mid">
+                        <span class="ct"><?php echo $member['follow_count']; ?></span>
+                        <span class="t">关注</span>
+                    </div>
+                </div>
+                <div class="col" onClick="goToMyMbList('<?php echo $member['uid']; ?>');">
+                    <div class="mid">
+                        <span class="ct"><?php echo $member['topic_count']; ?></span>
+                        <span class="t">微博</span>
+                    </div>
+                </div>
+              </li> 
+              <li class="nb">
+                <div class="col bl" onClick="goToFansList('<?php echo $member['uid']; ?>');">
+                    <div class="mid">
+                        <span class="ct"><?php echo $member['fans_count']; ?></span>
+                        <span class="t">粉丝</span>
+                    </div>
+                </div>
+                <div class="col" onclick="goToTagList('<?php echo $member['uid']; ?>');">
+                    <div class="mid">
+                        <span class="ct"><?php echo $member['tag_favorite_count']; ?></span>
+                        <span class="t">话题</span>
+                    </div>
+                </div>
+              </li> 
+            </ul> 
+        </div>
 <?php if($member['uid'] == MEMBER_ID) { ?>
             <div class="topic_info">
                 <ul class="lv_4">
@@ -259,15 +217,13 @@ g_middle_nav_toolbar
                     </li>
                 </ul> 
             </div>
-        
 <?php } ?>
-        
-	</div>
+    </div>
 </div>
 <script language="javascript">
-	$(document).ready(function(){
-		setTmpNick("<?php echo $member['nickname']; ?>");
-	});
+    $(document).ready(function(){
+        setTmpNick("<?php echo $member['nickname']; ?>");
+    });
 </script>
 <?php if(!$this->Config['is_mobile_client']) { ?>
 </div>
@@ -307,16 +263,16 @@ g_middle_nav_toolbar
             </li>
         </ul>
     </div><?php } elseif($this->Code == "tag") { ?><div id="g_toolbar" class="g_toolbar">
-    	<ul class="g_toolbar_ul g_towbtn">
-        	<li><a href="javascript:openPublishBox(PUBLISH_NEW, {'tagid':<?php echo $tag_id; ?>});" class="btn_comment"></a></li>
+        <ul class="g_toolbar_ul g_towbtn">
+            <li><a href="javascript:openPublishBox(PUBLISH_NEW, {'tagid':<?php echo $tag_id; ?>});" class="btn_comment"></a></li>
             <li><a href="javascript:;" class="btn_fav" id="btn_fav_topic"></a></li>
         </ul>
     </div>
     <script language="javascript">
-		checkTopic('<?php echo $uncode_tag_key; ?>');
+        checkTopic('<?php echo $uncode_tag_key; ?>');
     </script><?php } elseif($this->Code=="detail") { ?><div id="g_toolbar" class="g_toolbar">
-    	<ul class="g_toolbar_ul">
-        	<li><a href="javascript:location.reload();" class="btn_ref"></a></li>
+        <ul class="g_toolbar_ul">
+            <li><a href="javascript:location.reload();" class="btn_ref"></a></li>
             <li><a href="javascript:openPublishBox(PUBLISH_COMMENT, {totid:'<?php echo $detail['tid']; ?>'});" class="btn_comment"></a></li>
             <li><a href="javascript:openPublishBox(PUBLISH_FORWARD, {totid:'<?php echo $detail['tid']; ?>'});" class="btn_forward"></a></li>
             <li><a id="btn_fav_mblog" href="javascript:
@@ -332,8 +288,8 @@ btn_fav_on
 "></a></li>
         </ul>
     </div><?php } elseif($this->Code=="userinfo" && $this->Get['uid'] != MEMBER_ID) { ?><div id="g_toolbar" class="g_toolbar">
-    	<ul class="g_toolbar_ul g_towbtn">
-        	<li><a href="javascript:openPublishBox(PUBLISH_NEW, {'atuid':<?php echo $member['uid']; ?>});" class="btn_at"></a></li>
+        <ul class="g_toolbar_ul g_towbtn">
+            <li><a href="javascript:openPublishBox(PUBLISH_NEW, {'atuid':<?php echo $member['uid']; ?>});" class="btn_at"></a></li>
             <li><a href="javascript:
 <?php if($is_blacklist) { ?>
 delFromBlackList('btn_blacklist', <?php echo $member['uid']; ?>, 1)
@@ -342,14 +298,12 @@ delFromBlackList('btn_blacklist', <?php echo $member['uid']; ?>, 1)
 ;" class="btn_blacklist" id="btn_blacklist"></a></li>
         </ul>
     </div><?php } elseif($this->Code=="publish") { ?><div id="g_toolbar" class="g_toolbar">
-    
 <?php if(in_array($_GET['pt'], array('reply', 'forward'))) { ?>
-			<div class="left_block"><input name="" type="checkbox" value="both" id="p_both"/><label for="p_both">
+            <div class="left_block"><input name="" type="checkbox" value="both" id="p_both"/><label for="p_both">
 <?php if($_GET['pt'] == "reply") { ?>
 同时转发<?php } elseif($_GET['pt'] == "forward") { ?>同时评论
 <?php } ?>
 </label></div>
-        
 <?php } ?>
         <div class="right_block"><button class="publish_btn" onclick="publishMBlog();" id="publish_btn" >发送</button></div>
     </div>

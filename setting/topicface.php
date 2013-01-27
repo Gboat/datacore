@@ -1,22 +1,6 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename topicface.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:13 384952617 731447389 9648 $
- *******************************************************************/
-
- 
-
 $face_url = 'templates/default/images/face/';
-
 $config['topicface']=array (
-
          0=> 
   array (
         'name' => '微笑',
@@ -152,7 +136,6 @@ $config['topicface']=array (
         'name' => '惊恐',
         'src' => $face_url.'jingkong.gif',
       ),
-
        24=> 
   array (
         'name' => '流汗',
@@ -473,7 +456,6 @@ $config['topicface']=array (
         'name' => '干杯',
         'src' => $face_url.'cheer.gif',
       ),
-
           83=> 
   array (
         'name' => '飞吻',
@@ -544,9 +526,5 @@ $config['topicface']=array (
         'name' => '右太极',
         'src' => $face_url.'zuotaiji.gif',
       ),
-      
-
 );
-
-
 ?>

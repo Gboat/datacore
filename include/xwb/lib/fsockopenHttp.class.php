@@ -1,170 +1,137 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename fsockopenHttp.class.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:04 993155798 905323097 22859 $
- *******************************************************************/
-
-
-
-
-
-
 class fsockopenHttp
 {
         var $headers, $status, $resttl, $cookies, $socks, $verbose;
     var $post_files, $post_fields;
     var $triggered_error = array();
-    	var $max_retries = 3;
-	var $_serverUrl;
-	var $mimes = array(
-						'gif' => 'image/gif',
-						'png' => 'image/png',
-						'bmp' => 'image/bmp',
-						'jpeg' => 'image/jpeg',
-						'pjpg' => 'image/pjpg',
-						'jpg' => 'image/jpeg',
-						'tif' => 'image/tiff',
-						'htm' => 'text/html',
-						'css' => 'text/css',
-						'html' => 'text/html',
-						'txt' => 'text/plain',
-						'gz' => 'application/x-gzip',
-						'tgz' => 'application/x-gzip',
-						'tar' => 'application/x-tar',
-						'zip' => 'application/zip',
-						'hqx' => 'application/mac-binhex40',
-						'doc' => 'application/msword',
-						'pdf' => 'application/pdf',
-						'ps' => 'application/postcript',
-						'rtf' => 'application/rtf',
-						'dvi' => 'application/x-dvi',
-						'latex' => 'application/x-latex',
-						'swf' => 'application/x-shockwave-flash',
-						'tex' => 'application/x-tex',
-						'mid' => 'audio/midi',
-						'au' => 'audio/basic',
-						'mp3' => 'audio/mpeg',
-						'ram' => 'audio/x-pn-realaudio',
-						'ra' => 'audio/x-realaudio',
-						'rm' => 'audio/x-pn-realaudio',
-						'wav' => 'audio/x-wav',
-						'wma' => 'audio/x-ms-media',
-						'wmv' => 'video/x-ms-media',
-						'mpg' => 'video/mpeg',
-						'mpga' => 'video/mpeg',
-						'wrl' => 'model/vrml',
-						'mov' => 'video/quicktime',
-						'avi' => 'video/x-msvideo'
-					);
-
-
+        var $max_retries = 3;
+    var $_serverUrl;
+    var $mimes = array(
+                        'gif' => 'image/gif',
+                        'png' => 'image/png',
+                        'bmp' => 'image/bmp',
+                        'jpeg' => 'image/jpeg',
+                        'pjpg' => 'image/pjpg',
+                        'jpg' => 'image/jpeg',
+                        'tif' => 'image/tiff',
+                        'htm' => 'text/html',
+                        'css' => 'text/css',
+                        'html' => 'text/html',
+                        'txt' => 'text/plain',
+                        'gz' => 'application/x-gzip',
+                        'tgz' => 'application/x-gzip',
+                        'tar' => 'application/x-tar',
+                        'zip' => 'application/zip',
+                        'hqx' => 'application/mac-binhex40',
+                        'doc' => 'application/msword',
+                        'pdf' => 'application/pdf',
+                        'ps' => 'application/postcript',
+                        'rtf' => 'application/rtf',
+                        'dvi' => 'application/x-dvi',
+                        'latex' => 'application/x-latex',
+                        'swf' => 'application/x-shockwave-flash',
+                        'tex' => 'application/x-tex',
+                        'mid' => 'audio/midi',
+                        'au' => 'audio/basic',
+                        'mp3' => 'audio/mpeg',
+                        'ram' => 'audio/x-pn-realaudio',
+                        'ra' => 'audio/x-realaudio',
+                        'rm' => 'audio/x-pn-realaudio',
+                        'wav' => 'audio/x-wav',
+                        'wma' => 'audio/x-ms-media',
+                        'wmv' => 'video/x-ms-media',
+                        'mpg' => 'video/mpeg',
+                        'mpga' => 'video/mpeg',
+                        'wrl' => 'model/vrml',
+                        'mov' => 'video/quicktime',
+                        'avi' => 'video/x-msvideo'
+                    );
         function fsockopenHttp($verbose = false)
     {
         $this->__construct($verbose);
     }
-
     function __construct($verbose = false)
     {
         $this->verbose = $verbose;
         $this->cookies = array();
         $this->socks = array();
-
         $this->_reset_status();
     }
-
     function __destruct()
     {
         foreach ($this->socks as $host => $sock) { @fclose($sock); }
     }
-
-	function setUrl($url)
-	{
-		$this->_serverUrl = $url;
-		return $this;
-	}
-
-	function setData($data)
-	{
+    function setUrl($url)
+    {
+        $this->_serverUrl = $url;
+        return $this;
+    }
+    function setData($data)
+    {
         $this->_reset_status();
-		if (is_array($data)) {
-			foreach ($data as $key => $var) {
-				$this->post_fields[] = array($key, $var);
-			}
-		} else {
-			$this->post_fields = $data;
-		}
-
-		return $this;
-	}
-
-	function setConfig($config)
-	{
-		foreach ($config as $var) {
-			foreach($var as $k) {
-				$headers = explode(':', $k);
-				$headers[1] = trim($headers[1]);
-				if (empty($headers[1])) {
-					continue;
-				}
-				$this->setHeader($headers[0], $headers[1]);
-			}
-		}
-	}
-
-	function getState()
-	{
-        return $this->status;
-	}
-
-	function request($method = null, $https = false)
-	{
-		$method = empty($method) ? 'get' : $method;
-        switch ($method) {
-			case 'get':
-				$result = $this->Get($this->_serverUrl);
-				break;
-			case 'post':
-				$result = $this->Post($this->_serverUrl);
-				break;
-			case 'Head':
-				$result = $this->Head($this->_serverUrl);
-				break;
-			default:
-				$result = $this->Get($this->_serverUrl);
+        if (is_array($data)) {
+            foreach ($data as $key => $var) {
+                $this->post_fields[] = array($key, $var);
+            }
+        } else {
+            $this->post_fields = $data;
         }
-		return $result;
-	}
-
+        return $this;
+    }
+    function setConfig($config)
+    {
+        foreach ($config as $var) {
+            foreach($var as $k) {
+                $headers = explode(':', $k);
+                $headers[1] = trim($headers[1]);
+                if (empty($headers[1])) {
+                    continue;
+                }
+                $this->setHeader($headers[0], $headers[1]);
+            }
+        }
+    }
+    function getState()
+    {
+        return $this->status;
+    }
+    function request($method = null, $https = false)
+    {
+        $method = empty($method) ? 'get' : $method;
+        switch ($method) {
+            case 'get':
+                $result = $this->Get($this->_serverUrl);
+                break;
+            case 'post':
+                $result = $this->Post($this->_serverUrl);
+                break;
+            case 'Head':
+                $result = $this->Head($this->_serverUrl);
+                break;
+            default:
+                $result = $this->Get($this->_serverUrl);
+        }
+        return $result;
+    }
         function getStatus()
     {
         return $this->status;
     }
-
         function getResttl()
     {
         return $this->resttl;
     }
-
         function setHeader($key, $value)
     {
         $this->_reset_status();
         $key = strtolower($key);
         $this->headers[$key] = $value;
     }
-
         function setCookie($key, $value)
     {
         if (!isset($this->headers['cookie'])) $this->headers['cookie'] = array();
         $this->headers['cookie'][$key] = $value;
     }
-
         function getHeader($key = null)
     {
         if (is_null($key)) return $this->headers;
@@ -172,7 +139,6 @@ class fsockopenHttp
         if (!isset($this->headers[$key])) return null;
         return $this->headers[$key];
     }
-
         function getCookie($key = null, $host = null)
     {
         if (is_null($host))
@@ -190,7 +156,6 @@ class fsockopenHttp
             return null;
         }
     }
-
         function saveCookie($fpath)
     {
         if ($fd = @fopen($fpath, 'w'))
@@ -202,18 +167,15 @@ class fsockopenHttp
         }
         return false;
     }
-
         function loadCookie($fpath)
     {
         if (file_exists($fpath)) $this->cookies = unserialize(@file_get_contents($fpath));
     }
-
         function addPostField($key, $value)
     {
         $this->_reset_status();
         $this->post_fields[] = array($key, $value);
     }
-
         function addPostFile($key, $fname, $content = null)
     {
         $this->_reset_status();
@@ -224,17 +186,14 @@ class fsockopenHttp
         }
         $this->post_files[] = array($key, $fname, $content);
     }
-
         function Get($url, $redir = true)
     {
         return $this->_do_url($url, 'get', null, $redir);
     }
-
         function Head($url)
     {
         return $this->_do_url($url, 'head');
     }
-
         function Post($url, $redir = true)
     {
         $data = '';
@@ -258,24 +217,23 @@ class fsockopenHttp
         }
         else
         {
-			if (!is_array($this->post_fields)) {
-				$data = $this->post_fields;
-			} else {
-				foreach ($this->post_fields as $tmp)
-				{
-					$data .= '&' . $this->_format_field($tmp[0], $tmp[1]);
-				}
-			}
+            if (!is_array($this->post_fields)) {
+                $data = $this->post_fields;
+            } else {
+                foreach ($this->post_fields as $tmp)
+                {
+                    $data .= '&' . $this->_format_field($tmp[0], $tmp[1]);
+                }
+            }
             $data = ltrim($data, '&');
         }
         $dlen = strlen($data);
         $this->setHeader('content-length', $dlen);
-		if (empty($this->headers['content-type'])) {
-			$this->setHeader('content-type', 'application/x-www-form-urlencoded');
-		}
+        if (empty($this->headers['content-type'])) {
+            $this->setHeader('content-type', 'application/x-www-form-urlencoded');
+        }
         return $this->_do_url($url, 'post', $data, $redir);
     }
-
                     function _sock_read($fd, $maxlen = 4096)
     {
         $rlen = 0;
@@ -292,7 +250,6 @@ class fsockopenHttp
         if ($ntry == 0) fclose($fd);
         return $data;
     }
-
         function _sock_write($fd, $buf)
     {
         $wlen = 0;
@@ -306,7 +263,6 @@ class fsockopenHttp
         }
         return true;
     }
-
         function _reset_status()
     {
         if ($this->status !== 0)
@@ -315,7 +271,6 @@ class fsockopenHttp
             $this->headers = $this->post_files = $this->post_fields = array();
         }
     }
-
         function _format_field($key, $value)
     {
         if (!is_array($value))
@@ -331,7 +286,6 @@ class fsockopenHttp
         }
         return $ret;
     }
-
         function _do_url($url, $method, $data = null, $redir = true)
     {
                 if (strncasecmp($url, 'http:/'.'/', 7) && strncasecmp($url, 'https:/'.'/', 8))
@@ -341,7 +295,6 @@ class fsockopenHttp
                 $url = substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/')+1) . $url;
             $url = $base . $url;
         }
-
                 $url = str_replace('&amp;', '&', $url);
         $pa = @parse_url($url);
         if ($pa['scheme'] && $pa['scheme'] != 'http' && $pa['scheme'] != 'https')
@@ -356,17 +309,14 @@ class fsockopenHttp
         $skey = $host . ':' . $port;
         if ($pa['scheme'] && $pa['scheme'] == 'https') $host_conn = 'ssl:/'.'/' . $host;
         else $host_conn = 'tcp:/'.'/' . $host;
-
                 $method = strtoupper($method);
         $buf = $method . ' ' . $pa['path'];
         if (isset($pa['query'])) $buf .= '?' . $pa['query'];
         $buf .= " HTTP/1.1\r\nHost: {$host}\r\n";
-
                 $this->_reset_status();
         if (!isset($this->headers['accept'])) $buf .= "Accept: *"."/"."*\r\n";
         if (isset($this->headers['accept-encoding'])) unset($this->headers['accept-encoding']);
         if (isset($this->headers['host'])) unset($this->headers['host']);
-
                 $now = time();
         $ck_str = '';
         foreach ($this->cookies as $ck_host => $ck_list)
@@ -393,36 +343,31 @@ class fsockopenHttp
         }
         $buf .= "\r\n";
         if ($method == 'POST') $buf .= $data . "\r\n";
-
                 $this->status = -1;
-
                 if ($this->verbose)
         {
             echo "[SEND] request buffer\r\n----\r\n";
             echo $buf;
             echo "----\r\n";
         }
-
                 $ntry = $this->max_retries;
         $sock = isset($this->socks[$skey]) ? $this->socks[$skey] : false;
         do
         {
             if ($sock && $this->_sock_write($sock, $buf)) break;
             if ($sock) @fclose($sock);           
-		
-			if(function_exists('fsockopen'))
-			{
-				$sock = @fsockopen($host_conn, $port, $errno, $error, 3);
-			}
-			elseif(function_exists('pfsockopen'))
-			{
-				$sock = @pfsockopen($host_conn, $port, $errno, $error, 3);
-			}
-			else
-			{
-				$sock = false;
-			}
-
+            if(function_exists('fsockopen'))
+            {
+                $sock = @fsockopen($host_conn, $port, $errno, $error, 3);
+            }
+            elseif(function_exists('pfsockopen'))
+            {
+                $sock = @pfsockopen($host_conn, $port, $errno, $error, 3);
+            }
+            else
+            {
+                $sock = false;
+            }
             if ($sock)
             {
                 stream_set_blocking($sock, 1);
@@ -442,7 +387,6 @@ class fsockopenHttp
             echo "[SEND] using socket = {$sock}\r\n";
             echo "[RECV] http respond header\r\n----\r\n";
         }
-
                 $this->headers = array();
         while ($line = fgets($sock, 2048))
         {
@@ -485,11 +429,9 @@ class fsockopenHttp
                         $ck_val[$tmpk2] = $tmpv;
                     }
                 }
-
                                 if ($ck_key == '') continue;
                 if ($ck_val['value'] == '') unset($this->cookies[$ck_val['domain']][$ck_key]);
                 else $this->cookies[$ck_val['domain']][$ck_key] = $ck_val;
-
                                 $this->headers['cookie'][$ck_key] = $ck_val;
             }
             else
@@ -501,7 +443,6 @@ class fsockopenHttp
             }
         }
         if ($this->verbose) echo "----\r\n";
-
                 if ($method == 'HEAD') return ($this->status == 200);
         $connection = $this->getHeader('connection');
         $encoding = $this->getHeader('transfer-encoding');
@@ -517,7 +458,6 @@ class fsockopenHttp
                 $chunk_len = hexdec(trim($line));
                 if ($chunk_len <= 0) break;                    $body .= $this->_sock_read($sock, $chunk_len);
                 fread($sock, 2);                        }
-
                         if ($this->verbose) echo "[RECV] chunk tailer\r\n----\r\n";
             while ($line = fgets($sock, 2048))
             {
@@ -549,13 +489,11 @@ class fsockopenHttp
             }
             $connection = 'close';
         }
-
                 if ($connection && !strcasecmp($connection, 'close'))
         {
             @fclose($sock);
             unset($this->socks[$skey]);
         }
-
                 if ($redir && $this->status != 200 && ($location = $this->getHeader('location')))
         {
             if (!preg_match('/^http[s]?:\/\/'.'/i', $location))
@@ -568,22 +506,14 @@ class fsockopenHttp
             }
             return $this->_do_url($location, 'get');
         }
-
                 return $body;
     }
-    
-    
     function _trigger_error( $errmsg, $errno ){
-    	$this->triggered_error[] = array('errmsg' => $errmsg, 'errno' => $errno );
-    	trigger_error($errmsg, $errno);
+        $this->triggered_error[] = array('errmsg' => $errmsg, 'errno' => $errno );
+        trigger_error($errmsg, $errno);
     }
-    
-    
     function get_triggered_error(){
-    	return $this->triggered_error;
+        return $this->triggered_error;
     }
-    
-    
 }
-
 ?>

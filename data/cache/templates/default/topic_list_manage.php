@@ -14,48 +14,40 @@ $(objStr1).mouseout(function(){$(objStr2).hide();});
 <?php if($this->Get['mod'] == 'talk' &&  $val['reply_ok']) { ?>
 <li><span id="answer_<?php echo $val['tid']; ?>" class="talkreply" onclick="showMainPublishBox('answer','talk','<?php echo $talk['lid']; ?>','<?php echo $val['tid']; ?>','<?php echo $val['uid']; ?>');return false;">回答</span></li><li class="o_line_l">|</li>
 <?php } ?>
-
 <?php if($this->Get['type'] != 'my_verify') { ?>
 <?php $tpid=$val['top_parent_id']; if ($tpid&&$parent_list[$tpid]) $root_type=$parent_list[$tpid]['type']; ?>
 <?php if((!isset($root_type)) || (isset($root_type) && in_array($root_type, get_topic_type('forward')))) { ?>
-	<li>
-	  <!--转发的判断 Begin-->
-	  
+    <li>
+      <!--转发的判断 Begin-->
 <?php if((in_array($val['type'], get_topic_type('forward')) || $this->Module=='qun') && $val['managetype'] != 2) { ?>
-	  
 <?php $not_allow_forward=0; ?>
 <span 
 <?php if(MEMBER_ID <1 ) { ?>
  onclick="ShowLoginDialog();" 
 <?php } ?>
 >
-			<a href="javascript:void(0);" onclick="get_forward_choose(<?php echo $val['tid']; ?>,<?php echo $allow_attach; ?>);" style="cursor:pointer;">转发
+            <a href="javascript:void(0);" onclick="get_forward_choose(<?php echo $val['tid']; ?>,<?php echo $allow_attach; ?>);" style="cursor:pointer;">转发
 <?php if($val['forwards']) { ?>
 (<?php echo $val['forwards']; ?>)
 <?php } ?>
 </a>
-		</span>
-	 
+        </span>
 <?php } else { ?> 
 <?php $not_allow_forward=1; ?>
- 
 <?php if(isset($val['fansgroup'])) { ?>
-	  <span><?php echo $val['fansgroup']; ?></span>
-	 
+      <span><?php echo $val['fansgroup']; ?></span>
 <?php } else { ?> <span title="设置了特殊的权限，不允许转发">转发</span>
-	 
 <?php } ?>
- 
 <?php } ?>
  <!--转发的判断 End-->
-	</li>
-	<li class="o_line_l">|</li>
+    </li>
+    <li class="o_line_l">|</li>
 <?php } else { ?><?php $not_allow_forward=1; ?>
 <?php } ?>
 <li>
 <?php if(!$val['reply_disable'] && $val['managetype'] != 2) { ?>
-	<span>
-		<a id="topic_list_reply_<?php echo $val['tid']; ?>_aid" href="javascript:void(0)" 
+    <span>
+        <a id="topic_list_reply_<?php echo $val['tid']; ?>_aid" href="javascript:void(0)" 
 <?php if(MEMBER_ID <1 ) { ?>
  onclick="ShowLoginDialog();" 
 <?php } ?>
@@ -64,43 +56,36 @@ $(objStr1).mouseout(function(){$(objStr2).hide();});
 (<?php echo $val['replys']; ?>)
 <?php } ?>
 </a>
-		</span>
-	 
+        </span>
 <?php } else { ?> <span>评论</span>
-	
 <?php } ?>
 </li>
-
-	<li class="o_line_l">|</li>
-
-	<li id="<?php echo $talkanswerid; ?>topic_lists_<?php echo $val['tid']; ?>_a" class="mobox">
-		<a href="javascript:void(0)" class="moreti" ><span class="txt">更多</span><span class="more"></span></a> 
-		<div id="<?php echo $talkanswerid; ?>topic_lists_<?php echo $val['tid']; ?>_b" class="molist" style="display:none">
+    <li class="o_line_l">|</li>
+    <li id="<?php echo $talkanswerid; ?>topic_lists_<?php echo $val['tid']; ?>_a" class="mobox">
+        <a href="javascript:void(0)" class="moreti" ><span class="txt">更多</span><span class="more"></span></a> 
+        <div id="<?php echo $talkanswerid; ?>topic_lists_<?php echo $val['tid']; ?>_b" class="molist" style="display:none">
 <?php if('myfavorite'==$this->Code) { ?>
- 
-				<span id="favorite_<?php echo $val['tid']; ?>" 
+                <span id="favorite_<?php echo $val['tid']; ?>" 
 <?php if(MEMBER_ID <1 ) { ?>
  onclick="ShowLoginDialog();" 
 <?php } ?>
 >
-					<a href="javascript:void(0)" onclick="favoriteTopic(<?php echo $val['tid']; ?>,'delete');return false;">取消收藏</a>
-				</span>
+                    <a href="javascript:void(0)" onclick="favoriteTopic(<?php echo $val['tid']; ?>,'delete');return false;">取消收藏</a>
+                </span>
 <?php } else { ?><span id="favorite_<?php echo $val['tid']; ?>" 
 <?php if(MEMBER_ID < 1) { ?>
  onclick="ShowLoginDialog();" 
 <?php } ?>
 >
-					<a href="javascript:void(0)" onclick="favoriteTopic(<?php echo $val['tid']; ?>,'add');return false;">收藏</a>
-				</span> 
-			
+                    <a href="javascript:void(0)" onclick="favoriteTopic(<?php echo $val['tid']; ?>,'add');return false;">收藏</a>
+                </span> 
 <?php } ?>
 <?php if($this->Config['is_report'] || MEMBER_ID > 0) { ?>
-			<span 
+            <span 
 <?php if(MEMBER_ID <1 ) { ?>
  onclick="ShowLoginDialog();" 
 <?php } ?>
 ><a href="javascript:void(0)" onclick="ReportBox('<?php echo $val['tid']; ?>')" title="举报不良信息">举报</a></span>
-			
 <?php } ?>
 <?php if($val['uid']==MEMBER_ID || 'admin'==MEMBER_ROLE_TYPE) { ?>
 <?php if($this->Code > 0  ||  in_array($this->Code,array('list_reply','do_add'))) $eid = 'reply_list'; else $eid = 'topic_list'  ?>
@@ -108,29 +93,23 @@ $(objStr1).mouseout(function(){$(objStr2).hide();});
 <?php $datetime = time(); $modify_time = $this->Config['topic_modify_time'] * 60 ?>
 <?php if($datetime - $val['addtime'] < $modify_time || 'admin'==MEMBER_ROLE_TYPE ) { ?>
 <?php if($val['replys'] <= 0 && $val['forwards'] <= 0 || 'admin'==MEMBER_ROLE_TYPE) { ?>
-						<a href="javascript:void(0);" onclick="modifyTopic(<?php echo $val['tid']; ?>,'modify_topic_<?php echo $val['tid']; ?>','<?php echo $eid; ?>',<?php echo $allow_attach; ?>);return false;" style="cursor:pointer;">编辑</a>
-					
+                        <a href="javascript:void(0);" onclick="modifyTopic(<?php echo $val['tid']; ?>,'modify_topic_<?php echo $val['tid']; ?>','<?php echo $eid; ?>',<?php echo $allow_attach; ?>);return false;" style="cursor:pointer;">编辑</a>
 <?php } ?>
 <?php } ?>
 <!--推荐开始 Begin-->
-					<a href="javascript:void(0)" onclick="showTopicRecdDialog({'tid':'<?php echo $val['tid']; ?>','tag_id':'<?php echo $tag_id; ?>'});return false;">推荐</a>
-				<!--推荐开始 End-->
-				
-			
+                    <a href="javascript:void(0)" onclick="showTopicRecdDialog({'tid':'<?php echo $val['tid']; ?>','tag_id':'<?php echo $tag_id; ?>'});return false;">推荐</a>
+                <!--推荐开始 End-->
 <?php } ?>
 <?php if('admin'==MEMBER_ROLE_TYPE) { ?>
-			    <a onclick="force_out(<?php echo $val['uid']; ?>);" href="javascript:void(0);">封杀</a>
-			    <a onclick="force_ip('<?php echo $val['postip']; ?>');" href="javascript:void(0);">封IP</a>
-			
+                <a onclick="force_out(<?php echo $val['uid']; ?>);" href="javascript:void(0);">封杀</a>
+                <a onclick="force_ip('<?php echo $val['postip']; ?>');" href="javascript:void(0);">封IP</a>
 <?php } ?>
 </div>
-	</li>
+    </li>
 <?php } else { ?><li id="topic_lists_<?php echo $val['id']; ?>_a" class="mobox">
 <?php if($val['uid']==MEMBER_ID || 'admin'==MEMBER_ROLE_TYPE) { ?>
-	  
 <?php if($this->Code > 0  ||  in_array($this->Code,array('list_reply','do_add'))) $eid = 'reply_list'; else $eid = 'topic_list'  ?>
   <a href="javascript:void(0)" onclick="deleteVerify(<?php echo $val['id']; ?>,'<?php echo $eid; ?>_<?php echo $val['id']; ?>');return false;">删除</a>
-	
 <?php } ?>
 </li>
 <?php } ?>

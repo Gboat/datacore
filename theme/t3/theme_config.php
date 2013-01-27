@@ -1,17 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename theme_config.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:17 961309056 317154368 267 $
- *******************************************************************/
-
-
 $theme_info=array(
       'theme_id' => 't3',
       'title' => '色彩',

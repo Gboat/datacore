@@ -1,18 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename theme.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:13 73245799 1225983140 3519 $
- *******************************************************************/
-
- 
-  
 $config['theme']=array (
   'theme_id' => 
   array (
@@ -25,7 +11,7 @@ $config['theme']=array (
     't8' => 't8',
     't9' => 't9',
     't6' => 't6',
-	't10' => 't10',
+    't10' => 't10',
   ),
   'theme_list' => 
   array (
@@ -139,7 +125,7 @@ $config['theme']=array (
       'theme_bg_image_type' => 'left',
       'sort' => 0,
     ),
-	't11' => 
+    't11' => 
     array (
       'theme_id' => 't11',
       'title' => '云彩',

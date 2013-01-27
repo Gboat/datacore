@@ -17,46 +17,35 @@
 <?php if($this->Config['theme_text_color']) { ?>
 body{ color:<?php echo $this->Config['theme_text_color']; ?>; }
 <?php } ?>
-
 <?php if($this->Config['theme_bg_color']) { ?>
 body{ background-color:<?php echo $this->Config['theme_bg_color']; ?>; }
 <?php } ?>
-
 <?php if($this->Config['theme_bg_image']) { ?>
 body{ background-image:url(<?php echo $this->Config['theme_bg_image']; ?>); }
 <?php } ?>
-
 <?php if($this->Config['theme_bg_position']) { ?>
 body{ background-position:<?php echo $this->Config['theme_bg_position']; ?>; }
 <?php } ?>
-
 <?php if($this->Config['theme_bg_repeat']) { ?>
 body{ background-repeat:<?php echo $this->Config['theme_bg_repeat']; ?>; }
 <?php } ?>
-
 <?php if($this->Config['theme_bg_fixed']) { ?>
 body{ background-attachment:<?php echo $this->Config['theme_bg_fixed']; ?>; }
 <?php } ?>
-
 <?php if($this->Config['theme_text_color']) { ?>
 body{ color:<?php echo $this->Config['theme_text_color']; ?>; }
 <?php } ?>
-
 <?php if($this->Config['theme_link_color']) { ?>
 a:link{ color:<?php echo $this->Config['theme_link_color']; ?>; }
 <?php } ?>
 a.artZoom{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_b.cur), pointer; }
 .artZoomBox a.maxImgLink { cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_s.cur), pointer; }
-
 a.artZoom2{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_b.cur), pointer; }
-
 a.artZoom3{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_b.cur), pointer; }
 .artZoomBox a.maxImgLink3 { cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_s.cur), pointer; }
-
 a.artZoomAll{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_b.cur), pointer; }
 .artZoomBox a.maxImgLinkAll { cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_s.cur), pointer; }
 </style>
-
 <script type="text/javascript">
 var thisSiteURL = '<?php echo $this->Config['site_url']; ?>/';
 var thisTopicLength = '<?php echo $this->Config['topic_input_length']; ?>';
@@ -65,15 +54,13 @@ var thisCode = '<?php echo $this->Code; ?>';
 var thisFace = '<?php echo $__my['face_small']; ?>';
 <?php $qun_setting = ConfigHandler::get('qun_setting'); ?>
 <?php if($qun_setting['qun_open']) { ?>
-	
-	var isQunClosed = false;
+    var isQunClosed = false;
 <?php } else { ?>var isQunClosed = true;
 <?php } ?>
 function faceError(imgObj)
 {
-	var errorSrc = '<?php echo $this->Config['site_url']; ?>/images/noavatar.gif';
-
-	imgObj.src = errorSrc;
+    var errorSrc = '<?php echo $this->Config['site_url']; ?>/images/noavatar.gif';
+    imgObj.src = errorSrc;
 }
 </script>
 <script type="text/javascript">var __ALERT__='<?php echo $this->Config['verify_alert']; ?>';</script>
@@ -87,11 +74,9 @@ function faceError(imgObj)
 <?php if(in_array($this->Code, array("follow","fans"))) { ?>
 <script type="text/javascript" src="templates/default/js/relation.js?v=build+20120428"></script>
 <?php } ?>
-
 <?php if($this->Get['mod']=="vote") { ?>
 <script type="text/javascript" src="templates/default/js/vote.js?v=build+20120428"></script>
 <?php } ?>
-
 <?php if($this->Get['mod']=="qun") { ?>
 <script type="text/javascript" src="templates/default/js/qun.js?v=build+20120428"></script>
 <?php } ?>
@@ -99,7 +84,6 @@ function faceError(imgObj)
 <script type="text/javascript" src="templates/default/js/DD_belatedPNG_0.0.8a-min.js?v=build+20120428" ></script>
 <script type="text/javascript">DD_belatedPNG.fix('.header,.pweibo,.boxRNav2 li,.boxRNav2 li a');   </script>
 <![endif]-->   
-
 </head>
 <?php echo $additional_str; ?>
 <body>

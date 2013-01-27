@@ -1,54 +1,30 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename images.class.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:04 1033899987 876631882 16828 $
- *******************************************************************/
-
- 
-  
- 
  if( !function_exists('___throwException') ){
- 	function ___throwException($str){
- 		trigger_error($str, 256);
- 	}
+     function ___throwException($str){
+         trigger_error($str, 256);
+     }
  }
-
-
-
  class images { 
          var $img;            var $info;    
          function images($file=null) { 
                  if(!extension_loaded('gd')) {
-                 	___throwException("GD库没有加载."); 
+                     ___throwException("GD库没有加载."); 
                  }
                  if($file){
-                 	$this->loadFile($file); 
+                     $this->loadFile($file); 
                  }
                                   register_shutdown_function(array(&$this, '__destruct'));
          } 
-          
          function __destruct() { 
                  if(is_resource($this->img)) 
                          imagedestroy($this->img); 
          }
-         
-         
-		          function __call($method, $arg) { 
+                  function __call($method, $arg) { 
                  if(substr($method, 0, 3) == 'get') { 
                          $attr = substr($method, 3); 
                          return $this->getInfo($attr); 
                  } 
          }
-         
-         
-         
          function getInfo($attr) {
              $attr = strtolower ( $attr );
              if(isset ( $this->info [$attr] )){
@@ -57,43 +33,33 @@
                  return null;
              }
          }
-         
          function getWidth(){
-         	return $this->getInfo('width');
+             return $this->getInfo('width');
          }
-         
          function getHeight(){
-         	return $this->getInfo('height');
+             return $this->getInfo('height');
          }
-         
          function getType(){
-         	return $this->getInfo('type');
+             return $this->getInfo('type');
          }
-         
                   function getResource() { 
                  if(isset($this->img)) 
                          return $this->img; 
                  return null; 
          }
-  		
-		 		 function getImgInfo($key=false){
-			if ($key){
-				return  isset($this->info[$key]) ? $this->info[$key] : null ;
-			}else {
-				return $this->info;
-			}
-		 }
-          
+                  function getImgInfo($key=false){
+            if ($key){
+                return  isset($this->info[$key]) ? $this->info[$key] : null ;
+            }else {
+                return $this->info;
+            }
+         }
          function save($path) { 
                  return $this->_output($path); 
          } 
-  
-          
          function output($type='gif') {                
                  return $this->_output('stream', $type); 
          } 
-  
-          
          function loadFile($file) { 
                  if(!file_exists($file)) 
                          ___throwException("指定的文件不存在 => $file"); 
@@ -104,8 +70,6 @@
                  $this->img = imagecreatefromstring($string); 
                  return $this; 
          } 
-  
-          
          function resize($width, $height, $keepScale=true) { 
                  $srcw   = $this->getWidth(); 
                  $srch   = $this->getHeight(); 
@@ -117,7 +81,6 @@
                                                                   $width = ceil($srcw * $height / $srch); 
                          } 
                  } 
-  
                                   $newimg = $this->_createAlphaImage($width, $height); 
                                   imagecopyresampled($newimg, $this->img, 0, 0, 0, 0, $width, $height, $srcw, $srch); 
                  imagedestroy($this->img); 
@@ -126,8 +89,6 @@
                  $this->info['height'] = $height; 
                  return $this; 
          } 
-  
-          
          function _createAlphaImage($width, $height){ 
                  $newimg = imagecreatetruecolor($width, $height); 
                  if($this->getType() == 1){                          $colorCount = imagecolorstotal($this->img); 
@@ -143,10 +104,7 @@
                  } 
                  return $newimg; 
          } 
-  
-          
          function thumbnail($width=128,$height=128, $crop=true, $center=true, $path=null) { 
-  
                  $destw  = min($this->getWidth(), $width); 
                  $desth = min($this->getHeight(), $height); 
                  if($crop){ 
@@ -173,8 +131,6 @@
                  if($path) return $this->save($path); 
                  return $this; 
          } 
-  
-          
          function crop($x, $y, $w, $h){ 
                  $w = min($w, $this->getWidth()); 
                  $h = min($h, $this->getHeight()); 
@@ -186,8 +142,6 @@
                  $this->info['height'] = $h; 
                  return $this; 
          } 
-  
-          
          function wave($grade=5, $dir="h"){ 
                  $w = $this->getWidth(); 
                  $h = $this->getHeight(); 
@@ -202,15 +156,11 @@
                  } 
                  return $this; 
          } 
-  
-          
          function textMark($text, $font, $color="#000000", $size=9, $path=null) { 
                  if(!file_exists($font)) 
                          ___throwException("字体文件不可用 => $font"); 
-  
                                   $mwidth = $this->getWidth(); 
                  $mheight= $this->getHeight(); 
-                  
                  $color = $this->_hexColor($color); 
                  $color = imagecolorallocate($this->img, $color['r'], $color['g'], $color['b']); 
                  $black = imagecolorallocate($this->img, 0, 0, 0); 
@@ -226,27 +176,21 @@
                  if($path) return $this->save($path); 
                  return $this; 
          } 
-  
-          
          function waterMark($markImg, $hp='center', $vp='center', $pct=50, $path=null) { 
                                   $srcw = $this->getWidth(); 
                  $srch = $this->getHeight(); 
-  
                                   $mark = new self($markImg); 
                  $markw = $mark->getWidth(); 
                  $markh = $mark->getHeight(); 
-  
                                   if($markw > $srcw || $markh > $srch) { 
                                                   $mark->resize($srcw-10, $srch-10, true); 
                          $markw = $mark->getWidth(); 
                          $markh = $mark->getHeight(); 
                  } 
-          
                                   $arrx = array('left' => 0, 'center' => floor(($srcw - $markw) / 2), 'right' => $srcw - $markw); 
                  $arry = array('top'  => 0, 'center' => floor(($srch - $markh) / 2), 'bottom' => $srch - $markh); 
                  $x = isset($arrx[$hp]) ? $arrx[$hp] : $arrx['center']; 
                  $y = isset($arry[$vp]) ? $arry[$vp] : $arry['center']; 
-                  
                                   if($mark->getType() == 3){ 
                                                   imagealphablending($this->img, true); 
                          imagecopy($this->img, $mark->getResource(), $x, $y, 0, 0, $markw, $markh); 
@@ -257,7 +201,6 @@
                  if($path) return $this->save($path); 
                  return $this; 
          } 
-  
                   function _hexColor($hex) { 
                  $color = hexdec(substr($hex, 1)); 
          return array( 
@@ -266,15 +209,12 @@
              "b" => $color & 0xFF 
                  );       
          } 
-  
-  
                   function _pngalpha($format) { 
                                   if($format == 'png') { 
                          imagealphablending($this->img, false); 
                          imagesavealpha($this->img, true); 
                  } 
          } 
-  
                   function _output($path, $type=null) {                
                  $toFile = false; 
                                   if($path !='stream') { 
@@ -284,7 +224,6 @@
                          $toFile = true; 
                  } 
                                   $this->_pngalpha($type); 
-  
                  if($type == "jpg") $type = "jpeg"; 
                  $func = "image".$type; 
                  if(!function_exists($func)) { 
@@ -297,7 +236,7 @@
                  else 
                  { 
                          if(!headers_sent()) 
-							@header("Content-type:image/".$type); 
+                            @header("Content-type:image/".$type); 
                          call_user_func($func, $this->img); 
                  } 
                  return $this; 

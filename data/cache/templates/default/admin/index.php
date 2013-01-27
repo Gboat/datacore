@@ -10,13 +10,13 @@
 <body scroll="yes" style="height:100%">
 <script type="text/javascript">
 function setTab(name,cursel,n){
-	for(i=1;i<=n;i++){
-	var menu=document.getElementById(name+i);
-	var con=document.getElementById("con_"+name+"_"+i);
-	try {
-		menu.className=i==cursel?"navon":"";
-		con.style.display=i==cursel?"block":"none";
-	}catch(e){}
+    for(i=1;i<=n;i++){
+    var menu=document.getElementById(name+i);
+    var con=document.getElementById("con_"+name+"_"+i);
+    try {
+        menu.className=i==cursel?"navon":"";
+        con.style.display=i==cursel?"block":"none";
+    }catch(e){}
 }
 return false;
 }
@@ -48,17 +48,17 @@ return false;
           <TABLE>
             <TR>
               <TD valign="top">
-			  <div class="wei2_t1">
-				<form method="get" name="settings" action="admin.php" target="main">
-					<input type="hidden" name="mod" value="search" />
-					<input type="hidden" name="code" value="menu" />
-					<input type="text" name="keyword" value="" class="wei2_t11" style="width:100px;"/>
-					<input type="submit" class="button" name="settingsubmit" value="查找功能" />
-				</form>
-			  </div>
-			  </TD>
+              <div class="wei2_t1">
+                <form method="get" name="settings" action="admin.php" target="main">
+                    <input type="hidden" name="mod" value="search" />
+                    <input type="hidden" name="code" value="menu" />
+                    <input type="text" name="keyword" value="" class="wei2_t11" style="width:100px;"/>
+                    <input type="submit" class="button" name="settingsubmit" value="查找功能" />
+                </form>
+              </div>
+              </TD>
               <TD valign="top">
-			  </TD>
+              </TD>
             </TR>
           </TABLE>
         </div>
@@ -67,7 +67,6 @@ return false;
   </tr>
   <tr>
     <td valign="top" id="main-fl"><div id="left">
-        
 <?php if(is_array($menuList)) { foreach($menuList as $i => $menuOne) { ?>
         <div id="con_nav_<?php echo $i; ?>"
 <?php if($i>1) { ?>
@@ -92,18 +91,14 @@ return false;
         <div class="cc"/>
       </div>
       <ul>
-		
 <?php } ?>
-  
 <?php } } ?>
       </ul>
       </div>
-	  
 <?php } } ?>
     </td>
     <td valign="top" id="mainright" style="height:94%; ">
-	<iframe name="main" frameborder="0" width="100%" height="100%" frameborder="0" scrolling="yes" style="overflow: visible;" src="admin.php?mod=index&code=home">
-	
+    <iframe name="main" frameborder="0" width="100%" height="100%" frameborder="0" scrolling="yes" style="overflow: visible;" src="admin.php?mod=index&code=home">
       </iframe>
     </td>
   </tr>

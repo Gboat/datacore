@@ -25,15 +25,12 @@ get_forward_choose(<?php echo $val['tid']; ?>,<?php echo $allow_attach; ?>, {app
 (<?php echo $val['forwards']; ?>)
 <?php } ?>
 </a>
-	 </span>
-	 
+     </span>
 <?php } else { ?> <span title="设置了特殊的权限，不允许转发">转发</span>
-	 
 <?php } ?>
 <!--转发的判断 End-->
 </li>
 <li class="o_line_l">|</li>
-
 <li>
 <?php if(!$val['reply_disable'] && $val['managetype'] != 2) { ?>
 <span>
@@ -51,7 +48,6 @@ return false;">评论
 <?php } else { ?><span>评论</span>
 <?php } ?>
 </li>
-
 <li class="o_line_l">|</li>
 <li id="topic_lists_<?php echo $val['tid']; ?>_a" class="mobox"><a href="javascript:void(0)" class="moreti" ><span class="txt">更多</span><span class="more"></span></a> 
 <div id="topic_lists_<?php echo $val['tid']; ?>_b" class="molist" style="display:none">
@@ -65,7 +61,6 @@ Code) { ?>
 <?php if($this->Config['is_report'] || MEMBER_ID > 0) { ?>
 <a href="javascript:void(0)" onclick="ReportBox('<?php echo $val['tid']; ?>')" title="举报不良信息">举报</a>
 <?php } ?>
-
 <?php if($val['uid']==MEMBER_ID || 'admin'==MEMBER_ROLE_TYPE) { ?>
 <?php if($this->Code > 0  ||  in_array($this->Code,array('list_reply','do_add'))) $eid = 'reply_list'; else $eid = 'topic_list'  ?>
 <a href="javascript:void(0)" onclick="deleteTopic(<?php echo $val['tid']; ?>,'<?php echo $eid; ?>_<?php echo $val['tid']; ?>');return false;">删除</a>
@@ -76,8 +71,8 @@ Code) { ?>
 <?php } ?>
 <?php } ?>
 <!--推荐开始 Begin-->
-		<a href="javascript:void(0)" onclick="showTopicRecdDialog({'tid':'<?php echo $val['tid']; ?>'});return false;">推荐</a>
-	<!--推荐开始 End-->
+        <a href="javascript:void(0)" onclick="showTopicRecdDialog({'tid':'<?php echo $val['tid']; ?>'});return false;">推荐</a>
+    <!--推荐开始 End-->
 <?php } ?>
 </div>
 </li>

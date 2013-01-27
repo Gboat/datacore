@@ -13,7 +13,6 @@
 <style type="text/css">
 .bottomLinks{width:930px;}
 .bottomLinks .bL_info{width:180px;}
-
 </style>
 <?php } ?>
 <div class="bottomLinks_R">
@@ -22,22 +21,22 @@
 <div class="bL_info bL_io1 <?php echo $bL_info_three; ?>">  
         <h4 class="MIB_txtar">找感兴趣的人</h4>
         <ul>
-			<li class="MIB_linkar"><a href="index.php?mod=people">名人堂</a></li>
+            <li class="MIB_linkar"><a href="index.php?mod=people">名人堂</a></li>
             <li class="MIB_linkar"><a href="index.php?mod=other&code=media">媒体汇</a></li>
             <li class="MIB_linkar"><a href="index.php?mod=topic&code=top">排行榜</a></li>
             <li class="MIB_linkar"><a href="index.php?mod=profile&code=maybe_friend" rel="nofollow">猜你喜欢的</a></li>
         </ul>
     </div>
-	<div class="bL_info bL_io2 <?php echo $bL_info_three; ?>">  
+    <div class="bL_info bL_io2 <?php echo $bL_info_three; ?>">  
         <h4 class="MIB_txtar">精彩内容</h4>
         <ul>
             <li class="MIB_linkar"><a href="index.php?mod=live">微直播</a></li>
             <li class="MIB_linkar"><a href="index.php?mod=talk">微访谈</a></li>
             <li class="MIB_linkar"><a href="index.php?mod=topic&code=new">最新微博</a></li>
-			<li class="MIB_linkar"><a href="index.php?mod=topic&code=recd">官方推荐</a></li>
+            <li class="MIB_linkar"><a href="index.php?mod=topic&code=recd">官方推荐</a></li>
         </ul>
     </div>
-	<div class="bL_info bL_io3 <?php echo $bL_info_three; ?>">  
+    <div class="bL_info bL_io3 <?php echo $bL_info_three; ?>">  
         <h4 class="MIB_txtar">热门应用</h4>
         <ul>
             <li class="MIB_linkar"><a href="index.php?mod=show&code=show">微博秀</a></li>
@@ -46,7 +45,7 @@
             <li class="MIB_linkar"><a href="index.php?mod=tools&code=qmd">图片签名档</a></li>
         </ul>
     </div>
-	<div class="bL_info bL_io4 <?php echo $bL_info_three; ?>">  
+    <div class="bL_info bL_io4 <?php echo $bL_info_three; ?>">  
         <h4 class="MIB_txtar">手机舆情</h4>
         <ul>
             <li class="MIB_linkar"><a href="index.php?mod=other&code=wap">WAP访问</a></li>
@@ -55,34 +54,31 @@
             <li class="MIB_linkar"><a href="index.php?mod=other&code=iphone">iphone客户端</a></li>
         </ul>
     </div>
-
-	<div class="bL_info bL_io5 <?php echo $bL_info_three; ?>">  
+    <div class="bL_info bL_io5 <?php echo $bL_info_three; ?>">  
         <h4 class="MIB_txtar">关于我们</h4>
         <ul>
-		    <li class="MIB_linkar"><a href="index.php?mod=other&code=contact">联系我们</a></li>
-			<li class="MIB_linkar"><a href="index.php?mod=other&code=vip_intro">申请V认证</a></li>
+            <li class="MIB_linkar"><a href="index.php?mod=other&code=contact">联系我们</a></li>
+            <li class="MIB_linkar"><a href="index.php?mod=other&code=vip_intro">申请V认证</a></li>
 <?php if(!empty($navigation_config['pluginmenu'])) { ?>
 <?php if(is_array($navigation_config['pluginmenu'])) { foreach($navigation_config['pluginmenu'] as $pmenus) { ?>
 <?php if(is_array($pmenus)) { foreach($pmenus as $pmenu) { ?>
 <?php if($pmenu['type'] == 2) { ?>
-			<li><a href="<?php echo $pmenu['url']; ?>" target="<?php echo $pmenu['target']; ?>"><?php echo $pmenu['name']; ?></a></li>
-			
+            <li><a href="<?php echo $pmenu['url']; ?>" target="<?php echo $pmenu['target']; ?>"><?php echo $pmenu['name']; ?></a></li>
 <?php } ?>
 <?php } } ?>
 <?php } } ?>
 <?php } ?>
 <li><?php echo $this->Config['tongji']; ?></li>
             <li class="MIB_linkar">
-				<a href="http://www.miibeian.gov.cn/" target="_blank" title="网站备案" rel="nofollow"><?php echo $this->Config['icp']; ?></a></li>
-			<!-- <li class="MIB_linkar">
-				<a href="index.php?mod=other&code=notice" target="_blank" title="网站公告" rel="nofollow">网站公告</a></li> -->
+                <a href="http://www.miibeian.gov.cn/" target="_blank" title="网站备案" rel="nofollow"><?php echo $this->Config['icp']; ?></a></li>
+            <!-- <li class="MIB_linkar">
+                <a href="index.php?mod=other&code=notice" target="_blank" title="网站公告" rel="nofollow">网站公告</a></li> -->
             <li class="MIB_linkar">
 <?php $__server_execute_time = round(microtime(true) - $GLOBALS['_J']['time_start'], 5) . " Second "; ?>
-
 <?php $__gzip_tips = ((defined('GZIP') && GZIP) ? "&nbsp;Gzip Enable." : "Gzip Disable."); ?>
 <span title="<?php echo $__server_execute_time; ?>,<?php echo $__gzip_tips; ?>">网页执行信息</span>
                 <?php echo upsCtrl()->Comlic(); ?></li>
-			<li></li>
+            <li></li>
         </ul>
     </div>
 </div>

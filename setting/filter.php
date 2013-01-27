@@ -1,5 +1,4 @@
 <?php 
-  
 $config['filter']=array (
   'enable' => '1',
   'keyword_disable' => '0',
@@ -425,7 +424,7 @@ king粉有售
 最淫官员',
   'verifys' => '需要审核的内容',
   'replaces' => '查找内容=替换内容',
-  'keyword_list' => 
+  'keyword_list' =>
   array (
     0 => '18DY电影',
     1 => '18年纪念',
@@ -848,11 +847,11 @@ king粉有售
     418 => '醉乙醚',
     419 => '最淫官员',
   ),
-  'verify_list' => 
+  'verify_list' =>
   array (
     0 => '测试需要审核的内容',
   ),
-  'replace_list' => 
+  'replace_list' =>
   array (
     '测试查找内容' => '测试替换内容',
   ),

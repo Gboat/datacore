@@ -6,7 +6,7 @@
   <td class="altbg2">
     <div align="center"><br /><br /><br />
 <?php if(is_array($message)==false) { ?>
-					<?php echo $message; ?>
+                    <?php echo $message; ?>
 <?php } else { ?>
 <?php if(is_array($message)) { foreach($message as $k => $one_message) { ?>
 <?php if($k) { ?>
@@ -16,15 +16,13 @@
 <?php } } ?>
 <?php } ?>
 <?php if($return_msg=="") { ?>
-					<br /><br /><br />
+                    <br /><br /><br />
 <?php if($time!==null) { ?>
-					<script>setTimeout("redirect('<?php echo $redirectto; ?>');", <?php echo $time; ?>*1000);</script>
-						<a href="<?php echo $redirectto; ?>">如果您的浏览器没有自动跳转，请点这里继续</a>
+                    <script>setTimeout("redirect('<?php echo $redirectto; ?>');", <?php echo $time; ?>*1000);</script>
+                        <a href="<?php echo $redirectto; ?>">如果您的浏览器没有自动跳转，请点这里继续</a>
 <?php } else { ?><a href="<?php echo $redirectto; ?>"><?php echo $to_title; ?></a>
-					
 <?php } ?>
 <?php } else { ?><?php echo $return_msg; ?>
-				
 <?php } ?>
     </div><br /><br /></td>
 </tr>

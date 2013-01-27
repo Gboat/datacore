@@ -1,18 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename cache.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:12 156450539 1774678501 941 $
- *******************************************************************/
-
- 
-  
 $config['cache']=array (
   'topic_index' => 
   array (

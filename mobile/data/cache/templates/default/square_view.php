@@ -1,12 +1,11 @@
 <?php /* 2013-01-26 in jishigou invalid request template */ if(!defined("IN_JISHIGOU")) exit("invalid request"); ?><script>
 <?php if(!$this->Config['is_mobile_client']) { ?>
-		var myScroll;
-		function loaded() {
-			myScroll = new iScroll('square_view_wp');
-		}
-		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-		document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
-	
+        var myScroll;
+        function loaded() {
+            myScroll = new iScroll('square_view_wp');
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
 <?php } ?>
 </script>
 <div class="square_view" id="square_view_wp">

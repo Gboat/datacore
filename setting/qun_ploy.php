@@ -1,18 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename qun_ploy.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:12 1619786774 1241024143 235 $
- *******************************************************************/
-
- 
-  
 $config['qun_ploy']=array (
   1 => 
   array (

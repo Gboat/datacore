@@ -6,11 +6,9 @@ $(".menu_hts_c1").click(function(){$(".menu_hts").hide();});
 <div class="menu_hts_a"><span style="float:left; padding-left:5px;">选择你要签到的话题</span><sub class="menu_hts_c1"></sub></div>
 <div class="menu_hts_b">
   <select name="sign_tag" id="sign_tag" onchange="setSignTag();">
-  	<option value="">请选择</option>
-  
+      <option value="">请选择</option>
 <?php if(is_array($tag_arr)) { foreach($tag_arr as $val) { ?>
-  	<option value="<?php echo $val; ?>"><?php echo $val; ?></option>
-  	
+      <option value="<?php echo $val; ?>"><?php echo $val; ?></option>
 <?php } } ?>
   </select>
 </div>
@@ -21,10 +19,7 @@ $(".menu_hts_c1").click(function(){$(".menu_hts").hide();});
       <td width="30%">排序</td>
       <td width="30%">删除</td>
     </tr>
-    
-    
 <?php if(is_array($rs)) { foreach($rs as $key => $val) { ?>
-    
 <?php if($act == 'city') { ?>
     <tr> 
       <td class="altbg1" style="border-bottom:1px dotted #EDEDED"><a href="admin.php?mod=city&code=zone&area=<?php echo $area; ?>&city=<?php echo $val['id']; ?>"><?php echo $val['name']; ?></a></td>
@@ -53,9 +48,7 @@ $(".menu_hts_c1").click(function(){$(".menu_hts").hide();});
         <a href="admin.php?mod=city&code=delstreet&area=<?php echo $area; ?>&city=<?php echo $city; ?>&zone=<?php echo $zone; ?>&fid=<?php echo $val['id']; ?>"  onclick="return confirm('你确实要删除吗?不可恢复');">删除</a>
       </td>
     </tr>
-    
 <?php } ?>
-    
 <?php } } ?>
     <tr>
       <td><input type="submit" name="submit11" value="修改排序" class="button"></td>

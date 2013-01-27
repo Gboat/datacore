@@ -36,16 +36,16 @@
             </li>
         </ul>
     </div><?php } elseif($this->Code == "tag") { ?><div id="g_toolbar" class="g_toolbar">
-    	<ul class="g_toolbar_ul g_towbtn">
-        	<li><a href="javascript:openPublishBox(PUBLISH_NEW, {'tagid':<?php echo $tag_id; ?>});" class="btn_comment"></a></li>
+        <ul class="g_toolbar_ul g_towbtn">
+            <li><a href="javascript:openPublishBox(PUBLISH_NEW, {'tagid':<?php echo $tag_id; ?>});" class="btn_comment"></a></li>
             <li><a href="javascript:;" class="btn_fav" id="btn_fav_topic"></a></li>
         </ul>
     </div>
     <script language="javascript">
-		checkTopic('<?php echo $uncode_tag_key; ?>');
+        checkTopic('<?php echo $uncode_tag_key; ?>');
     </script><?php } elseif($this->Code=="detail") { ?><div id="g_toolbar" class="g_toolbar">
-    	<ul class="g_toolbar_ul">
-        	<li><a href="javascript:location.reload();" class="btn_ref"></a></li>
+        <ul class="g_toolbar_ul">
+            <li><a href="javascript:location.reload();" class="btn_ref"></a></li>
             <li><a href="javascript:openPublishBox(PUBLISH_COMMENT, {totid:'<?php echo $detail['tid']; ?>'});" class="btn_comment"></a></li>
             <li><a href="javascript:openPublishBox(PUBLISH_FORWARD, {totid:'<?php echo $detail['tid']; ?>'});" class="btn_forward"></a></li>
             <li><a id="btn_fav_mblog" href="javascript:
@@ -61,8 +61,8 @@ btn_fav_on
 "></a></li>
         </ul>
     </div><?php } elseif($this->Code=="userinfo" && $this->Get['uid'] != MEMBER_ID) { ?><div id="g_toolbar" class="g_toolbar">
-    	<ul class="g_toolbar_ul g_towbtn">
-        	<li><a href="javascript:openPublishBox(PUBLISH_NEW, {'atuid':<?php echo $member['uid']; ?>});" class="btn_at"></a></li>
+        <ul class="g_toolbar_ul g_towbtn">
+            <li><a href="javascript:openPublishBox(PUBLISH_NEW, {'atuid':<?php echo $member['uid']; ?>});" class="btn_at"></a></li>
             <li><a href="javascript:
 <?php if($is_blacklist) { ?>
 delFromBlackList('btn_blacklist', <?php echo $member['uid']; ?>, 1)
@@ -71,14 +71,12 @@ delFromBlackList('btn_blacklist', <?php echo $member['uid']; ?>, 1)
 ;" class="btn_blacklist" id="btn_blacklist"></a></li>
         </ul>
     </div><?php } elseif($this->Code=="publish") { ?><div id="g_toolbar" class="g_toolbar">
-    
 <?php if(in_array($_GET['pt'], array('reply', 'forward'))) { ?>
-			<div class="left_block"><input name="" type="checkbox" value="both" id="p_both"/><label for="p_both">
+            <div class="left_block"><input name="" type="checkbox" value="both" id="p_both"/><label for="p_both">
 <?php if($_GET['pt'] == "reply") { ?>
 同时转发<?php } elseif($_GET['pt'] == "forward") { ?>同时评论
 <?php } ?>
 </label></div>
-        
 <?php } ?>
         <div class="right_block"><button class="publish_btn" onclick="publishMBlog();" id="publish_btn" >发送</button></div>
     </div>

@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>转发到新浪微博</title>
 <script type="text/javascript">
-	var scope = {
-		$lang		  : "zh",
-		$severtime    : "<?php echo time();?>",
-		$PRODUCT_NAME : "miniblogplatform",
-		$pageid       : "shareSucess",
-		$setDomain    : false,
-		$devMode	  : 99,
+    var scope = {
+        $lang          : "zh",
+        $severtime    : "<?php echo time();?>",
+        $PRODUCT_NAME : "miniblogplatform",
+        $pageid       : "shareSucess",
+        $setDomain    : false,
+        $devMode      : 99,
         $localUrl     : '<?php echo XWB_plugin::getPluginUrl('images');?>'
-	};
+    };
 </script>
 <script type="text/javascript" src="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/boot.js');?>"></script>
 <script type="text/javascript">loadResource();renderPage();</script>
@@ -20,15 +20,14 @@
 <link href="<?php echo $GLOBALS['_J']['site_url'] . ('/images/xwb/shareout.css');?>" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
 <div class="reg_wrap">
-	<!-- 顶部 LOGO -->
-	<div class="TopName">
+    <!-- 顶部 LOGO -->
+    <div class="TopName">
         <div class="logo"></div>
         <a href="<?php echo ( ! empty($rst['id'])) ? "http://weibo.com/u/{$rst['id']}" : '#';?>" target="_blank" class="logoLink"></a>
         <div class="op">
             <?php if ( ! empty($rst['id'])):?>
-        	<span>你正在使用 <a href="http://weibo.com/u/<?php echo $rst['id'];?>" target="_blank"  class="userID"><?php echo $rst['screen_name'];?></a> 帐号</span>
+            <span>你正在使用 <a href="http://weibo.com/u/<?php echo $rst['id'];?>" target="_blank"  class="userID"><?php echo $rst['screen_name'];?></a> 帐号</span>
             <span class="line">|</span>
             <span><a href="http://v.t.sina.com.cn/share/sharechg.php?appkey=<?php echo XWB_APP_KEY;?>&url=&title=&source=&sourceUrl=&%20content=gb2312&pic=">换个帐号？</a></span>
             <?php endif;?>
@@ -36,10 +35,9 @@
     </div>
     <!-- /顶部 LOGO -->
     <div class="reg_main">
-    	<b class="bg_regTop">&nbsp;</b>
+        <b class="bg_regTop">&nbsp;</b>
          <b class="bg_deco_s">&nbsp;</b>
         <div class="reg_pub">
-
             <div class="n_Box">
                 <div class="n_login_sc2">
                     <h2><?php echo $tipMsg;?></h2>
@@ -53,6 +51,5 @@
         <b class="bg_regBot">&nbsp;</b>
     </div>
 </div>
-
 </body>
 </html>

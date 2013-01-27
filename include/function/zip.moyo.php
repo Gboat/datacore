@@ -1,27 +1,9 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename zip.moyo.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:02 1871561780 724283598 10177 $
- *******************************************************************/
-
-
-
-
-
 if (defined('zip.moyo.z2w'))
 {
     return;
 }
-
 define('zip.moyo.z2w', true);
-
 $__zip2web_obj = null;
 function zip2web($zip, $web)
 {
@@ -34,7 +16,6 @@ function zip2web($zip, $web)
     $r || $r = zip2web_Retry($zip, $web);
     return $r;
 }
-
 function zip2web_Retry($zip, $web)
 {
     if (!class_exists('PclZip'))
@@ -50,7 +31,6 @@ function zip2web_Retry($zip, $web)
     }
     return $wList;
 }
-
 class libMoyo_ExZIP2Web
 {
     var $total_files = 0;
@@ -289,5 +269,4 @@ class libMoyo_ExZIP2Web
         return true;
     }
 }
-
 ?>

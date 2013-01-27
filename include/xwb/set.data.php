@@ -1,17 +1,4 @@
 <?php
-/*******************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
- *
- * This is NOT a freeware, use is subject to license terms
- *
- * @Filename set.data.php $
- *
- * @Author http://inet.hitwh.edu.cn $
- *
- * @Date 2012-04-28 05:53:05 2097419811 1916706522 1008 $
- *******************************************************************/
-
-
 $__XWB_SET=array (
   'wb_addr_display' => 1,
   'reg_pwd_display' => 1,

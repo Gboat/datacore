@@ -2,23 +2,23 @@
 var _recommendCount = parseInt("<?php echo $recommend_count; ?>");
 function action()
 {
-	var strhtml;
-	strhtml = $('#ajaxcontent .indexrow').eq(_recommendCount-1).html();
-	if(strhtml == null){
-		return false;
-	}
-	//$('#ajaxcontent .indexrow').eq(0).appendTo("#ajaxcontent");
-	$('#ajaxcontent .indexrow').eq(_recommendCount-1).remove();
-	$('#ajaxcontent').prepend('<div class="indexrow" style="display:none;" id="indexrowid">'+strhtml+'</div>');
-	$('#ajaxcontent .indexrow').eq(0).slideDown(500);
+    var strhtml;
+    strhtml = $('#ajaxcontent .indexrow').eq(_recommendCount-1).html();
+    if(strhtml == null){
+        return false;
+    }
+    //$('#ajaxcontent .indexrow').eq(0).appendTo("#ajaxcontent");
+    $('#ajaxcontent .indexrow').eq(_recommendCount-1).remove();
+    $('#ajaxcontent').prepend('<div class="indexrow" style="display:none;" id="indexrowid">'+strhtml+'</div>');
+    $('#ajaxcontent .indexrow').eq(0).slideDown(500);
 }
 $(document).ready(function(){
-	var Interval;
-	Interval = setInterval('action()', 4000);
-	$("#ajaxcontent").hover(
-		function(){clearInterval(Interval);},
-		function(){Interval = setInterval('action()',4000);}
-	);
+    var Interval;
+    Interval = setInterval('action()', 4000);
+    $("#ajaxcontent").hover(
+        function(){clearInterval(Interval);},
+        function(){Interval = setInterval('action()',4000);}
+    );
 });
 </script>
 <style type="text/css">
@@ -28,9 +28,7 @@ $(document).ready(function(){
 </style>
 <?php if($recommend_topics) { ?>
 <div class="comBox" id="ajaxcontent" style="margin:10px 0; overflow:hidden;">
-  
 <?php if(is_array($recommend_topics)) { foreach($recommend_topics as $val) { ?>
-  
 <?php $_ad++; ?>
   <div class="indexrow" id="topic_list_<?php echo $val['tid']; ?>">
     <div class="feedCell" style="width:404px; overflow:hidden">
@@ -39,28 +37,22 @@ $(document).ready(function(){
         <div class="oriTxt">
           <p><a title="<?php echo $val['username']; ?>" href="index.php?mod=<?php echo $val['username']; ?>"><?php echo $val['nickname']; ?></a><?php echo $val['validate_html']; ?>: <span><?php echo $val['content']; ?></span></p>
         </div>
-        
 <?php if($val['attachid'] && $val['attach_list']) { ?>
 <?php $val['attach_key']=$val['tid'].'_'.mt_rand(); ?>
 <ul class="attachList" id="attach_area_<?php echo $val['attach_key']; ?>">
-	  
 <?php if(is_array($val['attach_list'])) { foreach($val['attach_list'] as $iv) { ?>
-	  <li><img src="<?php echo $iv['attach_img']; ?>" class="attachList_img"/><div class="attachList_att"><p class="attachList_att_name"><b><?php echo $iv['attach_name']; ?></b> <a href="javascript:void(0);"  onclick="downattach(<?php echo $iv['id']; ?>);">下载</a>(<?php echo $iv['attach_down']; ?>次)</p><p class="attachList_att_doc"><?php echo $iv['attach_size']; ?> 积分：<?php echo $iv['attach_score']; ?>分</p></div></li>
-	  
+      <li><img src="<?php echo $iv['attach_img']; ?>" class="attachList_img"/><div class="attachList_att"><p class="attachList_att_name"><b><?php echo $iv['attach_name']; ?></b> <a href="javascript:void(0);"  onclick="downattach(<?php echo $iv['id']; ?>);">下载</a>(<?php echo $iv['attach_down']; ?>次)</p><p class="attachList_att_doc"><?php echo $iv['attach_size']; ?> 积分：<?php echo $iv['attach_score']; ?>分</p></div></li>
 <?php } } ?>
 </ul>
 <?php } ?>
-
 <?php if($val['imageid'] && $val['image_list']) { ?>
 <?php $val['image_key']=$val['tid'].'_'.mt_rand(); ?>
 <ul class="imgList" id="image_area_<?php echo $val['image_key']; ?>">
-	  
 <?php if(is_array($val['image_list'])) { foreach($val['image_list'] as $iv) { ?>
-	  <li>
-	  <a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>"  class="miniImg">
-	  <img style="width:<?php echo $this->Config['thumbwidth']; ?>px; height:<?php echo $this->Config['thumbheight']; ?>px;" src="<?php echo $iv['image_small']; ?>" /></a>
-	  </li>
-	  
+      <li>
+      <a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>"  class="miniImg">
+      <img style="width:<?php echo $this->Config['thumbwidth']; ?>px; height:<?php echo $this->Config['thumbheight']; ?>px;" src="<?php echo $iv['image_small']; ?>" /></a>
+      </li>
 <?php } } ?>
 </ul>
 <?php } ?>
@@ -68,27 +60,24 @@ $(document).ready(function(){
 <?php if($val['is_vote'] > 0) { ?>
 <?php $val['vote_key']=$val['tid'].'_'.$val['random'] ?>
 <ul class="imgList" id="vote_detail_<?php echo $val['vote_key']; ?>">
-		  <li><a href="javascript:;" onclick="getVoteDetailWidgets('<?php echo $val['vote_key']; ?>', <?php echo $val['is_vote']; ?>);"><img src='./images/vote_pic_01.gif'/></a> </li>
-		</ul>
-		<div id="vote_area_<?php echo $val['vote_key']; ?>" style="display:none;">
-			<div class="blogTxt"> 
-				<div class="top"></div> 
-				<div class="mid" id="vote_content_<?php echo $val['vote_key']; ?>"> 
-				</div> 
-				<div class="bottom"></div> 
-			</div>
-		</div>
-	
+          <li><a href="javascript:;" onclick="getVoteDetailWidgets('<?php echo $val['vote_key']; ?>', <?php echo $val['is_vote']; ?>);"><img src='./images/vote_pic_01.gif'/></a> </li>
+        </ul>
+        <div id="vote_area_<?php echo $val['vote_key']; ?>" style="display:none;">
+            <div class="blogTxt"> 
+                <div class="top"></div> 
+                <div class="mid" id="vote_content_<?php echo $val['vote_key']; ?>"> 
+                </div> 
+                <div class="bottom"></div> 
+            </div>
+        </div>
 <?php } ?>
-              
 <!--投票 End-->
 <?php if($val['videoid'] and $this->Config['video_status']) { ?>
 <div class="feedUservideo">
-	<a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>" class="miniImg">
-  	<div id="play_<?php echo $val['VideoID']; ?>" class="vP"><img src="images/feedvideoplay.gif"  /></div>
-  	<img src="<?php echo $val['VideoImg']; ?>" style="border:none"/> </a></div>
+    <a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>" class="miniImg">
+      <div id="play_<?php echo $val['VideoID']; ?>" class="vP"><img src="images/feedvideoplay.gif"  /></div>
+      <img src="<?php echo $val['VideoImg']; ?>" style="border:none"/> </a></div>
 <?php } ?>
-
 <?php if($val['musicid']) { ?>
 <?php if($val['xiami_id']) { ?>
 <div class="feedUserImg"><embed width="257" height="33" wmode="transparent" type="application/x-shockwave-flash" src="http://www.xiami.com/widget/0_<?php echo $val['xiami_id']; ?>/singlePlayer.swf"></embed></div>
@@ -99,9 +88,8 @@ $(document).ready(function(){
 <?php if(($tpid=$val['top_parent_id'])>0 && !in_array($this->Code, array('forward', 'reply'))) { ?>
 <?php if(('mycomment'==$this->Code || $topic_view) && 'reply'==$val['type'] && $tpid!=($pid=$val['parent_id']) && $parent_list[$pid]) { ?>
 <p class="feedP">回复{<a
-	href="index.php?mod=<?php echo $parent_list[$pid]['username']; ?>"><?php echo $parent_list[$pid]['nickname']; ?>：</a><span><?php echo $parent_list[$pid]['content']; ?></span>}</p>
+    href="index.php?mod=<?php echo $parent_list[$pid]['username']; ?>"><?php echo $parent_list[$pid]['nickname']; ?>：</a><span><?php echo $parent_list[$pid]['content']; ?></span>}</p>
 <?php } ?>
-
 <?php if(!$topic_view) { ?>
 <?php $pt=$parent_list[$tpid]; ?>
 <div class="blogTxt">
@@ -109,60 +97,52 @@ $(document).ready(function(){
 <div class="mid">
 <?php if($pt) { ?>
  <span> <a
-	href="index.php?mod=<?php echo $pt['username']; ?>"
-	onmouseover="get_user_choose(<?php echo $pt['uid']; ?>,'_reply_user',<?php echo $val['tid']; ?>);"
-	onmouseout="clear_user_choose();"> <?php echo $pt['nickname']; ?> </a>
+    href="index.php?mod=<?php echo $pt['username']; ?>"
+    onmouseover="get_user_choose(<?php echo $pt['uid']; ?>,'_reply_user',<?php echo $val['tid']; ?>);"
+    onmouseout="clear_user_choose();"> <?php echo $pt['nickname']; ?> </a>
 <?php echo $pt['validate_html']; ?> : <!--悬浮头像、弹出对话框--> <span
-	id="user_<?php echo $val['tid']; ?>_reply_user"></span> <!--悬浮头像、弹出对话框--> </span> 
+    id="user_<?php echo $val['tid']; ?>_reply_user"></span> <!--悬浮头像、弹出对话框--> </span> 
 <?php $TPT_ = $TPT_ ? $TPT_ : 'TPT_'; ?>
 <span id="topic_content_<?php echo $TPT_; ?><?php echo $pt['tid']; ?>_short"><?php echo $pt['content']; ?></span> <span
-	id="topic_content_<?php echo $TPT_; ?><?php echo $pt['tid']; ?>_full"></span> 
+    id="topic_content_<?php echo $TPT_; ?><?php echo $pt['tid']; ?>_full"></span> 
 <?php if($pt['longtextid'] > 0) { ?>
 <span> <a href="javascript:;"
-	onclick="view_longtext('<?php echo $pt['longtextid']; ?>', '<?php echo $pt['tid']; ?>', this, '<?php echo $TPT_; ?>', '<?php echo $val['tid']; ?>');return false;">查看全文</a>
+    onclick="view_longtext('<?php echo $pt['longtextid']; ?>', '<?php echo $pt['tid']; ?>', this, '<?php echo $TPT_; ?>', '<?php echo $val['tid']; ?>');return false;">查看全文</a>
 </span> 
 <?php } ?>
- 
 <?php if($pt['attachid'] && $pt['attach_list']) { ?>
 <table class="attachst" style="width:440px;">
 <?php if(is_array($pt['attach_list'])) { foreach($pt['attach_list'] as $iv) { ?>
-	<tr>
-		<td class="attachst_img"><img src="<?php echo $iv['attach_img']; ?>" /></td>
-		<td class="attachst_att">
-		<p class="attachList_att_name"><b><?php echo $iv['attach_name']; ?></b>&nbsp;（<?php echo $iv['attach_size']; ?>）</p>
-		<p class="attachList_att_doc"><a href="javascript:void(0);"
-		onclick="downattach(<?php echo $iv['id']; ?>);">点此下载</a>（需<?php echo $iv['attach_score']; ?>积分，已下载<?php echo $iv['attach_down']; ?>次）</p>
-
-		</td>
-	</tr>
-	
+    <tr>
+        <td class="attachst_img"><img src="<?php echo $iv['attach_img']; ?>" /></td>
+        <td class="attachst_att">
+        <p class="attachList_att_name"><b><?php echo $iv['attach_name']; ?></b>&nbsp;（<?php echo $iv['attach_size']; ?>）</p>
+        <p class="attachList_att_doc"><a href="javascript:void(0);"
+        onclick="downattach(<?php echo $iv['id']; ?>);">点此下载</a>（需<?php echo $iv['attach_score']; ?>积分，已下载<?php echo $iv['attach_down']; ?>次）</p>
+        </td>
+    </tr>
 <?php } } ?>
 </table>
 <?php } ?>
- 
 <?php if($pt['imageid'] && $pt['image_list']) { ?>
- 
 <?php $pt['image_key']=$pt['tid'].'_'.mt_rand(); ?>
 <ul class="imgList" id="image_area_<?php echo $pt['image_key']; ?>">
 <?php if(is_array($pt['image_list'])) { foreach($pt['image_list'] as $iv) { ?>
-	<li><a href="<?php echo $iv['image_original']; ?>" class="artZoomAll"
-		rel="<?php echo $iv['image_small']; ?>" rev="<?php echo $pt['image_key']; ?>"><img
-		src="<?php echo $iv['image_small']; ?>" /></a>
-	<div class="artZoomBox" style="display:none;">
-	<div class="tool"><a title="向右转" href="#" class="imgRight">向右转</a><a
-		title="向左转" href="#" class="imgLeft">向左转</a><a title="查看原图"
-		href="<?php echo $iv['image_original']; ?>" class="viewImg">查看原图</a></div>
-	<a class="maxImgLinkAll" href="<?php echo $iv['image_original']; ?>"> <img src="<?php echo $iv['image_original']; ?>" class="maxImg"></a></div>
-	</li>
-	
+    <li><a href="<?php echo $iv['image_original']; ?>" class="artZoomAll"
+        rel="<?php echo $iv['image_small']; ?>" rev="<?php echo $pt['image_key']; ?>"><img
+        src="<?php echo $iv['image_small']; ?>" /></a>
+    <div class="artZoomBox" style="display:none;">
+    <div class="tool"><a title="向右转" href="#" class="imgRight">向右转</a><a
+        title="向左转" href="#" class="imgLeft">向左转</a><a title="查看原图"
+        href="<?php echo $iv['image_original']; ?>" class="viewImg">查看原图</a></div>
+    <a class="maxImgLinkAll" href="<?php echo $iv['image_original']; ?>"> <img src="<?php echo $iv['image_original']; ?>" class="maxImg"></a></div>
+    </li>
 <?php } } ?>
 </ul>
 <?php } ?>
  <!--style="width:<?php echo $this->Config['thumbwidth']; ?>px; height:<?php echo $this->Config['thumbheight']; ?>px;"-->
-
 <!--投票 Begin--> 
 <?php if($pt['is_vote'] > 0) { ?>
- 
 <?php $__vote_key = $pt['tid'].'_'.$pt['random'] ?>
 <ul class="imgList" id="vote_detail_<?php echo $__vote_key; ?>">
 <li><a href="javascript:;" onclick="getVoteDetailWidgets('<?php echo $__vote_key; ?>', <?php echo $pt['is_vote']; ?>);"><img src='./images/vote_pic_01.gif' /></a></li>
@@ -178,9 +158,7 @@ $(document).ready(function(){
 <div id="play_<?php echo $pt['VideoID']; ?>" class="vP"><img src="images/feedvideoplay.gif" /></div>
 <img src="<?php echo $pt['VideoImg']; ?>" style="border: none" /> </a></div>
 <?php } ?>
- 
 <?php if($pt['musicid']) { ?>
- 
 <?php if($pt['xiami_id']) { ?>
 <div class="feedUserImg">
 <embed width="257" height="33" wmode="transparent" type="application/x-shockwave-flash" src="http://www.xiami.com/widget/0_<?php echo $pt['xiami_id']; ?>/singlePlayer.swf"></embed></div>
@@ -188,7 +166,6 @@ $(document).ready(function(){
 <div id="play_<?php echo $pt['MusicID']; ?>"></div>
 <img src="images/music.gif" title="点击播放音乐" onClick="javascript:showFlash('music', '<?php echo $pt['MusicUrl']; ?>', this, '<?php echo $pt['MusicID']; ?>');" style="cursor: pointer; border: none;" /></div>
 <?php } ?>
- 
 <?php } ?>
 <div style="width:400px; float:left; padding:5px 0; margin:0;">
 <a href="index.php?mod=topic&code=<?php echo $tpid; ?>" target="_blank">原文评论(<?php echo $pt['replys']; ?>)</a>&nbsp;
@@ -203,19 +180,18 @@ $(document).ready(function(){
 </div>
 <?php } ?>
 <?php } ?>
-		<div class="from"> 
-		<div class="mycome">
+        <div class="from"> 
+        <div class="mycome">
 <?php if(!$no_from) { ?>
 <?php echo $val['from_html']; ?>
 <?php } ?>
 </div>
-		<span style="float:right;"><a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>"><?php echo $val['dateline']; ?></a></span>
-		</div>
-	 </div>
+        <span style="float:right;"><a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>"><?php echo $val['dateline']; ?></a></span>
+        </div>
+     </div>
     </div>
     <div class="mBlog_linedot" style="width:404px; overflow:hidden"></div>
   </div>
-  
 <?php } } ?>
 </div>
 <?php } ?>

@@ -3,7 +3,6 @@
 </table>
 <div style="color:gray;"><center><?php echo $this->Config['tongji']; ?> 
 <?php $__server_execute_time = round(microtime(true) - $GLOBALS['_J']['time_start'], 5) . " Second "; ?>
-
 <?php $__gzip_tips = ((defined('GZIP') && GZIP) ? "&nbsp;Gzip Enable." : "Gzip Disable."); ?>
 <span title="网页执行信息：<?php echo $__server_execute_time; ?>,<?php echo $__gzip_tips; ?>">
 &nbsp; 网页执行信息：<?php echo $__server_execute_time; ?>,<?php echo $__gzip_tips; ?></span></center></div>

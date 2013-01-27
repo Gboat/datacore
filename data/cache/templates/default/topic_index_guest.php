@@ -17,15 +17,13 @@ var thisCode = '<?php echo $this->Code; ?>';
 var thisFace = '<?php echo $__my['face_small']; ?>';
 <?php $qun_setting = ConfigHandler::get('qun_setting'); ?>
 <?php if($qun_setting['qun_open']) { ?>
-	
-	var isQunClosed = false;
+    var isQunClosed = false;
 <?php } else { ?>var isQunClosed = true;
 <?php } ?>
 function faceError(imgObj)
 {
-	var errorSrc = '<?php echo $this->Config['site_url']; ?>/images/noavatar.gif';
-
-	imgObj.src = errorSrc;
+    var errorSrc = '<?php echo $this->Config['site_url']; ?>/images/noavatar.gif';
+    imgObj.src = errorSrc;
 }
 </script>
 <link rel="shortcut icon" href="templates/default/images/favicon.ico" />
@@ -42,38 +40,29 @@ function faceError(imgObj)
 <?php if($this->Config['theme_text_color']) { ?>
 body{ color:<?php echo $this->Config['theme_text_color']; ?>;}
 <?php } ?>
-
 <?php if($this->Config['theme_bg_color']) { ?>
 body{ background-color:<?php echo $this->Config['theme_bg_color']; ?>;}
 <?php } ?>
-
 <?php if($this->Config['theme_bg_image']) { ?>
 body{ background-image:url(<?php echo $this->Config['theme_bg_image']; ?>);}
 <?php } ?>
-
 <?php if($this->Config['theme_bg_position']) { ?>
 body{ background-position:<?php echo $this->Config['theme_bg_position']; ?>;}
 <?php } ?>
-
 <?php if($this->Config['theme_bg_repeat']) { ?>
 body{ background-repeat:<?php echo $this->Config['theme_bg_repeat']; ?>;}
 <?php } ?>
-
 <?php if($this->Config['theme_text_color']) { ?>
 body{ color:<?php echo $this->Config['theme_text_color']; ?>;}
 <?php } ?>
-
 <?php if($this->Config['theme_link_color']) { ?>
 a:link{ color:<?php echo $this->Config['theme_link_color']; ?>;}
 <?php } ?>
 a.artZoom{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_b.cur), pointer; }
 .artZoomBox a.maxImgLink { cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_s.cur), pointer; }
-
 a.artZoom2{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_b.cur), pointer; }
-
 a.artZoom3{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_b.cur), pointer; }
 .artZoomBox a.maxImgLink3 { cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_s.cur), pointer; }
-
 a.artZoomAll{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_b.cur), pointer; }
 .artZoomBox a.maxImgLinkAll { cursor:url(<?php echo $this->Config['site_url']; ?>/templates/default/images/magnifier_s.cur), pointer; }
 </style>
@@ -84,35 +73,32 @@ a.artZoomAll{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/defa
 <div id="mainWrapper">
   <div id="topbox">
     <div id="tleft">
-	
 <!--幻灯广告-->
 <?php if($this->Config['slide_index_enable'] && ($slide_config=ConfigHandler::get('slide_index')) && $slide_config['enable'] && $slide_config['list']) { ?>
-	<script src="templates/default/js/kinslideshow.js?v=build+20120428" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(function(){
-			$("#KinSlideshow").KinSlideshow({
-			moveStyle:"down",			//切换方向 可选值：【 left | right | up | down 】
-			intervalTime:3,   			//设置间隔时间为5秒 【单位：秒】 [默认为5秒]
-			moveSpeedTime:400 , 		//切换一张图片所需时间，【单位：毫秒】[默认为400毫秒]
-			isHasTitleFont:false,		//是否显示标题文字 可选值：【 true | false 】
-			isHasTitleBar:false,		//是否显示标题背景 可选值：【 true | false 】[默认为true]	
-			//标题文字样式，(isHasTitleFont = true 前提下启用)  
-			titleBar:{titleBar_height:30,titleBar_bgColor:"#08355c",titleBar_alpha:0.3},
-			titleFont:{TitleFont_size:12,TitleFont_color:"#FFFFFF",TitleFont_weight:"normal"},
-			//按钮样式设置，(isHasBtn = true 前提下启用) 
-			btn:{btn_bgColor:"#FFFFFF",btn_bgHoverColor:"#1072aa",btn_fontColor:"#000000",btn_fontHoverColor:"#FFFFFF",btn_borderColor:"#cccccc",btn_borderHoverColor:"#1188c0",btn_borderWidth:1}
-			});
-		});
-	</script>
-	<div id="KinSlideshow" style="visibility:hidden;width:680px;height:220px;overflow:hidden;position:relative;">
+    <script src="templates/default/js/kinslideshow.js?v=build+20120428" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#KinSlideshow").KinSlideshow({
+            moveStyle:"down",            //切换方向 可选值：【 left | right | up | down 】
+            intervalTime:3,               //设置间隔时间为5秒 【单位：秒】 [默认为5秒]
+            moveSpeedTime:400 ,         //切换一张图片所需时间，【单位：毫秒】[默认为400毫秒]
+            isHasTitleFont:false,        //是否显示标题文字 可选值：【 true | false 】
+            isHasTitleBar:false,        //是否显示标题背景 可选值：【 true | false 】[默认为true]    
+            //标题文字样式，(isHasTitleFont = true 前提下启用)  
+            titleBar:{titleBar_height:30,titleBar_bgColor:"#08355c",titleBar_alpha:0.3},
+            titleFont:{TitleFont_size:12,TitleFont_color:"#FFFFFF",TitleFont_weight:"normal"},
+            //按钮样式设置，(isHasBtn = true 前提下启用) 
+            btn:{btn_bgColor:"#FFFFFF",btn_bgHoverColor:"#1072aa",btn_fontColor:"#000000",btn_fontHoverColor:"#FFFFFF",btn_borderColor:"#cccccc",btn_borderHoverColor:"#1188c0",btn_borderWidth:1}
+            });
+        });
+    </script>
+    <div id="KinSlideshow" style="visibility:hidden;width:680px;height:220px;overflow:hidden;position:relative;">
 <?php if(is_array($slide_config['list'])) { foreach($slide_config['list'] as $_v) { ?>
         <a href="<?php echo $_v['href']; ?>" target="_blank"><img src="<?php echo $_v['src']; ?>" alt="" width="680" height="220" onerror="javascript:faceError(this);"/></a>
-    
 <?php } } ?>
 </div>
 <?php } ?>
 <!--幻灯广告-->
-
       <!--热门话题-->
       <div class="talking"> <strong>正在热议：</strong>
         <div id="Tacticle" class="acticle">
@@ -126,43 +112,38 @@ a.artZoomAll{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/defa
 </div>
             <div id="demo2"></div>
           </div>
-		<script type="text/javascript">
-			/*
-			 两秒后再执行
-			 */
-			 $(document).ready(function(){
-				var speed=40;
-				var tab=document.getElementById("Tacticle");
-				var tab1=document.getElementById("Tacticle_s");
-				var tab2=document.getElementById("demo2");
-				tab2.innerHTML=tab1.innerHTML;
-				function Marquee(){
-					if(tab2.offsetWidth-tab.scrollLeft<=0)
-						tab.scrollLeft-=tab1.offsetWidth
-					else{
-						tab.scrollLeft++;
-					}
-				}
-				var MyMar=setInterval(Marquee,speed);
-				tab.onmouseover=function() {clearInterval(MyMar)};
-				tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
-			 });
-			 
-			function guestLoginSubmit()
-			{
+        <script type="text/javascript">
+             $(document).ready(function(){
+                var speed=40;
+                var tab=document.getElementById("Tacticle");
+                var tab1=document.getElementById("Tacticle_s");
+                var tab2=document.getElementById("demo2");
+                tab2.innerHTML=tab1.innerHTML;
+                function Marquee(){
+                    if(tab2.offsetWidth-tab.scrollLeft<=0)
+                        tab.scrollLeft-=tab1.offsetWidth
+                    else{
+                        tab.scrollLeft++;
+                    }
+                }
+                var MyMar=setInterval(Marquee,speed);
+                tab.onmouseover=function() {clearInterval(MyMar)};
+                tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+             });
+            function guestLoginSubmit()
+            {
 <?php if($this->Config['seccode_login']) { ?>
-					var username = $("#username_input").val();
-					var psw = $("#password_input").val();
-					if (username.length<1 || psw.length<1) {
-						location.href = "index.php?mod=login";
-					} else {
-						showSeccodeDialog();
-					}
+                    var username = $("#username_input").val();
+                    var psw = $("#password_input").val();
+                    if (username.length<1 || psw.length<1) {
+                        location.href = "index.php?mod=login";
+                    } else {
+                        showSeccodeDialog();
+                    }
 <?php } else { ?>$('#guest_login').submit();
-				
 <?php } ?>
 }
-		</script>
+        </script>
         </div>
       </div>
       <!--热门话题-->
@@ -170,16 +151,12 @@ a.artZoomAll{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/defa
     <!--注册登录-->
     <div class="loginbox"> <a title="注册<?php echo $this->Config['site_name']; ?>" onclick="window.location.href='<?php echo $this->Config['site_url']; ?>/index.php?mod=member';return false;" class="btn_reg">注册<?php echo $this->Config['site_name']; ?></a>
       <div class="login_area">
-	  
 <?php $login_extract=jsg_member_login_extract(); ?>
-  
 <?php if($login_extract) { ?>
 <?php $login_extract_forms=$login_extract['login_forms']; ?>
 <form method="<?php echo $login_extract_forms['method']; ?>" action="<?php echo $login_extract_forms['action']; ?>" id="guest_login">
-		  
 <?php if(is_array($login_extract_forms['hidden_inputs'])) { foreach($login_extract_forms['hidden_inputs'] as $v) { ?>
-		  <input type="hidden" name="<?php echo $v['name']; ?>" value="<?php echo $v['value']; ?>" />
-		  
+          <input type="hidden" name="<?php echo $v['name']; ?>" value="<?php echo $v['value']; ?>" />
 <?php } } ?>
           <div class="item">
             <label for="username" class="labelTag">昵称：</label>
@@ -202,17 +179,15 @@ a.artZoomAll{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/defa
             <label class="labelTag">&nbsp;</label>
             <!-- <span class="enterInput"> <input type="submit" class="btn_login" value="<?php echo $login_extract_forms['submit_input']['value']; ?>" name="<?php echo $login_extract_forms['submit_input']['name']; ?>"/></span> -->
             <span class="enterInput"> <input type="submit" class="btn_login" value="" name="<?php echo $login_extract_forms['submit_input']['name']; ?>"/></span>  
-		  </div>
-		  <div class="clearfix2">
-		  <label class="labelTag">&nbsp;</label>
-		  </div>
+          </div>
+          <div class="clearfix2">
+          <label class="labelTag">&nbsp;</label>
+          </div>
         </form>
-	  
 <?php } else { ?>        <form method="POST"  action="<?php echo $this->Config['site_url']; ?>/index.php?mod=login&code=dologin" id="guest_login" onKeyDown="if(event.keyCode==13) guestLoginSubmit();" autocomplete="off">
 <input type="hidden" name="FORMHASH" value='<?php echo FORMHASH; ?>'/>
 <?php if($this->Config['seccode_login']) { ?>
-			<input type="hidden" name="seccode" id="seccode_input" value="">
-		
+            <input type="hidden" name="seccode" id="seccode_input" value="">
 <?php } ?>
           <div class="item">
             <label for="username" class="labelTag">昵&nbsp;&nbsp;称：</label>
@@ -238,49 +213,30 @@ a.artZoomAll{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/defa
           <div class="clearfix">
             <label class="labelTag">&nbsp;</label>
             <span class="enterInput"> <input type="button" class="btn_login" value="" onclick="guestLoginSubmit();"/></span>  
-		  </div>
-		  <div class="clearfix2">
+          </div>
+          <div class="clearfix2">
           <p class="tlb_P">或使用如下帐号登录：</p>
-		  <label class="labelTag">&nbsp;</label>
-		  
+          <label class="labelTag">&nbsp;</label>
 <?php if($this->Config['sina_enable'] && sina_weibo_init()) { ?>
- 
 <?php echo sina_weibo_login('s'); ?>
- 
 <?php } ?>
-
 <?php if($this->Config['qqwb_enable'] && qqwb_init()) { ?>
- 
 <?php echo qqwb_login('s'); ?>
- 
 <?php } ?>
-
 <?php if($this->Config['yy_enable'] && yy_init()) { ?>
- 
 <?php echo yy_login('s'); ?>
- 
 <?php } ?>
-
 <?php if($this->Config['renren_enable'] && renren_init()) { ?>
- 
 <?php echo renren_login('s'); ?>
- 
 <?php } ?>
-
 <?php if($this->Config['kaixin_enable'] && kaixin_init()) { ?>
- 
 <?php echo kaixin_login('s'); ?>
- 
 <?php } ?>
-
 <?php if($this->Config['fjau_enable'] && fjau_init()) { ?>
- 
 <?php echo fjau_login('s'); ?>
- 
 <?php } ?>
   </div>
         </form>
-	  
 <?php } ?>
       </div>
     </div>
@@ -288,49 +244,43 @@ a.artZoomAll{ cursor:url(<?php echo $this->Config['site_url']; ?>/templates/defa
   </div>
  <div id="midBox">
     <div class="mleft">
-	<h1 class="htitle2">最受关注用户</h1>
+    <h1 class="htitle2">最受关注用户</h1>
       <ul class="userlist">
-	  
 <?php if(is_array($r_users)) { foreach($r_users as $val) { ?>
-      
 <?php ++$_floor; ?>
       <li><a target="_blank" href="index.php?mod=<?php echo $val['username']; ?>"><img  title="<?php echo $val['nickname']; ?>" src="<?php echo $val['face']; ?>"  onerror="javascript:faceError(this);"><?php echo $val['nickname']; ?></a></li>
-      
 <?php } } ?>
       </ul>
-	  <h1 class="htitle4">近期活跃用户</h1>
+      <h1 class="htitle4">近期活跃用户</h1>
       <ul class="userlist">
-	  
 <?php if(is_array($day2_r_users)) { foreach($day2_r_users as $val) { ?>
       <li><a target="_blank" href="index.php?mod=<?php echo $val['username']; ?>"><img  title="<?php echo $val['nickname']; ?>" src="<?php echo $val['face_original']; ?>"  onerror="javascript:faceError(this);"><?php echo $val['nickname']; ?></a></li>
-	  
 <?php } } ?>
       </ul>
-
-	</div>
+    </div>
     <div class="mcenter">
     <h1 class="htitle">大家都在说</h1>
     <script type="text/javascript">
 var _recommendCount = parseInt("<?php echo $recommend_count; ?>");
 function action()
 {
-	var strhtml;
-	strhtml = $('#ajaxcontent .indexrow').eq(_recommendCount-1).html();
-	if(strhtml == null){
-		return false;
-	}
-	//$('#ajaxcontent .indexrow').eq(0).appendTo("#ajaxcontent");
-	$('#ajaxcontent .indexrow').eq(_recommendCount-1).remove();
-	$('#ajaxcontent').prepend('<div class="indexrow" style="display:none;" id="indexrowid">'+strhtml+'</div>');
-	$('#ajaxcontent .indexrow').eq(0).slideDown(500);
+    var strhtml;
+    strhtml = $('#ajaxcontent .indexrow').eq(_recommendCount-1).html();
+    if(strhtml == null){
+        return false;
+    }
+    //$('#ajaxcontent .indexrow').eq(0).appendTo("#ajaxcontent");
+    $('#ajaxcontent .indexrow').eq(_recommendCount-1).remove();
+    $('#ajaxcontent').prepend('<div class="indexrow" style="display:none;" id="indexrowid">'+strhtml+'</div>');
+    $('#ajaxcontent .indexrow').eq(0).slideDown(500);
 }
 $(document).ready(function(){
-	var Interval;
-	Interval = setInterval('action()', 4000);
-	$("#ajaxcontent").hover(
-		function(){clearInterval(Interval);},
-		function(){Interval = setInterval('action()',4000);}
-	);
+    var Interval;
+    Interval = setInterval('action()', 4000);
+    $("#ajaxcontent").hover(
+        function(){clearInterval(Interval);},
+        function(){Interval = setInterval('action()',4000);}
+    );
 });
 </script>
 <style type="text/css">
@@ -340,9 +290,7 @@ $(document).ready(function(){
 </style>
 <?php if($recommend_topics) { ?>
 <div class="comBox" id="ajaxcontent" style="margin:10px 0; overflow:hidden;">
-  
 <?php if(is_array($recommend_topics)) { foreach($recommend_topics as $val) { ?>
-  
 <?php $_ad++; ?>
   <div class="indexrow" id="topic_list_<?php echo $val['tid']; ?>">
     <div class="feedCell" style="width:404px; overflow:hidden">
@@ -351,28 +299,22 @@ $(document).ready(function(){
         <div class="oriTxt">
           <p><a title="<?php echo $val['username']; ?>" href="index.php?mod=<?php echo $val['username']; ?>"><?php echo $val['nickname']; ?></a><?php echo $val['validate_html']; ?>: <span><?php echo $val['content']; ?></span></p>
         </div>
-        
 <?php if($val['attachid'] && $val['attach_list']) { ?>
 <?php $val['attach_key']=$val['tid'].'_'.mt_rand(); ?>
 <ul class="attachList" id="attach_area_<?php echo $val['attach_key']; ?>">
-	  
 <?php if(is_array($val['attach_list'])) { foreach($val['attach_list'] as $iv) { ?>
-	  <li><img src="<?php echo $iv['attach_img']; ?>" class="attachList_img"/><div class="attachList_att"><p class="attachList_att_name"><b><?php echo $iv['attach_name']; ?></b> <a href="javascript:void(0);"  onclick="downattach(<?php echo $iv['id']; ?>);">下载</a>(<?php echo $iv['attach_down']; ?>次)</p><p class="attachList_att_doc"><?php echo $iv['attach_size']; ?> 积分：<?php echo $iv['attach_score']; ?>分</p></div></li>
-	  
+      <li><img src="<?php echo $iv['attach_img']; ?>" class="attachList_img"/><div class="attachList_att"><p class="attachList_att_name"><b><?php echo $iv['attach_name']; ?></b> <a href="javascript:void(0);"  onclick="downattach(<?php echo $iv['id']; ?>);">下载</a>(<?php echo $iv['attach_down']; ?>次)</p><p class="attachList_att_doc"><?php echo $iv['attach_size']; ?> 积分：<?php echo $iv['attach_score']; ?>分</p></div></li>
 <?php } } ?>
 </ul>
 <?php } ?>
-
 <?php if($val['imageid'] && $val['image_list']) { ?>
 <?php $val['image_key']=$val['tid'].'_'.mt_rand(); ?>
 <ul class="imgList" id="image_area_<?php echo $val['image_key']; ?>">
-	  
 <?php if(is_array($val['image_list'])) { foreach($val['image_list'] as $iv) { ?>
-	  <li>
-	  <a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>"  class="miniImg">
-	  <img style="width:<?php echo $this->Config['thumbwidth']; ?>px; height:<?php echo $this->Config['thumbheight']; ?>px;" src="<?php echo $iv['image_small']; ?>" /></a>
-	  </li>
-	  
+      <li>
+      <a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>"  class="miniImg">
+      <img style="width:<?php echo $this->Config['thumbwidth']; ?>px; height:<?php echo $this->Config['thumbheight']; ?>px;" src="<?php echo $iv['image_small']; ?>" /></a>
+      </li>
 <?php } } ?>
 </ul>
 <?php } ?>
@@ -380,27 +322,24 @@ $(document).ready(function(){
 <?php if($val['is_vote'] > 0) { ?>
 <?php $val['vote_key']=$val['tid'].'_'.$val['random'] ?>
 <ul class="imgList" id="vote_detail_<?php echo $val['vote_key']; ?>">
-		  <li><a href="javascript:;" onclick="getVoteDetailWidgets('<?php echo $val['vote_key']; ?>', <?php echo $val['is_vote']; ?>);"><img src='./images/vote_pic_01.gif'/></a> </li>
-		</ul>
-		<div id="vote_area_<?php echo $val['vote_key']; ?>" style="display:none;">
-			<div class="blogTxt"> 
-				<div class="top"></div> 
-				<div class="mid" id="vote_content_<?php echo $val['vote_key']; ?>"> 
-				</div> 
-				<div class="bottom"></div> 
-			</div>
-		</div>
-	
+          <li><a href="javascript:;" onclick="getVoteDetailWidgets('<?php echo $val['vote_key']; ?>', <?php echo $val['is_vote']; ?>);"><img src='./images/vote_pic_01.gif'/></a> </li>
+        </ul>
+        <div id="vote_area_<?php echo $val['vote_key']; ?>" style="display:none;">
+            <div class="blogTxt"> 
+                <div class="top"></div> 
+                <div class="mid" id="vote_content_<?php echo $val['vote_key']; ?>"> 
+                </div> 
+                <div class="bottom"></div> 
+            </div>
+        </div>
 <?php } ?>
-              
 <!--投票 End-->
 <?php if($val['videoid'] and $this->Config['video_status']) { ?>
 <div class="feedUservideo">
-	<a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>" class="miniImg">
-  	<div id="play_<?php echo $val['VideoID']; ?>" class="vP"><img src="images/feedvideoplay.gif"  /></div>
-  	<img src="<?php echo $val['VideoImg']; ?>" style="border:none"/> </a></div>
+    <a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>" class="miniImg">
+      <div id="play_<?php echo $val['VideoID']; ?>" class="vP"><img src="images/feedvideoplay.gif"  /></div>
+      <img src="<?php echo $val['VideoImg']; ?>" style="border:none"/> </a></div>
 <?php } ?>
-
 <?php if($val['musicid']) { ?>
 <?php if($val['xiami_id']) { ?>
 <div class="feedUserImg"><embed width="257" height="33" wmode="transparent" type="application/x-shockwave-flash" src="http://www.xiami.com/widget/0_<?php echo $val['xiami_id']; ?>/singlePlayer.swf"></embed></div>
@@ -411,9 +350,8 @@ $(document).ready(function(){
 <?php if(($tpid=$val['top_parent_id'])>0 && !in_array($this->Code, array('forward', 'reply'))) { ?>
 <?php if(('mycomment'==$this->Code || $topic_view) && 'reply'==$val['type'] && $tpid!=($pid=$val['parent_id']) && $parent_list[$pid]) { ?>
 <p class="feedP">回复{<a
-	href="index.php?mod=<?php echo $parent_list[$pid]['username']; ?>"><?php echo $parent_list[$pid]['nickname']; ?>：</a><span><?php echo $parent_list[$pid]['content']; ?></span>}</p>
+    href="index.php?mod=<?php echo $parent_list[$pid]['username']; ?>"><?php echo $parent_list[$pid]['nickname']; ?>：</a><span><?php echo $parent_list[$pid]['content']; ?></span>}</p>
 <?php } ?>
-
 <?php if(!$topic_view) { ?>
 <?php $pt=$parent_list[$tpid]; ?>
 <div class="blogTxt">
@@ -421,60 +359,52 @@ $(document).ready(function(){
 <div class="mid">
 <?php if($pt) { ?>
  <span> <a
-	href="index.php?mod=<?php echo $pt['username']; ?>"
-	onmouseover="get_user_choose(<?php echo $pt['uid']; ?>,'_reply_user',<?php echo $val['tid']; ?>);"
-	onmouseout="clear_user_choose();"> <?php echo $pt['nickname']; ?> </a>
+    href="index.php?mod=<?php echo $pt['username']; ?>"
+    onmouseover="get_user_choose(<?php echo $pt['uid']; ?>,'_reply_user',<?php echo $val['tid']; ?>);"
+    onmouseout="clear_user_choose();"> <?php echo $pt['nickname']; ?> </a>
 <?php echo $pt['validate_html']; ?> : <!--悬浮头像、弹出对话框--> <span
-	id="user_<?php echo $val['tid']; ?>_reply_user"></span> <!--悬浮头像、弹出对话框--> </span> 
+    id="user_<?php echo $val['tid']; ?>_reply_user"></span> <!--悬浮头像、弹出对话框--> </span> 
 <?php $TPT_ = $TPT_ ? $TPT_ : 'TPT_'; ?>
 <span id="topic_content_<?php echo $TPT_; ?><?php echo $pt['tid']; ?>_short"><?php echo $pt['content']; ?></span> <span
-	id="topic_content_<?php echo $TPT_; ?><?php echo $pt['tid']; ?>_full"></span> 
+    id="topic_content_<?php echo $TPT_; ?><?php echo $pt['tid']; ?>_full"></span> 
 <?php if($pt['longtextid'] > 0) { ?>
 <span> <a href="javascript:;"
-	onclick="view_longtext('<?php echo $pt['longtextid']; ?>', '<?php echo $pt['tid']; ?>', this, '<?php echo $TPT_; ?>', '<?php echo $val['tid']; ?>');return false;">查看全文</a>
+    onclick="view_longtext('<?php echo $pt['longtextid']; ?>', '<?php echo $pt['tid']; ?>', this, '<?php echo $TPT_; ?>', '<?php echo $val['tid']; ?>');return false;">查看全文</a>
 </span> 
 <?php } ?>
- 
 <?php if($pt['attachid'] && $pt['attach_list']) { ?>
 <table class="attachst" style="width:440px;">
 <?php if(is_array($pt['attach_list'])) { foreach($pt['attach_list'] as $iv) { ?>
-	<tr>
-		<td class="attachst_img"><img src="<?php echo $iv['attach_img']; ?>" /></td>
-		<td class="attachst_att">
-		<p class="attachList_att_name"><b><?php echo $iv['attach_name']; ?></b>&nbsp;（<?php echo $iv['attach_size']; ?>）</p>
-		<p class="attachList_att_doc"><a href="javascript:void(0);"
-		onclick="downattach(<?php echo $iv['id']; ?>);">点此下载</a>（需<?php echo $iv['attach_score']; ?>积分，已下载<?php echo $iv['attach_down']; ?>次）</p>
-
-		</td>
-	</tr>
-	
+    <tr>
+        <td class="attachst_img"><img src="<?php echo $iv['attach_img']; ?>" /></td>
+        <td class="attachst_att">
+        <p class="attachList_att_name"><b><?php echo $iv['attach_name']; ?></b>&nbsp;（<?php echo $iv['attach_size']; ?>）</p>
+        <p class="attachList_att_doc"><a href="javascript:void(0);"
+        onclick="downattach(<?php echo $iv['id']; ?>);">点此下载</a>（需<?php echo $iv['attach_score']; ?>积分，已下载<?php echo $iv['attach_down']; ?>次）</p>
+        </td>
+    </tr>
 <?php } } ?>
 </table>
 <?php } ?>
- 
 <?php if($pt['imageid'] && $pt['image_list']) { ?>
- 
 <?php $pt['image_key']=$pt['tid'].'_'.mt_rand(); ?>
 <ul class="imgList" id="image_area_<?php echo $pt['image_key']; ?>">
 <?php if(is_array($pt['image_list'])) { foreach($pt['image_list'] as $iv) { ?>
-	<li><a href="<?php echo $iv['image_original']; ?>" class="artZoomAll"
-		rel="<?php echo $iv['image_small']; ?>" rev="<?php echo $pt['image_key']; ?>"><img
-		src="<?php echo $iv['image_small']; ?>" /></a>
-	<div class="artZoomBox" style="display:none;">
-	<div class="tool"><a title="向右转" href="#" class="imgRight">向右转</a><a
-		title="向左转" href="#" class="imgLeft">向左转</a><a title="查看原图"
-		href="<?php echo $iv['image_original']; ?>" class="viewImg">查看原图</a></div>
-	<a class="maxImgLinkAll" href="<?php echo $iv['image_original']; ?>"> <img src="<?php echo $iv['image_original']; ?>" class="maxImg"></a></div>
-	</li>
-	
+    <li><a href="<?php echo $iv['image_original']; ?>" class="artZoomAll"
+        rel="<?php echo $iv['image_small']; ?>" rev="<?php echo $pt['image_key']; ?>"><img
+        src="<?php echo $iv['image_small']; ?>" /></a>
+    <div class="artZoomBox" style="display:none;">
+    <div class="tool"><a title="向右转" href="#" class="imgRight">向右转</a><a
+        title="向左转" href="#" class="imgLeft">向左转</a><a title="查看原图"
+        href="<?php echo $iv['image_original']; ?>" class="viewImg">查看原图</a></div>
+    <a class="maxImgLinkAll" href="<?php echo $iv['image_original']; ?>"> <img src="<?php echo $iv['image_original']; ?>" class="maxImg"></a></div>
+    </li>
 <?php } } ?>
 </ul>
 <?php } ?>
  <!--style="width:<?php echo $this->Config['thumbwidth']; ?>px; height:<?php echo $this->Config['thumbheight']; ?>px;"-->
-
 <!--投票 Begin--> 
 <?php if($pt['is_vote'] > 0) { ?>
- 
 <?php $__vote_key = $pt['tid'].'_'.$pt['random'] ?>
 <ul class="imgList" id="vote_detail_<?php echo $__vote_key; ?>">
 <li><a href="javascript:;" onclick="getVoteDetailWidgets('<?php echo $__vote_key; ?>', <?php echo $pt['is_vote']; ?>);"><img src='./images/vote_pic_01.gif' /></a></li>
@@ -490,9 +420,7 @@ $(document).ready(function(){
 <div id="play_<?php echo $pt['VideoID']; ?>" class="vP"><img src="images/feedvideoplay.gif" /></div>
 <img src="<?php echo $pt['VideoImg']; ?>" style="border: none" /> </a></div>
 <?php } ?>
- 
 <?php if($pt['musicid']) { ?>
- 
 <?php if($pt['xiami_id']) { ?>
 <div class="feedUserImg">
 <embed width="257" height="33" wmode="transparent" type="application/x-shockwave-flash" src="http://www.xiami.com/widget/0_<?php echo $pt['xiami_id']; ?>/singlePlayer.swf"></embed></div>
@@ -500,7 +428,6 @@ $(document).ready(function(){
 <div id="play_<?php echo $pt['MusicID']; ?>"></div>
 <img src="images/music.gif" title="点击播放音乐" onClick="javascript:showFlash('music', '<?php echo $pt['MusicUrl']; ?>', this, '<?php echo $pt['MusicID']; ?>');" style="cursor: pointer; border: none;" /></div>
 <?php } ?>
- 
 <?php } ?>
 <div style="width:400px; float:left; padding:5px 0; margin:0;">
 <a href="index.php?mod=topic&code=<?php echo $tpid; ?>" target="_blank">原文评论(<?php echo $pt['replys']; ?>)</a>&nbsp;
@@ -515,35 +442,31 @@ $(document).ready(function(){
 </div>
 <?php } ?>
 <?php } ?>
-		<div class="from"> 
-		<div class="mycome">
+        <div class="from"> 
+        <div class="mycome">
 <?php if(!$no_from) { ?>
 <?php echo $val['from_html']; ?>
 <?php } ?>
 </div>
-		<span style="float:right;"><a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>"><?php echo $val['dateline']; ?></a></span>
-		</div>
-	 </div>
+        <span style="float:right;"><a href="index.php?mod=topic&code=<?php echo $val['tid']; ?>"><?php echo $val['dateline']; ?></a></span>
+        </div>
+     </div>
     </div>
     <div class="mBlog_linedot" style="width:404px; overflow:hidden"></div>
   </div>
-  
 <?php } } ?>
 </div>
 <?php } ?>
 <div id="Pcontent" style="z-index:100; position:absolute; height:550px; overflow:hidden; margin:0;"></div>
     </div>
     <div class="mright">
-	  <div class="dlblank">
-	    <h1 class="htitle3">公告</h1>
-		<p></p>
-		 
+      <div class="dlblank">
+        <h1 class="htitle3">公告</h1>
+        <p></p>
 <?php if(is_array($list_notice)) { foreach($list_notice as $notice) { ?>
-		 <p><a href="index.php?mod=other&code=notice&ids=<?php echo $notice['id']; ?>" title="<?php echo $notice['titles']; ?>"><?php echo $notice['title']; ?></a></p>
-		 
+         <p><a href="index.php?mod=other&code=notice&ids=<?php echo $notice['id']; ?>" title="<?php echo $notice['titles']; ?>"><?php echo $notice['title']; ?></a></p>
 <?php } } ?>
   </div>
-
 <script type="text/javascript">
 function tabChange(obj,id)
 {
@@ -585,7 +508,6 @@ arrayul[i].className = "hidden";
 </ul>
 </div>
 </div>
-
 <div class="visBox">
 <p>使用<a href="index.php?mod=tools&code=imjiqiren" rel="nofollow"><?php echo $this->Config['site_name']; ?>QQ机器人</a>
 <?php if($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config)) { ?>
@@ -607,63 +529,44 @@ arrayul[i].className = "hidden";
 <?php } ?>
 <div class="mlink">
 <span class="lf">
-    
 <?php if($this->
     Config['default_module']==$this->Module && !$this->Code) { ?>
-    
 <?php @include('./setting/link.php'); ?>
-    
 <?php if($config['link_list']) { ?>
     友情链接：
-    
 <?php if(is_array($config['link_list'])) { foreach($config['link_list'] as $link) { ?>
-    
 <?php if(!empty($link['logo'])) { ?>
-			<a href="<?php echo $link['url']; ?>" target="_blank"><img src="<?php echo $link['logo']; ?>" width="88" height="31" border="0" alt="<?php echo $link['name']; ?>"></a>
+            <a href="<?php echo $link['url']; ?>" target="_blank"><img src="<?php echo $link['logo']; ?>" width="88" height="31" border="0" alt="<?php echo $link['name']; ?>"></a>
 <?php } else { ?><a href="<?php echo $link['url']; ?>" target="_blank"><?php echo $link['name']; ?></a>
-		
 <?php } ?>
  &nbsp;
-    
 <?php } } ?>
-    
 <?php } ?>
-    
 <?php } ?>
 </span>
 <span class="rt">
-    
 <?php $about_link = ConfigHandler::get('about_link'); ?>
-    
 <?php if(is_array($about_link)) { foreach($about_link as $about_id => $_about) { ?>
-    
 <?php global $rewriteHandler; if($rewriteHandler) $_about['link']=$rewriteHandler->
     formatURL($_about['link'],null); ?>
  <a href="<?php echo $_about['link']; ?>"><?php echo $_about['name']; ?></a>&nbsp;
-    
 <?php } } ?>
     &nbsp;<a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank" title="网站备案"><?php echo $this->Config['icp']; ?></a>
     <?php echo $this->Config['tongji']; ?><?php $__server_execute_time = round(microtime(true) - $GLOBALS['_J']['time_start'], 5) . " Second "; ?>
-
 <?php $__gzip_tips = ((defined('GZIP') && GZIP) ? "&nbsp;Gzip Enable." : "Gzip Disable."); ?>
 <span class="f10" title="<?php echo $__server_execute_time; ?>,<?php echo $__gzip_tips; ?>">执行信息</span>
 </span>
 </div>
-
-
-
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".sinaweiboLogin").mouseover(function(){$(".tlb_sina").show();});$(".sinaweiboLogin").mouseout(function(){$(".tlb_sina").hide();});
-	$(".qqweiboLogin").mouseover(function(){$(".tlb_qq").show();});$(".qqweiboLogin").mouseout(function(){$(".tlb_qq").hide();});
-	$(".yyLogin").mouseover(function(){$(".tlb_yy").show();});$(".yyLogin").mouseout(function(){$(".tlb_yy").hide();});
-	$(".renrenLogin").mouseover(function(){$(".tlb_renren").show();});$(".renrenLogin").mouseout(function(){$(".tlb_renren").hide();});
-	$(".kaixinLogin").mouseover(function(){$(".tlb_kaixin").show();});$(".kaixinLogin").mouseout(function(){$(".tlb_kaixin").hide();});
-	$(".fjauLogin").mouseover(function(){$(".tlb_fj").show();});$(".fjauLogin").mouseout(function(){$(".tlb_fj").hide();});
+    $(".sinaweiboLogin").mouseover(function(){$(".tlb_sina").show();});$(".sinaweiboLogin").mouseout(function(){$(".tlb_sina").hide();});
+    $(".qqweiboLogin").mouseover(function(){$(".tlb_qq").show();});$(".qqweiboLogin").mouseout(function(){$(".tlb_qq").hide();});
+    $(".yyLogin").mouseover(function(){$(".tlb_yy").show();});$(".yyLogin").mouseout(function(){$(".tlb_yy").hide();});
+    $(".renrenLogin").mouseover(function(){$(".tlb_renren").show();});$(".renrenLogin").mouseout(function(){$(".tlb_renren").hide();});
+    $(".kaixinLogin").mouseover(function(){$(".tlb_kaixin").show();});$(".kaixinLogin").mouseout(function(){$(".tlb_kaixin").hide();});
+    $(".fjauLogin").mouseover(function(){$(".tlb_fj").show();});$(".fjauLogin").mouseout(function(){$(".tlb_fj").hide();});
 });
 </script>
-
-
 </div>
 </div>
 </body>
