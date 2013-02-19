@@ -1,7 +1,7 @@
 <?php if(!defined('IN_JISHIGOU')) { exit('invalid request'); } 
 $cache = array (
   'key' => 'data_block/recommend_topic_user-10-12',
-  'dateline' => 1359288276,
+  'dateline' => 1359639005,
   'val' => 
   array (
     'life' => 36000,
@@ -14,7 +14,7 @@ $cache = array (
         'username' => '1',
         'face_url' => '',
         'face' => 'http://localhost/yqweibo/images/face/c/98/1_s.jpg',
-        'aboutme' => '',
+        'aboutme' => '我是管理员',
         'validate' => '1',
         'validate_category' => '2',
         'nickname' => 'admin',

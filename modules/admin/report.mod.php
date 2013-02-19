@@ -126,7 +126,7 @@ class ModuleObject extends MasterObject
                 'message' => '管理员<a href="index.php?mod='.MEMBER_ID.'" href="_blank">'.MEMBER_NICKNAME.'</a>已对您举报的微博【'.cut_str($report['tcontent'],20).'】做了'.$do.'的处理，感谢你对本站维护做出的贡献。',
                 'to_user' => $report['nickname'],
             );
-                        $PmLogic->pmSend($pm_post);
+            $PmLogic->pmSend($pm_post);
         }
         $this->Messager("操作成功");
     }
