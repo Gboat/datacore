@@ -65,7 +65,7 @@ class ModuleObject extends MasterObject
                 $content = str_split($topic_content,40);
         $content = array_iconv($this->Config['charset'],'utf-8',$content);
                 $topic_url = $this->Config['site_url'];
-                $topic_date = array_iconv($this->Config['charset'],'utf-8',$topic_dateline.' | '.'记事狗微博');
+                $topic_date = array_iconv($this->Config['charset'],'utf-8',$topic_dateline.' | '.'DataCore微博');
         imagettftext($bg, 9, 0, 130, 25, $white, "images/simsun.ttc", $content[0]);
         imagettftext($bg, 9, 0, 130, 45, $white, "images/simsun.ttc", $content[1]);
         imagettftext($bg, 9, 0, 130, 70, $white, "images/simsun.ttc", $topic_date);

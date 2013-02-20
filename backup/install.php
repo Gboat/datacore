@@ -27,7 +27,7 @@ include './setting/constants.php';
 $inslang = defined('INSTALL_LANG') ? INSTALL_LANG : '';
 $version = SYS_VERSION ." " . SYS_BUILD . ' ' . $lang[$inslang];
 if(!defined('INSTALL_LANG') || !function_exists('instmsg') || !is_readable($sqlfile)) {
-    exit("Please upload all files to install JishiGou system<br />&#x5b89;&#x88c5; 【记事狗】 &#x60a8;&#x5fc5;&#x987b;&#x4e0a;&#x4f20;&#x6240;&#x6709;&#x6587;&#x4ef6;&#xff0c;&#x5426;&#x5219;&#x65e0;&#x6cd5;&#x7ee7;&#x7eed;");
+    exit("Please upload all files to install JishiGou system<br />&#x5b89;&#x88c5; 【DataCore】 &#x60a8;&#x5fc5;&#x987b;&#x4e0a;&#x4f20;&#x6240;&#x6709;&#x6587;&#x4ef6;&#xff0c;&#x5426;&#x5219;&#x65e0;&#x6cd5;&#x7ee7;&#x7eed;");
 } elseif(!isset($config['db_host']) || !isset($config['auth_key'])) {
     instmsg('config_nonexistence');
 } elseif(!ini_get('short_open_tag')) {
@@ -368,7 +368,7 @@ if(!$action) {
                             'url' => 'http:/'.'/aijuhe.net',
                         ),
                         array (
-                            'name' => _getaarrayrandval(array('开源微博系统','php微博系统','免费微博程序','开源微博程序','微博源码下载','轻博系统','轻博程序','免费开源微博系统','记事狗微博系统',)),
+                            'name' => _getaarrayrandval(array('开源微博系统','php微博系统','免费微博程序','开源微博程序','微博源码下载','轻博系统','轻博程序','免费开源微博系统','DataCore系统',)),
                                         'url' => 'http:/'.'/www.jishigou.net',
                         ),
                     );

@@ -4,7 +4,7 @@
 {eval $conf_charset=$this->Config['charset'];}
 <meta http-equiv="Content-Type" content="text/html; charset=$conf_charset" />
 <meta http-equiv="x-ua-compatible" content="ie=7" />
-<title>记事狗微博系统后台管理</title>
+<title>DataCore系统后台管理</title>
 <link href="./templates/default/admin/admin_m.css" rel="stylesheet" type="text/css">
 </head>
 <body scroll="yes" style="height:100%">
@@ -25,7 +25,7 @@ return false;
   <tr>
     <td colspan="2" height="80" valign="top"><div id="header">
         <div class="logo fl">
-          <div class="png"><a href="{conf site_url}/admin.php"><img width="160" height="43" src="./templates/default/admin/images/logo.gif" alt=" 记事狗微博系统 " /></a></div>
+          <div class="png"><a href="{conf site_url}/admin.php"><img width="160" height="43" src="./templates/default/admin/images/logo.gif" alt=" DataCore系统 " /></a></div>
           <div class="lun"><span style="color:#FA891B">V{conf sys_version}</span> {SYS_PUBLISHED} {SYS_BUILD} </div>
         </div>
         <!--大导航 -->
@@ -35,7 +35,7 @@ return false;
 		{/loop}
         </ul>
         <!--头部信息导航-->
-        <div class="wei fl">当前用户：<a title="查看或修改我的相关信息" href="admin.php?mod=member&code=modify" target="main">{MEMBER_NICKNAME}</a>（<!--{if true===JISHIGOU_FOUNDER}-->网站创始人&<!--{/if}--> {$GLOBALS[_J][member][role_name]} | <a href="admin.php?mod=login&code=logout">退出后台</a>） &nbsp;|&nbsp; <a href="admin.php?mod=cache" target="main">清空缓存</a> &nbsp;|&nbsp; <a title="在新窗口中打开访问首页" href="index.php" style="cursor: pointer;" class="s0" target="_blank">网站首页</a> &nbsp;|&nbsp; <a href="admin.php?mod=upgrade" target="main" title="在线升级到记事狗最新版本">在线升级</a> &nbsp;</div>
+        <div class="wei fl">当前用户：<a title="查看或修改我的相关信息" href="admin.php?mod=member&code=modify" target="main">{MEMBER_NICKNAME}</a>（<!--{if true===JISHIGOU_FOUNDER}-->网站创始人&<!--{/if}--> {$GLOBALS[_J][member][role_name]} | <a href="admin.php?mod=login&code=logout">退出后台</a>） &nbsp;|&nbsp; <a href="admin.php?mod=cache" target="main">清空缓存</a> &nbsp;|&nbsp; <a title="在新窗口中打开访问首页" href="index.php" style="cursor: pointer;" class="s0" target="_blank">网站首页</a> &nbsp;|&nbsp; <a href="admin.php?mod=upgrade" target="main" title="在线升级到DataCore最新版本">在线升级</a> &nbsp;</div>
         <div class="wei2 fr">
           <TABLE>
             <TR>

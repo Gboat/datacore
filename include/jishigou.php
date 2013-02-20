@@ -264,7 +264,7 @@ class jishigou {
             'fjau' => 1, 
             'people' => 1, 
             'nedu' => 1, 
-                        'friend' => 1,
+            'friend' => 1,
             'member' => 1,
             'square' => 1,
             'more' => 1,

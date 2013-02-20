@@ -23,7 +23,7 @@ class TaskItem extends TaskCore
         foreach($mail as $value){
             if($value['sendtime'] <= time())
             {
-                $mail_subject = '记事狗邮件提醒';
+                $mail_subject = 'DataCore邮件提醒';
                 Load::lib('mail');
                 $send_result = send_mail('85924101@qq.com',$mail_subject,$value['content'],array(),3,false);
                 $sql='delete from '.TABLE_PREFIX.'cron where id = '.$value['id'];

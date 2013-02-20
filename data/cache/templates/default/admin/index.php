@@ -4,7 +4,7 @@
 <?php $conf_charset=$this->Config['charset']; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $conf_charset; ?>" />
 <meta http-equiv="x-ua-compatible" content="ie=7" />
-<title>记事狗微博系统后台管理</title>
+<title>DataCore系统后台管理</title>
 <link href="./templates/default/admin/admin_m.css?v=build+20120428" rel="stylesheet" type="text/css">
 </head>
 <body scroll="yes" style="height:100%">
@@ -25,7 +25,7 @@ return false;
   <tr>
     <td colspan="2" height="80" valign="top"><div id="header">
         <div class="logo fl">
-          <div class="png"><a href="<?php echo $this->Config['site_url']; ?>/admin.php"><img width="160" height="43" src="./templates/default/admin/images/logo.gif" alt=" 记事狗微博系统 " /></a></div>
+          <div class="png"><a href="<?php echo $this->Config['site_url']; ?>/admin.php"><img width="160" height="43" src="./templates/default/admin/images/logo.gif" alt=" DataCore系统 " /></a></div>
           <div class="lun"><span style="color:#FA891B">V<?php echo $this->Config['sys_version']; ?></span> <?php echo SYS_PUBLISHED; ?> <?php echo SYS_BUILD; ?> </div>
         </div>
         <!--大导航 -->
@@ -43,7 +43,7 @@ return false;
 <?php if(true===JISHIGOU_FOUNDER) { ?>
 网站创始人&
 <?php } ?>
- <?php echo $GLOBALS['_J']['member']['role_name']; ?> | <a href="admin.php?mod=login&code=logout">退出后台</a>） &nbsp;|&nbsp; <a href="admin.php?mod=cache" target="main">清空缓存</a> &nbsp;|&nbsp; <a title="在新窗口中打开访问首页" href="index.php" style="cursor: pointer;" class="s0" target="_blank">网站首页</a> &nbsp;|&nbsp; <a href="admin.php?mod=upgrade" target="main" title="在线升级到记事狗最新版本">在线升级</a> &nbsp;</div>
+ <?php echo $GLOBALS['_J']['member']['role_name']; ?> | <a href="admin.php?mod=login&code=logout">退出后台</a>） &nbsp;|&nbsp; <a href="admin.php?mod=cache" target="main">清空缓存</a> &nbsp;|&nbsp; <a title="在新窗口中打开访问首页" href="index.php" style="cursor: pointer;" class="s0" target="_blank">网站首页</a> &nbsp;|&nbsp; <a href="admin.php?mod=upgrade" target="main" title="在线升级到DataCore最新版本">在线升级</a> &nbsp;</div>
         <div class="wei2 fr">
           <TABLE>
             <TR>

@@ -142,7 +142,7 @@ class ModuleObject extends MasterObject
     }
     function home()
     {
-        $program_name = "记事狗";
+        $program_name = "DataCore";
                 include(ROOT_PATH . 'setting/admin_left_menu.php');
         $shorcut_list=array();
         foreach ($menu_list as $_menu_list)
