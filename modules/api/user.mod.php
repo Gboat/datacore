@@ -1,3 +1,480 @@
-<?php // This file is protected by copyright law & provided under license. Copyright(C) 2005-2099 www.cenwor.com, All rights reserved.
-$OOO0O0O00=__FILE__;$OOO000000=urldecode('%74%68%36%73%62%65%68%71%6c%61%34%63%6f%5f%73%61%64%66%70%6e%72');$OO00O0000=16872;$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$O0O0000O0='OOO0000O0';eval(($$O0O0000O0('JE9PME9PMDAwMD0kT09PMDAwMDAwezE3fS4kT09PMDAwMDAwezEyfS4kT09PMDAwMDAwezE4fS4kT09PMDAwMDAwezV9LiRPT08wMDAwMDB7MTl9O2lmKCEwKSRPMDAwTzBPMDA9JE9PME9PMDAwMCgkT09PME8wTzAwLCdyYicpOyRPTzBPTzAwME89JE9PTzAwMDAwMHsxN30uJE9PTzAwMDAwMHsyMH0uJE9PTzAwMDAwMHs1fS4kT09PMDAwMDAwezl9LiRPT08wMDAwMDB7MTZ9OyRPTzBPTzAwTzA9JE9PTzAwMDAwMHsxNH0uJE9PTzAwMDAwMHswfS4kT09PMDAwMDAwezIwfS4kT09PMDAwMDAwezB9LiRPT08wMDAwMDB7MjB9OyRPTzBPTzAwME8oJE8wMDBPME8wMCwxMjYzKTskT08wME8wME8wPSgkT09PMDAwME8wKCRPTzBPTzAwTzAoJE9PME9PMDAwTygkTzAwME8wTzAwLDM4MCksJ0pSZEVaQnkyRFNLc2NVdXhZTDM1SXBhSE02UDFmYlFpTkFUL1Z2OFdHQzArNzltcmpoZ2Vrbk9sNHdvenRxRlg9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));return;?>
-SZqxcERxcERxcEneb2Sif8pj1yB/63NWHnqy3IhBHntWsdDWDT4V5kqxcZtj5eJjsTDWDTjGSZqx5eJjcERxcdNV5ktj5ktjcZtjKdLx5eRx5eJjcZtGSZtjcERxcZtjcdjV5ktjcZtjcEJjK3jW3vSVLpCdQ5SZIk9eMnpnQBvccepSfyBD556Yca6TIavuYpYrpWM4pkbEcd7luangP8AW6a9m5OjkbOqob2ByaEkWsdbRYVUZLI623ZvK3khU5VqYIpS5pBpapnA6a8BTMOLv68bGPaC+1ynm1lRhfWUkbH6lQ2vocEZgceYnU/f4u37rSgVCK3Vz68U71lUvKdLxcEJj5eRxcEJCuOpOMajGSZqxcERxcERxcdVzEYCC6TNA6yp8Pawv6dNW3Iwi3Vv53Zv25nIWK3VUdW7Ud8p4PHYGSOvmb8B7PaYNf8phbapebdfCujkKiYkKMOhAflcN5aqVbahv5OS06aUkDyp4bypm62cN5aBebypg5OS06aUkEYCzEYC8baw/byvr1TRU1OLn1ypxM8CvMlYGSyUr186C6gVUdW7UdTLkPyves5wUMHUk6HSxM8CvMlYGSyUr186C6gVzEYGVbyACfgkFLHAvMlpk63NCujkKiYkK6WpmMlLC1O4NLHAvMlpk63NCEYCzEYCebOvkMONGS2LGPHc9xVUr6yICEYCzEYC/MHUvDdbOPaplSeGSd3JNDdJNDJkKMOBe63JWfOArbgfoEYCzEYGVbyACfgkFIOArbgNCujkKMWSvMa7zEYCqEYC/MHUvDdb8MaweSeGUdW7UdTLkPyves5wyMaweKdVzEYCTf8pAPe7UdWkUd8UAfOINSO6r1yhrbgfoEYCzEYGVbyACfgkFL8q71yqlKdVzEYCTf8pAPe7UdWkUd8UAfOINSO6r1yhrbnqm6HfWuNkKMOBe63JW68q71yql18plSeGUd8UAfOINSOwvbnq81Oh71lfWuNkKMOBe63JW18pl68q71yqlSeGUdW7UdTLkPyves5wy1Oh71lbu6HfGK57Ud8Sg6aB+ujkKiYkKMOBe63JW68q71yqlHOLv1dfoEYC/MHUvDdb81Oh71lbV6ajWuNkKMOBe63JW6yp7HO6r1yhrbgfoEYC/MHUvDdbV6ah81Oh71lfWuNkKQjkKS2LGPHc9xV6r1yhrbkLv1dNCujkKMWSvMa7zEYCqEYC/MHUvDdb81Oh71lbifOArbgfoEYC/MHUvDdb81Oh71lbePyqlSeGUd8UAfOINSlUG1lbi68q71yqlSeGUd8UAfOINSlUG1lb81Oh71lfWuNkKQjkKS2LGPHc9xV6r1yhrbnUG1lfGK57Ud8Sg6aB+ujkKiYkKMOBe63JW1HvibyqjPacWuTJNDdJUd8UAfOINSOnwbyqjPacWuTJNDdJUd8UAfOINSlLrfyv/SeGUdW7UdTLkPyves5wI1lRCMgNCujkKMWSvMa7zEYCqEYC/MHUvDdb9Qpq8f8vv18LibyqjPacWuNkKMOBe63JW1Hv8f8vv18Lk1lRCMgfoEYCzEYGVbyACfgkF5Hvyf8vv18LI1lRCMgNCujkKMWSvMa7zEYCqEYC/MHUvDdb9Qpq8MH6rf8vk63foEYC/MHUvDdb9Qa6Ab8qgPHLvSeGUdW7UdTLkPyves5wUQI6Ab8qgPHLvKdVzEYCTf8pAPe7UdWkUd8UAfOINSO6Ab8qgPHLvHOnwSeGUd8UAfOINSO6Ab8qgPHLv1HVWuNkKQjkKS2LGPHc9xV6Ab8qgPHLv5HVGK57Ud8Sg6aB+ujkKiYkKMOBe63JW1HviMOq91apmbdfoEYC/MHUvDdb9QaUr1anv1WYWuNkKQjkKS2LGPHc9xVnwYOq91apmbdNCujkKMWSvMa7zEYCqEYC/MHUvDdb/1On96awkHOnwSeGUd8UAfOINSOUr1anv1WL9Q3foEYCzEYGVbyACfgkFYOq91apmbZnwKdVzEYCTf8pAPe7UdWkUd8UAfOINSOBkHOnwSeGUd8UAfOINSOBk1HVWuNkKQjkKS2LGPHc9xVBk5HVGK57Ud8Sg6aB+ujkKiYkKMOBe63JW1HvifykWuNkKMOBe63JW1Hvj13foEYC/MHUvDdbj13foEYC/MHUvDdbj1pqe6awkSeGUd8UAfOINSlR9fOpmbdfoEYCzEYGVbyACfgkFIyncPHUkKdVzEYCTf8pAPe7UdWkUd8UAfOINSlR9HOwvbgfoEYC/MHUvDdbj1awvbgfoEYCzEYGVbyACfgkFIynu6HfGK57Ud8Sg6aB+ujkKiYkK6yp8MHp7bdJoEYCzEYGVbyACfgkFYOqV63JqDdfWujkKS2LGPHc9xVnAPa4GK57Ud8Sg6aB+ujkKiYkKiYkKiYkK6WpmMlLC1O4N5aBC1TNCEYCzEYCAfyvi1lpkf2pkKdbAfyVNPHcN1O7WK57UdWkUd86n18UkPaqmDBUG1lfGKYkKQjkKS2pC6dJqDynAQdNjsdAC1WYCDdNVbyACfgkF3awjbHLeagbnPaYWH3JXS2LGPHc9xVvmf2pkfn7WbavVSnkNuTJVbyACfgkFbHUvfv7WbavVSnkCK57UdTLnfOpgDEkNS2LGPHc9xvqC18vkHlpe6HDGS2pC6dVzEYCAfyvi1lpkf2pkKdLnfOpgK57UdWkUd86n18UkPaqmDZ6A1WcGKYkKQjkKS2pC6dJqDynAQdNjsdAC1WYCDdNVbyACfgkF3awjbHLeagbnPaYWH3JXS2LGPHc9xVvmf2pkfn7WbavVSnkNuTJVbyACfgkFbHUvfv7WbavVSnkCK57UdTLnfOpgDEkNS2LGPHc9xvqC18vkHlpe6HDGS2pC6dVzEYGVfyBW6pqAfWDNx3JVbyACfgkFHlRA6OIGS2pe6HS1SO6A1WUiMOqn1WYWH3VzEYGVfdJqDyBgf8BwKJkKSO6C6ahVfgfqxTbnPaYWsJkKSOUrbawkSekFS2RA6OpiMHSgaOUrbawkH3jUdTb7PanCbdfqxTDNQgLjMabvHOBgfv9r686e6HLbi3hzS2RA6OpiMHSgaOUrbawkHHkNDTjUdTbTbaLVQavVSekFS2pe6HS1SlpC6dbbsJkKK57UdTLnPaLeDEkN5yqA6EGo1aqV6ajGSOSn6yLwSgV9x8bvbBqC62cGS2JCujkKS2Svb2pg1TJqDyBgf8BwKdVzEYCC6TNVbavVfgVNQjkKS2Svb2pg1TJqDdLjMabvHOBgf/7UdTLg6HLnf8w1Slpe6HSeSnkNx3JVbyACfgkFHlpe6HDGS2pC62cCujkKiYkKMHRCHOqnb2RnbdNVf8pkbHSmK57UdWkUd86n18UkPaqmDZ6r1yhrbgNCEYCzEYGVbavVDEkN1aB4KEJ7KyvmbdVNKdLkPyves5wS1WRnb2U1SlpC6dbbDEtVbyACfgkF3awjbHLeagbnPaYWH3JoDdLkPyves5wnfOpgagbnPaYWH3VCujkKS2pe6HDNx3JVbyACfgkFHOvmPHLibHUvfTNVbavVK57UdTLjMabvHOBgfTJqDdLkPyves5wifyBW63NVbHUvfv7W68q71yqlHOUrbawkSnkCujkKS2JNx3RAfWSAQ3NUdTb8Pap762cWx54WMWpV62vC6df7EYGWMOqn1WYWx54VfyBW6pqAfWS1MOqn1WLbsJkKSOhC1avkSekFDTRzS2RA6OpiMHSgaOq86WUvbBnqs27VfyBW6pqAfWS1MOqn1WLbi3JTsJkKSlpC6dfqxTLnfOpgagbnPaYWH3jUdTVzEYGVbavVfgJqDZhrMaYou8nr6yp7KdbTbaLVQ3fCs5wW6HLiPaLeKdLjK57UdTLg6HLnf84Nx3RAfWSAQ3NCujkKPaMGS2pC62cCD27UdTLg6HLnf84Nx3JVfyBW6pqAfWDzEYGVf8pkbHSmagbnfOpgfgbbDEkNS2LGPHc9xvqnfOpgKdLnPaLeK57UdWkUd8BjPpqrbHLjbHYGS2Svb2pg1TVzEYCqEYC8baw/byvr1TRy1Oh71lbu6HfGKYkKQjkKS2pC6dJqDynAQdNjsdAC1WYCDdLkPyves5wS1WRnb2U1SlpC6dbbK57UdTLnfOpgDEkNS2LGPHc9xvqC18vkHlpe6HDGS2pC6dVzEYCC6TNVbHUvfv7WbavVSnkND5kNS2LGPHc9xWpe6HS1SlpC6dbbK3RzEYGVf8pkfgJqDySn6yLwHOBV6dNVbHUvfv7WbavVSnk7S2LGPHc9xWpe6HS1SlpC6dbbK57Ud8v8KdLg6HLeDdM8S2Svb2U1SOpgf8qgSnkCD27Ud8BjPpqvfWSrfTNVf8pkfn7W6HSg1lDWH3VzEYCqEYCqEYCAfyvi1lpkf2pkKdb81Oh71lbm6HfNPHcN1O7WK57UdWkUd86n18UkPaqmDZ6r1yhrbkLv1dNCEYCzEYGVbavVDEkN1aB4KEJ7KyvmbdVNS2LGPHc9xVvmf2pkfn7WbavVSnkCujkKS2pe6HDNx3JVbyACfgkFHOvmPHLibHUvfTNVbavVK57Ud8v8KdLnPaYND5kNS2LGPHc9xWpe6HS1SlpC6dbbK3RzEYCTbaLVQpqV6ajGS2pC6djVbyACfgkFbHUvfv7WbavVSnkCujkKMHRCHOqnb2RnbdNW68q71yql6yp7DyveDyq+SgVzEYCqEYCqEYC8baw/byvr1TRy1Oh71lb5PyqlKdVUdW7UdTLe1lpgMOpiPaYNx3R9MHNGcdjGPawkK3JGS2LGPHc9xVvmf2pkfn7WfOqnf8UvHOvVSnkNxgLkPyves5wS1WRnb2U1SlUrbHS/6pqC6dbbDEGNS2LGPHc9xWpe6HS1SlpC6dbbK3VzEYCC6TNAS2UrbHS/6pqC6dVNQjkKMHRCHOpgf8qgKdbe1lpgMOpiPaYNPHcN6anjb2VWsEZjUgVzEYCqEYGVfOqnf8UvHlpe6HDNx3JVbyACfgkFHlpe6HDGS2UrbHS/6pqC6dVzEYCC6TNAS2UrbHS/6pqnfOpgK3RzEYCAfyvi6HSg1lDGSlUrbHS/6pqC6dRCfgRC1W6A1yvVSgjhcENCujkKiYkKS2LAf8bvbBqC6dJqDynAQdNjsdAC1WYCDdNVbyACfgkF3awjbHLeagbkMHSW6HLiPaYWH3VCujkKPaMGD3LkMHSW6HLiPaYCD27Ud8BjPpqvfWSrfTNWbyBg6OpkHOvVDyveDyp9f2LwSgjhcEVCujkKiYkKS2LAf8bvbBqnfOpgDEkNS2LGPHc9xvqnfOpgKdLkMHSW6HLiPaYCujkKPaMGS2UrbHS/6pqC6EkqS2LAf8bvbBqC6dRtidZVbyBg6OpkHlpe6HDCD27Ud8BjPpqvfWSrfTNWbyBg6OpkHOvVDyveDyvmb8B7PaYWsEZhcdVzEYCqEYGVf8pkbHSmDEkNMHSgMHVGK57UdTLg6HLnf8w1SlUrbHS/63bbDEkNMHSgMHVGEYGWbavVSekFS2UrbHS/6pqnfOpgagbnPaYWH3jUdTbnfOpg18B963fqxTLe1lpgMOpibHUvfv7WbHUvf8wA1aIWH3jUdTbmPaU+18B963fqxTLe1lpgMOpibHUvfv7W18v/POwA1aIWH3jUdTb81Oh71lbC18fWx5w8Mahe63jUdTb81Oh71lbv6BqTQ3fqx86A12UvsJkKK57UdTLg6HLnf8w1SlLAf8bvbdbbDEkNMHSgMHVGEYGWbavVSekFS2LAf8bvbBqnfOpgagbnPaYWH3jUdTbnfOpg18B963fqxTLkMHSW6HLibHUvfv7WbHUvf8wA1aIWH3jUdTbmPaU+18B963fqxTLkMHSW6HLibHUvfv7W18v/POwA1aIWH3jUdTb81Oh71lbC18fWx5w8Mahe63jUdTb81Oh71lbv6BqTQ3fqx86A12UvsJkKK57UdTLg1lfNx3Rc1OBVu/C91OLv1dNWMWpV62VWK3kFPaw81gNVbyBg6OpkHOvVsdLe1lpgMOpiPaYCujkKPaMGS2SrbgVNQjkKS2Svb2pg1v7WbyBg6OpkSnn1SO6r1yhrbOpVHOSwSnkNx3JVf8pkbHSmagbe1lpgMOIWHp7W68q71yqlPawWSnkNx3RkfWpvujkKiYkKS2SrbgJqDZhrMaYou8nr6yp7KdbTbaLVQ3fCs5wC186rKdLe1lpgMOpiPaY7S2LAf8bvbBqC6dVzEYCC6TNVf8qlK3RzEYGVf8pkbHSmagbkMHSW6HYWHp7W68q71yqlPawWSnkNx3JVf8pkbHSmagbe1lpgMOIWHp7W68q71yql6aLiMWVWH3JqD2LgbaIzEYCqEYCAfyvi1lpkf2pkKdLg6HLnf84CujkKiYkK6WpmMlLC1O4NpyqjPacGKYkKQjkKS2pC6dJqDynAQdNjsdAC1WYCDdNVbyACfgkF3awjbHLeagbnPaYWH3JXS2LGPHc9xVvmf2pkfn7WbavVSnkNuTJVbyACfgkFbHUvfv7WbavVSnkCK57UdTLnfOpgDEkNS2LGPHc9xvqC18vkHlpe6HDGS2pC6dVzEYGVflB7HlbG6HSvfgJqDyBgf8BwKdVzEYGVflB7HlbG6HSvfn9bDEkND8RnPaLNx3bzS2pC62kWD/7UdTLefahibOAvf8peankNx3JTM2LwfypNDZvuKdb8PHSebdf7SO6rfWbAf8YWsdbT1lLGSgVTujkKSyvVHOnAQdJqDynAQdNjsdAC1WYCDdLkPyves5wS1WRnb2U1SOvVHOnAQdbbK57Ud8v8KdLC6Bq9MHNCD27UdTLefahibOAvf8peankNx3JTM2LC6yJtx3fVPaLi1aB4SgDzEYCqEYGVPaLi1avmDEkN1aB4KEJ7KyvmbdVNS2LGPHc9xVvmf2pkfn7WPaLi1avmSnkCujkKPaMGSyvVHOnC1TVNQjkKS2Uh1BqlPypg6HU1H3JqDdSNbyvVME4WSyvVHOnC1TfTujkKiYkKS2Uh1BqlPypg63JqDdDNbOAvf8INDTwC1HR71OLvKdDNMawVDdD7S2Uh1BqlPypg6HcCujkKS2Uh1dJqDdSe6ahvMlYNMOqn1WYGKTVNMHcNMOqn1WYN6WSr13JTsvLRYVhBHnR3LI6Sad4TbyqjPacNS2Uh1BqlPypg63DzEYGVf8qlDEkNS2LGPHc9xVLAbyBTMHUv3yBm6yhvfTkFL8pkMOAyPHSebdNVflB7K57UdTLg6HLnf84Nx3RAfWSAQ3NCujkKPaMGS2Srbn7WMOqn1WYWH3VNQjkKS2Svb2pg1TJqDdLkPyves5wifyBW63NVf8qlagb/1lpmbdbbK57UdTLg6HLnf8w1SlLrfyv/fgbbDEkNS2LGPHc9xvqk1lRCMgNTDdLefahibOAvf8IN1lSV6HDNMWVNM2LC6yJN6ypeMgR7PanCbdRzS2Svb2pg1v9r686e6HLbi3hzS2Svb2pg1v9/1lpmbBnqDdDCujkKiYkKMHRCHOqnb2RnbdNVf8pkbHSmK57UdWkUd86n18UkPaqmDZnwLWSC6awVpyqjPacGKYkKQjkKS2pC6dJqDynAQdNjsdAC1WYCDdLkPyves5wnfOpgagbnPaYWH3VzEYGVbHUvfTJqDdLkPyves5wiPawCbBqnfOpgKdLnPaYCujkKS2pC62cNx3RW6HLiMWpV62vC62cGS2pC6djVbyACfgkFYOqm68vWagbk1lRCMnq9QaAr1apibyv96pq7PanCbdbbK57UdTLnPaLeagLnPaLbDEkNS2pC6E7UdTLefahibOAvf8peDEkNMHSgMHVGK57UdTLefahibOAvf8peankNx3JTM2LwfypNDZvuKdb8PHSebdf7SO6rfWbAf8YWsdbT1lLGSgVTujkKPaMGS2pC62cCD27UdTLefahibOAvf8peankNx3JTM2pC6yJNPa4NKdfTs8v9fyhr6yIGDTf7SgD7S2pC62cCsTDWK3DzEYCqEYCC6TJGS2Lrfyv/HOnwPyq96pqkPanvHOhC1avkDE4jK3RzEYGVflB7HlbG6HSvfn9bDEkND8RVMHLv1yvm6aJFSl7VbyqjPaUi1HvG1OnvHlLC1api1yv9PHLqSgDzEYCqEYGVflB7HlbG6HSvDEkNKdLefahibOAvf8peDEtTD2bG6HSvDdDmKyv9fyhr6yIGDTRA18YNDTjVflB7HlbG6HSvfgVCDEGN1Wp71dVzEYGVf8qlDEkNS2LGPHc9xVLAbyBTMHUv3yBm6yhvfTkFL8pkMOAyPHSebdNTfOp76aUkDyUrbawkKdGCDyBeDyR/1lpmbyJN6WSr13JTsvLRYVhBHnR3LI6Sad4TbyqjPacNS2Uh1BqlPypg63JTK57UdTLg6HLnf84Nx3RAfWSAQ3NCujkKPaMGS2Srbn7WMOqn1WYWH3VNQjkKS2Svb2pg1TJqDdLkPyves5wifyBW63NVf8qlagb/1lpmbdbbK57UdTLefahibOAvf8INs/kNDTRrf8LvfTRTQ3RNbyvVMdRV6HU/DyhC1avkD27Vf8pkbHSmaOq86WUvbBnqs27Vf8pkbHSmaOUrbawkHHkND/7UdTLg6HLnf8w1SlLrfyv/fgbbDEkNS2LGPHc9xvqk1lRCMgNVflB7HlbG6HSvK57UdWkUd8BjPpqrbHLjbHYGS2Svb2pg1TVzEYCqEYC8baw/byvr1TRUQI6Ab8qgPHLvKdVUdW7UdTLnPaYNx3R9MHNGcdjGPawkK3JVbyACfgkFbHUvfv7WbavVSnkCujkKS2pe6HDNx3JVbyACfgkFHOvmPHLibHUvfTNVbavVK57UdTLg6HLnf84Nx3RAfWSAQ3NCujkKS2SrbgJqDdLkPyves5wZMHLAM8Be6IAA18L76HD9xV6vbyUGL8vgflYGDWUv1yp/bdR/1lpmbdN0K3RAfgRNMOqn1WLNDy6g1OkNMdDmpZBd5ZpiIBSBLVvMsTSk1lRCMnq8MH6rf8vk6aJNpZMNbOAvf8INpZMmbavVx3bzS2pC62kWDTVzEYCC6TNVf8qlagb/1lpmbdbbKYkKQjkKS2Svb2pg1TJqDdLkPyves5wifyBW63NVf8qlagb/1lpmbdbbK57UdTLefajNx3JTfOp76aUkDBLys8LAbyp7PawvDyBeDy6Ab8qgPHLvHlLC1aINsdRIsTGN6WSr13RNDTwIYIScLpqYIVpy3pNmDWLrfyv/HO6Ab8qgPHLvMdRILTR76a6kDyCrPa4NMdDmpZBd5ZpiIBSBLVvMsTSk1lRCMOJNpdRr1TRIsWLC6EnILTwkPaYNbOAvf8INpZMmbavVx3bzS2pC62kWDyqg6ypgDySwDBLys8vVDyLvfOcN1yv9PHYNQgLg6HLnf8w1SOq86WUvbdbbi3hzS2Svb2pg1v7WMOqn1WYWHHkTujkKS2Bn6HSwDEkNS2LGPHc9xVLAbyBTMHUv3yBm6yhvfTkFIHpvfWVGS2Uh1dVzEYGVbyqjPaUi1yvebdJqDyBgf8BwKdVzEYClPyv763JG68B7fOIND5kNKdLg1lfNx3JVfHpvfWV9xVbvbBSrbgNCK3VUdW7Ud8v8KdLg1lb1SlLC6dbbxEZCD27Ud8Ur1WLC1WpvujkKiYkKS2Srbn7W68BO1lSCbypibyv963bbDEkN1Hvi6yBk6pq81lS9MHYgKdLg1lb1SO6Ab8qgPHLvHlLC1aIWH3VzEYGVf8qlDEkNS2LGPHc9xvLrfyv/5yqWPac9xVnAPOIGS2SrbgVzEYGVbyqjPaUi1yvebB9bDEkNS2LGPHc9xvqjf8q/6HUeHlLrfyv/KdLg1lfCujkKiYkKS2Svb2pg1v7WbyqjPaUeSnkNx3JVbyqjPaUi1yvebE7UdWkUd8BjPpqrbHLjbHYGS2Svb2pg1TVzEYCqEYC8baw/byvr1TRyMH6rf8vk6InwKdVUdW7UdTLnPaYNx3R9MHNGcdjGPawkK3JVbyACfgkFbHUvfv7WbavVSnkCujkKS2pe6HDNx3JVbyACfgkFHOvmPHLibHUvfTNVbavVK57UdTLg6HLnf84Nx3RAfWSAQ3NCujkKS2SrbgJqDdLkPyves5wZMHLAM8Be6IAA18L76HD9xV6vbyUGL8vgflYGDWUv1yp/bdR/1lpmbdN0K3RAfgRNMOqn1WLNDy6g1OkNMdDmpZBd5ZpiIBSBLVvMsTSk1lRCMnq8MH6rf8vk6aJNpZMNbOAvf8INpZMmb2pC6EkWQgLnPaLqSgDCujkKPaMGS2Srbn7WMOqn1WYWH3VUdW7UdTLg6HLnf84Nx3JVbyACfgkFHlRA6OIGS2Srbn7WMOqn1WYWH3VzEYGVfHpvfWVNx3JVbyACfgkFLyBkMaSAfOpDMawV1ypgs5wLbapgQ3NTfOp76aUkDBLys8LAbyp7PawvDyBeDy6Ab8qgPHLvHlLC1aINsdRILTwnPaYNMHcN6WpC6dJ7DBYmKTR8f8q9DyJTsvLRYVhBHnR3LI6Sad4TbyqjPaUi68BO1lSCbypNDBLyDyhv6WYNP8qC1TRNDTwIYIScLpqYIVpy3pNmDWLrfyv/MdRIDyqmDBYmbyvVxpLysWLC6dRlPypg63RILTwkbavVx3bzS2pC62kWDyqg6ypgDySwDBLys8vVDyLvfOcN1yv9PHYNQgLg6HLnf8w1SOq86WUvbdbbi3hzS2Svb2pg1v7WMOqn1WYWHHkTK57UdWbGPahvDdA8Mahe63JAx3JGS2SrbgJqDdLhbapgQ3kFLOpkI8qlKdVCKYkKQjkKPaMGS2Srbn7WbyvVSnktc3VNQjkKMOqmbyvmbaIzEYCqEYGVf8qlagb8MH6rf8vk6pqkPanvSnkNx3R9QpqVMHLvHO6rf8nAbEDGS2Srbn7W68BO1lSCbypibyv963bbK57UdTLg1lfNx3JVbyACfgkFpyqjPaUc1ObCMgkF5aB+63NVf8qlK57UdTLg1lb1SO6Ab8qgPHLvHOnv1aSvfWcWH3JqDdLkPyves5wI1lRCMkhr6Ov/s5w26HLU6anT6HDGS2Srbn7W6WpC6dbbsdSNbavVMdhNbaUnPaLNsyRnfOpg18B96aJ7MywCMO9mManvMdhN68B/6pqnf8hNsyR8MaUvMdhNb8B7PaLAbypNDTVzEYGVbyqjPaUi1yvebB9bDEkNS2LGPHc9xvqjf8q/6HUeHlLrfyv/KdLg1lfCujkKiYkKS2Svb2pg1v7WbyqjPaUeSnkNx3JVbyqjPaUi1yvebE7UdWkUd8BjPpqrbHLjbHYGS2Svb2pg1TVzEYCqEYC8baw/byvr1TRUQIUr1anv1WYGKYkKQjkKS2pC6dJqDynAQdNjsdAC1WYCDdLkPyves5wnfOpgagbnPaYWH3VzEYGVbHUvfTJqDdLkPyves5wiPawCbBqnfOpgKdLnPaYCujkKS2Svb2pg1TJqDyBgf8BwKdVzEYGVf8qlDEkNS2LGPHc9xVLAbyBTMHUv3yBm6yhvfTkFL8pkMOAyPHSebdNTfOp76aUkDyUrbawkKdGCDyBeDyR/1lpmbyJN6WSr13JTsvLRYVhBHnR3LI6Sad4TbyqjPacNbOAvf8INM2pC6yJNx3JWS2pC6dfNMawVDyRkQHRvMdRC1TJGSOSrbyNWsdbg6HR7Q3fCDTVzEYCC6TNVf8qlagb/1lpmbdbbKYkKQjkKS2Svb2pg1TJqDdLkPyves5wifyBW63NVf8qlagb/1lpmbdbbK57UdTLg6HLnf8w1SlLrfyv/fgbbDEkNS2LGPHc9xvqk1lRCMgNTD2bG6HSvDyRnPaLNDEkNSgLnPaYWDyBm6dRNb2vj6aJNPa4NKdbT1lLGSgjWf8pj12VWK3Rrf8LvfTRTQ3RNbyvVMdRV6HU/DyhC1avkD27Vf8pkbHSmagbr686e6HYWHHk7QgLg6HLnf8w1SOUrbawkSnnqDdDCujkKiYkKMHRCHOqnb2RnbdNVf8pkbHSmK57UdWkUd86n18UkPaqmDZUr1anv1WLUQ3NCEYCzEYGVbavVDEkN1aB4KEJ7KyvmbdVNS2LGPHc9xWpe6HS1SlpC6dbbK57UdTLnfOpgDEkNS2LGPHc9xvqC18vkHlpe6HDGS2pC6dVzEYGVf8pkbHSmDEkNMHSgMHVGK57UdTLg1lfNx3JVbyACfgkFLyBkMaSAfOpDMawV1ypgs5wy6HL/PZ6CfWUkKdSe6ahvMlYNMOqn1WYGKTVNMHcNMyUrbawkMdR8f8q9DdDmpZBd5ZpiIBSBLVvMsTSk1lRCMgRlPypg63RNbyqnPaLNx3bzS2pC62kWDyBm6dRNb2vj6aJNPa4NKdbT1lLGSgjWf8pj12VWK3JTK57Ud8v8KdLg1lb1SOUrbawkSnkCEYCzEYGVf8pkbHSmDEkNS2LGPHc9xvqjMabvKdLg1lb1SOUrbawkSnkCujkKS2Svb2pg1v7WbyqjPaUeSnkNx3JVbyACfgkFHlLrfyv/KdDNbOAvf8INM2LrbavVMEkWQgLnPaLqSgRA18YNM2LwfypNDyvmDdNWM8qkPdf7SlSvfyhwSgVN1lSV6HDNMWVNM2LC6yJN6ypeMgR7PanCbdRzS2Svb2pg1v7W1O68fOpkSnnqs27Vf8pkbHSmagb/1lpmbdbbi3JTK57UdWkUd8BjPpqrbHLjbHYGS2Svb2pg1TVzEYCqEYC8baw/byvr1TRRbZnwKdVUdW7UdTLnPaYNx3R9MHNGcdjGPawkK3JVbyACfgkFbHUvfv7WbavVSnkCujkKS2pe6HDNx3JVbyACfgkFHOvmPHLibHUvfTNVbavVK57UdTLg6HLnf84Nx3RAfWSAQ3NCujkKS2Uh1dJqDdSe6ahvMlYNKTR8f8q9DyJTsvLRYVhBHnR3LI6Sad4TbyqjPaUi1apmbyvr18JNbOAvf8INM2pC6yJqSl7VbavVi3fTujkKS2Bn6HSwDEkNS2LGPHc9xVLAbyBTMHUv3yBm6yhvfTkFIHpvfWVGS2Uh1dVzEYClPyv763JG68B7fOIND5kNKdLg1lfNx3JVfHpvfWV9xVbvbBSrbgNCK3VUdW7UdTLk1lRCMnqC62U1S2Srbn7WbyvVSnnbDEkNS2Srbn7WbyvVSnkzEYCqEYGVbyqjPaUiPaLeHOUrbawkDEkNMOqn1WYGS2Lrfyv/HOvVfgVzEYCC6TNVbyqjPaUiPaLeHOUrbawkKYkKQjkKS2Svb2pg1TJqDdLkPyves5wifyBW63NVbyqjPaUiPaLeHOUrbawkK57UdTLg6HLnf8w1SlLrfyv/fgbbDEkNS2LGPHc9xvqk1lRCMgNTD2bG6HSvDyRkPaLNDyvmDdNWDTwC1HR71OLvKdDWsdfTsdLk1lRCMnqC62cCsTDWK3Rrf8LvfTRTQ3RNbyvVMdRV6HU/DyhC1avkD27Vf8pkbHSmagbr686e6HYWHHk7QgLg6HLnf8w1SOUrbawkSnnqDdDCujkKiYkKMHRCHOqnb2RnbdNVf8pkbHSmK57UdWkUd86n18UkPaqmDBR95yvebZSAPgNCEYCzEYGVbHUvfTJqDdLkPyves5wiPawCbBqnfOpgKynAQdNjsdAC1WYCDdLkPyves5wnfOpgagbnPaYWH3VCujkKSy6r1yLvfTJqDdNW1lpkM8q4SekqDdLkPyves5wS1WRnb2U1SO6r1yLvfTbbDEtW1lpkM8q4SeGNSOvmM8q4SgVzEYGVbOAvf8peDEkNMHSgMHVGEYGTD2JmMyne6lLrPaLNx3bzS2pe6HS1SlpC6dbbi3fNDTjUdTDNfdwN68q76ypgMEkWQgL81OhV6HSqSgJTsJkKDTRjs8RV6ahebyBkbHUND5kWcTfNDTjUdTVzEYGVPaLi1aB4DEkN1aB4KEJ7KyvmbdVNS2LGPHc9xVvmf2pkfn7WPaLi1aB4SnkCujkKPaMGSyvVHOnAQdVNQjkKS2bG6HSvfn9bDEkNDTRjs8Rj1avVMEjqSl7VPaLi1aB4i3fND/7UdWkUdTLC6Bq9Pa4Nx3R9MHNGcdjGPawkK3JVbyACfgkF3awjbHLeagbC6Bq9Pa4WH3VzEYCC6TNVPaLi1avmK3RzEYGVbOAvf8peankNx3JTD2JmM2R9PaLNxTbzSyvVHOnC1WkWDdDzEYCqEYGVbavVDEkN1aB4KEJ7KyvmbdVNS2LGPHc9xVvmf2pkfn7WbavVSnkCujkKPaMGS2pC6dJFcdVNQjkKS2bG6HSvfn9bDEkNDTRjs8R9fOb8f8q9PaLNx3bzS2pC62kWDdDzEYCqEYCC6TNW18plfykWx5kVbyACfgkF3awjbHLeagb8Pahk6HDWH3VNQjkKS2bG6HSvfn9bDEkNDTRjs8Rm6HbNx/JND/7UdWkUdTLefahibOAvf8INx3JGS2bG6HSvfgJXDTRH3Zp3L3JTs8v9fyhr6yIGDTRR5VYNDTjVbOAvf8peK3JoDdfWK57UdTLefahi1lSV6HDNx3JTDZq3LZp3DZS6D2JmM2R9PaLNDZLBIkcND/7UdTLg6HLnf84Nx3RAfWSAQ3NCujkKS2SrbgJqDdLkPyves5wZMHLAM8Be6IAA18L76HD9xV6vbyUGL8vgflYGDvUB5ZpEpdR/1lpmbdN0K3RRIgRNMOqn1WLNDZ635kkNMdDmpZBd5ZpiIBSBLVvMsTSj1HUND2JNS2Uh1BqlPypg63JTK57Ud8v8KdLg1lb1SOUrbawkSnkCD27UdTLg6HLnf84Nx3JVbyACfgkFHlRA6OIGS2Srbn7WMOqn1WYWH3VzEYGVflB7HOhC1avkDEkNDTRc3InSpdRzS2Svb2pg1v7W1O68fOpkSnnqsdRzS2Svb2pg1v7WMOqn1WYWHHkND/7UdTLhbapgQ3JqDdLkPyves5wZMHLAM8Be6IAA18L76HD9xvBn6HSwKdS5LIhBYnYNfd40DZ635kkNMdDmpZBd5ZpiIBSBLVvMsTSj1HUND2JNS2Uh1BqlPypg63JVflB7HOqg6ypgDdLefahi1yv9PHYNDTVzEYGVfyni1yvebEnAfWSAQ3NCujkKbOAC1yIGS2SrbekVfHpvfWV9xVbvbBSrbgNCK3RzEYGVf8qlagbC6dbbDEkNS2Srbn7WfynC6dbbujkKS2Srbn7WfOpm6BqkPanvSnkNx3R9QpqVMHLvHO6rf8nAbdNVf8qlagbVMHLv1yvm63bbsdS6sak96dRDu8VTK57UdTLg1lb1Slpe6HDWH3JqDdLg1lb1SOne6lLrSnkzEYGVf8qlagbnfOpgHOvVSnkNx3JVf8qlagb9fObk1OvVSnkzEYGVf8qlagbmPaU+18B963bbDEkNS2Srbn7W1HUW18v/POwA1aIWH57UdTLj1pq7PHUkankqS2Srbe7UdWkUdTLg6HLnf8w1SlR9fgbbDEkNS2R9HOhCflYzEYCqEYCAfyvi1lpkf2pkKdLg6HLnf84CujkKiYkK6WpmMlLC1O4NIyncPHUkKdVNQjkKS2pe6HDNx3JVbyACfgkFHOvmPHLibHUvfTA9MHNGcdjGPawkK3JVbyACfgkFbHUvfv7WbavVSnkCK57UdTLnPaYNx3R9MHNGcdjGPawkK3JVbyACfgkF3awjbHLeagbnPaYWH3VzEYGVHlRA6OINx3JVbyACfgkFHlRA6OIGK57UdTLjMabvDEkNMHSgMHVGEYGWfypgHlRA6Opi1Wp9SekFSBqjMabvagb/1lpmbdbbsJkKK57UdTLY1Ihr6Ov/DEkN5yqA6EGo1yqWPacGSlR9SgjhK57UdTLC186rDEkNMHSgMHVGK57UdTL/1lpmbdJqDEJzEYGVf8pkfgJqDyBgf8BwKdVzEYCC6TNVbavVDEjhK3RzEYGVPaw81gJqDdLY1Ihr6Ov/s5wW6HLY1IhCflYGSOvmM8q4SgjVfyBW63jVbHUvfv7WbavVSnkCujkKiap7fOINQjkKSyvm68tNx3JVIync1ObCMgkF6Opk3yvebyqgQ3NVbHUvfv7WbavVSnk7S2pC6djVfyBW63VzEYCqEYCC6TNVPaw81gVNQjkKSyUrbawkDEkNSyvm68q1SlRA6OpiMHSgSnn1SlLrbyB7HlSvMOqg6dbbujkKPaMGSyUrbawkDE4jK3RzEYGVf8pkfgJqDdLkPyves5wifyBW63NVMOqn1WYCujkKS2R9fgJqDyBgf8BwKdVzEYC81lSvMaUGKdLC186ragbj1pq7PHUkSnkNMHcNS2SrbgVNQjkKS2R9fn9bDEkNS2Srbe7UdWkUdTLg6HLeagbj1HcWH3JqDdLj1HczEYCqEYCqEYCAfyvi1lpkf2pkKdLg6HLeK57UdWkUd86n18UkPaqmDBR958plKdVUdW7UdTLnPaYNx3R9MHNGcdjGPawkK3JVbyACfgkFbHUvfv7WbavVSnkCujkKS2pe6HDNx3JVbyACfgkFHOvmPHLibHUvfTNVbavVK57UdTLk6HAkDEkNb2SC13Aeb2SCfBqkMabeKdLkPyves5wS1WRnb2U1SlLvQ2YWH3VCujkKS2LvQ2YNx3R/bHLeb2DGS2LvQ2Y7ceJjK57UdTLk1nqnfOpgDEkNb2SC13Aeb2SCfBqkMabeKdLkPyves5wS1WRnb2U1SlLrHlpe6HDWH3VCujkKSBR95yqWPacNx3Rc1OBVu/C71ObCMgNWfykWsEZCujkKS2RrflYNx3RAfWSAQ3NUdTbk1nqnfOpgSekFS2LrHlpe6HD7EYGW1apefOBW63fqxTLk6HAksJkKK57UdTLg6HYNx3JVIync1ObCMgkFfyn56awVKdLj1lUksdLnfOpgagbnPaYWH3jVbHUvfv7WbHUvf8wA1aIWH3jVbHUvfv7W18v/POwA1aIWH3VzEYCC6TNVf8pkK3RzEYCC6TNhDEkqDdLg6HYCD27Ud8BjPpqvfWSrfTNWbyp4bdRCfgRv1HRkQ3f7c5ZhK57UdWnv12UvPaMNKEDNx5kNS2SvbdVNQjkKMHRCHOpgf8qgKdbk1nqnfOpgDyveDyp9f2LwSgjhc5DCujkKiap7fOpC6TJGcgJqx3JVf8pkK3RzEYCAfyvi6HSg1lDGSlLrHlpe6HDNPHcNPawOMahC6df7c5ZeK57UdWnv12UvD27Ud8BjPpqvfWSrfTNVf8pksEZhUdVzEYCqEYCqEYCAfyvi1lpkf2pkKdbe6awVDyveDyq+SgVzEYCqEYCqEYG=
+<?php
+if(!defined('IN_JISHIGOU'))
+{
+    exit('invalid request');
+}
+class ModuleObject extends MasterObject
+{
+    function ModuleObject($config)
+    {
+        $this->MasterObject($config);
+        $this->Execute();
+    }
+    function Execute()
+    {
+        switch($this->Code)
+        {
+            case 'view':		      
+            case 'show':
+            {
+                $this->Show();
+                break;
+            }
+            case 'fans':
+            {
+                $this->Fans();
+                break;
+            }
+            case 'follow':
+            {
+                $this->Follow();
+                break;
+            }
+            case 'follow_new':
+            case 'follownew':
+            case 'new_follow':
+            case 'newfollow':
+            {
+                $this->FollowNew();
+                break;
+            }
+            case 'follow_del':
+            case 'followdel':
+            case 'del_follow':
+            case 'delfollow':
+            {
+                $this->FollowDel();
+                break;
+            }
+            case 'follow_show':
+            case 'followshow':
+            case 'show_follow':
+            case 'showfollow':
+            {
+                $this->FollowShow();
+                break;
+            }
+            case 'my_topic':    
+            case 'mytopic':    
+            case 'topic':
+            {
+                $this->Topic();
+                break;
+            }
+            case 'my_friend_topic':
+            case 'myfriendtopic':
+            {
+                $this->MyFriendTopic();
+                break;
+            }
+            case 'my_favorite':
+            case 'myfavorite':
+            {
+                $this->MyFavorite();
+                break;
+            }
+            case 'favorite_my':
+            case 'favoritemy':
+            {
+                $this->FavoriteMy();
+                break;
+            }
+            case 'my_comment':
+            case 'mycomment':
+            {
+                $this->MyComment();
+                break;
+            }
+            case 'comment_my':
+            case 'commentmy':
+            {
+                $this->CommentMy();
+                break;
+            }
+            case 'at_my':
+            case 'atmy':
+            {
+                $this->AtMy();
+                break;
+            }
+            case 'my_pm':
+            case 'mypm':
+            case 'pm':
+            case 'pm_sent':
+            case 'pmsent':
+            {
+                $this->PmList();
+                break;
+            }
+            case 'pm_new':
+            case 'pmnew':
+            {
+                $this->PmNew();
+                break;
+            }
+            default :
+            {
+                $this->Code = '';
+                $this->Main();
+                break;
+            }
+        }
+    }
+    function Main()
+    {
+        api_output('api is ok');
+    }
+    function Show()
+    {
+        $uid = max(0,(int) ($this->Inputs['uid'] ?$this->Inputs['uid'] : $this->user['uid']));
+        $user = $this->_init_user($uid);
+        api_output($user);
+    }
+    function Fans()
+    {
+        $uid = max(0,(int) ($this->Inputs['uid'] ?$this->Inputs['uid'] : $this->user['uid']));
+        $user = $this->_init_user($uid);
+        $page_arr = $this->_page($user['fans_count']);
+        $p = array(
+            'fields'=>'uid',
+            'count'=>$page_arr[count],
+            'limit'=>" {$page_arr[offset]},{$page_arr[count]} ",
+            'buddyid'=>$user['uid'],
+        );
+        $uids = Load::model('buddy')->get_ids($p);
+        $return = array();
+        if($uids) {
+            $return = $page_arr;
+            $return['users'] = $this->_user($uids);
+        }
+        api_output($return);
+    }
+    function Follow()
+    {
+        $uid = max(0,(int) ($this->Inputs['uid'] ?$this->Inputs['uid'] : $this->user['uid']));
+        $user = $this->_init_user($uid);
+        $page_arr = $this->_page($user['follow_count']);
+        $p = array(
+            'fields'=>'buddyid',
+            'count'=>$page_arr[count],
+            'limit'=>" {$page_arr[offset]},{$page_arr[count]} ",
+            'uid'=>$user['uid'],
+        );
+        $uids = Load::model('buddy')->get_ids($p);
+        $return = array();
+        if($uids) {
+            $return = $page_arr;
+            $return['users'] = $this->_user($uids);
+        }
+        api_output($return);
+    }
+    function FollowNew()
+    {
+        $uid = max(0,(int) $this->Inputs['uid']);
+        $user = $this->_init_user($uid);
+        if($user['uid'] != $this->user['uid']) {
+            $rets = buddy_add($user['uid'],$this->user['uid']);
+            if($rets &&$rets['error']) {
+                api_error($rets['error']);
+            }
+        }
+        api_output('follownew is ok');
+    }
+    function FollowDel()
+    {
+        $uid = max(0,(int) $this->Inputs['uid']);
+        $user = $this->_init_user($uid);
+        if($uid != $this->user['uid']) {
+        buddy_del($uid,$this->user['uid']);
+        api_output('followdel is ok');
+    }
+    }
+    function FollowShow()
+    {
+        $source_id = max(0,(int) ($this->Inputs['source_id'] ?$this->Inputs['source_id'] : $this->user['uid']));
+        if(!$source_id) {
+            api_error('source_id is empty',107);
+        }
+        $source_user = $this->_user($source_id);
+        if(!$source_user) {
+            api_error('source_id is invalid',108);
+        }
+        $target_id = max(0,(int) ($this->Inputs['target_id']));
+        if(!$target_id) {
+            api_error('target_id is empty',109);
+        }
+        $target_user = $this->_user($target_id);
+        if($source_id==$target_id ||!$target_user) {
+            api_error('target_id is invalid',110);
+        }
+        $return = array();
+        $return['source'] = array(
+            'uid'=>$source_user['uid'],
+            'username'=>$source_user['username'],
+            'nickname'=>$source_user['nickname'],
+            'following'=>false,
+            'followed_by'=>false,
+        );
+        $return['target'] = array(
+            'uid'=>$target_user['uid'],
+            'username'=>$target_user['username'],
+            'nickname'=>$target_user['nickname'],
+            'following'=>false,
+            'followed_by'=>false,
+        );
+        $row = Load::model('buddy')->info($target_id,$source_id);
+        if($row) {
+            $return['target']['followed_by'] = $return['source']['following'] = true;
+        }
+        $row = Load::model('buddy')->info($source_id,$target_id);
+        if($row) {
+            $return['target']['following'] = $return['source']['followed_by'] = true;
+        }
+        api_output($return);
+    }
+    function Topic()
+    {
+        $uid = max(0,(int) ($this->Inputs['uid'] ?$this->Inputs['uid'] : $this->user['uid']));
+        $user = $this->_init_user($uid);
+        $sql_wheres = array();
+        $sql_wheres[] = "`uid`='{$uid}'";
+        $sql_wheres[] = "`type` IN('first','forward','both')";
+        $id_max = max(0,(int) $this->Inputs['id_max']);
+        if($id_max) {
+            $sql_wheres[] = "`tid`<='$id_max'";
+        }
+        $id_min = max(0,(int) $this->Inputs['id_min']);
+        if($id_min) {
+            $sql_wheres[] = "`tid`>'$id_min'";
+        }
+        $sql_where = " where ".implode(" and ",$sql_wheres);
+            $sql = "select count(*) as count from ".TABLE_PREFIX."topic $sql_where";
+            $row = $this->DatabaseHandler->FetchFirst($sql);
+            $return = array();
+            if($row['count']) {
+                $return = $this->_page($row['count']);
+                $return['topics'] = $this->_topic(" $sql_where order by `tid` desc limit {$return[offset]},{$return[count]} ");
+            }
+            api_output($return);
+    }
+    function MyFriendTopic()
+    {
+        $uid = max(0,(int) $this->user['uid']);
+        $user = $this->_init_user($uid);
+        $uids = get_buddyids($uid,$this->Config['topic_myhome_time_limit']);
+        $uids[$uid] = $uid;
+        $sql_wheres = array();
+        $sql_wheres[] = "`type` IN('first','forward','both')";
+        if($uids) {
+            $sql_wheres[] = "`uid` in ('".implode("','",$uids)."')";
+        }
+        if ($topic_myhome_time_limit >0) {
+            $sql_wheres[] = "`dateline`>'{$topic_myhome_time_limit}'";
+        }
+        $sql_where = ($sql_wheres ?" where ".(implode(" and ",$sql_wheres)) : null);
+        $row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from ".TABLE_PREFIX."topic $sql_where ");
+        $return = array();
+        if($row['count']) {
+            $return = $this->_page($row['count']);
+            $sql_where .= " order by `tid` desc limit {$return[offset]},{$return[count]} ";
+            $return['topics'] = $this->_topic($sql_where);
+        }
+        api_output($return);
+    }
+    function MyFavorite()
+    {
+        $uid = max(0,(int) $this->user['uid']);
+        $user = $this->_init_user($uid);
+        $return = array();
+        $row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from `".TABLE_PREFIX."topic_favorite` TF where TF.uid='{$uid}'");
+        if($row['count'])
+        {
+            $return = $this->_page($row['count']);
+            $sql = "select TF.dateline as favorite_time , T.* from `".TABLE_PREFIX."topic_favorite` TF left join `".TABLE_PREFIX."topic` T on T.tid=TF.tid where TF.uid='{$uid}' order by TF.id desc limit {$return['offset']},{$return['count']}";
+            $query = $this->DatabaseHandler->Query($sql);
+            $topic_list = array();
+            while (false != ($row = $query->GetRow()))
+            {
+                if($row['tid']<1) {
+                    continue;
+                }
+                $row['favorite_time'] = my_date_format2($row['favorite_time']);
+                $row = $this->TopicLogic->Make($row);
+                $topic_list[] = $this->_process_topic($row);
+            }
+            $return['topics'] = $topic_list;
+        }
+        api_output($return);
+    }
+    function FavoriteMy()
+    {
+        $uid = max(0,(int) $this->user['uid']);
+        $user = $this->_init_user($uid);
+        $return = array();
+        $row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from `".TABLE_PREFIX."topic_favorite` TF where TF.tuid='{$uid}'");
+        if($row['count'])
+        {
+            $return = $this->_page($row['count']);
+            $query = $this->DatabaseHandler->Query("select TF.dateline as favorite_time , TF.uid as fuid , T.* from `".TABLE_PREFIX."topic_favorite` TF left join `".TABLE_PREFIX."topic` T on T.tid=TF.tid where TF.tuid='{$uid}' order by TF.id desc limit {$return['offset']},{$return['count']}");
+            while (false != ($row = $query->GetRow()))
+            {
+                if($row['tid']<1) {
+                    continue;
+                }
+                $row['favorite_time'] = my_date_format2($row['favorite_time']);
+                $row = $this->TopicLogic->Make($row);
+                $row['favorite_members'] = $this->TopicLogic->GetMember($row['fuid'],"`uid`,`ucuid`,`username`,`nickname`,`face_url`,`face`,`validate`");
+                $topic_list[] = $this->_process_topic($row);
+            }
+            $return['topics'] = $topic_list;
+        }
+        api_output($return);
+    }
+function MyComment()
+{
+$uid = max(0,(int) $this->user['uid']);
+$user = $this->_init_user($uid);
+$return = array();
+$row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from ".TABLE_PREFIX."topic where `uid` = '$uid' and `type` in ('both','reply')");
+if($row['count'])
+{
+$return = $this->_page($row['count']);
+$return['topics'] = $this->_topic(" where `uid` = '$uid' and `type` in ('both','reply') order by `tid` desc limit {$return['offset']},{$return['count']} ");
+}
+api_output($return);
+}
+function CommentMy()
+{
+$uid = max(0,(int) $this->user['uid']);
+$user = $this->_init_user($uid);
+$return = array();
+$row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from ".TABLE_PREFIX."topic where `touid`='{$uid}' and `type` in ('both','reply') ");
+if($row['count'])
+{
+$return = $this->_page($row['count']);
+$return['topics'] = $this->_topic(" where `touid`='{$uid}' and `type` in ('both','reply') order by `tid` desc limit {$return['offset']},{$return['count']} ");
+}
+api_output($return);
+}
+function AtMy()
+{
+$uid = max(0,(int) $this->user['uid']);
+$user = $this->_init_user($uid);
+$return = array();
+$sql = "select * from `".TABLE_PREFIX."topic_mention` where `uid`='{$uid}'";
+$query = $this->DatabaseHandler->Query($sql);
+while (false != ($row = $query->GetRow()))
+{
+$topic_ids[$row['tid']] = $row['tid'];
+}
+$topic_ids_count = count($topic_ids);
+if($topic_ids_count)
+{
+$return = $this->_page($topic_ids_count);
+$return['topics'] = $this->_topic(" where `tid` in ('".implode("','",$topic_ids)."') order by `tid` desc limit {$return['offset']},{$return['count']} ");
+}
+api_output($return);
+}
+function PmListBak()
+{
+$user = $this->_init_user(max(0,(int) $this->user['uid']));
+$folder = ('outbox'== $this->Inputs['folder'] ?'outbox': 'inbox');
+$wheres = array(
+" p.`msgtoid`='{$user['uid']}' ",
+" p.`folder`='{$folder}' ",
+" p.`delstatus`!='2' ",
+);
+$id_max = max(0,(int) $this->Inputs['id_max']);
+if($id_max) {
+$wheres[] = " p.`pmid`<='{$id_max}' ";
+}
+$id_min = max(0,(int) $this->Inputs['id_min']);
+if($id_min) {
+$wheres[] = " p.`pmid`>'{$id_min}' ";
+}
+$uid = max(0,(int) $this->Inputs['uid']);
+if($uid >0) {
+$wheres[] = " p.`msgfromid`='{$uid}' ";
+}
+if('newpm'==$this->Inputs['filter']) {
+$wheres[] = " p.`new`>0 ";
+}
+$sql_where = ($wheres ?" WHERE ".implode(" AND ",$wheres) : '');
+$sql_order = " ORDER BY p.`pmid` DESC ";
+$return = array();
+$row = $this->DatabaseHandler->FetchFirst("SELECT count(*) AS `count` FROM `".TABLE_PREFIX."pms` p $sql_where ");
+if($row['count']) {
+$return = $this->_page($row['count']);
+$sql_limit = " LIMIT {$return['offset']}, {$return['count']} ";
+$query = $this->DatabaseHandler->Query("SELECT p.* FROM `".TABLE_PREFIX."pms` p $sql_where $sql_order $sql_limit ");
+$pm_list=array();
+while($row=$query->GetRow()) {
+$row['id'] = $row['pmid'];
+$row['send_time'] = my_date_format($row['dateline'],"Y-m-d H:i");
+$row['user'] = $row['msgto'];
+$row['user_id'] = $row['msgtoid'];
+$row['nickname'] = $row['msgnickname'];
+$pm_list[]=$row;
+}
+$return['pms'] = $pm_list;
+}
+api_output($return);
+}
+function PmList() {
+$user = $this->_init_user(max(0,(int) $this->user['uid']));
+$uid = max(0,(int) $this->Inputs['uid']);
+$_page = $this->_page();
+$page = array(
+'per_page_num'=>$_page['count'],
+);
+$PmLogic = Load::logic('pm',1);
+$info = array();
+$count = 0;
+$rets = array();
+if($uid <1) {
+$info = $PmLogic->getPmList('inbox',$page,$user['uid']);
+}else {
+$info = $PmLogic->getHistory($user['uid'],$uid,$page);
+}
+if($info) {
+$count = $info['page_arr']['total_record'];
+if($count >0) {
+$rets = $this->_page($count);
+$pms = array();
+foreach($info['pm_list'] as $row) {
+$pms[] = $row;
+}
+$rets['pms'] = $pms;
+}
+}
+api_output($rets);
+}
+function PmNew()
+{
+$uid = max(0,(int) $this->user['uid']);
+$user = $this->_init_user($uid);
+$text = trim(strip_tags($this->Inputs['text']));
+$text = cutstr($text,300);
+$to_user = trim(strip_tags($this->Inputs['to_user']));
+$PmLogic = Load::logic('pm',1);
+$post = array(
+'to_user'=>$to_user,
+'message'=>$text,
+);
+$ret = $PmLogic->pmSend($post,$user['uid'],$user['username'],$user['nickname']);
+if($ret) {
+if(1 == $ret) {
+api_error('text is empty',111);
+}elseif (2 == $ret) {
+api_error('to_user is empty',112);
+}elseif (3 == $ret) {
+api_error('to_user is invalid',113);
+}else {
+api_error($ret,114);
+}
+}
+api_output('send is ok');
+}
+}
+
+?>

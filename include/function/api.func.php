@@ -1,3 +1,138 @@
-<?php // This file is protected by copyright law & provided under license. Copyright(C) 2005-2099 www.cenwor.com, All rights reserved.
-$OOO0O0O00=__FILE__;$OOO000000=urldecode('%74%68%36%73%62%65%68%71%6c%61%34%63%6f%5f%73%61%64%66%70%6e%72');$OO00O0000=4632;$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$O0O0000O0='OOO0000O0';eval(($$O0O0000O0('JE9PME9PMDAwMD0kT09PMDAwMDAwezE3fS4kT09PMDAwMDAwezEyfS4kT09PMDAwMDAwezE4fS4kT09PMDAwMDAwezV9LiRPT08wMDAwMDB7MTl9O2lmKCEwKSRPMDAwTzBPMDA9JE9PME9PMDAwMCgkT09PME8wTzAwLCdyYicpOyRPTzBPTzAwME89JE9PTzAwMDAwMHsxN30uJE9PTzAwMDAwMHsyMH0uJE9PTzAwMDAwMHs1fS4kT09PMDAwMDAwezl9LiRPT08wMDAwMDB7MTZ9OyRPTzBPTzAwTzA9JE9PTzAwMDAwMHsxNH0uJE9PTzAwMDAwMHswfS4kT09PMDAwMDAwezIwfS4kT09PMDAwMDAwezB9LiRPT08wMDAwMDB7MjB9OyRPTzBPTzAwME8oJE8wMDBPME8wMCwxMjYyKTskT08wME8wME8wPSgkT09PMDAwME8wKCRPTzBPTzAwTzAoJE9PME9PMDAwTygkTzAwME8wTzAwLDM4MCksJ0pSZEVaQnkyRFNLc2NVdXhZTDM1SXBhSE02UDFmYlFpTkFUL1Z2OFdHQzArNzltcmpoZ2Vrbk9sNHdvenRxRlg9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));return;?>
-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
+<?php
+if(!defined('IN_JISHIGOU'))
+{
+    exit('invalid request');
+}
+function api_output($result,$status='',$code=0)
+{
+    $outputs = array();
+    if($status)
+    {
+        $outputs['status'] = $status;
+        $outputs[$status] = true;
+    }
+    if($code)
+    {
+        $outputs['code'] = $code;
+    }
+    $outputs['result'] = $result;
+    $outputs = array_iconv($GLOBALS['_J']['charset'],'utf-8',$outputs);
+    ob_clean();
+    if('json'==API_OUTPUT)
+    {
+        header("Content-type: text/html;charset=utf-8");
+        echo json_encode($outputs);
+    }
+    elseif('serialize_base64'==API_OUTPUT)
+    {
+        header("Content-type: text/html;charset=utf-8");
+        echo base64_encode(serialize($outputs));
+    }
+    else
+    {
+        header("Content-type: application/xml;charset=utf-8");
+        echo xml_serialize($outputs);
+    }
+}
+function api_error($msg,$code=0,$halt=true)
+{
+    api_output($msg,'error',$code);
+    $halt &&exit;
+}
+if(!function_exists('xml_unserialize'))
+{
+    function xml_unserialize(&$xml,$isnormal = FALSE) {
+        $xml_parser = new XML($isnormal);
+        $data = $xml_parser->parse($xml);
+        $xml_parser->destruct();
+        return $data;
+    }
+}
+if(!function_exists('xml_serialize'))
+{
+    function xml_serialize($arr,$htmlon = false,$isnormal = false,$level = 1)
+    {
+        $s = ($level == 1 ?"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\r\n<root>\r\n": '');
+        $space = str_repeat("\t",$level);
+        foreach($arr as $k =>$v)
+        {
+            if(!is_array($v))
+            {
+                $html = ($htmlon ?true : (false!==strpos($v,'</')));
+                $s .= $space.($isnormal ?"<$k>": "<item id=\"$k\">").($html ?'<![CDATA[': '').$v.($html ?']]>': '').($isnormal ?"</$k>": "</item>")."\r\n";
+            }
+            else
+            {
+                $s .= $space.($isnormal ?"<$k>": "<item id=\"$k\">")."\r\n".xml_serialize($v,$htmlon,$isnormal,$level +1).$space.($isnormal ?"</$k>": "</item>")."\r\n";
+            }
+        }
+        $s = preg_replace("/([\x01-\x08\x0b-\x0c\x0e-\x1f])+/",' ',$s);
+        return ($level == 1 ?$s."</root>": $s);
+    }
+}
+class XML {
+    var $parser;
+    var $document;
+    var $stack;
+    var $data;
+    var $last_opened_tag;
+    var $isnormal;
+    var $attrs = array();
+    var $failed = FALSE;
+    function __construct($isnormal) {
+        $this->XML($isnormal);
+    }
+    function XML($isnormal) {
+        $this->isnormal = $isnormal;
+        $this->parser = xml_parser_create('ISO-8859-1');
+        xml_parser_set_option($this->parser,XML_OPTION_CASE_FOLDING,false);
+        xml_set_object($this->parser,$this);
+        xml_set_element_handler($this->parser,'open','close');
+        xml_set_character_data_handler($this->parser,'data');
+    }   
+    function destruct() {
+        xml_parser_free($this->parser);
+    }
+    function parse(&$data) {
+        $this->document = array();
+        $this->stack	= array();
+        return xml_parse($this->parser,$data,true) &&!$this->failed ?$this->document : '';
+    }
+    function open(&$parser,$tag,$attributes) {
+        $this->data = '';
+        $this->failed = FALSE;
+        if(!$this->isnormal) {
+            if(isset($attributes['id']) &&!is_string($this->document[$attributes['id']])) {
+                $this->document  = &$this->document[$attributes['id']];
+            }else {
+                $this->failed = TRUE;
+            }
+        }else {
+            if(!isset($this->document[$tag]) ||!is_string($this->document[$tag])) {
+                $this->document  = &$this->document[$tag];
+            }else {
+                $this->failed = TRUE;
+            }
+        }
+        $this->stack[] = &$this->document;
+        $this->last_opened_tag = $tag;
+        $this->attrs = $attributes;
+    }
+    function data(&$parser,$data) {
+        if($this->last_opened_tag != NULL) {
+            $this->data .= $data;
+        }
+    }
+    function close(&$parser,$tag) {
+        if($this->last_opened_tag == $tag) {
+            $this->document = $this->data;
+            $this->last_opened_tag = NULL;
+        }
+        array_pop($this->stack);
+        if($this->stack) {
+            $this->document = &$this->stack[count($this->stack)-1];
+        }
+    }
+}
+
+?>

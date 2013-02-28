@@ -1,0 +1,72 @@
+三、（发布/评论/转发）微博(api.php?mod=topic&code=add)
+1、HTTP请求方式
+    GET/POST
+
+2、是否需要登录
+    true
+3、支持格式
+    XML/JSON/SERIALIZE_BASE64
+4、请求参数
+参数    必选    类型及范围  说明
+__API__[charset]    false   utf-8/gbk   输入内容的编码，默认为utf-8 
+__API__[output]     false   xml/json/serialize_base64   内容返回时的格式，默认为xml
+__API__[app_key]    true    int         申请应用时分配的AppKey
+__API__[app_secret] true    string      申请应用时分配的AppSecret
+__API__[username]   true    string      网站用户的用户名
+__API__[password]   true    string      网站用户密码的加密字串，生成格式为：md5(用户名.md5(密码))
+mod                 true    topic
+code                true    add
+content true        string  微博内容
+totid               false   int         (评论/转发)微博的ID，默认为空
+type                false   string，first/reply/forward/both    默认为first(原创微博)，reply(评论微博)，forward(转发微博)，both(即评论又转发)
+
+5、注意事项
+content参数的长度限制为250个字节（GBK编码下，一个汉字相当于两字节）
+type参数只有在指定totid时才生效，默认为first(原创微博)
+
+6、返回结果
+XML示例
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item id="result">
+		<item id="tid">185</item>
+	<item id="uid">1</item>
+	<item id="username">admin</item>
+	<item id="content">分享图片</item>
+	<item id="replys">0</item>
+	<item id="forwards">0</item>
+	<item id="totid">0</item>
+	<item id="type">first</item>
+	<item id="addtime">1298596723</item>
+	<item id="from_string">来自网站</item>
+	<item id="image_small">http://192.168.1.234/www.jishigou.com/./images/topic/5/34/20_s.jpg</item>
+	<item id="image_original">http://192.168.1.234/www.jishigou.com/./images/topic/5/34/20_o.jpg</item>
+	<item id="nickname">admin</item>
+	<item id="face">http://192.168.1.234/www.jishigou.com/./images/face/c/98/1_s.jpg</item>
+	<item id="validate">0</item>
+	<item id="face_original">http://192.168.1.234/www.jishigou.com/./images/face/c/98/1_b.jpg</item>
+</item>
+	<item id="charset">utf-8</item>
+</root>
+JSON示例
+无
+SERIALIZE_BASE64示例
+无
+字段说明 - result
+tid:微博ID
+uid:用户ID
+username:用户名
+nickname:用户昵称
+face:用户小头像
+face_ original:用户大头像
+validate:用记认证
+content:微博内容
+replys:回复数
+forwards:转发数
+addtime:发布时间
+totid:回复的微博ID
+type:微博的类型，first(原创)/reply(评论)/forward(转发)/both(即评论又转发)
+from_string:来自哪里
+7、其他
+无
+

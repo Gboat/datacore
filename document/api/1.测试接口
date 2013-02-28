@@ -1,0 +1,38 @@
+一、测试接口(api.php?mod=test&code=test)
+
+1、HTTP请求方式
+GET/POST
+2、是否需要登录
+false
+3、支持格式
+XML/JSON/SERIALIZE_BASE64
+4、请求参数
+参数    必选    类型及范围  说明
+__API__[charset]    false   utf-8/gbk   输入内容的编码，默认为utf-8
+__API__[output]     false   xml/json/serialize_base64   内容返回时的格式，默认为xml
+__API__[app_key]    true    int         申请应用时分配的AppKey
+__API__[app_secret] true    string      申请应用时分配的AppSecret
+__API__[username]   false   string      网站用户的用户名
+__API__[password]   false   string      网站用户密码的加密字串，生成格式为：md5(用户名.md5(密码))
+mod                 true    test        
+code                false   test
+
+5、注意事项
+无
+6、返回结果
+XML示例
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <item id="result">api is ok</item>
+    <item id="charset">utf-8</item>
+</root>
+
+JSON示例
+    {"result":"api is ok","charset":"utf-8"}
+SERIALIZE_BASE64示例
+    YToyOntzOjY6InJlc3VsdCI7czo5OiJhcGkgaXMgb2siO3M6NzoiY2hhcnNldCI7czo1OiJ1dGYtOCI7fQ==
+字段说明
+    result:返回的内容
+    charset:返回内容的编码格式
+7、其他
+无

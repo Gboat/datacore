@@ -1,0 +1,35 @@
+DataCore API说明文档
+网站API地址
+http://您网站的地址/api.php 
+常见错误信息的返回结果
+错误代码（code）    错误提示(result)    说明
+-6  register is invalid Email 已经存在了
+-5  register is invalid Email 不允许注册
+-4  register is invalid Email 不合法
+-3  register is invalid 用户名或者昵称已经存在了
+-2  register is invalid 用户名或者昵称不允许注册
+-1  register is invalid 用户名或者昵称不合法
+0   register is invalid 注册时发生未知错误
+1   mod is invalid  模块错误
+10  inputs is empty 内容输入为空
+11  db is invalid   数据库连接错误
+12  ip is invalid   请求的IP被禁止访问啦
+13  app_key or app_secret is invalid    AppKey可AppSecret错误
+14  app status is invalid   应用正在审核中
+15  username or password is invalid 用户名或密码错误
+16  api request_times_day is invalid    当天请求数超过限制
+100 uid is empty    用户ID为空
+101 uid is invalid  用户ID错误
+102 id is empty ID为空
+103 id is invalid   ID错误
+104 content is empty    微博内容为空
+105 【通知】内容发布失败    微博发布失败信息
+106 微博删除失败信息    
+107 source_id is empty  source_id为空
+108 source_id is invalid    source_id 错误
+109 target_id is empty  target_id 为空
+110 target_id is invalid    target_id 错误
+111 text is empty   私信内容为空
+112 to_user is empty    私信接收人为空
+113 to_user is invalid  私信接收人错误
+

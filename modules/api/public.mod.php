@@ -1,3 +1,88 @@
-<?php // This file is protected by copyright law & provided under license. Copyright(C) 2005-2099 www.cenwor.com, All rights reserved.
-$OOO0O0O00=__FILE__;$OOO000000=urldecode('%74%68%36%73%62%65%68%71%6c%61%34%63%6f%5f%73%61%64%66%70%6e%72');$OO00O0000=2300;$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$O0O0000O0='OOO0000O0';eval(($$O0O0000O0('JE9PME9PMDAwMD0kT09PMDAwMDAwezE3fS4kT09PMDAwMDAwezEyfS4kT09PMDAwMDAwezE4fS4kT09PMDAwMDAwezV9LiRPT08wMDAwMDB7MTl9O2lmKCEwKSRPMDAwTzBPMDA9JE9PME9PMDAwMCgkT09PME8wTzAwLCdyYicpOyRPTzBPTzAwME89JE9PTzAwMDAwMHsxN30uJE9PTzAwMDAwMHsyMH0uJE9PTzAwMDAwMHs1fS4kT09PMDAwMDAwezl9LiRPT08wMDAwMDB7MTZ9OyRPTzBPTzAwTzA9JE9PTzAwMDAwMHsxNH0uJE9PTzAwMDAwMHswfS4kT09PMDAwMDAwezIwfS4kT09PMDAwMDAwezB9LiRPT08wMDAwMDB7MjB9OyRPTzBPTzAwME8oJE8wMDBPME8wMCwxMjYyKTskT08wME8wME8wPSgkT09PMDAwME8wKCRPTzBPTzAwTzAoJE9PME9PMDAwTygkTzAwME8wTzAwLDM4MCksJ0pSZEVaQnkyRFNLc2NVdXhZTDM1SXBhSE02UDFmYlFpTkFUL1Z2OFdHQzArNzltcmpoZ2Vrbk9sNHdvenRxRlg9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));return;?>
-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
+<?php
+
+if(!defined('IN_JISHIGOU'))
+{
+    exit('invalid request');
+}
+class ModuleObject extends MasterObject
+{
+    function ModuleObject($config)
+    {
+        $this->MasterObject($config);
+        $this->Execute();
+    }
+    function Execute()
+    {
+        switch($this->Code)
+        {
+            case 'topic':
+            {
+                $this->Topic();
+                break;
+            }
+            case 'register':
+            {
+                $this->Register();
+                break;
+            }
+            default :
+            {
+                $this->Main();
+                break;
+            }
+        }
+    }
+    function Main()
+    {
+        api_output('api is ok');
+    }
+    function Topic()
+    {
+        $sql_wheres = array();
+        $sql_wheres[] = "`type` IN('first','forward','both')";
+        $id_max = max(0,(int) $this->Inputs['id_max']);
+        if($id_max) {
+            $sql_wheres[] = "`tid`<='$id_max'";
+        }
+        $id_min = max(0,(int) $this->Inputs['id_min']);
+        if($id_min) {
+            $sql_wheres[] = "`tid`>'$id_min'";
+        }
+        $sql_where = ($sql_wheres ?" where ".implode(" and ",$sql_wheres) : "");
+        $sql = "select count(*) as count from ".TABLE_PREFIX."topic $sql_where";
+        $row = $this->DatabaseHandler->FetchFirst($sql);
+        $return = array();
+        if($row['count']) {
+            $return = $this->_page($row['count']);
+            $return['topics'] = $this->_topic(" $sql_where order by `tid` desc limit {$return[offset]},{$return[count]} ");
+        }
+        api_output($return);
+    }
+    function Register()
+    {
+        $regstatus = jsg_member_register_check_status();
+        if($regstatus['error'])
+        {
+            api_error('register is close',0);
+        }
+        if($regstatus['invite_enable'])
+        {
+            if(!$regstatus['normal_enable'])
+            {
+                api_error('register is invite',0);
+            }
+        }
+        $username = $this->Inputs['username'];
+        $nickname = $this->Inputs['nickname'];
+        $password = $this->Inputs['password'];
+        $email = $this->Inputs['email'];
+        $ret = jsg_member_register($nickname,$password,$email,$username);
+        if($ret <1)
+        {
+            api_error('register is invalid',$ret);
+        }
+        api_output($ret);
+    }
+}
+
+?>

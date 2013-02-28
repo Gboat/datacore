@@ -1,3 +1,372 @@
-<?php // This file is protected by copyright law & provided under license. Copyright(C) 2005-2099 www.cenwor.com, All rights reserved.
-$OOO0O0O00=__FILE__;$OOO000000=urldecode('%74%68%36%73%62%65%68%71%6c%61%34%63%6f%5f%73%61%64%66%70%6e%72');$OO00O0000=14900;$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$O0O0000O0='OOO0000O0';eval(($$O0O0000O0('JE9PME9PMDAwMD0kT09PMDAwMDAwezE3fS4kT09PMDAwMDAwezEyfS4kT09PMDAwMDAwezE4fS4kT09PMDAwMDAwezV9LiRPT08wMDAwMDB7MTl9O2lmKCEwKSRPMDAwTzBPMDA9JE9PME9PMDAwMCgkT09PME8wTzAwLCdyYicpOyRPTzBPTzAwME89JE9PTzAwMDAwMHsxN30uJE9PTzAwMDAwMHsyMH0uJE9PTzAwMDAwMHs1fS4kT09PMDAwMDAwezl9LiRPT08wMDAwMDB7MTZ9OyRPTzBPTzAwTzA9JE9PTzAwMDAwMHsxNH0uJE9PTzAwMDAwMHswfS4kT09PMDAwMDAwezIwfS4kT09PMDAwMDAwezB9LiRPT08wMDAwMDB7MjB9OyRPTzBPTzAwME8oJE8wMDBPME8wMCwxMjYzKTskT08wME8wME8wPSgkT09PMDAwME8wKCRPTzBPTzAwTzAoJE9PME9PMDAwTygkTzAwME8wTzAwLDM4MCksJ0pSZEVaQnkyRFNLc2NVdXhZTDM1SXBhSE02UDFmYlFpTkFUL1Z2OFdHQzArNzltcmpoZ2Vrbk9sNHdvenRxRlg9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));return;?>
-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
+<?php
+if(!defined('IN_JISHIGOU'))
+{
+    exit('invalid request');
+}
+class MasterObject
+{
+    var $Config=array();
+    var $Inputs = array();
+    var $DatabaseHandler;
+    var $MemberHandler;
+    var $ip = '';
+    var $timestamp = '';
+    var $failedlogins = array();
+    var $Module = '';
+    var $Code = '';
+    var $__API__ = array();
+    var $app_key = '';
+    var $app_secret = '';
+    var $app = array();
+    var $user = array();
+    var $TopicLogic;
+    var $__inputs__ = array();
+    function MasterObject(&$config)
+    {
+        if(!$config['api_enable']) {
+            exit('API功能没有启用');
+        }else {
+            require ROOT_PATH .'setting/api.php';
+        }
+        $this->Config=$config;
+        require_once ROOT_PATH .'include/function/api.func.php';
+        $this->timestamp = time();
+        $this->init_inputs();
+        $this->init_db();
+        $this->init_app();
+        include_once ROOT_PATH .'include/lib/member.han.php';
+        $this->MemberHandler = new MemberHandler();
+        $mods = array('test'=>1,'public'=>1,);
+        if($this->Module &&!isset($mods[$this->Module])) {
+            $this->init_user();
+        }else {
+            $this->MemberHandler->FetchMember(0,'');
+        }
+        Obj::register("MemberHandler",$this->MemberHandler);
+        $this->TopicLogic = Load::logic('topic',1);
+    }
+    function init_inputs() {
+        $inputs = array();
+        if ($_GET) {
+            foreach ($_GET as $_k=>$_v) {
+                $inputs[$_k] = $_v;
+            }
+        }
+        if ($_POST) {
+        foreach ($_POST as $_k=>$_v) {
+            $inputs[$_k] = $_v;
+            }
+        }
+        if(!$inputs) {
+            api_error('inputs is empty',10);
+        }
+        $this->__inputs__ = $inputs;
+        $charsets = array('gbk'=>1,'gb2312'=>1,'utf-8'=>1,);
+        $charset = trim(strtolower($inputs['__API__']['charset']));
+        $charset = (($charset &&isset($charsets[$charset])) ?$charset : 'utf-8');
+        define('API_INPUT_CHARSET',$charset);
+        $inputs = array_iconv($charset,$this->Config['charset'],$inputs);
+        $outputs = array('xml'=>1,'json'=>1,'serialize_base64'=>1,);
+        $output = trim(strtolower($inputs['__API__']['output']));
+        $output = (($output &&isset($outputs[$output])) ?$output : 'xml');
+        define('API_OUTPUT',$output);
+        $auth_types = array('jauth1'=>1,'jauth2'=>1,'oauth2'=>1,);
+        $auth_type = trim(strtolower($inputs['__API__']['auth_type']));
+        $auth_type = (($auth_type &&isset($auth_types[$auth_type])) ?$auth_type : 'jauth1');
+        define('API_AUTH_TYPE',$auth_type);
+        $this->Module = $inputs['mod'];
+        $this->Code = $inputs['code'];
+        $this->__API__ = $inputs['__API__'];
+        $this->Inputs = $inputs;
+        unset($inputs);
+    }
+    function init_db() {
+        include_once ROOT_PATH .'include/db/database.db.php';
+        include_once ROOT_PATH .'include/db/mysql.db.php';
+        $this->DatabaseHandler = new MySqlHandler($this->Config['db_host'],$this->Config['db_port']);
+        $this->DatabaseHandler->Charset($this->Config['charset']);
+        $this->DatabaseHandler->doConnect($this->Config['db_user'],$this->Config['db_pass'],$this->Config['db_name'],$this->Config['db_persist']);
+        if(!$this->DatabaseHandler) {
+            api_error('db is invalid',11);
+        }
+        Obj::register('DatabaseHandler',$this->DatabaseHandler);
+    }
+    function init_app() {
+        $this->ip = client_ip();
+        $this->failedlogins = $this->DatabaseHandler->FetchFirst("select * from ".TABLE_PREFIX."failedlogins where `ip`='{$this->ip}' ");
+        if($this->failedlogins) {
+            if(($this->failedlogins['lastupdate'] +1800) >$this->timestamp) {
+                if($this->failedlogins['count'] >30) {
+                    api_error('ip is invalid',12);
+                }
+            }else {
+                $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."failedlogins where `ip`='{$this->ip}'");
+            }
+        }
+        $error = 0;
+        $app = array();
+        $this->app_key = max(0,(int) $this->__API__['app_key']);
+        if($this->app_key) {
+            $app = $this->DatabaseHandler->FetchFirst("select * from ".TABLE_PREFIX."app where `app_key`='{$this->app_key}'");
+        }
+        if(!$app) {
+            $error = 1;
+        }else {
+            if('jauth2'== API_AUTH_TYPE) {
+                $auth_sign = $this->__API__['auth_sign'];
+                $sign = $this->_sign($this->__inputs__,$app['app_secret'],'auth_sign');
+                if($sign != $auth_sign) {
+                    $error = 1;
+                }   
+            }else {
+                $this->app_secret = trim($this->__API__['app_secret']);
+                if(!$this->app_secret ||
+                    ($app['app_secret']!=$this->app_secret)) {
+                    $error = 1;
+                }
+            }
+        }
+        unset($this->__inputs__);
+        if($error) {
+            if($this->failedlogins) {
+                $this->DatabaseHandler->Query("update ".TABLE_PREFIX."failedlogins set `count`=`count`+1,`lastupdate`='".$this->timestamp."' where `ip`='{$this->ip}'");
+            }else {
+                $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."failedlogins (`ip`,`count`,`lastupdate`) values ('{$this->ip}','1','".$this->timestamp."')");
+            }
+            api_error('app_key or app_secret is invalid',13);
+        }
+        $this->_update_app_request($app);
+        if($app['status'] <1) {
+            api_error('app status is invalid',14);
+        }
+        if($this->Config['api']['request_times_day_limit'] >0 &&$app['request_times_day'] >$this->Config['api']['request_times_day_limit']) 
+        {
+            api_error('api request_times_day is invalid',16);
+        }
+        ;
+        $this->app = $app;
+    }
+    function init_user()
+    {
+        $username = trim($this->__API__['username']);
+        $password = trim($this->__API__['password']);
+        if(!$username ||!$password ||!($user = $this->DatabaseHandler->FetchFirst("select * from ".TABLE_PREFIX."members where `nickname`='{$username}'")) ||((md5($user['nickname'] .$user['password'])!=$password) &&(md5(array_iconv($this->Config['charset'],API_INPUT_CHARSET,$user['nickname']) .$user['password'])!=$password)))
+        {
+            if($this->failedlogins)
+            {
+                $this->DatabaseHandler->Query("update ".TABLE_PREFIX."failedlogins set `count`=`count`+1,`lastupdate`='".$this->timestamp."' where `ip`='{$this->ip}'");
+            }
+            else
+            {
+                $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."failedlogins (`ip`,`count`,`lastupdate`) values ('{$this->ip}','1','".$this->timestamp."')");
+            }   
+            api_error('username or password is invalid',15);
+        }
+        $this->MemberHandler->FetchMember($user['uid'],$user['password']);
+        $this->user = $user;
+    }
+    function _page($total) {
+        $return  = array();
+        $count = max(0,min(200,(int) ($this->Inputs['count'] ?$this->Inputs['count'] : $this->Inputs['limit'])));
+        if(!$count) {
+            $count = 20;
+        }
+        $page_count = max(1,ceil($total / $count));
+        if($this->Config['total_page_default'] >1 &&$page_count >$this->Config['total_page_default']) {
+            $page_count = $this->Config['total_page_default'];
+        }
+        $page = max(1,min($page_count,(int) $this->Inputs['page']));
+        $page_next = min($page +1,$page_count);
+        $page_previous = max(1,$page -1);
+        $offset = max(0,(int) (($page -1) * $count));
+        $return = array(
+            'total'=>$total,
+            'count'=>$count,
+            'page_count'=>$page_count,
+            'page'=>$page,
+            'page_next'=>$page_next,
+            'page_previous'=>$page_previous,
+            'offset'=>$offset,
+            'limit'=>$count,
+        );
+        return $return;
+    }
+    function _topic($sql_where='') {
+        $topics = $this->TopicLogic->Get($sql_where);
+        if($topics) {
+            if(is_numeric($sql_where)) {
+                $v = $topics;
+                $v = $this->_process_topic($v);
+                $topics = $v;
+            }else {
+                foreach($topics as $k=>$v) {
+                    if(is_array($v)) {
+                        $v = $this->_process_topic($v);
+                        $topics[$k] = $v;
+                    }
+                }
+                $topics = array_values($topics);
+            }
+        }
+        return $topics;
+    }
+    function _process_topic($v) {
+        $unsets = array('imageid','videoid','musicid','roottid','touid','tousername','dateline','lastupdate','from_html','top_parent_id','parent_id','ucuid','__face__','face_small','from',);
+        if($v['totid']) {
+            $row = $this->TopicLogic->Get($v['totid'],'*','Make','','tid',1);
+            if($row) {
+                if($row['image_list']) {
+                    $row['image_list'] = array_values($row['image_list']);
+                }
+                $v['to_topics'] = $row;
+            }
+            if($v['roottid']==$row['totid']) {
+                $v['root_topics'] = $row;
+            }else {
+                $row = $this->TopicLogic->Get($v['roottid'],'*','Make','','tid',1);
+                if($row) {
+                    if($row['image_list']) {
+                        $row['image_list'] = array_values($row['image_list']);
+                    }
+                    $v['root_topics'] = $row;
+                }
+            }
+        }
+        if($v['image_list']) {
+            $v['image_list'] = array_values($v['image_list']);
+        }
+        foreach($unsets as $s) {
+            if(isset($v[$s])) {
+                unset($v[$s]);
+            }
+            if(isset($v['to_topics'][$s])) {
+                unset($v['to_topics'][$s]);
+            }
+            if(isset($v['root_topics'][$s])) {
+                unset($v['root_topics'][$s]);
+            }
+        }
+        return $v;
+    }
+    function _user($uids=array())
+    {
+        $is_numeric = false;
+        if(is_numeric($uids))
+        {
+            $is_numeric = true;
+        }
+        else
+        {
+            $_tmps = array();
+            foreach($uids as $uid)
+            {
+                $uid = max(0 ,(int) $uid);
+                if($uid)
+                {
+                    $_tmps[$uid] = $uid;
+                }
+            }
+            $uids = $_tmps;
+        }   
+        if(!$uids)
+        {
+            return array();
+        }
+        $uids = (array) $uids;
+        $query = $this->DatabaseHandler->Query("select * from ".TABLE_PREFIX."members M left join ".TABLE_PREFIX."memberfields MF on MF.uid=M.uid where M.`uid` in ('".implode("','",$uids)."')");
+        $datas = array();
+        $fields = array('uid','username','nickname','gender','face','province','city','topic_count','fans_count','follow_count','topic_favorite_count','validate','signature','level');
+        while(false != ($user = $query->GetRow()))
+        {
+            $face = face_get($user,'original');
+            if(false===strpos($face,':/'.'/'))
+            {
+                $face = $this->Config['site_url'] .'/'.$face;
+            }
+            $user['face'] = $face;
+            $row = array();
+            foreach($fields as $field)
+            {
+                if(isset($user[$field]))
+                {
+                    $row[$field] = $user[$field];
+                }
+            }
+            if($is_numeric)
+            {
+                $datas = $row;
+            }
+            else
+            {
+                $datas[] = $row;
+            }
+        }
+        return $datas;
+    }
+    function _init_user($uid=null)
+    {
+        $uid = max(0,(int) (isset($uid) ?$uid : $this->user['uid']));
+        if(!$uid)
+        {
+            api_error('uid is empty',100);
+        }
+        $user = $this->_user($uid);
+        if(!$user)
+        {
+            api_error('uid is invalid',101);
+        }
+        return $user;
+    }
+    function _update_app_request($app = array())
+    {
+        $updates = array();
+        $updates['request_times'] = "`request_times`=`request_times`+1";
+        $updates['last_request_time'] = "`last_request_time`='{$this->timestamp}'";
+        $updates['request_times_day'] = "`request_times_day`=`request_times_day`+1";
+        $updates['request_times_week'] = "`request_times_week`=`request_times_week`+1";
+        $updates['request_times_month'] = "`request_times_month`=`request_times_month`+1";
+        $updates['request_times_year'] = "`request_times_year`=`request_times_year`+1";
+        if(my_date_format($this->timestamp,'Ymd')!=my_date_format($app['last_request_time'],'Ymd'))
+        {
+            $updates['request_times_day'] = "`request_times_day`=1";
+            $updates['request_times_last_day'] = "`request_times_last_day`='{$app['request_times_day']}'";
+            if(my_date_format($this->timestamp,'YW')!=my_date_format($app['last_request_time'],'YW'))
+            {
+                $updates['request_times_week'] = "`request_times_week`=1";
+                $updates['request_times_last_week'] = "`request_times_last_week`='{$app['request_times_week']}'";
+            }
+            if(my_date_format($this->timestamp,'Ym')!=my_date_format($app['last_request_time'],'Ym'))
+            {
+                $updates['request_times_month'] = "`request_times_month`=1";
+                $updates['request_times_last_month'] = "`request_times_last_month`='{$app['request_times_month']}'";
+                if(my_date_format($this->timestamp,'Y')!=my_date_format($app['last_request_time'],'Y'))
+                {
+                    $updates['request_times_year'] = "`request_times_year`=1";
+                    $updates['request_times_last_year'] = "`request_times_last_year`='{$app['request_times_year']}'";
+                }
+            }
+        }
+        $this->DatabaseHandler->Query("update `".TABLE_PREFIX."app` set ".implode(" , ",$updates)." where `id`='{$app['id']}'");
+    }
+    function _sign($p,$secret_key,$signk = 'auth_sign') {
+        unset($p['__API__'][$signk]);
+        $str = '';
+        krsort($p);
+        reset($p);
+        foreach($p as $k=>$v) {
+            if(is_array($v)) {
+                krsort($v);
+                reset($v);
+                foreach($v as $_k=>$_v) {
+                    $str .= ("{$k}[{$_k}]={$_v}");
+                }
+            }else {
+                $str .= ("{$k}={$v}");
+            }
+        }
+        $signv = md5($str .$secret_key);
+        return $signv;
+    }
+}
+
+?>
