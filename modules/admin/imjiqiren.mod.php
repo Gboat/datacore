@@ -1,3 +1,279 @@
-<?php // This file is protected by copyright law & provided under license. Copyright(C) 2005-2099 www.cenwor.com, All rights reserved.
-$OOO0O0O00=__FILE__;$OOO000000=urldecode('%74%68%36%73%62%65%68%71%6c%61%34%63%6f%5f%73%61%64%66%70%6e%72');$OO00O0000=15244;$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$O0O0000O0='OOO0000O0';eval(($$O0O0000O0('JE9PME9PMDAwMD0kT09PMDAwMDAwezE3fS4kT09PMDAwMDAwezEyfS4kT09PMDAwMDAwezE4fS4kT09PMDAwMDAwezV9LiRPT08wMDAwMDB7MTl9O2lmKCEwKSRPMDAwTzBPMDA9JE9PME9PMDAwMCgkT09PME8wTzAwLCdyYicpOyRPTzBPTzAwME89JE9PTzAwMDAwMHsxN30uJE9PTzAwMDAwMHsyMH0uJE9PTzAwMDAwMHs1fS4kT09PMDAwMDAwezl9LiRPT08wMDAwMDB7MTZ9OyRPTzBPTzAwTzA9JE9PTzAwMDAwMHsxNH0uJE9PTzAwMDAwMHswfS4kT09PMDAwMDAwezIwfS4kT09PMDAwMDAwezB9LiRPT08wMDAwMDB7MjB9OyRPTzBPTzAwME8oJE8wMDBPME8wMCwxMjYzKTskT08wME8wME8wPSgkT09PMDAwME8wKCRPTzBPTzAwTzAoJE9PME9PMDAwTygkTzAwME8wTzAwLDM4MCksJ0pSZEVaQnkyRFNLc2NVdXhZTDM1SXBhSE02UDFmYlFpTkFUL1Z2OFdHQzArNzltcmpoZ2Vrbk9sNHdvenRxRlg9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));return;?>
-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
+<?php
+
+if(!defined('IN_JISHIGOU'))
+{
+exit('invalid request');
+}
+class ModuleObject extends MasterObject
+{
+var $ModuleConfig = array();
+function ModuleObject($config)
+{
+$this->MasterObject($config);
+if($this->Config['imrobot'])
+{
+$this->Messager("您的网站已经整合了旧版QQ机器人，如需使用新版QQ机器人请联系官方客服",null);
+}
+$this->ModuleConfig = ConfigHandler::get('imjiqiren');
+$this->Execute();
+}
+function Execute()
+{
+ob_start();
+switch($this->Code)
+{
+case 'do_modify_setting':
+$this->DoModifySetting();
+break;
+case 'list':
+$this->DoList();
+break;
+case 'test':
+$this->DoTest();
+break;
+default:
+$this->Code = 'imjiqiren_setting';
+$this->Main();
+break;
+}
+$body = ob_get_clean();
+$this->ShowBody($body);
+}
+function Main()
+{
+$imjiqiren_config = $this->ModuleConfig;
+if(!$imjiqiren_config)
+{
+$imjiqiren_config = array
+(
+'t_enable'=>1,
+'p_enable'=>1,
+'m_enable'=>1,
+'f_enable'=>1,
+);
+ConfigHandler::set('imjiqiren',$imjiqiren_config);
+}
+$imjiqiren_config['imjiqiren_url'] = 'http:/'.'/cenwor.com/plugin.php?id=imjiqiren';
+Load::lib('form');
+$FormHandler = new FormHandler();
+$enable_radio = $FormHandler->YesNoRadio('enable',(int) $imjiqiren_config['enable']);
+$t_enable_radio = $FormHandler->YesNoRadio('t_enable',(int) $imjiqiren_config['t_enable']);
+$p_enable_radio = $FormHandler->YesNoRadio('p_enable',(int) $imjiqiren_config['p_enable']);
+$m_enable_radio = $FormHandler->YesNoRadio('m_enable',(int) $imjiqiren_config['m_enable']);
+$f_enable_radio = $FormHandler->YesNoRadio('f_enable',(int) $imjiqiren_config['f_enable']);
+$sign_update_disable_radio = $FormHandler->YesNoRadio('sign_update_disable',(int) $imjiqiren_config['sign_update_disable']);
+$qqwb_update_disable_radio = $FormHandler->YesNoRadio('qqwb_update_disable',(int) $imjiqiren_config['qqwb_update_disable']);
+$sina_update_disable_radio = $FormHandler->YesNoRadio('sina_update_disable',(int) $imjiqiren_config['sina_update_disable']);
+$reset_password_disable_radio = $FormHandler->YesNoRadio('reset_password_disable',(int) $imjiqiren_config['reset_password_disable']);
+$api_url_encode = base64_encode($this->Config['site_url'] ."/imjiqiren.php?mod=imjiqiren");
+$api_url_from = 'jishigou';
+$api_url_key = substr(md5("{$api_url_from}\t{$imjiqiren_config['imjiqiren_url']}\t{$api_url_encode}"),-12);
+$api_url_encode = urlencode($api_url_encode);
+$imjiqiren_url = "{$imjiqiren_config[imjiqiren_url]}&op=app&co=do_add&api_url_encode={$api_url_encode}&api_url_from={$api_url_from}&api_url_key={$api_url_key}";
+;
+$imjiqiren_var003 = ($imjiqiren_config[admin_qq_robots] ?'<a target="_blank" href="admin.php?mod=imjiqiren&code=test"><font color="red">您可以点此在新窗口中打开测试。</font></a>': '');
+$imjiqiren_var001 = ($imjiqiren_config['app_id'] ?'如第一次启用机器人，请点下面地址获取QQ机器人核心配置信息，并填写在右侧；留空则不更新原先的配置<br />': '');
+$imjiqiren_var002 = '';
+if($imjiqiren_config['app_id'])
+{
+$imjiqiren_var002 = "
+            <tr>
+      <td class=\"altbg1\" width=\"40%\"> 2.1、APP ID </td>
+      <td class=\"altbg2\">{$imjiqiren_config[app_id]}</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 2.2、APP KEY </td>
+      <td class=\"altbg2\">{$imjiqiren_config[app_key]}</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 2.3、QQ机器人 </td>
+      <td class=\"altbg2\">{$imjiqiren_config[qq_robots]}</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 2.4、QQ发微博格式前辍 </td>
+      <td class=\"altbg2\">{$imjiqiren_config[send_update_cmd]}<br />
+      </td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 2.5、QQ签名发微博标志 </td>
+      <td class=\"altbg2\">{$imjiqiren_config[sign_update_mark]}<br />
+      </td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> <b>3、有新微博通知管理员？</b> <br />建议您启用本功能，便于及时监控微博内容。<br />请按右侧步骤开启此功能</td>
+      <td class=\"altbg2\">
+      1）绑定您的常用QQ号，<a target=\"_blank\" href=\"index.php?mod=tools&code=imjiqiren\"><font color=\"red\">点此在新窗口中打开绑定</font></a>；<br />
+      2）在下面输入框中填入您绑定的QQ号码，并提交；<br />
+		<input name=\"admin_qq_robots\" type=\"text\" id=\"admin_qq_robots\" value=\"{$imjiqiren_config[admin_qq_robots]}\" size=\"40\" /><br />
+      3）管理员QQ设置完成，{$imjiqiren_var003}<br />
+	  </td>
+    </tr>
+";
+}
+include($this->TemplateHandler->Template('admin/header'));
+echo '<br />';
+$FORMHASH = FORMHASH;
+$ImJiqiRenHTML = "
+<form action=\"admin.php?mod=imjiqiren&code=do_modify_setting\" method=\"POST\">
+<input type=\"hidden\" name=\"FORMHASH\" value=\"{$FORMHASH}\"  />
+  <table cellspacing=\"1\" cellpadding=\"4\" width=\"100%\" align=\"center\" class=\"tableborder\">
+    <tr class=\"header\">
+      <td colspan=\"2\">参数配置</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> <b>1、开启QQ机器人功能？</b> <br />
+		如第一次启用机器人，必须填写下面的核心配置
+		</td>
+      <td class=\"altbg2\">{$enable_radio}</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> <b>2、QQ机器人核心配置</b> <br />
+        {$imjiqiren_var001}
+		<a href=\"{$imjiqiren_url}\" target=\"_blank\">【点此启用/获取机器人核心配置】</a>
+	  </td>
+      <td class=\"altbg2\"><textarea name=\"imjiqiren_config_string\" style=\"width:400px;height:60px;\"></textarea></td>
+    </tr>
+	{$imjiqiren_var002}
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> <b>4、QQ机器人提醒类型设置</b> </td>
+      <td class=\"altbg2\">只有下面开启的提醒功能，前台用户才可以设置</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 4.1、开启@我的提醒功能？ </td>
+      <td class=\"altbg2\">{$t_enable_radio}</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 4.2、开启新评论提醒功能？ </td>
+      <td class=\"altbg2\">{$p_enable_radio}</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 4.3、开启新私信提醒功能？ </td>
+      <td class=\"altbg2\">{$m_enable_radio}</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 4.4、开启新粉丝提醒功能？ </td>
+      <td class=\"altbg2\">{$f_enable_radio}</td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> <b>5、其他设置</b> </td>
+      <td class=\"altbg2\">&nbsp;<br />
+      </td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 5.1、禁止QQ签名发微博？ </td>
+      <td class=\"altbg2\">{$sign_update_disable_radio}<br />
+      </td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 5.2、禁止QQ发微博时更新到新浪？ </td>
+      <td class=\"altbg2\">{$qqwb_update_disable_radio}<br />
+      </td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 5.3、禁止QQ发微博时更新到腾讯？ </td>
+      <td class=\"altbg2\">{$sina_update_disable_radio}<br />
+      </td>
+    </tr>
+    <tr>
+      <td class=\"altbg1\" width=\"40%\"> 5.4、禁止QQ发@MM指令时修改密码？ </td>
+      <td class=\"altbg2\">{$reset_password_disable_radio}<br />
+      </td>
+    </tr>
+  </table>
+   <center>
+    <input class=\"button\" type=\"submit\" name=\"imjiqiren_submit\" value=\"提 交\">
+  </center>
+</form>
+<br />
+";
+echo $ImJiqiRenHTML;
+}
+function DoList()
+{
+;
+}
+function DoTest()
+{
+if(!$this->ModuleConfig['enable'] ||!imjiqiren_init($this->Config))
+{
+$this->Messager("请先开启QQ机器人功能","admin.php?mod=imjiqiren",10);
+}
+if(!$this->ModuleConfig['admin_qq_robots'])
+{
+$this->Messager("请先设置管理员的QQ号","admin.php?mod=imjiqiren",10);
+}
+$send_result = imjiqiren_send_message($this->ModuleConfig['admin_qq_robots'],'to_admin_robot',array('test'=>true,'username'=>'test','content'=>'后台发起的通知管理员测试，现在时间：'.date("Y-m-d H:i:s"),'topic_id'=>-1,));
+if($send_result)
+{
+$this->Messager("【{$send_result}】".('debug'==$this->Get['action'] ?imjiqiren_errors_output(false) : ''),null);
+}
+else
+{
+$this->Messager("【发送失败】".('debug'==$this->Get['action'] ?imjiqiren_errors_output(false) : ''),null);
+}
+}
+function DoModifySetting()
+{
+$check_result = $this->_imjiqirenEnvCheck();
+if($check_result)
+{
+ConfigHandler::update('imjiqiren_enable',0);
+$this->Messager($check_result,null);
+}
+$imjiqiren_config = $this->ModuleConfig;
+$imjiqiren_config_string = $this->Post['imjiqiren_config_string'];
+if ($imjiqiren_config_string)
+{
+$_tmps = unserialize(base64_decode($imjiqiren_config_string));
+if ($_tmps)
+{
+$_tmps = array_iconv('gbk',$this->Config['charset'],$_tmps);
+$app_id = (int) $_tmps['app_id'];
+if($app_id >0)
+{
+$imjiqiren_config['app_id'] = $app_id;
+$imjiqiren_config['app_key'] = $_tmps['app_key'];
+$imjiqiren_config['imjiqiren_url'] = $_tmps['imjiqiren_url'];
+$imjiqiren_config['server_url'] = $_tmps['server_url'];
+$imjiqiren_config['server_ip'] = $_tmps['server_ip'];
+$imjiqiren_config['qq_robots'] = is_numeric($_tmps['qq_robots']) ?$_tmps['qq_robots'] : 0;
+$imjiqiren_config['send_update_cmd'] = $_tmps['send_update_cmd'];
+$imjiqiren_config['sign_update_mark'] = $_tmps['sign_update_mark'];
+$imjiqiren_config['robot_id'] = (int) $_tmps['robot_id'];
+$imjiqiren_config['robot_key'] = $_tmps['robot_key'];
+$imjiqiren_config['robot_username'] = $_tmps['robot_username'];
+$imjiqiren_config['robot_password'] = $_tmps['robot_password'];
+$imjiqiren_config['robot_server_ip'] = $_tmps['robot_server_ip'];
+$imjiqiren_config['robot_server_port'] = $_tmps['robot_server_port'];
+$imjiqiren_config['robot_server_key'] = $_tmps['robot_server_key'];
+}
+}
+}
+$enable = $this->Post['enable'];
+$imjiqiren_enable = (($enable &&$imjiqiren_config['app_id']>0 &&$imjiqiren_config['app_key'] &&$imjiqiren_config['qq_robots']>10000 &&$imjiqiren_config['robot_id'] &&$imjiqiren_config['robot_key'] &&$imjiqiren_config['robot_username'] &&$imjiqiren_config['robot_server_ip'] &&$imjiqiren_config['robot_server_port'] &&$imjiqiren_config['robot_server_key']) ?1 : 0);
+$imjiqiren_config['enable'] = $imjiqiren_enable;
+if(isset($this->Post['t_enable'])) $imjiqiren_config['t_enable'] = ($this->Post['t_enable'] ?1 : 0);
+if(isset($this->Post['p_enable'])) $imjiqiren_config['p_enable'] = ($this->Post['p_enable'] ?1 : 0);
+if(isset($this->Post['m_enable'])) $imjiqiren_config['m_enable'] = ($this->Post['m_enable'] ?1 : 0);
+if(isset($this->Post['f_enable'])) $imjiqiren_config['f_enable'] = ($this->Post['f_enable'] ?1 : 0);
+$imjiqiren_config['sign_update_disable'] = ($this->Post['sign_update_disable'] ?1 : 0);
+$imjiqiren_config['admin_qq_robots'] = is_numeric($this->Post['admin_qq_robots']) ?$this->Post['admin_qq_robots'] : 0;
+ConfigHandler::set('imjiqiren',$imjiqiren_config);
+if ($imjiqiren_enable!=$this->Config['imjiqiren_enable'])
+{
+ConfigHandler::update('imjiqiren_enable',$imjiqiren_enable);
+}
+if ($imjiqiren_config['app_id'] <1 ||!$imjiqiren_config['app_key'])
+{
+$this->Messager("配置信息有误，请重新输入");
+}
+$this->Messager("修改成功");
+}
+function _imjiqirenEnvCheck()
+{
+Load::functions('imjiqiren_env');
+return imjiqiren_env();
+}
+}
+
+?>

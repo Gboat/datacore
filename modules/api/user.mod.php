@@ -330,151 +330,151 @@ class ModuleObject extends MasterObject
         }
         api_output($return);
     }
-function MyComment()
-{
-$uid = max(0,(int) $this->user['uid']);
-$user = $this->_init_user($uid);
-$return = array();
-$row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from ".TABLE_PREFIX."topic where `uid` = '$uid' and `type` in ('both','reply')");
-if($row['count'])
-{
-$return = $this->_page($row['count']);
-$return['topics'] = $this->_topic(" where `uid` = '$uid' and `type` in ('both','reply') order by `tid` desc limit {$return['offset']},{$return['count']} ");
-}
-api_output($return);
-}
-function CommentMy()
-{
-$uid = max(0,(int) $this->user['uid']);
-$user = $this->_init_user($uid);
-$return = array();
-$row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from ".TABLE_PREFIX."topic where `touid`='{$uid}' and `type` in ('both','reply') ");
-if($row['count'])
-{
-$return = $this->_page($row['count']);
-$return['topics'] = $this->_topic(" where `touid`='{$uid}' and `type` in ('both','reply') order by `tid` desc limit {$return['offset']},{$return['count']} ");
-}
-api_output($return);
-}
-function AtMy()
-{
-$uid = max(0,(int) $this->user['uid']);
-$user = $this->_init_user($uid);
-$return = array();
-$sql = "select * from `".TABLE_PREFIX."topic_mention` where `uid`='{$uid}'";
-$query = $this->DatabaseHandler->Query($sql);
-while (false != ($row = $query->GetRow()))
-{
-$topic_ids[$row['tid']] = $row['tid'];
-}
-$topic_ids_count = count($topic_ids);
-if($topic_ids_count)
-{
-$return = $this->_page($topic_ids_count);
-$return['topics'] = $this->_topic(" where `tid` in ('".implode("','",$topic_ids)."') order by `tid` desc limit {$return['offset']},{$return['count']} ");
-}
-api_output($return);
-}
-function PmListBak()
-{
-$user = $this->_init_user(max(0,(int) $this->user['uid']));
-$folder = ('outbox'== $this->Inputs['folder'] ?'outbox': 'inbox');
-$wheres = array(
-" p.`msgtoid`='{$user['uid']}' ",
-" p.`folder`='{$folder}' ",
-" p.`delstatus`!='2' ",
-);
-$id_max = max(0,(int) $this->Inputs['id_max']);
-if($id_max) {
-$wheres[] = " p.`pmid`<='{$id_max}' ";
-}
-$id_min = max(0,(int) $this->Inputs['id_min']);
-if($id_min) {
-$wheres[] = " p.`pmid`>'{$id_min}' ";
-}
-$uid = max(0,(int) $this->Inputs['uid']);
-if($uid >0) {
-$wheres[] = " p.`msgfromid`='{$uid}' ";
-}
-if('newpm'==$this->Inputs['filter']) {
-$wheres[] = " p.`new`>0 ";
-}
-$sql_where = ($wheres ?" WHERE ".implode(" AND ",$wheres) : '');
-$sql_order = " ORDER BY p.`pmid` DESC ";
-$return = array();
-$row = $this->DatabaseHandler->FetchFirst("SELECT count(*) AS `count` FROM `".TABLE_PREFIX."pms` p $sql_where ");
-if($row['count']) {
-$return = $this->_page($row['count']);
-$sql_limit = " LIMIT {$return['offset']}, {$return['count']} ";
-$query = $this->DatabaseHandler->Query("SELECT p.* FROM `".TABLE_PREFIX."pms` p $sql_where $sql_order $sql_limit ");
-$pm_list=array();
-while($row=$query->GetRow()) {
-$row['id'] = $row['pmid'];
-$row['send_time'] = my_date_format($row['dateline'],"Y-m-d H:i");
-$row['user'] = $row['msgto'];
-$row['user_id'] = $row['msgtoid'];
-$row['nickname'] = $row['msgnickname'];
-$pm_list[]=$row;
-}
-$return['pms'] = $pm_list;
-}
-api_output($return);
-}
-function PmList() {
-$user = $this->_init_user(max(0,(int) $this->user['uid']));
-$uid = max(0,(int) $this->Inputs['uid']);
-$_page = $this->_page();
-$page = array(
-'per_page_num'=>$_page['count'],
-);
-$PmLogic = Load::logic('pm',1);
-$info = array();
-$count = 0;
-$rets = array();
-if($uid <1) {
-$info = $PmLogic->getPmList('inbox',$page,$user['uid']);
-}else {
-$info = $PmLogic->getHistory($user['uid'],$uid,$page);
-}
-if($info) {
-$count = $info['page_arr']['total_record'];
-if($count >0) {
-$rets = $this->_page($count);
-$pms = array();
-foreach($info['pm_list'] as $row) {
-$pms[] = $row;
-}
-$rets['pms'] = $pms;
-}
-}
-api_output($rets);
-}
-function PmNew()
-{
-$uid = max(0,(int) $this->user['uid']);
-$user = $this->_init_user($uid);
-$text = trim(strip_tags($this->Inputs['text']));
-$text = cutstr($text,300);
-$to_user = trim(strip_tags($this->Inputs['to_user']));
-$PmLogic = Load::logic('pm',1);
-$post = array(
-'to_user'=>$to_user,
-'message'=>$text,
-);
-$ret = $PmLogic->pmSend($post,$user['uid'],$user['username'],$user['nickname']);
-if($ret) {
-if(1 == $ret) {
-api_error('text is empty',111);
-}elseif (2 == $ret) {
-api_error('to_user is empty',112);
-}elseif (3 == $ret) {
-api_error('to_user is invalid',113);
-}else {
-api_error($ret,114);
-}
-}
-api_output('send is ok');
-}
+    function MyComment()
+    {
+        $uid = max(0,(int) $this->user['uid']);
+        $user = $this->_init_user($uid);
+        $return = array();
+        $row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from ".TABLE_PREFIX."topic where `uid` = '$uid' and `type` in ('both','reply')");
+        if($row['count'])
+        {
+            $return = $this->_page($row['count']);
+            $return['topics'] = $this->_topic(" where `uid` = '$uid' and `type` in ('both','reply') order by `tid` desc limit {$return['offset']},{$return['count']} ");
+        }
+        api_output($return);
+    }
+    function CommentMy()
+    {
+        $uid = max(0,(int) $this->user['uid']);
+        $user = $this->_init_user($uid);
+        $return = array();
+        $row = $this->DatabaseHandler->FetchFirst("select count(*) as `count` from ".TABLE_PREFIX."topic where `touid`='{$uid}' and `type` in ('both','reply') ");
+        if($row['count'])
+        {
+            $return = $this->_page($row['count']);
+            $return['topics'] = $this->_topic(" where `touid`='{$uid}' and `type` in ('both','reply') order by `tid` desc limit {$return['offset']},{$return['count']} ");
+        }
+        api_output($return);
+    }
+    function AtMy()
+    {
+        $uid = max(0,(int) $this->user['uid']);
+        $user = $this->_init_user($uid);
+        $return = array();
+        $sql = "select * from `".TABLE_PREFIX."topic_mention` where `uid`='{$uid}'";
+        $query = $this->DatabaseHandler->Query($sql);
+        while (false != ($row = $query->GetRow()))
+        {
+            $topic_ids[$row['tid']] = $row['tid'];
+        }
+        $topic_ids_count = count($topic_ids);
+        if($topic_ids_count)
+        {
+            $return = $this->_page($topic_ids_count);
+            $return['topics'] = $this->_topic(" where `tid` in ('".implode("','",$topic_ids)."') order by `tid` desc limit {$return['offset']},{$return['count']} ");
+        }       
+        api_output($return);
+    }
+    function PmListBak()
+    {
+        $user = $this->_init_user(max(0,(int) $this->user['uid']));
+        $folder = ('outbox'== $this->Inputs['folder'] ?'outbox': 'inbox');
+        $wheres = array(
+            " p.`msgtoid`='{$user['uid']}' ",
+            " p.`folder`='{$folder}' ",
+            " p.`delstatus`!='2' ",
+            );
+        $id_max = max(0,(int) $this->Inputs['id_max']);
+        if($id_max) {
+            $wheres[] = " p.`pmid`<='{$id_max}' ";
+        }
+        $id_min = max(0,(int) $this->Inputs['id_min']);
+        if($id_min) {
+            $wheres[] = " p.`pmid`>'{$id_min}' ";
+        }
+        $uid = max(0,(int) $this->Inputs['uid']);
+        if($uid >0) {
+            $wheres[] = " p.`msgfromid`='{$uid}' ";
+        }
+        if('newpm'==$this->Inputs['filter']) {
+            $wheres[] = " p.`new`>0 ";
+        }
+        $sql_where = ($wheres ?" WHERE ".implode(" AND ",$wheres) : '');
+        $sql_order = " ORDER BY p.`pmid` DESC ";
+        $return = array();
+        $row = $this->DatabaseHandler->FetchFirst("SELECT count(*) AS `count` FROM `".TABLE_PREFIX."pms` p $sql_where ");
+        if($row['count']) {
+            $return = $this->_page($row['count']);
+            $sql_limit = " LIMIT {$return['offset']}, {$return['count']} ";
+            $query = $this->DatabaseHandler->Query("SELECT p.* FROM `".TABLE_PREFIX."pms` p $sql_where $sql_order $sql_limit ");
+            $pm_list=array();
+            while($row=$query->GetRow()) {
+                $row['id'] = $row['pmid'];
+                $row['send_time'] = my_date_format($row['dateline'],"Y-m-d H:i");
+                $row['user'] = $row['msgto'];
+                $row['user_id'] = $row['msgtoid'];
+                $row['nickname'] = $row['msgnickname'];
+                $pm_list[]=$row;
+            }
+            $return['pms'] = $pm_list;
+        }
+        api_output($return);
+    }
+    function PmList() {
+        $user = $this->_init_user(max(0,(int) $this->user['uid']));
+        $uid = max(0,(int) $this->Inputs['uid']);
+        $_page = $this->_page();
+        $page = array(
+            'per_page_num'=>$_page['count'],
+        );
+        $PmLogic = Load::logic('pm',1);
+        $info = array();
+        $count = 0;
+        $rets = array();
+        if($uid <1) {
+            $info = $PmLogic->getPmList('inbox',$page,$user['uid']);
+        }else {
+            $info = $PmLogic->getHistory($user['uid'],$uid,$page);
+        }
+        if($info) {
+            $count = $info['page_arr']['total_record'];
+            if($count >0) {
+                $rets = $this->_page($count);
+                $pms = array();
+                foreach($info['pm_list'] as $row) {
+                    $pms[] = $row;
+                }
+                $rets['pms'] = $pms;
+            }
+        }
+        api_output($rets);
+    }
+    function PmNew()
+    {
+        $uid = max(0,(int) $this->user['uid']);
+        $user = $this->_init_user($uid);
+        $text = trim(strip_tags($this->Inputs['text']));
+        $text = cutstr($text,300);
+        $to_user = trim(strip_tags($this->Inputs['to_user']));
+        $PmLogic = Load::logic('pm',1);
+        $post = array(
+            'to_user'=>$to_user,
+            'message'=>$text,
+        );
+        $ret = $PmLogic->pmSend($post,$user['uid'],$user['username'],$user['nickname']);
+        if($ret) {
+            if(1 == $ret) {
+                api_error('text is empty',111);
+            }elseif (2 == $ret) {
+                api_error('to_user is empty',112);
+            }elseif (3 == $ret) {
+                api_error('to_user is invalid',113);
+            }else {
+                api_error($ret,114);
+            }
+        }
+        api_output('send is ok');
+    }
 }
 
 ?>

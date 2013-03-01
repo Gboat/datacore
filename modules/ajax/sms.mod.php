@@ -1,3 +1,213 @@
-<?php // This file is protected by copyright law & provided under license. Copyright(C) 2005-2099 www.cenwor.com, All rights reserved.
-$OOO0O0O00=__FILE__;$OOO000000=urldecode('%74%68%36%73%62%65%68%71%6c%61%34%63%6f%5f%73%61%64%66%70%6e%72');$OO00O0000=6352;$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$O0O0000O0='OOO0000O0';eval(($$O0O0000O0('JE9PME9PMDAwMD0kT09PMDAwMDAwezE3fS4kT09PMDAwMDAwezEyfS4kT09PMDAwMDAwezE4fS4kT09PMDAwMDAwezV9LiRPT08wMDAwMDB7MTl9O2lmKCEwKSRPMDAwTzBPMDA9JE9PME9PMDAwMCgkT09PME8wTzAwLCdyYicpOyRPTzBPTzAwME89JE9PTzAwMDAwMHsxN30uJE9PTzAwMDAwMHsyMH0uJE9PTzAwMDAwMHs1fS4kT09PMDAwMDAwezl9LiRPT08wMDAwMDB7MTZ9OyRPTzBPTzAwTzA9JE9PTzAwMDAwMHsxNH0uJE9PTzAwMDAwMHswfS4kT09PMDAwMDAwezIwfS4kT09PMDAwMDAwezB9LiRPT08wMDAwMDB7MjB9OyRPTzBPTzAwME8oJE8wMDBPME8wMCwxMjYyKTskT08wME8wME8wPSgkT09PMDAwME8wKCRPTzBPTzAwTzAoJE9PME9PMDAwTygkTzAwME8wTzAwLDM4MCksJ0pSZEVaQnkyRFNLc2NVdXhZTDM1SXBhSE02UDFmYlFpTkFUL1Z2OFdHQzArNzltcmpoZ2Vrbk9sNHdvenRxRlg9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));return;?>
-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
+<?php
+
+if(!defined('IN_JISHIGOU'))
+{
+exit('invalid request');
+}
+class ModuleObject extends MasterObject
+{
+function ModuleObject($config)
+{
+$this->MasterObject($config);
+if(!sms_init($this->Config))
+{
+response_text('短信功能未开启');
+}
+$this->Execute();
+}
+function Execute()
+{
+ob_start();
+switch($this->Code)
+{
+case 'bind':
+$this->Bind();
+break;
+case 'bind_verify':
+$this->BindVerify();
+break;
+case 'vars':
+$this->Vars();
+break;
+case 'register_verify':
+$this->RegisterVerify();
+break;
+case 'check_register_verify':
+$this->CheckRegisterVerify();
+break;
+default:
+$this->Main();
+break;
+}
+response_text(ob_get_clean());
+}
+function Main()
+{
+response_text('正在建设中……');
+}
+function Bind()
+{
+$this->_sms_init_user();
+$sms_num = $this->Post['sms_num'];
+if(!sms_is_phone($sms_num))
+{
+js_alert_output('请输入正确的手机号码');
+}
+if(($_user_info = _sms_client_user($sms_num)) &&$_user_info['uid'] &&$_user_info['uid']!=MEMBER_ID)
+{
+js_alert_output('此手机号已经绑定了其他的帐号');
+}
+$user_info = sms_client_user(MEMBER_ID);
+$sms_has_bind = sms_has_bind($user_info);
+if($sms_has_bind)
+{
+js_alert_output('您的帐号已经绑定了手机号');
+}
+if($user_info['bind_key_time'] +60 >time())
+{
+js_alert_output('60秒内仅发送一次，请稍候再试');
+}
+$bind_key = mt_rand(100000,999999);
+$sets = array(
+'username'=>MEMBER_NAME,
+'user_im'=>$sms_num,
+'bind_key'=>$bind_key,
+'bind_key_time'=>time(),
+);
+sms_client_user_update($sets,$user_info);
+$sms_msg = "您的验证码为 {$bind_key}";
+sms_send($sms_num,$sms_msg,MEMBER_ID);
+}
+function BindVerify()
+{
+$this->_sms_init_user();
+$bind_key = $this->Post['bind_key'];
+if(!is_numeric($bind_key))
+{
+js_alert_output('请输入正确的验证码');
+}
+$user_info = sms_client_user(MEMBER_ID);
+$sms_has_bind = sms_has_bind($user_info);
+if($sms_has_bind)
+{
+js_alert_output('您的帐号已经绑定了手机号');
+}
+if($bind_key!=$user_info['bind_key'])
+{
+js_alert_output('验证码输入错误');
+}
+if($user_info['bind_key_time'] +7200 <time())
+{
+js_alert_output('验证码已经过期了，请重新发起验证');
+}
+$sets = array(
+'bind_key'=>0,
+'bind_key_time'=>0,
+'try_bind_times'=>'+1',
+'last_try_bind_time'=>time(),
+);
+sms_client_user_update($sets,$user_info);
+$this->DatabaseHandler->Query("update `".TABLE_PREFIX."members` set `phone`='{$user_info['user_im']}' where `uid`='".MEMBER_ID."'");
+$sms_msg = "您的手机号已与帐号 {$user_info['username']} 绑定成功";
+sms_send($user_info['user_im'],$sms_msg);
+}
+function Vars()
+{
+$this->_sms_init_user();
+$return = '';
+$sms_config = ConfigHandler::get('sms');
+$sms_config_new = $sms_config;
+if($sms_config['app_key'] &&$sms_config['sms_id'])
+{
+$sms_vars = array();
+if($this->Config['sms_extra_enable'])
+{
+if(!function_exists('sms_extra_vars'))
+{
+Load::functions('sms_extra');
+}
+$sms_vars = sms_extra_vars();
+}
+else 
+{
+$sms_vars = sms_client_post(array('step'=>'vars'));
+}
+if($sms_vars)
+{
+foreach($sms_vars as $k=>$v)
+{
+if($sms_config_new[$k] != $v)
+{
+$sms_config_new[$k] = $v;
+}
+}
+}
+}
+else
+{
+$sms_config_new['surplus'] = 0;
+$sms_config_new['surplus_html'] = '';
+}
+if($sms_config_new != $sms_config)
+{
+ConfigHandler::set('sms',$sms_config_new);
+$sms_config = $sms_config_new;
+}
+$get = ($this->Post['get'] ?$this->Post['get'] : $this->Get['get']);
+$return = ($sms_config[$get] ?$sms_config[$get] : $sms_config['surplus_html']);
+response_text($return);
+}
+function RegisterVerify()
+{
+if(!$this->Config['sms_register_verify_enable'])
+{
+js_alert_output('注册时短信验证功能未开启');
+}
+$sms_num = $this->Post['sms_num'];
+if(!sms_is_phone($sms_num))
+{
+js_alert_output('请输入正确的手机号码');
+}
+if(($_user_info = _sms_client_user($sms_num)) &&$_user_info['uid'])
+{
+js_alert_output('此手机号已经绑定了其他的帐号');
+}
+if($_user_info['bind_key_time'] +60 >time())
+{
+js_alert_output('60秒内仅发送一次，请稍候再试');
+}
+$bind_key = mt_rand(100000,999999);
+$sets = array(
+'user_im'=>$sms_num,
+'bind_key'=>$bind_key,
+'bind_key_time'=>time(),
+);
+sms_client_user_update($sets,$_user_info);
+$sms_msg = "您的验证码为 {$bind_key}";
+sms_send($sms_num,$sms_msg,0);
+}
+function CheckRegisterVerify()
+{
+if(!$this->Config['sms_register_verify_enable'])
+{
+js_alert_output('注册时短信验证功能未开启');
+}
+$sms_num = $this->Post['sms_num'];
+$bind_key = $this->Post['bind_key'];
+$ret = sms_check_bind_key($sms_num,$bind_key);
+if($ret)
+{
+js_alert_output($ret);
+}
+}
+function _sms_init_user()
+{
+$this->initMemberHandler();
+if(MEMBER_ID <1)
+{
+response_text('登录后才能继续操作');
+}
+}
+}
+
+?>

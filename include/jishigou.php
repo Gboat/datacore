@@ -80,9 +80,9 @@ class jishigou {
                 'GLOBALS' => 1,
                 '_GET' => 1,
                 '_POST' => 1,
-                        '_COOKIE' => 1,
+                '_COOKIE' => 1,
                 '_SERVER' => 1,
-                         '_FILES' => 1,
+                '_FILES' => 1,
         );
         foreach($GLOBALS as $k=>$v) {
             if(!isset($superglobal[$k])) {

@@ -1,3 +1,273 @@
-<?php // This file is protected by copyright law & provided under license. Copyright(C) 2005-2099 www.cenwor.com, All rights reserved.
-$OOO0O0O00=__FILE__;$OOO000000=urldecode('%74%68%36%73%62%65%68%71%6c%61%34%63%6f%5f%73%61%64%66%70%6e%72');$OO00O0000=13036;$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$O0O0000O0='OOO0000O0';eval(($$O0O0000O0('JE9PME9PMDAwMD0kT09PMDAwMDAwezE3fS4kT09PMDAwMDAwezEyfS4kT09PMDAwMDAwezE4fS4kT09PMDAwMDAwezV9LiRPT08wMDAwMDB7MTl9O2lmKCEwKSRPMDAwTzBPMDA9JE9PME9PMDAwMCgkT09PME8wTzAwLCdyYicpOyRPTzBPTzAwME89JE9PTzAwMDAwMHsxN30uJE9PTzAwMDAwMHsyMH0uJE9PTzAwMDAwMHs1fS4kT09PMDAwMDAwezl9LiRPT08wMDAwMDB7MTZ9OyRPTzBPTzAwTzA9JE9PTzAwMDAwMHsxNH0uJE9PTzAwMDAwMHswfS4kT09PMDAwMDAwezIwfS4kT09PMDAwMDAwezB9LiRPT08wMDAwMDB7MjB9OyRPTzBPTzAwME8oJE8wMDBPME8wMCwxMjYzKTskT08wME8wME8wPSgkT09PMDAwME8wKCRPTzBPTzAwTzAoJE9PME9PMDAwTygkTzAwME8wTzAwLDM4MCksJ0pSZEVaQnkyRFNLc2NVdXhZTDM1SXBhSE02UDFmYlFpTkFUL1Z2OFdHQzArNzltcmpoZ2Vrbk9sNHdvenRxRlg9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));return;?>
-SZqxcERxcERxcEneb2Sif8pj1yB/63NWHnqy3IhBHntWsdDWDT4V5kqxcZtj5eJjsTDWDTjGSZqx5eJjcERxcdNV5ktj5ktjcZtjKdLx5eRx5eJjcZtGSZtjcERxcZtjcdjV5ktjcZtjcEJjK3jW3vSVLpCdQ5SZIk9eMnpnQBvccepSfyBD556Yca6TIavuYpYrpWM4pkbEcd7luangP8AW6a9m5OjkbOqob2ByaEkWsdbRYVUZLI623ZvK3khU5VqYIpS5pBpapnA6a8BTMOLv68bGPaC+1ynm1lRhfWUkbH6lQ2vocEZgceYnU/f4u37rSgVCK3Vz68U71lUvKdLxcEJj5eRxcEJCuOpOMajGSZqxcERxcERxcdVzEYCC6TNA6yp8Pawv6dNT3IwiIkn5HknxLdDCKYkKQjkK6HACbdNTYaU/6HUeDZLv18vv6dDCujkKiYkKPaMGD3LkPyves5wE1Ow8Pab1SlU9fnqv18BT1yIWH3RtidBe1HUiPawCbdNVbyACfgkFYOqm68vWK3VUdW7UdTL9fOfNx3JTEYGNDdJNDdJNDEhVPHMNflLw1yIqHdSk6HAksaB7Pabmu8hv6WYzHdDFEYGNDdJNDdJNDEhVPHMFEYGSd3JNx2UjMa4NflLw1yIqSOUr1yqguWSv6dfF44dYw1dxos3kwPu+44dLxdqefyBmxmPSTFPfmmQi+Q3XGQPM+F34NuQW/QaB0uPa7uQPAu3oVmaK0uPamQat/FFt/uax0m8fNuT8NQ34Nu340mQmNuaUvQQPAuQzVQam8mFt/uaU7Fax+FQI0uT20mal7QQPAuPSTFPfmmaxVQaF+maU8mFt/ua8NmPQWuPfTQ3omVEVrPE/ND2G+45G+++VrPE/ND2vA1x87o/VrPE/ND2WmwWVrPEv/w2WC42Vro2rrDeVrPECNzlv/oXVmoHW+KeVmDE8vz1Cvz58vs1vTsE8TMr8Ws+WWolVro2W8G5CNS+WWoHrrSrvr6xWAs1Wmw2v+C+vVDzVrPEv/oXVmoHG++zWrPzVmDl8/0Hv/wiCNS+WWoHrrDe8TS1C8GX8vz1v/w189G/Wmw2v+C+rrDZUdTJNDdJSxdqVPHMFEYGNDdJNd5hVPHMFEYGNDdJNd5hdITJrxNkKDdJNDJVSx2Ukf8qm6ezvCGsCWDEVr1XWvK/8TMr8Ws+WWolVro28WDlvT02rrDeG+ziGN65W7zrW+02WVD1vV6/vrDECNSGtslUkf8qm6e4tYvDNse4tYvDNse4UdTJNDdJSxdqVPHMFEYGNDdJNDdJNDEjr6yvOxNkKD/7Ud8v8KdLe1HUi1HUWHlSvb2pg1TVNQjkKS2U9fkAI5IjNx3JV1HUWujkKf8pkbHSmDdLe1HUDpZncujkKiap7fOINQjkKS2LGPHc9xVnvflUA6OpgKdL9fOf71Wp71dVzEYCqEYCqEYCC6TAULIndLpSi3IYNxEZCEYCzEYGVbyACfgkF5apefOBW6HDGDmTr9FaBTEhADyAg6aMqSOvm6yp4sWRGfEq91OYq1yqWPa4WxmQdmQP9CuQ6mFaqv5jrM5z8TS1GNDItM3RGf8p8x3bC18LvQdwjP2JX1aqVxanv1aSvfTfFw4Kww0OVw+uGwMPcxdqAxm34Nu340ma4Vuax9gD71Wp71dVzEYCqEYCC6TACflUvbdNVHnRxInL1SlU9fnqebaS9PHYWH3VNSTMVHnRxInL1SnqnfOpgSnkCEYCzEYGVHOwrbyv/6pqv18BT1yINx3JjujkKSBqnfOpgDEkNMHSgMHVGK57Ud86rf8pAMONGSBqY5nUIagbibHUvfTbbDyBeDdL+x54VbTVUdW7Ud8v8Kdbi6awAM8hvSekqflpTflLgKdL+sdklK3VUdW7UdTLibHUvfv7VPnkNx3JGS2MNxeZNuTJjK57UdTLi18qkPaUvHOpmMaS763J+x3JVHlpe6HS1Sy9bujkKiYkKiYkKS2pj6yBk6pqg6HUn12YNx3Re1HUiMOhC6awkHlpe6HSibHRVMHLvKdLibHUvfThULIndLpSi3IYCujkKS2LGPHc9xVnvflUA6OpgKdsG++zWrPz8TSEvTCtTK57UdWkUdTLe1HUiMOqm68vWDEkNYOqm68vW3yBm6yhvf/Go6OpkKdbe1HcWK57UdTLe1HUiMOnVDEkNS2U9fnq/1Ow8Pab1SlUv18LibHRVMHLvHOU96dbbujkKS2U9fnqC6dJqDdLe1HUiMOqm68vWagbe1HUiPaYWH57UdTLe1HUibHUvfTJqD2U9fnq/1yvv1WLibHUvfTAULIndLpSi3IYCujkKS2U9fnqGMHUiM8vm6dJqD2U9fnqGMHUiM8vm6dNVfOneHlpe6HDCujkKS2U9fkAI5IjNx3JWSe7Ud8v8KdLe1HUiPyBeHOSC18YCEYCzEYGVfOAAf8pi1HUWDEkNSgfzEYCC6TNVfOneHlpe6HS1Slpe6HSiPakWH3VUdW7Ud8v8KdZVfOneHlpe6HS1SlUGMHSvHlLC1aIWH3VUdW7UdTLePyBg63JqDdLkPyves5w26HL1SlUGMHSvSnkzEYCC6TNVfOAAf8ICEYCzEYGVfOAAf8pibyv963JqDdLe1HUibHUvfv7WfOAAf8pibyv963bbujkKPaMGD3LePyBg6pqkPanvKYkKQjkKS2UGMHSvHlLC1aINx3RkPanvKdVzEYGVHlpe6HDNx3RAfWSAQ3NWfOAAf8pibyv963fqxTLePyBg6pqkPanvsdVzEYCe1HUiMOhC6awkHlpe6HSibHRVMHLvKdLibHUvfThULIndLpSi3IYCujkKS2UGMHSvHOne6gJqDdDtPanWD2UgMekWQgLkPyves5wE1Ow8Pab1SlUCbypibHS7SnnqsOvm6yp4sWRGfEq91OYq1lLG6HD8MOqV65ne1Hc8fOAAf8pibyv965nzS2UGMHSvHlLC1apqSgRlPaLkPEkWcdfNPypC6OAkx3fjSgJrxTDzEYCqEYCqEYCv12UvEYCzEYGVfO9CfBqePyBg63JqDdLkPyves5w26HL1SlU+PHRifOAAf8IWH57Ud8v8KdZVfO9CfBqePyBg63VUdW7UdTLkPyves5wU6HUeMabvfTNTw1QgwzmxwGTYwM0iwzmLwPoPws0ywG8swCgowwF9wsFAzzgcwGKGw4ojw6gGwMFrwsmvzzgPxySgx/2/ND2WvK/GAo+v9z28TMr8Ws+v/w2vr0zv/6+rrS7tMWDFcmuJNQa8NmPQWuPfTQ3omVE8/wEvTsEVrPE/ND2v8wzvCDlVrPEW8G5vr0zv/6+W+MWrrDeVrPECNzlv/oXVmoHW+KeVmDE8vz1Cvz58vs1vTsE8TMr8Ws+WWolVro2W8G5CNS+WWoHrrS7tMWDFxySgx/hADyAg6aMqSl7VbyACfgkFYOqm68vWagbePHLvHlpg1dbbi3qC18LvQdwjP2JX1aqVxaqkPypgS8Ur6yIqfOneSWUGMHSvx5ZWx/heb2Sr18fFwMFLwsTJwCOAw1omwMOPw6yKoKFSwGTLww0ZwCgswMFsxdqeb2Sr18fFxdqAxTJ818SefE7NxyZNP2Sv6/kWQgLkPyves5wE1Ow8Pab1SlUCbypibHS7SnnqsOvm6yp4sWRGfEq91OYq1lLG6HD8MOqV65ne1Hc8fO9CfBqePyBg65khSez8TS1GNDHWN+W8+P5W8z58/0HGrwrvAPHG++zWrPzCG1HCWPDtsOZFDThmbah7K57UdWkUdWkUdWkUdTLePyBg6pqkPanvDEkNS2LGPHc9xVbvbB7WfOAAf8pibyv963bbujkKPaMGS2UGMHSvHlLC1aINSTMVfOAAf8pibyv965kqS2U9fnqnfOpgagbePyBg6pqkPanvSnkCEYCzEYGVfOAAf8pi1HUWDEkNDmPDVQaD8mQzVQam8m3oAmPSTFPfmmQi+Q3XGQFt/uax+F3zCQ3qrFQI0uT20mal7QPSTFPfmmaxVQaF+maU8mFt/u3qGua8NmPQWZE8TS2/ND2v8wzvCDl8TS2W8G5vr0zv/6+W+MWrrDe8TS2CNzlv/oXVmoHW+KeVmDE8vz1Cvz58vs1vTsE8TMr8Ws+WWolVro2W8G5CNS+WWoHrrSrVrPEVm6X8WPHG+wHG+wHvVKfNDTwW6HLi6Wp71Bqnf8jGS2LGPHc9xVUr186C6n7WfOvk6pqnf8jWH3jTPawV6HNmfyAjxOnr6EnrbyAvfT6/1OLvxHU9fgDCsTDND/7UdTLI1lRCMkhr6Ov/DEkN5yqA6EGo1yqWPacGSlLrfyv/SgjhK57UdTLiIZq5pB7WflvmHlLrHlUC18ZWH3JqDdNGS2LGPHc9xVUr186C6n7WfOvmMpqv18BT1yIWH3J8SWUC18BibOpCM8qiPawCbdNCDdM8fOvmMpql6avT1nqTPawVHlUvb2LC18fG5IpUYVp3HkvZK3VNxeZNuTJjK57UdTLA6yLif8pebahkDEkNSBLrfyv/5yqWPac9xVBV6dNVfOAAf8pi1HUWK57UdTLibHUvfTJqDyBgf8BwKdbePyBg6pqkPanvSekF1HLif8Bm6dNhsEZhc5Zhc5Zhc5ZCsdVzEYCe1HUiMOhC6awkHlpe6HSibHRVMHLvKdLibHUvfThULIndLpSi3IYCujkK6HACbE7UdWkUdWkUdVhrMaYou8hCMTNW68qg13fCujkKSZ6rf8nDMawV1ypgDEkN18plDZ6rf8nDMawV1ypgKdVzEYC81lSvMaUGKdLe1HUiMOqm68vWDyBeDdL+x54VbTVUdW7Ud8v8Kdbi6awAM8hvSekqflpTflLgKdL+sdklK3J8STLODdM8PHUe6HYGS2U9fnqnfOpgagL+H3VCEYCzEYGVQgSzSy9qHlSA6yvrDWkqDdLy1lS93yBm6yhvfTkFaape58q3MaLC1gNTHlpe6HS1QgL+ipkTsdAC1WYCDdLe1HUibHUvfv7VPnkCujkKiYkKiYkKS2U9fnqOMHDjcEZNx3JWSe7Ud8v8KdLkHOpmMaS76pqgMaLC1gVUdW7UdTLe1HUib8BgcEJhDEkNDNkKDdJNDdJNDdJNDdJNx2LgxNkKdYVNDEhk6dR/1yBefenfD8B7bySWcpjTD2bC62LGxpjTc/IvHdDFDuatNuaY+kE8TS2W8G58/wECACsrrStNxdqk6E4UdNVSDdJtbyYNMOhAflcqHdSA12LT6eSfDTRlPaLkPEnfD/DnSpjTxW7VbBqv18BT1ypif8BVPaqqxdqk6E4UdNVSDdJtbyYNMOhAflcqHdSA12LT6eSfD/zrrD/Vm6Xv/oXVmoHv/w28TMr8Ws+WWolVroZNYBLxLVMrYBLx5TEv/1x8vz1vA1xCvol8TS1vrDEvVKXrrDVtslLVxNkKdYVtslLgxTDzEYCqEYGVfOneHl6Af/JjcTJqDdfWujkKPaMGS2Ri6awAM8hvHlSA6yvrKYkKQjkKS2U9fnqOMHDjcEDNx3JTEYGNDdJNDdJNDdJNDdJtb2DFEYGSd3JNx2LVDyU7MHUexpjTMahkM8fhHdDFDuatNuaY+FPa7uTrAuTmmmPxVu8yVmFtWgJtslLVxNkKdYVNDEhk6dR/1yBefenfD8B7bySWcvjTxW7VfBqv18BT1ypif8BVPaqqxdqk6E4UdNVSDdJtbyYNMOhAflcqHdSA12LT6eSfD/zrrD/Vm6Xv/oXVmoHv/w28TMr8Ws+WWolVroZNYBRxLVMrYBRx5TEv/1x8vz1vA1xCvol8TS1vrDEvVKXrrDVtslLVxNkKdYVtslLgxNkKD/7UdWkUdTLe1HUib8BgcEJeDEkNSgfzEYCC6TNV1pqv18BT1ypif8BVPatCEYCzEYGVfOneHl6Af/JjcgJqDdDUdTJNDdJNDdJNDdJNDEhkf/4UdNVSDdJtbyYNMOhAflcqHdSA12LT6eBfD/4Nw1gJw6drwCPjwoQRwsFAwGFYoMP3zzgiDEjrbyYFEYGSd3JNx2LVDyU7MHUexpjTMahkM8fgHdDFQgL9HOpmMaS76pqgMaLC1lktslLVxNkKdYVNDEhk6dR/1yBefenfD8B7bySWcvjTxmFtTu3wWFax+F3zCQaxVQPSTFPfmmQi+Q3XG3RJ5IqyLTqJ5IquDuaU7FPH9maB7F8H+QPDvmatNuaY+FFtT5jrbyYFEYGSd5jrb2DFEYGTujkKiYkKS2U9fnqOMHDjcEYNx3JWSe7Ud8v8KdL8HOpmMaS76pqgMaLC1gVUdW7UdTLe1HUib8BgcEJkDEkNDNkKDdJNDdJNDdJNDdJNx2LgxNkKdYVNDEhk6dR/1yBefenfD8B7bySWcpjTxTEvrDEvVKX8v+EW7GWVmSl8/wECACsrrStNxdqk6E4UdNVSDdJtbyYNMOhAflcqHdSA12LT6eSfD/wzSy6i6awAM8hvHlSA6yvri5jrbyYFEYGSd3JNx2LVDyU7MHUexpjTMahkM8fgHdDFzzgDws8iwMFrwsmvwMFLwG8swCgowwF9wsFADZRy5k6yskRy5k4NwMOewCQOwMaeo6Q9wGTaw1gJw6drzzgSxdqk6E4UdNVSxdqkf/4UdTDzEYCqEYGVfOneHl6Af/JjU3JqDdfWujkKPaMGS2U9fnq/1aYCEYCzEYGVfOneHl6Af/JjU3JqDdDUdTJNDdJNDdJNDdJNDdJNDuFt/uPNruat/FPM+eh81OwkDyUr1yqgxpjTf8pVHdDFxyDFQgLe1HUiMOnViQ3qGuQPAuaF+maU8mayAQamm5jrM/4tsO6r1WYFEYGTujkKiYkKSZ6xIVnDYpUDDEkNLVq35IARIkNzEYGVfOne3BLU5dJqDdDNDdJNDdJNDdJNDEhVPHMFEYGSd5hefyBmD2UkQahvx3b/1Ohrf/Cg6aYWxmuJVuPe0uPZ/FuJV5jrflRA1/zG+ziVmDlGCG2WWol8vz1Cvz5vAGHCGC2WmM2v/w289G/8NPXrrDevVK1vTSWVmw1v7D1W8z58/0HvrzlWvPH/ND2VmDlVmG/v8wzvmC5rrDZUdNVtsOLCb/4UdNVt6yvOxNkKdYVtYvDNsezVmDE/ND2VrPEvr6xvTMlvmSE8Tsiv9zsWm4XVmDz8TMr8Ws+Wmw2v+C+VmG1rrDeW/+EvWK/v/oXVmoHrrSGtYvDNse4UdNVScQuJNQ8J8mTXAFPSTFPfmmQi+Q3XGH7VfOneHOvViQaxVQaF+maU8W7VfOneHl6Af/JjUHlrrS7tYvDFEYGSd5s/ND28WDWVm++v8wzvCDlVrPE/ND2WmwWVrPEv/w2WC42Vro2/ND28TS6JwGFYwMTjwsONzzgcwsONwsgPwGovwC3OwMTjwG8swCgowwF9wsFAoMdPwwFvzzgcwMFrw6gGwsTso6OToKoFwzOmwGovwMFHoMdPwwFvww0ZwMPBwPowzzg1xZS3xNkKdYVe44dRwPPdo6gJwMFaw+PDwG8swCgowsTuw1TYwGTlwzmLwPoPzzgcwMF0o6gJwMFLxy6r1WYNMOq71lDqHdSg6aLfD/4tM/wJIpAdLEjrM/4tsO6r1WYFwMOewMFrzzgcwMFLxy6r1WYNMOq71lDqHdSg6aLfD/wJPyp7fEjr68qmbEzv/oX8WoHWWDr88z5vCS+vV1lVmo5/NDDtMWDNse4UdNVtsOLCb/4UdNVtMWDNse4UdNVt68qg13RAMlLC1O4qHdSC18LvQdwjP2JX1aqVxaqkPypgS8Ur6yIqfOneHdDN1apkPyqVxpjTIZq5pBjTxNkKDdJNDdJNxyvmf2pkD2LwfyIqHdSGPaLV6awfDTRmManvxpjTLVq35IARIkAfDTROMahn65nfDW7VLVq35IARIkAqHdDNse4UdNVNDEhkMaS763R/6ah7flRAMOvm6enfD/BfDTR/6ah7fyBV6yvm6enfD/LfDTRlPaLkPEnfD/ZjcdpfDTRA1yvW1/nfD8Uv1WLvfvjTDyU7MHUexpjTbyBT1ypT1lSV6HSfD/4UdNVSx2LgxNkKdYVNDEhk6dR/1OhefyBmxpjTcnjTx/hTxm3o/uuJNQPSTFPfmmQi+Q3XGQPxVu8yVmTmrmQq+/jrM/4tslLVxNkKdYVtslLgxNkKdYvzS2U9fnqOMHDjcEBqEYGSdH7VfOneHl6Af/JjcWkUdNVSQgLe1HUib8BgcEJeiYkKdYvzS2U9fnqOMHDjcELqEYGSDdJtslLAM8hvxNkKd3JNDEh/6awk6HDFEYGSd5hC1WRnbdR/1yBefenfD8Snb2Lr1vjTD2LwfyIqHdSebaS9PHLfDTRmManvxpjTfOneHlUnM8nCbBjTD26A12pvxpjTwGFYws0VHdDFEYGSDdJtsOUv1WLvf/4UdNVtsO6rf8kFEYGSxySgDdtFEYGNDdJNQgLePyBg6pq9fObqD/7UdWkUd8p7fOIUdW7UdTLe1HUiM8vm6BqmbakNx3JGS2U9fnqnfOpgagbnfOpgHOv9SnkNxgLe1HUibHUvfv7WbHUvfvqC13bbDEGNSgfCujkKS2U9fkAI5IjNx3JTEYGNDdJNDdJNDEhVPHMFEYGSd5hefyBmD2UkQahvx3b/1Ohrf/Cg6aYWxmuJVuaj/FTk9ua/0FuJV5jrflRA1/z8TMr8Ws+WWolVro288KXVmDEWC4lvAP/8v+EW8G5VmCsvT0/8v+WvrDXrrDev/o+CWDEGCG2VmDEVmK+W+GEv/6HW8G5Wmw2v+C+rrDev/1xv/oXWvK/GAo+v9z2W8G58TMr8Ws+v/w2vr0zv/6+/ND2CNS+Gr4i8TMr8Ws+W+1zvVDlv/w2vr0zv/6+rrDevCGs8WCe8WDWVm+CJwsON44dRoKFZoKoowsON44dRwMaew+uGwsON44dRwzm6wsONwMFLwoQRwsFAzzgcwsONoMuqwMFrwsmvwog7wsTJwCQOo6QkwC3OwMTjwG8swCgowwF9wsFAww0ZoMdPwwFvzzg1w1O5w43OwzmLwPoPw6duwsONwMFrwsmvoKoFwzOmwsTUwGovwMFHoMdPwwFvzzgcwGTao60xwCQOwMFaw+PDwzmLwPoPzzgREYGSxdqVPHMFEYGSxyLCb/4UdNVtYvDNse4UdNVSwMF0o6gJceEWCwsv/1xv/oXv+Ge8TSEvmSE8TsiVmDz8TMr8Ws+W8G5Wmw2v+C+rrSGtYvDNse4UdTJNDdJNDdJNxyLCbTRC6EnfDWU9fnqTPawVHOBg6aBfD/4UdTJNDdJSd52/ND2G+ziGrCxvAPH8N0/W8G58TMr8Ws+v/zirrDevm11WN+WvAzrTNSeG/+iv/w1C0GeG+42WGD2TNSl8/DWCV04tMWDNse4Udm80/uTrNQQNNQajAm8J8mTXAFQi+Q3XGQaxVQaD7uPSTFPfmm34TT/GTGsvNMi8voH8WSXCvz5WWolVro2W0Dl8WDWvmz1GrwXrrDeG+ziGNSEvr4xW+MWvrGICxZS3DdtFEYGNDdJNdYVtPawjbHYNb2vj65nfDWLvQ2LfDTR/1yBefenfDWJhHdDNPaYqHdSe1HUiM8vm6BqmbanfDTRmManvxpjTfOneHOSC18Li1Wp9HdDNb8B7baIqHdSzS2U9fnqTPawVHOwn1HnfDTJrxT6mMWUjuehC1WRnbdRC6EnfDWU9fnqTPawVHOSnb2Lr1vjTDyqmMOhCMO7qHdSe1HUiM8vm6dNCHdDNb2vj65nfD8Snb2Lr1vjTDyU7MHUexpjTfOBO6pjTD26A12pvxpjToDolwMFaoP0coKFRwodRHdDNse4UdTJNDdJNDdJNxdqVPHMFEYGNDdJNDdJNDEhVPHMNPaYqHdSe1HUiM8vm6BqO6HSC6WviMHSvMpjTD2UkQahvxpjT6yvefyhAQ5Cm1OwvunjTxNkKDdJNDdJNDdJNDdJNcmuJNQTr9FTFVFaBCQaxVQaD7uPd0uPSTFPfmmQPAu80/uTrNQQNNQFt/uaw9mQdmQa2mFKJWuQzVQam8mPSTFPfmmax9FKJWQPcTQ83+/hdITJrxNkKDdJNDdJNDdJNDdJNxyvmf2pkD2LwfyIqHdSk6HAkHdDNMOhAflcqHdSjcpjTDyvVxpjTfOneHOSC18LiPOpwHdDN18B965nfDWU9fnqTPawVHO9vQpjTD26A12pvxpjTHdDNse4818SefE7tPawjbHYN1Ow/1yv/PenfDWU9fnqTPawVHl6vf8v8Q3NCHdDNb2vj65nfD8Snb2Lr1vjTDyU7MHUexpjTfOBO6pjTD26A12pvxpjTwzmLwPoPwG8swCgowMFlHdDNse4UdTJNDdJNDdJNxdqVPHMFEYGNDdJNDdJNDEhVPHMNPaYqHdSe1HUiM8vm6Bq9fObfD/4tsOLCb/4UdTJNDdJNDdJNxZS3DdtFxZS3DdtFDdJNDdJNDdJNDdJNDdJNEYGSxdqVPHMFEYGTujkKS2U9fkAI5IjNs/kNDTJNDdJNDdJNEYGNDdJNDdJNDEheMlSCf2YN1yBm6lpA6OIqHdS0MH6AfOUgPHRkHdDFEYGNDdJNDdJNDJkKDdJNDdJNDdJNDdJN6WpmMlLC1O4NfOneHOSC18YGKYkKDdJNDdJNDdJNDdJNQjkKDdJNDdJNDdJNDdJNDdJND26AfTRe1HUi1Wp9DEkNSdNWDlU9fnqTPawVHOwn13fCsW6A1dNCujkKDdJNDdJNDdJNDdJNDdJNDJkKDdJNDdJNDdJNDdJNDdJND26AfTR9QIB0MHNNx3JVsWRrflYGEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdbAP8B4sWRGfEq91OYqfOneS8Ur6yIqM8vm6df7EYGNDdJNDdJNDdJNDdJNDdJNDdJND27UdTJNDdJNDdJNDdJNDdJNDdJNDdJNDdJND2U9fnqmbakofOneHOwn13JNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDJkKDdJNDdJNDdJNDdJNDdJNDdJNDdRqsJkKDdJNDdJNDdJNDdJNDdJNDdJNDdR8baw/byvr1TJG6dVNEYGNDdJNDdJNDdJNDdJNDdJNDdJND27UdTJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDyv8KyYCEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRzEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNSdNWDlU9fnqTPawVHOne6gfCs8Ak1ajG6dVzEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRqEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRv12UvEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRzEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNSdNWDlU9fnqTPawVHOSnb2Lr1TfCs8Bkb2DGSOLCfOBT1ypVSgjWb2Sn63fCujkKDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdYGSgUe1HUiM8vm6BqO6HSC6WviMHSvM3fCs8UefgNW6yvefyhAQ3f7SOS71OU+SgVzEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRqEYGNDdJNDdJNDdJNDdJNDdJNDdJND2kUdTJNDdJNDdJNDdJNDdJNDdJCujkKDdJNDdJNDdJNDdJNiYkKDdJNDdJNDdJNDdJNEYGNDdJNDdJNDdJNDdR8baw/byvr1TRe1HUiM8vm6BqO6HSC6WVGKYkKDdJNDdJNDdJNDdJNQjkKDdJNDdJNDdJNDdJNDdJND26AfTRTPawVHO9vQ3JqDdYGSgUe1HUiM8vm6Bq+6HVWK3wOMajGK57UdTJNDdJNDdJNDdJNDdJNDdJUdTJNDdJNDdJNDdJNDdJNDdROMHDN1HvRP8B4DEkNSdwj1lUkKJkKDdJNDdJNDdJNDdJNDdJNDdJNDdJWMaCAQdwjP2JX1aqVxHU9fg6/1OLvxaSC18Lib8pgPa6wSgjUdTJNDdJNDdJNDdJNDdJNDdJNDdJNQjkKDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNM8vm6Bq+6HVoM8vm6Bq+6HVUdTJNDdJNDdJNDdJNDdJNDdJNDdJNi3jUdTJNDdJNDdJNDdJNDdJNDdJNDdJN6WpmMlLC1O4NKyYCEYGNDdJNDdJNDdJNDdJNDdJNDdJND27UdTJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDyv8KyYCEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRzEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNSdNWDlU9fnqTPawVHOne6gfCs8Ak1ajG6dVzEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRqEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRv12UvEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdRzEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNMahvfWYGSFQzVQam8mPDVuaKWF3oATfCujkKDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDJkKDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJND2bC18Lrbgw71OUAbyvr1Twg6ahrMaYGK57UdTJNDdJNDdJNDdJNDdJNDdJNDdJNDdJND2kUdTJNDdJNDdJNDdJNDdJNDdJNDdJNiYkKDdJNDdJNDdJNDdJNDdJNDdVzEYGNDdJNDdJNDdJNDdRqEYGNDdJNDdJNDdJNDdJUdTJNDdJNDdJNDdJNDy6n18UkPaqmD2U9fnqn18SC18YGKYkKDdJNDdJNDdJNDdJNQjkKDdJNDdJNDdJNDdJNDdJND26AfTR9QIB0MHNNx3JVsWRrflYGEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdbAP8B4sWRGfEq91OYqfOneS8Ur6yIqbawTPawVSgjUdTJNDdJNDdJNDdJNDdJNDdJNDdJNQjkKDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDyUr6yIobawTPawVDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJUdTJNDdJNDdJNDdJNDdJNDdJNDdJNi3jUdTJNDdJNDdJNDdJNDdJNDdJNDdJN6WpmMlLC1O4NKyYCDJkKDdJNDdJNDdJNDdJNDdJNDdJNDdRzEYGNDdJNDdJNDdJNDdJNDdJNDdJNDdJNDdJVKdf/fOneHOSC18LiMHSvM3fCs8Ak1ajG6dVzEYGNDdJNDdJNDdJNDdJNDdJNDdJND2kUdTJNDdJNDdJNDdJNDdJNDdJCujkKDdJNDdJNDdJNDdJNiYkKDdJNDdJNDdJNDdJNEYGNDdJNDdJNDEjrfOUgPHRkxNkKDdJNDdJNDdJNDdJND/7UdWkUdN==
+<?php
+
+if(!defined("IN_SMS_MOD"))
+{
+exit("Access Denied");
+}
+if(!$this->Config['sms_enable'] ||!sms_init($this->Config))
+{
+$msg = "
+        <div style=\"text-align:left;\">
+        <div>
+		  <span style='color:red'>【小贴士】</span>手机短信是一种全新的互动方式，只需要一个简单的绑定，即可用自己的手机发微博，如果有人@你、评论你、关注你、给你发私信，你都可以第一时间收到手机短信的通知；当然绑定后你可以设置不接受通知，或随时取消绑定！
+    	</div>
+    	<div>
+    	<BR />
+    		<strong>如需使用手机短信服务，请联系管理员开通</strong><BR /><BR />
+    	</div>
+        </div>
+";
+if($sms_msg_return) {
+$smsHTML = $msg;
+return $smsHTML;
+}else {
+$this->Messager($msg,null);
+}
+}
+if(MEMBER_ID <1)
+{
+$this->Messager("请先<a href='index.php?mod=login'>点此登录</a>或者<a href='index.php?mod=member'>点此注册</a>一个帐号",null);
+}
+if(isset($_POST['sms_submit']) &&$_POST['_user'])
+{
+$_notice_enable = 0;
+$_user = array();
+foreach($_POST['_user'] as $k=>$v)
+{
+if('_enable'==substr($k,-7))
+{
+$_user[$k] = ($v ?1 : 0);
+$_notice_enable += $_user[$k];
+}
+}
+$update_result = sms_client_user_update($_user,MEMBER_ID);
+$this->Messager("设置成功");
+}
+$sms_config = ConfigHandler::get('sms');
+$sms_cmd = $sms_config['send_update_cmd'];
+$sms_id = $sms_config['sms_id'];
+$sms_user = sms_client_user(MEMBER_ID);
+$sms_has_bind = sms_has_bind($sms_user);
+$smsHTML = '';
+if($sms_has_bind)
+{
+$share_msg = '';
+if($sms_user['user_im'])
+{
+if(!$sms_user['share_time'])
+{
+$share = $this->Get['share'];
+if($share)
+{
+$share_time = $sms_user['share_time'];
+if(!$share_time)
+{
+$share_time = time();
+$_user = array('share_time'=>$share_time,);
+sms_client_user_update($_user,MEMBER_ID);
+$share_msg = "<img src='{$this->Config['site_url']}/index.php?mod=other&code=sms&share_time={$share_time}' width='0' height='0' />";
+}
+}
+else
+{
+$skip_share = $this->Get['skip_share'];
+if(!$skip_share)
+{
+$this->Messager("已经成功绑定了手机短信，您现在可以：<br>1、用自己手机发微博；<br>2、如果有人@提到你、回复你的微博等，你都可以第一时间收到手机短信的通知；<br><br><a href='{$this->Config['site_url']}/index.php?mod=other&code=sms&share=1'><strong>发一条微博告诉我的朋友</strong></a> &nbsp; <a href='{$this->Config['site_url']}/index.php?mod=other&code=sms&skip_share=1'>或者点此直接进入设置页面</a>",null);
+}
+}
+}
+$share_time = $this->Get['share_time'];
+if($share_time &&$share_time==$sms_user['share_time'])
+{
+$share_msg = "我刚绑定了手机短信，可以使用自己手机发微博，你如果@我、回复我的微博等，我都可以第一时间收到手机短信的通知；你也来试试吧 ".get_full_url($this->Config['site_url'],"index.php?mod=other&code=sms")." ";
+$TopicLogic = Load::logic('topic',1);
+$_POST['syn_to_sina'] = (($this->Config['sina_enable'] &&sina_weibo_init() &&sina_weibo_bind_setting(MEMBER_ID)) ?1 : 0);
+$add_result = $TopicLogic->Add($share_msg);
+$_user = array('share_time'=>mt_rand(1,1111111111),);
+sms_client_user_update($_user,MEMBER_ID);
+exit;
+}
+}
+Load::lib('form');
+$FormHandler = new FormHandler();
+foreach($sms_config as $k=>$v)
+{
+if('_enable'==substr($k,-7) &&$v &&isset($sms_user[$k]))
+{
+${"{$k}_radio"}= $FormHandler->YesNoRadio("_user[{$k}]",(int) $sms_user[$k]);
+}
+}
+$sms_var001 = '';
+if($t_enable_radio)
+{
+$sms_var001 = "
+            <tr>
+		  <td class=\"altbg1\" width=\"25%\"> 开启@我的提醒？ </td>
+		  <td class=\"altbg2\" width=\"25%\">{$t_enable_radio}</td>
+		  <td class=\"altbg2\">（也可以发手机短信 @TOFF/@TON 即时关闭或开启）</td>
+		</tr>";
+}
+$sms_var002 = '';
+if($p_enable_radio)
+{
+$sms_var002 = "
+            <tr>
+		  <td class=\"altbg1\"> 开启新评论提醒？ </td>
+		  <td class=\"altbg2\">{$p_enable_radio}</td>
+		  <td class=\"altbg2\">（也可以发手机短信 @POFF/@PON 即时关闭或开启）</td>
+		</tr>
+";
+}
+$sms_var003 = '';
+if($m_enable_radio)
+{
+$sms_var003 = "
+            <tr>
+		  <td class=\"altbg1\"> 开启新私信提醒？ </td>
+		  <td class=\"altbg2\">{$m_enable_radio}</td>
+		  <td class=\"altbg2\">（也可以发手机短信 @MOFF/@MON 即时关闭或开启）</td>
+		</tr>
+";
+}
+$sms_var004 = '';
+if($f_enable_radio)
+{
+$sms_var004 = "
+            <tr>
+		  <td class=\"altbg1\"> 开启新粉丝提醒？ </td>
+		  <td class=\"altbg2\">{$f_enable_radio}</td>
+		  <td class=\"altbg2\">（也可以发手机短信 @FOFF/@FON 即时关闭或开启）</td>
+		</tr>
+";
+}
+$sms_var005 = '';
+if($sms_cmd)
+{
+$sms_var005 = "
+               ，格式是<font color=\"red\"><b>{$sms_cmd}你的微博内容</b></font>
+";
+}
+$FORMHASH = FORMHASH;
+$smsHTML = "           <div>
+		<span style='color:red'>【注意】</span>请不要短时间内频繁发消息，否则他将直接忽略、不予回应！
+	</div>
+	<div>
+		<BR />一、你当前帐户已经与手机绑定了，现在可以：<BR />
+		1、通过手机短信{$sms_id}发微博{$sms_var005}；<BR>
+		2、有人回复你、给你发私信、或@提到你，你会接收到手机短信通知，可在下面设置接受通知的内容；<BR>
+		3、如需取消手机与帐户绑定，只需发<font color=\"red\"><b>@QXBD</b></font>即可，发<font color=\"red\">@help</font>可查看更多命令。<br />
+	</div>
+	<br />
+	<form action=\"index.php?mod=other&code=sms\" method=\"POST\">
+      <input type=\"hidden\" name=\"FORMHASH\" value=\"{$FORMHASH}\" />
+	  <table cellspacing=\"1\" cellpadding=\"4\" width=\"100%\" align=\"center\" class=\"tableborder\">
+		<tr>
+		  <td colspan=\"3\"><b>二、手机短信提醒设置</b></td>
+		</tr>
+		{$sms_var001}
+		{$sms_var002}
+		{$sms_var003}
+		{$sms_var004}
+	  </table>
+	   <center>
+		<input class=\"button\" type=\"submit\" name=\"sms_submit\" value=\"提交\">
+	  </center>
+	</form>
+	<br />
+    {$share_msg}";
+}
+else
+{
+$sms_bind_num = ($sms_user['user_im'] ?$sms_user['user_im'] : '');
+$smsHTML = "
+        <div>
+		<span style='color:red'>【小贴士】</span>手机短信是一种全新的互动方式，只需要一个简单的绑定，即可用自己的手机发微博、通过手机签名发微博，如果有人@你、评论你、关注你、给你发私信，你都可以第一时间收到手机短信的通知；当然绑定后你可以设置不接受通知，或随时取消绑定！
+	</div>
+	<div>
+	<BR />
+		只需30秒即可完成帐户与手机的绑定：<BR />
+        <div id=\"sms_bind_area\">
+    		1、请输入您的手机号，并点击“获取验证码”按钮<br />
+验证码将通过短信发到手机上(节假日期间短信稍有延迟，请耐心等待)<BR />
+    		<input type=\"text\" class=\"p1\" id=\"sms_bind_num\" name=\"sms_bind_num\" value=\"{$sms_bind_num}\" />&nbsp;<input id=\"sms_bind_button\" onclick=\"sms_bind()\" type=\"button\" class=\"save\" value=\"获取验证码\" />
+        </div>
+        <div id=\"sms_bind_verify_area\" style=\"display:none;\">
+            2、请输入发到您手机的验证码，并点击“绑定手机号”按钮<BR />
+            <input type=\"text\" class=\"p1\" id=\"sms_bind_key\" name=\"sms_bind_key\" value=\"\" />&nbsp;<input onclick=\"sms_bind_verify()\" type=\"button\" class=\"save\" value=\"绑定手机号\" />
+        </div>
+        <div id=\"sms_bind_msg\"></div>
+        <BR /><BR />               
+	</div>
+";
+$smsHTML .= "        
+        <script language=\"javascript\">
+        
+            function sms_bind()
+            {
+                var sms_num = $('#sms_bind_num').val();
+                
+                var myAjax = $.post(
+                    'ajax.php?mod=sms&code=bind',
+                    {
+                        sms_num:sms_num                        
+                    },
+                    function (d) 
+                    {
+                        if(d)
+                        {
+                            $('#sms_bind_msg').html(d);
+                        }
+                        else
+                        {
+                            $('#sms_bind_button').attr('disabled','true');
+                            $('#sms_bind_verify_area').css('display','block');
+                        }
+                    }
+                );
+            }
+            
+            function sms_bind_verify()
+            {
+                var bind_key = $('#sms_bind_key').val();
+                
+                var myAjax = $.post(
+                    'ajax.php?mod=sms&code=bind_verify',
+                    {
+                        bind_key:bind_key
+                    },
+                    function (d)
+                    {
+                        if(d)
+                        {
+                            $('#sms_bind_msg').html(d);
+                        }
+                        else
+                        {
+                            alert('绑定成功了');
+                            
+                            window.location.reload();
+                        }
+                    }
+                );
+            }
+            
+            function sms_unbind()
+            {
+                var myAjax = $.post(
+                    'ajax.php?mod=sms&code=unbind',
+                    {
+                         code:unbind                       
+                    },
+                    function (d) 
+                    {
+                        $('#sms_bind_area').html(d);
+                    }
+                );
+            }
+            
+        </script>
+            ";
+}
+
+?>

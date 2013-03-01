@@ -1,3 +1,179 @@
-<?php // This file is protected by copyright law & provided under license. Copyright(C) 2005-2099 www.cenwor.com, All rights reserved.
-$OOO0O0O00=__FILE__;$OOO000000=urldecode('%74%68%36%73%62%65%68%71%6c%61%34%63%6f%5f%73%61%64%66%70%6e%72');$OO00O0000=7320;$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$O0O0000O0='OOO0000O0';eval(($$O0O0000O0('JE9PME9PMDAwMD0kT09PMDAwMDAwezE3fS4kT09PMDAwMDAwezEyfS4kT09PMDAwMDAwezE4fS4kT09PMDAwMDAwezV9LiRPT08wMDAwMDB7MTl9O2lmKCEwKSRPMDAwTzBPMDA9JE9PME9PMDAwMCgkT09PME8wTzAwLCdyYicpOyRPTzBPTzAwME89JE9PTzAwMDAwMHsxN30uJE9PTzAwMDAwMHsyMH0uJE9PTzAwMDAwMHs1fS4kT09PMDAwMDAwezl9LiRPT08wMDAwMDB7MTZ9OyRPTzBPTzAwTzA9JE9PTzAwMDAwMHsxNH0uJE9PTzAwMDAwMHswfS4kT09PMDAwMDAwezIwfS4kT09PMDAwMDAwezB9LiRPT08wMDAwMDB7MjB9OyRPTzBPTzAwME8oJE8wMDBPME8wMCwxMjYyKTskT08wME8wME8wPSgkT09PMDAwME8wKCRPTzBPTzAwTzAoJE9PME9PMDAwTygkTzAwME8wTzAwLDM4MCksJ0pSZEVaQnkyRFNLc2NVdXhZTDM1SXBhSE02UDFmYlFpTkFUL1Z2OFdHQzArNzltcmpoZ2Vrbk9sNHdvenRxRlg9JywnQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLycpKSk7ZXZhbCgkT08wME8wME8wKTs=')));return;?>
-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
+<?php
+
+if(!defined('IN_JISHIGOU'))
+{
+exit('invalid request');
+}
+function imjiqiren_env()
+{
+$msgs = array();
+if(!defined('ROOT_PATH'))
+{
+define('ROOT_PATH',substr(dirname(__FILE__),0,-17) .'/');
+}
+$files = array(ROOT_PATH .'imjiqiren.php',ROOT_PATH .'include/function/imjiqiren.func.php',ROOT_PATH .'include/function/imjiqiren_env.func.php',ROOT_PATH .'modules/imjiqiren/master.mod.php',ROOT_PATH .'modules/imjiqiren/imjiqiren.mod.php',ROOT_PATH .'modules/imjiqiren.mod.php',ROOT_PATH .'modules/admin/imjiqiren.mod.php',ROOT_PATH .'include/lib/imjiqiren_db.class.php',);
+foreach ($files as $f)
+{
+if (!is_file($f))
+{
+$msgs[] = "文件<b>{$f}</b>不存在";
+}
+}
+$funcs = array('version_compare',array('fsockopen','pfsockopen'),array('iconv','mb_convert_encoding'),);
+foreach ($funcs as $func)
+{
+if (!is_array($func))
+{
+if (!function_exists($func))
+{
+$msgs[] = "函数<b>{$func}</b>不可用";
+}
+}
+else
+{
+$t = false;
+foreach ($func as $f)
+{
+if(function_exists($f))
+{
+$t = true;
+break;
+}
+}
+if (!$t)
+{
+$msgs[] = "函数<b>".implode(" , ",$func)."</b>都不可用";
+}
+}
+}
+if (version_compare(PHP_VERSION,'4.3') <0)
+{
+$msgs[] = "PHP版本需要<b>4.3</b>及以上";
+}
+$files = array(ROOT_PATH .'setting/',ROOT_PATH .'setting/settings.php',ROOT_PATH .'setting/imjiqiren.php',ROOT_PATH .'./data/cache/',);
+foreach ($files as $file)
+{
+$test_file_name = "write_test_".date("Ymd").".test";
+if (is_dir($file))
+{
+$test_file = "{$file}/{$test_file_name}";
+if (!(@file_put_contents($test_file,$test_file_name)))
+{
+$msgs[] = "目录<b>{$file}</b>不可写";
+}
+else
+{
+if(!(@unlink($test_file)))
+{
+$msgs[] = "目录<b>{$file}</b>没有删除文件的权限";
+}
+}
+}
+else
+{
+if (!(file_exists($file)))
+{
+@file_put_contents($file,$test_file_name);
+if(!(file_exists($file) &&@unlink($file)))
+{
+$msgs[] = "文件<b>{$file}</b>不可写";
+}
+}
+else
+{
+if(!($fp = fopen($file,'a+')))
+{
+$msgs[] = "文件<b>{$file}</b>不可写";
+}
+@fclose($fp);
+}
+}
+}
+include(ROOT_PATH .'setting/settings.php');
+if(!defined('TABLE_PREFIX'))
+{
+define('TABLE_PREFIX',$config['db_table_prefix']);
+}
+include_once(ROOT_PATH .'include/lib/imjiqiren_db.class.php');
+$db = new imjiqiren_client_db();
+$db->connect(($config['db_host'] .($config['db_port'] ?":{$config['db_port']}": "")),$config['db_user'],$config['db_pass'],$config['db_name'],str_replace("-","",$config['charset']),$config['db_persist']);
+if (!$db)
+{
+$msgs[] = "数据库连接失败";
+}
+else
+{
+$query = $db->query("select count(*) from ".TABLE_PREFIX."imjiqiren_client_user",'SILENT');
+if (!$query &&'1146'==$db->errno())
+{
+$query = $db->query("CREATE TABLE `".TABLE_PREFIX."imjiqiren_client_user` (
+`id` int(10) unsigned NOT NULL auto_increment,
+`uid` int(10) unsigned NOT NULL default '0',
+`username` char(30) NOT NULL default '',
+`user_im` int(10) unsigned NOT NULL default '0',
+`try_bind_times` int(10) unsigned NOT NULL default '0',
+`last_try_bind_time` int(10) unsigned NOT NULL default '0',
+`send_times` int(10) unsigned NOT NULL default '0',
+`last_send_time` int(10) unsigned NOT NULL default '0',
+`last_send_message_id` int(10) unsigned NOT NULL default '0',
+`stop_receive` tinyint(1) unsigned NOT NULL default '0',
+`receive_times` int(10) unsigned NOT NULL default '0',
+`last_receive_time` int(10) unsigned NOT NULL default '0',
+`last_receive_message_id` int(10) unsigned NOT NULL default '0',
+`stop_sign_update` tinyint(1) unsigned NOT NULL default '0',
+`sign_update_times` int(10) unsigned NOT NULL default '0',
+`last_sign_update_time` int(10) unsigned NOT NULL default '0',
+`last_sign_update_message_id` int(10) unsigned NOT NULL default '0',
+`reset_password_times` int(10) unsigned NOT NULL default '0',
+`last_reset_password_time` int(10) unsigned NOT NULL default '0',
+`dateline` int(10) unsigned NOT NULL default '0',
+`enable` tinyint(1) unsigned NOT NULL default '1',
+`t_enable` tinyint(1) unsigned NOT NULL default '1',
+`p_enable` tinyint(1) unsigned NOT NULL default '1',
+`m_enable` tinyint(1) unsigned NOT NULL default '1',
+`f_enable` tinyint(1) unsigned NOT NULL default '1',
+`share_time` int(10) unsigned NOT NULL default '0',
+PRIMARY KEY  (`id`),
+KEY `uid` (`uid`),
+KEY `user_im` (`user_im`)
+) ENGINE=MyISAM");
+}
+if (!$query)
+{
+$msgs[] = "数据表<b>".TABLE_PREFIX."imjiqiren_client_user</b>不存在或创建失败";
+}
+$query = $db->query("select count(*) from ".TABLE_PREFIX."imjiqiren_failedlogins",'SILENT');
+if (!$query &&'1146'==$db->errno())
+{
+$query = $db->query("CREATE TABLE `".TABLE_PREFIX."imjiqiren_failedlogins` (
+`ip` CHAR(15) NOT NULL default '',
+`count` TINYINT(1) UNSIGNED NOT NULL default '0',
+`lastupdate` INT(10) UNSIGNED NOT NULL default '0',
+PRIMARY KEY  (`ip`)
+) ENGINE=MyISAM");
+}
+if (!$query)
+{
+$msgs[] = "数据表<b>".TABLE_PREFIX."imjiqiren_failedlogins</b>不存在或创建失败";
+}
+$query = $db->query("select count(*) from ".TABLE_PREFIX."imjiqiren_send_queue",'SILENT');
+if (!$query &&'1146'==$db->errno())
+{
+$query = $db->query("CREATE TABLE `".TABLE_PREFIX."imjiqiren_send_queue` (
+`to` int(10) unsigned NOT NULL default '0',
+`message` text NOT NULL default '',
+`salt` char(10) NOT NULL default '',
+`dateline` int(10) unsigned NOT NULL default '0',
+UNIQUE KEY `to` (`to`),
+KEY `dateline` (`dateline`)
+) ENGINE=MyISAM");
+}
+if (!$query)
+{
+$msgs[] = "数据表<b>".TABLE_PREFIX."imjiqiren_send_queue</b>不存在或创建失败";
+}
+}
+return $msgs;
+}
+
+?>
