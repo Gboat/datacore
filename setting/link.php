@@ -1,22 +1,17 @@
 <?php
-$config["link_list"]=array (
+$config['link_list']=array (
   0 => 
   array (
-    'name' => 'INET',
+    'name' => 'WRUD主站',
+    'url' => 'http://wrud.net',
+    'logo' => '',
+    'order' => 10,
+  ),
+  1 => 
+  array (
+    'name' => '哈工大网络技术研究所INET',
     'url' => 'http://inet.hitwh.edu.cn',
     'logo' => '',
-    'order' => 100,
-  ),
-  'biniu' => 
-  array (
-    'name' => '友情链接平台',
-    'url' => '#',
-    'order' => 100,
-  ),
-  'biniu1' => 
-  array (
-    'name' => 'alexa排名查询',
-    'url' => '#',
     'order' => 100,
   ),
 );

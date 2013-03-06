@@ -20,7 +20,8 @@ class TopicLogic
             $this->Config = & Obj::registry("config");
         }
         if($this->Config['topic_cut_length'] > 0) {
-            $this->_len = $this->Config['topic_cut_length'] * 2;        }
+            $this->_len = $this->Config['topic_cut_length'] * 2;
+        }
         if($this->Config['topic_input_length'] > 0) {
             $this->_len2 = $this->Config['topic_input_length'] * 2;
         }
@@ -30,28 +31,28 @@ class TopicLogic
     {
         if(is_array($datas) && count($datas))
         {
-                        $ks = array(
+            $ks = array(
                 'tid'=>1,
                 'uid'=>1,
-                            'content'=>1,
-                            'imageid'=>1,
+                'content'=>1,
+                'imageid'=>1,
                 'attachid'=>1,
                 'videoid'=>1,
                 'musicid'=>1,
                 'longtextid'=>1,
-                                                    'totid'=>1,
+                'totid'=>1,
                 'touid'=>1,
-                            'dateline'=>1,
-                            'from'=>1,
+                'dateline'=>1,
+                'from'=>1,
                 'type'=>1,
                 'item_id'=>1,
                 'item'=>1,
                 'postip'=>1,
                 'timestamp'=>1,
                 'managetype' => 1,
-                            'checkfilter' =>1,
+                'checkfilter' =>1,
                 'verify' => 1,
-                            'design' =>1,
+                'design' =>1,
                 'xiami_id' => 1,
             );
             foreach($datas as $k=>$v)
@@ -73,16 +74,16 @@ class TopicLogic
         }elseif($this->Config['verify']){
             $is_verify = true;
         }
-                $content = $this->_content_strip($content);
-                $content_length = strlen($content);
+        $content = $this->_content_strip($content);
+        $content_length = strlen($content);
         if ($content_length < 2)
         {
             return "内容不允许为空";
         }
-                if($this->_len2 > 0 && $content_length > $this->_len2) {
+        if($this->_len2 > 0 && $content_length > $this->_len2) {
             $content = cut_str($content, $this->_len2, '');
         }
-                if(!$checkfilter){
+        if(!$checkfilter){
             $f_rets = filter($content);
             if($f_rets)
             {
@@ -94,7 +95,7 @@ class TopicLogic
                 }
             }
         }
-                $totid = max(0, (int)$totid);
+        $totid = max(0, (int)$totid);
         $data = array();
         if($managetype){
             $data['managetype'] = $managetype;
@@ -126,9 +127,9 @@ class TopicLogic
             'androidpad'=>1,
         );
         $from = (($from && ($_froms[$from])) ? $from : 'web'); 
-                if (empty ($item) || $item_id < 0)
+        if (empty ($item) || $item_id < 0)
         {
-                        if (!is_numeric($type)) {
+            if (!is_numeric($type)) {
                 $_types = array('first' => 1, 'forward' => 1, 'reply' => 1, 'both' => 1);
                 $type = (($totid < 1 && $type && isset($_types[$type])) ? 'first' :  $type);
                 if (empty($type)) {
@@ -138,7 +139,7 @@ class TopicLogic
         }
         if ($item == 'qun' && $item_id > 0)
         {
-                        $qun_closed = DB::result_first("SELECT closed FROM ".DB::table('qun')." WHERE qid='{$item_id}'");
+            $qun_closed = DB::result_first("SELECT closed FROM ".DB::table('qun')." WHERE qid='{$item_id}'");
             if ($qun_closed) {
                 return "当前微群已经关闭，你无法发布内容";
             }
@@ -147,7 +148,8 @@ class TopicLogic
                 return "你没有权限进行当前操作";
             }
         }
-        $data['from'] = $from;         if (($type == 'forward' || $type == 'both')  && $item == 'qun') {
+        $data['from'] = $from;
+        if (($type == 'forward' || $type == 'both')  && $item == 'qun') {
             $data['type'] = $item;
         } else {
             $data['type'] = $type;         }
@@ -157,13 +159,13 @@ class TopicLogic
         $data['dateline'] = $data['lastupdate'] = $timestamp = ($timestamp > 0 ? $timestamp : time());
         $data['totid'] = $totid;
         $data['touid'] = $touid;
-                $data['item'] = $item;
+        $data['item'] = $item;
         $data['item_id'] = $item_id;
-                $member = $this->GetMember($data['uid']);
+        $member = $this->GetMember($data['uid']);
         if(!$member) {
             return "用户不存在";
         }
-                $MemberHandler = & Obj::registry('MemberHandler');
+        $MemberHandler = & Obj::registry('MemberHandler');
         if($MemberHandler) {
             if(!($MemberHandler->HasPermission('topic','add',0,$member))) {
                 if(true!==IN_JISHIGOU_SMS) {
@@ -177,7 +179,7 @@ class TopicLogic
                 }
             }
         }
-                if(MEMBER_ROLE_TYPE != 'admin'){
+        if(MEMBER_ROLE_TYPE != 'admin'){
             if($this->Config['topic_vip'] == 1){
                 if(!$member['validate']){
                     return "非V认证用户无法发布信息";
@@ -186,27 +188,29 @@ class TopicLogic
                 $to_verify = 1;
                 if(!$member['validate']){
                     $f_rets['vip'] = 1;
-                    $f_rets['msg'] = '非V认证用户发言内容进入<a href="index.php?mod='.$member['uid'].'&type=my_verify" target="_blank">待审核</a>,
-                                    <a href="'.$this->Config['site_url'].'/index.php?mod=other&code=vip_intro" target="_blank">点击申请认证</a>';
+                    $f_rets['msg'] = '非V认证用户发言内容进入<a href="index.php?mod='.$member['uid'].'&type=my_verify" target="_blank">待审核</a>,<a href="'.$this->Config['site_url'].'/index.php?mod=other&code=vip_intro" target="_blank">点击申请认证</a>';
                     $is_verify = true;
                 }
             }
         }
         $data['username'] = $username = $member['username'];
         $topic_content_id = abs(crc32(md5($content)));
-                                        if(!$verify){
+        if(!$verify){
+            /*
             if($this->Config['lastpost_time']>0 && 'sina'!=$data['from'] && (($timestamp - $member['lastpost']) < $this->Config['lastpost_time'])) {
                 return "您发布的太快了，请在在<b>{$this->Config['lastpost_time']}</b>秒后再发布";
             }
+             */
+
         }
-                if($imageid) {
+        if($imageid) {
             if($verify){
                 $data['imageid'] = $imageid;
             }else{
                 $data['imageid'] = $imageid = Load::logic('image', 1)->get_ids($imageid, $data['uid']);
             }
         }
-                if($attachid)
+        if($attachid)
         {
             if($verify){
                 $data['attachid'] = $attachid;
@@ -215,25 +219,25 @@ class TopicLogic
             }
         }
         $data['musicid'] = $musicid;
-                if($xiami_id > 0){
+        if($xiami_id > 0){
             $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX .
                                           "topic_music`(`uid`,`username`,`dateline`,`xiami_id`) values ('" .
             $data['uid'] . "','" . $data['username'] . "',"."'{$timestamp}','{$xiami_id}')");
             $musicid = $data['musicid'] = $this->DatabaseHandler->Insert_ID();
         }
-                $topic_more = array();
+        $topic_more = array();
         $parents = '';
         $data['roottid'] = 0;
         if ($totid > 0)
         {
-                        $content = $this->GetForwardContent($content);
+            $content = $this->GetForwardContent($content);
             $_type_names = array('both'=>'转发和评论', 'forward'=>'转发', 'reply'=>'评论');
             $_type_name = $_type_names[$type];
             $to_topic = $row = $this->Get($totid);
             if (!($to_topic)) {
                 return "对不起,由于原微博已删除,不能{$_type_name}";
             }
-                        if(('reply' == $type || 'both' == $type) && ($rets = jsg_role_check_allow('topic_reply', $row['uid'], $data['uid']))) {
+            if(('reply' == $type || 'both' == $type) && ($rets = jsg_role_check_allow('topic_reply', $row['uid'], $data['uid']))) {
                 return $rets['error'];
             } elseif (('forward' == $type || 'both' == $type) && ($rets = jsg_role_check_allow('topic_forward', $row['uid'], $data['uid']))) {
                 return $rets['error'];
@@ -246,8 +250,8 @@ class TopicLogic
             $data['roottid'] = ($topic_more['parents'] ? substr($parents, 0, strpos($parents,
                 ',')) : $totid);
             $root_topic = $this->Get($data['roottid']);
-                        if ($root_topic['item'] == 'qun' && $root_topic['item_id'] > 0) {
-                                $qun_closed = DB::result_first("SELECT closed FROM ".DB::table('qun')." WHERE qid='{$root_topic['item_id']}'");
+            if ($root_topic['item'] == 'qun' && $root_topic['item_id'] > 0) {
+                $qun_closed = DB::result_first("SELECT closed FROM ".DB::table('qun')." WHERE qid='{$root_topic['item_id']}'");
                 if ($qun_closed) {
                     return "当前微群已经关闭，你无法发布内容";
                 }
@@ -259,12 +263,12 @@ class TopicLogic
                 {
                     return "对不起,由于原始微博已删除,不能{$_type_name}";
                 }
-                                if(('reply' == $type || 'both' == $type) && ($rets = jsg_role_check_allow('topic_reply', $rrow['uid'], $data['uid']))) {
+                if(('reply' == $type || 'both' == $type) && ($rets = jsg_role_check_allow('topic_reply', $rrow['uid'], $data['uid']))) {
                     return $rets['error'];
                 } elseif (('forward' == $type || 'both' == $type) && ($rets = jsg_role_check_allow('topic_forward', $rrow['uid'], $data['uid']))) {
                     return $rets['error'];
                 }
-                                if(('forward'==$type || 'both'==$type))
+                if(('forward'==$type || 'both'==$type))
                 {
                     $content .= $this->ForwardSeprator . "{$row['nickname']} : " . jaddslashes($this->_content_strip($row['content']), 1, 1);
                 }
@@ -275,10 +279,10 @@ class TopicLogic
         $at_uids = $_process_result['at_uids'];
         $tags = $_process_result['tags'];
         $urls = $_process_result['urls'];
-                $longtextid = Load::logic('longtext', 1)->add($_content, $data['uid']);
+        $longtextid = Load::logic('longtext', 1)->add($_content, $data['uid']);
         if(strlen($_content) > $this->_len) {
             $data['longtextid'] = $longtextid;
-                        $_content = cut_str($_content, $this->_len, '');
+            $_content = cut_str($_content, $this->_len, '');
             $_content = $this->_content_end($_content);
         } else {
             unset($data['longtextid']);
@@ -291,21 +295,21 @@ class TopicLogic
             $data['content'] = $_content;
         }
         $data['postip'] = $postip ? $postip : client_ip();
-                if($is_verify){
+        if($is_verify){
             $sql = "insert into `" . TABLE_PREFIX . "topic_verify` (`" . implode("`,`", array_keys
             ($data)) . "`) values ('" . implode("','", $data) . "')";
             $this->DatabaseHandler->Query($sql);
             $tid = $this->DatabaseHandler->Insert_ID();
             $topic_id = $data['tid'] = $tid;
-                        if ($imageid)
+            if ($imageid)
             {
                 DB::query("update ".TABLE_PREFIX."topic_image set `tid`='-1' where `id` in ($imageid)");
             }
-                        if ($attachid)
+            if ($attachid)
             {
                 DB::query("update ".TABLE_PREFIX."topic_attach set `tid`='-1' where `id` in ($attachid)");
             }
-                        if($urls)
+            if($urls)
             {
                 $date = $data;
                 $date['id'] = $data['tid'];
@@ -317,7 +321,7 @@ class TopicLogic
                     'message' => $member['nickname']."有一条微博进入待审核状态，<a href='admin.php?mod=topic&code=verify' target='_blank'>点击</a>进入审核。",
                     'to_user' => str_replace('|',',',$notice_to_admin),
                 );
-                                $admin_info = DB::fetch_first('select `uid`,`username`,`nickname` from `'.TABLE_PREFIX.'members` where `uid` = 1');
+                $admin_info = DB::fetch_first('select `uid`,`username`,`nickname` from `'.TABLE_PREFIX.'members` where `uid` = 1');
                 load::logic('pm');
                 $PmLogic = new PmLogic();
                 $PmLogic->pmSend($pm_post,$admin_info['uid'],$admin_info['username'],$admin_info['nickname']);
@@ -336,7 +340,7 @@ class TopicLogic
             }
             $topic_id = $data['tid'] = $tid;
             if($is_new){
-                                if (!empty($item) && $item_id > 0 && !($design == 'design' || $design == 'btn_wyfx')) {                    Load::functions('app');
+                if (!empty($item) && $item_id > 0 && !($design == 'design' || $design == 'btn_wyfx')) {                    Load::functions('app');
                     $param = array(
                         'item' => $item,
                         'item_id' => $item_id,
@@ -350,16 +354,16 @@ class TopicLogic
                     app_add_relation($param);
                     unset($param);
                 }
-                                $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX . "topic_more`(`tid`,`parents`) values('{$tid}','{$parents}')");
+                $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX . "topic_more`(`tid`,`parents`) values('{$tid}','{$parents}')");
             }
-                        $this->DatabaseHandler->Query("update `" . TABLE_PREFIX . "members` set ".(($data['type'] != 'reply') ? "`topic_count` = `topic_count` + 1 ," : "")." `lastactivity`='{$data['lastupdate']}',`lastpost`='{$data['lastupdate']}',`last_topic_content_id`='{$topic_content_id}' where `uid`='{$data['uid']}'");
+                $this->DatabaseHandler->Query("update `" . TABLE_PREFIX . "members` set ".(($data['type'] != 'reply') ? "`topic_count` = `topic_count` + 1 ," : "")." `lastactivity`='{$data['lastupdate']}',`lastpost`='{$data['lastupdate']}',`last_topic_content_id`='{$topic_content_id}' where `uid`='{$data['uid']}'");
             if('reply' != $data['type']) {
                 $p = array(
                     'buddyid' => $data['uid'],
                 );
                 Load::model('buddy')->update_lastuptime($p);
             }
-                        if ($data['type'] == 'both' || $data['type'] == 'reply' && $parents)
+            if ($data['type'] == 'both' || $data['type'] == 'reply' && $parents)
             {
                 $sql = "insert into `" . TABLE_PREFIX . "topic_reply`(`tid`,`replyid`) values ";
                 $_list = array();
@@ -378,23 +382,23 @@ class TopicLogic
                     $this->DatabaseHandler->Query($sql);
                 }
             }
-                        if ($imageid)
+            if ($imageid)
             {
                 Load::logic('image', 1)->set_tid($imageid, $tid);
             }
-                        if ($attachid)
+            if ($attachid)
             {
                 Load::logic('attach', 1)->set_tid($attachid, $tid);
             }
-                        if($longtextid > 0)
+            if($longtextid > 0)
             {
                 Load::logic('longtext', 1)->set_tid($longtextid, $tid);
             }
-                        if($musicid){
+            if($musicid){
                 $sql = "update `".TABLE_PREFIX."topic_music` set `tid` = '{$tid}' where `id` = '$musicid' ";
                 $this->DatabaseHandler->Query($sql);
             }
-                        if($urls)
+            if($urls)
             {
                 $this->_process_urls($data,$urls);
             }
@@ -403,13 +407,13 @@ class TopicLogic
                 $sql = "update `" . TABLE_PREFIX . "topic_video` set `tid`='{$tid}' where `id`='{$data['videoid']}'";
                 $this->DatabaseHandler->Query($sql);
             }
-                        if($totid > 0)
+            if($totid > 0)
             {
                 $reply_count_update = (($type == 'both' || $type == 'reply') ?
                     "`replys` = `replys` + 1 , " : "");
                 $forward_count_update = (($type == 'both' || $type == 'forward') ?
                     "`forwards` = `forwards` + 1 , " : "");
-                                $update_sql = '';
+                $update_sql = '';
                 if ($type == 'reply') {
                     $update_sql = " `replys` = `replys` + 1 ,`lastupdate`='{$data['lastupdate']}' ";
                 } else if ($type == 'both') {
@@ -417,12 +421,12 @@ class TopicLogic
                 } else if ($type == 'forward') {
                     $update_sql = " `forwards` = `forwards` + 1 ";
                 }
-                                if ($parents && !empty($update_sql))
+                if ($parents && !empty($update_sql))
                 {
                     $sql = "update `" . TABLE_PREFIX . "topic` set {$update_sql} where `tid` in ($parents)";
                     $this->DatabaseHandler->Query($sql);
                 }
-                                                if ($data['uid']!=$data['touid'] && ($data['type'] == 'both' || $data['type'] == 'reply'))
+                if ($data['uid']!=$data['touid'] && ($data['type'] == 'both' || $data['type'] == 'reply'))
                 {
                     $sql = "update `" . TABLE_PREFIX .
                         "members` set `comment_new`=`comment_new`+1 where `uid`='{$data['touid']}'";
@@ -433,11 +437,11 @@ class TopicLogic
                 $row = $query->GetRow();
                 if ($row)
                 {
-                                        if ($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config))
+                    if ($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config))
                     {
                         imjiqiren_send_message($row, 'p', $this->Config);
                     }
-                                        if ($this->Config['sms_enable'] && sms_init($this->Config))
+                    if ($this->Config['sms_enable'] && sms_init($this->Config))
                     {
                         sms_send_message($row, 'p', $this->Config);
                     }
@@ -460,18 +464,18 @@ class TopicLogic
                         }
                         else
                         {
-                                                        $pm_content = $reply_notice['comment_new'] . '人评论你的微博';
+                            $pm_content = $reply_notice['comment_new'] . '人评论你的微博';
                             Load::logic('notice', 1)->Insert_Cron($reply_notice['uid'], $reply_notice['email'], $pm_content,
                                 'raply');
                         }
                     }
                 }
             }
-                        if ($at_uids)
+            if ($at_uids)
             {
                 $this->_process_at_uids($data,$at_uids);
             }
-                        if ($item == 'qun' && ($data['type'] == 'qun' || $data['type'] == 'first')) {
+            if ($item == 'qun' && ($data['type'] == 'qun' || $data['type'] == 'first')) {
                 if (!empty($item_id)) {
                     $query = DB::query("SELECT uid FROM ".DB::table('qun_user')." WHERE qid='{$item_id}'");
                     $uids = array();
@@ -487,7 +491,7 @@ class TopicLogic
                     }
                 }
             }
-                        $update_credits = false;
+            $update_credits = false;
             if ($tags)
             {
                 Load::logic('tag');
@@ -511,7 +515,7 @@ class TopicLogic
                         }
                     }
                 }
-                                foreach($tags as $val) {
+                foreach($tags as $val) {
                     $query = DB::query("SELECT uid FROM ".DB::table('tag_favorite')." WHERE tag='{$val}'");
                     $tag_uids = array();
                     while ($value = DB::fetch($query)) {
@@ -524,7 +528,7 @@ class TopicLogic
                     }
                 }
             }
-                        if ($this->Config['extcredits_enable'])
+            if ($this->Config['extcredits_enable'])
             {
                 if (!$update_credits && !$sign_credits && $data['uid'] > 0)
                 {
@@ -538,7 +542,7 @@ class TopicLogic
                     }
                 }
             }
-                        if ($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config))
+            if ($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config))
             {
                 $to_admin_robot = ConfigHandler::get('imjiqiren', 'admin_qq_robots');
                 if ($to_admin_robot)
@@ -548,7 +552,7 @@ class TopicLogic
                         'topic_id' => $topic_id));
                 }
             }
-                        if ($this->Config['sms_enable'] && sms_init($this->Config))
+            if ($this->Config['sms_enable'] && sms_init($this->Config))
             {
                 $to_admin_mobile = ConfigHandler::get('sms', 'admin_mobile');
                 if ($to_admin_mobile)
@@ -560,7 +564,7 @@ class TopicLogic
             }
             $this->_syn_to($data);
         }
-                if('reply' != $data['type']) {
+        if('reply' != $data['type']) {
             Load::model('cache/db')->del("{$data['uid']}-topic-%", 1);
         }
         unset($this->_cache);
@@ -613,28 +617,28 @@ class TopicLogic
                 return $f_rets['msg'];
             }
         }
-                if($topic_info['totid'] > 0)
+        if($topic_info['totid'] > 0)
         {
-                        $content = $this->GetForwardContent($content);
+            $content = $this->GetForwardContent($content);
             $row = $this->Get($topic_info['totid'],'*','Make',$table);
             if($row && ('forward'==$topic_info['type'] || 'both'==$topic_info['type']))
             {
                 $content .= $this->ForwardSeprator . "{$row['nickname']} : " . jaddslashes($this->_content_strip($row['content']), 1, 1);
                 if(strlen($content) > $this->_len)
                 {
-                                    }
+                }
             }
         }
-                if($imageid != $topic_info['imageid']) {
+        if($imageid != $topic_info['imageid']) {
             if($imageid) {
                 $imageid = Load::logic('image', 1)->get_ids($imageid, $topic_info['uid']);
                 if($imageid) {
                     Load::logic('image', 1)->set_tid($imageid, $tid);
                 }
             }
-                        Load::logic('image', 1)->set_topic_imageid($tid);
+            Load::logic('image', 1)->set_topic_imageid($tid);
         }
-                if($attachid != $topic_info['attachid'])
+        if($attachid != $topic_info['attachid'])
         {
             if($attachid)
             {
@@ -644,17 +648,17 @@ class TopicLogic
                     Load::logic('attach', 1)->set_tid($attachid, $tid);
                 }
             }
-                        Load::logic('attach', 1)->set_topic_attachid($tid);
+            Load::logic('attach', 1)->set_topic_attachid($tid);
         }
         $_process_result = $this->_process_content($content, $topic_info);
         $_content = $_process_result['content'];
         $at_uids = $_process_result['at_uids'];
         $tags = $_process_result['tags'];
         $urls = $_process_result['urls'];
-                $longtextid = Load::logic('longtext', 1)->modify($topic_info['tid'], $_content);
+        $longtextid = Load::logic('longtext', 1)->modify($topic_info['tid'], $_content);
         if(strlen($_content) > $this->_len) {
             $sql_sets['longtextid'] = "`longtextid`='$longtextid'";
-                        $_content = cut_str($_content, $this->_len, '');
+            $_content = cut_str($_content, $this->_len, '');
             $_content = $this->_content_end($_content);
         } else {
             $sql_sets['longtextid'] = "`longtextid`='0'";
@@ -690,7 +694,7 @@ class TopicLogic
             }
             $TagLogic->Modify(array('item_id' => $tid, 'tag' => $tags), $tags_old);
         }
-                if($urls)
+        if($urls)
         {
             $this->_process_urls($topic_info,$urls,true);
         }
@@ -710,30 +714,30 @@ class TopicLogic
             $topic[$rs['tid']] = $rs;
         }
         foreach ($topic as $value) {
-                        $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."topic where tid = '$value[tid]'");
-                        $value['managetype'] = $managetype;
+            $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."topic where tid = '$value[tid]'");
+            $value['managetype'] = $managetype;
             $value['content'] = addslashes($value['content']);
             $value['content2'] = addslashes($value['content2']);
             $sql = "insert into `" . TABLE_PREFIX . "topic_verify` (`" . implode("`,`", array_keys
             ($value)) . "`) values ('" . implode("','", $value) . "')";
             $this->DatabaseHandler->Query($sql);
-                        if ($value['imageid'])
+            if ($value['imageid'])
             {
                 $this->DatabaseHandler->Query("update ".TABLE_PREFIX."topic_image set `tid`='-1' where `id` in ($value[imageid])");
             }
             jsg_member_update_count($value['uid'], 'topic_count', '-1');
-                        if ($value['attachid'])
+            if ($value['attachid'])
             {
                 $this->DatabaseHandler->Query("update ".TABLE_PREFIX."topic_attach set `tid`='-1' where `id` in ($value[attachid])");
             }
-                        $topic_more = $this->GetMore($value['tid']);
+            $topic_more = $this->GetMore($value['tid']);
             if ($topic_more['parents'])
             {
                 $sql = "update `" . TABLE_PREFIX .
                     "topic` set `replys`=if(`replys`>1,`replys`-1,0) where `tid` in({$topic_more['parents']})";
                 $this->DatabaseHandler->Query($sql);
             }
-                        if ($this->Config['extcredits_enable'] && $value['uid'] > 0){
+            if ($this->Config['extcredits_enable'] && $value['uid'] > 0){
                 update_credits_by_action('topic_del', $value['uid']);
             }
         }
@@ -758,14 +762,15 @@ class TopicLogic
             $topics = $topic;
         }
         $topics = (array) $topics;
-                $tbs = array(
+        $tbs = array(
             'qqwb_bind_topic' => 'tid',
             'report' => 'tid',
             'sms_receive_log' => 'tid',
-            'topic_verify' => 'tid',                   'topic_favorite' => 'tid',
+            'topic_verify' => 'tid',
+            'topic_favorite' => 'tid',
             'topic_image' => 'tid',
             'topic_attach' => 'tid',
-                        'topic_longtext' => 'tid',
+            'topic_longtext' => 'tid',
             'topic_mention' => 'tid',
             'topic_more' => 'tid',
             'topic_music' => 'tid',
@@ -785,7 +790,7 @@ class TopicLogic
         foreach ($topics as $topic)
         {
             $tid = $topic['tid'];
-                        if (!empty($topic['item']) &&  $topic['item_id'] > 0) {
+            if (!empty($topic['item']) &&  $topic['item_id'] > 0) {
                 Load::functions('app');
                 app_delete_relation($topic['item'], $topic['item_id'], $topic['tid']);
             }
@@ -799,22 +804,22 @@ class TopicLogic
                     $TagLogic->Delete(array('item_id' => $topic['tid'], 'tag' => $subpatterns['1'], ));
                 }
             }
-                        if ($topic['imageid']) {
+            if ($topic['imageid']) {
                 Load::logic('image', 1)->delete($topic['imageid']);
             }
-                        if ($topic['attachid'])
+            if ($topic['attachid'])
             {
                 Load::logic('attach', 1)->delete($topic['attachid']);
             }
             if ($topic['videoid'])
             {
-                                $sql = "select `id`,`video_img` from `" . TABLE_PREFIX .
+                $sql = "select `id`,`video_img` from `" . TABLE_PREFIX .
                     "topic_video` where `id`='" . $topic['videoid'] . "' ";
                 $query = $this->DatabaseHandler->Query($sql);
                 $topic_video = $query->GetRow();
                 Load::lib('io', 1)->DeleteFile($topic_video['video_img']);
             }
-                        foreach($tbs as $k=>$vs)
+            foreach($tbs as $k=>$vs)
             {
                 $vs = (array) $vs;
                 foreach($vs as $v)
@@ -902,22 +907,22 @@ class TopicLogic
         $member_list = array();
         if($uids) {
             $sql = "SELECT
-  M.`uid`,
-  M.`ucuid`,
-  M.`username`,
-  M.`nickname`,
-  M.`signature`,
-  M.`face_url`,
-  M.`face`,
-  M.`validate`,
-  M.`validate_category`,
-  M.`level`,
-  MF.validate_true_name,
-  MF.validate_remark
-FROM ".DB::table('members')." M
-  LEFT JOIN ".DB::table('memberfields')." MF
-    ON MF.uid = M.uid
-WHERE M.uid IN('".implode("','", $uids)."')";
+                  M.`uid`,
+                  M.`ucuid`,
+                  M.`username`,
+                  M.`nickname`,
+                  M.`signature`,
+                  M.`face_url`,
+                  M.`face`,
+                  M.`validate`,
+                  M.`validate_category`,
+                  M.`level`,
+                  MF.validate_true_name,
+                  MF.validate_remark
+                  FROM ".DB::table('members')." M
+                  LEFT JOIN ".DB::table('memberfields')." MF
+                        ON MF.uid = M.uid
+                        WHERE M.uid IN('".implode("','", $uids)."')";
             $query = DB::query($sql);
             while (false != ($row=DB::fetch($query))) {
                 $member_list[$row['uid']] = $this->MakeMember($row);
@@ -926,14 +931,14 @@ WHERE M.uid IN('".implode("','", $uids)."')";
         $video_list = array();
         if($videoids) {
             $sql = "SELECT
-  `id`,
-  `video_hosts`,
-  `video_link`,
-  `video_img`,
-  `video_img_url`,
-  `video_url`
-FROM ".DB::table('topic_video')."
-WHERE `id` IN('".implode("','", $videoids)."')";
+                  `id`,
+                  `video_hosts`,
+                  `video_link`,
+                  `video_img`,
+                  `video_img_url`,
+                  `video_url`
+            FROM ".DB::table('topic_video')."
+            WHERE `id` IN('".implode("','", $videoids)."')";
             $query = DB::query($sql);
             while (false != ($row=DB::fetch($query))) {
                 $video_list[$row['id']] = $row;
@@ -942,11 +947,11 @@ WHERE `id` IN('".implode("','", $videoids)."')";
         $music_list = array();
         if($musicids) {
             $sql = "SELECT
-  `id`,
-  `music_url`,
-  `xiami_id`
-FROM ".DB::table('topic_music')."
-WHERE `id`IN('".implode("','", $musicids)."')";
+                  `id`,
+                  `music_url`,
+                  `xiami_id`
+            FROM ".DB::table('topic_music')."
+            WHERE `id`IN('".implode("','", $musicids)."')";
             $query = DB::query($sql);
             while (false != ($row=DB::fetch($query))) {
                 $music_list[$row['id']] = $row;
@@ -986,24 +991,24 @@ WHERE `id`IN('".implode("','", $musicids)."')";
     function Make($topic, $actors = array(), $cut_content = 1, $merge_sql = 0)
     {
         global $rewriteHandler;
-                $make_member_fields = "`uid`,`ucuid`,`username`,`nickname`,`signature`,`face_url`,`face`,`validate`,`validate_category`,`level`";
-                $topic['content'] .= $topic['content2'];
-                if($topic['longtextid'] > 0) {
+        $make_member_fields = "`uid`,`ucuid`,`username`,`nickname`,`signature`,`face_url`,`face`,`validate`,`validate_category`,`level`";
+        $topic['content'] .= $topic['content2'];
+        if($topic['longtextid'] > 0) {
             $topic['content'] = $this->_content_end($topic['content']);
         }
         $topic['raw_content'] = strip_tags($topic['content']);
         unset($topic['content2']);
-                if($cut_content && defined(TOPIC_CONTENT_CUT_LENGTH) && TOPIC_CONTENT_CUT_LENGTH > 0)
+        if($cut_content && defined(TOPIC_CONTENT_CUT_LENGTH) && TOPIC_CONTENT_CUT_LENGTH > 0)
         {
             $topic['content'] = cutstr($topic['content'], TOPIC_CONTENT_CUT_LENGTH);
             $topic['raw_content'] = cutstr($topic['raw_content'], TOPIC_CONTENT_CUT_LENGTH);
         }
-                if ($topic['dateline'])
+        if ($topic['dateline'])
         {
             $topic['addtime'] = $topic['dateline'];
             $topic['dateline'] = my_date_format2($topic['dateline']);
         }
-                $highlight = $_GET['highlight'];
+        $highlight = $_GET['highlight'];
         if (is_numeric($highlight))
         {
         }
@@ -1015,7 +1020,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
         if(!$topic['random']) {
             $topic['random'] = mt_rand();
         }
-                if (false !== strpos($topic['content'], $this->Config['site_url']))
+        if (false !== strpos($topic['content'], $this->Config['site_url']))
         {
             if (preg_match_all('~(?:https?\:\/\/|www\.)(?:[A-Za-z0-9\_\-]+\.)+[A-Za-z0-9]{1,4}(?:\:\d{1,6})?(?:\/[\w\d\/=\?%\-\&_\~\`\:\+\#\.]*(?:[^\;\@\[\]\<\>\'\"\n\r\t\s\x7f-\xff])*)?~i',
             $topic['content'] . " ", $match))
@@ -1033,7 +1038,8 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                     {
                         $app_type = '';
                         $tmp_vid = 0;
-                        if (MEMBER_ID > 0) {                            if (preg_match("/mod=vote(?:&code=view)?&vid=([0-9]+)/", $v, $m) || preg_match("/vote(?:\/view)?\/vid\-([0-9]+)/", $v, $m)) {
+                        if (MEMBER_ID > 0) {
+                            if (preg_match("/mod=vote(?:&code=view)?&vid=([0-9]+)/", $v, $m) || preg_match("/vote(?:\/view)?\/vid\-([0-9]+)/", $v, $m)) {
                                 $app_type = 'vote';
                                 $tmp_vid = $m[1];
                                 if ($topic['is_vote'] === 0) {
@@ -1041,7 +1047,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                                 }
                             }
                         }
-                                                if ($app_type == 'vote') {
+                        if ($app_type == 'vote') {
                             $cont_sch[] = "{$v}";
                             $vote_key = $topic['tid'].'_'.$topic['random'];
                             if (IN_JISHIGOU_WAP === true || IN_JISHIGOU_MOBILE === true) {
@@ -1057,14 +1063,14 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 }
                 if ($cont_rpl && $cont_sch)
                 {
-                                        $cont_sch = array_unique($cont_sch);
+                    $cont_sch = array_unique($cont_sch);
                     $cont_rpl = array_unique($cont_rpl);
                     $topic['content'] = trim(str_replace($cont_sch, $cont_rpl, $topic['content']));
                 }
             }
         }
-                $this->_parseAt($topic);
-                if (false !== strpos($topic['content'], '<T>#'))
+        $this->_parseAt($topic);
+        if (false !== strpos($topic['content'], '<T>#'))
         {
             static $topic_content_tag_href_pattern_static = '';
             if (!$topic_content_tag_href_pattern_static)
@@ -1077,7 +1083,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 {
                     $topic_content_tag_href_pattern_static = $rewriteHandler->formatURL($topic_content_tag_href_pattern_static);
                 }
-                                if (defined("IN_JISHIGOU_MOBILE")) {
+                if (defined("IN_JISHIGOU_MOBILE")) {
                     $topic_content_tag_href_pattern_static = 'javascript:goToTopicList(\\\'|REPLACE_VALUE| . "\')"';
                 }
             }
@@ -1109,7 +1115,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
         if(false !== strpos($topic['content'], '<U')) {
             $topic['content'] = preg_replace('~(</U>|<U[^><]*?>|<U\s*)~', '', $topic['content']);
         }
-                if (false !== strpos($topic['content'], '[')) {
+        if (false !== strpos($topic['content'], '[')) {
             if (false === strpos($topic['content'], '#[')) {
                 if (preg_match_all('~\[(.+?)\]~', $topic['content'], $match)) {
                     static $face_conf=null;
@@ -1118,7 +1124,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                     }
                     foreach ($match[0] as $k => $v) {
                         if (false != ($img_src = $face_conf[$match[1][$k]])) {
-                                                        if (defined("IN_JISHIGOU_MOBILE")) {
+                            if (defined("IN_JISHIGOU_MOBILE")) {
                                 $img_src = 'mobile/'.$img_src;
                             }
                             $topic['content'] = str_replace($v, '<img src="' . $this->Config['site_url'] .
@@ -1128,7 +1134,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 }
             }
         }
-                if ($topic['touid'] && !$merge_sql) {
+        if ($topic['touid'] && !$merge_sql) {
             $touser = $this->GetMember($topic['touid'], $make_member_fields);
             if ($topic['tousername'] != $touser['nickname']) {
                 $updatatousername = "update `" . TABLE_PREFIX . "topic` set `tousername`='{$touser['nickname']}' where `tid`=" .
@@ -1136,8 +1142,8 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 $this->DatabaseHandler->Query($updatatousername);
             }
         }
-                $topic = $this->_make_topic_from($topic);
-                $topic['top_parent_id'] = $topic['roottid'];
+        $topic = $this->_make_topic_from($topic);
+        $topic['top_parent_id'] = $topic['roottid'];
         $topic['parent_id'] = $topic['totid'];
         if ($topic['imageid']) {
             $topic['image_list'] = Load::logic('image', 1)->image_list($topic['imageid']);
@@ -1145,7 +1151,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
         if ($topic['attachid']) {
             $topic['attach_list'] = Load::logic('attach', 1)->attach_list($topic['attachid']);
         }
-                if ($topic['videoid'] > 0 && $this->Config['video_status'] && !$merge_sql)
+        if ($topic['videoid'] > 0 && $this->Config['video_status'] && !$merge_sql)
         {
             $sql = "select `id`,`video_hosts`,`video_link`,`video_img`,`video_img_url`,`video_url` from `" .
             TABLE_PREFIX . "topic_video` where `id`='" . $topic['videoid'] . "' ";
@@ -1164,7 +1170,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 $topic['VideoImg'] = $this->Config['site_url'] . '/images/vd.gif';
             }
         }
-                if ($topic['musicid'] > 0 && !$merge_sql)
+        if ($topic['musicid'] > 0 && !$merge_sql)
         {
             $sql = "select `id`,`music_url`,`xiami_id` from `" . TABLE_PREFIX .
                 "topic_music` where `id`='" . $topic['musicid'] . "' ";
@@ -1174,10 +1180,10 @@ WHERE `id`IN('".implode("','", $musicids)."')";
             $topic['MusicUrl'] = $topic_music['music_url'];
             $topic['xiami_id'] = $topic_music['xiami_id'];
         }
-                if(!$merge_sql) {
+        if(!$merge_sql) {
             $topic = array_merge($topic, (array) $this->GetMember($topic['uid'], $make_member_fields));
         }
-                return $topic;
+        return $topic;
     }
     function _make_topic_from($topic) {
         $topic['from_html'] = $topic['from_string'] = '';
@@ -1214,7 +1220,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
     {
         global $rewriteHandler, $topic_content_member_href_pattern_static;
         if (false !== strpos($topic['content'], '</M>')) {
-                        if (defined("IN_JISHIGOU_MOBILE")) {
+            if (defined("IN_JISHIGOU_MOBILE")) {
                 $topic_content_member_href_pattern_static = "javascript:;";
                 if (IN_JISHIGOU_MOBILE_TOPIC_DETAIL === true) {
                     preg_match_all("/<M ([^>]+?)>/", $topic['content'], $matches);
@@ -1267,11 +1273,11 @@ WHERE `id`IN('".implode("','", $musicids)."')";
         $tid = (is_numeric($tid) ? $tid : 0);
         if($tid > 0) {
             $sql = "SELECT
-      t.`tid`
-    FROM `".TABLE_PREFIX."topic_reply` tr
-      LEFT JOIN `".TABLE_PREFIX."topic` t
-        ON t.tid = tr.`replyid`
-    WHERE tr.`tid` = '{$tid}'";
+            t.`tid`
+            FROM `".TABLE_PREFIX."topic_reply` tr
+            LEFT JOIN `".TABLE_PREFIX."topic` t
+            ON t.tid = tr.`replyid`
+            WHERE tr.`tid` = '{$tid}'";
             $query = $this->DatabaseHandler->Query($sql);
             while (false != ($row = $query->GetRow())) {
                 if($row['tid'] > 0) {
@@ -1334,7 +1340,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 }
                 else
                 {
-                                        $_POST['syn_to_sina'] = 1;
+                    $_POST['syn_to_sina'] = 1;
                     $GLOBALS['jsg_tid'] = $data['tid'];
                     $GLOBALS['jsg_totid'] = $data['totid'];
                     $GLOBALS['jsg_message'] = $data['content'];
@@ -1342,7 +1348,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                     $GLOBALS['jsg_attachid'] = $data['attachid'];
                     require_once(ROOT_PATH . 'include/xwb/sina.php');
                     require_once(XWB_plugin::hackFile('newtopic'));
-                                    }
+                }
             }
         }
     }
@@ -1447,7 +1453,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 }
             }
         }
-                if (false !== strpos($content, '#'))
+        if (false !== strpos($content, '#'))
         {
             $tag_num = ConfigHandler::get('tag_num', 'topic');
             if (preg_match_all('~\#([^\-\#\$\{\}\(\)\;\<\>\\\\]+?)\#~', $content, $match))
@@ -1470,9 +1476,9 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 }
             }
         }
-                        if (false !== strpos($content, ':/' . '/') || false !== strpos($content, 'www.'))
+        if (false !== strpos($content, ':/' . '/') || false !== strpos($content, 'www.'))
         {
-                        if (preg_match_all('~(?:https?\:\/\/|www\.)(?:[A-Za-z0-9\_\-]+\.)+[A-Za-z0-9]{1,4}(?:\:\d{1,6})?(?:\/[\w\d\/=\?%\-\&\;_\~\`\:\+\#\.\@\[\]]*(?:[^\<\>\'\"\n\r\t\s\x7f-\xff])*)?~i',
+            if (preg_match_all('~(?:https?\:\/\/|www\.)(?:[A-Za-z0-9\_\-]+\.)+[A-Za-z0-9]{1,4}(?:\:\d{1,6})?(?:\/[\w\d\/=\?%\-\&\;_\~\`\:\+\#\.\@\[\]]*(?:[^\<\>\'\"\n\r\t\s\x7f-\xff])*)?~i',
             $content, $match))
             {
                 foreach ($match[0] as $v)
@@ -1519,7 +1525,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
             }
         }
         if($cont_sch && $cont_rpl) {            
-                        uasort($cont_sch, create_function('$a, $b', 'return (strlen($a)<strlen($b));'));
+            uasort($cont_sch, create_function('$a, $b', 'return (strlen($a)<strlen($b));'));
             foreach($cont_sch as $k=>$v) {
                 if($v && isset($cont_rpl[$k])) {
                     $content = str_replace($v, $cont_rpl[$k], $content);
@@ -1557,7 +1563,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
         }
         else
         {
-                        $type_result = $this->_parse_video($url);
+            $type_result = $this->_parse_video($url);
             if($type_result)
             {
                 $type = 'video';
@@ -1585,7 +1591,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
     function _parse_video_image($image_url)
     {
         $return = '';
-                if ($image_url)
+        if ($image_url)
         {
             $img_src_md5 = md5($image_url);
             $img_path = RELATIVE_ROOT_PATH . 'images/video_img/' . $img_src_md5[0] . $img_src_md5[1] .
@@ -1645,7 +1651,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
             if (($temp_image = dfopen($image_url)) && (Load::lib('io', 1)->WriteFile($image_file,$temp_image)) && is_image($image_file)) {
                 Load::lib('io', 1)->WriteFile($image_file_small, $temp_image);
                 list($image_width, $image_height, $image_type, $image_attr) = getimagesize($image_file);
-                                if($image_width > 200)
+                if($image_width > 200)
                 {
                     $p_width = 200;
                     $p_height = round(($image_height*200)/$image_width);
@@ -1673,7 +1679,8 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 }
                 $p = array(
                     'id' => $image_id,
-                    'vtid' => $data['id'],                    'site_url' => $site_url,
+                    'vtid' => $data['id'],
+                    'site_url' => $site_url,
                     'photo' => $image_file,
                     'name' => basename($image_url),
                     'filesize' => $image_size,
@@ -1723,7 +1730,8 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 }
                 $p = array(
                     'id' => $attach_id,
-                    'vtid' => $data['id'],                    'site_url' => $site_url,
+                    'vtid' => $data['id'],
+                    'site_url' => $site_url,
                     'file' => $attach_file,
                     'name' => basename($attach_url),
                     'filesize' => $attach_size,
@@ -1757,12 +1765,14 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                 $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX . "topic_mention` (`tid`,`uid`,`dateline`) values ('{$tid}','{$at_uid}','{$timestamp}')");
                 $this->DatabaseHandler->Query("update `" . TABLE_PREFIX .
                     "members` set `at_new`=`at_new`+1 , `at_count`=`at_count`+1 where `uid`='$at_uid'");
-                                $user_notice = $this->DatabaseHandler->FetchFirst("select `uid`,`username`,`at_new`,`email`,`notice_at`,`nickname` from `" .
+                $user_notice = $this->DatabaseHandler->FetchFirst("select `uid`,`username`,`at_new`,`email`,`notice_at`,`nickname` from `" .
                 TABLE_PREFIX . "members` where `uid`='$at_uid'");
                 if($user_notice)
                 {
-                    if ($user_notice['notice_at'] == 1)                     {
-                        if ($this->Config['notice_email'] == 1)                         {
+                    if ($user_notice['notice_at'] == 1)
+                    {
+                        if ($this->Config['notice_email'] == 1)
+                        {
                             if(!function_exists('send_mail')) {
                                 Load::lib('mail');
                                 $mail_to = $user_notice['email'];
@@ -1773,13 +1783,13 @@ WHERE `id`IN('".implode("','", $musicids)."')";
                         }
                         else
                         {
-                                                        Load::logic('notice', 1)->Insert_Cron($user_notice['uid']);
+                             Load::logic('notice', 1)->Insert_Cron($user_notice['uid']);
                         }
                     }
-                                        if ($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config)) {
+                    if ($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config)) {
                         imjiqiren_send_message($user_notice, 't', $this->Config);
                     }
-                                        if ($this->Config['sms_enable'] && sms_init($this->Config)) {
+                    if ($this->Config['sms_enable'] && sms_init($this->Config)) {
                         sms_send_message($user_notice, 't', $this->Config);
                     }
                 }
@@ -1925,7 +1935,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
         $parent_list = array();
         if ($topic_list)
         {
-                        $parent_id_list = array();
+            $parent_id_list = array();
             foreach ($topic_list as $row)
             {
                 if($get_parent && 0 < ($p = (int) $row['parent_id']))
@@ -1945,7 +1955,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
         return $parent_list;
     }
     function GetForwardContent($content) {
-                $seprator = $this->ForwardSeprator;
+        $seprator = $this->ForwardSeprator;
         $seprator = trim($seprator);
         $strpos = strpos($content, $seprator);
         if(false !== $strpos) {
@@ -1985,7 +1995,7 @@ WHERE `id`IN('".implode("','", $musicids)."')";
         if(!($user = Load::model('cache/db')->get($cache_id))){
             $user = array();
             $sql = "SELECT
-                      COUNT(*) AS c_count,t.uid,m.username,m.nickname 
+                    COUNT(*) AS c_count,t.uid,m.username,m.nickname 
                     FROM `".TABLE_PREFIX."topic` t 
                     LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.uid 
                     WHERE t.`touid` = '$uid'  

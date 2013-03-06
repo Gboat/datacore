@@ -1,4 +1,5 @@
 <?php 
+  
  $config=array (
   'ajax_topic_time' => '45',
   'api_enable' => 1,
@@ -35,6 +36,8 @@
   'gzip' => 0,
   'icp' => '备案申请中',
   'image_uploadify_queue_size_limit' => '3',
+  'index_meta_description' => '数据核心',
+  'index_meta_keywords' => '数据核心',
   'install_lock_time' => 1343384299,
   'invite_by_admin' => '1',
   'invite_count_max' => '30',
@@ -49,11 +52,14 @@
   'login_enable' => 1,
   'maxthumbheight' => '6000',
   'maxthumbwidth' => '800',
+  'meta_description' => '数据核心',
+  'meta_keywords' => '数据核心',
   'mobile_url' => 'http://localhost/yqweibo/mobile',
   'no_verify_email_role_id' => '5',
   'normal_default_role_id' => '3',
   'notice_to_admin' => '',
   'only_show_vip_topic' => '0',
+  'page_title' => '数据核心',
   'qmd_file_url' => './images/qmd/',
   'qqwb_enable' => 1,
   'qun_attach_enable' => 1,

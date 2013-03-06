@@ -94,6 +94,7 @@ class MasterObject
     function init_app() {
         $this->ip = client_ip();
         $this->failedlogins = $this->DatabaseHandler->FetchFirst("select * from ".TABLE_PREFIX."failedlogins where `ip`='{$this->ip}' ");
+        /*
         if($this->failedlogins) {
             if(($this->failedlogins['lastupdate'] +1800) >$this->timestamp) {
                 if($this->failedlogins['count'] >30) {
@@ -103,6 +104,7 @@ class MasterObject
                 $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."failedlogins where `ip`='{$this->ip}'");
             }
         }
+         */
         $error = 0;
         $app = array();
         $this->app_key = max(0,(int) $this->__API__['app_key']);
