@@ -5,7 +5,7 @@
     'category_id' => '0',
     'category_name' => '个人',
     'category_pic' => '',
-    'num' => '0',
+    'num' => '1',
     'dateline' => '1322040871',
   ),
   2 => 
@@ -14,7 +14,7 @@
     'category_id' => '1',
     'category_name' => '站长',
     'category_pic' => '',
-    'num' => '0',
+    'num' => '1',
     'dateline' => '1322040878',
   ),
   3 => 

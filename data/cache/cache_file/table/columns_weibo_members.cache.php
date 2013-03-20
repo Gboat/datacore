@@ -1,7 +1,7 @@
 <?php if(!defined('IN_JISHIGOU')) { exit('invalid request'); } 
 $cache = array (
   'key' => 'table/columns_weibo_members',
-  'dateline' => 1359290819,
+  'dateline' => 1363689985,
   'val' => 
   array (
     'life' => 0,

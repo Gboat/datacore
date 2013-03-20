@@ -28,8 +28,8 @@ type参数只有在指定totid时才生效，默认为first(原创微博)
 XML示例
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<item id="result">
-		<item id="tid">185</item>
+<item id="result">
+	<item id="tid">185</item>
 	<item id="uid">1</item>
 	<item id="username">admin</item>
 	<item id="content">分享图片</item>

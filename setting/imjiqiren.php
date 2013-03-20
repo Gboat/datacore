@@ -6,6 +6,6 @@ $config['imjiqiren']=array (
   'f_enable' => 1,
   'enable' => 1,
   'sign_update_disable' => 1,
-  'admin_qq_robots' => 1,
+  'admin_qq_robots' => 0,
 );
  ?>

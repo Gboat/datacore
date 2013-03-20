@@ -187,7 +187,7 @@ class ImageLogic
         $ret = 0;
         if($sets) {
             $ret = DB::update($this->table, $sets, array('id' => $id));
-                        if(isset($sets['tid']) && $sets['tid'] > 0) {
+            if(isset($sets['tid']) && $sets['tid'] > 0) {
                 $tid = $sets['tid'] ? $sets['tid'] : $info['tid'];
                 $this->set_topic_imageid($tid);
             } elseif ($vtid > 0) {
@@ -290,7 +290,7 @@ class ImageLogic
         }
         if($ids && $checks)
         {
-                        $_checks = array('uid' => 1, 'tid' => 0);
+            $_checks = array('uid' => 1, 'tid' => 0);
             if(is_numeric($checks))
             {
                 $checks = array('uid' => $checks);
