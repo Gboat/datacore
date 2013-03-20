@@ -54,7 +54,7 @@
   'maxthumbwidth' => '800',
   'meta_description' => '数据核心',
   'meta_keywords' => '数据核心',
-  'mobile_url' => 'http://localhost/yqweibo/mobile',
+  'mobile_url' => 'http://localhost/datacore/mobile',
   'no_verify_email_role_id' => '5',
   'normal_default_role_id' => '3',
   'notice_to_admin' => '',
@@ -100,7 +100,7 @@
   'site_domain' => 'localhost',
   'site_name' => 'DataCore',
   'site_notice' => NULL,
-  'site_url' => 'http://localhost/yqweibo',
+  'site_url' => 'http://localhost/datacore',
   'slide_enable' => 0,
   'slide_index_enable' => 1,
   'style_three_tol' => 0,
@@ -136,7 +136,7 @@
   'video_status' => '1',
   'vote_open' => '1',
   'wap' => '1',
-  'wap_url' => 'http://localhost/yqweibo/wap',
+  'wap_url' => 'http://localhost/datacore/wap',
   'watermark_contents' => '1',
   'watermark_contents_color' => '#ffffff',
   'watermark_contents_size' => '12',
@@ -144,4 +144,4 @@
   'watermark_position' => 4,
   'widget_enable' => '0',
 ); 
- ?>
+?>

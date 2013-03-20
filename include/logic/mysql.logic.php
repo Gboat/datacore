@@ -34,7 +34,7 @@ class MysqlLogic
         {
             foreach ($table_field_list as $drop_field)
             {
-                            }
+            }
         }
         if(count($sql_l)<1)return false;
         $sqls.=implode(",\r\n\t",$sql_l);

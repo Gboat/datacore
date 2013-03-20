@@ -270,7 +270,7 @@ class AttachLogic
         }
         if($ids && $checks)
         {
-                        $_checks = array('uid' => 1, 'tid' => 0);
+            $_checks = array('uid' => 1, 'tid' => 0);
             if(is_numeric($checks))
             {
                 $checks = array('uid' => $checks);
@@ -364,15 +364,15 @@ class AttachLogic
         {
             $query = DB::query("SELECT * FROM ".DB::table('topic_attach')." WHERE id IN(".jimplode($ids).")");
             while($attach = DB::fetch($query))
-                        {
-                                $attach_img = $attach['filetype'];
+            {
+                $attach_img = $attach['filetype'];
                 $attach_name = $attach['name'];
                 $attach_size = $attach['filesize'];
                 $attach_down = $attach['download'];
                 $attach_size = ($attach_size > 1024*1024) ? round($attach_size/(1024*1024),2).'MB' : round($attach_size/1024,1).'KB';
                 $attach_score = $attach['score'];
                 $attach_file = RELATIVE_ROOT_PATH . $attach['file'];
-                                                                                                                                                                    $list[$attach['id']] = array(
+                $list[$attach['id']] = array(
                     'id' => $attach['id'],
                     'attach_img' => 'images/filetype/'.$attach_img.'.gif',
                     'attach_file' => $attach_file,
