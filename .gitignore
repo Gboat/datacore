@@ -1,5 +1,6 @@
-data/*
-backup/*
-setting/*
-mobile/data/cache/*
-wap/data/cache/*
+data
+data/cache
+backup
+setting
+mobile/data/cache
+wap/data/cache

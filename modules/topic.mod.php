@@ -63,12 +63,12 @@ class ModuleObject extends MasterObject
             return false;
         }
         $title = '';
-                $per_page_num = 20;
+        $per_page_num = 20;
         $topic_uids = $topic_ids = $order_list = $where_list = $params = array();
         $where = $order = $limit = "";
         $cache_time = 0;
         $cache_key = '';
-                $options = array();
+        $options = array();
         $gets = array(
             'mod' => ($_GET['mod_original'] ? get_safe_code($_GET['mod_original']) : $this->Module),
             'code' => $this->Code,
@@ -82,10 +82,10 @@ class ModuleObject extends MasterObject
         unset($gets['type']);
         $type_url = "index.php?".url_implode($gets);
         $params['uid'] = $uid = $member['uid'];
-                $is_personal = ($uid == MEMBER_ID);
+        $is_personal = ($uid == MEMBER_ID);
         $params['is_personal'] = $is_personal;
         $params['code'] = $this->Code;
-                $code_ary = array (
+        $code_ary = array (
             'myblog',
             'mycomment',
             'tocomment',
@@ -94,7 +94,7 @@ class ModuleObject extends MasterObject
             'myfavorite',
             'favoritemy',
             'tag',
-                    'qun',
+            'qun',
             'recd',
             'other',
             'bbs',
@@ -102,54 +102,54 @@ class ModuleObject extends MasterObject
             'department',
         );
         if (!in_array($params['code'], $code_ary)) {
-                        $params['code'] = 'myblog';
+            $params['code'] = 'myblog';
         }
-                $page_str = $params['code'];
+        $page_str = $params['code'];
         if($params['code'] == 'bbs' || $params['code'] == 'cms') {
             $page_str = 'myhome';         }
         if (($show_topic_num = (int) $this->ShowConfig['topic'][$page_str]) > 0) {
             $per_page_num = $show_topic_num;
         }
         $options['perpage'] = $per_page_num;
-                $groupname = '';
+        $groupname = '';
         $groupid = 0;
         $TopicListLogic = Load::logic('topic_list', 1);
-                $tpl = 'topic_index';
+        $tpl = 'topic_index';
         if ('myhome'==$params['code']) {
             $tpl = 'topic_myhome';
             $topic_selected = 'myhome';
-                        $type = get_param('type');
+            $type = get_param('type');
             if($type && !in_array($type, array('pic', 'video', 'music', 'vote', 'event', ))) {
                 $type = '';
             }
             if($type) {
                 $params['type'] = $type;
             }
-                        $gid = max(0, (int) get_param('gid'));
+            $gid = max(0, (int) get_param('gid'));
             if($gid) {
                 $params['gid'] = $gid;
             }
-                        $topic_myhome_time_limit = 0;
+            $topic_myhome_time_limit = 0;
             if($this->Config['topic_myhome_time_limit'] > 0) {
                 $topic_myhome_time_limit = (TIMESTAMP - ($this->Config['topic_myhome_time_limit'] * 86400));
                 if ($topic_myhome_time_limit > 0) {
                     $options['dateline'] = $topic_myhome_time_limit;
                 }
             }
-                        $options['uid'] = array($member['uid']);
+            $options['uid'] = array($member['uid']);
             if ($member['uid'] == MEMBER_ID) {
                 $cache_time = 600;
                 $cache_key = "{$member['uid']}-topic-myhome-{$type}-{$gid}";
                 $title = '我的首页';
                 $GLOBALS['_J']['disable_user_follow'] = 1;
-                                $refresh_time = max(30, (int) $this->Config['ajax_topic_time']);
+                $refresh_time = max(30, (int) $this->Config['ajax_topic_time']);
                 if(get_param('page') < 2 && ($member['lastactivity'] + $refresh_time < TIMESTAMP)) {
                     $new_topic = Load::model('buddy')->check_new_topic($uid, 1);
                     if($new_topic > 0) {
                         Load::model('cache/db')->del("{$uid}-topic-%", 1);
                     }
                 }
-                                if ($gid) {
+                if ($gid) {
                     $group_info = DB::fetch_first("SELECT *
                                                    FROM ".DB::table('group')."
                                                    WHERE uid=".MEMBER_ID." AND id='{$gid}' ");
@@ -166,7 +166,7 @@ class ModuleObject extends MasterObject
                         $groupname = $row['g_name'];
                         $groupid = $row['gid'];
                     }
-                                        if($g_view_uids) {
+                    if($g_view_uids) {
                         $options['uid'] = $g_view_uids;
                     } else {
                         $this->Messager("没有设置用户，无法查看这个组的微博",'index.php?mod=topic&code=group&gid='.$gid);
@@ -185,7 +185,7 @@ class ModuleObject extends MasterObject
                 $title = "{$member['nickname']}的微博";
                 $this->_initTheme($member);
             }
-                        if($type) {
+            if($type) {
                 $getTypeTidReturn = $TopicListLogic->GetTypeTid($type,$options['uid'],$options);
                 $options['tid'] = $getTypeTidReturn['tid'];
                 $options['count'] = $getTypeTidReturn['count'];
@@ -215,7 +215,7 @@ class ModuleObject extends MasterObject
             }
             if($tag_info)
             {
-                                $sql = "select `item_id` from `".TABLE_PREFIX."topic_tag` where  `tag_id` in('".implode("','",$tag_info)."') ORDER BY `item_id` DESC LIMIT 2000 ";
+                $sql = "select `item_id` from `".TABLE_PREFIX."topic_tag` where  `tag_id` in('".implode("','",$tag_info)."') ORDER BY `item_id` DESC LIMIT 2000 ";
                 $query = $this->DatabaseHandler->Query($sql);
                 $topic_ids = array();
                 while (false != ($row = $query->GetRow())) {
@@ -223,7 +223,7 @@ class ModuleObject extends MasterObject
                 }
                 $options['tid'] = $topic_ids;
                 unset($topic_ids);
-                                if ($this->Get['type']) {
+                if ($this->Get['type']) {
                     $options['filter'] = $this->Get['type'];
                 }
                 if ($view == 'new_reply') {
@@ -256,7 +256,7 @@ class ModuleObject extends MasterObject
             if ($member['uid']!=MEMBER_ID) {
                 $this->Messager("您无权查看该页面",null);
             }
-                        if ($member['comment_new']) {
+            if ($member['comment_new']) {
                 $sql = "update `".TABLE_PREFIX."members` set `comment_new`=0 where `uid`='{$member['uid']}'";
                 $this->DatabaseHandler->Query($sql);
                 $this->MemberHandler->MemberFields['comment_new'] = 0;
@@ -273,24 +273,24 @@ class ModuleObject extends MasterObject
         } else if ('myblog' == $params['code']) {
             $tpl = 'topic_myblog';
             $where = " 1 ";
-                        $options['uid'] = array($member['uid']);
-                        if ($this->Get['type']) {
-                                if('vote' == $this->Get['type']){
+            $options['uid'] = array($member['uid']);
+            if ($this->Get['type']) {
+                if('vote' == $this->Get['type']){
                     $type = 'vote';
                     $tpl = 'topic_vote';
                     $perpage = $this->ShowConfig['vote']['list'];
                     $perpage = empty($perpage) ? 20 : $perpage;
                     $vote_where = ' 1 ';
-                                        $filter = get_param('filter');
+                    $filter = get_param('filter');
                     if ($filter == 'joined') {
-                                                $vids = Load::logic('vote',1)->get_joined($member['uid']);
+                        $vids = Load::logic('vote',1)->get_joined($member['uid']);
                         if (!empty($vids)) {
                             $vote_where .= " AND `v`.`vid` IN(".jimplode($vids).") ";
                         } else {
                             $vote_where = ' 0 ';
                         }
                     } else if ($filter == 'new_update') {
-                                                DB::query("UPDATE ".DB::table('members')." SET vote_new=0 WHERE uid='{$uid}'");
+                        DB::query("UPDATE ".DB::table('members')." SET vote_new=0 WHERE uid='{$uid}'");
                         $this->MemberHandler->MemberFields['vote_new'] = 0;
                         $vids = Load::logic('vote',1)->get_joined($uid);
                         if (!empty($vids)) {
@@ -321,12 +321,12 @@ class ModuleObject extends MasterObject
                         $page_arr['html'] = $vote_info['page']['html'];
                         $uid_ary = $vote_info['uids'];
                     }
-                                        if (!empty($uid_ary)) {
+                    if (!empty($uid_ary)) {
                         $members = $this->TopicLogic->GetMember($uid_ary);
                     }
                     $topic_list_get = true;
                 }
-                                if('event' == $this->Get['type']){
+                if('event' == $this->Get['type']){
                     $type = 'event';
                     $tpl = 'topic_event';
                     $filter = get_param('filter');
@@ -338,14 +338,14 @@ class ModuleObject extends MasterObject
                         $param['order'] = " order by a.lasttime desc,a.app_num desc,a.posttime desc ";
                         $param['page_url'] = $options['page_url'];
                         $return = Load::logic('event',1)->getEvents($param);            
-                                        } else if ($filter == 'new_update'){
-                                                $this->DatabaseHandler->Query("update ".TABLE_PREFIX."members set event_new = 0 where uid = '$uid'");
+                    } else if ($filter == 'new_update'){
+                        $this->DatabaseHandler->Query("update ".TABLE_PREFIX."members set event_new = 0 where uid = '$uid'");
                         $this->MemberHandler->MemberFields['event_new'] = 0;
                         $this->Title = "最近更新的活动";
                         $param['uid'] = $uid;
                         $param['page_url'] = $options['page_url'];
                         $return = Load::logic('event',1)->getNewEvent($param);    
-                                        }else{
+                    }else{
                         $filter = 'created';
                         $this->Title = $member['nickname']."的活动";
                         $param['where'] = " a.postman = '$uid' and a.verify = 1 ";
@@ -362,7 +362,7 @@ class ModuleObject extends MasterObject
                     $type = $this->Get['type'];
                     $options['type'] = array('reply', 'both');
                 }
-                                if(in_array($this->Get['type'],array('pic','video','music','attach'))){
+                if(in_array($this->Get['type'],array('pic','video','music','attach'))){
                     if($this->Get['follow']){
                         $buddyids = get_buddyids($params['uid'], $this->Config['topic_myhome_time_limit']);
                         if($buddyids) {
@@ -375,7 +375,7 @@ class ModuleObject extends MasterObject
                     $options['count'] = $getTypeTidReturn['count'];
                     $options['limit'] = $per_page_num;
                 }
-                                $dateline = TIMESTAMP - 30*24*3600;
+                $dateline = TIMESTAMP - 30*24*3600;
                 if('hot_reply' == $this->Get['type']){
                     $options['where'] = " replys > 0 and dateline > '$dateline' ";
                     $options['type'] = 'first';
@@ -393,7 +393,7 @@ class ModuleObject extends MasterObject
                             $this->Messager("您无权查看该页面",-1);
                         }
                     }
-                                        $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."topic_verify` where managetype = 0";
+                    $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."topic_verify` where managetype = 0";
                     $total_record = DB::result_first($sql);
                                         $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
                                         $sql = "select v.*
@@ -412,19 +412,19 @@ class ModuleObject extends MasterObject
                     $topic_list_get = true;
                 }
             } else {
-                                $img_arr = Load::logic('image', 1)->get_my_image($member['uid'], 6);
+                $img_arr = Load::logic('image', 1)->get_my_image($member['uid'], 6);
             }
             if ($member['uid'] != MEMBER_ID) {
                 $title = "{$member['nickname']}的微博";
-                                $list_blacklist = is_blacklist($member['uid'], MEMBER_ID);
-                                $fg_code = 'hisblog';
+                $list_blacklist = is_blacklist($member['uid'], MEMBER_ID);
+                $fg_code = 'hisblog';
                 $this->_initTheme($member);
             } else {
                 $title = '我的微博';
                 $this->MetaKeywords ="{$member['nickname']}的微博";
             }
             $buddys = array();
-                        if (MEMBER_ID > 0 && $member['uid'] != MEMBER_ID) {
+            if (MEMBER_ID > 0 && $member['uid'] != MEMBER_ID) {
                 $sql = "select `buddyid` as `id`,`remark`
                         from `".TABLE_PREFIX."buddys`
                         where `uid`='".MEMBER_ID."' and `buddyid` = ".$member['uid'];
@@ -438,8 +438,8 @@ class ModuleObject extends MasterObject
             if($member['uid'] != MEMBER_ID) {
                 $this->Messager("您无权查看该页面",null);
             }
-                        if ($member['at_new']) {
-                                $sql = "update `".TABLE_PREFIX."members` set `at_new`=0 where `uid`='{$member['uid']}'";
+            if ($member['at_new']) {
+                $sql = "update `".TABLE_PREFIX."members` set `at_new`=0 where `uid`='{$member['uid']}'";
                 $this->DatabaseHandler->Query($sql);
                 $this->MemberHandler->MemberFields['at_new'] = 0;
             }
@@ -458,10 +458,10 @@ class ModuleObject extends MasterObject
             if ($member['uid'] != MEMBER_ID) {
                 $this->Messager("您无权查看该页面",null);
             }
-                        $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."topic_favorite` TF where TF.uid='{$uid}'";
+            $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."topic_favorite` TF where TF.uid='{$uid}'";
             $total_record = DB::result_first($sql);
-                        $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
-                        $sql = "select TF.dateline as favorite_time , T.*
+            $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
+            $sql = "select TF.dateline as favorite_time , T.*
                     from `".TABLE_PREFIX."topic_favorite` TF
                     left join `".TABLE_PREFIX."topic` T
                     on T.tid=TF.tid
@@ -483,15 +483,15 @@ class ModuleObject extends MasterObject
             if ($member['uid'] != MEMBER_ID) {
                 $this->Messager("您无权查看该页面",null);
             }
-                        if ($member['favoritemy_new'] > 0) {
+            if ($member['favoritemy_new'] > 0) {
                 $sql = "update `".TABLE_PREFIX."members` set `favoritemy_new`=0 where `uid`='{$member['uid']}'";
                 $this->DatabaseHandler->Query($sql);
                 $this->MemberHandler->MemberFields['favoritemy_new'] = 0;
             }
-                        $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."topic_favorite` TF where TF.tuid='{$uid}'";
+            $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."topic_favorite` TF where TF.tuid='{$uid}'";
             $total_record = DB::result_first($sql);
-                        $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
-                        $sql = "select TF.dateline as favorite_time , TF.uid as fuid , T.*
+            $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
+            $sql = "select TF.dateline as favorite_time , TF.uid as fuid , T.*
                     from `".TABLE_PREFIX."topic_favorite` TF
                     left join `".TABLE_PREFIX."topic` T
                     on T.tid=TF.tid
@@ -509,7 +509,7 @@ class ModuleObject extends MasterObject
                 $fuids[$row['fuid']] = $row['fuid'];
             }
             $favorite_members = $this->TopicLogic->GetMember($fuids,"`uid`,`ucuid`,`username`,`nickname`,`face_url`,`face`,`validate`,`validate_category`");
-                        $topic_list_get = true;
+            $topic_list_get = true;
         } else if ('qun' == $params['code']) {
             $tpl = 'topic_qun';
             $title = "我的微群";
@@ -517,7 +517,7 @@ class ModuleObject extends MasterObject
             if (!$qun_setting['qun_open']) {
                 $this->Messager("当前站点没有开放微群功能", null);
             }
-                        DB::query("UPDATE ".DB::table('members')." SET qun_new=0 WHERE uid='".MEMBER_ID."' ");
+            DB::query("UPDATE ".DB::table('members')." SET qun_new=0 WHERE uid='".MEMBER_ID."' ");
             $this->MemberHandler->MemberFields['qun_new'] = 0;
             $views = array('new', 'new_reply', 'my_reply', 'recd');
             $view = trim($this->Get['view']);
@@ -529,7 +529,7 @@ class ModuleObject extends MasterObject
             $join_qun_count = DB::result_first("SELECT COUNT(*) FROM ".DB::table('qun_user')." WHERE uid='{$u}' ");
             $qun_name = '';
             if ($join_qun_count > 0) {
-                                $query = DB::query("SELECT qid FROM ".DB::table('qun_user')." WHERE uid='{$u}'");
+            $query = DB::query("SELECT qid FROM ".DB::table('qun_user')." WHERE uid='{$u}'");
                 while ($value = DB::fetch($query)) {
                     $qid_ary[] = $value['qid'];
                 }
@@ -594,7 +594,7 @@ class ModuleObject extends MasterObject
                     $this->MemberHandler->MemberFields['qun_new'] = 0;
                 }
             }
-                        $sql = "select * from `".TABLE_PREFIX."qun`  where `recd` = 1 order by `member_num` desc limit 0,8  ";
+            $sql = "select * from `".TABLE_PREFIX."qun`  where `recd` = 1 order by `member_num` desc limit 0,8  ";
             $query = $this->DatabaseHandler->Query($sql);
             $hot_qun = array();
             $qunLogic = Load::logic('qun',1);
@@ -635,7 +635,7 @@ class ModuleObject extends MasterObject
             $view = 'all';
             $active[$view] = 'current';
             $info = array();
-                        if($this->Config['dedecms_enable'] && @is_file(ROOT_PATH . 'setting/dedecms.php')){
+            if($this->Config['dedecms_enable'] && @is_file(ROOT_PATH . 'setting/dedecms.php')){
                 Load::logic("topic_cms");
                 $TopicCmsLogic = new TopicCmsLogic();
                 $info = $TopicCmsLogic->get_cms($param);
@@ -677,7 +677,7 @@ class ModuleObject extends MasterObject
                 'perpage' => $options['perpage'],
                 'page_url' => $options['page_url'],
             );
-                        if(($this->Config['dzbbs_enable'] && @is_file(ROOT_PATH . 'setting/dzbbs.php')) || ($this->Config['phpwind_enable'] && $this->Config['pwbbs_enable'] && @is_file(ROOT_PATH . 'setting/phpwind.php'))){
+            if(($this->Config['dzbbs_enable'] && @is_file(ROOT_PATH . 'setting/dzbbs.php')) || ($this->Config['phpwind_enable'] && $this->Config['pwbbs_enable'] && @is_file(ROOT_PATH . 'setting/phpwind.php'))){
                 Load::logic("topic_bbs");
                 $TopicBbsLogic = new TopicBbsLogic();
                 $info = $TopicBbsLogic->get_bbs($param);
@@ -691,7 +691,8 @@ class ModuleObject extends MasterObject
             $topic_list_get = true;
         }
         if (!$topic_list_get) {
-                        if($cache_time > 0 && !$options['tid']) {                 $cache_key = ($cache_key ? $cache_key : "{$member['uid']}-topic-{$params['code']}-{$params['type']}-{$params['gid']}-{$params['qid']}-{$params['view']}");
+            if($cache_time > 0 && !$options['tid']) {
+                $cache_key = ($cache_key ? $cache_key : "{$member['uid']}-topic-{$params['code']}-{$params['type']}-{$params['gid']}-{$params['qid']}-{$params['view']}");
                 $options = $TopicListLogic->get_options($options, $cache_time, $cache_key);
             }
             $info = $TopicListLogic->get_data($options);
@@ -711,10 +712,10 @@ class ModuleObject extends MasterObject
         if ($topic_list) {
             $topic_list_count = count($topic_list);
             if (!$topic_parent_disable && 'bbs' != $this->Code) {
-                                $parent_list = $this->TopicLogic->GetParentTopic($topic_list, ('mycomment' == $this->Code));
-                            }
+                 $parent_list = $this->TopicLogic->GetParentTopic($topic_list, ('mycomment' == $this->Code));
+            }
         }
-                $group_list = $grouplist2 = array();
+        $group_list = $grouplist2 = array();
         $group_list = $this->_myGroup($member['uid']);
         $cut_num = 5;
         if ($group_list) {
@@ -737,7 +738,7 @@ class ModuleObject extends MasterObject
                 $group_list = array();
             }
         }
-                $member_medal = $my_member ? $my_member : $member;
+        $member_medal = $my_member ? $my_member : $member;
         if ($member_medal['medal_id']) {
             $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
         }
@@ -747,13 +748,13 @@ class ModuleObject extends MasterObject
         } else {
             $exp_width = 0;
         }
-                $nex_exp_credit  = $exp_return['nex_exp_credit'];
-                $nex_level  = $exp_return['nex_exp_level'];
+        $nex_exp_credit  = $exp_return['nex_exp_credit'];
+        $nex_level  = $exp_return['nex_exp_level'];
         $this->Title = $title;
         $tpl = $tpl ? $tpl : 'topic_index';
         include($this->TemplateHandler->Template($tpl));
     }
-        function View()
+    function View()
     {
         if ($this->ID < 1) {
             $this->Messager("请指定一个ID",null);
@@ -764,7 +765,7 @@ class ModuleObject extends MasterObject
         if (!$topic_info) {
             $this->Messager("您要查看的话题已经不存在了",null);
         }
-                $allow_op = 1;
+        $allow_op = 1;
         if ($topic_info['item'] == 'qun' && !empty($topic_info['item_id'])) {
             Load::logic('qun');
             $QunLogic = new QunLogic();
@@ -779,9 +780,9 @@ class ModuleObject extends MasterObject
                 }
             }
         } else {
-                                    if ($topic_info['type'] == 'reply') {
+            if ($topic_info['type'] == 'reply') {
                 $roottid = $topic_info['roottid'];
-                                if (empty($roottid)) {
+                if (empty($roottid)) {
                     $root_type = 'reply';
                 } else {
                     $root_type = DB::result_first("SELECT type FROM ".DB::table('topic')." WHERE tid='{$roottid}'");
@@ -796,11 +797,10 @@ class ModuleObject extends MasterObject
         $parent_list = $t_parent_list = $r_parent_list = array();
         if($topic_info['parent_id'])
         {
-            $parent_id_list = array
-            (
-            $topic_info['parent_id'],
-            $topic_info['top_parent_id'],
-            );
+            $parent_id_list = array(
+                $topic_info['parent_id'],
+                $topic_info['top_parent_id'],
+                );
             if($parent_id_list)
             {
                 $t_parent_list = $this->TopicLogic->Get($parent_id_list);
@@ -815,9 +815,9 @@ class ModuleObject extends MasterObject
             $page_arr = page($total_record,$per_page_num,$query_link,$_config);
             if($tids)
             {
-                                $condition = "where `tid` in ('".implode("','",$tids)."') order by `dateline` asc {$page_arr['limit']}";
+                $condition = "where `tid` in ('".implode("','",$tids)."') order by `dateline` asc {$page_arr['limit']}";
                 $reply_list = $this->TopicLogic->Get($condition);
-                                $parent_list = $r_parent_list = $this->TopicLogic->GetParentTopic($reply_list, 1);
+                $parent_list = $r_parent_list = $this->TopicLogic->GetParentTopic($reply_list, 1);
             }
         }
         if($t_parent_list)
@@ -841,13 +841,13 @@ class ModuleObject extends MasterObject
         {
             $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
         }
-                if($topic_info['longtextid']) {
+        if($topic_info['longtextid']) {
             $longtext_info = Load::logic('longtext', 1)->get_info($topic_info['longtextid'], 1);
             $longtext_info[longtext] = nl2br($longtext_info[longtext]);
             $topic_info['content'] = $longtext_info['longtext'];
         }
         $this->Title = cut_str(strip_tags($topic_info['content']),50)." - {$member['nickname']}的微博";
-                $Keywords = array();
+        $Keywords = array();
         if(strpos($topic_info['content'],'#'))
         {
             preg_match_all('~\#([^\#\s\'\"\/\<\>\?\\\\]+?)\#~',strip_tags($topic_info['content']),$Keywords);
@@ -872,9 +872,9 @@ class ModuleObject extends MasterObject
             $this->Messager("请先<a href='index.php?mod=login'>点此登录</a>或者<a href='index.php?mod=member'>点此注册</a>一个帐号",'index.php?mod=login');
         }
         $my_member = $this->_member((int) $this->Get['mod_original']);
-                $gid = intval(trim($this->Get['gid']));
+        $gid = intval(trim($this->Get['gid']));
         $keyword = $this->Post['nickname'] ? $this->Post['nickname'] : $this->Get['nickname'];
-                $per_page_num = empty($this->ShowConfig['topic']['follow']) ? 10 : $this->ShowConfig['topic']['follow'];
+        $per_page_num = empty($this->ShowConfig['topic']['follow']) ? 10 : $this->ShowConfig['topic']['follow'];
         $gets = array(
             'mod' => $_GET['mod_original'] ? get_safe_code($_GET['mod_original']) : $this->Module,
             'code' => $this->Code,
@@ -883,7 +883,7 @@ class ModuleObject extends MasterObject
             'type' => $this->Get['type'],
         );
         $page_url = "index.php?".url_implode($gets);
-                $orderBy = ' ORDER BY ';
+        $orderBy = ' ORDER BY ';
         if("fans_count" == $this->Get['type']){
             $orderBy .= " m.`fans_count` DESC ";
         } else if ("lastpost" == $this->Get['type']) {
@@ -920,13 +920,13 @@ class ModuleObject extends MasterObject
                                     }
             }
         } else if($gid) {
-                        $group_view = DB::fetch_first("SELECT *
+            $group_view = DB::fetch_first("SELECT *
                                            FROM ".DB::table("group")."
                                            WHERE `id`='{$gid}' AND uid='".MEMBER_ID."'");
             if (empty($group_view)) {
                 $this->Messager("这个不是你的分组，你不能查看", -1);
             }
-                        $count = DB::result_first("SELECT COUNT(*)
+            $count = DB::result_first("SELECT COUNT(*)
                                        FROM ".DB::table('groupfields')."
                                        WHERE gid='{$gid}' AND `uid` = '".MEMBER_ID."' ");
             if ($count > 0) {
@@ -949,27 +949,27 @@ class ModuleObject extends MasterObject
                         }
             }
         } else {
-                        $count = $member['follow_count'];
+            $count = $member['follow_count'];
             if ($count > 0) {
-                                $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
-                                $sql = "SELECT b.remark, m.*
+                $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
+                $sql = "SELECT b.remark, m.*
                         FROM ".DB::table('buddys')." AS b
                         LEFT JOIN ".DB::table('members')." AS m
                         ON m.`uid` = b.`buddyid`
                         WHERE b.`uid`='{$member['uid']}'
                         {$orderBy}
                         {$page_arr['limit']}";
-                        $query = DB::query($sql);
-                        while (false != ($row = $query->GetRow())) {
-                            if($row['uid'] > 0) {
-                                $member_list[$row['uid']] = $this->TopicLogic->MakeMember($row);
-                            }
-                            $uids[] = $row['uid'];
-                        }
+                $query = DB::query($sql);
+                while (false != ($row = $query->GetRow())) {
+                    if($row['uid'] > 0) {
+                        $member_list[$row['uid']] = $this->TopicLogic->MakeMember($row);
+                    }
+                    $uids[] = $row['uid'];
+                }
             }
         }
-                $member_list = Load::model('buddy')->follow_html($member_list);
-                $sql = "SELECT  GF.touid , GF.gid, GF.g_name , GF.display ,G.group_name ,G.id , GF.*
+        $member_list = Load::model('buddy')->follow_html($member_list);
+        $sql = "SELECT  GF.touid , GF.gid, GF.g_name , GF.display ,G.group_name ,G.id , GF.*
                 FROM ".DB::table('group')." AS G
                 LEFT JOIN ".DB::table('groupfields')." AS GF
                 ON G.id=GF.gid
@@ -979,10 +979,10 @@ class ModuleObject extends MasterObject
         while ($row = DB::fetch($query)) {
             $user_group[$row['id']] = $row;
         }
-                $group_list = $grouplist2 = array();
+        $group_list = $grouplist2 = array();
         $group_list = $this->_myGroup($member['uid']);
         if($group_list) $grouplist2 = array_slice($group_list,0,min(4,count($group_list)));
-                $member_medal = $my_member ? $my_member : $member;
+        $member_medal = $my_member ? $my_member : $member;
         if ($member_medal['medal_id']) {
             $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
         }
@@ -995,11 +995,11 @@ class ModuleObject extends MasterObject
         if (!$member) {
             $this->Messager("请先<a href='index.php?mod=login'>点此登录</a>或者<a href='index.php?mod=member'>点此注册</a>一个帐号",'index.php?mod=login');
         }
-                $gid = (int) $this->Get['gid'];
-                $sql = "select * from `".TABLE_PREFIX."group` where `id`='{$gid}' limit 0,1";
+        $gid = (int) $this->Get['gid'];
+        $sql = "select * from `".TABLE_PREFIX."group` where `id`='{$gid}' limit 0,1";
         $query = $this->DatabaseHandler->Query($sql);
         $group_view = $query->GetRow();
-                $_config = array(
+        $_config = array(
             'return' => 'array',
         );
         $per_page_num = 12;
@@ -1013,24 +1013,24 @@ class ModuleObject extends MasterObject
         );
         $uids = Load::model('buddy')->get_ids($p);
         $buddysList = $this->TopicLogic->GetMember($uids,"`uid`,`ucuid`,`username`,`face_url`,`face`,`province`,`city`,`fans_count`,`topic_count`,`validate`,`validate_category`,`nickname`");
-                $group_list = $grouplist2 = array();
+        $group_list = $grouplist2 = array();
         $group_list = $this->_myGroup($member['uid']);
         if($group_list) $grouplist2 = array_slice($group_list,0,min(4,count($group_list)));
         include($this->TemplateHandler->Template('topic_group'));
     }
     function Fans() {
-                $member = $this->_member();
+        $member = $this->_member();
         if (!$member) {
             $this->Messager("链接错误，请检查",null);
         }
         $my_member = $this->_member($this->Get['mod_original']);
-                $per_page_num = $this->ShowConfig['topic']['fans'];
-                if ($member['uid']==MEMBER_ID && $member['fans_new']>0) {
+        $per_page_num = $this->ShowConfig['topic']['fans'];
+        if ($member['uid']==MEMBER_ID && $member['fans_new']>0) {
             $sql = "update `".TABLE_PREFIX."members` set `fans_new`=0 where `uid`='{$member['uid']}'";
             $this->DatabaseHandler->Query($sql);
             $this->MemberHandler->MemberFields['fans_new'] = 0;
         }
-                $orderBy = $orderBy2 = '';
+        $orderBy = $orderBy2 = '';
         if("fans_count" == $this->Get['type']){
             $orderBy = " order by m.`fans_count` DESC ,id ";
         } else if ("lastpost" == $this->Get['type']){
@@ -1039,14 +1039,14 @@ class ModuleObject extends MasterObject
             $order = 'id';
             $orderBy = " order by b.id DESC ";
         }
-                $gid = intval(trim($this->Get['gid']));
+        $gid = intval(trim($this->Get['gid']));
         $keyword = trim($this->Post['nickname'] ? $this->Post['nickname'] : $this->Get['nickname']);
-                if($keyword)
+        if($keyword)
         {
             if (strlen($keyword) < 2) {
                 $this->Messager("请输入至少3个字符的关键词",-1);
             }
-                        $query = DB::query("SELECT * FROM ".DB::table('buddys')." WHERE buddyid='".MEMBER_ID."' ");
+            $query = DB::query("SELECT * FROM ".DB::table('buddys')." WHERE buddyid='".MEMBER_ID."' ");
             $fans_uid = array();
             while ($row = DB::fetch($query)) {
                 $fans_uid[$row['uid']] = $row['uid'];
@@ -1054,23 +1054,22 @@ class ModuleObject extends MasterObject
             if(empty($fans_uid)){
                 $this->Messager("暂时还没有人关注你",-1);
             }
-                        $where_list['keyword'] =  build_like_query("`nickname`",$keyword);
+            $where_list['keyword'] =  build_like_query("`nickname`",$keyword);
             $where = (empty($where_list)) ? null : " WHERE ".implode(' AND ',$where_list)." and `uid` in ('" . implode("','", $fans_uid) . "')";
-                        $page_url = "index.php?mod={$member['username']}&code=fans&nickname=".$keyword;
+            $page_url = "index.php?mod={$member['username']}&code=fans&nickname=".$keyword;
             $_config = array(
                 'return' => 'array',
             );
-                        $count = DB::result_first("SELECT count(*) FROM ".DB::table('members')." {$where} ");
+            $count = DB::result_first("SELECT count(*) FROM ".DB::table('members')." {$where} ");
             $page_arr = page($count, $per_page_num, $page_url, $_config);
             $query = DB::query("SELECT * FROM ".DB::table('members')." {$where} {$page_arr['limit']}");
             $uids = array();
             while ($row = DB::fetch($query)) {
                 $uids[$row['uid']] = $row['uid'];
             }
-        }
-                elseif($gid)
+        }elseif($gid)
         {
-                        $username = $member['username'];
+            $username = $member['username'];
             $fans_group = DB::fetch_first("SELECT * FROM ".DB::table('fans_group')." WHERE gid='{$gid}'");
             if (empty($fans_group)) {
                 $this->Messager('当前分组不存在或或者已经被删除', "index.php?mod={$username}&code=fans");
@@ -1078,15 +1077,15 @@ class ModuleObject extends MasterObject
             if ($fans_group['uid'] != MEMBER_ID) {
                 $this->Messager('你没有权限此操作', "index.php?mod={$username}&code=fans");
             }
-                        $uid = MEMBER_ID;
-                        $orderType = $this->Get['type'] ? '&type='.$this->Get['type'] : "";
+            $uid = MEMBER_ID;
+            $orderType = $this->Get['type'] ? '&type='.$this->Get['type'] : "";
             $page_url = "index.php?mod={$member['username']}&code=fans&gid={$gid}".$orderType;
             $_config = array(
                 'return' => 'array',
             );
             $where_sql = " f.gid='{$gid}' AND f.uid='{$uid}' ";
-                        $count = DB::result_first("SELECT count(*) FROM ".DB::table('fans_group_fields')." f where {$where_sql} ");
-                        $page_arr = page($count, $per_page_num, $page_url, $_config);
+            $count = DB::result_first("SELECT count(*) FROM ".DB::table('fans_group_fields')." f where {$where_sql} ");
+            $page_arr = page($count, $per_page_num, $page_url, $_config);
             $query = DB::query("SELECT f.`touid` FROM ".DB::table('fans_group_fields')." f LEFT JOIN ".DB::table('members')." m ON m.`uid` = f.`touid` WHERE {$where_sql}" . $orderBy ."{$page_arr['limit']}");
             $uids = array();
             while ($value = DB::fetch($query))
@@ -1100,8 +1099,8 @@ class ModuleObject extends MasterObject
             $_config = array(
                 'return' => 'array',
             );
-                        $count = $member['fans_count'];
-                        $page_arr = page($count, $per_page_num, $page_url, $_config);
+            $count = $member['fans_count'];
+            $page_arr = page($count, $per_page_num, $page_url, $_config);
             $sql = "select b.`uid` from `".TABLE_PREFIX."buddys` b left join `".TABLE_PREFIX."members` m on m.`uid` = b.`uid` where b.`buddyid`='{$member['uid']}' ". $orderBy ."{$page_arr['limit']}";
             $query = $this->DatabaseHandler->Query($sql);
             $uids = array();
@@ -1118,7 +1117,7 @@ class ModuleObject extends MasterObject
             $member_list = $this->TopicLogic->GetMember(" m LEFT JOIN `".TABLE_PREFIX."buddys` b ON (b.buddyid=m.uid AND b.uid='{$member['uid']}') WHERE m.uid IN($sql_in_uids) $orderBy LIMIT ".count($uids)." ", " m.*, b.remark ");
             $member_list = Load::model('buddy')->follow_html($member_list);
         }
-                $member_medal = $my_member ? $my_member : $member;
+        $member_medal = $my_member ? $my_member : $member;
         if ($member_medal['medal_id']) {
             $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
         }
@@ -1132,10 +1131,10 @@ class ModuleObject extends MasterObject
             $r_users = $this->TopicLogic->GetMember("where face!='' order by `fans_count` desc limit {$limit}","`uid`,`ucuid`,`username`,`fans_count`,`validate`,`validate_category`,`province`,`city`,`face`,`nickname`");
             cache($r_users);
         }
-                $limit = $this->ShowConfig['topic_top']['renqi'];
+        $limit = $this->ShowConfig['topic_top']['renqi'];
         if ($limit>0 && false == ($day7_r_buddys = cache("misc/top_day7_r_buddys",$this->CacheConfig['topic_top']['renqi']))) {
             $day7_r_buddys = array();
-                        $sql = "select DISTINCT(B.buddyid) AS buddyid , COUNT(B.uid) AS count  from `".TABLE_PREFIX."buddys` B left join `".TABLE_PREFIX."members` M on B.buddyid=M.uid WHERE B.dateline>='".(TIMESTAMP - 86400 * 7)."' and M.face!='' GROUP BY buddyid ORDER BY count DESC LIMIT {$limit}";
+            $sql = "select DISTINCT(B.buddyid) AS buddyid , COUNT(B.uid) AS count  from `".TABLE_PREFIX."buddys` B left join `".TABLE_PREFIX."members` M on B.buddyid=M.uid WHERE B.dateline>='".(TIMESTAMP - 86400 * 7)."' and M.face!='' GROUP BY buddyid ORDER BY count DESC LIMIT {$limit}";
             $query = $this->DatabaseHandler->Query($sql);
             $uids = $_ids = array();
             while (false != ($row = $query->GetRow()))
@@ -1159,9 +1158,9 @@ class ModuleObject extends MasterObject
             }
             cache($day7_r_buddys);
         }
-                $limit = $this->ShowConfig['topic_top']['huoyue'];
+        $limit = $this->ShowConfig['topic_top']['huoyue'];
         if ($limit>0 && false == ($day7_r_users = cache("misc/top_day7_r_users",$this->CacheConfig['topic_top']['huoyue']))) {
-                        $sql = "select DISTINCT(T.uid) AS uid , COUNT(T.tid) AS `count` from `".TABLE_PREFIX."topic` T left join `".TABLE_PREFIX."members` M on T.uid=M.uid WHERE T.dateline>='".(TIMESTAMP - 86400 * 7)."' and M.face!='' GROUP BY uid ORDER BY `count` DESC LIMIT {$limit}";
+            $sql = "select DISTINCT(T.uid) AS uid , COUNT(T.tid) AS `count` from `".TABLE_PREFIX."topic` T left join `".TABLE_PREFIX."members` M on T.uid=M.uid WHERE T.dateline>='".(TIMESTAMP - 86400 * 7)."' and M.face!='' GROUP BY uid ORDER BY `count` DESC LIMIT {$limit}";
             $query = $this->DatabaseHandler->Query($sql);
             $uids = $day7_r_users = array();
             while (false != ($row = $query->GetRow()))
@@ -1182,9 +1181,9 @@ class ModuleObject extends MasterObject
             }
             cache($day7_r_users);
         }
-                $limit = $this->ShowConfig['topic_top']['yingxiang'];
+        $limit = $this->ShowConfig['topic_top']['yingxiang'];
         if ($limit>0 && false == ($day7_r_topics = cache("misc/top_day7_r_topics",$this->CacheConfig['topic_top']['yingxiang']))) {
-                        $sql = "select DISTINCT(T.touid) AS uid ,  COUNT(T.tid) AS `count` from `".TABLE_PREFIX."topic` T left join `".TABLE_PREFIX."members` M on T.touid=M.uid WHERE M.face !='' and  T.dateline>='".(TIMESTAMP - 86400 * 7)."' and T.touid > 0  GROUP BY `uid` ORDER BY `count` DESC LIMIT {$limit}";
+            $sql = "select DISTINCT(T.touid) AS uid ,  COUNT(T.tid) AS `count` from `".TABLE_PREFIX."topic` T left join `".TABLE_PREFIX."members` M on T.touid=M.uid WHERE M.face !='' and  T.dateline>='".(TIMESTAMP - 86400 * 7)."' and T.touid > 0  GROUP BY `uid` ORDER BY `count` DESC LIMIT {$limit}";
             $query = $this->DatabaseHandler->Query($sql);
             $uids = $day7_r_topics = array();
             while (false != ($row = $query->GetRow()))
@@ -1205,11 +1204,11 @@ class ModuleObject extends MasterObject
             }
             cache($day7_r_topics);
         }
-                $limit = isset($this->ShowConfig['topic_top']['credits']) ? $this->ShowConfig['topic_top']['credits'] : 20;
+        $limit = isset($this->ShowConfig['topic_top']['credits']) ? $this->ShowConfig['topic_top']['credits'] : 20;
         $credits = $this->Config['credits_filed'];
         $credits_name = $this->Config['credits']['ext'][$credits]['name'];
         if ($limit>0 && false == ($top_day7_r_sign = cache("misc/top_day7_r_sign",$this->CacheConfig['topic_top']['credits']))) {
-                                    if($credits){
+            if($credits){
                 $members = $this->TopicLogic->GetMember(" where `$credits` > 0 order by `$credits` desc limit {$limit}","`uid`,`ucuid`,`username`,`fans_count`,`validate`,`validate_category`,`province`,`city`,`face`,`nickname`,`$credits`");
                 $top_day7_r_sign = array();
                 if($members) {
@@ -1232,9 +1231,9 @@ class ModuleObject extends MasterObject
     function Hot()
     {
         if(MEMBER_ID > 0) {
-                        $member = jsg_member_info(MEMBER_ID);
+            $member = jsg_member_info(MEMBER_ID);
         }
-                $vip_uids_in = '';
+        $vip_uids_in = '';
         $vip_uids = array();
         if($this->Config['only_show_vip_topic']) {
             $vip_uids = jsg_get_vip_uids();
@@ -1249,7 +1248,7 @@ class ModuleObject extends MasterObject
             $d = isset($d_list[$this->Get['d']]) ? $this->Get['d'] : 7;
             $time = $d * 86400;
             $dateline = TIMESTAMP - $time;
-                        $per_page_num = (int) $this->ShowConfig['topic_hot']["day{$d}"];
+            $per_page_num = (int) $this->ShowConfig['topic_hot']["day{$d}"];
             if($per_page_num < 1) {
                 $per_page_num = 20;
             }
@@ -1276,7 +1275,7 @@ class ModuleObject extends MasterObject
             $d = isset($d_list[$this->Get['d']]) ? $this->Get['d'] : 7;
             $time = $d * 86400;
             $dateline = TIMESTAMP - $time;
-                        $per_page_num = $this->ShowConfig['reply_hot']["day{$d}"];
+            $per_page_num = $this->ShowConfig['reply_hot']["day{$d}"];
             if($per_page_num < 1) {
                 $per_page_num = 20;
             }
@@ -1299,7 +1298,7 @@ class ModuleObject extends MasterObject
             }
         } elseif('newreply' == $this->Code) {
             $title = '最新评论';
-                        $per_page_num = $this->ShowConfig['new_reply']['reply'];
+            $per_page_num = $this->ShowConfig['new_reply']['reply'];
             if($per_page_num < 1) {
                 $per_page_num = 20;
             }
@@ -1321,7 +1320,7 @@ class ModuleObject extends MasterObject
             }
         } elseif ($this->Code =='new') {
             $title = '最新微博';
-                        $per_page_num = $this->ShowConfig['topic_new']['topic'];
+            $per_page_num = $this->ShowConfig['topic_new']['topic'];
             if($per_page_num < 1) {
                 $per_page_num = 20;
             }
@@ -1400,7 +1399,7 @@ class ModuleObject extends MasterObject
                 }
             }
             $province_list = Load::lib('form', 1)->Select("tc_province",$province,$province_id," onchange=\"changeProvince();\" style=\"width:150px\" ");
-                        $per_page_num = $this->ShowConfig['topic_new']['topic'];
+            $per_page_num = $this->ShowConfig['topic_new']['topic'];
             if($per_page_num < 1) {
                 $per_page_num = 20;
             }
@@ -1435,7 +1434,7 @@ class ModuleObject extends MasterObject
                     }
                 }
             }
-                        $events = array();
+            $events = array();
             $event_limit = 10;
             if($city_id){
                 $event_where = " city_id = '$city_id' ";
@@ -1448,7 +1447,7 @@ class ModuleObject extends MasterObject
                 $events = $query->GetAll();
             }
         }
-                if ('forward' != $this->Code) {
+        if ('forward' != $this->Code) {
             $parent_id_list = array();
             if ($topics) {
                 foreach ($topics as $row) {
@@ -1461,7 +1460,7 @@ class ModuleObject extends MasterObject
                 }
             }
             if($parent_id_list) {
-                                $pcount = count($parent_id_list);
+                $pcount = count($parent_id_list);
                 $options = array(
                     'tid' => $parent_id_list,
                     'type' => get_topic_type(),
@@ -1475,7 +1474,7 @@ class ModuleObject extends MasterObject
                 } else {
                     $keys = array();
                 }
-                                foreach ($parent_id_list as $key => $val) {
+                foreach ($parent_id_list as $key => $val) {
                     if (in_array($val, $keys)) {
                         continue;
                     }
@@ -1493,9 +1492,9 @@ class ModuleObject extends MasterObject
                 }
             }
         }
-                $Tg_limit = $this->ShowConfig['topic_new']['tag'];
+        $Tg_limit = $this->ShowConfig['topic_new']['tag'];
         if($Tg_limit > 0) {
-                        $Tg_date  = max(43200, (int) $this->CacheConfig['topic_new']['day_tag']);
+            $Tg_date  = max(43200, (int) $this->CacheConfig['topic_new']['day_tag']);
             $dateline = TIMESTAMP - $Tg_date;
             $cache_time  = max(0, (int) $this->CacheConfig['topic_new']['tag']);
             if(!$cache_time || false === ($tags = cache("misc/topic-new-tag-{$Tg_limit}-{$Tg_date}", $cache_time))) {
@@ -1531,7 +1530,7 @@ class ModuleObject extends MasterObject
         {
             $member['follow_html'] = follow_html($member['uid'], chk_follow(MEMBER_ID, $uid));
         }
-                if(true === UCENTER_FACE && MEMBER_ID == $uid && MEMBER_UCUID > 0 && !($member['__face__']))
+        if(true === UCENTER_FACE && MEMBER_ID == $uid && MEMBER_UCUID > 0 && !($member['__face__']))
         {
             include_once(ROOT_PATH . './api/uc_client/client.php');
             $uc_check_result = uc_check_avatar(MEMBER_UCUID);
@@ -1573,15 +1572,15 @@ class ModuleObject extends MasterObject
         if(MEMBER_ID > 0) {
             $member = $this->_member(MEMBER_ID);
         }
-                $limit = $this->ShowConfig['topic_index']['guanzhu'];
+        $limit = $this->ShowConfig['topic_index']['guanzhu'];
         if ($limit > 0) {
             if(false === ($r_users = cache("index/r_users",$this->CacheConfig['topic_index']['guanzhu']))) {
                 $r_users = $this->TopicLogic->GetMember("where face !='' order by `fans_count` desc limit {$limit}","`uid`,`ucuid`,`username`,`face_url`,`face`,`fans_count`,`validate`,`validate_category`,`nickname`");
                 cache($r_users);
             }
         }
-                $day2_r_users = $this->_recommendUser(7,$this->ShowConfig['topic_index']['new_user'],$this->CacheConfig['topic_index']['new_user']);
-                $r_tags = $this->_recommendTag(2,$this->ShowConfig['topic_index']['hot_tag'],$this->CacheConfig['topic_index']['hot_tag']);
+        $day2_r_users = $this->_recommendUser(7,$this->ShowConfig['topic_index']['new_user'],$this->CacheConfig['topic_index']['new_user']);
+        $r_tags = $this->_recommendTag(2,$this->ShowConfig['topic_index']['hot_tag'],$this->CacheConfig['topic_index']['hot_tag']);
         $recommend_count = 0;
         if ($this->ShowConfig['topic_index']['recommend_topic']) {
             if (false === ($cache_recommend_topics = cache("index/recommend_topics", $this->CacheConfig['topic_index']['recommend_topic']))) {
@@ -1596,7 +1595,7 @@ class ModuleObject extends MasterObject
                 $table = " ".DB::table("topic")." a,(SELECT uid, max(dateline) max_dateline FROM ".DB::table("topic")." WHERE type IN(".$type_sql.") GROUP BY uid) b $vip_t ";
                 $where = "  WHERE a.uid = b.uid AND a.dateline = b.max_dateline AND a.type IN({$type_sql}) $vip_w ORDER BY a.dateline DESC LIMIT {$this->ShowConfig['topic_index']['recommend_topic']}";
                 $recommend_topics = $this->TopicLogic->Get($where, $fields, 'Make', $table);
-                                $parent_list = $this->TopicLogic->GetParentTopic($recommend_topics);
+                $parent_list = $this->TopicLogic->GetParentTopic($recommend_topics);
                 $cache_recommend_topics = array(
                     'recommend_topics' => $recommend_topics,
                     'parent_list' => $parent_list,
@@ -1609,7 +1608,7 @@ class ModuleObject extends MasterObject
             }
             $recommend_count = count($recommend_topics);
         }
-                $cache_id = 'notice/list-topic_index_guest';
+        $cache_id = 'notice/list-topic_index_guest';
         if (false===($list_notice = Load::model('cache/file')->get($cache_id))) {
             $sql="select `id`,`title` from ".TABLE_PREFIX.'notice'." order by `id` desc limit 5 ";
             $query = $this->DatabaseHandler->Query($sql);
@@ -1617,7 +1616,7 @@ class ModuleObject extends MasterObject
             while (false != ($row = $query->GetRow())) {
                 $row['titles']    = $row['title'];
                 $row['title']     = cutstr($row['title'],30);
-                $list_notice[]     = $row;
+                $list_notice[]    = $row;
             }
             Load::model('cache/file')->set($cache_id, $list_notice, 86400);
         }
@@ -1625,7 +1624,7 @@ class ModuleObject extends MasterObject
         $this->MetaDescription = $this->Config['index_meta_description'];
         include($this->TemplateHandler->Template('topic_index_guest'));
     }
-        function _myGroup($uid=0,$limit='')
+    function _myGroup($uid=0,$limit='')
     {
         $order = 'order by `group_count` desc';
         $sql="Select `id`,`group_name`,`group_count` From ".TABLE_PREFIX.'group'." where `uid` = '{$uid}' {$order} {$limit}";
@@ -1633,7 +1632,7 @@ class ModuleObject extends MasterObject
         $list = $query->GetAll();
         return $list;
     }
-        function _GroupFields($uid=0)
+    function _GroupFields($uid=0)
     {
         $list = array();
         if(MEMBER_ID > 0)
@@ -1665,7 +1664,7 @@ class ModuleObject extends MasterObject
         }
         return $medal_list;
     }
-        function Photo()
+    function Photo()
     {
         $this->Title = '图片墙';
         $nickname = '我';
@@ -1683,7 +1682,8 @@ class ModuleObject extends MasterObject
             }
         }
         $TopicListLogic = Load::logic('topic_list', 1);
-        $photo_num = 20;         $p = array(
+        $photo_num = 20;
+        $p = array(
             'count' => $photo_num,
             'vip' => $this->Config['only_show_vip_topic'],
             'limit' => $photo_num,
@@ -1697,8 +1697,10 @@ class ModuleObject extends MasterObject
             $isloading = false;
         }
         if($this->Config['attach_enable']){$allow_attach = 1;}else{$allow_attach = 0;}
-        $t_col_foot = 't_col_foot';         $t_col_backTop = 't_col_backTop';
-        $url_uid = ($uid ? $uid : MEMBER_ID);         include($this->TemplateHandler->Template('topic_photo'));
+        $t_col_foot = 't_col_foot';
+        $t_col_backTop = 't_col_backTop';
+        $url_uid = ($uid ? $uid : MEMBER_ID);
+        include($this->TemplateHandler->Template('topic_photo'));
     }
 }
 ?>
