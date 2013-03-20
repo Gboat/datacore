@@ -81,6 +81,32 @@ class ModuleObject extends MasterObject
         else
         {
         }
+        /*
+            $ks = array(
+                'tid'=>1,
+                'uid'=>1,
+                'content'=>1,
+                'imageid'=>1,
+                'attachid'=>1,
+                'videoid'=>1,
+                'musicid'=>1,
+                'longtextid'=>1,
+                'totid'=>1,
+                'touid'=>1,
+                'dateline'=>1,
+                'from'=>1,
+                'type'=>1,
+                'item_id'=>1,
+                'item'=>1,
+                'postip'=>1,
+                'timestamp'=>1,
+                'managetype' => 1,
+                'checkfilter' =>1,
+                'verify' => 1,
+                'design' =>1,
+                'xiami_id' => 1,
+            )
+         */
         $datas = array(
             'content'=>$content,
             'totid'=>$totid,

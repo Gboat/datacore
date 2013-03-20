@@ -13,9 +13,9 @@ if (!function_exists('gzdecode')) {
             $extralen = $extralen[1];
             $headerlen += 2 + $extralen;
         }
-        if ($flags & 8)         $headerlen = strpos($data, chr(0), $headerlen) + 1;
-        if ($flags & 16)         $headerlen = strpos($data, chr(0), $headerlen) + 1;
-        if ($flags & 2)         $headerlen += 2;
+        if ($flags & 8) $headerlen = strpos($data, chr(0), $headerlen) + 1;
+        if ($flags & 16) $headerlen = strpos($data, chr(0), $headerlen) + 1;
+        if ($flags & 2) $headerlen += 2;
         $unpacked = @gzinflate(substr($data, $headerlen));
         if ($unpacked === FALSE)
         $unpacked = $data;
@@ -275,7 +275,7 @@ class VideoLogic
         }
         if($ids && $checks)
         {
-                        $_checks = array('uid' => 1, 'tid' => 0);
+            $_checks = array('uid' => 1, 'tid' => 0);
             if(is_numeric($checks))
             {
                 $checks = array('uid' => $checks);
@@ -399,7 +399,7 @@ class VideoLogic
             return $ret;
         }
         $sys_config = ConfigHandler::get();
-                $parse_code = $this->_get_parse_code();
+        $parse_code = $this->_get_parse_code();
         if($parse_code) {
             @eval($parse_code);
         }
@@ -521,7 +521,7 @@ class VideoLogic
                 break;
             }
         }
-        ';
+       ';
     }
 }
 ?>
