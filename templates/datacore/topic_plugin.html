@@ -1,0 +1,48 @@
+<!--{template "topic_header"}-->
+<!--{if MEMBER_ID ==0}-->
+<div class="inventLine2"> 
+        <div class="atxt">
+			<p class="p_1"><span>{$member[nickname]}</span>在这里写微博，想收到TA的最新消息吗？</p> 
+			<p class="p_2">微博是现在最酷、最火的沟通交流工具，可以随时随地分享新鲜事，与朋友保持联络。</p> 
+			<p class="p_3">现在注册微博就可通过网页、手机、QQ机器人随时分享新鲜事，并关注好友的最新消息！</p>
+        </div>
+		<div class="abtn">
+			<a href="index.php?mod=member&code&uid={$member[uid]}">
+			<img src="images/regbtn.gif"></a>
+			<p>已有帐号，<a href="index.php?mod=login">请点此登录</a></p>
+		</div> 
+</div>
+<!--{/if}-->
+<div class="main {$t_col_main}">
+
+<!--此处三栏-->
+<div class="t_col_main_si {$t_col_main_side}">
+<div class="t_col_main_fl">
+	<div id="topic_index_left_ajax_list">
+	<!--{if MEMBER_STYLE_THREE_TOL == 1}-->
+	 {template "topic_left.inc"}
+	<!--{/if}-->
+	</div>
+</div>
+</div>
+<!--此处三栏-->
+
+<div class="mainL">
+<style>
+table{border:0;border-collapse:collapse;width:100%;}
+td{border:1px solid #c0deed;line-height:18px;padding:10px;}
+.plugintop{padding:15px;font-size:26px;font-weight:bold;color:#2b4a78;background:#ddeef6;}
+</style>
+<!--{eval include($this->TemplateHandler->Template($template));}-->
+</div>
+
+<!--{template "topic_right.inc"}-->
+
+</div>
+
+<!--{if $this->Config[ad_enable] && $this->Config[ad][ad_list][group_myhome][footer]}-->
+<div style="text-align:center" class="T_AD">
+  {$this->Config[ad][ad_list][group_myhome][footer]}
+</div>
+<!--{/if}-->
+<!--{template "topic_footer"}-->
