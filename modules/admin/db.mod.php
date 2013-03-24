@@ -1,6 +1,6 @@
 <?php
 include_once(ROOT_PATH . 'include/function/misc.func.php');
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -55,13 +55,13 @@ class ModuleObject extends MasterObject
     {    
         $backupdir = $this->Get['backupdir'];
         if (!$backupdir) {
-            if(true===JISHIGOU_FOUNDER) {            
+            if(true===DATACORE_FOUNDER) {            
                 $_f_list = (array) Load::lib('io', 1)->ReadDir(RELATIVE_ROOT_PATH.'data/backup/db/'.$backupdir,1);
                 $f_list = array();
                 $key = 0;
                 foreach ($_f_list as $_k=>$_f) {
                     $ext = strtolower(trim(substr(strrchr($_f, '.'), 1, 10)));
-                    if(!in_array($ext,array('sql','zip',)) || 'jishigou.sql'==basename($_f)) {
+                    if(!in_array($ext,array('sql','zip',)) || 'datacore.sql'==basename($_f)) {
                         unset($_f_list[$_k]);
                         continue;
                     }
@@ -150,14 +150,14 @@ class ModuleObject extends MasterObject
                 "<td class=\"altbg2\">$info[volume]</td>\n".
                 ($info['type'] == 'zip' ? "<td class=\"altbg1\"><a href=\"admin.php?mod=db&code=importzip&datafile_server=".urlencode($info[filename])."&importsubmit=yes\">[解压缩]</a></td>\n" :
                 "<td class=\"altbg1\"><a href=\"admin.php?mod=db&code=doimport&from=server&datafile_server=".urlencode($info[filename])."&importsubmit=yes\"".
-                ($info['version'] != SYS_VERSION ? " onclick=\"return confirm('导入和当前 JishiGou 版本不一致的数据极有可能产生无法解决的故障，您确定继续吗？');\"" : '').">[导入]</a></td>\n");
+                ($info['version'] != SYS_VERSION ? " onclick=\"return confirm('导入和当前 DataCore 版本不一致的数据极有可能产生无法解决的故障，您确定继续吗？');\"" : '').">[导入]</a></td>\n");
             }
         }
         include $this->TemplateHandler->Template('admin/db_import');
     }
     function DoImport()
     {        
-        if(true!==JISHIGOU_FOUNDER) {
+        if(true!==DATACORE_FOUNDER) {
             $this->Messager("为安全起见，只有网站创始人才能执行数据恢复操作。", null);
         }
         $readerror = 0;
@@ -239,12 +239,12 @@ class ModuleObject extends MasterObject
             clearcache();
             $this->Messager('数据成功导入数据库。',null);
         } else {
-            $this->Messager('数据文件非 JishiGou 格式，无法导入。');
+            $this->Messager('数据文件非 DataCore 格式，无法导入。');
         }
     }
     function DoImportZip()
     {
-        if(true!==JISHIGOU_FOUNDER) {
+        if(true!==DATACORE_FOUNDER) {
             $this->Messager("为安全起见，只有网站创始人才能执行数据恢复操作。", null);
         }
         $datafile_server = get_param('datafile_server');
@@ -500,14 +500,14 @@ class ModuleObject extends MasterObject
             if(trim($sqldump)) {
                 $sqldump = "$idstring".
                 "# <?exit();?>\n".
-                "# JishiGou Multi-Volume Data Dump Vol.$volume\n".
-                "# Version: JishiGou ".SYS_VERSION."\n".
+                "# DataCore Multi-Volume Data Dump Vol.$volume\n".
+                "# Version: DataCore ".SYS_VERSION."\n".
                 "# Time: $time\n".
                 "# Type: $type\n".
                 "# Table Prefix: $tablepre\n".
                 "#\n".
-                "# JishiGou Home: http:\/\/www.jishigou.net\n".
-                "# Please visit our website for newest infomation about JishiGou\n".
+                "# DataCore Home: http:\/\/www.datacore.net\n".
+                "# Please visit our website for newest infomation about DataCore\n".
                 "# --------------------------------------------------------\n\n\n".
                 "$setnames".
                 $sqldump;
@@ -569,7 +569,7 @@ class ModuleObject extends MasterObject
                         $filelist .= "<li><a href=\"$filename\">$filename\n";
                     }
                     $this->Messager("恭喜您，全部 $volume 个备份文件成功创建，备份完成。
-".(true===JISHIGOU_FOUNDER ? $filelist : "<br />文件备份在 data/backup/db/ 目录下") ,null);
+".(true===DATACORE_FOUNDER ? $filelist : "<br />文件备份在 data/backup/db/ 目录下") ,null);
                 }
             }
         } else {

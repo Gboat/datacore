@@ -2,7 +2,7 @@
  * 记事狗微博
  * 
  * @author 		~ZZ~
- * @package 	jishigou.net
+ * @package 	datacore.net
  * @category	JSGST
  * @version		v1.0 $Date: 2011-05-16
  */

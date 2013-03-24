@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -10,7 +10,7 @@ function sina_env()
     {
         define('ROOT_PATH',substr(dirname(__FILE__),0,-17) . '/');
     }
-    $files = array(ROOT_PATH . 'include/xwb/sina.php',ROOT_PATH . 'include/xwb/jishigou.php',ROOT_PATH . 'include/xwb/set.data.php',ROOT_PATH . 'include/xwb/hack/newtopic.hack.php',ROOT_PATH . 'include/xwb/lib/xwbDB.class.php',);
+    $files = array(ROOT_PATH . 'include/xwb/sina.php',ROOT_PATH . 'include/xwb/datacore.php',ROOT_PATH . 'include/xwb/set.data.php',ROOT_PATH . 'include/xwb/hack/newtopic.hack.php',ROOT_PATH . 'include/xwb/lib/xwbDB.class.php',);
     foreach ($files as $f)
     {
         if (!is_file($f)) 

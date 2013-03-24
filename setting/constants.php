@@ -10,8 +10,8 @@ if(!defined('ROOT_PATH')) {
 if(!isset($config['auth_key'])) {
     include(ROOT_PATH . 'setting/settings.php');
 }
-//IN_JISHIGOU
-define('IN_JISHIGOU',true);
+//IN_DATACORE
+define('IN_DATACORE',true);
 //软件的信息
 define('SYS_VERSION','3.5.0');
 define('SYS_PUBLISHED','');

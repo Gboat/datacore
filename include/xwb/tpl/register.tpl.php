@@ -85,7 +85,7 @@
 <h3 id="forRegH3" class="xwb-plugin-layer-title">您正在用<a class="xwb-plugin-td-right-a" href="http://weibo.com/u/<?php echo $sina_user_info['id'];?>" target="_blank">新浪微博账号</a>登录本站，如您还无本站账号请设置以下信息：</h3>
 <h3 id="forBindH3" class="xwb-plugin-layer-title" style="display:none;">输入已有的<?php echo XWB_S_TITLE ;?>帐号信息，绑定当前<a class="xwb-plugin-td-right-a" href="http://weibo.com/u/<?php echo $sina_user_info['id'];?>" target="_blank">新浪微博帐号</a>。</h3>
 <div id="regBox" class="xwb-plugin-form" style="display:block;">
-    <?php $regstatus = jsg_member_register_check_status(); if($regstatus['error'] || (true!==JISHIGOU_FORCED_REGISTER && $regstatus['invite_enable'] && !$regstatus['normal_enable'])) { ?>
+    <?php $regstatus = jsg_member_register_check_status(); if($regstatus['error'] || (true!==DATACORE_FORCED_REGISTER && $regstatus['invite_enable'] && !$regstatus['normal_enable'])) { ?>
        非常抱歉，本站目前禁止绑定新注册用户；<a href="javascript:void(function(){})" class="xwb-plugin-td-right-a" onclick="forTurn('bind')" tabindex="-1"><span><strong>请点此绑定已有的帐号</strong></span></a>
     <?php } else { ?>
     <form action="<?php echo XWB_plugin::URL("xwbSiteInterface.doReg");?>" id="siteRegFrom"  method="post" target="xwbSiteRegister"  >

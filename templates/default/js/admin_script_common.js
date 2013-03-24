@@ -11,7 +11,7 @@ var note_timer;
 
 //iframe包含
 
-function $jishigou(id) {
+function $datacore(id) {
 	return document.getElementById(id);
 }
 
@@ -23,14 +23,14 @@ function addSort(obj) {
  	newOptDiv.className = 'popupmenu_centerbox';
  	newOptDiv.style.cssText = 'position: absolute; left: 50%; top: 200px; width: 400px; margin-left: -200px;';
  	document.body.appendChild(newOptDiv);
- 	$jishigou('newsort').focus();
+ 	$datacore('newsort').focus();
  	}
 }
 	
 function addOption(sid, aid) {
-	var obj = $jishigou(aid);
-	var newOption = $jishigou(sid).value;
-	$jishigou(sid).value = "";
+	var obj = $datacore(aid);
+	var newOption = $datacore(sid).value;
+	$datacore(sid).value = "";
 	if (newOption!=null && newOption!='') {
 		var newOptionTag=document.createElement('option');
 		newOptionTag.text=newOption;
@@ -104,14 +104,14 @@ function seccode() {
 }
 function updateseccode() {
 	var img = 'do.php?ac=seccode&rand='+Math.random();
-	if($jishigou('img_seccode')) {
-		$jishigou('img_seccode').src = img;
+	if($datacore('img_seccode')) {
+		$datacore('img_seccode').src = img;
 	}
 }
 
 //缩小图片并添加链接
 function resizeImg(id,size) {
-	var theImages = $jishigou(id).getElementsByTagName('img');
+	var theImages = $datacore(id).getElementsByTagName('img');
 	for (i=0; i<theImages.length; i++) {
 		theImages[i].onload = function() {
 			if (this.width > size) {
@@ -151,7 +151,7 @@ function resizeImg(id,size) {
 function ctrlEnter(event, btnId, onlyEnter) {
 	if(isUndefined(onlyEnter)) onlyEnter = 0;
 	if((event.ctrlKey || onlyEnter) && event.keyCode == 13) {
-		$jishigou(btnId).click();
+		$datacore(btnId).click();
 		return false;
 	}
 	return true;
@@ -159,7 +159,7 @@ function ctrlEnter(event, btnId, onlyEnter) {
 //缩放Textarea
 function zoomTextarea(id, zoom) {
 	zoomSize = zoom ? 10 : -10;
-	obj = $jishigou(id);
+	obj = $datacore(id);
 	if(obj.rows + zoomSize > 0 && obj.cols + zoomSize * 3 > 0) {
 		obj.rows += zoomSize;
 		obj.cols += zoomSize * 3;
@@ -193,7 +193,7 @@ function ischeck(id, prefix) {
 	return false;
 }
 function showPreview(val, id) {
-	var showObj = $jishigou(id);
+	var showObj = $datacore(id);
 	if(typeof showObj == 'object') {
 		showObj.innerHTML = val.replace(/\n/ig, "<br />");
 	}
@@ -217,11 +217,11 @@ function getEvent() {
 function copyRow(tbody) {
 	var add = false;
 	var newnode;
-	if($jishigou(tbody).rows.length == 1 && $jishigou(tbody).rows[0].style.display == 'none') {
-		$jishigou(tbody).rows[0].style.display = '';
-		newnode = $jishigou(tbody).rows[0];
+	if($datacore(tbody).rows.length == 1 && $datacore(tbody).rows[0].style.display == 'none') {
+		$datacore(tbody).rows[0].style.display = '';
+		newnode = $datacore(tbody).rows[0];
 	} else {
-		newnode = $jishigou(tbody).rows[0].cloneNode(true);
+		newnode = $datacore(tbody).rows[0].cloneNode(true);
 		add = true;
 	}
 	tags = newnode.getElementsByTagName('input');
@@ -231,12 +231,12 @@ function copyRow(tbody) {
 		}
 	}
 	if(add) {
-		$jishigou(tbody).appendChild(newnode);
+		$datacore(tbody).appendChild(newnode);
 	}
 }
 	
 function delRow(obj, tbody) {
-	if($jishigou(tbody).rows.length == 1) {
+	if($datacore(tbody).rows.length == 1) {
 		var trobj = obj.parentNode.parentNode;
 		tags = trobj.getElementsByTagName('input');
 		for(i in tags) {
@@ -246,7 +246,7 @@ function delRow(obj, tbody) {
 		}
 		trobj.style.display='none';
 	} else {
-		$jishigou(tbody).removeChild(obj.parentNode.parentNode);
+		$datacore(tbody).removeChild(obj.parentNode.parentNode);
 	}
 }
 
@@ -260,7 +260,7 @@ function insertWebImg(obj) {
 }
 
 function checkFocus(target) {
-	var obj = $jishigou(target);
+	var obj = $datacore(target);
 	if(!obj.hasfocus) {
 		obj.focus();
 	}
@@ -271,7 +271,7 @@ function insertImage(text) {
 }
 
 function insertContent(target, text) {
-	var obj = $jishigou(target);
+	var obj = $datacore(target);
 	selection = document.selection;
 	checkFocus(target);
 	if(!isUndefined(obj.selectionStart)) {
@@ -292,14 +292,14 @@ function checkImage(url) {
 }
 
 function quick_validate(obj) {
-    if($jishigou('seccode')) {
-		var code = $jishigou('seccode').value;
+    if($datacore('seccode')) {
+		var code = $datacore('seccode').value;
 		var x = new Ajax();
 		x.get('cp.php?ac=common&op=seccode&code=' + code, function(s){
 			s = trim(s);
 			if(s != 'succeed') {
 				alert(s);
-				$jishigou('seccode').focus();
+				$datacore('seccode').focus();
            		return false;
 			} else {
 				obj.form.submit();
@@ -320,8 +320,8 @@ function trim(str) {
 // 停止音乐flash
 function stopMusic(preID, playerID) {
 	var musicFlash = preID.toString() + '_' + playerID.toString();
-	if($jishigou(musicFlash)) {
-		$jishigou(musicFlash).SetVariable('closePlayer', 1);
+	if($datacore(musicFlash)) {
+		$datacore(musicFlash).SetVariable('closePlayer', 1);
 	}
 }
 // 显示影视、音乐flash
@@ -389,12 +389,12 @@ function showFlash(host, flashvar, obj, shareid) {
 	}
 	
 	if(!obj) {
-		$jishigou('flash_div_' + shareid).innerHTML = flashHtml;
+		$datacore('flash_div_' + shareid).innerHTML = flashHtml;
 		return true;
 	}
-	if($jishigou('flash_div_' + shareid)) {
-		$jishigou('flash_div_' + shareid).style.display = '';
-		$jishigou('flash_hide_' + shareid).style.display = '';
+	if($datacore('flash_div_' + shareid)) {
+		$datacore('flash_div_' + shareid).style.display = '';
+		$datacore('flash_hide_' + shareid).style.display = '';
 		obj.style.display = 'none';
 		
 		return true;
@@ -407,7 +407,7 @@ function showFlash(host, flashvar, obj, shareid) {
 		
 		obj.style.display = 'none';
 		//隐藏播放图标
-		$jishigou('play_' + shareid).style.display = 'none';
+		$datacore('play_' + shareid).style.display = 'none';
 		
 		var hideObj = document.createElement('div');
 		hideObj.id = 'flash_hide_' + shareid;
@@ -432,7 +432,7 @@ function showFlash(host, flashvar, obj, shareid) {
 			}
 			obj.style.display = '';
 			//显示播放图标
-			$jishigou('play_' + shareid).style.display = 'block';
+			$datacore('play_' + shareid).style.display = 'block';
 			  
 
 		}
@@ -505,12 +505,12 @@ function showMusic(host, flashvar, obj, shareid) {
 	}
 	
 	if(!obj) {
-		$jishigou('flash_div_' + shareid).innerHTML = flashHtml;
+		$datacore('flash_div_' + shareid).innerHTML = flashHtml;
 		return true;
 	}
-	if($jishigou('flash_div_' + shareid)) {
-		$jishigou('flash_div_' + shareid).style.display = '';
-		$jishigou('flash_hide_' + shareid).style.display = '';
+	if($datacore('flash_div_' + shareid)) {
+		$datacore('flash_div_' + shareid).style.display = '';
+		$datacore('flash_hide_' + shareid).style.display = '';
 		obj.style.display = 'none';
 		
 		return true;
@@ -523,7 +523,7 @@ function showMusic(host, flashvar, obj, shareid) {
 		
 		obj.style.display = 'none';
 		//隐藏播放图标
-		$jishigou('play_' + shareid).style.display = 'none';
+		$datacore('play_' + shareid).style.display = 'none';
 		
 		var hideObj = document.createElement('div');
 		hideObj.id = 'flash_hide_' + shareid;
@@ -548,7 +548,7 @@ function showMusic(host, flashvar, obj, shareid) {
 			}
 			obj.style.display = '';
 			//显示播放图标
-			$jishigou('play_' + shareid).style.display = 'block';
+			$datacore('play_' + shareid).style.display = 'block';
 			  
 
 		}
@@ -563,10 +563,10 @@ function showMusic(host, flashvar, obj, shareid) {
 function userapp_open() {
 	var x = new Ajax();
 	x.get('cp.php?ac=common&op=getuserapp', function(s){
-		$jishigou('my_userapp').innerHTML = s;
-		$jishigou('a_app_more').className = 'on';
-		$jishigou('a_app_more').innerHTML = '收起';
-		$jishigou('a_app_more').onclick = function() {
+		$datacore('my_userapp').innerHTML = s;
+		$datacore('a_app_more').className = 'on';
+		$datacore('a_app_more').innerHTML = '收起';
+		$datacore('a_app_more').onclick = function() {
 			userapp_close();
 		}
 	});
@@ -576,10 +576,10 @@ function userapp_open() {
 function userapp_close() {
 	var x = new Ajax();
 	x.get('cp.php?ac=common&op=getuserapp&subop=off', function(s){
-		$jishigou('my_userapp').innerHTML = s;
-		$jishigou('a_app_more').className = 'off';
-		$jishigou('a_app_more').innerHTML = '展开';
-		$jishigou('a_app_more').onclick = function() {
+		$datacore('my_userapp').innerHTML = s;
+		$datacore('a_app_more').className = 'off';
+		$datacore('a_app_more').innerHTML = '展开';
+		$datacore('a_app_more').onclick = function() {
 			userapp_open();
 		}
 	});
@@ -589,7 +589,7 @@ function userapp_close() {
 function startMarquee(h, speed, delay, sid) {
 	var t = null;
 	var p = false;
-	var o = $jishigou(sid);
+	var o = $datacore(sid);
 	o.innerHTML += o.innerHTML;
 	o.onmouseover = function() {p = true}
 	o.onmouseout = function() {p = false}
@@ -638,14 +638,14 @@ function showreward() {
 
 function msgwin(s, t) {
 	
-	var msgWinObj = $jishigou('msgwin');
+	var msgWinObj = $datacore('msgwin');
 	if(!msgWinObj) {
 		var msgWinObj = document.createElement("div");
 		msgWinObj.id = 'msgwin';
 		msgWinObj.style.display = 'none';
 		msgWinObj.style.position = 'absolute';
 		msgWinObj.style.zIndex = '100000';
-		$jishigou('append_parent').appendChild(msgWinObj);
+		$datacore('append_parent').appendChild(msgWinObj);
 	}
 	msgWinObj.innerHTML = s;
 	msgWinObj.style.display = '';
@@ -661,7 +661,7 @@ function msgwin(s, t) {
 
 function showmsgwin(b, e, a, t) {
 	step = (b - e) / 10;
-	var msgWinObj = $jishigou('msgwin');
+	var msgWinObj = $datacore('msgwin');
 	newp = (parseInt(msgWinObj.style.top) - step);
 	if(newp > e) {
 		msgWinObj.style.filter = 'progid:DXImageTransform.Microsoft.Alpha(opacity=' + a + ')';
@@ -676,23 +676,23 @@ function showmsgwin(b, e, a, t) {
 }
 
 function displayOpacity(id, n) {
-	if(!$jishigou(id)) {
+	if(!$datacore(id)) {
 		return;
 	}
 	if(n >= 0) {
 		n -= 10;
-		$jishigou(id).style.filter = 'progid:DXImageTransform.Microsoft.Alpha(opacity=' + n + ')';
-		$jishigou(id).style.opacity = n / 100;
+		$datacore(id).style.filter = 'progid:DXImageTransform.Microsoft.Alpha(opacity=' + n + ')';
+		$datacore(id).style.opacity = n / 100;
 		setTimeout('displayOpacity(\'' + id + '\',' + n + ')', 50);
 	} else {
-		$jishigou(id).style.display = 'none';
-		$jishigou(id).style.filter = 'progid:DXImageTransform.Microsoft.Alpha(opacity=100)';
-		$jishigou(id).style.opacity = 1;
+		$datacore(id).style.display = 'none';
+		$datacore(id).style.filter = 'progid:DXImageTransform.Microsoft.Alpha(opacity=100)';
+		$datacore(id).style.opacity = 1;
 	}
 }
 
 function display(id) {
-	var obj = $jishigou(id);
+	var obj = $datacore(id);
 	obj.style.display = obj.style.display == '' ? 'none' : '';
 }
 

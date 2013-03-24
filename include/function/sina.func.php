@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -59,21 +59,21 @@ function sina_weibo_bind_setting($uid=0)
     } 
     return $return;   
 }
-function sina_weibo_synctopic_tojishigou($uid=0)
+function sina_weibo_synctopic_todatacore($uid=0)
 {
     $return = false;
     $row = (is_array($uid) ? $uid : sina_weibo_bind_info((int) $uid));
-    if($row['profile'] && false!==strpos($row['profile'],'synctopic_tojishigou') && preg_match('~[\"\']synctopic_tojishigou[\"\']\s*\:\s*1~',$row['profile']))
+    if($row['profile'] && false!==strpos($row['profile'],'synctopic_todatacore') && preg_match('~[\"\']synctopic_todatacore[\"\']\s*\:\s*1~',$row['profile']))
     {
         $return = true;
     } 
     return $return;
 }
-function sina_weibo_syncreply_tojishigou($uid=0)
+function sina_weibo_syncreply_todatacore($uid=0)
 {
     $return = false;
     $row = (is_array($uid) ? $uid : sina_weibo_bind_info((int) $uid));
-    if($row['profile'] && false!==strpos($row['profile'],'syncreply_tojishigou') && preg_match('~[\"\']syncreply_tojishigou[\"\']\s*\:\s*1~',$row['profile']))
+    if($row['profile'] && false!==strpos($row['profile'],'syncreply_todatacore') && preg_match('~[\"\']syncreply_todatacore[\"\']\s*\:\s*1~',$row['profile']))
     {
         $return = true;
     } 
@@ -120,13 +120,13 @@ function sina_weibo_bind_icon($uid=0)
         {
             $return = "<img src='{$sys_config['site_url']}/images/xwb/bgimg/sinawebo_on.gif' alt='已经绑定新浪微博' />";
             $MemberHandler = & Obj::registry('MemberHandler');
-            if($sys_config['sina']['is_synctopic_tojishigou'] && sina_weibo_synctopic_tojishigou($uid))
+            if($sys_config['sina']['is_synctopic_todatacore'] && sina_weibo_synctopic_todatacore($uid))
             {
                 $_read_now = true;
-                if($sys_config['sina']['syncweibo_tojishigou_time'] > 0)
+                if($sys_config['sina']['syncweibo_todatacore_time'] > 0)
                 {
                     $xwb_bind_info = sina_weibo_bind_info($uid);
-                    if($xwb_bind_info['last_read_time'] + $sys_config['sina']['syncweibo_tojishigou_time'] > time())
+                    if($xwb_bind_info['last_read_time'] + $sys_config['sina']['syncweibo_todatacore_time'] > time())
                     {
                         $_read_now = false;
                     }
@@ -140,12 +140,12 @@ function sina_weibo_bind_icon($uid=0)
                     $return .= "<img src='{$sys_config['site_url']}/index.php?mod=xwb&code=synctopic&uid={$uid}' width='0' height='0' style='display:none' />";
                 }
             }
-            if($sys_config['sina']['is_syncreply_tojishigou'] && is_numeric($_GET['code']) && sina_weibo_syncreply_tojishigou($uid) && ($xwb_bind_topic = sina_weibo_bind_topic($_GET['code'])) && ($topic_info = DB::fetch_first("select * from ".TABLE_PREFIX."topic where `tid`='{$_GET['code']}'")))
+            if($sys_config['sina']['is_syncreply_todatacore'] && is_numeric($_GET['code']) && sina_weibo_syncreply_todatacore($uid) && ($xwb_bind_topic = sina_weibo_bind_topic($_GET['code'])) && ($topic_info = DB::fetch_first("select * from ".TABLE_PREFIX."topic where `tid`='{$_GET['code']}'")))
             {
                 $_read_now = true;
-                if($sys_config['sina']['syncweibo_tojishigou_time'] > 0)
+                if($sys_config['sina']['syncweibo_todatacore_time'] > 0)
                 {
-                    if($xwb_bind_topic['last_read_time'] + $sys_config['sina']['syncweibo_tojishigou_time'] > time())
+                    if($xwb_bind_topic['last_read_time'] + $sys_config['sina']['syncweibo_todatacore_time'] > time())
                     {
                         $_read_now = false;
                     }
@@ -222,7 +222,7 @@ function sina_weibo_oauth($access_token = null, $refresh_token = null) {
         $client_id = $sys_config['sina']['app_key'];
         $client_secret = $sys_config['sina']['app_secret'];
         Load::lib('oauth2');
-        $oauth = new JishiGouOAuth($client_id, $client_secret, $access_token, $refresh_token);
+        $oauth = new DataCoreOAuth($client_id, $client_secret, $access_token, $refresh_token);
         $oauth->host = 'https:/'.'/api.weibo.com/';
         $oauth->access_token_url = 'https:/'.'/api.weibo.com/oauth2/access_token';
         $oauth->authorize_url = 'https:/'.'/api.weibo.com/oauth2/authorize';

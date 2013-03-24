@@ -1,4 +1,4 @@
-<?php if(!defined('IN_JISHIGOU')) { exit('invalid request'); } 
+<?php if(!defined('IN_DATACORE')) { exit('invalid request'); } 
 $cache = array (
   'key' => 'role_action/login-1',
   'dateline' => 1363690090,

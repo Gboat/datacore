@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -116,7 +116,7 @@ class ModuleObject extends MasterObject
         $privileges=explode(',',$role_info['privilege']);
         foreach($privilege_list as $key=>$privilege)
         {
-            if($privilege['allow_all']==1 && false === JISHIGOU_FOUNDER)
+            if($privilege['allow_all']==1 && false === DATACORE_FOUNDER)
             {
                 $privilege['disabled']=" disabled";
             }
@@ -165,7 +165,7 @@ class ModuleObject extends MasterObject
         $action="admin.php?mod=role&code=domodify";
         $title="编辑用户组权限";
         $wheres = array();
-        if(true !== JISHIGOU_FOUNDER) {
+        if(true !== DATACORE_FOUNDER) {
             $wheres[] = " `module` NOT IN ('".implode("','", $this->smods)."') ";
         }
         if('normal'==$role_info['type']) {
@@ -177,7 +177,7 @@ class ModuleObject extends MasterObject
         $privilege_list=$query->GetAll();
         $privileges=explode(',',$role_info['privilege']);
         foreach($privilege_list as $privilege) {
-            if($privilege['allow_all']==1 && false === JISHIGOU_FOUNDER) {
+            if($privilege['allow_all']==1 && false === DATACORE_FOUNDER) {
                 $privilege['disabled']=" disabled ";
             }
             $module_name=isset($this->ModuleList[$privilege['module']])
@@ -217,7 +217,7 @@ class ModuleObject extends MasterObject
             $FormHandler = new FormHandler();
         }
         $tpl = 'admin/role_info';
-        if(true===DEBUG && true===JISHIGOU_FOUNDER && 2==$this->ID && 'admin'==$this->Code) {
+        if(true===DEBUG && true===DATACORE_FOUNDER && 2==$this->ID && 'admin'==$this->Code) {
             $tpl = 'admin/role_info_admin';
         }
         include $this->TemplateHandler->Template($tpl);
@@ -246,7 +246,7 @@ class ModuleObject extends MasterObject
                     $iiddss[$iid] = $iid;
                 }
             }
-            if(true !== JISHIGOU_FOUNDER) {
+            if(true !== DATACORE_FOUNDER) {
                                 $role_pids = array();
                 foreach(explode(',', $role['privilege']) as $oid) {
                     $role_pids[$oid] = $oid;

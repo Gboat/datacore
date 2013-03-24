@@ -1,4 +1,4 @@
-<?php if(!defined('IN_JISHIGOU')) { exit('invalid request'); } 
+<?php if(!defined('IN_DATACORE')) { exit('invalid request'); } 
 $cache = array (
   'key' => 'misc/video_parse_code',
   'dateline' => 1363315109,

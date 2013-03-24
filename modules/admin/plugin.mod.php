@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -282,8 +282,8 @@ class ModuleObject extends MasterObject
                 $filedir = PLUGIN_DIR . '/'.$file;
                 $d = dir($filedir);
                 while($f = $d->read()){
-                    if(preg_match('/^jishigou\_plugin\_'.$file.'.xml$/', $f)){
-                        $xml_url = $filedir.'/jishigou_plugin_'.$file.'.xml';
+                    if(preg_match('/^datacore\_plugin\_'.$file.'.xml$/', $f)){
+                        $xml_url = $filedir.'/datacore_plugin_'.$file.'.xml';
                         $fp = fopen($xml_url, 'r');
                         $xmldata = fread($fp, 4096);
                         $plugin_ary = array();
@@ -408,7 +408,7 @@ class ModuleObject extends MasterObject
     {    
         $plugindir = $this->Get['plugindir'];
         $filedir = PLUGIN_DIR . '/'.$plugindir;
-        $xml_url = $filedir.'/jishigou_plugin_'.$plugindir.'.xml';
+        $xml_url = $filedir.'/datacore_plugin_'.$plugindir.'.xml';
         $fp = fopen($xml_url, 'r');
         $xmldata = fread($fp, 4096);
         $plugindata_all = xml_unserialize($xmldata);
@@ -423,7 +423,7 @@ class ModuleObject extends MasterObject
                 include($filedir.'/'.$installfile);
                 if($sql)
                 {
-                    $sqls = str_replace("\r","\n",str_replace("{jishigou}",TABLE_PREFIX,$sql));
+                    $sqls = str_replace("\r","\n",str_replace("{datacore}",TABLE_PREFIX,$sql));
                     foreach(explode(";\n", trim($sqls)) as $sql)
                     {
                         $query = trim($sql);
@@ -501,7 +501,7 @@ class ModuleObject extends MasterObject
         }
         $plugindir = $this->Get['plugindir'];
         $filedir = PLUGIN_DIR . '/'.$plugindir;
-        $xml_url = $filedir.'/jishigou_plugin_'.$plugindir.'.xml';
+        $xml_url = $filedir.'/datacore_plugin_'.$plugindir.'.xml';
         $fp = fopen($xml_url, 'r');
         $xmldata = fread($fp, 4096);
         $plugindata_all = xml_unserialize($xmldata);
@@ -510,7 +510,7 @@ class ModuleObject extends MasterObject
         {
                         if(file_exists($filedir.'/'.$uninstallfile)) {
                 include($filedir.'/'.$uninstallfile);
-                $sqls = str_replace("\r","\n",str_replace("{jishigou}",TABLE_PREFIX,$sql));
+                $sqls = str_replace("\r","\n",str_replace("{datacore}",TABLE_PREFIX,$sql));
                 foreach(explode(";\n", trim($sqls)) as $sql)
                 {
                     $query = trim($sql);
@@ -557,7 +557,7 @@ class ModuleObject extends MasterObject
         $plugindir = $plugin_info['identifier'];
         $nowver = !empty($plugin_info['version']) ? $plugin_info['version'] : 0;
         $filedir = PLUGIN_DIR . '/'.$plugindir;
-        $xml_url = $filedir.'/jishigou_plugin_'.$plugindir.'.xml';
+        $xml_url = $filedir.'/datacore_plugin_'.$plugindir.'.xml';
         $fp = fopen($xml_url, 'r');
         $xmldata = fread($fp, 4096);
         $plugindata_all = xml_unserialize($xmldata);
@@ -571,7 +571,7 @@ class ModuleObject extends MasterObject
             if($upgradefile){ 
                                 if(file_exists($filedir.'/'.$upgradefile)) {
                     include($filedir.'/'.$upgradefile);
-                    $sqls = str_replace("\r","\n",str_replace("{jishigou}",TABLE_PREFIX,$sql));
+                    $sqls = str_replace("\r","\n",str_replace("{datacore}",TABLE_PREFIX,$sql));
                     foreach(explode(";\n", trim($sqls)) as $sql)
                     {
                         $query = trim($sql);

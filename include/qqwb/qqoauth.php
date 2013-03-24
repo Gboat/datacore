@@ -10,7 +10,7 @@ class QQOAuth {
     public $format = 'json';
     public $decode_json = TRUE;
     public $http_info;
-    public $useragent = 'JishiGou OAuth v0.2';
+    public $useragent = 'DataCore OAuth v0.2';
     function accessTokenURL()  { return 'http:/'.'/open.t.qq.com/cgi-bin/access_token'; }
     function authenticateURL() { return 'http:/'.'/open.t.qq.com/cgi-bin/authenticate'; }
     function authorizeURL()    { return 'http:/'.'/open.t.qq.com/cgi-bin/authorize'; }

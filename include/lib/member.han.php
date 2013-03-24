@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
 class MemberHandler {
@@ -32,7 +32,7 @@ class MemberHandler {
             define("MEMBER_ROLE_TYPE",$this->MemberFields['role_type']);
             define("MEMBER_STYLE_THREE_TOL", (int) (1 == $this->MemberFields['style_three_tol'] ? 1 :
             (-1 == $this->MemberFields['style_three_tol'] ? 0 : $GLOBALS['_J']['config']['style_three_tol'])));
-            define('JISHIGOU_FOUNDER', jsg_member_is_founder(MEMBER_ID));
+            define('DATACORE_FOUNDER', jsg_member_is_founder(MEMBER_ID));
         }
         return $this->MemberFields;
     }
@@ -94,7 +94,7 @@ class MemberHandler {
         $role_id = (int) $MemberFields['role_id'];
         $role_name = $MemberFields['role_name'];
         $role_privilege = $MemberFields['role_privilege'];
-        if($role_id < 1 && true !== JISHIGOU_FOUNDER) {
+        if($role_id < 1 && true !== DATACORE_FOUNDER) {
             $this->_SetError("角色编号不能为空,或者该编号在服务器上已经删除");
             clearcache();
             return false;
@@ -145,7 +145,7 @@ class MemberHandler {
             $current_action['id'] = $current_action_id;
             $current_action['mod'] = $mod;
             $this->_SetCurrentAction($current_action);
-            if(true === JISHIGOU_FOUNDER) {
+            if(true === DATACORE_FOUNDER) {
                 return true;
             }
             if($current_action['allow_all']==1) {
@@ -174,7 +174,7 @@ class MemberHandler {
                 return true;             }
             if('POST' != $_SERVER['REQUEST_METHOD']) {
                 return true;             }
-            if(!$GLOBALS['_J']['config']['jishigou_founder']) {
+            if(!$GLOBALS['_J']['config']['datacore_founder']) {
                 return true;             }
             $error = "操作模块:{$mod}<br>操作指令:{$action}<br><br>";
             $error.= "由于此操作在系统中没有权限控制,您暂时无法执行该操作,请联系网站的超级管理员。";

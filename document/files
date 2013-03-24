@@ -531,7 +531,7 @@
 │   │       └── z.mp3
 │   ├── share_douban.jpg
 │   ├── share_happy.jpg
-│   ├── share_jishigou.gif
+│   ├── share_datacore.gif
 │   ├── share_qq.jpg
 │   ├── share_renren.jpg
 │   ├── share_share.jpg
@@ -727,7 +727,7 @@
 │   │   ├── zip.func.php
 │   │   └── zip.moyo.php
 │   ├── index.html
-│   ├── jishigou.php
+│   ├── datacore.php
 │   ├── lib
 │   │   ├── cookie.han.php
 │   │   ├── form.han.php
@@ -793,7 +793,7 @@
 │   └── xwb
 │       ├── hack
 │       │   └── newtopic.hack.php
-│       ├── jishigou.php
+│       ├── datacore.php
 │       ├── lang
 │       │   ├── gbk.php
 │       │   └── utf8.php
@@ -841,9 +841,9 @@
 │   ├── index.htm
 │   ├── index.html
 │   ├── install.lang.php
-│   ├── jishigou_data.sql
-│   ├── jishigou.sql
-│   ├── jishigou_upgrade_area.php
+│   ├── datacore_data.sql
+│   ├── datacore.sql
+│   ├── datacore_upgrade_area.php
 │   ├── style.css
 │   └── udata
 ├── install.php
@@ -1287,13 +1287,13 @@
 │   │   ├── company.inc.php
 │   │   ├── index.htm
 │   │   ├── install.php
-│   │   ├── jishigou_plugin_company.xml
+│   │   ├── datacore_plugin_company.xml
 │   │   ├── logo.png
 │   │   ├── memcp.inc.php
 │   │   └── uninstall.php
 │   ├── index.html
 │   └── map
-│       ├── jishigou_plugin_map.xml
+│       ├── datacore_plugin_map.xml
 │       └── map.inc.php
 ├── pw_api.php
 ├── setting

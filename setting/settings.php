@@ -46,7 +46,7 @@
   'is_report' => '0',
   'is_signature' => '1',
   'is_topic_user_follow' => '1',
-  'jishigou_founder' => '1',
+  'datacore_founder' => '1',
   'lastpost_time' => '5',
   'level_radio' => '1',
   'login_enable' => 1,

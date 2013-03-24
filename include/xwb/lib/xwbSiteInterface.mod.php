@@ -370,8 +370,8 @@ class xwbSiteInterface {
                 $screen_name = $sina_user_info['screen_name'];
                 $profile = XWB_plugin::O('xwbUserProfile');
                 $setting = $profile->get('bind_setting', 1);
-                $tojishigou = $profile->get('synctopic_tojishigou', 0);
-                $reply_tojishigou = $profile->get('syncreply_tojishigou', 0);
+                $todatacore = $profile->get('synctopic_todatacore', 0);
+                $reply_todatacore = $profile->get('syncreply_todatacore', 0);
                 include XWB_P_ROOT.'/tpl/xwb_cenbind_on.tpl.php';
             }            
         } else {
@@ -393,10 +393,10 @@ class xwbSiteInterface {
             XWB_plugin::showError('新浪微博绑定功能已经关闭！');
         }
         $setting = XWB_plugin::V('p:setting');
-        $tojishigou = XWB_plugin::V('p:tojishigou');
-        $reply_tojishigou = XWB_plugin::V('p:reply_tojishigou');        
+        $todatacore = XWB_plugin::V('p:todatacore');
+        $reply_todatacore = XWB_plugin::V('p:reply_todatacore');        
         $profile = XWB_plugin::O('xwbUserProfile');
-        $profile->set(array('bind_setting'=>(int)$setting,'synctopic_tojishigou'=>(int)$tojishigou,'syncreply_tojishigou'=>(int)$reply_tojishigou,));
+        $profile->set(array('bind_setting'=>(int)$setting,'synctopic_todatacore'=>(int)$todatacore,'syncreply_todatacore'=>(int)$reply_todatacore,));
         Load::model('misc')->update_account_bind_info(XWB_S_UID, '', '', 1);
         echo '<script>parent.tips();</script>';
     }

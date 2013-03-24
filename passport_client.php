@@ -1,6 +1,6 @@
 <?php
 define('ROOT_PATH',dirname(__FILE__) . '/');
-define('IN_JISHIGOU',true);
+define('IN_DATACORE',true);
 $action = isset($_POST['action']) ? $_POST['action'] : $_GET['action'];
 $userdb = isset($_POST['userdb']) ? $_POST['userdb'] : $_GET['userdb'];
 $forward = isset($_POST['forward']) ? $_POST['forward'] : $_GET['forward'];
@@ -195,7 +195,7 @@ class jsg_db {
         return mysql_close($this->link);
     }
     function halt($msg = '', $sql = '') {
-        echo('<br>JishiGou Login : <br>'.$msg."<br>".$sql.'<br><hr><br>');
+        echo('<br>DataCore Login : <br>'.$msg."<br>".$sql.'<br><hr><br>');
     }
 }
 ?>

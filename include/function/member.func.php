@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
 function jsg_member_register($nickname, $password, $email, $username = '', $ucuid = 0, $role_id = 0) {
@@ -18,7 +18,7 @@ function jsg_member_register_check_status() {
             $rets["{$v}_enable"] = 1;
         }
     }
-        if(!$rets && true!==JISHIGOU_FORCED_REGISTER) {    
+        if(!$rets && true!==DATACORE_FORCED_REGISTER) {    
         $msg = '本站暂时关闭了普通注册功能 ';
         $msg .= jsg_member_third_party_reg_msg();        
         $rets['error'] = ($GLOBALS['_J']['config']['regclosemessage'] ? $GLOBALS['_J']['config']['regclosemessage'] : $msg);
@@ -300,7 +300,7 @@ function jsg_role_check_allow($action, $to_uid, $from_uid = MEMBER_ID) {
     if($to_uid < 1 || $from_uid < 1 || $to_uid == $from_uid) {
         return $rets;
     }
-        if(MEMBER_ID == $from_uid && true === JISHIGOU_FOUNDER) {
+        if(MEMBER_ID == $from_uid && true === DATACORE_FOUNDER) {
         return $rets;
     }
     $actions = array('sendpm'=>'私信', 'topic_forward'=>'转发', 'topic_reply'=>'评论', 'topic_at'=>'@', 'follow'=>'关注', );
@@ -361,7 +361,7 @@ function jsg_get_vip_uids($limit=300, $day=30) {
 function jsg_member_is_founder($uid) {
     global $_J;    
     $uid = (is_numeric($uid) ? $uid : 0);
-    $ret = (boolean) ($uid>0 && $_J['config']['jishigou_founder'] && jsg_find($_J['config']['jishigou_founder'], $uid, ','));
+    $ret = (boolean) ($uid>0 && $_J['config']['datacore_founder'] && jsg_find($_J['config']['datacore_founder'], $uid, ','));
     return $ret;    
 }
 function jsg_is_mobile($num) {

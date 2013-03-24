@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
 function get_sub_menu() {
@@ -35,7 +35,7 @@ function admin_check_allow($uid, $is_role_id=0) {
         if(MEMBER_ID < 1) {
         return false;
     }
-        if(true === JISHIGOU_FOUNDER) {
+        if(true === DATACORE_FOUNDER) {
         return true;
     }
     $uid = (is_numeric($uid) ? $uid : 0);

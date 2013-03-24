@@ -363,7 +363,7 @@ class Http_Client
         $this->_reset();
         if (!isset($this->headers['user-agent']))
         {
-            $buf .= "User-Agent: Mozilla/5.0 (Compatible; " . HC_PACKAGENAME . "/" . HC_VERSION . "; +JishiGou) ";
+            $buf .= "User-Agent: Mozilla/5.0 (Compatible; " . HC_PACKAGENAME . "/" . HC_VERSION . "; +DataCore) ";
             $buf .= "php-" . php_sapi_name() . "/" . phpversion() . " ";
             $buf .= php_uname("s") . "/" . php_uname("r") . "\r\n";
         }

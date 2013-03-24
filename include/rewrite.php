@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
 include(ROOT_PATH . 'setting/rewrite.php');
@@ -14,7 +14,7 @@ if($_rewrite['mode']) {
     $rewriteHandler->prependVarList=$_rewrite['prepend_var_list'];
     $rewriteHandler->varReplaceList=(array)$_rewrite['var_replace_list'];
     $rewriteHandler->valueReplaceList=(array)$_rewrite['value_replace_list'];
-    if(true === IN_JISHIGOU_INDEX || true === IN_JISHIGOU_AJAX) {
+    if(true === IN_DATACORE_INDEX || true === IN_DATACORE_AJAX) {
         $rewriteHandler->parseRequest($_rewrite['request']);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -128,7 +128,7 @@ class ModuleObject extends MasterObject
             $mail_subject = "来自".$this->Config['site_name']."微博-管理员 ".MEMBER_NICKNAME." 的报备";
             $mail_content = $message;
             $mail_from_username = MEMBER_NAME;
-            $mail_from_email = 'no-reply@jishigou.net';
+            $mail_from_email = 'no-reply@datacore.net';
             $mail_from_email = $this->Config['site_admin_email'];
             $send_result = send_mail($mail_to,$mail_subject,$mail_content,$mail_from_username,$mail_from_email,array(),3,false);
             if(!$send_result){

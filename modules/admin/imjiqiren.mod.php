@@ -1,6 +1,6 @@
 <?php
 
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
 exit('invalid request');
 }
@@ -66,7 +66,7 @@ $qqwb_update_disable_radio = $FormHandler->YesNoRadio('qqwb_update_disable',(int
 $sina_update_disable_radio = $FormHandler->YesNoRadio('sina_update_disable',(int) $imjiqiren_config['sina_update_disable']);
 $reset_password_disable_radio = $FormHandler->YesNoRadio('reset_password_disable',(int) $imjiqiren_config['reset_password_disable']);
 $api_url_encode = base64_encode($this->Config['site_url'] ."/imjiqiren.php?mod=imjiqiren");
-$api_url_from = 'jishigou';
+$api_url_from = 'datacore';
 $api_url_key = substr(md5("{$api_url_from}\t{$imjiqiren_config['imjiqiren_url']}\t{$api_url_encode}"),-12);
 $api_url_encode = urlencode($api_url_encode);
 $imjiqiren_url = "{$imjiqiren_config[imjiqiren_url]}&op=app&co=do_add&api_url_encode={$api_url_encode}&api_url_from={$api_url_from}&api_url_key={$api_url_key}";

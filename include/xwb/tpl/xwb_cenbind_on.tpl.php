@@ -25,16 +25,16 @@
         <div class="radio-box">
         <div class="radio"><label for="setting_1"><input name="setting" id="setting_1" type="radio" value="1" <?php if ($setting == 1) {?> checked="checked" <?php }?> />是</label> &nbsp; <label for="setting_0"><input name="setting" id="setting_0" type="radio" value="0" <?php if ($setting == 0) {?> checked="checked" <?php }?> />否</label></div>
         </div>
-        <?php if(XWB_plugin::pCfg('is_synctopic_tojishigou') && ($MemberHandler = & Obj::registry('MemberHandler')) && ($MemberHandler->HasPermission('xwb','__synctopic'))) {?>
+        <?php if(XWB_plugin::pCfg('is_synctopic_todatacore') && ($MemberHandler = & Obj::registry('MemberHandler')) && ($MemberHandler->HasPermission('xwb','__synctopic'))) {?>
         <h3>读取新浪微博的内容到本站？</h3>
         <div class="radio-box">
-        <div class="radio"><label for="tojishigou_1"><input name="tojishigou" id="tojishigou_1" type="radio" value="1" <?php if ($tojishigou == 1) {?> checked="checked" <?php }?> />是</label> &nbsp; <label for="tojishigou_0"><input name="tojishigou" id="tojishigou_0" type="radio" value="0" <?php if ($tojishigou == 0) {?> checked="checked" <?php }?> />否</label></div>
+        <div class="radio"><label for="todatacore_1"><input name="todatacore" id="todatacore_1" type="radio" value="1" <?php if ($todatacore == 1) {?> checked="checked" <?php }?> />是</label> &nbsp; <label for="todatacore_0"><input name="todatacore" id="todatacore_0" type="radio" value="0" <?php if ($todatacore == 0) {?> checked="checked" <?php }?> />否</label></div>
         </div>
         <?php }?> 
-        <?php if(XWB_plugin::pCfg('is_syncreply_tojishigou') && ($MemberHandler = & Obj::registry('MemberHandler')) && ($MemberHandler->HasPermission('xwb','__syncreply'))) {?>
+        <?php if(XWB_plugin::pCfg('is_syncreply_todatacore') && ($MemberHandler = & Obj::registry('MemberHandler')) && ($MemberHandler->HasPermission('xwb','__syncreply'))) {?>
         <h3>读取新浪微博的评论内容到本站？</h3>
         <div class="radio-box">
-        <div class="radio"><label for="reply_tojishigou_1"><input name="reply_tojishigou" id="reply_tojishigou_1" type="radio" value="1" <?php if ($reply_tojishigou == 1) {?> checked="checked" <?php }?> />是</label> &nbsp; <label for="reply_tojishigou_0"><input name="reply_tojishigou" id="reply_tojishigou_0" type="radio" value="0" <?php if ($reply_tojishigou == 0) {?> checked="checked" <?php }?> />否</label></div>
+        <div class="radio"><label for="reply_todatacore_1"><input name="reply_todatacore" id="reply_todatacore_1" type="radio" value="1" <?php if ($reply_todatacore == 1) {?> checked="checked" <?php }?> />是</label> &nbsp; <label for="reply_todatacore_0"><input name="reply_todatacore" id="reply_todatacore_0" type="radio" value="0" <?php if ($reply_todatacore == 0) {?> checked="checked" <?php }?> />否</label></div>
         </div>
         <?php }?>        
         <span class="xwb-plugin-btn"><input type="submit" class="button" value="保存设置"></span>

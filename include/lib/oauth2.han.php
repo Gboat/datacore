@@ -1,8 +1,8 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
-class JishiGouOAuth {
+class DataCoreOAuth {
     var $client_id;
     var $client_secret;
     var $access_token;
@@ -18,14 +18,14 @@ class JishiGouOAuth {
     var $format = 'json';
     var $decode_json = TRUE;
     var $http_info;
-    var $useragent = 'JishiGou OAuth2 v0.1';
+    var $useragent = 'DataCore OAuth2 v0.1';
     var $debug = FALSE;
     function accessTokenURL()  { return $this->access_token_url; }
     function authorizeURL()    { return $this->authorize_url; }
     function __construct($client_id, $client_secret, $access_token = NULL, $refresh_token = NULL) {
-        $this->JishiGouOAuth($client_id, $client_secret, $access_token, $refresh_token);
+        $this->DataCoreOAuth($client_id, $client_secret, $access_token, $refresh_token);
     }
-    function JishiGouOAuth($client_id, $client_secret, $access_token = NULL, $refresh_token = NULL)
+    function DataCoreOAuth($client_id, $client_secret, $access_token = NULL, $refresh_token = NULL)
     {
         $this->client_id = $client_id;
         $this->client_secret = $client_secret;

@@ -1,11 +1,11 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
 $sql = <<<EOF
-DROP TABLE IF EXISTS {jishigou}plugin_company;
-CREATE TABLE {jishigou}plugin_company(
+DROP TABLE IF EXISTS {datacore}plugin_company;
+CREATE TABLE {datacore}plugin_company(
   `cid` int(10) unsigned NOT NULL auto_increment,
   `uid` int(10) unsigned NOT NULL default '0',
   `uccid` int(10) unsigned NOT NULL default '0',

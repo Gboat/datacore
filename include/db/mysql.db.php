@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -62,7 +62,7 @@ class MySqlHandler extends DatabaseHandler
                 static $WAITTIMES = 0;
                 $result = $this->Query($sql, 'WAIT'.++$WAITTIMES.$type);
             } elseif (true===DEBUG || ($type != 'SKIP_ERROR' && 'SILENT' != $type && substr($type, 5) != 'SKIP_ERROR')) {
-                if('admin' === MEMBER_ROLE_TYPE || true === JISHIGOU_FOUNDER) {
+                if('admin' === MEMBER_ROLE_TYPE || true === DATACORE_FOUNDER) {
                     exit($this->GetLastError($sql, $file, $line));                 }
                 die('MySql query error, Please contact webmaster.');
             } else {

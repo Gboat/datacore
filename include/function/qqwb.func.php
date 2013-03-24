@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -65,11 +65,11 @@ function qqwb_bind_setting($uid=0)
     } 
     return $return;   
 }
-function qqwb_synctopic_tojishigou($uid=0)
+function qqwb_synctopic_todatacore($uid=0)
 {
     $return = false;
     $row = (is_array($uid) ? $uid : qqwb_bind_info((int) $uid));
-    if($row['profile'] && false!==strpos($row['profile'],'synctopic_tojishigou') && preg_match('~[\"\']synctopic_tojishigou[\"\']\s*\:\s*1~',$row['profile']))
+    if($row['profile'] && false!==strpos($row['profile'],'synctopic_todatacore') && preg_match('~[\"\']synctopic_todatacore[\"\']\s*\:\s*1~',$row['profile']))
     {
         $return = true;
     } 
@@ -100,7 +100,7 @@ function qqwb_bind_icon($uid=0)
         if (qqwb_bind($uid)) 
         {
             $return = "<img src='{$sys_config['site_url']}/images/qqwb/qqwb_on.gif' alt='已经绑定腾讯微博' />";
-            if($sys_config['qqwb']['is_synctopic_tojishigou'] && qqwb_synctopic_tojishigou($uid))
+            if($sys_config['qqwb']['is_synctopic_todatacore'] && qqwb_synctopic_todatacore($uid))
             {
                 $return .= "<img src='{$sys_config['site_url']}/index.php?mod=qqwb&code=synctopic&uid={$uid}' width='0' height='0' style='display:none' />";
             }

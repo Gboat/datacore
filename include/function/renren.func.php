@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -28,7 +28,7 @@ function renren_oauth($access_token = null, $refresh_token = null)
         $client_id = $sys_config['renren']['client_id'];
         $client_secret = $sys_config['renren']['client_secret'];
         Load::lib('oauth2');
-        $renren_oauth = new JishiGouOAuth($client_id, $client_secret, $access_token, $refresh_token);
+        $renren_oauth = new DataCoreOAuth($client_id, $client_secret, $access_token, $refresh_token);
         $renren_oauth->host = 'https:/'.'/graph.renren.com/';
         $renren_oauth->access_token_url = 'https:/'.'/graph.renren.com/oauth/token';
         $renren_oauth->authorize_url = 'https:/'.'/graph.renren.com/oauth/authorize';

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -59,7 +59,7 @@ class ModuleObject extends MasterObject
             }
         }
         if($per_page_num < 1) $per_page_num = 10;
-        $target_id = $this->_input('target_id', 1, 'jishigou_div');
+        $target_id = $this->_input('target_id', 1, 'datacore_div');
         rewriteDisable();
         include template('output_url_js');
     }

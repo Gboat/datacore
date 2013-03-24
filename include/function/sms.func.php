@@ -1,6 +1,6 @@
 <?php
 
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
 exit('invalid request');
 }
@@ -327,7 +327,7 @@ else
 {
 usleep(rand(10000,1000000));
 }
-if( TRUE===IN_JISHIGOU_INDEX ||TRUE===IN_JISHIGOU_AJAX ||TRUE===IN_JISHIGOU_ADMIN )
+if( TRUE===IN_DATACORE_INDEX ||TRUE===IN_DATACORE_AJAX ||TRUE===IN_DATACORE_ADMIN )
 {
 $result = jsg_schedule(array('to'=>$to,'message'=>$message),'sms_send');
 }

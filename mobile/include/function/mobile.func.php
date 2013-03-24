@@ -3,7 +3,7 @@ class Mobile
 {
         function show_message($code, $data = array())
     {
-        if (IN_JISHIGOU_MOBILE_AJAX === true) {
+        if (IN_DATACORE_MOBILE_AJAX === true) {
             if ($code == 410) {
                 Mobile::error("No Login", 410);
             }

@@ -97,7 +97,7 @@ function cache($name,$lifetime=null,$only_get=false)
         if(is_writeable($path)===false && is_dir($path))return trigger_error("缓存目录 $path 不可写",E_USER_WARNING);
         if(is_dir($cache_dir=dirname($S_file))==false) jmkdir($cache_dir);
         $data=var_export($name,true);
-        $data="<?php if(!defined('IN_JISHIGOU')) exit('invalid request'); \r\n\$cache=$data;\r\n?>";
+        $data="<?php if(!defined('IN_DATACORE')) exit('invalid request'); \r\n\$cache=$data;\r\n?>";
         $len = Load::lib('io', 1)->WriteFile($S_file, $data);
         @chmod($S_file, 0777);
         $S_file=null;
@@ -387,11 +387,11 @@ function strip_selected_tags(&$str,$disallowable="<script><iframe><style><link>"
 }
 function page($total_record, $per_page_num,$url='', $_config = array(), $per_page_nums = "")
 {
-    if(true===IN_JISHIGOU_INDEX || true===IN_JISHIGOU_AJAX){
+    if(true===IN_DATACORE_INDEX || true===IN_DATACORE_AJAX){
         global $rewriteHandler;
     }
     $sys_config = ConfigHandler::get();
-        if(true === IN_JISHIGOU_ADMIN && isset($sys_config['total_page_default']))
+        if(true === IN_DATACORE_ADMIN && isset($sys_config['total_page_default']))
     {
         unset($sys_config['total_page_default']);
     }
@@ -891,7 +891,7 @@ function face_get($users=array(), $type='small') {
             if('small'!=$type) {
                 $type = 'middle';
             }
-                        if(!isset($mods[$_GET['mod']]) && (TRUE===IN_JISHIGOU_INDEX || TRUE===IN_JISHIGOU_AJAX)) {
+                        if(!isset($mods[$_GET['mod']]) && (TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX)) {
                 $file = UC_API . '/data/avatar/' . jsg_uc_face_path($ucuid, $type, 'virtual');
                             } else {
                 $file = UC_API . "/avatar.php?uid={$ucuid}&type=virtual&size={$type}";
@@ -917,7 +917,7 @@ function face_get($users=array(), $type='small') {
                 $PwBbsLogic = new TopicBbsLogic();
                 $icon = $PwBbsLogic->get_pw_uicon($ucuid);
             }
-            if($icon && (TRUE===IN_JISHIGOU_INDEX || TRUE===IN_JISHIGOU_AJAX))
+            if($icon && (TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX))
             {
                 $file = UC_API . $icon;
             }
@@ -935,7 +935,7 @@ function face_get($users=array(), $type='small') {
             $face_url = DB::result_first("select `face_url` from ".TABLE_PREFIX."members where `uid`='$uid'");
         }
     } else {
-        if(!isset($mods[$_GET['mod']]) && (TRUE===IN_JISHIGOU_INDEX || TRUE===IN_JISHIGOU_AJAX)) {
+        if(!isset($mods[$_GET['mod']]) && (TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX)) {
             ;
         } else {
             if(!file_exists(ROOT_PATH . $file)) {
@@ -2111,14 +2111,14 @@ function str_safe($str) {
     }
     return '';
 }
-if(!defined('JISHIGOU_GLOBAL_FUNCTION')) {
-    define('JISHIGOU_GLOBAL_FUNCTION', true);
-    if(!defined('IN_JISHIGOU')) {
+if(!defined('DATACORE_GLOBAL_FUNCTION')) {
+    define('DATACORE_GLOBAL_FUNCTION', true);
+    if(!defined('IN_DATACORE')) {
         if(!defined('ROOT_PATH')) {
             define('ROOT_PATH', substr(dirname(__FILE__), 0, -17) . '/');
         }
-        require_once ROOT_PATH . 'include/jishigou.php';
-        $jishigou = new jishigou();
+        require_once ROOT_PATH . 'include/datacore.php';
+        $datacore = new datacore();
     }
 }
 Load::functions('member');

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -38,7 +38,7 @@ class TemplateHandler
             $this->CompiledPath = $config['__compiled_abs_path__'].'/'.$this->TemplateDir.'/';
         }
         #endif
-        $this->TemplateHeadAdd = '<?php /'.'* '.date('Y-m-d').' in jishigou invalid request template *'.'/ if(!defined("IN_JISHIGOU")) exit("invalid request"); ?>';
+        $this->TemplateHeadAdd = '<?php /'.'* '.date('Y-m-d').' in datacore invalid request template *'.'/ if(!defined("IN_DATACORE")) exit("invalid request"); ?>';
         $this->TemplateDeveloper = ($config['templatedeveloper'] ? 1 : 0);
     }
     function Template($filename)
@@ -175,7 +175,7 @@ class TemplateHandler
         {
             $this->ModifyLinks();
         }
-        if($rewriteHandler && (true===IN_JISHIGOU_INDEX || true===IN_JISHIGOU_AJAX))
+        if($rewriteHandler && (true===IN_DATACORE_INDEX || true===IN_DATACORE_AJAX))
         {
             $this->TemplateString=$rewriteHandler->output($this->TemplateString,true);
         }

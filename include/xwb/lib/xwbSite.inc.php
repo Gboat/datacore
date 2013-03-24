@@ -18,7 +18,7 @@ function xwb_setSiteRegister($nickname, $email, $pwd=false)
     $uid = 0;
     $password = ($pwd ? $pwd : rand(100000,999999));
     $regstatus = jsg_member_register_check_status();
-    if($regstatus['normal_enable'] || true===JISHIGOU_FORCED_REGISTER)
+    if($regstatus['normal_enable'] || true===DATACORE_FORCED_REGISTER)
     {
         $uid = jsg_member_register($nickname, $password, $email);
     }

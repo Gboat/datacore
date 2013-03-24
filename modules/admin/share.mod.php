@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -12,7 +12,7 @@ class ModuleObject extends MasterObject
         if('share_setting' == $this->Code || '' == $this->Code) {
                         ;
         } else {
-            if(true !== JISHIGOU_FOUNDER) {
+            if(true !== DATACORE_FOUNDER) {
                 $this->Messager('特别说明：鉴于安全考虑，站外展示调用模块仅允许“网站创始人”进行添加、编辑、删除等操作。', '', 10);
             }
         }

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -269,7 +269,7 @@ class ModuleObject extends MasterObject
         $plugin_info = $query->GetRow();
         if($plugin_info){
             $export_ary = array();
-            $export_ary['Title'] = 'JishiGou! Plugin';
+            $export_ary['Title'] = 'DataCore! Plugin';
             $export_ary['Version'] = SYS_VERSION;
             $export_ary['Data']['plugin']['available'] = 0;
             $export_ary['Data']['plugin']['name'] = $plugin_info['name'];
@@ -302,7 +302,7 @@ class ModuleObject extends MasterObject
                 $export_ary['uninstallfile'] = 'uninstall.php';
             }
             $xml = xml_serialize($export_ary, true);
-            $filename = strtolower(str_replace(array('!', ' '), array('', '_'), 'JishiGou! Plugin')).'_'.$plugin_info['identifier'].'.xml';
+            $filename = strtolower(str_replace(array('!', ' '), array('', '_'), 'DataCore! Plugin')).'_'.$plugin_info['identifier'].'.xml';
             ob_end_clean();
             header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
             header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
