@@ -506,7 +506,7 @@ class ModuleObject extends MasterObject
                 "# Type: $type\n".
                 "# Table Prefix: $tablepre\n".
                 "#\n".
-                "# DataCore Home: http:\/\/www.datacore.net\n".
+                "# DataCore Home: http:\/\/wrud.net\n".
                 "# Please visit our website for newest infomation about DataCore\n".
                 "# --------------------------------------------------------\n\n\n".
                 "$setnames".

@@ -39,12 +39,12 @@ XML示例
 	<item id="type">first</item>
 	<item id="addtime">1298596723</item>
 	<item id="from_string">来自网站</item>
-	<item id="image_small">http://192.168.1.234/www.datacore.com/./images/topic/5/34/20_s.jpg</item>
-	<item id="image_original">http://192.168.1.234/www.datacore.com/./images/topic/5/34/20_o.jpg</item>
+	<item id="image_small">./images/topic/5/34/20_s.jpg</item>
+	<item id="image_original">./images/topic/5/34/20_o.jpg</item>
 	<item id="nickname">admin</item>
-	<item id="face">http://192.168.1.234/www.datacore.com/./images/face/c/98/1_s.jpg</item>
+	<item id="face">./images/face/c/98/1_s.jpg</item>
 	<item id="validate">0</item>
-	<item id="face_original">http://192.168.1.234/www.datacore.com/./images/face/c/98/1_b.jpg</item>
+	<item id="face_original">./images/face/c/98/1_b.jpg</item>
 </item>
 	<item id="charset">utf-8</item>
 </root>

@@ -1,5 +1,5 @@
 /**
- * 记事狗微博
+ * 数据中心
  * 
  * @author 		~ZZ~
  * @package 	datacore.net

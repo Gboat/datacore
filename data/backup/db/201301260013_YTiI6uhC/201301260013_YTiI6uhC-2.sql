@@ -6,7 +6,7 @@
 # Type: all_tables
 # Table Prefix: weibo_
 #
-# DataCore Home: http:\/\/www.datacore.net
+# DataCore Home: http:\/\/wrud.net
 # Please visit our website for newest infomation about DataCore
 # --------------------------------------------------------
 
