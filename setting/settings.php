@@ -17,6 +17,7 @@
   'copyright' => '',
   'count_online_user' => '1',
   'credits_filed' => 'extcredits3',
+  'datacore_founder' => '1',
   'db_host' => 'localhost',
   'db_name' => 'weibo',
   'db_pass' => 'root',
@@ -46,7 +47,6 @@
   'is_report' => '0',
   'is_signature' => '1',
   'is_topic_user_follow' => '1',
-  'datacore_founder' => '1',
   'lastpost_time' => '5',
   'level_radio' => '1',
   'login_enable' => 1,
@@ -65,9 +65,9 @@
   'qun_attach_enable' => 1,
   'qun_setting' => 
   array (
-    'qun_open' => '1',
-    'new_qun' => '1',
-    'tc_qun' => '1',
+    'qun_open' => '0',
+    'new_qun' => '0',
+    'tc_qun' => '0',
     'img_size' => 200,
     'member_num' => 300,
     'admin_num' => 5,
@@ -144,4 +144,4 @@
   'watermark_position' => 4,
   'widget_enable' => '0',
 ); 
-?>
+ ?>
