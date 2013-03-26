@@ -3,9 +3,9 @@
  $config=array (
   'ajax_topic_time' => '45',
   'api_enable' => 1,
-  'attach_enable' => 1,
-  'attach_files_limit' => 5,
-  'attach_size_limit' => 5120,
+  'attach_enable' => 0,
+  'attach_files_limit' => 3,
+  'attach_size_limit' => 2000,
   'auth_key' => 'JG2hw6uv07TA0PE0AwvUoqWA6RQFLY1p',
   'cache_table_num' => 16,
   'charset' => 'utf-8',
@@ -26,7 +26,7 @@
   'db_type' => 'mysql',
   'db_user' => 'root',
   'default_module' => 'topic',
-  'event_open' => '1',
+  'event_open' => 0,
   'extcredits_enable' => 1,
   'extra_domain' => '',
   'extra_domains' => 
@@ -62,7 +62,7 @@
   'page_title' => '数据核心',
   'qmd_file_url' => './images/qmd/',
   'qqwb_enable' => 1,
-  'qun_attach_enable' => 1,
+  'qun_attach_enable' => 0,
   'qun_setting' => 
   array (
     'qun_open' => '0',
@@ -90,7 +90,7 @@
   'safe_key' => 'rEt1GT5ZMEKcfBUC5IoGGFwc1oHXTOHs',
   'sign' => 
   array (
-    'sign_enable' => '1',
+    'sign_enable' => '0',
   ),
   'sign_verify' => '0',
   'sina_enable' => 1,
@@ -134,7 +134,9 @@
   'verify' => '0',
   'verify_alert' => '1',
   'video_status' => '1',
-  'vote_open' => '1',
+  'vote_open' => '0',
+  'vote_verify' => '0',
+  'vote_vip' => '0',
   'wap' => '1',
   'wap_url' => 'http://localhost/datacore/wap',
   'watermark_contents' => '1',

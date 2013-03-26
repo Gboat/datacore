@@ -136,7 +136,7 @@
             $(".SC_guanzhugaihuati").click(function(){$(this).parent().toggleClass("fold_guanzhugaihuati");$(".SC_guanzhugaihuati_box").toggle();});
             });
 </script>
-<div class="SC">
+<div class="SC" style="display:none">
     <h3>关注该话题的人<a class="btn SC_guanzhugaihuati" href="javascript:void(0)"></a></h3>
     <ul class="FTL FTL2 SC_guanzhugaihuati_box">
         <!--{loop $tag_favorite_list $val}-->
@@ -159,6 +159,18 @@
 <!--{/if}-->
 
 
+<div class="SC">
+    <!--{if $__my[uid]>0}-->
+    <!--{if $is_favorite}-->
+    <span id="favorite_tag_id"><a href="javascript:void(0);" onclick="favoriteTag('{$tag}','delete');return false;"><img src="images/noattention.gif" /></a></span>
+    <!--{else}-->
+    <span id="favorite_tag_id"><a href="javascript:void(0);" onclick="favoriteTag('{$tag}');return false;"><img src="images/attention.gif" /></a></span>
+    <!--{/if}-->
+    <!--{/if}-->
+</div>
+<div class="SC">
+    <a href="" title="显示信息图谱"> 显示信息图谱</a> 
+</div>
 <!-- 热门话题推荐-->
 <!--{if $this->
 Config[hot_tag_recommend_enable] && ($hot_tag_recommend = ConfigHandler::get('hot_tag_recommend')) && $hot_tag_recommend[list]}-->
