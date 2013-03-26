@@ -2,7 +2,6 @@
    @Name:数据中心主样式表 
    @Link:wrud.net
    @Date:2010.10.12
-   @Author:@itom
 #############################*/
 body{ text-align:left;margin:0; padding:0;color:#333; font-size:12px; font-family:Arial,"宋体"; line-height:22px;}
 body{ background-color:#B0E0FA; background-image:url(../images/themebg.jpg); background-repeat:no-repeat;background-position:center 0;}
@@ -72,7 +71,7 @@ a:hover{color:#0073B2;text-decoration:underline;}
 .newTig:hover{ background:#FDFFD2; border:1px solid #F9F2A7;} 
 .newTig a:link{ color:#D4A639;}
 .t_c1{ background:url(../images/t_c_bg.gif) no-repeat right; width:43px;}
-ul.t_c1_box{ width:210px; padding:5px 0;color:#fff; display:none;background:#373a3d;position:absolute; margin-left:0;*margin:24px 0 0 -45px;_margin:24px 0 0 -45px;}
+ul.t_c1_box{ width:105px; padding:5px 0;color:#fff; display:none;background:#373a3d;position:absolute; margin-left:0;*margin:24px 0 0 -45px;_margin:24px 0 0 -45px;}
 .headerNav ul.hleft li ul.t_c1_box li{ height:23px; line-height:23px; width:105px; display:block; overflow:hidden;}
 .headerNav ul.hleft li ul.t_c1_box li a{ font-size:12px;}
 ul.t_c1_box li:hover{ background:#5e646c;}
