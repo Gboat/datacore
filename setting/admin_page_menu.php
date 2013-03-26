@@ -414,7 +414,7 @@ $menu_list = array(
     '_tool_system' => array(
             array(
                 'name' => '同Ip网站监测',
-                'link' => 'http://cnrdn.com/G8f4',
+                'link' => '',
             ),
             array(
                 'name' => '清空系统缓存',
