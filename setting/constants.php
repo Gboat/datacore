@@ -1,8 +1,7 @@
 <?php
-define('DEBUG',true);
+define('DEBUG',false);
 if(true === DEBUG) {
-    //error_reporting(E_ALL ^ E_NOTICE);
-    error_reporting(E_ERROR);
+    error_reporting(E_ALL ^ E_NOTICE);
 } else {
     error_reporting(E_ERROR);
 }
