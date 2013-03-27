@@ -23,15 +23,15 @@ class ModuleObject extends MasterObject
         ob_start();
         switch($this->Code)
         {
-            case 'dologin':
-                $this->DoLogin();
-                break;
-            case 'logout':
-                $this->LogOut();
-                break;
-            default:
-                $this->login();
-                break;
+        case 'dologin':
+            $this->DoLogin();
+            break;
+        case 'logout':
+            $this->LogOut();
+            break;
+        default:
+            $this->login();
+            break;
         }
         $body=ob_get_clean();
         $this->ShowBody($body);
@@ -66,17 +66,17 @@ class ModuleObject extends MasterObject
         $password = $this->Password;        
         if($this->Config['reg_email_verify'] == '1')
         {    
-             $member_info = DB::fetch_first("select `uid`,`username` from ".DB::table('members')." where `username`='$username' limit 0,1");
+            $member_info = DB::fetch_first("select `uid`,`username` from ".DB::table('members')." where `username`='$username' limit 0,1");
             if($member_info) 
             {
-                 $member_validate = DB::fetch_first("select `uid`,`status` from ".DB::table('member_validate')." where `uid`='{$member_info['uid']}' ");
+                $member_validate = DB::fetch_first("select `uid`,`status` from ".DB::table('member_validate')." where `uid`='{$member_info['uid']}' ");
             }
             if($member_validate)
             {
                 if($member_validate['status'] != '1')
                 {    
                     $this->Messager("必须完成邮件激活，才能正常访问！进入注册时填写的邮箱激活即可。",'index.php?mod=login');
-                                    }
+                }
             }
         }
         $referer=jsg_getcookie('referer');
@@ -95,7 +95,7 @@ class ModuleObject extends MasterObject
         {
             $redirecto = "index.php?mod=topic&code=myhome" ;
         }
-                if($this->Post['loginType'] == 'share')
+        if($this->Post['loginType'] == 'share')
         {
             $redirecto = $this->Post['return_url'];
         }
@@ -108,8 +108,8 @@ class ModuleObject extends MasterObject
         $this->Messager('退出成功','index.php?mod=topic&code=new',0);
     }
     function _logincheck() {
-        $onlineip= client_ip();
-        $timestamp=time();
+        $onlineip = client_ip();
+        $timestamp = time();
         $query = $this->DatabaseHandler->Query("SELECT count, lastupdate FROM ".TABLE_PREFIX.'failedlogins'." WHERE ip='$onlineip'");
         if(false != ($login = $query->GetRow())) {
             if($timestamp - $login['lastupdate'] > 900) {

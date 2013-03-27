@@ -7,7 +7,15 @@ function wap_page($total_record,$per_page_num,$url='',$_config=array(),$per_page
     $total_record = intval($total_record);
     $per_page_num = intval($per_page_num);
     if($per_page_num < 1) $per_page_num = 10;
-    $config['total_page'] = max(0,(int) (isset($_config['total_page']) ? $_config['total_page'] : $SystemConfig['total_page_default']));    $config['page_display'] = isset($_config['page_display']) ? (int) $_config['page_display'] : 3;    $config['char'] = isset($_config['char']) ? (string) $_config['char'] : ' ';    $config['url_postfix'] = isset($_config['url_postfix']) ? (string) $_config['url_postfix'] : '';    $config['extra'] = isset($_config['extra']) ? (string) $_config['extra'] : '';    $config['idencode'] = (bool) $_config['idencode'];    $config['var'] = isset($_config['var']) ? (string) $_config['var'] : 'page';    $config['return'] = isset($_config['return']) ? (string) $_config['return'] : 'html';    extract($config);
+    $config['total_page'] = max(0,(int) (isset($_config['total_page']) ? $_config['total_page'] : $SystemConfig['total_page_default']));
+    $config['page_display'] = isset($_config['page_display']) ? (int) $_config['page_display'] : 3;
+    $config['char'] = isset($_config['char']) ? (string) $_config['char'] : ' ';
+    $config['url_postfix'] = isset($_config['url_postfix']) ? (string) $_config['url_postfix'] : '';
+    $config['extra'] = isset($_config['extra']) ? (string) $_config['extra'] : '';
+    $config['idencode'] = (bool) $_config['idencode'];
+    $config['var'] = isset($_config['var']) ? (string) $_config['var'] : 'page';
+    $config['return'] = isset($_config['return']) ? (string) $_config['return'] : 'html';
+    extract($config);
     $total_page = ceil($total_record / $per_page_num);
     if($config['total_page']>1 && $total_page > $config['total_page'])
     {
@@ -79,11 +87,11 @@ function wap_page($total_record,$per_page_num,$url='',$_config=array(),$per_page
 function wap_follow_html($uid,$follow=0,$addhtml=true){
     $html = "";
     if(MEMBER_ID>0 && MEMBER_ID!=$uid) {
-                $sys_config = ConfigHandler::get();
+        $sys_config = ConfigHandler::get();
         if ($follow) {
-                    $html = "<a href='index.php?mod=topic&amp;code=dofollow&amp;id={$uid}&amp;act=fans'>取消关注</a>";
+            $html = "<a href='index.php?mod=topic&amp;code=dofollow&amp;id={$uid}&amp;act=fans'>取消关注</a>";
         } else {
-                    $html = "<a href='index.php?mod=topic&amp;code=dofollow&amp;id={$uid}&amp;act=follow'>加关注</a>";
+            $html = "<a href='index.php?mod=topic&amp;code=dofollow&amp;id={$uid}&amp;act=follow'>加关注</a>";
         }
         if($addhtml) $html = "<span id='follow_{$uid}'>{$html}</span>";
     }

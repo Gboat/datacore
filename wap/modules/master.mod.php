@@ -24,7 +24,7 @@ class MasterObject
         }
         $this->Config=$config;
         require_once ROOT_PATH . 'wap/include/function/wap_global.func.php';
-                $this->Get     = &$_GET;
+        $this->Get     = &$_GET;
         $this->Post    = &$_POST;
         $this->Cookie  = &$_COOKIE;
         $this->Session = &$_SESSION;
@@ -33,30 +33,30 @@ class MasterObject
         $this->Files   = &$_FILES;
         $this->Module = get_param('mod');
         $this->Code   = get_param('code');
-                include_once ROOT_PATH . 'include/lib/template.han.php';
+        include_once ROOT_PATH . 'include/lib/template.han.php';
         $this->TemplateHandler=new TemplateHandler($config);
         Obj::register('TemplateHandler',$this->TemplateHandler);
-                if($this->Config['ipbanned_enable']) {
+        if($this->Config['ipbanned_enable']) {
             $ipbanned=ConfigHandler::get('access','ipbanned');
             if(!empty($ipbanned) && preg_match("~^({$ipbanned})~",client_ip())) {
                 $this->Messager("您的IP已经被禁止访问。",null);
             }
             unset($ipbanned);
         }
-                include_once ROOT_PATH . 'include/db/database.db.php';
+        include_once ROOT_PATH . 'include/db/database.db.php';
         include_once ROOT_PATH . 'include/db/mysql.db.php';
         $this->DatabaseHandler = new MySqlHandler($this->Config['db_host'],$this->Config['db_port']);
         $this->DatabaseHandler->Charset($this->Config['charset']);
         $this->DatabaseHandler->doConnect($this->Config['db_user'],$this->Config['db_pass'],$this->Config['db_name'],$this->Config['db_persist']);
         Obj::register('DatabaseHandler',$this->DatabaseHandler);
-                if($this->Config['robot']['turnon'])
+        if($this->Config['robot']['turnon'])
         {
             include_once ROOT_PATH . 'include/logic/robot.logic.php';
             $RobotLogic=new RobotLogic();
             $robot_name = $RobotLogic->isRobot();
             if($robot_name)
             {
-                                if ($this->Config['robot']['list'][$robot_name]['disallow']) {
+                if ($this->Config['robot']['list'][$robot_name]['disallow']) {
                     exit('Access Denied');
                 }
                 $RobotLogic->statistic();
@@ -68,7 +68,7 @@ class MasterObject
             unset($RobotLogic);
         }
         unset($this->Config['robot']);
-                include_once ROOT_PATH . 'include/lib/member.han.php';
+        include_once ROOT_PATH . 'include/lib/member.han.php';
         $uid = 0;
         $password = '';
         if(($authcode=jsg_getcookie('auth'))) {
@@ -81,10 +81,11 @@ class MasterObject
             $member_error = array_iconv($this->Config['charset'],'utf-8',$member_error);
             $this->Messager($member_error,null);
         }
-                if($this->MemberHandler->MemberFields['role_id'] == 118){
+        if($this->MemberHandler->MemberFields['role_id'] == 118){
             $this->Messager("您已经被永久禁止访问。",null);
         }
-        $this->Title=$this->MemberHandler->CurrentAction['name'];        Obj::register("MemberHandler", $this->MemberHandler);
+        $this->Title=$this->MemberHandler->CurrentAction['name'];
+        Obj::register("MemberHandler", $this->MemberHandler);
     }
     function Messager($message, $redirectto='',$time = -1,$return_msg=false,$js=null)
     {
@@ -139,7 +140,7 @@ class MasterObject
         }
         $additional_str = $url_redirect.$js;
         $this->Title = '操作提示';
-                $return_Url = $_SERVER['HTTP_REFERER'];
+        $return_Url = $_SERVER['HTTP_REFERER'];
         include $this->TemplateHandler->Template('messager');
         exit;
     }    
@@ -169,14 +170,14 @@ class MasterObject
         }
         return $data;
     }
-        function _longtextLogic($ids) {
+    function _longtextLogic($ids) {
         $data = Load::logic('longtext', 1)->get_info($ids, 1);
         if($data) {
             $data = wap_iconv($data);
         }
         return $data;
     }
-         function _PmLogic($folder,$page='')
+    function _PmLogic($folder,$page='')
     {
         $data = $this->PmLogic->getPmList($folder,$page);
         if($data)
@@ -185,7 +186,7 @@ class MasterObject
         }
         return $data;
     }
-        function _GetHistory($uid=0,$touid=0,$page='')
+    function _GetHistory($uid=0,$touid=0,$page='')
     {
         $data = $this->PmLogic->getHistory($uid,$touid,$page);
         if($data)
@@ -194,7 +195,7 @@ class MasterObject
         }
         return $data;
     }
-        function _DoPmSend($touser='',$message='')
+    function _DoPmSend($touser='',$message='')
     {
         $data = $this->PmLogic->pmSend($touser,$message);
         if($data)
@@ -203,7 +204,7 @@ class MasterObject
         }
         return $data;
     }
-         function _TopicListLogic($param='')
+    function _TopicListLogic($param='')
     {
         $data = $this->TopicListLogic->get_recd_list($param);
         if($data)
@@ -212,16 +213,16 @@ class MasterObject
         }
         return $data;
     }
-        function _OtherLogicFavorite($uid=0,$tid=0,$act='')
+    function _OtherLogicFavorite($uid=0,$tid=0,$act='')
     {        
-            include_once ROOT_PATH . 'include/logic/other.logic.php';
-            $OtherLogic = new OtherLogic();
-            $data = $OtherLogic->TopicFavorite($uid,$tid,$act);
-            if($data)
-            {
-                $data = wap_iconv($data);
-            }
-            return $data;
+        include_once ROOT_PATH . 'include/logic/other.logic.php';
+        $OtherLogic = new OtherLogic();
+        $data = $OtherLogic->TopicFavorite($uid,$tid,$act);
+        if($data)
+        {
+            $data = wap_iconv($data);
+        }
+        return $data;
     }
 }
 ?>
