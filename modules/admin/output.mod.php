@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
 class ModuleObject extends MasterObject {
@@ -104,7 +104,7 @@ class ModuleObject extends MasterObject {
         $this->Messager('删除成功');
     }
     function _output_code($row, $ret_row=0) {
-        $row['output_code'] = '<div id="jishigou_div">内容正在加载中，请稍候……</div><script type="text/javascript" src="'.get_full_url($this->Config['site_url'], "index.php?mod=output&code=url_js&id={$row['id']}&hash={$row['hash']}&per_page_num={$row['per_page_num']}&content_default=".urlencode($row['content_default'])).'" charset="'.$this->Config['charset'].'"></script>';
+        $row['output_code'] = '<div id="datacore_div">内容正在加载中，请稍候……</div><script type="text/javascript" src="'.get_full_url($this->Config['site_url'], "index.php?mod=output&code=url_js&id={$row['id']}&hash={$row['hash']}&per_page_num={$row['per_page_num']}&content_default=".urlencode($row['content_default'])).'" charset="'.$this->Config['charset'].'"></script>';
         $row['output_code'] = htmlspecialchars($row['output_code']);
         if($ret_row) {
             return $row;

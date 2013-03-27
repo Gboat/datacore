@@ -93,7 +93,7 @@
     <div class="set_warp" style="width:650px; margin:0 auto; padding:20px 0 50px;">    
         <div id="qqwb_user_reg" style="display: block;">
 			<!--{eval $regstatus = jsg_member_register_check_status();}-->
-            <!--{if $regstatus['error'] || (true!==JISHIGOU_FORCED_REGISTER && $regstatus['invite_enable'] && !$regstatus['normal_enable'])}-->
+            <!--{if $regstatus['error'] || (true!==DATACORE_FORCED_REGISTER && $regstatus['invite_enable'] && !$regstatus['normal_enable'])}-->
             
                 非常抱歉，本站目前不支持绑定新注册用户；<a onclick="qqwb_switch_div(1);return false;" href="javascript:void(0)"><span><strong>请点此绑定已有的帐号</strong></span></a>
                 

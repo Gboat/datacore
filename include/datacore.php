@@ -1,8 +1,8 @@
 <?php
-class jishigou {
+class datacore {
     var $var = array();
-    function jishigou() {
-        if(!defined('IN_JISHIGOU')) {
+    function datacore() {
+        if(!defined('IN_DATACORE')) {
             $this->_init_env();
             $this->_init_config();
             $this->_init_input();
@@ -26,31 +26,31 @@ class jishigou {
             $type = 'index';
         }
         $modules_path = ROOT_PATH . ($types[$type]['mod_path'] ? $types[$type]['mod_path'] : ('modules/' . ('index' == $type ? '' : $type . '/')));
-        define('IN_JISHIGOU_' . strtoupper($type), true);
+        define('IN_DATACORE_' . strtoupper($type), true);
         if(!(@include_once $modules_path . 'master.mod.php') && !class_exists('MasterObject')) {
             exit('modules path is invalid');
         }
-        if($this->var['config']['rewrite_enable'] && (true===IN_JISHIGOU_INDEX || true===IN_JISHIGOU_AJAX || true===IN_JISHIGOU_ADMIN)) {
+        if($this->var['config']['rewrite_enable'] && (true===IN_DATACORE_INDEX || true===IN_DATACORE_AJAX || true===IN_DATACORE_ADMIN)) {
             include(ROOT_PATH . 'include/rewrite.php');
         }
         if(!(@include_once $modules_path . ($this->_init_mod($types[$type])) . '.mod.php') && !class_exists('ModuleObject')) {
             exit('mod is invalid');
         }
-        if ($this->var['config']['upgrade_lock_time'] > 0 && true!==IN_JISHIGOU_UPGRADE && true!==IN_JISHIGOU_ADMIN) {
+        if ($this->var['config']['upgrade_lock_time'] > 0 && true!==IN_DATACORE_UPGRADE && true!==IN_DATACORE_ADMIN) {
             if(($this->var['config']['upgrade_lock_time'] + 600 > TIMESTAMP) ||
             (is_file(ROOT_PATH . './data/cache/upgrade.lock') &&
             @filemtime(ROOT_PATH . './data/cache/upgrade.lock') + 600 > TIMESTAMP)) {
                 die('System upgrade. Please wait...');
             }
         }
-        if ($this->var['config']['site_closed'] && true!==IN_JISHIGOU_ADMIN) {
+        if ($this->var['config']['site_closed'] && true!==IN_DATACORE_ADMIN) {
             if ('login' != $this->var['mod'] && ($site_closed_msg=file_get_contents(ROOT_PATH . 'data/cache/site_enable.txt'))) {
                 exit($site_closed_msg);
             }
         }
         $allow_gzip = 0;
         $un_gzip_mods = array('share'=>1, 'output'=>1, 'download'=>1, 'attachment'=>1, );
-        if(true===GZIP && true===IN_JISHIGOU_INDEX && !isset($un_gzip_mods[$this->var['mod']]) && substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) {
+        if(true===GZIP && true===IN_DATACORE_INDEX && !isset($un_gzip_mods[$this->var['mod']]) && substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) {
             $allow_gzip = 1;
         }
         ob_start(($allow_gzip ? 'ob_gzhandler' : null));
@@ -62,13 +62,13 @@ class jishigou {
         if(PHP_VERSION < '5.3.0') {
             set_magic_quotes_runtime(0);
         }
-        define('IN_JISHIGOU', true);
+        define('IN_DATACORE', true);
         define('ROOT_PATH', substr(dirname(__FILE__), 0, -8) . '/');
         define('PLUGIN_DIR', ROOT_PATH . 'plugin/');
         define('RELATIVE_ROOT_PATH', './');
         define('MAGIC_QUOTES_GPC', get_magic_quotes_gpc());
         define('TIMESTAMP', time());
-        if(!defined('JISHIGOU_GLOBAL_FUNCTION') && !@include(ROOT_PATH . 'include/function/global.func.php')) {
+        if(!defined('DATACORE_GLOBAL_FUNCTION') && !@include(ROOT_PATH . 'include/function/global.func.php')) {
             exit('global.func.php is not exists');
         }
         if(function_exists('ini_set')) {

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
 class ModuleObject extends MasterObject
@@ -9,7 +9,7 @@ class ModuleObject extends MasterObject
     {
         $this->MasterObject($config);
         $this->ID = max(0, (int) get_param('id'));
-        if(true!==JISHIGOU_FOUNDER) {
+        if(true!==DATACORE_FOUNDER) {
             $this->Messager("您没有相应的权限，仅限网站创始人访问", null);
         }
         $this->Execute();

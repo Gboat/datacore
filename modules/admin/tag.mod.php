@@ -1,6 +1,6 @@
 <?php
 include_once(ROOT_PATH . 'include/function/misc.func.php');
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }

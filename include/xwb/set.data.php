@@ -24,9 +24,9 @@ $__XWB_SET=array (
   'is_upload_image' => 0,
   'wbx_medal_update_time' => 1800,
   'wbx_share_time' => 15,
-  'is_synctopic_tojishigou' => 1,
-  'is_syncreply_tojishigou' => 0,
-  'is_syncimage_tojishigou' => 0,
-  'syncweibo_tojishigou_time' => 180,
+  'is_synctopic_todatacore' => 1,
+  'is_syncreply_todatacore' => 0,
+  'is_syncimage_todatacore' => 0,
+  'syncweibo_todatacore_time' => 180,
 );
 ?>

@@ -5,7 +5,7 @@ $config['ad']=array (
   array (
     'topic_' => 
     array (
-      'header' => '<item><img>templates/default/images/index/ad.jpg</img><url>http://t.jishigou.net/index.php</url></item>',
+      'header' => '<item><img>templates/default/images/index/ad.jpg</img><url>http://t.datacore.net/index.php</url></item>',
       'middle_right' => '网站首页右侧广告',
       'footer' => '网站首页的底部横幅广告',
     ),

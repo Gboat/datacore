@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -130,7 +130,7 @@ class ModuleObject extends MasterObject
         {
             Return $regstatus['error'];
         }    
-        if(true!==JISHIGOU_FORCED_REGISTER && $regstatus['invite_enable'])
+        if(true!==DATACORE_FORCED_REGISTER && $regstatus['invite_enable'])
         {
             if(!$regstatus['normal_enable'])
             {
@@ -375,7 +375,7 @@ class ModuleObject extends MasterObject
     function _init_yy_oauth($access_token = null)
     {
         Load::lib('oauth2');
-        $this->yyOauth = new JishiGouOAuth($this->yyConfig['client_id'], $this->yyConfig['client_secret'], $access_token);
+        $this->yyOauth = new DataCoreOAuth($this->yyConfig['client_id'], $this->yyConfig['client_secret'], $access_token);
         $this->yyOauth->host = 'https:/'.'/gdb.yy.com/';
         $this->yyOauth->access_token_url = 'https:/'.'/gdb.yy.com/oauth/token';
         $this->yyOauth->authorize_url = 'https:/'.'/gdb.yy.com/oauth/authorize';

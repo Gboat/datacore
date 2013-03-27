@@ -2,7 +2,7 @@
 $config['user']=array (
   'forbid' => '*my*
 *admin*
-*jishigou*
+*datacore*
 group*
 dig
 seccode

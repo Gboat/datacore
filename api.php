@@ -1,5 +1,5 @@
 <?php
-require './include/jishigou.php';
-$jishigou = new jishigou();
-$jishigou->run('api');
+require './include/datacore.php';
+$datacore = new datacore();
+$datacore->run('api');
 ?>

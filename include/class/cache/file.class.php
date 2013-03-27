@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
 class cache_file {
@@ -29,7 +29,7 @@ class cache_file {
             'dateline' => TIMESTAMP,
             'val' => array('life'=>max(0, (int) $life), 'data'=>$val, ),
         );
-        $data = "<?php if(!defined('IN_JISHIGOU')) { exit('invalid request'); } \r\n\$cache = " . var_export($datas, true) . ";\r\n?>";
+        $data = "<?php if(!defined('IN_DATACORE')) { exit('invalid request'); } \r\n\$cache = " . var_export($datas, true) . ";\r\n?>";
         $file = $this->_file($key);
         if(!is_dir(($dir = dirname($file)))) {
             $this->io->MakeDir($dir);

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -41,7 +41,7 @@ function __order($order_by_list='',$query_link='',$config=array())
     {
         return $result[$return];
     }
-    if(true===IN_JISHIGOU_INDEX || true===IN_JISHIGOU_AJAX){
+    if(true===IN_DATACORE_INDEX || true===IN_DATACORE_AJAX){
         global $rewriteHandler;
     }
     if('' == $query_link)

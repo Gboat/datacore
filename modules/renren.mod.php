@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -133,7 +133,7 @@ class ModuleObject extends MasterObject
         {
             Return $regstatus['error'];
         }    
-        if(true!==JISHIGOU_FORCED_REGISTER && $regstatus['invite_enable'])
+        if(true!==DATACORE_FORCED_REGISTER && $regstatus['invite_enable'])
         {
             if(!$regstatus['normal_enable'])
             {

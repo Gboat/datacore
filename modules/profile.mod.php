@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -351,7 +351,7 @@ class ModuleObject extends MasterObject
                 $invite_email = $_row['femail'];
                 $invite_url = "{$this->Config['site_url']}/index.php?mod=member&code=".urlencode("{$invite_id}#{$invite_hash}")."&email=" . urlencode($invite_email);
                 $mail_from_username = $this->Member['nickname'];
-                $mail_from_email = 'no-reply@jishigou.net';
+                $mail_from_email = 'no-reply@datacore.net';
                 $mail_from_email = $this->Config['site_admin_email'];
                 $mail_to = $email;
                 $mail_subject = "来自好友{$this->Member['nickname']}的{$this->Config[site_name]}微博邀请";

@@ -20,7 +20,7 @@ define('XWB_API_URL',     'http:/'.'/api.t.sina.com.cn/');
 define('XWB_API_CHARSET',        'UTF8');
 define('XWB_S_ROOT',    ROOT_PATH);
 require_once XWB_P_ROOT.'/lib/compat.inc.php';require_once XWB_P_ROOT.'/lib/core.class.php';
-require_once XWB_P_ROOT . '/jishigou.php';
+require_once XWB_P_ROOT . '/datacore.php';
 session_start();
 if ( !isset($_SESSION[XWB_CLIENT_SESSION]) ){
     $_SESSION[XWB_CLIENT_SESSION]= array();

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -771,13 +771,13 @@ class ModuleObject extends MasterObject
                 'is_sync_face' => 1,
                 'is_upload_image' => 1,
                 'wbx_share_time' => 15,
-                'is_synctopic_tojishigou' => 0,
-                'is_syncreply_tojishigou' => 0,
-                'is_syncimage_tojishigou' => 0,
-                'syncweibo_tojishigou_time' => 180,
+                'is_synctopic_todatacore' => 0,
+                'is_syncreply_todatacore' => 0,
+                'is_syncimage_todatacore' => 0,
+                'syncweibo_todatacore_time' => 180,
                     );
                 }
-                if(!isset($sina['syncweibo_tojishigou_time'])) $sina['syncweibo_tojishigou_time'] = 180;
+                if(!isset($sina['syncweibo_todatacore_time'])) $sina['syncweibo_todatacore_time'] = 180;
                 $sina_enable_radio = $this->FormHandler->YesNoRadio('sina[enable]', (int) ($sina['enable'] && $this->Config['sina_enable']));
                 $sina_is_account_binding_radio = $this->FormHandler->YesNoRadio('sina[is_account_binding]', (int) $sina['is_account_binding']);
                 $sina_is_synctopic_toweibo_radio = $this->FormHandler->YesNoRadio('sina[is_synctopic_toweibo]', (int) $sina['is_synctopic_toweibo']);
@@ -786,9 +786,9 @@ class ModuleObject extends MasterObject
                 $sina_reg_pwd_display_radio = $this->FormHandler->YesNoRadio('sina[reg_pwd_display]', (int) $sina['reg_pwd_display']);
                 $sina_is_sync_face_radio = $this->FormHandler->YesNoRadio('sina[is_sync_face]', (int) $sina['is_sync_face']);
                 $sina_is_upload_image_radio = $this->FormHandler->YesNoRadio('sina[is_upload_image]', (int) $sina['is_upload_image']);
-                $sina_is_synctopic_tojishigou_radio = $this->FormHandler->YesNoRadio('sina[is_synctopic_tojishigou]', (int) $sina['is_synctopic_tojishigou']);
-                $sina_is_syncreply_tojishigou_radio = $this->FormHandler->YesNoRadio('sina[is_syncreply_tojishigou]', (int) $sina['is_syncreply_tojishigou']);
-                $sina_is_syncimage_tojishigou_radio = $this->FormHandler->YesNoRadio('sina[is_syncimage_tojishigou]', (int) $sina['is_syncimage_tojishigou']);
+                $sina_is_synctopic_todatacore_radio = $this->FormHandler->YesNoRadio('sina[is_synctopic_todatacore]', (int) $sina['is_synctopic_todatacore']);
+                $sina_is_syncreply_todatacore_radio = $this->FormHandler->YesNoRadio('sina[is_syncreply_todatacore]', (int) $sina['is_syncreply_todatacore']);
+                $sina_is_syncimage_todatacore_radio = $this->FormHandler->YesNoRadio('sina[is_syncimage_todatacore]', (int) $sina['is_syncimage_todatacore']);
                 include($this->TemplateHandler->Template('admin/setting_sina'));
             }
             function DoModifySina()
@@ -864,13 +864,13 @@ class ModuleObject extends MasterObject
                 'is_sync_face' => 1,
                 'is_upload_image' => 1,
                 'wbx_share_time' => 15,
-                'is_synctopic_tojishigou' => 0,
-                'is_syncreply_tojishigou' => 0,
-                'is_syncimage_tojishigou' => 0,
-                'syncweibo_tojishigou_time' => 180,
+                'is_synctopic_todatacore' => 0,
+                'is_syncreply_todatacore' => 0,
+                'is_syncimage_todatacore' => 0,
+                'syncweibo_todatacore_time' => 180,
                     );
                 }
-                if(!isset($qqwb['syncweibo_tojishigou_time'])) $qqwb['syncweibo_tojishigou_time'] = 180;
+                if(!isset($qqwb['syncweibo_todatacore_time'])) $qqwb['syncweibo_todatacore_time'] = 180;
                 $qqwb_enable_radio = $this->FormHandler->YesNoRadio('qqwb[enable]', (int) ($qqwb['enable'] && $this->Config['qqwb_enable']));
                 $qqwb_is_account_binding_radio = $this->FormHandler->YesNoRadio('qqwb[is_account_binding]', (int) $qqwb['is_account_binding']);
                 $qqwb_is_synctopic_toweibo_radio = $this->FormHandler->YesNoRadio('qqwb[is_synctopic_toweibo]', (int) $qqwb['is_synctopic_toweibo']);
@@ -879,9 +879,9 @@ class ModuleObject extends MasterObject
                 $qqwb_reg_pwd_display_radio = $this->FormHandler->YesNoRadio('qqwb[reg_pwd_display]', (int) $qqwb['reg_pwd_display']);
                 $qqwb_is_sync_face_radio = $this->FormHandler->YesNoRadio('qqwb[is_sync_face]', (int) $qqwb['is_sync_face']);
                 $qqwb_is_upload_image_radio = $this->FormHandler->YesNoRadio('qqwb[is_upload_image]', (int) $qqwb['is_upload_image']);
-                $qqwb_is_synctopic_tojishigou_radio = $this->FormHandler->YesNoRadio('qqwb[is_synctopic_tojishigou]', (int) $qqwb['is_synctopic_tojishigou']);
-                $qqwb_is_syncreply_tojishigou_radio = $this->FormHandler->YesNoRadio('qqwb[is_syncreply_tojishigou]', (int) $qqwb['is_syncreply_tojishigou']);
-                $qqwb_is_syncimage_tojishigou_radio = $this->FormHandler->YesNoRadio('qqwb[is_syncimage_tojishigou]', (int) $qqwb['is_syncimage_tojishigou']);
+                $qqwb_is_synctopic_todatacore_radio = $this->FormHandler->YesNoRadio('qqwb[is_synctopic_todatacore]', (int) $qqwb['is_synctopic_todatacore']);
+                $qqwb_is_syncreply_todatacore_radio = $this->FormHandler->YesNoRadio('qqwb[is_syncreply_todatacore]', (int) $qqwb['is_syncreply_todatacore']);
+                $qqwb_is_syncimage_todatacore_radio = $this->FormHandler->YesNoRadio('qqwb[is_syncimage_todatacore]', (int) $qqwb['is_syncimage_todatacore']);
                 include($this->TemplateHandler->Template('admin/setting_qqwb'));
             }
             function DoModifyQQWB()
@@ -1242,7 +1242,7 @@ class ModuleObject extends MasterObject
             {
                 $un_writes = array();
                 $is_local=preg_match("~^localhost|127\.0\.0\.1|192\.168\.\d+\.\d+$~",$_SERVER['SERVER_ADDR']);
-                $str="# BEGIN JishiGou
+                $str="# BEGIN DataCore
 <IfModule mod_rewrite.c>
 RewriteEngine On
 ".
@@ -1255,7 +1255,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php [L]
 </IfModule>
-# END JishiGou";
+# END DataCore";
                 $fp = @fopen(ROOT_PATH.".htaccess","wb");
                 if($fp==false) {
                     $un_writes[] = '.htaccess';
@@ -1278,7 +1278,7 @@ RewriteRule . index.php [L]
                             @touch($_path . 'index.html');
                         }
                     }
-                    $str="# BEGIN JishiGou dir safe protect for {$_dir}
+                    $str="# BEGIN DataCore dir safe protect for {$_dir}
 <IfModule mod_rewrite.c>
 RewriteEngine On
 ".
@@ -1287,7 +1287,7 @@ RewriteEngine On
 RewriteBase {$abs_path}{$_dir}
 RewriteRule ^.*\.(php|php3|php4|asp|aspx|jsp|cgi)$ index.html [NC,L]
 </IfModule>
-# END JishiGou ".date("Y-m-d H:i:s");
+# END DataCore ".date("Y-m-d H:i:s");
                     @$len = Load::lib('io', 1)->WriteFile($_path . '.htaccess', $str);
                     if(!$len) {
                         $un_writes[] = "{$_dir}.htaccess";
@@ -1315,7 +1315,7 @@ RewriteRule ^.*\.(php|php3|php4|asp|aspx|jsp|cgi)$ index.html [NC,L]
                             @touch($_path . 'index.html');
                         }
                     }
-                    $str="# BEGIN JishiGou dir safe protect for {$_dir}
+                    $str="# BEGIN DataCore dir safe protect for {$_dir}
 <IfModule mod_rewrite.c>
 RewriteEngine On
 ".
@@ -1324,7 +1324,7 @@ RewriteEngine On
 RewriteBase {$abs_path}{$_dir}
 RewriteRule . index.html [L]
 </IfModule>
-# END JishiGou ".date("Y-m-d H:i:s");
+# END DataCore ".date("Y-m-d H:i:s");
                     @$len = Load::lib('io', 1)->WriteFile($_path . '.htaccess', $str);
                     if(!$len) {
                         $un_writes[] = "{$_dir}.htaccess";

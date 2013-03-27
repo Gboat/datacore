@@ -216,7 +216,7 @@ A:active {
 .topbox .custom {
 	WIDTH: 610px
 }
-.jishigouLogo {
+.datacoreLogo {
 	LINE-HEIGHT: 300px; WIDTH: 290px; BACKGROUND: url(../../default/images/logo.png) no-repeat scroll 0 0 transparent; HEIGHT: 84px; MARGIN-LEFT: 10px; _background: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src='../images/wall/logo_w.png')
 }
 .partnerLogo {
@@ -452,7 +452,7 @@ DIV.rightControl {
 .LC li, .DCont, .DCont li{ background-image:url(../images/wall/listS.png); border-color:#bdf8fc;}
 .DCont .picBox{ background:#00bdb6;} 
 body{ background-color:#3A9DCD;}
-.topbox .custom,.topbox .jishigouLogo{ float:left;}
+.topbox .custom,.topbox .datacoreLogo{ float:left;}
 .custom p{ font-size:35px; padding-left:50px;}
 .userName strong{ color:#D0FC9B;}
 .LC{MARGIN: 19px auto 0px; WIDTH:884px; HEIGHT:555px; OVERFLOW: hidden;}

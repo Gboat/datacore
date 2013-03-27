@@ -1,10 +1,11 @@
-<?php
+<?php 
+  
 $config['smtp']=array (
-  'enable' => '0',
-  'host' => '',
+  'enable' => '1',
+  'host' => 'smtp.qq.com',
   'port' => '25',
-  'mail' => '',
-  'username' => '',
-  'password' => '',
+  'mail' => 'mg90@foxmail.com',
+  'username' => 'mg90',
+  'password' => '521241',
 );
-?>
+ ?>

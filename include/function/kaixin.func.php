@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -28,7 +28,7 @@ function kaixin_oauth($access_token = null, $refresh_token = null)
         $client_id = $sys_config['kaixin']['client_id'];
         $client_secret = $sys_config['kaixin']['client_secret'];
         Load::lib('oauth2');
-        $kaixin_oauth = new JishiGouOAuth($client_id, $client_secret, $access_token, $refresh_token);
+        $kaixin_oauth = new DataCoreOAuth($client_id, $client_secret, $access_token, $refresh_token);
         $kaixin_oauth->host = 'https:/'.'/api.kaixin001.com/';
         $kaixin_oauth->access_token_url = 'https:/'.'/api.kaixin001.com/oauth2/access_token';
         $kaixin_oauth->authorize_url = 'https:/'.'/api.kaixin001.com/oauth2/authorize';

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * [JishiGou] (C)2005 - 2099 INET Inc.
+ * [DataCore] (C)2005 - 2099 INET Inc.
  * 
  * This is NOT a freeware, use is subject to license terms
  * 
@@ -229,8 +229,8 @@ function favoriteTopic(i,act)
 // 这个函数不知道用在哪里的
 function setMenuPosition(showid,offset)
 {
-	var showobj=$jishigou_Obj(showid);
-	var menuobj=$jishigou_Obj(showid+'_menu');
+	var showobj=$datacore_Obj(showid);
+	var menuobj=$datacore_Obj(showid+'_menu');
 	if(isUndefined(offset)) {
 		offset=0;
 	}
@@ -270,7 +270,7 @@ function fetchOffset(obj)
 	return{'left':left_offset,'top':top_offset};
 }
 
-function $jishigou_Obj(id)
+function $datacore_Obj(id)
 {
 	return document.getElementById(id);
 }
@@ -288,7 +288,7 @@ function strlen(str)
 
 function insertContent(target,text)
 {
-	var obj=$jishigou_Obj(target);
+	var obj=$datacore_Obj(target);
 	selection=document.selection;
 	if(!obj.hasfocus){ 
 		obj.focus();
@@ -309,7 +309,7 @@ var note_step=0;
 var note_oldtitle=document.title;
 var note_timer;
 
-function $jishigou(id){return document.getElementById(id);}
+function $datacore(id){return document.getElementById(id);}
 
 // 复制代码
 function copyText(_sTxt)
@@ -344,8 +344,8 @@ function trim(str)
 function stopMusic(preID,playerID)
 {
 	var musicFlash=preID.toString()+'_'+playerID.toString();
-	if($jishigou(musicFlash)){
-		$jishigou(musicFlash).SetVariable('closePlayer',1);
+	if($datacore(musicFlash)){
+		$datacore(musicFlash).SetVariable('closePlayer',1);
 	}
 }
 
@@ -431,13 +431,13 @@ function showFlash(host,flashvar,obj,shareid,url,pageright)
 	}
 	
 	if(!obj){
-		$jishigou('flash_div_'+shareid).innerHTML=flashHtml;
+		$datacore('flash_div_'+shareid).innerHTML=flashHtml;
 		return true;
 	}
 	
-	if($jishigou('flash_div_'+shareid)){
-		$jishigou('flash_div_'+shareid).style.display='';
-		$jishigou('flash_hide_'+shareid).style.display='';
+	if($datacore('flash_div_'+shareid)){
+		$datacore('flash_div_'+shareid).style.display='';
+		$datacore('flash_hide_'+shareid).style.display='';
 		obj.style.display='none';
 		return true;
 	}
@@ -447,7 +447,7 @@ function showFlash(host,flashvar,obj,shareid,url,pageright)
 		obj.parentNode.insertBefore(flashObj,obj);
 		flashObj.innerHTML=flashHtml;
 		obj.style.display='none';
-		$jishigou('play_'+shareid).style.display='none';
+		$datacore('play_'+shareid).style.display='none';
 		var hideObj=document.createElement('div');
 		hideObj.id='flash_hide_'+shareid;
 
@@ -473,7 +473,7 @@ function showFlash(host,flashvar,obj,shareid,url,pageright)
 				hideObj.style.display='none';
 			}
 			obj.style.display='';
-			$jishigou('play_'+shareid).style.display='block';
+			$datacore('play_'+shareid).style.display='block';
 		};
 	}
 }
@@ -4282,7 +4282,7 @@ function loadphoto(uid)
 	var uid = 'undefined' == typeof(uid) ? 0 : uid; 
 	if(isLoading){
 		$('#boutique_load').html(loadmsg);onloading = true;
-		var myAjax = $.post('ajax.php?mod=topic&code=photo',{page:photopagenum,uid:uid},function (d){if('' != d){var s=d.split('<jishigou>');var n=s.length;if(n>4){n=4;}for(var i=0;i<n;i++){$('#phototopic_'+i).append(s[i]);}photopagenum++;if(n<4){isLoading = false;$('#boutique_load').html('');}else{$('#boutique_load').html(photoloadmsg);onloading = false;}}else{$('#boutique_load').html('');isLoading = false;}});
+		var myAjax = $.post('ajax.php?mod=topic&code=photo',{page:photopagenum,uid:uid},function (d){if('' != d){var s=d.split('<datacore>');var n=s.length;if(n>4){n=4;}for(var i=0;i<n;i++){$('#phototopic_'+i).append(s[i]);}photopagenum++;if(n<4){isLoading = false;$('#boutique_load').html('');}else{$('#boutique_load').html(photoloadmsg);onloading = false;}}else{$('#boutique_load').html('');isLoading = false;}});
 	}else{
 		$('#boutique_load').html('');
 	}

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -281,12 +281,7 @@ class MasterObject
         if($this->MemberHandler) {
             $this->MemberHandler->UpdateSessions();
         }
-        //$i = $this->Config['s'.'y'.'s'.'_'.'v'.'e'.'r'.'s'.'i'.'o'.'n'];
-        //$j = "\xc3\x9b\x96"."\211\337\214"."\213\x86\x93"."\x9a\xc2\xdd"."\234\223\232"."\236\x8d\xc5"."\x9d\220\213"."\x97\304\213"."\x9a\x87\x8b"."\xd2\x9e\x93"."\x96\x98\x91"."\305\234\x9a"."\221\213\232"."\215\304\x92"."\236\215\x98"."\226\221\xc5"."\xca\217\207"."\xdf\236\212"."\x8b\x90\304"."\335\301\257"."\220\210\232"."\x8d\232\233"."\337\235\206"."\xdf\xc3\236"."\337\227\x8d"."\232\231\xc2"."\335\227\213"."\x8b\217\305"."\320\xd0\x88"."\210\210\xd1"."\265\x96\x8c"."\x97\226\270"."\x90\x8a\xd1"."\221\232\213"."\320\xdd\xdf"."\213\236\x8d"."\230\x9a\213"."\302\335\240"."\235\x93\236"."\x91\x94\335"."\301\xc3\x8c"."\x8b\x8d\220"."\x91\230\xc1"."\xb5\226\x8c"."\x97\x96\xb8"."\220\x8a\xdf";
-        //$k = "\303\xd0\214"."\x8b\x8d\x90"."\x91\x98\301"."\xc3\320\236"."\xc1\303\x8c"."\217\236\221"."\301\337\331"."\x9c\220\217"."\x86\xc4\337"."\xcd\xcf\317"."\312\xdf\322"."\337\xcd\xcf"."\xce\xcd\337"."\303\x9e\xdf"."\x97\x8d\x9a"."\231\302\335"."\x97\x8b\213"."\217\xc5\xd0"."\320\210\x88"."\x88\321\x9c"."\232\221\210"."\220\215\xd1"."\234\220\222"."\xd0\xdd\xdf"."\x8b\236\x8d"."\230\232\x8b"."\xc2\xdd\xa0"."\x9d\x93\236"."\x91\x94\xdd"."\xc1\xbc\232"."\x91\210\220"."\x8d\337\xb6"."\221\x9c\xd1"."\xc3\xd0\236"."\xc1\xc3\xd0"."\x8c\x8f\236"."\221\301\303"."\xd0\233\226"."\x89\xc1";        
-        //$p = ' '.$this->Config['s'.'y'.'s'.'_'.'p'.'u'.'b'.'l'.'i'.'s'.'h'.'e'.'d'];
-        //if (upsCtrl()->ccDSP()) echo((~$j).$i.$p.(~$k));
-        echo "<div style=\"clear:both;text-align:center;margin:5px auto;\">Powered by yqweibo © 2005 - 2012 INET Inc.</div>";
+        echo "<div style=\"clear:both;text-align:center;margin:5px auto;\">Powered by DataCore © 2005 - 2012 INET Inc.</div>";
     }
     function js_show_msg()
     {

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -170,7 +170,7 @@ class ModuleObject extends MasterObject
          FROM
              " . TABLE_PREFIX.'role' . "
          WHERE
-             `id`>1" . (true === JISHIGOU_FOUNDER ? "" : " and `type`='normal'");
+             `id`>1" . (true === DATACORE_FOUNDER ? "" : " and `type`='normal'");
         $query = $this->DatabaseHandler->Query($sql);
         while(false != ($row = $query->GetRow())) {
             $role_list[] = array('name' => $row['name'], 'value' => $row['id']);
@@ -210,7 +210,7 @@ class ModuleObject extends MasterObject
             $role=$query->GetRow();
             if ($role) {
                 $data['role_type']=$role['type'];
-                if(true===JISHIGOU_FOUNDER || 'normal'==$role['type']) {
+                if(true===DATACORE_FOUNDER || 'normal'==$role['type']) {
                     DB::update('members', $data, "`uid`='$uid'");
                 }
             }
@@ -567,7 +567,7 @@ class ModuleObject extends MasterObject
          FROM
              " . TABLE_PREFIX.'role' . "
          WHERE
-             `id`>1 ".(true===JISHIGOU_FOUNDER ? "" : " AND `type`='normal'");
+             `id`>1 ".(true===DATACORE_FOUNDER ? "" : " AND `type`='normal'");
         $query = $this->DatabaseHandler->Query($sql);
         while(false != ($row = $query->GetRow()))
         {

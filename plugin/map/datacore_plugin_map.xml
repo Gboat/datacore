@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <root>
-    <item id="Title"><![CDATA[JishiGou! Plugin]]></item>
+    <item id="Title"><![CDATA[DataCore! Plugin]]></item>
     <item id="Version"><![CDATA[3.0.0]]></item>
     <item id="Data">
         <item id="plugin">

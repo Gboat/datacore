@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -164,7 +164,7 @@ function _send_mail_by_smtp($email_to,$email_subject,$email_message,$smtp_config
         $tousers[] = preg_match('/^(.+?) \<(.+?)\>$/',$touser, $to) ? ($mailusername ? '=?'.$charset.'?B?'.base64_encode($to[1])."?= <$to[2]>" : $to[2]) : $touser;
     }
     $email_to = implode(',', $tousers);
-    $headers = "From: $email_from{$maildelimiter}X-Priority: 3{$maildelimiter}X-Mailer: JishiGou ".SYS_VERSION."{$maildelimiter}MIME-Version: 1.0{$maildelimiter}Content-type: text/".($html ? 'html' : 'plain')."; charset=$charset{$maildelimiter}Content-Transfer-Encoding: base64{$maildelimiter}";
+    $headers = "From: $email_from{$maildelimiter}X-Priority: 3{$maildelimiter}X-Mailer: DataCore ".SYS_VERSION."{$maildelimiter}MIME-Version: 1.0{$maildelimiter}Content-type: text/".($html ? 'html' : 'plain')."; charset=$charset{$maildelimiter}Content-Transfer-Encoding: base64{$maildelimiter}";
     $mail['port'] = $mail['port'] ? $mail['port'] : 25;
     if(!$fp = jfsockopen($mail['server'], $mail['port'], $errno, $errstr, 3)) {
         $errorlog('SMTP', "($mail[server]:$mail[port]) CONNECT - Unable to connect to the SMTP server", 0);
@@ -176,7 +176,7 @@ function _send_mail_by_smtp($email_to,$email_subject,$email_message,$smtp_config
         $errorlog('SMTP', "$mail[server]:$mail[port] CONNECT - $lastmessage", 0);
         return false;
     }
-    fputs($fp, ($mail['auth'] ? 'EHLO' : 'HELO')." JishiGou\r\n");
+    fputs($fp, ($mail['auth'] ? 'EHLO' : 'HELO')." DataCore\r\n");
     $lastmessage = fgets($fp, 512);
     if(substr($lastmessage, 0, 3) != 220 && substr($lastmessage, 0, 3) != 250) {
         $errorlog('SMTP', "($mail[server]:$mail[port]) HELO/EHLO - $lastmessage", 0);

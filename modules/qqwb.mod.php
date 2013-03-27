@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -153,7 +153,7 @@ class ModuleObject extends MasterObject
         {
             Return $regstatus['error'];
         }    
-        if(true!==JISHIGOU_FORCED_REGISTER && $regstatus['invite_enable'])
+        if(true!==DATACORE_FORCED_REGISTER && $regstatus['invite_enable'])
         {
             if(!$regstatus['normal_enable'])
             {
@@ -320,7 +320,7 @@ class ModuleObject extends MasterObject
     }    
     function third_party_regstatus() {
         if($this->Config['third_party_regstatus'] && in_array('qqwb', $this->Config['third_party_regstatus'])) {
-            define('JISHIGOU_FORCED_REGISTER', true);
+            define('DATACORE_FORCED_REGISTER', true);
         }
     }
     function _syn_face($uid, $face='') {

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -40,7 +40,7 @@ class ModuleObject extends MasterObject
     function Main()
     {
         if($this->Config['third_party_regstatus'] && in_array('sina', $this->Config['third_party_regstatus'])) {
-            define('JISHIGOU_FORCED_REGISTER', true);
+            define('DATACORE_FORCED_REGISTER', true);
         }
                 require_once ROOT_PATH . 'include/xwb/sina.php';
                         XWB_plugin::init();
@@ -68,7 +68,7 @@ class ModuleObject extends MasterObject
     function SyncTopic()
     {
         $sina = ConfigHandler::get('sina');
-        if(!$sina['is_synctopic_tojishigou'])
+        if(!$sina['is_synctopic_todatacore'])
         {
             return ;
         }
@@ -97,11 +97,11 @@ class ModuleObject extends MasterObject
         {
             return ;
         }
-        if(!(sina_weibo_synctopic_tojishigou($uid)))
+        if(!(sina_weibo_synctopic_todatacore($uid)))
         {
             return ;
         }
-        if($sina['syncweibo_tojishigou_time'] > 0 && ($info['last_read_time'] + $sina['syncweibo_tojishigou_time'] > time()))
+        if($sina['syncweibo_todatacore_time'] > 0 && ($info['last_read_time'] + $sina['syncweibo_todatacore_time'] > time()))
         {
             return ;
         }
@@ -146,11 +146,11 @@ class ModuleObject extends MasterObject
                         $tid = max(0, (int) $add_result['tid']);
                         if($tid)
                         {
-                            if($sina['is_syncimage_tojishigou'] && $data['original_pic'])
+                            if($sina['is_syncimage_todatacore'] && $data['original_pic'])
                             {
                                 $TopicLogic->_parse_url_image($add_result,$data['original_pic']);
                             }
-                            if($sina['is_syncimage_tojishigou'] && $data['retweeted_status']['original_pic'])
+                            if($sina['is_syncimage_todatacore'] && $data['retweeted_status']['original_pic'])
                             {
                                 $TopicLogic->_parse_url_image($add_result,$data['retweeted_status']['original_pic']);
                             }
@@ -165,7 +165,7 @@ class ModuleObject extends MasterObject
     function SyncReply()
     {
         $sina = ConfigHandler::get('sina');
-        if(!$sina['is_syncreply_tojishigou'])
+        if(!$sina['is_syncreply_todatacore'])
         {
             return ;
         }
@@ -184,7 +184,7 @@ class ModuleObject extends MasterObject
         {
             return ;
         }
-        if($sina['syncweibo_tojishigou_time'] > 0 && ($info['last_read_time'] + $sina['syncweibo_tojishigou_time'] > time()))
+        if($sina['syncweibo_todatacore_time'] > 0 && ($info['last_read_time'] + $sina['syncweibo_todatacore_time'] > time()))
         {
             return ;
         }
@@ -192,7 +192,7 @@ class ModuleObject extends MasterObject
         {
             return ;
         }
-        if(!(sina_weibo_syncreply_tojishigou($topic_info['uid'])))
+        if(!(sina_weibo_syncreply_todatacore($topic_info['uid'])))
         {
             return ;
         }
@@ -233,7 +233,7 @@ class ModuleObject extends MasterObject
                         $_tid = max(0, (int) $add_result['tid']);
                         if($_tid)
                         {
-                            if($sina['is_syncimage_tojishigou'] && $data['original_pic'])
+                            if($sina['is_syncimage_todatacore'] && $data['original_pic'])
                             {
                                 $TopicLogic->_parse_url_image($add_result,$data['original_pic']);
                             }

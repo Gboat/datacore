@@ -2,7 +2,7 @@
  * 微博输入框自动提示
  * 
  * @author 		~ZZ~
- * @package 	jishigou.net
+ * @package 	datacore.net
  * @category	Publish
  * @version		v1.0 $Date: 2011-05-16
  */

@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU')) {
+if(!defined('IN_DATACORE')) {
     exit('Access Denied');
 }
 define("OUT_CHARSET", "UTF-8");

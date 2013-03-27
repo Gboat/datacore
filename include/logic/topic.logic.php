@@ -1,5 +1,5 @@
 <?php
-if(!defined('IN_JISHIGOU'))
+if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
@@ -168,7 +168,7 @@ class TopicLogic
         $MemberHandler = & Obj::registry('MemberHandler');
         if($MemberHandler) {
             if(!($MemberHandler->HasPermission('topic','add',0,$member))) {
-                if(true!==IN_JISHIGOU_SMS) {
+                if(true!==IN_DATACORE_SMS) {
                     return ($MemberHandler->GetError());
                 }
             } else {
@@ -1050,7 +1050,7 @@ class TopicLogic
                         if ($app_type == 'vote') {
                             $cont_sch[] = "{$v}";
                             $vote_key = $topic['tid'].'_'.$topic['random'];
-                            if (IN_JISHIGOU_WAP === true || IN_JISHIGOU_MOBILE === true) {
+                            if (IN_DATACORE_WAP === true || IN_DATACORE_MOBILE === true) {
                                 $cont_rpl[] = "<a href='{$v}'>{$v}<img src='{$this->Config['site_url']}/images/voteicon.gif'/></a>";
                             } else {
                                 $cont_rpl[] = "<a onclick='return getVoteDetailWidgets(\"{$vote_key}\", {$tmp_vid});' href='{$v}'>{$v}<img src='{$this->Config['site_url']}/images/voteicon.gif'/></a>";
@@ -1083,12 +1083,12 @@ class TopicLogic
                 {
                     $topic_content_tag_href_pattern_static = $rewriteHandler->formatURL($topic_content_tag_href_pattern_static);
                 }
-                if (defined("IN_JISHIGOU_MOBILE")) {
+                if (defined("IN_DATACORE_MOBILE")) {
                     $topic_content_tag_href_pattern_static = 'javascript:goToTopicList(\\\'|REPLACE_VALUE| . "\')"';
                 }
             }
             $topic['content'] = preg_replace('~<T>#(.+?)#</T>~e', '\'<a href="' . str_replace('|REPLACE_VALUE|', 
-                '\' . ' . (defined('IN_JISHIGOU_MOBILE') ? '' : 'urlencode') . '(strip_tags(\'\\1\'))', $topic_content_tag_href_pattern_static) . ' . \'">#\\1#</a>\'', $topic['content']);
+                '\' . ' . (defined('IN_DATACORE_MOBILE') ? '' : 'urlencode') . '(strip_tags(\'\\1\'))', $topic_content_tag_href_pattern_static) . ' . \'">#\\1#</a>\'', $topic['content']);
         }
         if (false !== strpos($topic['content'], '</U>')) {
             static $topic_content_url_href_pattern_static = '';
@@ -1124,7 +1124,7 @@ class TopicLogic
                     }
                     foreach ($match[0] as $k => $v) {
                         if (false != ($img_src = $face_conf[$match[1][$k]])) {
-                            if (defined("IN_JISHIGOU_MOBILE")) {
+                            if (defined("IN_DATACORE_MOBILE")) {
                                 $img_src = 'mobile/'.$img_src;
                             }
                             $topic['content'] = str_replace($v, '<img src="' . $this->Config['site_url'] .
@@ -1220,9 +1220,9 @@ class TopicLogic
     {
         global $rewriteHandler, $topic_content_member_href_pattern_static;
         if (false !== strpos($topic['content'], '</M>')) {
-            if (defined("IN_JISHIGOU_MOBILE")) {
+            if (defined("IN_DATACORE_MOBILE")) {
                 $topic_content_member_href_pattern_static = "javascript:;";
-                if (IN_JISHIGOU_MOBILE_TOPIC_DETAIL === true) {
+                if (IN_DATACORE_MOBILE_TOPIC_DETAIL === true) {
                     preg_match_all("/<M ([^>]+?)>/", $topic['content'], $matches);
                     if ($matches[1]) {
                         $sql = "Select `uid`,`username` From " . TABLE_PREFIX . 'members' .
@@ -1253,7 +1253,7 @@ class TopicLogic
                 }
                 $topic['content'] = preg_replace('~<M ([^>]+?)>\@(.+?)</M>~', '<a href="' .
                 str_replace('|REPLACE_VALUE|', '\\1', $topic_content_member_href_pattern_static) .
-                '" target="_blank"'.(true!==IN_JISHIGOU_WAP ? '  onmouseover="get_at_user_choose(\'\\2\',\'_user\','.$topic['tid'].',event);"  onmouseout="clear_user_choose();"' : '').'>@\\2</a>', $topic['content']);
+                '" target="_blank"'.(true!==IN_DATACORE_WAP ? '  onmouseover="get_at_user_choose(\'\\2\',\'_user\','.$topic['tid'].',event);"  onmouseout="clear_user_choose();"' : '').'>@\\2</a>', $topic['content']);
             }
         }
     }
@@ -1334,7 +1334,7 @@ class TopicLogic
             if (($data['totid'] > 0 && $sina_config['is_syncreply_toweibo'] && sina_weibo_bind_setting($data['uid'])) || ($data['totid'] <
             1 && $sina_config['is_synctopic_toweibo'] && $_POST['syn_to_sina']))
             {
-                if( TRUE===IN_JISHIGOU_INDEX || TRUE===IN_JISHIGOU_AJAX || TRUE===IN_JISHIGOU_ADMIN )
+                if( TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX || TRUE===IN_DATACORE_ADMIN )
                 {
                     $result = jsg_schedule(array('data'=>$data),'syn_to_sina', $data['uid']);
                 }
@@ -1361,7 +1361,7 @@ class TopicLogic
             if (($data['totid'] > 0 && $qqwb_config['is_syncreply_toweibo'] && qqwb_synctoqq($data['uid'])) || ($data['totid'] <
             1 && $qqwb_config['is_synctopic_toweibo'] && $_POST['syn_to_qqwb']))
             {
-                if( TRUE===IN_JISHIGOU_INDEX || TRUE===IN_JISHIGOU_AJAX || TRUE===IN_JISHIGOU_ADMIN )
+                if( TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX || TRUE===IN_DATACORE_ADMIN )
                 {
                     $result = jsg_schedule($data,'syn_to_qqwb');
                 }
@@ -1382,7 +1382,7 @@ class TopicLogic
             if (($data['totid'] > 0 && $kaixin_config['is_sync_topic']) || ($data['totid'] <
             1 && $kaixin_config['is_sync_topic'] && $_POST['syn_to_kaixin']))
             {
-                if( TRUE===IN_JISHIGOU_INDEX || TRUE===IN_JISHIGOU_AJAX || TRUE===IN_JISHIGOU_ADMIN )
+                if( TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX || TRUE===IN_DATACORE_ADMIN )
                 {
                     $result = jsg_schedule($data, 'syn_to_kaixin');
                 }
@@ -1402,7 +1402,7 @@ class TopicLogic
             if (($data['totid'] > 0 && $renren_config['is_sync_topic']) || ($data['totid'] <
             1 && $renren_config['is_sync_topic'] && $_POST['syn_to_renren']))
             {
-                if( TRUE===IN_JISHIGOU_INDEX || TRUE===IN_JISHIGOU_AJAX || TRUE===IN_JISHIGOU_ADMIN )
+                if( TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX || TRUE===IN_DATACORE_ADMIN )
                 {
                     $result = jsg_schedule($data, 'syn_to_renren');
                 }

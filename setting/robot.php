@@ -1,5 +1,5 @@
 <?php 
 $config['robot']=array (
-  'turnon' => true,
+    'turnon' => false,
 );
- ?>
+?>

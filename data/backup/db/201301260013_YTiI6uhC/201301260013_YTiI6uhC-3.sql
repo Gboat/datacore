@@ -1,13 +1,13 @@
 # Identify: MTM1OTEzMDQzNiwzLjUuMCxhbGxfdGFibGVzLG11bHRpdm9sLDM=
 # <?exit();?>
-# JishiGou Multi-Volume Data Dump Vol.3
-# Version: JishiGou 3.5.0
+# DataCore Multi-Volume Data Dump Vol.3
+# Version: DataCore 3.5.0
 # Time: 1359130436
 # Type: all_tables
 # Table Prefix: weibo_
 #
-# JishiGou Home: http:\/\/www.jishigou.net
-# Please visit our website for newest infomation about JishiGou
+# DataCore Home: http:\/\/wrud.net
+# Please visit our website for newest infomation about DataCore
 # --------------------------------------------------------
 
 

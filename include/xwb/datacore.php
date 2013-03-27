@@ -70,7 +70,7 @@ define('XWB_APP_SECRET_KEY',    ($GLOBALS['_J']['config']['sina']['app_secret'] 
 define('XWB_S_CHARSET',        str_replace("-","",strtoupper($GLOBALS['_J']['config']['charset'])));
 define('XWB_S_TBPRE',        $GLOBALS['_J']['config']['db_table_prefix']);
 define('XWB_S_VERSION',        '2.5.0');
-define('XWB_S_NAME',        'JishiGou');
+define('XWB_S_NAME',        'DataCore');
 define('XWB_S_TITLE',        XWB_plugin::convertEncoding($GLOBALS['_J']['config']['site_name'], XWB_S_CHARSET, 'UTF-8'));
 define('XWB_S_SITEURL',        $GLOBALS['_J']['config']['site_url'] . "/");
 if(!$GLOBALS[XWB_SITE_GLOBAL_V_NAME]['site_db'])

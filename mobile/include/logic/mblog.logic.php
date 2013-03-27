@@ -192,7 +192,7 @@ class MblogLogic
     }
         function getDetail($tid, $uid = 0)
     {
-        define("IN_JISHIGOU_MOBILE_TOPIC_DETAIL", true);
+        define("IN_DATACORE_MOBILE_TOPIC_DETAIL", true);
         $topic_info = $this->TopicLogic->Get($tid);
         if (empty($topic_info)) {
             return 400;
