@@ -52,7 +52,7 @@ class ModuleObject extends MasterObject
         $timestamp = time();
         $uid = MEMBER_ID;
         $member = $this->_topicLogicGetMember($uid);
-                $limit = $this->ShowConfig['tag_index']['hot'];
+        $limit = $this->ShowConfig['tag_index']['hot'];
         if ($limit>0 && false == ($tag_list = cache("wap-tag/tag_hot",$this->CacheConfig['tag_index']['hot']))) {
             $tag_ids = array();
             $tag_list = array();
@@ -75,7 +75,7 @@ class ModuleObject extends MasterObject
             }
             cache($tag_list);
         }
-                $limit = $this->ShowConfig['tag_index']['guanzhu'];
+        $limit = $this->ShowConfig['tag_index']['guanzhu'];
         if ($limit>0 && false == ($tag_guanzu = cache("wap-tag/tag_guanzu",$this->CacheConfig['tag_index']['guanzhu']))) {
             $sql = "select `id`,`name`,`topic_count`,`tag_count` from `".TABLE_PREFIX."tag`  ORDER BY `tag_count` DESC LIMIT {$limit}";
             $query = $this->DatabaseHandler->Query($sql);
@@ -87,10 +87,10 @@ class ModuleObject extends MasterObject
             }
             cache($tag_guanzu);
         }
-                $limit = $this->ShowConfig['tag_index']['day7'];
+        $limit = $this->ShowConfig['tag_index']['day7'];
         if ($limit>0 && false == ($tag_r_day7 = cache("wap-tag/tag_r_day7",$this->CacheConfig['tag_index']['day7']))) {
             $sql = "select `id`,`name`,`topic_count`,`tag_count` from `".TABLE_PREFIX."tag`  WHERE last_post>='".(time() - 86400 * 7)."' GROUP BY `topic_count` DESC LIMIT {$limit}";
-                        $query = $this->DatabaseHandler->Query($sql);
+            $query = $this->DatabaseHandler->Query($sql);
             $tag_r_day7 = array();
             while (false != ($row = $query->GetRow()))
             {
@@ -99,7 +99,7 @@ class ModuleObject extends MasterObject
             }
             cache($tag_r_day7);
         }
-                $limit = $this->ShowConfig['tag_index']['day7_guanzhu'];
+        $limit = $this->ShowConfig['tag_index']['day7_guanzhu'];
         if ($limit>0 && false == ($day7_guanzhu = cache("wap-tag/day7_guanzhu",$this->CacheConfig['tag_index']['day7_guanzhu']))) {
             $sql = "select `id`,`name`,`topic_count`,`tag_count` from `".TABLE_PREFIX."tag`  WHERE `tag_count` > 0 and last_post>='".(time() - 86400 * 7)."' GROUP BY `tag_count` DESC LIMIT {$limit}";
             $query = $this->DatabaseHandler->Query($sql);
@@ -111,7 +111,7 @@ class ModuleObject extends MasterObject
             }
             cache($day7_guanzhu);
         }
-                $limit = $this->ShowConfig['tag_index']['tag_tuijian'];
+        $limit = $this->ShowConfig['tag_index']['tag_tuijian'];
         if ($limit>0 && false == ($tag_tuijian = cache("wap-tag/tag_tuijian",$this->CacheConfig['tag_index']['tag_tuijian']))) {
             $sql = "select `id`,`name`,`topic_count`,`tag_count` from `".TABLE_PREFIX."tag`  WHERE `status` = 1 order by `topic_count` desc  Limit {$limit}";
             $query = $this->DatabaseHandler->Query($sql);
@@ -132,7 +132,7 @@ class ModuleObject extends MasterObject
         $uid = MEMBER_ID;
         $member = $this->_topicLogicGetMember($uid);
         $params = array();
-                $tag = getSafeCode($this->Code);
+        $tag = getSafeCode($this->Code);
         if (!$tag) {
             $this->Messager("请输入正确的链接地址",null);
         }
@@ -174,7 +174,7 @@ class ModuleObject extends MasterObject
             }
             $topic_list_count = 0;
             if($topic_list) {
-                                $parent_id_list = array();
+                $parent_id_list = array();
                 foreach ($topic_list as $row) {
                     if(0 < ($p = (int) $row['parent_id'])) {
                         $parent_id_list[$p] = $p;
@@ -198,7 +198,7 @@ class ModuleObject extends MasterObject
                 if($parent_id_list) {
                     $parent_list = $this->_topicLogicGet($parent_id_list);
                 }
-                            }
+            }
         }
         $show_config = ConfigHandler::get('show');
         $day1_r_tags = cache("misc/recommendTopicTag-1-{$show_config['topic_index']['hot_tag']}",-1,true);
@@ -219,7 +219,7 @@ class ModuleObject extends MasterObject
                 $tag_favorite_list[] = $row;
             }
         }
-                $tag= wap_iconv($tag);
+        $tag= wap_iconv($tag);
         $tag_value = '#'.$tag.'#';
         $topic_count = $tag_info['topic_count'];
         $this->Title =$tag;
