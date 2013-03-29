@@ -12,6 +12,7 @@
   'cookie_expire' => '30',
   'cookie_path' => '/',
   'cookie_prefix' => 'yqweibo_Tzd1JU_',
+  'copyright' => '',
   'count_online_user' => '1',
   'credits_filed' => 'extcredits3',
   'datacore_founder' => '1',
@@ -24,6 +25,9 @@
   'db_user' => 'root',
   'default_module' => 'topic',
   'extcredits_enable' => 1,
+  'extra_domains' => 
+  array (
+  ),
   'follow_limit' => 2000,
   'gzip' => 1,
   'icp' => '备案申请中',
@@ -45,8 +49,12 @@
   'meta_description' => '数据核心',
   'meta_keywords' => '数据核心',
   'mobile_url' => 'http://localhost/datacore/mobile',
-  'no_verify_email_role_id' => '5',
+  'no_verify_email_role_id' => '4',
   'normal_default_role_id' => '3',
+  'notice_to_new_user' => '',
+  'notice_to_new_user_news' => '',
+  'notice_to_validatesucssee_user' => '',
+  'notice_to_waitvalidate_user' => '',
   'only_show_vip_topic' => '1',
   'page_title' => '数据核心',
   'qmd_file_url' => './images/qmd/',
@@ -67,13 +75,18 @@
   ),
   'refresh_times_banned_ip' => '10',
   'refresh_times_banned_ip_time' => '86400',
-  'register_invite_input' => '1',
+  'reg_email_forbid' => '',
+  'reg_email_verify' => '0',
+  'regclosemessage' => '',
+  'register_invite_input' => '0',
+  'register_invite_input2' => '0',
   'regstatus' => 
   array (
-    0 => 'normal',
-    1 => 'invite',
+    0 => 'invite',
   ),
   'safe_key' => 'rEt1GT5ZMEKcfBUC5IoGGFwc1oHXTOHs',
+  'seccode_login' => 1,
+  'seccode_register' => 0,
   'sign' => 
   array (
     'sign_enable' => '0',
@@ -95,13 +108,12 @@
   'theme_text_color' => '#333333',
   'third_party_regstatus' => 
   array (
-    0 => 'sina',
-    1 => 'qqwb',
   ),
   'thumbheight' => 120,
   'thumbwidth' => 120,
   'timezone' => '8',
   'today_topic' => '#意见反馈#',
+  'tongji' => '',
   'topic_cut_length' => 140,
   'topic_input_length' => 1000,
   'topic_length' => 140,
