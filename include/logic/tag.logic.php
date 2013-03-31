@@ -24,12 +24,12 @@ class TagLogic
     var $_error;
     function TagLogic($item)
     {
-        $this->Config            = ConfigHandler::get('tag');
+        $this->Config = ConfigHandler::get('tag');
         if (false == $this->Config) exit("tag的配制文件不存在，请检查SETTING目录下的tag.php文件是否存在。");
-        $this->Item                = trim($item);
-        $this->ItemConfig         = $this->Config['item_list'][$this->Item];
+        $this->Item = trim($item);
+        $this->ItemConfig = $this->Config['item_list'][$this->Item];
         if(false == $this->ItemConfig) exit("{$item}的配制文件不存在，请检查SETTING目录下的tag.php文件。");
-        $this->DatabaseHandler    = &Obj::registry("DatabaseHandler");
+        $this->DatabaseHandler = &Obj::registry("DatabaseHandler");
         $this->_setItem();
     }
     function GetOne($tag)
