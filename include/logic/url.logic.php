@@ -304,10 +304,10 @@ class UrlLogic
             }
         }
         if (false == preg_match('~^(?:https?\:\/\/|www\.)(?:[A-Za-z0-9\_\-]+\.)+[A-Za-z0-9]{1,4}(?:\:\d{1,6})?(?:\/[\w\d\/=\?%\-\&_\~\`\:\+\#\.]*(?:[^\;\@\[\]\<\>\'\"\n\r\t\s\x7f-\xff])*)?$~i',
-                $url))
-                {
-                    return '';
-                }
+            $url))
+        {
+            return '';
+        }
         return $url;
     }
     function _key($id,$op="ENCODE")
@@ -316,15 +316,15 @@ class UrlLogic
         $base = 62;
         $out = "";
         if('ENCODE' == $op) {
-           for ( $t = floor( log10( $id ) / log10( $base ) ); $t >= 0; $t-- ) {
-               $a = floor( $id / pow( $base, $t ) );
-               $out = $out . substr( $index, $a, 1 );
-               $id = $id - ( $a * pow( $base, $t ) );
-           }
+            for ( $t = floor( log10( $id ) / log10( $base ) ); $t >= 0; $t-- ) {
+                $a = floor( $id / pow( $base, $t ) );
+                $out = $out . substr( $index, $a, 1 );
+                $id = $id - ( $a * pow( $base, $t ) );
+            }
         } elseif ('DECODE' == $op) {
             ;
         }
-       return $out;
+        return $out;
     }
     function _hash($url)
     {
