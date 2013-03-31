@@ -1,6 +1,7 @@
 <?php
 class datacore {
     var $var = array();
+    //init
     function datacore() {
         if(!defined('IN_DATACORE')) {
             $this->_init_env();
@@ -9,6 +10,7 @@ class datacore {
             $this->_init_output();
         }
     }
+
     function run($type='') {
         $types = array(
             'index'=>array('mod_default'=>'topic', ), 
@@ -21,6 +23,7 @@ class datacore {
             'wap'=>array('mod_default'=>'topic', 'mod_path'=>'wap/modules/', ), 
             'mobile'=>array('mod_default'=>'topic', 'mod_path'=>'mobile/modules/', ), 
             'mobile_ajax'=>array('mod_default'=>'topic', 'mod_path'=>'mobile/modules/ajax/', ), 
+            //'spider'=>array('mod_default'=>'topic', 'mod_path'=>'spider/modules/', ), 
         );
         if(!isset($types[$type])) {
             $type = 'index';
@@ -38,10 +41,10 @@ class datacore {
         }
         if ($this->var['config']['upgrade_lock_time'] > 0 && true!==IN_DATACORE_UPGRADE && true!==IN_DATACORE_ADMIN) {
             if(($this->var['config']['upgrade_lock_time'] + 600 > TIMESTAMP) ||
-            (is_file(ROOT_PATH . './data/cache/upgrade.lock') &&
-            @filemtime(ROOT_PATH . './data/cache/upgrade.lock') + 600 > TIMESTAMP)) {
-                die('System upgrade. Please wait...');
-            }
+                (is_file(ROOT_PATH . './data/cache/upgrade.lock') &&
+                @filemtime(ROOT_PATH . './data/cache/upgrade.lock') + 600 > TIMESTAMP)) {
+                    die('System upgrade. Please wait...');
+                }
         }
         if ($this->var['config']['site_closed'] && true!==IN_DATACORE_ADMIN) {
             if ('login' != $this->var['mod'] && ($site_closed_msg=file_get_contents(ROOT_PATH . 'data/cache/site_enable.txt'))) {
@@ -57,7 +60,8 @@ class datacore {
         $ModuleObject = new ModuleObject($this->var['config']);
     }
     function _init_env() {
-        error_reporting(E_ERROR);
+        #error_reporting(E_ERROR);
+        error_reporting(E_ALL ^ E_NOTICE);
         set_time_limit(300);
         if(PHP_VERSION < '5.3.0') {
             set_magic_quotes_runtime(0);
@@ -77,12 +81,12 @@ class datacore {
             ini_set("magic_quotes_runtime", 0);
         }
         $superglobal = array(
-                'GLOBALS' => 1,
-                '_GET' => 1,
-                '_POST' => 1,
-                '_COOKIE' => 1,
-                '_SERVER' => 1,
-                '_FILES' => 1,
+            'GLOBALS' => 1,
+            '_GET' => 1,
+            '_POST' => 1,
+            '_COOKIE' => 1,
+            '_SERVER' => 1,
+            '_FILES' => 1,
         );
         foreach($GLOBALS as $k=>$v) {
             if(!isset($superglobal[$k])) {
@@ -116,12 +120,12 @@ class datacore {
         @header('P3P: CP="CAO PSA OUR"');
         if($config['install_lock_time'] < 1) {
             if (!is_file(ROOT_PATH . 'data/install.lock') &&
-            is_file(ROOT_PATH . 'install.php')) {
-                die("<meta http-equiv='refresh' content=\"5; URL='./install.php'\"><a href='./install.php'>请点此进行系统的安装</a>");
-            }
+                is_file(ROOT_PATH . 'install.php')) {
+                    die("<meta http-equiv='refresh' content=\"5; URL='./install.php'\"><a href='./install.php'>请点此进行系统的安装</a>");
+                }
         }
         require ROOT_PATH . 'setting/constants.php';
-                $config['sys_version'] = sys_version();
+        $config['sys_version'] = sys_version();
         $config['sys_published'] = SYS_PUBLISHED;
         if(!$config['wap_url']) {
             $config['wap_url'] = $config['site_url'] . "/wap";
@@ -129,7 +133,7 @@ class datacore {
         if(!$config['mobile_url']) {
             $config['mobile_url'] = $config['site_url'] . "/mobile";
         }
-                if($config['extra_domains']) {
+        if($config['extra_domains']) {
             $http_host = (getenv('HTTP_HOST') ? getenv('HTTP_HOST') : $_SERVER['HTTP_HOST']);
             if($config['site_domain'] != $http_host && in_array($http_host, $config['extra_domains'])) {
                 $config['site_url'] = str_replace($config['site_domain'], $http_host, $config['site_url']);
@@ -268,6 +272,7 @@ class datacore {
             'member' => 1,
             'square' => 1,
             'more' => 1,
+            'track' => 1,
         );
         $mod = $this->_get('mod');
         if(!$mod) {

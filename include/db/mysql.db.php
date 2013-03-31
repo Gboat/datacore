@@ -6,7 +6,8 @@ if(!defined('IN_DATACORE'))
 define("QUERY_SAFE", true);
 class MySqlHandler extends DatabaseHandler
 {
-    var $TableName;     var $FieldList; 
+    var $TableName;
+    var $FieldList; 
     var $Charset='gbk';
     function MySqlHandler($server_host, $server_port = '3306')
     {
@@ -29,8 +30,8 @@ class MySqlHandler extends DatabaseHandler
             if($this->Charset)
             {
                 @mysql_query("SET character_set_connection={$this->Charset},
-                             character_set_results={$this->Charset},
-                             character_set_client=binary",$db);
+                    character_set_results={$this->Charset},
+                    character_set_client=binary",$db);
             }
             if($this->GetVersion() > '5.0.1')mysql_query("SET sql_mode=''",$db);
         }
@@ -63,7 +64,8 @@ class MySqlHandler extends DatabaseHandler
                 $result = $this->Query($sql, 'WAIT'.++$WAITTIMES.$type);
             } elseif (true===DEBUG || ($type != 'SKIP_ERROR' && 'SILENT' != $type && substr($type, 5) != 'SKIP_ERROR')) {
                 if('admin' === MEMBER_ROLE_TYPE || true === DATACORE_FOUNDER) {
-                    exit($this->GetLastError($sql, $file, $line));                 }
+                    exit($this->GetLastError($sql, $file, $line));
+                }
                 die('MySql query error, Please contact webmaster.');
             } else {
                 return false;
@@ -78,7 +80,7 @@ class MySqlHandler extends DatabaseHandler
             $cmd = trim(strtoupper(substr($sql, 0, strpos($sql, ' '))));
             if(in_array($cmd, $checkcmd)) {                
                 $cache_id = md5($sql);
-                if(false==($test = $static_query_safes[$cache_id])) {                
+                if(false==($test = $static_query_safes[$cache_id])) {
                     $test = $this->_do_query_safe($sql);
                     $static_query_safes[$cache_id] = $test;
                 }
@@ -120,43 +122,43 @@ class MySqlHandler extends DatabaseHandler
             for ($i = 0; $i <$len; $i++) {
                 $str = $sql[$i];
                 switch ($str) {
-                    case '\'':
-                        if(!$mark) {
-                            $mark = '\'';
-                            $clean .= $str;
-                        } elseif ($mark == '\'') {
-                            $mark = '';
-                        }
-                        break;
-                    case '/':
-                        if(empty($mark) && $sql[$i+1] == '*') {
-                            $mark = '/'.'*';
-                            $clean .= $mark;
-                            $i++;
-                        } elseif($mark == '/'.'*' && $sql[$i -1] == '*') {
-                            $mark = '';
-                            $clean .= '*';
-                        }
-                        break;
-                    case '#':
-                        if(empty($mark)) {
-                            $mark = $str;
-                            $clean .= $str;
-                        }
-                        break;
-                    case "\n":
-                        if($mark == '#' || $mark == '--') {
-                            $mark = '';
-                        }
-                        break;
-                    case '-':
-                        if(empty($mark)&& substr($sql, $i, 3) == '-- ') {
-                            $mark = '-- ';
-                            $clean .= $mark;
-                        }
-                        break;
-                    default:
-                        break;
+                case '\'':
+                    if(!$mark) {
+                        $mark = '\'';
+                        $clean .= $str;
+                    } elseif ($mark == '\'') {
+                        $mark = '';
+                    }
+                    break;
+                case '/':
+                    if(empty($mark) && $sql[$i+1] == '*') {
+                        $mark = '/'.'*';
+                        $clean .= $mark;
+                        $i++;
+                    } elseif($mark == '/'.'*' && $sql[$i -1] == '*') {
+                        $mark = '';
+                        $clean .= '*';
+                    }
+                    break;
+                case '#':
+                    if(empty($mark)) {
+                        $mark = $str;
+                        $clean .= $str;
+                    }
+                    break;
+                case "\n":
+                    if($mark == '#' || $mark == '--') {
+                        $mark = '';
+                    }
+                    break;
+                case '-':
+                    if(empty($mark)&& substr($sql, $i, 3) == '-- ') {
+                        $mark = '-- ';
+                        $clean .= $mark;
+                    }
+                    break;
+                default:
+                    break;
                 }
                 $clean .= $mark ? '' : $str;
             }
@@ -257,7 +259,7 @@ class MySqlHandler extends DatabaseHandler
         }
         Return $this->FieldList;
     }
-                                function Select($id = '', $condition = NULL, $fields = "*")
+    function Select($id = '', $condition = NULL, $fields = "*")
     {
         if($condition === NULL)
         {
@@ -319,7 +321,7 @@ class MySqlHandler extends DatabaseHandler
         }
         Return $data_list;
     }
-                            function Replace($dataList)
+    function Replace($dataList)
     {
         if($dataList == "")Return false;
         foreach($this->FieldList as $key => $field)
@@ -334,13 +336,13 @@ class MySqlHandler extends DatabaseHandler
         $this->query($sql);
         return $this->Insert_ID();
     }
-                            function Insert($dataList,$continue_primary_key=true)
+    function Insert($dataList,$continue_primary_key=true)
     {
         if(($sql=$this->BuildInsert($this->TableName,$dataList,$continue_primary_key,true))=="")return false;
         $this->query($sql);
         return $this->Insert_ID();
     }
-                                    function Update($dataList, $condition = NULL)
+    function Update($dataList, $condition = NULL)
     {
         if(($sql=$this->BuildUpdate($this->TableName,$dataList,$condition,true))=="")return false;
         if ($this->query($sql))
@@ -352,7 +354,7 @@ class MySqlHandler extends DatabaseHandler
             return false;
         }
     }
-                            function Delete($id = "", $condition = NULL)
+    function Delete($id = "", $condition = NULL)
     {
         if($condition === NULL)
         {
@@ -479,8 +481,8 @@ class MySqlHandler extends DatabaseHandler
         {
             $mixed=trim($mixed,',');
             $mixed=strpos($mixed,',')!==false
-                    ?"'".str_replace(',',"','",$mixed)."'"
-                    :"'$mixed'";
+                ?"'".str_replace(',',"','",$mixed)."'"
+                :"'$mixed'";
         }
         elseif($type=="array")
         {
@@ -562,18 +564,18 @@ class MySqlIterator
         $this->_current_row++;
         switch($result_type)
         {
-            case 'row':
-                return mysql_fetch_row($this->GetResourceId());
-                break;
-            case 'assoc':
-                return mysql_fetch_assoc($this->GetResourceId());
-                break;
-            case 'both':
-                return mysql_fetch_array($this->GetResourceId());
-                break;
-            case 'object':
-                return mysql_fetch_object($this->GetResourceId());
-                break;
+        case 'row':
+            return mysql_fetch_row($this->GetResourceId());
+            break;
+        case 'assoc':
+            return mysql_fetch_assoc($this->GetResourceId());
+            break;
+        case 'both':
+            return mysql_fetch_array($this->GetResourceId());
+            break;
+        case 'object':
+            return mysql_fetch_object($this->GetResourceId());
+            break;
         }
     }
     function result($row)

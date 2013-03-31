@@ -19,9 +19,13 @@ class PmLogic
         $time = time();
         $this->DatabaseHandler->SetTable(TABLE_PREFIX.'pms');
         $data=array(
-            "msgfrom"        =>MEMBER_NAME,
-            "msgnickname"        =>MEMBER_NICKNAME,
-            "msgfromid" => MEMBER_ID,                                  "msgto" => '',                    "tonickname" => '',                "msgtoid"   => 0,                                "message"   => trim($post['message']),
+            "msgfrom"=>MEMBER_NAME,
+            "msgnickname"=>MEMBER_NICKNAME,
+            "msgfromid"=>MEMBER_ID,
+            "msgto"=>'',
+            "tonickname" => '',
+            "msgtoid" => 0,
+            "message" => trim($post['message']),
             "new"=>'1',
             "dateline"=>$time,
             "plid"=>0,
@@ -37,9 +41,9 @@ class PmLogic
         return '';
     }
     function delNotice($pmid){
-                $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."pms where pmid = '$pmid'");
+        $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."pms where pmid = '$pmid'");
         $time = time();
-                $query = $this->DatabaseHandler->Query("select * from ".TABLE_PREFIX."pms where plid = 0 and folder = 'inbox' order by dateline desc limit 1");
+        $query = $this->DatabaseHandler->Query("select * from ".TABLE_PREFIX."pms where plid = 0 and folder = 'inbox' order by dateline desc limit 1");
         $pm_list = $query->GetRow();
         if($pm_list){
             $uid = $pmlist['msgfromid'];
@@ -58,7 +62,7 @@ class PmLogic
         $read && $where_sql = " and is_new = 1 ";
         if($folder == 'inbox'){
             if($page) {
-                                if($page['count']) {
+                if($page['count']) {
                     $total_record = (int) $page['count'];
                 } else {
                     $sql = "select count(*) from ".TABLE_PREFIX."pms_list where uid = $uid and pmnum > 0 $where_sql or plid = 0";
@@ -67,15 +71,15 @@ class PmLogic
                 if($page['return_count']) {
                     return $total_record;
                 }
-                                  $page_arr = page($total_record,$page['per_page_num'],$page['query_link'],array('return'=>'array',));
+                $page_arr = page($total_record,$page['per_page_num'],$page['query_link'],array('return'=>'array',));
             }
             $sql="select *
-                  from ".TABLE_PREFIX."pms_list
-                  where (uid = $uid and pmnum > 0 $where_sql
-                           or
-                           plid = 0 )
-                  ORDER BY dateline DESC
-                  {$page_arr['limit']} ";
+                from ".TABLE_PREFIX."pms_list
+                where (uid = $uid and pmnum > 0 $where_sql
+                or
+                plid = 0 )
+                ORDER BY dateline DESC
+                {$page_arr['limit']} ";
             $query = $this->DatabaseHandler->Query($sql);
             while($row=$query->GetRow()){
                 $rsdb = unserialize($row['lastmessage']);
@@ -84,17 +88,17 @@ class PmLogic
                         $row[$key] = stripslashes($value);
                     }
                 }
-                                if($row['plid'] == 0){
+                if($row['plid'] == 0){
                     $row['uid'] = $row['msgfromid'];
                     $row['face'] = face_get($row['msgfromid']);
                     $row['username'] = $row['msgfrom'];
                     $row['nickname'] = $row['msgnickname'];
-                                }else if($row['msgfromid'] == $uid){
+                }else if($row['msgfromid'] == $uid){
                     $row['uid'] = $row['msgtoid'];
                     $row['face'] = face_get($row['msgtoid']);
                     $row['username'] = $row['msgto'];
                     $row['nickname'] = $row['tonickname'];
-                                }else{
+                }else{
                     $row['uid'] = $row['msgfromid'];
                     $row['face'] = face_get($row['msgfromid']);
                     $row['username'] = $row['msgfrom'];
@@ -105,7 +109,7 @@ class PmLogic
             }
         }else{
             if($page){
-                                  $sql="SELECT count(*) FROM ".TABLE_PREFIX."pms WHERE msgfromid='$uid' AND folder='outbox'";
+                $sql="SELECT count(*) FROM ".TABLE_PREFIX."pms WHERE msgfromid='$uid' AND folder='outbox'";
                 $total_record = $this->DatabaseHandler->ResultFirst($sql);
                 $page_arr = page($total_record,$page['per_page_num'],$page['query_link'],array('return'=>'array',));
             }
@@ -119,8 +123,8 @@ class PmLogic
                 $pm_list[$row['pmid']]=$row;
             }
         }
-                $return_arr['pm_list'] = $pm_list;
-                $return_arr['page_arr'] = $page_arr;
+        $return_arr['pm_list'] = $pm_list;
+        $return_arr['page_arr'] = $page_arr;
         return $return_arr;
     }
     function getHistory($uid = MEMBER_ID,$touid = MEMBER_ID,$page=array(),$limit=''){
@@ -131,34 +135,34 @@ class PmLogic
                 $count = (int) $page['count'];
             } else {
                 $sql = "select count(*) from ".TABLE_PREFIX."pms
-                        where ((msgfromid = '$uid' AND msgtoid = '$touid' AND delstatus != 1)
-                                 OR
-                                 (msgfromid = '$touid' AND msgtoid = '$uid' AND delstatus != 2))
-                                AND folder = 'inbox' ";
+                    where ((msgfromid = '$uid' AND msgtoid = '$touid' AND delstatus != 1)
+                    OR
+                    (msgfromid = '$touid' AND msgtoid = '$uid' AND delstatus != 2))
+                    AND folder = 'inbox' ";
                 $count = $this->DatabaseHandler->ResultFirst($sql);
             }
             if($page['return_count']) {
                 return $count;
             }
-                        $page_arr = page($count,$page['per_page_num'],$page['query_link'],array('return'=>'array',));
+            $page_arr = page($count,$page['per_page_num'],$page['query_link'],array('return'=>'array',));
             $limit = $page_arr['limit'];
         }
         $sql = "select p.*,m1.nickname as msgnickname,m2.nickname as tonickname from ".TABLE_PREFIX."pms p
-                left join `".TABLE_PREFIX."members` m1 on m1.uid = p.msgfromid
-                left join `".TABLE_PREFIX."members` m2 on m2.uid = p.msgtoid
-                where ((p.msgfromid = '$uid' AND p.msgtoid = '$touid' AND p.delstatus != 1)
-                         OR
-                         (p.msgfromid = '$touid' AND p.msgtoid = '$uid' AND p.delstatus != 2))
-                        AND p.folder = 'inbox'
-                order by p.dateline desc $limit";
+            left join `".TABLE_PREFIX."members` m1 on m1.uid = p.msgfromid
+            left join `".TABLE_PREFIX."members` m2 on m2.uid = p.msgtoid
+            where ((p.msgfromid = '$uid' AND p.msgtoid = '$touid' AND p.delstatus != 1)
+            OR
+            (p.msgfromid = '$touid' AND p.msgtoid = '$uid' AND p.delstatus != 2))
+            AND p.folder = 'inbox'
+            order by p.dateline desc $limit";
         $query = $this->DatabaseHandler->Query($sql);
         $pm_list = array();
         while (false != ($row = $query->GetRow())){
-                        if($row['msgfromid'] == $uid){
+            if($row['msgfromid'] == $uid){
                 $row['uid'] = $row['msgtoid'];
                 $row['username'] = $row['msgto'];
                 $row['nickname'] = $row['tonickname'];
-                        }else{
+            }else{
                 $row['uid'] = $row['msgfromid'];
                 $row['username'] = $row['msgfrom'];
                 $row['nickname'] = $row['msgnickname'];
@@ -177,16 +181,16 @@ class PmLogic
         $page_arr = array();
         if($page){
             $sql = "select count(*) from ".TABLE_PREFIX."pms
-                    where plid = 0";
+                where plid = 0";
             $count = $this->DatabaseHandler->ResultFirst($sql);
-                        $page_arr = page($count,$page['per_page_num'],$page['query_link'],array('return'=>'array',));
+            $page_arr = page($count,$page['per_page_num'],$page['query_link'],array('return'=>'array',));
             $limit = $page_arr['limit'];
         }else{
             $limit = $page['limit'];
         }
         $sql = "select * from ".TABLE_PREFIX."pms
-                where plid = 0
-                order by dateline desc $limit ";
+            where plid = 0
+            order by dateline desc $limit ";
         $query = $this->DatabaseHandler->Query($sql);
         $pm_list = array();
         while (false != ($row = $query->GetRow())){
@@ -204,7 +208,7 @@ class PmLogic
     }
     function pmSend($post,$suid=MEMBER_ID,$susername=MEMBER_NAME,$snickname=MEMBER_NICKNAME){    
         if($suid == MEMBER_ID) {
-                        $MemberHandler = & Obj::registry('MemberHandler');
+            $MemberHandler = & Obj::registry('MemberHandler');
             if($MemberHandler && $MemberHandler->HasPermission('pm','send')==false) {
                 return 6;
             }
@@ -231,17 +235,17 @@ class PmLogic
         if(trim($post['to_user'])!='')
         {
             $in=$this->DatabaseHandler->BuildIn($post['to_user'],"nickname");
-                        $sql="
-            SELECT
+            $sql="
+                SELECT
                 uid,username,nickname,notice_pm,email,newpm
-            FROM
+                FROM
                 ".TABLE_PREFIX.'members'."
-            WHERE
+                WHERE
                 $in";
             $query = $this->DatabaseHandler->Query($sql);
             while($row=$query->GetRow())
             {
-                                $rets = jsg_role_check_allow('sendpm', $row['uid'], $suid);
+                $rets = jsg_role_check_allow('sendpm', $row['uid'], $suid);
                 if($rets && $rets['error']) {
                     return $rets['error'];
                 } else {
@@ -256,42 +260,42 @@ class PmLogic
         }
         $time = time();
         $post['message'] = strstr($post['message'],"\\") ? $post['message'] : addslashes($post['message']);
-                foreach($to_user_list as $to_user_id => $to_user_name)
+        foreach($to_user_list as $to_user_id => $to_user_name)
         {
             $data=array(
-            "msgfrom"     =>$susername,
-            "msgnickname"=>$snickname,
-            "msgfromid"  =>$suid,                                  "msgto" => $to_user_name['username'],                    "tonickname" => $to_user_name['nickname'],                "msgtoid"   => $to_user_id,                                "subject"   => $post['subject'],
-            "message"   => $post['message'],
-            "new"=>'1',
-            "dateline"=>$time,
+                "msgfrom"     =>$susername,
+                "msgnickname"=>$snickname,
+                "msgfromid"  =>$suid,                                  "msgto" => $to_user_name['username'],                    "tonickname" => $to_user_name['nickname'],                "msgtoid"   => $to_user_id,                                "subject"   => $post['subject'],
+                "message"   => $post['message'],
+                "new"=>'1',
+                "dateline"=>$time,
             );
             if($post["save_to_outbox"])
             {
                 $data['folder']="outbox";
                 $msg="消息已经保存草稿箱";
             }
-                        $uids = '';
+            $uids = '';
             if($suid > $to_user_id){
                 $uids = $to_user_id.",".$suid;
             }else{
                 $uids = $suid.",".$to_user_id;
             }
             $plid = 0;
-                                    if(!$msg){
-                                $lastmessage = addslashes(serialize($data));
+            if(!$msg){
+                $lastmessage = addslashes(serialize($data));
                 $plid = $this->DatabaseHandler->ResultFirst("select plid from ".TABLE_PREFIX."pms_index where uids = '$uids'");
                 if($plid == 0){
-                                        $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_index (uids) values('$uids')");
+                    $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_index (uids) values('$uids')");
                     $plid = $this->DatabaseHandler->Insert_ID();
                     if(0 != $plid){
-                                                $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_list (plid,uid,pmnum,dateline,lastmessage) values($plid,".$suid.",1,$time,'$lastmessage')");
+                        $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_list (plid,uid,pmnum,dateline,lastmessage) values($plid,".$suid.",1,$time,'$lastmessage')");
                         if($suid != $to_user_id){
                             $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_list (plid,uid,pmnum,dateline,lastmessage,is_new) values($plid,$to_user_id,1,$time,'$lastmessage',1)");
                         }
                     }
                 }else{
-                                        $this->DatabaseHandler->Query("update ".TABLE_PREFIX."pms_list set pmnum = pmnum + 1,dateline = $time,lastmessage = '$lastmessage',is_new = 1 where plid = '$plid' and uid = '$to_user_id' ");
+                    $this->DatabaseHandler->Query("update ".TABLE_PREFIX."pms_list set pmnum = pmnum + 1,dateline = $time,lastmessage = '$lastmessage',is_new = 1 where plid = '$plid' and uid = '$to_user_id' ");
                     if($suid != $to_user_id){
                         $this->DatabaseHandler->Query("update ".TABLE_PREFIX."pms_list set pmnum = pmnum + 1,dateline = $time,lastmessage = '$lastmessage',is_new = 0 where plid = '$plid'  and uid = '$suid' ");
                     }
@@ -299,13 +303,13 @@ class PmLogic
             }
             $data['plid'] = $plid;
             DB::insert('pms',$data);
-                    }
+        }
         if($msg){
             return 4;
         }
         $num=$post["save_to_outbox"]?0:1;
         if($num > 0){
-                        $_tmps=array_keys($to_user_list);
+            $_tmps=array_keys($to_user_list);
             $to_user_id_list = array();
             foreach($_tmps as $_tmp) {
                 $_tmp = (int) $_tmp;
@@ -316,24 +320,26 @@ class PmLogic
             $this->UpdateNewMsgCount($num,$to_user_id_list);
             foreach ($to_user_list as $user_notice)
             {
-                 if($user_notice['notice_pm'] == 1)                   {
-                        if($this->Config['notice_email'] == 1)                         {
-                            Load::lib('mail');
-                            $mail_to = $user_notice['email'];
-                            $mail_subject = "{$this->noticeConfig['pm']['title']}";
-                            $mail_content = "{$this->noticeConfig['pm']['content']}";
-                            $send_result = send_mail($mail_to,$mail_subject,$mail_content,array(),3,false);
-                                                        $sql = "update `".TABLE_PREFIX."members` set `last_notice_time`= time()  where `uid` = {$user_notice['uid']}";
-                            $this->DatabaseHandler->Query($sql);
-                        }
-                        else
-                        {
-                            Load::logic('notice');
-                            $NoticeLogic = new NoticeLogic();
-                            $pm_content = '您有'.$user_notice['newpm'].'条站内短信没有查看，请立即查看。';
-                            $NoticeLogic->Insert_Cron($user_notice['uid'],$user_notice['email'],$pm_content,'pm');
-                        }
+                if($user_notice['notice_pm'] == 1)
+                {
+                    if($this->Config['notice_email'] == 1)
+                    {
+                        Load::lib('mail');
+                        $mail_to = $user_notice['email'];
+                        $mail_subject = "{$this->noticeConfig['pm']['title']}";
+                        $mail_content = "{$this->noticeConfig['pm']['content']}";
+                        $send_result = send_mail($mail_to,$mail_subject,$mail_content,array(),3,false);
+                        $sql = "update `".TABLE_PREFIX."members` set `last_notice_time`= time()  where `uid` = {$user_notice['uid']}";
+                        $this->DatabaseHandler->Query($sql);
                     }
+                    else
+                    {
+                        Load::logic('notice');
+                        $NoticeLogic = new NoticeLogic();
+                        $pm_content = '您有'.$user_notice['newpm'].'条站内短信没有查看，请立即查看。';
+                        $NoticeLogic->Insert_Cron($user_notice['uid'],$user_notice['email'],$pm_content,'pm');
+                    }
+                }
                 if($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config))
                 {
                     imjiqiren_send_message($user_notice,'m',$this->Config);
@@ -412,17 +418,17 @@ class PmLogic
                 $this->DatabaseHandler->Query("update ".TABLE_PREFIX."pms set delstatus = 2 where pmid = '$pmid'");
             }
         }
-                $this->setNewList($uid,$otheruid,$plid);
+        $this->setNewList($uid,$otheruid,$plid);
         return '';
     }
     function setNewList($uid,$otheruid,$plid){
         $sql = "select * from ".TABLE_PREFIX."pms
-                where ((msgfromid = '$uid' AND msgtoid = '$otheruid' AND delstatus != 1)
-                         OR
-                         (msgfromid = '$otheruid' AND msgtoid = '$uid' AND delstatus != 2))
-                        AND folder = 'inbox'
-                        order by dateline desc
-                        limit 1 ";
+            where ((msgfromid = '$uid' AND msgtoid = '$otheruid' AND delstatus != 1)
+            OR
+            (msgfromid = '$otheruid' AND msgtoid = '$uid' AND delstatus != 2))
+            AND folder = 'inbox'
+            order by dateline desc
+            limit 1 ";
         $query = $this->DatabaseHandler->Query($sql);
         $pm = $query->GetRow();
         if($pm){
@@ -456,12 +462,12 @@ class PmLogic
             return 5;
         }
         $to_user_list = array();
-                $sql="
-        SELECT
+        $sql="
+            SELECT
             uid,username,nickname,notice_pm,email,newpm
-        FROM
+            FROM
             ".TABLE_PREFIX.'members'."
-        WHERE
+            WHERE
             uid = '$touid'";
         $query = $this->DatabaseHandler->Query($sql);
         while($row=$query->GetRow())
@@ -474,20 +480,20 @@ class PmLogic
         }
         $plid = $this->DatabaseHandler->ResultFirst("select plid from ".TABLE_PREFIX."pms_index where uids = '$uids'");
         if($plid == 0){
-                        $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_index (uids) values('$uids')");
+            $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_index (uids) values('$uids')");
             $plid = mysql_insert_id();
             $pm_list['plid'] = $plid;
             $lastmessage = addslashes(serialize($pm_list));
-                        $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_list (plid,uid,pmnum,dateline,lastmessage) values('$plid',".MEMBER_ID.",1,'$time','$lastmessage')");
+            $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_list (plid,uid,pmnum,dateline,lastmessage) values('$plid',".MEMBER_ID.",1,'$time','$lastmessage')");
             if($pm_list['msgtoid'] != $pm_list['msgfromid']){
                 $this->DatabaseHandler->Query("insert into ".TABLE_PREFIX."pms_list (plid,uid,pmnum,dateline,lastmessage) values('$plid','$touid',1,'$time','$lastmessage')");
             }
         }else{
             $lastmessage = addslashes(serialize($pm_list));
-                        $this->DatabaseHandler->Query("update ".TABLE_PREFIX."pms_list set pmnum = pmnum + 1,dateline = '$time',lastmessage = '$lastmessage' where plid = '$plid'");
+            $this->DatabaseHandler->Query("update ".TABLE_PREFIX."pms_list set pmnum = pmnum + 1,dateline = '$time',lastmessage = '$lastmessage' where plid = '$plid'");
         }
-                $this->DatabaseHandler->Query("update ".TABLE_PREFIX."pms set folder = 'inbox' ,message = '$message' ,dateline = '$time',plid = '$plid' where pmid = '$pmid'");
-                $num = 1;
+        $this->DatabaseHandler->Query("update ".TABLE_PREFIX."pms set folder = 'inbox' ,message = '$message' ,dateline = '$time',plid = '$plid' where pmid = '$pmid'");
+        $num = 1;
         $_tmps=array_keys($to_user_list);
         $to_user_id_list = array();
         foreach($_tmps as $_tmp) {
@@ -499,24 +505,26 @@ class PmLogic
         $this->UpdateNewMsgCount($num,$to_user_id_list);
         foreach ($to_user_list as $user_notice)
         {
-             if($user_notice['notice_pm'] == 1)               {
-                    if($this->Config['notice_email'] == 1)                     {
-                        Load::lib('mail');
-                        $mail_to = $user_notice['email'];
-                        $mail_subject = "{$this->noticeConfig['pm']['title']}";
-                        $mail_content = "{$this->noticeConfig['pm']['content']}";
-                        $send_result = send_mail($mail_to,$mail_subject,$mail_content,array(),3,false);
-                                                $sql = "update `".TABLE_PREFIX."members` set `last_notice_time`= time()  where `uid` = {$user_notice['uid']}";
-                        $this->DatabaseHandler->Query($sql);
-                    }
-                    else
-                    {
-                        Load::logic('notice');
-                        $NoticeLogic = new NoticeLogic();
-                        $pm_content = '您有'.$user_notice['newpm'].'条站内短信没有查看，请立即查看。';
-                        $NoticeLogic->Insert_Cron($user_notice['uid'],$user_notice['email'],$pm_content,'pm');
-                    }
+            if($user_notice['notice_pm'] == 1)
+            {
+                if($this->Config['notice_email'] == 1)
+                {
+                    Load::lib('mail');
+                    $mail_to = $user_notice['email'];
+                    $mail_subject = "{$this->noticeConfig['pm']['title']}";
+                    $mail_content = "{$this->noticeConfig['pm']['content']}";
+                    $send_result = send_mail($mail_to,$mail_subject,$mail_content,array(),3,false);
+                    $sql = "update `".TABLE_PREFIX."members` set `last_notice_time`= time()  where `uid` = {$user_notice['uid']}";
+                    $this->DatabaseHandler->Query($sql);
                 }
+                else
+                {
+                    Load::logic('notice');
+                    $NoticeLogic = new NoticeLogic();
+                    $pm_content = '您有'.$user_notice['newpm'].'条站内短信没有查看，请立即查看。';
+                    $NoticeLogic->Insert_Cron($user_notice['uid'],$user_notice['email'],$pm_content,'pm');
+                }
+            }
             if($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config))
             {
                 imjiqiren_send_message($user_notice,'m',$this->Config);
@@ -532,7 +540,7 @@ class PmLogic
         }
         return 0;
     }
-        function UpdateNewMsgCount($num,$uids='')
+    function UpdateNewMsgCount($num,$uids='')
     {
         if($uids=='')$uids=MEMBER_ID;
         $uids=$this->DatabaseHandler->BuildIn($uids,'uid');
@@ -543,11 +551,11 @@ class PmLogic
             $num="+".$num;
         }
         $sql="
-        UPDATE
+            UPDATE
             ".TABLE_PREFIX.'members'."
-        SET
+            SET
             newpm=newpm $num
-        WHERE
+            WHERE
             $uids";
         $this->DatabaseHandler->Query($sql);
         $ret = $this->DatabaseHandler->AffectedRows();;

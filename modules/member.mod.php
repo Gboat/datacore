@@ -28,36 +28,36 @@ class ModuleObject extends MasterObject
         ob_start();
         switch($this->Code)
         {
-            case 'delete':
-                $this->Delete();
-                break;
-            case 'step1':
-                $this->Step1();
-                break;
-            case 'do_step1':
-                $this->DoStep1();
-                break;
-            case 'step2':
-                $this->Step2();
-                break;
-            case 'do_step2':
-                $this->DoStep2();
-                break;
-            case 'verify':
-                $this->Verify();
-                break;
-            case 'doregister':
-                $this->DoRegister();
-                break;
-                         case 'setverify':
-                $this->DoSetVerify();
-                break;
-                        case 'check_modify_emali':
-                $this->DoModifyEmali();
-                break;
-            default:
-                $this->Register();
-                break;
+        case 'delete':
+            $this->Delete();
+            break;
+        case 'step1':
+            $this->Step1();
+            break;
+        case 'do_step1':
+            $this->DoStep1();
+            break;
+        case 'step2':
+            $this->Step2();
+            break;
+        case 'do_step2':
+            $this->DoStep2();
+            break;
+        case 'verify':
+            $this->Verify();
+            break;
+        case 'doregister':
+            $this->DoRegister();
+            break;
+        case 'setverify':
+            $this->DoSetVerify();
+            break;
+        case 'check_modify_emali':
+            $this->DoModifyEmali();
+            break;
+        default:
+            $this->Register();
+            break;
         }
         $Contents=ob_get_clean();
         $this->ShowBody($Contents);
@@ -77,7 +77,7 @@ class ModuleObject extends MasterObject
         $data['verify_time']=time();
         $data['status']=1;
         $this->DatabaseHandler->Update($data,"`key`='{$key}' and `uid`='{$uid}'");
-                $sql = "delete from `".TABLE_PREFIX."member_validate` where `uid`='{$uid}' and `status`=0";
+        $sql = "delete from `".TABLE_PREFIX."member_validate` where `uid`='{$uid}' and `status`=0";
         $this->DatabaseHandler->Query($sql);
         $data=array();
         $data['role_id']=$row['role_id'];
@@ -87,23 +87,23 @@ class ModuleObject extends MasterObject
     }
     function Register()
     {        
-                if(MEMBER_ID != 0 AND false == $this->IsAdmin)
+        if(MEMBER_ID != 0 AND false == $this->IsAdmin)
         {
             $this->Messager('您已经是注册用户，无需再注册！', -1);
         }
-                $regstatus = jsg_member_register_check_status();
+        $regstatus = jsg_member_register_check_status();
         if($regstatus['error'])
         {
             $this->Messager($regstatus['error'], null);
         }
-                if($this->Config['ipbanned_enable']) {
+        if($this->Config['ipbanned_enable']) {
             $ipbanned=ConfigHandler::get('access','ipbanned');
             if(!empty($ipbanned) && preg_match("~^({$ipbanned})~",client_ip())) {
                 $this->Messager("您的IP已经被禁止访问和注册。",null);
             }
             unset($ipbanned);
         }
-                $inviter_member = array();
+        $inviter_member = array();
         $action="index.php?mod=member&code=doregister";
         $check_result = jsg_member_register_check_invite($this->Code);            
         if($regstatus['invite_enable'] && !$regstatus['normal_enable'])         {
@@ -132,7 +132,7 @@ class ModuleObject extends MasterObject
         }
         Load::lib('form');
         $FormHandler = new FormHandler();
-                $query = $this->DatabaseHandler->Query("select * from ".TABLE_PREFIX."common_district where upid = 0 order by list");
+        $query = $this->DatabaseHandler->Query("select * from ".TABLE_PREFIX."common_district where upid = 0 order by list");
         while (false != ($rsdb = $query->GetRow())){
             $province[$rsdb['id']]['value']  = $rsdb['id'];
             $province[$rsdb['id']]['name']  = $rsdb['name'];
@@ -143,16 +143,16 @@ class ModuleObject extends MasterObject
     }
     function DoRegister()
     {
-                if(MEMBER_ID != 0 AND false == $this->IsAdmin)
+        if(MEMBER_ID != 0 AND false == $this->IsAdmin)
         {
             $this->Messager('您已经是注册用户，无需再注册！', -1);
         }
-                $regstatus = jsg_member_register_check_status();
+        $regstatus = jsg_member_register_check_status();
         if($regstatus['error'])
         {
             $this->Messager($regstatus['error'], null);
         }
-                if($this->Config['ipbanned_enable']) {
+        if($this->Config['ipbanned_enable']) {
             $ipbanned=ConfigHandler::get('access','ipbanned');
             if(!empty($ipbanned) && preg_match("~^({$ipbanned})~",client_ip())) {
                 $this->Messager("您的IP已经被禁止访问和注册。",null);
@@ -165,7 +165,7 @@ class ModuleObject extends MasterObject
         $sms_ckret = 0;
         if($this->_sms_register())
         {
-                        $sms_bind_num = $this->Post['sms_bind_num'];
+            $sms_bind_num = $this->Post['sms_bind_num'];
             $sms_bind_key = $this->Post['sms_bind_key'];
             $sms_ckret = sms_check_bind_key($sms_bind_num, $sms_bind_key);
             if($sms_ckret)
@@ -232,73 +232,73 @@ class ModuleObject extends MasterObject
         $datas['uid'] = $uid;
         if($this->Post['province']){
             $datas['province'] = $this->DatabaseHandler->ResultFirst("select name from ".TABLE_PREFIX."common_district where id = ".(int) $this->Post['province']);         }
-        if($this->Post['city']){
-            $datas['city'] = $this->DatabaseHandler->ResultFirst("select name from ".TABLE_PREFIX."common_district where id = ".(int) $this->Post['city']);        }
-        if($this->Post['area']){
-            $datas['area'] = $this->DatabaseHandler->ResultFirst("select name from ".TABLE_PREFIX."common_district where id = ".(int) $this->Post['area']);        }
-        if($this->Post['street']){
-            $datas['street'] = $this->DatabaseHandler->ResultFirst("select name from ".TABLE_PREFIX."common_district where id = ".(int) $this->Post['street']);        }
-        if($this->_sms_register()) {
-            $datas['phone'] = $sms_bind_num;
-        }
-        $this->DatabaseHandler->SetTable(TABLE_PREFIX.'members');
-        $this->DatabaseHandler->Update($datas);
-                if($this->_sms_register()) {
-            $_sms_info = _sms_client_user($sms_bind_num);
-                        $_sms_sets = array(
-                'uid' => $uid,
-                'username' => $username,
-                'bind_key' => 0,
-                'bind_key_time' => 0,
-                'try_bind_times' => '+1',
-                'last_try_bind_time' => $timestamp,
-            );
-            sms_client_user_update($_sms_sets, $_sms_info);
-        }
-                $followgroup_ary = ConfigHandler::get('follow');
-        if (empty($followgroup_ary)) {
-            $followgroup_ary = get_def_follow_group();
-        }
-        if (!empty($followgroup_ary)) {
-            foreach ($followgroup_ary as $value) {
-                $insert_ary = array(
-                    'uid' => $uid,
-                    'group_name' => $value,
-                    'group_count' => 0,
-                );
-                DB::insert("group", $insert_ary);
-            }
-        }
-                if(($sendmsgname = $this->Config['notice_to_new_user']) && $this->Config['notice_to_new_user_news']) {            
-            $pm_post = array(
-                'message' => $this->Config['notice_to_new_user_news'],
-                'to_user' => $nickname,
-            );
-                        $admin_info = DB::fetch_first("select `uid`,`username`,`nickname` from `".TABLE_PREFIX."members` where `nickname` = '$sendmsgname'");
-            if($admin_info){
-                Load::logic('pm',1)->pmSend($pm_post,$admin_info['uid'],$admin_info['username'],$admin_info['nickname']);
-            }
-        }
-                if($inviter_member) {
-            jsg_member_register_by_invite($inviter_member['uid'], $uid, $check_result);
-        }        
-        $rets = jsg_member_login($uid, $password, 'uid');
-        if($rets['uc_syn_html']) {
-            $message[] = $rets['uc_syn_html'];
-        }
-        if($this->Config['reg_email_verify']!='1') {
-            $redirect_to = 'index.php?mod=member&code=step1';
-        } else {
-            $redirect_to = 'index.php?mod=member&code=setverify&ids='.$uid;
-        }
-        if($message) {
-            $message[] = "您已经注册成功";
-        } else {
-            $message = null;
-        }
-        $this->Messager($message, $redirect_to, 0);
+                if($this->Post['city']){
+                    $datas['city'] = $this->DatabaseHandler->ResultFirst("select name from ".TABLE_PREFIX."common_district where id = ".(int) $this->Post['city']);        }
+                        if($this->Post['area']){
+                            $datas['area'] = $this->DatabaseHandler->ResultFirst("select name from ".TABLE_PREFIX."common_district where id = ".(int) $this->Post['area']);        }
+                                if($this->Post['street']){
+                                    $datas['street'] = $this->DatabaseHandler->ResultFirst("select name from ".TABLE_PREFIX."common_district where id = ".(int) $this->Post['street']);        }
+                                        if($this->_sms_register()) {
+                                            $datas['phone'] = $sms_bind_num;
+                                        }
+                                    $this->DatabaseHandler->SetTable(TABLE_PREFIX.'members');
+                                    $this->DatabaseHandler->Update($datas);
+                                    if($this->_sms_register()) {
+                                        $_sms_info = _sms_client_user($sms_bind_num);
+                                        $_sms_sets = array(
+                                            'uid' => $uid,
+                                            'username' => $username,
+                                            'bind_key' => 0,
+                                            'bind_key_time' => 0,
+                                            'try_bind_times' => '+1',
+                                            'last_try_bind_time' => $timestamp,
+                                        );
+                                        sms_client_user_update($_sms_sets, $_sms_info);
+                                    }
+                                    $followgroup_ary = ConfigHandler::get('follow');
+                                    if (empty($followgroup_ary)) {
+                                        $followgroup_ary = get_def_follow_group();
+                                    }
+                                    if (!empty($followgroup_ary)) {
+                                        foreach ($followgroup_ary as $value) {
+                                            $insert_ary = array(
+                                                'uid' => $uid,
+                                                'group_name' => $value,
+                                                'group_count' => 0,
+                                            );
+                                            DB::insert("group", $insert_ary);
+                                        }
+                                    }
+                                    if(($sendmsgname = $this->Config['notice_to_new_user']) && $this->Config['notice_to_new_user_news']) {            
+                                        $pm_post = array(
+                                            'message' => $this->Config['notice_to_new_user_news'],
+                                            'to_user' => $nickname,
+                                        );
+                                        $admin_info = DB::fetch_first("select `uid`,`username`,`nickname` from `".TABLE_PREFIX."members` where `nickname` = '$sendmsgname'");
+                                        if($admin_info){
+                                            Load::logic('pm',1)->pmSend($pm_post,$admin_info['uid'],$admin_info['username'],$admin_info['nickname']);
+                                        }
+                                    }
+                                    if($inviter_member) {
+                                        jsg_member_register_by_invite($inviter_member['uid'], $uid, $check_result);
+                                    }        
+                                    $rets = jsg_member_login($uid, $password, 'uid');
+                                    if($rets['uc_syn_html']) {
+                                        $message[] = $rets['uc_syn_html'];
+                                    }
+                                    if($this->Config['reg_email_verify']!='1') {
+                                        $redirect_to = 'index.php?mod=member&code=step1';
+                                    } else {
+                                        $redirect_to = 'index.php?mod=member&code=setverify&ids='.$uid;
+                                    }
+                                    if($message) {
+                                        $message[] = "您已经注册成功";
+                                    } else {
+                                        $message = null;
+                                    }
+                                    $this->Messager($message, $redirect_to, 0);
     }
-        function DoSetVerify()
+    function DoSetVerify()
     {
         $uid = (int) $this->Get['ids'];
         $action = "index.php?mod=member&code=check_modify_emali";
@@ -307,55 +307,55 @@ class ModuleObject extends MasterObject
         $sql = "SELECT `uid`,`ucuid`,`nickname`,`username`,`email` from `".TABLE_PREFIX."members` where `uid` = '{$uid}'  LIMIT 0,1";
         $query = $this->DatabaseHandler->Query($sql);
         $members = $query->GetRow();
-                $emali_url = $this->_email_url($members['email']);
+        $emali_url = $this->_email_url($members['email']);
         include($this->TemplateHandler->Template('member_verify'));
     }
-        function DoModifyEmali()
+    function DoModifyEmali()
     {
-            $uid = $this->Post['uid'];
-                        $email = $this->Post['email'];
-                        $checktype = $this->Post['checktype'];
-            if($email)
+        $uid = $this->Post['uid'];
+        $email = $this->Post['email'];
+        $checktype = $this->Post['checktype'];
+        if($email)
+        {
+            if($checktype == 'modify')
             {
-                if($checktype == 'modify')
+                $sql = "SELECT `uid`,`ucuid`,`nickname`,`username`,`email` from `".TABLE_PREFIX."members` where `uid` = '{$uid}'  LIMIT 0,1";
+                $query = $this->DatabaseHandler->Query($sql);
+                $members = $query->GetRow();
+                $jsg_result = jsg_member_checkemail($email, $members['ucuid']);
+                if($jsg_result < 1)
                 {
-                    $sql = "SELECT `uid`,`ucuid`,`nickname`,`username`,`email` from `".TABLE_PREFIX."members` where `uid` = '{$uid}'  LIMIT 0,1";
-                    $query = $this->DatabaseHandler->Query($sql);
-                    $members = $query->GetRow();
-                    $jsg_result = jsg_member_checkemail($email, $members['ucuid']);
-                    if($jsg_result < 1)
-                    {
-                        $rets = array(
-                            '0' => '【注册失败】有可能是站点关闭了注册功能',
-                            '-4' => 'Email 不合法，请输入正确的Email地址。',
-                            '-5' => 'Email 不允许注册，请尝试更换一个。',
-                            '-6' => 'Email 已经存在了，请尝试更换一个。',
-                        );
-                                                echo $rets[$jsg_result];
-                        die;
-                    }
-                                        $sql = "update `".TABLE_PREFIX."members` set  `email`='{$email}' where `uid`='{$uid}'";
-                    $this->DatabaseHandler->Query($sql);
+                    $rets = array(
+                        '0' => '【注册失败】有可能是站点关闭了注册功能',
+                        '-4' => 'Email 不合法，请输入正确的Email地址。',
+                        '-5' => 'Email 不允许注册，请尝试更换一个。',
+                        '-6' => 'Email 已经存在了，请尝试更换一个。',
+                    );
+                    echo $rets[$jsg_result];
+die;
                 }
-                $sys_config = ConfigHandler::get();
-                if($sys_config['reg_email_verify'])
-                {
-                    Load::functions('my');
-                    my_member_validate($uid,$email,(int) $sys_config['normal_default_role_id']);
-                    echo "邮件已重新发送成功";
-                    echo "<script language='Javascript'>";
-                    echo "parent.document.getElementById('user_email').innerHTML='{$email}';";
-                    echo "</script>";
-                    die;
-                                    }
+                $sql = "update `".TABLE_PREFIX."members` set  `email`='{$email}' where `uid`='{$uid}'";
+                $this->DatabaseHandler->Query($sql);
             }
+            $sys_config = ConfigHandler::get();
+            if($sys_config['reg_email_verify'])
+            {
+                Load::functions('my');
+                my_member_validate($uid,$email,(int) $sys_config['normal_default_role_id']);
+                echo "邮件已重新发送成功";
+                echo "<script language='Javascript'>";
+                echo "parent.document.getElementById('user_email').innerHTML='{$email}';";
+                echo "</script>";
+die;
+            }
+        }
     }
     function Step1()
     {
         if (MEMBER_ID < 1) {
             $this->Messager("请先<a href='index.php?mod=login'>点此登录</a>或者<a href='index.php?mod=member'>点此注册</a>一个帐号",'index.php?mod=login');
         }
-                $follow_type = 'recommend';
+        $follow_type = 'recommend';
         $this->ShowConfig = ConfigHandler::get('show');
         $day = 7;
         $time = $day * 86400;
@@ -363,7 +363,7 @@ class ModuleObject extends MasterObject
         if($limit < 1) $limit = 20;
         $TopicLogic = Load::logic('topic', 1);
         $regfollow = ConfigHandler::get('regfollow');
-                for ($i = 0; $i < count($regfollow); $i++) 
+        for ($i = 0; $i < count($regfollow); $i++) 
         {
             if($regfollow[$i] == '')
             {
@@ -381,7 +381,7 @@ class ModuleObject extends MasterObject
                 $uids = $regfollow;
             }
         } else {
-                        if (false === ($uids = cache("misc/RTU-{$day}-{$limit}",900))) {
+            if (false === ($uids = cache("misc/RTU-{$day}-{$limit}",900))) {
                 $dateline = time() - $time;
                 $sql = "SELECT DISTINCT(uid) AS uid, COUNT(tid) AS topics FROM `".TABLE_PREFIX."topic` WHERE dateline>=$dateline GROUP BY uid ORDER BY topics DESC LIMIT {$limit}";
                 $query = $this->DatabaseHandler->Query($sql);
@@ -405,7 +405,7 @@ class ModuleObject extends MasterObject
                 }
             }
         }
-                $user_count = count($uids);
+        $user_count = count($uids);
         $this->Title = "关注热门人物";
         include($this->TemplateHandler->Template('member_step1'));
     }
@@ -415,7 +415,7 @@ class ModuleObject extends MasterObject
             $this->Messager("请先<a href='index.php?mod=login'>点此登录</a>或者<a href='index.php?mod=member'>点此注册</a>一个帐号",'index.php?mod=login');
         }        
         $uid = MEMBER_ID;
-                $uids = $this->Post['ids'];
+        $uids = $this->Post['ids'];
         if(MEMBER_ID > 0 && $uids) {
             $uids = (array) $uids;
             foreach ($uids as $id) {
@@ -425,7 +425,7 @@ class ModuleObject extends MasterObject
                 }
             }
         }
-                $tagid = (int) get_param('tag');
+        $tagid = (int) get_param('tag');
         if($tagid)
         {
             Load::logic('other');
@@ -481,105 +481,105 @@ class ModuleObject extends MasterObject
         }
         $this->Messager($msg, "?");
     }
-        function _email_url($email='')
+    function _email_url($email='')
     {
         $url = "";
         $email_array = explode("@",$email);
         $email_value = $email_array[1];
         switch($email_value)
         {
-            case "163.com":
-                $url = "mail.163.com";
-                break;
-            case "vip.163.com":
-                $url = "vip.163.com/?b08abh1";
-                break;
-            case "sina.com":
-                $url = "mail.sina.com.cn";
-                break;
-            case "sina.cn":
-                $url = "mail.sina.com.cn/cnmail/index.html";
-                break;
-            case "vip.sina.com":
-                $url = "vip.sina.com.cn";
-                break;
-            case "2008.sina.com":
-                $url = "mail.2008.sina.com.cn";
-                break;
-            case "sohu.com":
-                $url = "mail.sohu.com";
-                break;
-            case "vip.sohu.com":
-                $url = "vip.sohu.com";
-                break;
-            case "tom.com":
-                $url = "mail.tom.com";
-                break;
-            case "vip.sina.com":
-                $url = "vip.tom.com";
-                break;
-            case "sogou.com":
-                $url = "mail.sogou.com";
-                break;
-            case "126.com":
-                $url = "www.126.com";
-                break;
-            case "vip.126.com":
-                $url = "vip.126.com/?b09abh1";
-                break;
-            case "139.com":
-                $url = "mail.10086.cn";
-                break;
-            case "gmail.com":
-                $url = "www.google.com/accounts/ServiceLogin?service=mail";
-                break;
-            case "hotmail.com":
-                $url = "www.hotmail.com";
-                break;
-            case "189.cn":
-                $url = "webmail2.189.cn/webmail/";
-                break;
-            case "qq.com":
-                $url = "mail.qq.com/cgi-bin/loginpage";
-                break;
-            case "yahoo.com":
-                $url = "mail.cn.yahoo.com";
-                break;
-            case "yahoo.cn":
-                $url = "mail.cn.yahoo.com";
-                break;
-            case "yahoo.com.cn":
-                $url = "mail.cn.yahoo.com";
-                break;
-            case "21cn.com":
-                $url = "mail.21cn.com";
-                break;
-            case "eyou.com":
-                $url = "www.eyou.com";
-                break;
-            case "188.com":
-                $url = "www.188.com";
-                break;
-            case "yeah.net":
-                $url = "www.yeah.net";
-                break;
-            case "foxmail.com":
-                $url = "mail.qq.com/cgi-bin/loginpage?t=fox_loginpage";
-                break;
-            case "wo.com.cn":
-                $url = "mail.wo.com.cn/smsmail/login.html";
-                break;
-            case "263.net":
-                $url = "www.263.net";
-                break;
-            case "x263.net":
-                $url = "www.263.net";
-                break;
-            case "263.net.cn":
-                $url = "www.263.net";
-                break;
-            default:
-                $url = "";
+        case "163.com":
+            $url = "mail.163.com";
+            break;
+        case "vip.163.com":
+            $url = "vip.163.com/?b08abh1";
+            break;
+        case "sina.com":
+            $url = "mail.sina.com.cn";
+            break;
+        case "sina.cn":
+            $url = "mail.sina.com.cn/cnmail/index.html";
+            break;
+        case "vip.sina.com":
+            $url = "vip.sina.com.cn";
+            break;
+        case "2008.sina.com":
+            $url = "mail.2008.sina.com.cn";
+            break;
+        case "sohu.com":
+            $url = "mail.sohu.com";
+            break;
+        case "vip.sohu.com":
+            $url = "vip.sohu.com";
+            break;
+        case "tom.com":
+            $url = "mail.tom.com";
+            break;
+        case "vip.sina.com":
+            $url = "vip.tom.com";
+            break;
+        case "sogou.com":
+            $url = "mail.sogou.com";
+            break;
+        case "126.com":
+            $url = "www.126.com";
+            break;
+        case "vip.126.com":
+            $url = "vip.126.com/?b09abh1";
+            break;
+        case "139.com":
+            $url = "mail.10086.cn";
+            break;
+        case "gmail.com":
+            $url = "www.google.com/accounts/ServiceLogin?service=mail";
+            break;
+        case "hotmail.com":
+            $url = "www.hotmail.com";
+            break;
+        case "189.cn":
+            $url = "webmail2.189.cn/webmail/";
+            break;
+        case "qq.com":
+            $url = "mail.qq.com/cgi-bin/loginpage";
+            break;
+        case "yahoo.com":
+            $url = "mail.cn.yahoo.com";
+            break;
+        case "yahoo.cn":
+            $url = "mail.cn.yahoo.com";
+            break;
+        case "yahoo.com.cn":
+            $url = "mail.cn.yahoo.com";
+            break;
+        case "21cn.com":
+            $url = "mail.21cn.com";
+            break;
+        case "eyou.com":
+            $url = "www.eyou.com";
+            break;
+        case "188.com":
+            $url = "www.188.com";
+            break;
+        case "yeah.net":
+            $url = "www.yeah.net";
+            break;
+        case "foxmail.com":
+            $url = "mail.qq.com/cgi-bin/loginpage?t=fox_loginpage";
+            break;
+        case "wo.com.cn":
+            $url = "mail.wo.com.cn/smsmail/login.html";
+            break;
+        case "263.net":
+            $url = "www.263.net";
+            break;
+        case "x263.net":
+            $url = "www.263.net";
+            break;
+        case "263.net.cn":
+            $url = "www.263.net";
+            break;
+        default:
+            $url = "";
         }
         if($url)
         {

@@ -52,12 +52,12 @@ class DatabaseHandler
         {
             $sum=0;
             echo "        <table align='center' id=debugtable width=98% border=0 cellspacing=1 style='background:#828284;word-break: break-all'>
-        <tr style='background:Darkred;height:30;Color:White'>
-                            <th width=30>NO</th>
-                            <th>Query</th>
-                            <th width=100>In File<br>From Line<br>ProcessTime</th>
-                            <th width=200>Explain SQL</th>
-        </tr>";
+                <tr style='background:Darkred;height:30;Color:White'>
+                <th width=30>NO</th>
+                <th>Query</th>
+                <th width=100>In File<br>From Line<br>ProcessTime</th>
+                <th width=200>Explain SQL</th>
+                </tr>";
             foreach($this->SQL_Store as $key=>$val) 
             {
                 $key=$key+1;
@@ -70,17 +70,17 @@ class DatabaseHandler
                 }
                 $val['FILE']=basename($val['FILE']);
                 echo "        <tr style='background:#EEEEEE;Height:25;Text-Align:center'>
-                                <td>[$key]</td>
-                                <td align=left>{$val['SQL']}</td>
-                                <td>{$val['FILE']}<BR />
-                                Line : {$val['LINE']}<BR />
-                                Time : {$val['TIME']}</td>
-                                <td  align=left>{$val['explain']}</td>
-        </tr>";
+                    <td>[$key]</td>
+                    <td align=left>{$val['SQL']}</td>
+                    <td>{$val['FILE']}<BR />
+                    Line : {$val['LINE']}<BR />
+                    Time : {$val['TIME']}</td>
+                    <td  align=left>{$val['explain']}</td>
+                    </tr>";
             }
             echo "        <tr style='background:#EEEEEE;Height:25;Text-Align:center'>
-                                <td colspan='6'><span style='font-size: 12px;'>本页面共有<FONT COLOR='#FF0000'>{$key}</FONT>个查询,查询总时间为:<FONT COLOR='#FF0000'>{$sum}</FONT></span></td>
-        </tr>";
+                <td colspan='6'><span style='font-size: 12px;'>本页面共有<FONT COLOR='#FF0000'>{$key}</FONT>个查询,查询总时间为:<FONT COLOR='#FF0000'>{$sum}</FONT></span></td>
+                </tr>";
             echo "</table>";
             echo "<hr>";
         }

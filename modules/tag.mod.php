@@ -50,7 +50,7 @@ class ModuleObject extends MasterObject
     {
         $this->Code = 'tag';
         $timestamp = time();
-                $limit = $this->ShowConfig['tag_index']['hot'];
+        $limit = $this->ShowConfig['tag_index']['hot'];
         if ($limit>0 && false == ($tag_list = cache("tag/tag_hot",$this->CacheConfig['tag_index']['hot']))) {
             $tag_ids = array();
             $tag_list = array();
@@ -81,10 +81,10 @@ class ModuleObject extends MasterObject
             }
             cache($tag_guanzu);
         }
-                $limit = $this->ShowConfig['tag_index']['day7'];
+        $limit = $this->ShowConfig['tag_index']['day7'];
         if ($limit>0 && false == ($tag_r_day7 = cache("tag/tag_r_day7",$this->CacheConfig['tag_index']['day7']))) {
             $sql = "select `id`,`name`,`topic_count`,`tag_count` from `".TABLE_PREFIX."tag`  WHERE last_post>='".(time() - 86400 * 7)."' GROUP BY `topic_count` DESC LIMIT {$limit}";
-                        $query = $this->DatabaseHandler->Query($sql);
+            $query = $this->DatabaseHandler->Query($sql);
             $tag_r_day7 = array();
             while (false != ($row = $query->GetRow()))
             {
@@ -92,7 +92,7 @@ class ModuleObject extends MasterObject
             }
             cache($tag_r_day7);
         }
-                $limit = $this->ShowConfig['tag_index']['day7_guanzhu'];
+        $limit = $this->ShowConfig['tag_index']['day7_guanzhu'];
         if ($limit>0 && false == ($day7_guanzhu = cache("tag/day7_guanzhu",$this->CacheConfig['tag_index']['day7_guanzhu']))) {
             $sql = "select `id`,`name`,`topic_count`,`tag_count` from `".TABLE_PREFIX."tag`  WHERE `tag_count` > 0 and last_post>='".(time() - 86400 * 7)."' GROUP BY `tag_count` DESC LIMIT {$limit}";
             $query = $this->DatabaseHandler->Query($sql);
@@ -103,16 +103,16 @@ class ModuleObject extends MasterObject
             }
             cache($day7_guanzhu);
         }
-                $limit = $this->ShowConfig['tag_index']['tag_tuijian'];
+        $limit = $this->ShowConfig['tag_index']['tag_tuijian'];
         if ($limit>0 && false == ($tag_tuijian = cache("tag/tag_tuijian",$this->CacheConfig['tag_index']['tag_tuijian']))) {
-                        $sql = "select * from `".TABLE_PREFIX."tag_recommend`  order by `id` desc  Limit {$limit}";
+            $sql = "select * from `".TABLE_PREFIX."tag_recommend`  order by `id` desc  Limit {$limit}";
             $query = $this->DatabaseHandler->Query($sql);
             $tag_name = array();
             while (false != ($row = $query->GetRow()))
             {
                 $tag_name[$row['name']] = $row['name'];
             }
-                        if($tag_name)
+            if($tag_name)
             {
                 $query = DB::query("SELECT `id`,`name` FROM ".DB::table('tag')." where `name` in ('".implode("','", $tag_name)."') order by `id` desc limit 0,{$limit} ");
                 $tag_tuijian = array();
@@ -175,7 +175,7 @@ class ModuleObject extends MasterObject
                 $page_arr = $info['page'];
             }
         } else {
-                        if (empty($this->Get['type'])) {
+            if (empty($this->Get['type'])) {
                 $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
                 $sql = "select `item_id` from `".TABLE_PREFIX."topic_tag` where `tag_id`='{$tag_id}' order by `item_id` desc {$page_arr['limit']}";
                 $query = $this->DatabaseHandler->Query($sql);
@@ -210,8 +210,8 @@ class ModuleObject extends MasterObject
         if($topic_list)
         {
             $topic_list_count = count($topic_list);
-                        $parent_list = $TopicLogic->GetParentTopic($topic_list);
-                    }
+            $parent_list = $TopicLogic->GetParentTopic($topic_list);
+        }
         else
         {
             $total_record = 0;
@@ -266,7 +266,7 @@ class ModuleObject extends MasterObject
         }
         include($this->TemplateHandler->Template('tag_list_topic_box'));
     }
-        function _myFavoriteTags($limit=12)
+    function _myFavoriteTags($limit=12)
     {
         $uid = MEMBER_ID;
         $sql = "select * from `".TABLE_PREFIX."tag_favorite` where `uid`='{$uid}' order by `id` desc limit {$limit} ";

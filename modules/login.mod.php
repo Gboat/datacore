@@ -23,15 +23,15 @@ class ModuleObject extends MasterObject
         ob_start();
         switch($this->Code)
         {
-            case 'dologin':
-                $this->DoLogin();
-                break;
-            case 'logout':
-                $this->LogOut();
-                break;
-            default:
-                $this->login();
-                break;
+        case 'dologin':
+            $this->DoLogin();
+            break;
+        case 'logout':
+            $this->LogOut();
+            break;
+        default:
+            $this->login();
+            break;
         }
         $body=ob_get_clean();
         $this->ShowBody($body);
@@ -73,10 +73,10 @@ class ModuleObject extends MasterObject
         $uid = $rets['uid'];
         if($this->Config['reg_email_verify'] == '1')
         {
-             $member_info = DB::fetch_first("select `uid`,`username` from ".DB::table('members')." where `username`='$username' limit 0,1");
+            $member_info = DB::fetch_first("select `uid`,`username` from ".DB::table('members')." where `username`='$username' limit 0,1");
             if($member_info)
             {
-                 $member_validate = DB::fetch_first("select `uid`,`status` from ".DB::table('member_validate')." where `uid`='{$member_info['uid']}' ");
+                $member_validate = DB::fetch_first("select `uid`,`status` from ".DB::table('member_validate')." where `uid`='{$member_info['uid']}' ");
             }
             if($member_validate)
             {
@@ -93,11 +93,11 @@ class ModuleObject extends MasterObject
         Load::logic('other');
         $otherLogic = new OtherLogic();
         $sql = "SELECT m.id as medal_id,m.medal_img,m.medal_name,m.medal_depict,m.conditions,u.dateline,y.apply_id
-                FROM ".TABLE_PREFIX."medal m
-                LEFT JOIN ".TABLE_PREFIX."user_medal u ON (u.medalid = m.id AND u.uid = '$uid')
-                LEFT JOIN ".TABLE_PREFIX."medal_apply y ON (y.medal_id = m.id AND y.uid = '$uid')
-                WHERE m.is_open = 1
-                ORDER BY u.dateline DESC,m.id";
+            FROM ".TABLE_PREFIX."medal m
+            LEFT JOIN ".TABLE_PREFIX."user_medal u ON (u.medalid = m.id AND u.uid = '$uid')
+            LEFT JOIN ".TABLE_PREFIX."medal_apply y ON (y.medal_id = m.id AND y.uid = '$uid')
+            WHERE m.is_open = 1
+            ORDER BY u.dateline DESC,m.id";
         $query = $this->DatabaseHandler->Query($sql);
         while (false != ($rs = $query->GetRow())){
             $rs['conditions'] = unserialize($rs['conditions']);
@@ -110,12 +110,12 @@ class ModuleObject extends MasterObject
         {
             $redirecto = "index.php?mod=topic&code=myhome" ;
         }
-                if($this->Post['loginType'] == 'share')
+        if($this->Post['loginType'] == 'share')
         {
             $redirecto = $this->Post['return_url'];
             $this->Messager(null,$redirecto,0);
         }
-                if($this->Post['loginType'] == 'show_login')
+        if($this->Post['loginType'] == 'show_login')
         {
             $this->Messager(NULL,$redirecto,0);
         }

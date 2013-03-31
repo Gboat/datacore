@@ -7,14 +7,25 @@ function addquote($var) {
     return str_replace("\\\"", "\"", preg_replace("/\[([a-zA-Z0-9_\-\.\x7f-\xff]+)\]/s", "['\\1']", $var));
 }
 function stripvtags($expr, $statement) {
-        $expr = str_replace("\\\"", "\"", preg_replace("/\<\?php echo (\\\$.+?); \?\>/s", "\\1", $expr));
+    $expr = str_replace("\\\"", "\"", preg_replace("/\<\?php echo (\\\$.+?); \?\>/s", "\\1", $expr));
     $statement = str_replace("\\\"", "\"", $statement);
     return $expr.$statement;
 }
 class TemplateHandler
 {
     var $root_path = './';
-    var $TemplateRootPath="./templates/";    var $TemplatePath="";                    var $TemplateDir="default";                var $CompiledFolder="./data/cache/templates/";    var $CompiledPath="";                    var $TemplateFile="";                    var $CompiledFile="";                    var $TemplateString="";                var $TemplateExtension='.html';     var $CompiledExtension='.php';     var $LinkFileType='css|js|jpeg|jpg|png|bmp|gif|swf';     var $TemplateHeadAdd = '';
+    var $TemplateRootPath="./templates/";
+    var $TemplatePath="";
+    var $TemplateDir="default";
+    var $CompiledFolder="./data/cache/templates/";
+    var $CompiledPath="";
+    var $TemplateFile="";
+    var $CompiledFile="";
+    var $TemplateString="";
+    var $TemplateExtension='.html';
+    var $CompiledExtension='.php';
+    var $LinkFileType='css|js|jpeg|jpg|png|bmp|gif|swf';
+    var $TemplateHeadAdd = '';
     var $TemplateDeveloper = 0;
     var $_init_set = 0;
     var $io = null;
@@ -52,7 +63,7 @@ class TemplateHandler
             {
                 $tpl_path= strpos($this->TemplateDir,'/') ? dirname($this->TemplatePath) . '/' : dirname($this->TemplatePath).'/default/';
                 $this->TemplateFile=$tpl_path.$filename.$this->TemplateExtension;
-                                if(!is_file($this->TemplateFile))
+                if(!is_file($this->TemplateFile))
                 {
                     die("模板文件'".$this->TemplateFile."'不存在，请检查目录");
                 }
@@ -69,7 +80,7 @@ class TemplateHandler
         }
         Return $to;
     }
-        function check_compiled() {
+    function check_compiled() {
         $ret = false;
         clearstatcache();
         if(!is_file($this->CompiledFile)) {
@@ -128,11 +139,11 @@ class TemplateHandler
         $const_regexp = "([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)";
         $nest = 5;
         $template=$this->TemplateString;
-                if(defined('FORMHASH') && FORMHASH)
+        if(defined('FORMHASH') && FORMHASH)
         {
             $template = preg_replace("/(\<form.*? method=[\"\']?post[\"\']?)([^\>]*\>)/i","\\1 \\2\n<input type=\"hidden\" name=\"FORMHASH\" value='{FORMHASH}'/>",$template);
         }
-                $template = preg_replace("/\<\!\-\-\{(.+?)\}\-\-\>/s", "{\\1}", $template);
+        $template = preg_replace("/\<\!\-\-\{(.+?)\}\-\-\>/s", "{\\1}", $template);
         $template = str_replace("{LF}", "<?php echo \"\\n\"; ?>", $template);
         $template = preg_replace("/\{$var_regexp\}/s", "<?php echo \\1; ?>", $template);
         $template = preg_replace("/$var_regexp/es", "addquote('<?php echo \\1; ?>')", $template);
@@ -230,7 +241,7 @@ class TemplateHandler
         }
         return $this->TemplateString;
     }
-        function ModifyLinks()
+    function ModifyLinks()
     {
         preg_match_all("/src=[\"\'\s]?(.*?)[\"\'\s]|url[\(\"\']{1,3}(.*?)[\s\"\'\)]|background=[\"\']?(.*?)[\"\'\s]|href=[\"\'\s]?(.*?)[\"\'](.*?)\>/si", $this->TemplateString, $match);
         $old = @array_values(array_merge(@array_unique($match[1]), $match[2], @array_unique($match[3]), $match[4]));
@@ -262,7 +273,7 @@ class TemplateHandler
                     $private_file .= "?v=" . urlencode(SYS_BUILD);
                 }
                 $this->TemplateString = str_replace($link, $private_file, $this->TemplateString);
-                                $this->TemplateString = str_replace(array($to_dir_default . $to_dir_default, $to_dir . $to_dir), array($to_dir_default, $to_dir), $this->TemplateString);
+                $this->TemplateString = str_replace(array($to_dir_default . $to_dir_default, $to_dir . $to_dir), array($to_dir_default, $to_dir), $this->TemplateString);
             }
         }
         return $this->TemplateString;
@@ -278,7 +289,7 @@ class TemplateHandler
         {
             $content = str_replace($this->TemplateHeadAdd,'',$content);
             return $content;
-                    }
+        }
         else
         {
             return '<!-- '.$file.' -->';
@@ -292,7 +303,7 @@ class TemplateHandler
         {
             $content = str_replace($this->TemplateHeadAdd,'',$content);
             return $content;
-                    }
+        }
         else
         {
             return '<!-- '.$file.' -->';

@@ -19,32 +19,32 @@ class ModuleObject extends MasterObject
         ob_start();
         switch ($this->Code)
         {
-            case 'login':
-                $this->Login();
-                break;
-            case 'auth_callback':
-                $this->AuthCallback();
-                break;
-            case 'login_check':
-                $this->LoginCheck();
-                break;
-            case 'do_login':
-                $this->DoLogin();
-                break;
-            case 'reg_check':
-                $this->RegCheck();
-                break;
-            case 'do_reg':
-                $this->DoReg();
-                break;
-            case 'unbind':
-                $this->UnBind();
-                break;
-            case 'do_modify_bind_info':
-                $this->DoModifyBindInfo();
-                break;
-            default:
-                $this->Main();
+        case 'login':
+            $this->Login();
+            break;
+        case 'auth_callback':
+            $this->AuthCallback();
+            break;
+        case 'login_check':
+            $this->LoginCheck();
+            break;
+        case 'do_login':
+            $this->DoLogin();
+            break;
+        case 'reg_check':
+            $this->RegCheck();
+            break;
+        case 'do_reg':
+            $this->DoReg();
+            break;
+        case 'unbind':
+            $this->UnBind();
+            break;
+        case 'do_modify_bind_info':
+            $this->DoModifyBindInfo();
+            break;
+        default:
+            $this->Main();
         }
         $body=ob_get_clean();
         $this->ShowBody($body);
@@ -72,7 +72,7 @@ class ModuleObject extends MasterObject
         {
             $this->Messager(null,'?');
         }
-                $QQAuth = new QQOAuth($this->QQWBConfig['app_key'],$this->QQWBConfig['app_secret'],$last_keys['oauth_token'],$last_keys['oauth_token_secret']);
+        $QQAuth = new QQOAuth($this->QQWBConfig['app_key'],$this->QQWBConfig['app_secret'],$last_keys['oauth_token'],$last_keys['oauth_token_secret']);
         $QQInfo = $QQAuth->OAuthRequest('http:/'.'/open.t.qq.com/api/user/info?format=json', 'GET',array());
         unset($_SESSION['qqwb_oauth_token_secret']);
         jsg_setcookie('qqwb_oauth_token_secret','');
@@ -101,7 +101,7 @@ class ModuleObject extends MasterObject
             {
                 $this->DatabaseHandler->Query("update ".TABLE_PREFIX."qqwb_bind_info set `token`='{$last_keys['oauth_token']}',`tsecret`='{$last_keys['oauth_token_secret']}' where `qqwb_username`='{$QQInfo->name}'");
             }
-                        if(false != ($user_info = $this->_user_login($qqwb_bind_info['uid'])))
+            if(false != ($user_info = $this->_user_login($qqwb_bind_info['uid'])))
             {
                 if(true === UCENTER && ($ucuid = (int) $user_info['ucuid']) > 0)
                 {
@@ -127,12 +127,12 @@ class ModuleObject extends MasterObject
             else
             {
                 $this->third_party_regstatus();
-                                $qqwb_username = $QQInfo->name;
+                $qqwb_username = $QQInfo->name;
                 $token = $last_keys['oauth_token'];
                 $tsecret = $last_keys['oauth_token_secret'];
-                                $hash = authcode(md5($qqwb_username . $token . $tsecret), 'ENCODE');
+                $hash = authcode(md5($qqwb_username . $token . $tsecret), 'ENCODE');
                 $reg = array();
-                                $reg['nickname'] = array_iconv('utf-8',$this->Config['charset'],$QQInfo->nick);
+                $reg['nickname'] = array_iconv('utf-8',$this->Config['charset'],$QQInfo->nick);
                 if($this->QQWBConfig['is_sync_face'] && $QQInfo->head) {
                     $reg['face'] = $QQInfo->head . '/180';
                 }
@@ -347,7 +347,7 @@ class ModuleObject extends MasterObject
                 if(!is_image($image_file_small)) {
                     return 0;
                 }
-                                 $face_url = '';
+                $face_url = '';
                 if($this->Config['ftp_on']) {
                     $face_url = ConfigHandler::get('ftp','attachurl');
                     $ftp_result = ftpcmd('upload',$image_file_big);
@@ -384,15 +384,15 @@ class ModuleObject extends MasterObject
         if($uid < 1 || !$qqwb_username || !$token || !$tsecret) return 0;
         $ret = $this->DatabaseHandler->Query("REPLACE INTO ".TABLE_PREFIX."qqwb_bind_info
             (`uid`,
-             `qqwb_username`,
-             `token`,
-             `tsecret`,
-             `dateline`)
-VALUES ('{$uid}',
-        '{$qqwb_username}',
-        '{$token}',
-        '{$tsecret}',
-        '".TIMESTAMP."')");
+            `qqwb_username`,
+            `token`,
+            `tsecret`,
+            `dateline`)
+            VALUES ('{$uid}',
+                '{$qqwb_username}',
+                '{$token}',
+                '{$tsecret}',
+                '".TIMESTAMP."')");
         Load::model('misc')->update_account_bind_info($uid, '', '', 1);
         return $ret;
     }

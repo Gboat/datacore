@@ -18,7 +18,7 @@ function jsg_member_register_check_status() {
             $rets["{$v}_enable"] = 1;
         }
     }
-        if(!$rets && true!==DATACORE_FORCED_REGISTER) {    
+    if(!$rets && true!==DATACORE_FORCED_REGISTER) {    
         $msg = '本站暂时关闭了普通注册功能 ';
         $msg .= jsg_member_third_party_reg_msg();        
         $rets['error'] = ($GLOBALS['_J']['config']['regclosemessage'] ? $GLOBALS['_J']['config']['regclosemessage'] : $msg);
@@ -98,14 +98,14 @@ function jsg_member_nickname($nickname, $cache=1) {
         return '';
     }
     $member_info = array();
-        if(is_numeric($nickname)) {
+    if(is_numeric($nickname)) {
         if($GLOBALS['_J']['config']['sms_enable'] && jsg_is_mobile($nickname)) {
             $member_info = jsg_member_info($nickname, 'phone', '*', $cache);
         } else {
             $member_info = jsg_member_info($nickname, 'uid', '*', $cache);
         }
     } else {
-                if(false !== strpos($nickname, '@')) {
+        if(false !== strpos($nickname, '@')) {
             $member_info = jsg_member_info($nickname, 'email', '*', $cache);
         }
     }
@@ -193,19 +193,20 @@ function jsg_member_get($p, $mark=1, $cache=1) {
 }
 function jsg_member_make($row) {    
     if (isset($row['uid'])) {
-                $row['__face__'] = $row['face'];
-                if (true !== UCENTER_FACE && !$row['face']) {
-            $row['face'] = $row['face_small'] = $row['face_original'] = face_get();        } else {
+        $row['__face__'] = $row['face'];
+        if (true !== UCENTER_FACE && !$row['face']) {
+            $row['face'] = $row['face_small'] = $row['face_original'] = face_get();
+        } else {
             $row['face_small'] = $row['face'] = face_get($row);
             $row['face_original'] = face_get($row, 'middle');
         }        
-                $validate_id = ($row['validate_category'] ? $row['validate_category'] : $row['validate']);
+        $validate_id = ($row['validate_category'] ? $row['validate_category'] : $row['validate']);
         if($validate_id) {
-                        $validate_category = ConfigHandler::get('validate_category');
+            $validate_category = ConfigHandler::get('validate_category');
             if(!$validate_category){
                 $query = DB::query("SELECT *
-                                    FROM ".DB::table('validate_category')." 
-                                    ORDER BY id ASC");
+                    FROM ".DB::table('validate_category')." 
+                    ORDER BY id ASC");
                 while ($value = DB::fetch($query)) {
                     $validate_category[$value['id']] = $value;
                 }
@@ -228,10 +229,10 @@ function jsg_member_make($row) {
             $row['validate_html'] = "<a href='index.php?mod=other&code=vip_intro' target='_blank'><img class='vipImg' title='{$row['vip_info']}' src='{$GLOBALS['_J']['config']['site_url']}/{$vip_pic}' /></a>";
         }
     }
-        if (isset($row['province']) || isset($row['city'])) {
+    if (isset($row['province']) || isset($row['city'])) {
         $row['from_area'] = "{$row['province']} {$row['city']}";
     }        
-        if(isset($row['gender'])) {
+    if(isset($row['gender'])) {
         if($row['gender'] == 1) {
             $row['gender_ta'] = '他';
         } else {
@@ -300,7 +301,7 @@ function jsg_role_check_allow($action, $to_uid, $from_uid = MEMBER_ID) {
     if($to_uid < 1 || $from_uid < 1 || $to_uid == $from_uid) {
         return $rets;
     }
-        if(MEMBER_ID == $from_uid && true === DATACORE_FOUNDER) {
+    if(MEMBER_ID == $from_uid && true === DATACORE_FOUNDER) {
         return $rets;
     }
     $actions = array('sendpm'=>'私信', 'topic_forward'=>'转发', 'topic_reply'=>'评论', 'topic_at'=>'@', 'follow'=>'关注', );
@@ -348,7 +349,7 @@ function jsg_get_vip_uids($limit=300, $day=30) {
         $day = 30;
     }
     $vip_uids = array();
-        $cache_id = "topic/hot-vip-uids-{$day}-{$limit}";
+    $cache_id = "topic/hot-vip-uids-{$day}-{$limit}";
     if(false === ($vip_uids = Load::model('cache/file')->get($cache_id))) {
         $query = DB::query("select `uid` from ".DB::table('members')." where `lastactivity`>'".(time() - 86400 * $day)."' and `validate`='1' order by `lastactivity` desc limit {$limit} ");
         while (false != ($row = DB::fetch($query))) {

@@ -1,5 +1,4 @@
 <?php 
-  
  $config=array (
   'ajax_topic_time' => '45',
   'api_enable' => 1,

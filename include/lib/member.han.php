@@ -3,12 +3,14 @@ if(!defined('IN_DATACORE')) {
     exit('invalid request');
 }
 class MemberHandler {
-    var $ID = 0;    var $sid = '';
+    var $ID = 0;
+    var $sid = '';
     var $SessionExists = false;
     var $MemberPassword = '';
     var $MemberFields = array();
     var $ActionList = array();
-    var $CurrentAction = array();    var $_Error = array();
+    var $CurrentAction = array();
+    var $_Error = array();
     function MemberHandler() {
         $this->setSessionId();
     }
@@ -31,7 +33,7 @@ class MemberHandler {
             define("MEMBER_NICKNAME",$this->MemberFields['nickname']);
             define("MEMBER_ROLE_TYPE",$this->MemberFields['role_type']);
             define("MEMBER_STYLE_THREE_TOL", (int) (1 == $this->MemberFields['style_three_tol'] ? 1 :
-            (-1 == $this->MemberFields['style_three_tol'] ? 0 : $GLOBALS['_J']['config']['style_three_tol'])));
+                (-1 == $this->MemberFields['style_three_tol'] ? 0 : $GLOBALS['_J']['config']['style_three_tol'])));
             define('DATACORE_FOUNDER', jsg_member_is_founder(MEMBER_ID));
         }
         return $this->MemberFields;
@@ -40,7 +42,7 @@ class MemberHandler {
         if (jsg_getcookie('sid')=='' || $this->sid!=jsg_getcookie('sid')) {
             $this->setSessionId($this->sid);
         }
-                $timestamp = TIMESTAMP;
+        $timestamp = TIMESTAMP;
         $member = $this->MemberFields;
         $member['slastactivity'] = $timestamp;
         $member['action'] = (int) $this->CurrentAction['id'];
@@ -51,24 +53,25 @@ class MemberHandler {
         } else {
             global $_J;
             $uid = MEMBER_ID;
-            $onlinehold        = 1800;            $ip = $_J['client_ip'];
+            $onlinehold = 1800;
+            $ip = $_J['client_ip'];
             $ips = explode('.',$ip);
             $sql="DELETE FROM ".TABLE_PREFIX.'sessions'."
-            WHERE
+                WHERE
                 sid='{$this->sid}'
                 OR slastactivity<($timestamp-$onlinehold)
                 OR     ('".$uid."'<>'0' AND uid='".$uid."')
                 OR     (uid='0' AND ip1='$ips[0]' AND ip2='$ips[1]' AND ip3='$ips[2]' AND ip4='$ips[3]' AND slastactivity>$timestamp-60)";
             DB::query($sql);
             DB::query("REPLACE INTO ".DB::table('sessions')." SET `sid`='{$this->sid}', `ip1`='{$ips[0]}', `ip2`='{$ips[1]}', `ip3`='{$ips[2]}', `ip4`='{$ips[3]}', `uid`='{$member['uid']}', `action`='{$member['action']}', `slastactivity`='{$member['slastactivity']}'");
-                        if($uid && ($ip != $this->MemberFields['lastip'] || ($timestamp - $this->MemberFields['lastactivity'] > $onlinehold))) {
+            if($uid && ($ip != $this->MemberFields['lastip'] || ($timestamp - $this->MemberFields['lastactivity'] > $onlinehold))) {
                 $sql="
-                UPDATE
+                    UPDATE
                     ".TABLE_PREFIX.'members'."
-                SET
+                    SET
                     lastip='$ip',
                     lastactivity='$timestamp'
-                WHERE
+                    WHERE
                     uid='".$uid."'";
                 DB::query($sql);
             }
@@ -104,13 +107,13 @@ class MemberHandler {
             $cache_id = "role_action/{$mod}-{$is_admin}";
             if(false === ($cache_data = Load::model('cache/file')->get($cache_id))) {
                 $sql="
-                SELECT
+                    SELECT
                     *
-                FROM
+                    FROM
                     ".TABLE_PREFIX.'role_action'."
-                WHERE
+                    WHERE
                     `module`='$mod' AND `is_admin`='$is_admin'
-                ORDER BY
+                    ORDER BY
                     `module`, `action`";
                 $query = DB::query($sql);
                 $action_list=array();
@@ -155,10 +158,10 @@ class MemberHandler {
                 $this->_SetError("系统已经禁止<B>{$current_action['name']}</B>的任何操作");
                 return false;
             }
-                        if($MemberFields['role_privilege']=="*") {
+            if($MemberFields['role_privilege']=="*") {
                 return true;
             }
-                        if(false===jsg_find($role_privilege, $current_action_id, ',')) {
+            if(false===jsg_find($role_privilege, $current_action_id, ',')) {
                 if($ActionList[$current_action_id]['message']) {
                     $message = $ActionList[$current_action_id]['message'];
                 } else {
@@ -169,17 +172,20 @@ class MemberHandler {
             }
         } else {                         
             if(!$GLOBALS['_J']['config']['safe_mode']) {
-                return true;             }
+                return true;
+            }
             if(!$is_admin) {
-                return true;             }
+                return true;
+            }
             if('POST' != $_SERVER['REQUEST_METHOD']) {
                 return true;             }
-            if(!$GLOBALS['_J']['config']['datacore_founder']) {
-                return true;             }
-            $error = "操作模块:{$mod}<br>操作指令:{$action}<br><br>";
-            $error.= "由于此操作在系统中没有权限控制,您暂时无法执行该操作,请联系网站的超级管理员。";
-            $this->_SetError($error);
-            return false;
+                    if(!$GLOBALS['_J']['config']['datacore_founder']) {
+                        return true;
+                    }
+                $error = "操作模块:{$mod}<br>操作指令:{$action}<br><br>";
+                $error.= "由于此操作在系统中没有权限控制,您暂时无法执行该操作,请联系网站的超级管理员。";
+                $this->_SetError($error);
+                return false;
         }
         return true;
     }
@@ -211,13 +217,13 @@ class MemberHandler {
         if($this->sid) {
             if($this->ID) {
                 $sql = "SELECT * FROM ".DB::table("members")." `M` LEFT JOIN ".DB::table("memberfields")." `MF` ON MF.uid=M.uid
-                        LEFT JOIN ".DB::table("sessions")." `S` ON S.uid=M.uid 
+                    LEFT JOIN ".DB::table("sessions")." `S` ON S.uid=M.uid 
                     WHERE M.uid='{$this->ID}' AND M.password='{$this->MemberPassword}' AND S.sid='{$this->sid}' AND 
-                        CONCAT_WS('.', S.ip1, S.ip2, S.ip3, S.ip4)='{$_J['client_ip']}'";
+                    CONCAT_WS('.', S.ip1, S.ip2, S.ip3, S.ip4)='{$_J['client_ip']}'";
             } else {
                 $sql = "SELECT * FROM ".DB::table("sessions")." WHERE sid='{$this->sid}' AND CONCAT_WS('.', ip1, ip2, ip3, ip4)='{$_J['client_ip']}'";
             }
-                        if($sql) {
+            if($sql) {
                 $this->MemberFields = DB::fetch_first($sql);
             }
             if($this->MemberFields && !$this->ID && $this->MemberFields['uid'] > 0) {
@@ -255,9 +261,9 @@ class MemberHandler {
                     `creditshigher` role_creditshigher,
                     `creditslower` role_creditslower,
                     `privilege` role_privilege
-                FROM
+                    FROM
                     ".TABLE_PREFIX.'role'."
-                WHERE `id`='{$this->MemberFields['role_id']}'";
+                    WHERE `id`='{$this->MemberFields['role_id']}'";
                 $role = DB::fetch_first($sql);
                 Load::model('cache/file')->set($cache_id, $role);
             }
@@ -284,9 +290,9 @@ class MemberHandler {
                 `creditshigher` role_creditshigher,
                 `creditslower` role_creditslower,
                 `privilege` role_privilege
-            FROM
+                FROM
                 ".TABLE_PREFIX.'role'."
-            WHERE `id` = '1'";
+                WHERE `id` = '1'";
             $fields = DB::fetch_first($sql);
             $fields['role_id'] = 1;
             $fields['uid'] = 0;

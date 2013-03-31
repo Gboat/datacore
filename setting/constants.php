@@ -1,5 +1,5 @@
 <?php
-define('DEBUG',false);
+define('DEBUG',true);
 if(true === DEBUG) {
     error_reporting(E_ALL ^ E_NOTICE);
 } else {

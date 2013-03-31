@@ -152,10 +152,12 @@ class TopicLogic
         if (($type == 'forward' || $type == 'both')  && $item == 'qun') {
             $data['type'] = $item;
         } else {
-            $data['type'] = $type;         }
+            $data['type'] = $type;
+        }
         $data['uid'] = $uid = max(0, (int)($uid ? $uid : MEMBER_ID));
         $data['videoid'] = $videoid = max(0, (int)$videoid);
-        $data['longtextid'] = $longtextid = max(0 , (int) $longtextid);        $timestamp = $timestamp>0 ? $timestamp : $dateline;
+        $data['longtextid'] = $longtextid = max(0 , (int) $longtextid);
+        $timestamp = $timestamp>0 ? $timestamp : $dateline;
         $data['dateline'] = $data['lastupdate'] = $timestamp = ($timestamp > 0 ? $timestamp : time());
         $data['totid'] = $totid;
         $data['touid'] = $touid;
@@ -221,8 +223,8 @@ class TopicLogic
         $data['musicid'] = $musicid;
         if($xiami_id > 0){
             $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX .
-                                          "topic_music`(`uid`,`username`,`dateline`,`xiami_id`) values ('" .
-            $data['uid'] . "','" . $data['username'] . "',"."'{$timestamp}','{$xiami_id}')");
+                "topic_music`(`uid`,`username`,`dateline`,`xiami_id`) values ('" .
+                $data['uid'] . "','" . $data['username'] . "',"."'{$timestamp}','{$xiami_id}')");
             $musicid = $data['musicid'] = $this->DatabaseHandler->Insert_ID();
         }
         $topic_more = array();
@@ -297,7 +299,7 @@ class TopicLogic
         $data['postip'] = $postip ? $postip : client_ip();
         if($is_verify){
             $sql = "insert into `" . TABLE_PREFIX . "topic_verify` (`" . implode("`,`", array_keys
-            ($data)) . "`) values ('" . implode("','", $data) . "')";
+                ($data)) . "`) values ('" . implode("','", $data) . "')";
             $this->DatabaseHandler->Query($sql);
             $tid = $this->DatabaseHandler->Insert_ID();
             $topic_id = $data['tid'] = $tid;
@@ -331,7 +333,7 @@ class TopicLogic
             }
         }else{
             $sql = "insert into `" . TABLE_PREFIX . "topic` (`" . implode("`,`", array_keys
-            ($data)) . "`) values ('" . implode("','", $data) . "')";
+                ($data)) . "`) values ('" . implode("','", $data) . "')";
             $this->DatabaseHandler->Query($sql);
             $tid = $this->DatabaseHandler->Insert_ID();
             if ($tid < 1)
@@ -340,7 +342,8 @@ class TopicLogic
             }
             $topic_id = $data['tid'] = $tid;
             if($is_new){
-                if (!empty($item) && $item_id > 0 && !($design == 'design' || $design == 'btn_wyfx')) {                    Load::functions('app');
+                if (!empty($item) && $item_id > 0 && !($design == 'design' || $design == 'btn_wyfx')) { 
+                    Load::functions('app');
                     $param = array(
                         'item' => $item,
                         'item_id' => $item_id,
@@ -356,7 +359,7 @@ class TopicLogic
                 }
                 $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX . "topic_more`(`tid`,`parents`) values('{$tid}','{$parents}')");
             }
-                $this->DatabaseHandler->Query("update `" . TABLE_PREFIX . "members` set ".(($data['type'] != 'reply') ? "`topic_count` = `topic_count` + 1 ," : "")." `lastactivity`='{$data['lastupdate']}',`lastpost`='{$data['lastupdate']}',`last_topic_content_id`='{$topic_content_id}' where `uid`='{$data['uid']}'");
+            $this->DatabaseHandler->Query("update `" . TABLE_PREFIX . "members` set ".(($data['type'] != 'reply') ? "`topic_count` = `topic_count` + 1 ," : "")." `lastactivity`='{$data['lastupdate']}',`lastpost`='{$data['lastupdate']}',`last_topic_content_id`='{$topic_content_id}' where `uid`='{$data['uid']}'");
             if('reply' != $data['type']) {
                 $p = array(
                     'buddyid' => $data['uid'],
@@ -486,8 +489,8 @@ class TopicLogic
                     }
                     if (!empty($uids)) {
                         DB::query("UPDATE ".DB::table('members')."
-                                   SET qun_new=qun_new+1
-                                   WHERE uid IN(".jimplode($uids).")");
+                            SET qun_new=qun_new+1
+                            WHERE uid IN(".jimplode($uids).")");
                     }
                 }
             }
@@ -509,7 +512,7 @@ class TopicLogic
                                 if ($_t)
                                 {
                                     $update_credits = (update_credits_by_action(('_T' . crc32($_t)), $data['uid']) ||
-                                    $update_credits);
+                                        $update_credits);
                                 }
                             }
                         }
@@ -548,7 +551,7 @@ class TopicLogic
                 if ($to_admin_robot)
                 {
                     imjiqiren_send_message($to_admin_robot, 'to_admin_robot', array('site_url' => $this->
-                    Config['site_url'], 'username' => $data['username'], 'content' => $data['content'],
+                        Config['site_url'], 'username' => $data['username'], 'content' => $data['content'],
                         'topic_id' => $topic_id));
                 }
             }
@@ -558,7 +561,7 @@ class TopicLogic
                 if ($to_admin_mobile)
                 {
                     sms_send_message($to_admin_mobile, 'to_admin_mobile', array('site_url' => $this->
-                    Config['site_url'], 'username' => $data['username'], 'content' => $data['content'],
+                        Config['site_url'], 'username' => $data['username'], 'content' => $data['content'],
                         'topic_id' => $topic_id));
                 }
             }
@@ -719,7 +722,7 @@ class TopicLogic
             $value['content'] = addslashes($value['content']);
             $value['content2'] = addslashes($value['content2']);
             $sql = "insert into `" . TABLE_PREFIX . "topic_verify` (`" . implode("`,`", array_keys
-            ($value)) . "`) values ('" . implode("','", $value) . "')";
+                ($value)) . "`) values ('" . implode("','", $value) . "')";
             $this->DatabaseHandler->Query($sql);
             if ($value['imageid'])
             {
@@ -857,7 +860,7 @@ class TopicLogic
         while (false != ($row = $query->GetRow())) {
             if ('Make'!=$process || $is_one) {
                 $row = (($cache && isset($this->_cache[$cache_key][$row[$prikey]])) ? $this->_cache[$cache_key][$row[$prikey]] :
-                $this->$process($row));
+                    $this->$process($row));
             }
             if ($cache && isset($row[$prikey]) && !isset($this->_cache[$cache_key][$row[$prikey]])) {
                 $this->_cache[$cache_key][$row[$prikey]] = $row;
@@ -907,22 +910,22 @@ class TopicLogic
         $member_list = array();
         if($uids) {
             $sql = "SELECT
-                  M.`uid`,
-                  M.`ucuid`,
-                  M.`username`,
-                  M.`nickname`,
-                  M.`signature`,
-                  M.`face_url`,
-                  M.`face`,
-                  M.`validate`,
-                  M.`validate_category`,
-                  M.`level`,
-                  MF.validate_true_name,
-                  MF.validate_remark
-                  FROM ".DB::table('members')." M
-                  LEFT JOIN ".DB::table('memberfields')." MF
-                        ON MF.uid = M.uid
-                        WHERE M.uid IN('".implode("','", $uids)."')";
+                M.`uid`,
+                M.`ucuid`,
+                M.`username`,
+                M.`nickname`,
+                M.`signature`,
+                M.`face_url`,
+                M.`face`,
+                M.`validate`,
+                M.`validate_category`,
+                M.`level`,
+                MF.validate_true_name,
+                MF.validate_remark
+                FROM ".DB::table('members')." M
+                LEFT JOIN ".DB::table('memberfields')." MF
+                ON MF.uid = M.uid
+                WHERE M.uid IN('".implode("','", $uids)."')";
             $query = DB::query($sql);
             while (false != ($row=DB::fetch($query))) {
                 $member_list[$row['uid']] = $this->MakeMember($row);
@@ -931,14 +934,14 @@ class TopicLogic
         $video_list = array();
         if($videoids) {
             $sql = "SELECT
-                  `id`,
-                  `video_hosts`,
-                  `video_link`,
-                  `video_img`,
-                  `video_img_url`,
-                  `video_url`
-            FROM ".DB::table('topic_video')."
-            WHERE `id` IN('".implode("','", $videoids)."')";
+                `id`,
+                `video_hosts`,
+                `video_link`,
+                `video_img`,
+                `video_img_url`,
+                `video_url`
+                FROM ".DB::table('topic_video')."
+                WHERE `id` IN('".implode("','", $videoids)."')";
             $query = DB::query($sql);
             while (false != ($row=DB::fetch($query))) {
                 $video_list[$row['id']] = $row;
@@ -947,11 +950,11 @@ class TopicLogic
         $music_list = array();
         if($musicids) {
             $sql = "SELECT
-                  `id`,
-                  `music_url`,
-                  `xiami_id`
-            FROM ".DB::table('topic_music')."
-            WHERE `id`IN('".implode("','", $musicids)."')";
+                `id`,
+                `music_url`,
+                `xiami_id`
+                FROM ".DB::table('topic_music')."
+                WHERE `id`IN('".implode("','", $musicids)."')";
             $query = DB::query($sql);
             while (false != ($row=DB::fetch($query))) {
                 $music_list[$row['id']] = $row;
@@ -1023,7 +1026,7 @@ class TopicLogic
         if (false !== strpos($topic['content'], $this->Config['site_url']))
         {
             if (preg_match_all('~(?:https?\:\/\/|www\.)(?:[A-Za-z0-9\_\-]+\.)+[A-Za-z0-9]{1,4}(?:\:\d{1,6})?(?:\/[\w\d\/=\?%\-\&_\~\`\:\+\#\.]*(?:[^\;\@\[\]\<\>\'\"\n\r\t\s\x7f-\xff])*)?~i',
-            $topic['content'] . " ", $match))
+                $topic['content'] . " ", $match))
             {
                 $cont_rpl = $cont_sch = array();
                 foreach ($match[0] as $v)
@@ -1034,7 +1037,7 @@ class TopicLogic
                         continue;
                     }
                     if (strtolower($this->Config['site_url']) == strtolower(substr($v, 0, strlen($this->
-                    Config['site_url']))))
+                        Config['site_url']))))
                     {
                         $app_type = '';
                         $tmp_vid = 0;
@@ -1103,7 +1106,7 @@ class TopicLogic
             $sys_site_url = $this->Config['site_url'];
             if ($rewriteHandler) {
                 $sys_site_url = ((false !== ($_tmp_pos = strpos($sys_site_url, '/', 10))) ?
-                substr($sys_site_url, 0, $_tmp_pos) : $sys_site_url);
+                    substr($sys_site_url, 0, $_tmp_pos) : $sys_site_url);
             }
             $topic['content'] = preg_replace('~<U ([0-9a-zA-Z]+)>(.+?)</U>~e', '\'<a title="\'.htmlspecialchars(strip_tags(\'\\2\')).\'" href="' . 
                 ($sys_site_url . '/' . str_replace('|REPLACE_VALUE|', '\\1', $topic_content_url_href_pattern_static)) . '" target="_blank">' . 
@@ -1138,7 +1141,7 @@ class TopicLogic
             $touser = $this->GetMember($topic['touid'], $make_member_fields);
             if ($topic['tousername'] != $touser['nickname']) {
                 $updatatousername = "update `" . TABLE_PREFIX . "topic` set `tousername`='{$touser['nickname']}' where `tid`=" .
-                $topic['tid'];
+                    $topic['tid'];
                 $this->DatabaseHandler->Query($updatatousername);
             }
         }
@@ -1154,7 +1157,7 @@ class TopicLogic
         if ($topic['videoid'] > 0 && $this->Config['video_status'] && !$merge_sql)
         {
             $sql = "select `id`,`video_hosts`,`video_link`,`video_img`,`video_img_url`,`video_url` from `" .
-            TABLE_PREFIX . "topic_video` where `id`='" . $topic['videoid'] . "' ";
+                TABLE_PREFIX . "topic_video` where `id`='" . $topic['videoid'] . "' ";
             $query = $this->DatabaseHandler->Query($sql);
             $topic_video = $query->GetRow();
             $topic['VideoID'] = $topic_video['id'];
@@ -1240,8 +1243,8 @@ class TopicLogic
                     }
                 }
                 $topic['content'] = preg_replace('~<M ([^>]+?)>\@(.+?)</M>~', '<a href="' .
-                str_replace('|REPLACE_VALUE|', '\\1', $topic_content_member_href_pattern_static) .
-                '" target="_blank">@\\2</a>', $topic['content']);
+                    str_replace('|REPLACE_VALUE|', '\\1', $topic_content_member_href_pattern_static) .
+                    '" target="_blank">@\\2</a>', $topic['content']);
             } else {
                 if(!$topic_content_member_href_pattern_static)
                 {
@@ -1252,8 +1255,8 @@ class TopicLogic
                     }
                 }
                 $topic['content'] = preg_replace('~<M ([^>]+?)>\@(.+?)</M>~', '<a href="' .
-                str_replace('|REPLACE_VALUE|', '\\1', $topic_content_member_href_pattern_static) .
-                '" target="_blank"'.(true!==IN_DATACORE_WAP ? '  onmouseover="get_at_user_choose(\'\\2\',\'_user\','.$topic['tid'].',event);"  onmouseout="clear_user_choose();"' : '').'>@\\2</a>', $topic['content']);
+                    str_replace('|REPLACE_VALUE|', '\\1', $topic_content_member_href_pattern_static) .
+                    '" target="_blank"'.(true!==IN_DATACORE_WAP ? '  onmouseover="get_at_user_choose(\'\\2\',\'_user\','.$topic['tid'].',event);"  onmouseout="clear_user_choose();"' : '').'>@\\2</a>', $topic['content']);
             }
         }
     }
@@ -1273,11 +1276,11 @@ class TopicLogic
         $tid = (is_numeric($tid) ? $tid : 0);
         if($tid > 0) {
             $sql = "SELECT
-            t.`tid`
-            FROM `".TABLE_PREFIX."topic_reply` tr
-            LEFT JOIN `".TABLE_PREFIX."topic` t
-            ON t.tid = tr.`replyid`
-            WHERE tr.`tid` = '{$tid}'";
+                t.`tid`
+                FROM `".TABLE_PREFIX."topic_reply` tr
+                LEFT JOIN `".TABLE_PREFIX."topic` t
+                ON t.tid = tr.`replyid`
+                WHERE tr.`tid` = '{$tid}'";
             $query = $this->DatabaseHandler->Query($sql);
             while (false != ($row = $query->GetRow())) {
                 if($row['tid'] > 0) {
@@ -1328,11 +1331,11 @@ class TopicLogic
     function _syn_to_sina($data = array())
     {
         if ($this->Config['sina_enable'] && $data && $data['uid'] > 0 && $data['tid'] > 0 && 'sina'!=$data['from'] &&
-        sina_weibo_init($this->Config) && sina_weibo_bind($data['uid']) && !$GLOBALS['imjiqiren_sys_config']['imjiqiren']['sina_update_disable'])
+            sina_weibo_init($this->Config) && sina_weibo_bind($data['uid']) && !$GLOBALS['imjiqiren_sys_config']['imjiqiren']['sina_update_disable'])
         {
             $sina_config = ConfigHandler::get('sina');
             if (($data['totid'] > 0 && $sina_config['is_syncreply_toweibo'] && sina_weibo_bind_setting($data['uid'])) || ($data['totid'] <
-            1 && $sina_config['is_synctopic_toweibo'] && $_POST['syn_to_sina']))
+                1 && $sina_config['is_synctopic_toweibo'] && $_POST['syn_to_sina']))
             {
                 if( TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX || TRUE===IN_DATACORE_ADMIN )
                 {
@@ -1355,11 +1358,11 @@ class TopicLogic
     function _syn_to_qqwb($data = array())
     {
         if ($this->Config['qqwb_enable'] && $data['uid'] > 0 && $data['tid'] > 0 && 'qqwb'!=$data['from'] &&
-        qqwb_init($this->Config) && qqwb_bind($data['uid']) && !$GLOBALS['imjiqiren_sys_config']['imjiqiren']['qqwb_update_disable'])
+            qqwb_init($this->Config) && qqwb_bind($data['uid']) && !$GLOBALS['imjiqiren_sys_config']['imjiqiren']['qqwb_update_disable'])
         {
             $qqwb_config = ConfigHandler::get('qqwb');
             if (($data['totid'] > 0 && $qqwb_config['is_syncreply_toweibo'] && qqwb_synctoqq($data['uid'])) || ($data['totid'] <
-            1 && $qqwb_config['is_synctopic_toweibo'] && $_POST['syn_to_qqwb']))
+                1 && $qqwb_config['is_synctopic_toweibo'] && $_POST['syn_to_qqwb']))
             {
                 if( TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX || TRUE===IN_DATACORE_ADMIN )
                 {
@@ -1376,11 +1379,11 @@ class TopicLogic
     function _syn_to_kaixin($data = array())
     {
         if ($this->Config['kaixin_enable'] && $data['uid'] > 0 && $data['tid'] > 0 && 'kaixin'!=$data['from'] &&
-        kaixin_init($this->Config) && kaixin_bind($data['uid']) && !$GLOBALS['imjiqiren_sys_config']['imjiqiren']['kaixin_update_disable'])
+            kaixin_init($this->Config) && kaixin_bind($data['uid']) && !$GLOBALS['imjiqiren_sys_config']['imjiqiren']['kaixin_update_disable'])
         {
             $kaixin_config = ConfigHandler::get('kaixin');
             if (($data['totid'] > 0 && $kaixin_config['is_sync_topic']) || ($data['totid'] <
-            1 && $kaixin_config['is_sync_topic'] && $_POST['syn_to_kaixin']))
+                1 && $kaixin_config['is_sync_topic'] && $_POST['syn_to_kaixin']))
             {
                 if( TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX || TRUE===IN_DATACORE_ADMIN )
                 {
@@ -1396,11 +1399,11 @@ class TopicLogic
     function _syn_to_renren($data = array())
     {
         if ($this->Config['renren_enable'] && $data['uid'] > 0 && $data['tid'] > 0 && 'renren'!=$data['from'] &&
-        renren_init($this->Config) && renren_bind($data['uid']) && !$GLOBALS['imjiqiren_sys_config']['imjiqiren']['renren_update_disable'])
+            renren_init($this->Config) && renren_bind($data['uid']) && !$GLOBALS['imjiqiren_sys_config']['imjiqiren']['renren_update_disable'])
         {
             $renren_config = ConfigHandler::get('renren');
             if (($data['totid'] > 0 && $renren_config['is_sync_topic']) || ($data['totid'] <
-            1 && $renren_config['is_sync_topic'] && $_POST['syn_to_renren']))
+                1 && $renren_config['is_sync_topic'] && $_POST['syn_to_renren']))
             {
                 if( TRUE===IN_DATACORE_INDEX || TRUE===IN_DATACORE_AJAX || TRUE===IN_DATACORE_ADMIN )
                 {
@@ -1438,7 +1441,7 @@ class TopicLogic
                         }
                     }
                     $sql = "select `uid`,`nickname`,`username` from `" .
-                    TABLE_PREFIX . "members` where `nickname` in ('" . implode("','", $match[1]) .
+                        TABLE_PREFIX . "members` where `nickname` in ('" . implode("','", $match[1]) .
                         "') ";
                     $query = $this->DatabaseHandler->Query($sql);
                     while (false != ($row = $query->GetRow()))
@@ -1479,7 +1482,7 @@ class TopicLogic
         if (false !== strpos($content, ':/' . '/') || false !== strpos($content, 'www.'))
         {
             if (preg_match_all('~(?:https?\:\/\/|www\.)(?:[A-Za-z0-9\_\-]+\.)+[A-Za-z0-9]{1,4}(?:\:\d{1,6})?(?:\/[\w\d\/=\?%\-\&\;_\~\`\:\+\#\.\@\[\]]*(?:[^\<\>\'\"\n\r\t\s\x7f-\xff])*)?~i',
-            $content, $match))
+                $content, $match))
             {
                 foreach ($match[0] as $v)
                 {
@@ -1489,7 +1492,7 @@ class TopicLogic
                         continue;
                     }
                     if (strtolower($this->Config['site_url']) == strtolower(substr($v, 0, strlen($this->
-                    Config['site_url']))))
+                        Config['site_url']))))
                     {
                         continue;
                     }
@@ -1662,8 +1665,8 @@ class TopicLogic
                     @copy($image_file,$image_file_photo);
                 }
                 $result = makethumb($image_file, $image_file_small, min($this->Config['thumbwidth'],
-                $image_width), min($this->Config['thumbwidth'], $image_height), $this->Config['maxthumbwidth'],
-                $this->Config['maxthumbheight']);
+                    $image_width), min($this->Config['thumbwidth'], $image_height), $this->Config['maxthumbwidth'],
+                    $this->Config['maxthumbheight']);
                 $image_size = filesize($image_file);
                 $site_url = '';
                 if($this->Config['ftp_on'])
@@ -1759,14 +1762,14 @@ class TopicLogic
         foreach ($at_uids as $at_uid)
         {
             if($at_uid > 0 && $at_uid!=$data['uid'] && !($this->DatabaseHandler->FetchFirst("select * from `" . TABLE_PREFIX .
-            "topic_mention` where `tid`='$tid' and `uid`='$at_uid'")))
+                "topic_mention` where `tid`='$tid' and `uid`='$at_uid'")))
             {
                 $_at_uids[$at_uid] = $at_uid;
                 $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX . "topic_mention` (`tid`,`uid`,`dateline`) values ('{$tid}','{$at_uid}','{$timestamp}')");
                 $this->DatabaseHandler->Query("update `" . TABLE_PREFIX .
                     "members` set `at_new`=`at_new`+1 , `at_count`=`at_count`+1 where `uid`='$at_uid'");
                 $user_notice = $this->DatabaseHandler->FetchFirst("select `uid`,`username`,`at_new`,`email`,`notice_at`,`nickname` from `" .
-                TABLE_PREFIX . "members` where `uid`='$at_uid'");
+                    TABLE_PREFIX . "members` where `uid`='$at_uid'");
                 if($user_notice)
                 {
                     if ($user_notice['notice_at'] == 1)
@@ -1783,7 +1786,7 @@ class TopicLogic
                         }
                         else
                         {
-                             Load::logic('notice', 1)->Insert_Cron($user_notice['uid']);
+                            Load::logic('notice', 1)->Insert_Cron($user_notice['uid']);
                         }
                     }
                     if ($this->Config['imjiqiren_enable'] && imjiqiren_init($this->Config)) {
@@ -1832,9 +1835,9 @@ class TopicLogic
                     $video_img_url = ($this->Config['ftp_on'] ? ConfigHandler::get('ftp','attachurl') : "");
                 }
                 $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX .
-                "topic_video`(`uid`,`tid`,`username`,`video_hosts`,`video_link`,`video_url`,`video_img`,`video_img_url`,`dateline`) values ('" .
-                $data['uid'] . "','" . $data['tid'] . "','" . $data['username'] . "','" . $video_hosts . "','" . $video_link .
-                "','" . $video_url . "','" . $video_img . "','$video_img_url','{$timestamp}')");
+                    "topic_video`(`uid`,`tid`,`username`,`video_hosts`,`video_link`,`video_url`,`video_img`,`video_img_url`,`dateline`) values ('" .
+                    $data['uid'] . "','" . $data['tid'] . "','" . $data['username'] . "','" . $video_hosts . "','" . $video_link .
+                    "','" . $video_url . "','" . $video_img . "','$video_img_url','{$timestamp}')");
                 $videoid = $this->DatabaseHandler->Insert_ID();
                 if($videoid > 0)
                 {
@@ -1860,8 +1863,8 @@ class TopicLogic
                     }
                 }
                 $this->DatabaseHandler->Query("insert into `" . TABLE_PREFIX .
-                "topic_music`(`uid`,`tid`,`username`,`music_url`,`dateline`) values ('" .
-                $data['uid'] . "','" . $data['tid'] . "','" . $data['username'] . "','{$v['url']}','{$timestamp}')");
+                    "topic_music`(`uid`,`tid`,`username`,`music_url`,`dateline`) values ('" .
+                    $data['uid'] . "','" . $data['tid'] . "','" . $data['username'] . "','{$v['url']}','{$timestamp}')");
                 $musicid = $this->DatabaseHandler->Insert_ID();
                 if($musicid > 0)
                 {
@@ -1915,12 +1918,12 @@ class TopicLogic
         if($uid > 0)
         {
             $sql = "select  U_MEDAL.dateline ,  MEDAL.medal_img , MEDAL.conditions
-                          , MEDAL.medal_name ,MEDAL.medal_depict ,MEDAL.id , U_MEDAL.*
-                    from `".TABLE_PREFIX."medal` MEDAL
-                    left join `".TABLE_PREFIX."user_medal` U_MEDAL on MEDAL.id=U_MEDAL.medalid
-                    where U_MEDAL.uid='{$uid}'
-                    and U_MEDAL.is_index = 1
-                    and MEDAL.is_open = 1 ";
+                , MEDAL.medal_name ,MEDAL.medal_depict ,MEDAL.id , U_MEDAL.*
+                from `".TABLE_PREFIX."medal` MEDAL
+                left join `".TABLE_PREFIX."user_medal` U_MEDAL on MEDAL.id=U_MEDAL.medalid
+                where U_MEDAL.uid='{$uid}'
+                and U_MEDAL.is_index = 1
+                and MEDAL.is_open = 1 ";
             $query = $this->DatabaseHandler->Query($sql);
             while (false != ($row = $query->GetRow()))
             {
@@ -1965,18 +1968,18 @@ class TopicLogic
     }
     function atMyUser($uid=MEMBER_ID,$limit=10){
         $cache_id = $uid.'-atmyuser-7days-'.$limit;
-                $time = TIMESTAMP;
+        $time = TIMESTAMP;
         $time = $time - 7*86400;
         if(!($user = Load::model('cache/db')->get($cache_id))){
             $user = array();
             $sql = "SELECT COUNT(*) AS at_count ,m.uid,m.username,m.nickname
-                    FROM ".TABLE_PREFIX."topic_mention tm 
-                    LEFT JOIN ".TABLE_PREFIX."topic t ON t.tid = tm.tid 
-                    LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.uid 
-                    WHERE tm.uid = '$uid' AND tm.dateline > '$time'
-                    GROUP BY t.uid 
-                    ORDER BY at_count desc 
-                    LIMIT $limit ";
+                FROM ".TABLE_PREFIX."topic_mention tm 
+                LEFT JOIN ".TABLE_PREFIX."topic t ON t.tid = tm.tid 
+                LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.uid 
+                WHERE tm.uid = '$uid' AND tm.dateline > '$time'
+                GROUP BY t.uid 
+                ORDER BY at_count desc 
+                LIMIT $limit ";
             $query = DB::query($sql);
             while($rs = DB::fetch($query)){
                 if($rs['uid'] > 0) {
@@ -1990,20 +1993,20 @@ class TopicLogic
     }
     function getCommentUser($uid=MEMBER_ID,$limit=10){
         $cache_id = $uid.'-commentuser-7days-'.$limit;
-                $time = TIMESTAMP;
+        $time = TIMESTAMP;
         $time = $time - 7*86400;
         if(!($user = Load::model('cache/db')->get($cache_id))){
             $user = array();
             $sql = "SELECT
-                    COUNT(*) AS c_count,t.uid,m.username,m.nickname 
-                    FROM `".TABLE_PREFIX."topic` t 
-                    LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.uid 
-                    WHERE t.`touid` = '$uid'  
-                        AND t.`type` IN ('reply','both') 
-                        AND t.dateline > $time  
-                    GROUP BY t.`uid` 
-                    ORDER BY c_count DESC 
-                    LIMIT $limit  ";
+                COUNT(*) AS c_count,t.uid,m.username,m.nickname 
+                FROM `".TABLE_PREFIX."topic` t 
+                LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.uid 
+                WHERE t.`touid` = '$uid'  
+                AND t.`type` IN ('reply','both') 
+                AND t.dateline > $time  
+                GROUP BY t.`uid` 
+                ORDER BY c_count DESC 
+                LIMIT $limit  ";
             $query = DB::query($sql);
             while($rs = DB::fetch($query)){
                 if($rs['uid'] > 0) {
@@ -2017,20 +2020,20 @@ class TopicLogic
     }
     function getMyCommentUser($uid=MEMBER_ID,$limit=10){
         $cache_id = $uid.'-mycommentuser-7days-'.$limit;
-                $time = TIMESTAMP;
+        $time = TIMESTAMP;
         $time = $time - 7*86400;
         if(!($user = Load::model('cache/db')->get($cache_id))){
             $user = array();
             $sql = "SELECT
-                      COUNT(*) AS mc_count,t.touid as uid,m.username,m.nickname 
-                    FROM `".TABLE_PREFIX."topic` t 
-                    LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.touid 
-                    WHERE t.`uid` = '$uid'  
-                        AND t.`type` IN ('reply','both') 
-                        AND t.dateline > $time  
-                    GROUP BY t.`touid` 
-                    ORDER BY mc_count DESC 
-                    LIMIT $limit  ";
+                COUNT(*) AS mc_count,t.touid as uid,m.username,m.nickname 
+                FROM `".TABLE_PREFIX."topic` t 
+                LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.touid 
+                WHERE t.`uid` = '$uid'  
+                AND t.`type` IN ('reply','both') 
+                AND t.dateline > $time  
+                GROUP BY t.`touid` 
+                ORDER BY mc_count DESC 
+                LIMIT $limit  ";
             $query = DB::query($sql);
             while($rs = DB::fetch($query)){
                 if($rs['uid'] > 0) {
@@ -2043,17 +2046,17 @@ class TopicLogic
         return $user;
     }
     function getMusicUser($limit=10){
-                $time = TIMESTAMP;
+        $time = TIMESTAMP;
         $time = $time - 30*86400;
         $user = array();
         $sql = "SELECT
-                  COUNT(*) AS m_count,t.uid,m.username,m.nickname 
-                FROM `".TABLE_PREFIX."topic_music` t 
-                LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.uid 
-                WHERE t.dateline > $time  
-                GROUP BY t.`uid` 
-                ORDER BY m_count DESC 
-                LIMIT $limit  ";
+            COUNT(*) AS m_count,t.uid,m.username,m.nickname 
+            FROM `".TABLE_PREFIX."topic_music` t 
+            LEFT JOIN ".TABLE_PREFIX."members m ON m.uid = t.uid 
+            WHERE t.dateline > $time  
+            GROUP BY t.`uid` 
+            ORDER BY m_count DESC 
+            LIMIT $limit  ";
         $query = DB::query($sql);
         while($rs = DB::fetch($query)){
             if($rs['uid'] > 0) {

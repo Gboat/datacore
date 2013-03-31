@@ -49,15 +49,15 @@ class ModuleObject extends MasterObject
     function Main()
     {
         $FormHandler = Load::lib('form', 1);
-                if ('topic'==trim($this->Get['mod']) && empty($this->Code) && empty($this->Get['mod_original'])) {
-                        if (MEMBER_ID > 0) {
+        if ('topic'==trim($this->Get['mod']) && empty($this->Code) && empty($this->Get['mod_original'])) {
+            if (MEMBER_ID > 0) {
                 $this->Code = 'myhome';
             } else {
                 $this->_guestIndex();
                 return ;
             }
         }
-                $member = $this->_member();
+        $member = $this->_member();
         if(!$member) {
             $this->_guestIndex();
             return false;
@@ -106,7 +106,8 @@ class ModuleObject extends MasterObject
         }
         $page_str = $params['code'];
         if($params['code'] == 'bbs' || $params['code'] == 'cms') {
-            $page_str = 'myhome';         }
+            $page_str = 'myhome';
+        }
         if (($show_topic_num = (int) $this->ShowConfig['topic'][$page_str]) > 0) {
             $per_page_num = $show_topic_num;
         }
@@ -151,8 +152,8 @@ class ModuleObject extends MasterObject
                 }
                 if ($gid) {
                     $group_info = DB::fetch_first("SELECT *
-                                                   FROM ".DB::table('group')."
-                                                   WHERE uid=".MEMBER_ID." AND id='{$gid}' ");
+                        FROM ".DB::table('group')."
+                        WHERE uid=".MEMBER_ID." AND id='{$gid}' ");
                     if (empty($group_info)) {
                         $this->Messager("当前分组不存在", 'index.php?mod=myhome');
                     }
@@ -204,10 +205,10 @@ class ModuleObject extends MasterObject
             }
             $active[$view] = 'current';
             $sql = "select  TF.uid , TF.tag ,T.name , T.*
-                     from `".TABLE_PREFIX."tag` T
-                     left join `".TABLE_PREFIX."tag_favorite` TF
-                     on T.name=TF.tag
-                     where `uid`='".MEMBER_ID."'";
+                from `".TABLE_PREFIX."tag` T
+                left join `".TABLE_PREFIX."tag_favorite` TF
+                on T.name=TF.tag
+                where `uid`='".MEMBER_ID."'";
             $query = $this->DatabaseHandler->Query($sql);
             $tag_info = array();
             while (false != ($row = $query->GetRow())) {
@@ -246,7 +247,7 @@ class ModuleObject extends MasterObject
             }else{
                 $topic_list_get = true;
             }
-                        if($this->MemberHandler->MemberFields['topic_new']) {
+            if($this->MemberHandler->MemberFields['topic_new']) {
                 DB::query("UPDATE ".DB::table('members')." SET topic_new=0 WHERE uid='".MEMBER_ID."' ");
                 $this->MemberHandler->MemberFields['topic_new'] = 0;
             }
@@ -395,12 +396,12 @@ class ModuleObject extends MasterObject
                     }
                     $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."topic_verify` where managetype = 0";
                     $total_record = DB::result_first($sql);
-                                        $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
-                                        $sql = "select v.*
-                            from `".TABLE_PREFIX."topic_verify` v
-                            where v.uid='{$uid}'
-                            and v.managetype = 0 
-                            order by v.lastupdate desc {$page_arr['limit']}";
+                    $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
+                    $sql = "select v.*
+                        from `".TABLE_PREFIX."topic_verify` v
+                        where v.uid='{$uid}'
+                        and v.managetype = 0 
+                        order by v.lastupdate desc {$page_arr['limit']}";
                     $query = $this->DatabaseHandler->Query($sql);
                     while (false != ($row = $query->GetRow())) {
                         if ($row['id']<1) {
@@ -426,15 +427,15 @@ class ModuleObject extends MasterObject
             $buddys = array();
             if (MEMBER_ID > 0 && $member['uid'] != MEMBER_ID) {
                 $sql = "select `buddyid` as `id`,`remark`
-                        from `".TABLE_PREFIX."buddys`
-                        where `uid`='".MEMBER_ID."' and `buddyid` = ".$member['uid'];
+                    from `".TABLE_PREFIX."buddys`
+                    where `uid`='".MEMBER_ID."' and `buddyid` = ".$member['uid'];
                 $query = $this->DatabaseHandler->Query($sql);
                 $buddys = $query->GetRow();
             }
         } elseif ('myat' == $params['code']) {
             $tpl = 'topic_myat';
             $title = '@提到我的';
-                        $topic_selected = 'myat';
+            $topic_selected = 'myat';
             if($member['uid'] != MEMBER_ID) {
                 $this->Messager("您无权查看该页面",null);
             }
@@ -462,11 +463,11 @@ class ModuleObject extends MasterObject
             $total_record = DB::result_first($sql);
             $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
             $sql = "select TF.dateline as favorite_time , T.*
-                    from `".TABLE_PREFIX."topic_favorite` TF
-                    left join `".TABLE_PREFIX."topic` T
-                    on T.tid=TF.tid
-                    where TF.uid='{$uid}'
-                    order by TF.id desc {$page_arr['limit']}";
+                from `".TABLE_PREFIX."topic_favorite` TF
+                left join `".TABLE_PREFIX."topic` T
+                on T.tid=TF.tid
+                where TF.uid='{$uid}'
+                order by TF.id desc {$page_arr['limit']}";
             $query = $this->DatabaseHandler->Query($sql);
             while (false != ($row = $query->GetRow())) {
                 if ($row['tid']<1) {
@@ -492,11 +493,11 @@ class ModuleObject extends MasterObject
             $total_record = DB::result_first($sql);
             $page_arr = page($total_record,$per_page_num,$query_link,array('return'=>"Array"));
             $sql = "select TF.dateline as favorite_time , TF.uid as fuid , T.*
-                    from `".TABLE_PREFIX."topic_favorite` TF
-                    left join `".TABLE_PREFIX."topic` T
-                    on T.tid=TF.tid
-                    where TF.tuid='{$uid}'
-                    order by TF.id desc {$page_arr['limit']}";
+                from `".TABLE_PREFIX."topic_favorite` TF
+                left join `".TABLE_PREFIX."topic` T
+                on T.tid=TF.tid
+                where TF.tuid='{$uid}'
+                order by TF.id desc {$page_arr['limit']}";
             $query = $this->DatabaseHandler->Query($sql);
             $fuids = array();
             while (false != ($row = $query->GetRow())) {
@@ -529,7 +530,7 @@ class ModuleObject extends MasterObject
             $join_qun_count = DB::result_first("SELECT COUNT(*) FROM ".DB::table('qun_user')." WHERE uid='{$u}' ");
             $qun_name = '';
             if ($join_qun_count > 0) {
-            $query = DB::query("SELECT qid FROM ".DB::table('qun_user')." WHERE uid='{$u}'");
+                $query = DB::query("SELECT qid FROM ".DB::table('qun_user')." WHERE uid='{$u}'");
                 while ($value = DB::fetch($query)) {
                     $qid_ary[] = $value['qid'];
                 }
@@ -571,26 +572,26 @@ class ModuleObject extends MasterObject
                     }
                     if (!$topic_get_flg) {
                         $total_record = DB::result_first("SELECT COUNT(*)
-                                                   FROM ".DB::table('topic')." AS t
-                                                   LEFT JOIN ".DB::table('topic_qun')." AS tq
-                                                   USING(tid)
-                                                   WHERE {$where_sql}");
+                            FROM ".DB::table('topic')." AS t
+                            LEFT JOIN ".DB::table('topic_qun')." AS tq
+                            USING(tid)
+                            WHERE {$where_sql}");
                         if ($total_record > 0) {
-                                                        $page_arr = page($total_record, $options['perpage'], $options['page_url'], array('return'=>'array'));
+                            $page_arr = page($total_record, $options['perpage'], $options['page_url'], array('return'=>'array'));
                             $query = DB::query("SELECT t.*
-                                                FROM ".DB::table('topic')." AS t
-                                                LEFT JOIN ".DB::table('topic_qun')." AS tq
-                                                USING(tid)
-                                                WHERE {$where_sql}
-                                                ORDER BY {$order_sql}
-                                                {$page_arr['limit']} ");
-                                                $topic_list = array();
-                                                while ($value = DB::fetch($query)) {
-                                                    $topic_list[$value['tid']] = $this->TopicLogic->Make($value);
-                                                }
+                                FROM ".DB::table('topic')." AS t
+                                LEFT JOIN ".DB::table('topic_qun')." AS tq
+                                USING(tid)
+                                WHERE {$where_sql}
+                                ORDER BY {$order_sql}
+                        {$page_arr['limit']} ");
+                            $topic_list = array();
+                            while ($value = DB::fetch($query)) {
+                                $topic_list[$value['tid']] = $this->TopicLogic->Make($value);
+                            }
                         }
                     }
-                                        DB::query("UPDATE ".DB::table('members')." SET qun_new=0 WHERE uid='".MEMBER_ID."' ");
+                    DB::query("UPDATE ".DB::table('members')." SET qun_new=0 WHERE uid='".MEMBER_ID."' ");
                     $this->MemberHandler->MemberFields['qun_new'] = 0;
                 }
             }
@@ -712,7 +713,7 @@ class ModuleObject extends MasterObject
         if ($topic_list) {
             $topic_list_count = count($topic_list);
             if (!$topic_parent_disable && 'bbs' != $this->Code) {
-                 $parent_list = $this->TopicLogic->GetParentTopic($topic_list, ('mycomment' == $this->Code));
+                $parent_list = $this->TopicLogic->GetParentTopic($topic_list, ('mycomment' == $this->Code));
             }
         }
         $group_list = $grouplist2 = array();
@@ -800,7 +801,7 @@ class ModuleObject extends MasterObject
             $parent_id_list = array(
                 $topic_info['parent_id'],
                 $topic_info['top_parent_id'],
-                );
+            );
             if($parent_id_list)
             {
                 $t_parent_list = $this->TopicLogic->Get($parent_id_list);
@@ -836,7 +837,7 @@ class ModuleObject extends MasterObject
             $is_favorite = $query->GetRow();
         }
         $member = $this->_member($topic_info['uid']);
-                $member_medal = $member;
+        $member_medal = $member;
         if($member_medal['medal_id'])
         {
             $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
@@ -899,66 +900,66 @@ class ModuleObject extends MasterObject
             $search_sql = build_like_query("m.`nickname`", $keyword);
             $where_sql = " b.uid=".MEMBER_ID." AND {$search_sql} ";
             $count = DB::result_first("SELECT COUNT(*)
-                                       FROM ".DB::table('buddys')." AS b
-                                       LEFT JOIN ".DB::table('members')." AS m
-                                       ON b.buddyid=m.uid
-                                       WHERE {$where_sql}");
+                FROM ".DB::table('buddys')." AS b
+                LEFT JOIN ".DB::table('members')." AS m
+                ON b.buddyid=m.uid
+                WHERE {$where_sql}");
             if ($count > 0) {
                 $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
                 $query = DB::query("SELECT b.remark,m.*
-                                    FROM ".DB::table('buddys')." AS b
-                                    LEFT JOIN ".DB::table('members')." AS m
-                                    ON b.buddyid=m.uid
-                                    WHERE {$where_sql}
-                                    {$orderBy}
-                                    {$page_arr['limit']} ");
-                                    while ($row = DB::fetch($query)) {
-                                        if($row['uid'] > 0) {
-                                            $member_list[$row['uid']] = $this->TopicLogic->MakeMember($row);
-                                        }
-                                        $uids[] = $row['uid'];
-                                    }
+                    FROM ".DB::table('buddys')." AS b
+                    LEFT JOIN ".DB::table('members')." AS m
+                    ON b.buddyid=m.uid
+                    WHERE {$where_sql}
+            {$orderBy}
+            {$page_arr['limit']} ");
+                while ($row = DB::fetch($query)) {
+                    if($row['uid'] > 0) {
+                        $member_list[$row['uid']] = $this->TopicLogic->MakeMember($row);
+                    }
+                    $uids[] = $row['uid'];
+                }
             }
         } else if($gid) {
             $group_view = DB::fetch_first("SELECT *
-                                           FROM ".DB::table("group")."
-                                           WHERE `id`='{$gid}' AND uid='".MEMBER_ID."'");
+                FROM ".DB::table("group")."
+                WHERE `id`='{$gid}' AND uid='".MEMBER_ID."'");
             if (empty($group_view)) {
                 $this->Messager("这个不是你的分组，你不能查看", -1);
             }
             $count = DB::result_first("SELECT COUNT(*)
-                                       FROM ".DB::table('groupfields')."
-                                       WHERE gid='{$gid}' AND `uid` = '".MEMBER_ID."' ");
+                FROM ".DB::table('groupfields')."
+                WHERE gid='{$gid}' AND `uid` = '".MEMBER_ID."' ");
             if ($count > 0) {
                 $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
-                                $sql = "SELECT m.*,b.remark
-                        FROM ".DB::table('groupfields')." AS g
-                        LEFT JOIN ".DB::table('members')." AS m
-                        ON m.`uid` = g.`touid`
-                        LEFT JOIN  ".DB::table('buddys')." AS b
-                        ON b.`buddyid` = m.`uid`
-                        WHERE g.`gid`='{$gid}' AND  b.uid=".MEMBER_ID."
-                        {$orderBy}
-                        {$page_arr['limit']}";
-                        $query = DB::query($sql);
-                        while ($row = DB::fetch($query)) {
-                            if($row['uid'] > 0) {
-                                $member_list[$row['uid']] = $this->TopicLogic->MakeMember($row);
-                            }
-                            $uids[] = $row['uid'];
-                        }
+                $sql = "SELECT m.*,b.remark
+                    FROM ".DB::table('groupfields')." AS g
+                    LEFT JOIN ".DB::table('members')." AS m
+                    ON m.`uid` = g.`touid`
+                    LEFT JOIN  ".DB::table('buddys')." AS b
+                    ON b.`buddyid` = m.`uid`
+                    WHERE g.`gid`='{$gid}' AND  b.uid=".MEMBER_ID."
+            {$orderBy}
+            {$page_arr['limit']}";
+                $query = DB::query($sql);
+                while ($row = DB::fetch($query)) {
+                    if($row['uid'] > 0) {
+                        $member_list[$row['uid']] = $this->TopicLogic->MakeMember($row);
+                    }
+                    $uids[] = $row['uid'];
+                }
             }
         } else {
             $count = $member['follow_count'];
             if ($count > 0) {
                 $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
                 $sql = "SELECT b.remark, m.*
-                        FROM ".DB::table('buddys')." AS b
-                        LEFT JOIN ".DB::table('members')." AS m
-                        ON m.`uid` = b.`buddyid`
-                        WHERE b.`uid`='{$member['uid']}'
-                        {$orderBy}
-                        {$page_arr['limit']}";
+                    FROM ".DB::table('buddys')." AS b
+                    LEFT JOIN ".DB::table('members')." AS m
+                    ON m.`uid` = b.`buddyid`
+                    WHERE b.`uid`='{$member['uid']}'
+            {$orderBy}
+            {$page_arr['limit']}";
                 $query = DB::query($sql);
                 while (false != ($row = $query->GetRow())) {
                     if($row['uid'] > 0) {
@@ -970,10 +971,10 @@ class ModuleObject extends MasterObject
         }
         $member_list = Load::model('buddy')->follow_html($member_list);
         $sql = "SELECT  GF.touid , GF.gid, GF.g_name , GF.display ,G.group_name ,G.id , GF.*
-                FROM ".DB::table('group')." AS G
-                LEFT JOIN ".DB::table('groupfields')." AS GF
-                ON G.id=GF.gid
-                WHERE G.uid='".MEMBER_ID." ' ";
+            FROM ".DB::table('group')." AS G
+            LEFT JOIN ".DB::table('groupfields')." AS GF
+            ON G.id=GF.gid
+            WHERE G.uid='".MEMBER_ID." ' ";
         $query = DB::query($sql);
         $user_group = array();
         while ($row = DB::fetch($query)) {
@@ -1650,11 +1651,11 @@ class ModuleObject extends MasterObject
         if($uid > 0)
         {
             $sql = "select  U_MEDAL.dateline ,  MEDAL.medal_img , MEDAL.conditions , MEDAL.medal_name ,MEDAL.medal_depict ,MEDAL.id , U_MEDAL.*
-                    from `".TABLE_PREFIX."medal` MEDAL
-                    left join `".TABLE_PREFIX."user_medal` U_MEDAL on MEDAL.id=U_MEDAL.medalid
-                    where U_MEDAL.uid='{$uid}'
-                    and U_MEDAL.is_index = 1
-                    and MEDAL.is_open = 1 ";
+                from `".TABLE_PREFIX."medal` MEDAL
+                left join `".TABLE_PREFIX."user_medal` U_MEDAL on MEDAL.id=U_MEDAL.medalid
+                where U_MEDAL.uid='{$uid}'
+                and U_MEDAL.is_index = 1
+                and MEDAL.is_open = 1 ";
             $query = $this->DatabaseHandler->Query($sql);
             while (false != ($row = $query->GetRow()))
             {
@@ -1697,7 +1698,7 @@ class ModuleObject extends MasterObject
             $isloading = false;
         }
         if($this->Config['attach_enable']){$allow_attach = 1;}else{$allow_attach = 0;}
-        $t_col_foot = 't_col_foot';
+            $t_col_foot = 't_col_foot';
         $t_col_backTop = 't_col_backTop';
         $url_uid = ($uid ? $uid : MEMBER_ID);
         include($this->TemplateHandler->Template('topic_photo'));

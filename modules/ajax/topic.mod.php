@@ -20,210 +20,210 @@ class ModuleObject extends MasterObject
         ob_start();
         switch($this->Code)
         {
-            case 'favor_fenlei':
-                $this->favoriteFenlei();
-                break;
-            case 'favor_event':
-                $this->favoriteEvent();
-                break;
-            case 'favorite_tag':
-                $this->FavoriteTag();
-                break;
-            case 'group_list':
-                $this->GroupList();
-                break;
-            case 'group_menu':
-                $this->Group_Menu();
-                break;
-            case 'forward_menu':
-                $this->Forward_Menu();
-                break;
-            case 'usermenu':
-                $this->UserMenu();
-                break;
-            case 'tag_menu':
-                $this->Tag_Menu();
-                break;
-            case 'delete_image':
-                $this->DeleteImage();
-                break;
-            case 'delete_video':
-                $this->DeleteVideo();
-                break;
-            case 'delete_music':
-                $this->DeleteMusic();
-                break;
-            case 'follow':
-                $this->Follow();
-                break;
-            case 'favor':
-                $this->Favorite();
-                break;
-            case 'favor_tag':
-                $this->FavoriteTag();
-                break;
-            case 'upload':
-                $this->Upload();
-                break;
-            case 'dovideo':
-                $this->DoVideo();
-                break;
-            case 'do_add':
-                $this->DoAdd();
-                break;
-            case 'delete':
-                $this->Delete();
-                break;
-            case 'delverify':
-                $this->delVerify();
-                break;
-            case 'list_reply':
-                $this->ListReply();
-                break;
-            case 'forward':
-                $this->Do_forward();
-                break;
-            case 'view_comment':
-                $this->ViewComment();
-                break;
-            case 'view_bbs':
-                $this->ViewBbs();
-                break;
-            case 'view_cms':
-                $this->ViewCms();
-                break;
-            case 'create_group':
-                $this->Create_Group();
-                break;
-            case 'do_group':
-                $this->Do_Group();
-                break;
-            case 'group_fields':
-                $this->Group_fields();
-                break;
-            case 'del_group':
-                $this->Del_Group();
-                break;
-            case 'do_fansgroup':
-                $this->Do_FansGroup();
-                break;
-            case 'del_fansgroup':
-                $this->Del_FansGroup();
-                break;
-            case 'set_fansgroup':
-                $this->Set_FansGroup();
-                break;
-            case 'do_setfansgroup':
-                $this->Do_SetFansGroup();
-                break;
-            case 'create_fansgroup':
-                $this->Create_FansGroup();
-                break;
-            case 'fansgrouplist':
-                $this->FansGroupList();
-                break;
-            case 'doreport':
-                $this->DoReport();
-                break;
-            case 'remark':
-                $this->Remark();
-                break;
-            case 'add_remark':
-                $this->Add_Remark();
-                break;
-            case 'add_user_follow':
-                $this->Add_User_Follow();
-                break;
-            case 'follower_choose':
-                $this->Follower_choose();
-                break;
-            case 'doblacklist':
-                $this->DoAddMyBlackList();
-                break;
-            case 'do_delmyblacklist':
-                $this->DoDelMyBlackList();
-                break;
-            case 'modifytopic':
-                $this->ModifyTopic();
-                break;
-            case 'do_modifytopic':
-                $this->Do_ModifyTopic();
-                break;
-            case 'uploadface':
-                $this->UploadFace();
-                break;
-            case 'topicshow':
-                $this->TopicShow();
-                break;
-            case 'user_tag':
-                $this->User_Tag();
-                break;
-            case 'del_tag':
-                $this->Del_Tag();
-                break;
-                break;
-            case 'pmfriends':
-                $this->PmFriends();
-                break;
-            case 'open_mdeal':
-                $this->Open_Mdeal_Index();
-                break;
-            case 'do_delmyfans':
-                $this->DoDelMyFans();
-                break;
-                            case 'qmd':
-                $this->Qmd();
-                break;
-            case 'insert_qmd':
-                $this->Insert_Qmd();
-                break;
-                            case 'recd':
-                $this->recd();
-                break;
-            case 'do_recd':
-                $this->do_recd();
-                break;
-                            case 'editarea':
-                $this->editErea();
-                break;
-                            case 'publishsuccess':
-                $this->publishSuccess();
-                break;
-            case 'list':
-            case 'tag':
-            case 'myhome':
-            case 'mycomment':
-            case 'mylastpublish':
-            case 'updatecurrent':
-            case 'myat':
-            case 'myblog':
-            case 'tocomment':
-            case 'myfavorite':
-            case 'favoritemy':
-            case 'groupview':
-                $this->DoList();
-                break;
-                            case 'reg_follow_user':
-                $this->Do_Reg_Follow_User();
-                break;
-                            case 'showlogin':
-                $this->ShowLogin();
-                break;
-                            case 'add_favor_tag':
-                $this->addFavoriteTag();
-                break;
-                            case 'modify_user_signature':
-                $this->Modify_User_Signature();
-                break;
-                            case 'check_medal_list':
-                $this->Check_Medal_List();
-                break;
-                            case 'photo':
-                $this->Photo();
-                break;
-            default:
-                $this->Main();
-                break;
+        case 'favor_fenlei':
+            $this->favoriteFenlei();
+            break;
+        case 'favor_event':
+            $this->favoriteEvent();
+            break;
+        case 'favorite_tag':
+            $this->FavoriteTag();
+            break;
+        case 'group_list':
+            $this->GroupList();
+            break;
+        case 'group_menu':
+            $this->Group_Menu();
+            break;
+        case 'forward_menu':
+            $this->Forward_Menu();
+            break;
+        case 'usermenu':
+            $this->UserMenu();
+            break;
+        case 'tag_menu':
+            $this->Tag_Menu();
+            break;
+        case 'delete_image':
+            $this->DeleteImage();
+            break;
+        case 'delete_video':
+            $this->DeleteVideo();
+            break;
+        case 'delete_music':
+            $this->DeleteMusic();
+            break;
+        case 'follow':
+            $this->Follow();
+            break;
+        case 'favor':
+            $this->Favorite();
+            break;
+        case 'favor_tag':
+            $this->FavoriteTag();
+            break;
+        case 'upload':
+            $this->Upload();
+            break;
+        case 'dovideo':
+            $this->DoVideo();
+            break;
+        case 'do_add':
+            $this->DoAdd();
+            break;
+        case 'delete':
+            $this->Delete();
+            break;
+        case 'delverify':
+            $this->delVerify();
+            break;
+        case 'list_reply':
+            $this->ListReply();
+            break;
+        case 'forward':
+            $this->Do_forward();
+            break;
+        case 'view_comment':
+            $this->ViewComment();
+            break;
+        case 'view_bbs':
+            $this->ViewBbs();
+            break;
+        case 'view_cms':
+            $this->ViewCms();
+            break;
+        case 'create_group':
+            $this->Create_Group();
+            break;
+        case 'do_group':
+            $this->Do_Group();
+            break;
+        case 'group_fields':
+            $this->Group_fields();
+            break;
+        case 'del_group':
+            $this->Del_Group();
+            break;
+        case 'do_fansgroup':
+            $this->Do_FansGroup();
+            break;
+        case 'del_fansgroup':
+            $this->Del_FansGroup();
+            break;
+        case 'set_fansgroup':
+            $this->Set_FansGroup();
+            break;
+        case 'do_setfansgroup':
+            $this->Do_SetFansGroup();
+            break;
+        case 'create_fansgroup':
+            $this->Create_FansGroup();
+            break;
+        case 'fansgrouplist':
+            $this->FansGroupList();
+            break;
+        case 'doreport':
+            $this->DoReport();
+            break;
+        case 'remark':
+            $this->Remark();
+            break;
+        case 'add_remark':
+            $this->Add_Remark();
+            break;
+        case 'add_user_follow':
+            $this->Add_User_Follow();
+            break;
+        case 'follower_choose':
+            $this->Follower_choose();
+            break;
+        case 'doblacklist':
+            $this->DoAddMyBlackList();
+            break;
+        case 'do_delmyblacklist':
+            $this->DoDelMyBlackList();
+            break;
+        case 'modifytopic':
+            $this->ModifyTopic();
+            break;
+        case 'do_modifytopic':
+            $this->Do_ModifyTopic();
+            break;
+        case 'uploadface':
+            $this->UploadFace();
+            break;
+        case 'topicshow':
+            $this->TopicShow();
+            break;
+        case 'user_tag':
+            $this->User_Tag();
+            break;
+        case 'del_tag':
+            $this->Del_Tag();
+            break;
+            break;
+        case 'pmfriends':
+            $this->PmFriends();
+            break;
+        case 'open_mdeal':
+            $this->Open_Mdeal_Index();
+            break;
+        case 'do_delmyfans':
+            $this->DoDelMyFans();
+            break;
+        case 'qmd':
+            $this->Qmd();
+            break;
+        case 'insert_qmd':
+            $this->Insert_Qmd();
+            break;
+        case 'recd':
+            $this->recd();
+            break;
+        case 'do_recd':
+            $this->do_recd();
+            break;
+        case 'editarea':
+            $this->editErea();
+            break;
+        case 'publishsuccess':
+            $this->publishSuccess();
+            break;
+        case 'list':
+        case 'tag':
+        case 'myhome':
+        case 'mycomment':
+        case 'mylastpublish':
+        case 'updatecurrent':
+        case 'myat':
+        case 'myblog':
+        case 'tocomment':
+        case 'myfavorite':
+        case 'favoritemy':
+        case 'groupview':
+            $this->DoList();
+            break;
+        case 'reg_follow_user':
+            $this->Do_Reg_Follow_User();
+            break;
+        case 'showlogin':
+            $this->ShowLogin();
+            break;
+        case 'add_favor_tag':
+            $this->addFavoriteTag();
+            break;
+        case 'modify_user_signature':
+            $this->Modify_User_Signature();
+            break;
+        case 'check_medal_list':
+            $this->Check_Medal_List();
+            break;
+        case 'photo':
+            $this->Photo();
+            break;
+        default:
+            $this->Main();
+            break;
         }
         response_text(ob_get_clean());
     }
@@ -231,7 +231,7 @@ class ModuleObject extends MasterObject
     {
         response_text("正在建设中……");
     }
-        function editErea(){
+    function editErea(){
         $province = $this->Get['province'];
         if($province){
             $province_name = $this->DatabaseHandler->ResultFirst("select name from ".TABLE_PREFIX."common_district where id = $province");
@@ -274,7 +274,7 @@ class ModuleObject extends MasterObject
             $options['tid'] = $topic_ids;
         }
         $options['perpage'] = $per_page_num;
-                $tpl = 'topic_list_ajax';
+        $tpl = 'topic_list_ajax';
         if ('myhome' == $this->Code) {
             $uid = MEMBER_ID;
             $cache_time = 600;
@@ -309,7 +309,7 @@ class ModuleObject extends MasterObject
             $options['tid'] = $topic_ids;
         } else if ('groupview' == $this->Code) {
             $gid = (int) ($this->Post['gid'] ? $this->Post['gid'] : $this->Get['gid']);
-                        $sql = "select * from `".TABLE_PREFIX."groupfields` where `gid`='{$gid}' and uid = ".MEMBER_ID." ";
+            $sql = "select * from `".TABLE_PREFIX."groupfields` where `gid`='{$gid}' and uid = ".MEMBER_ID." ";
             $query = $this->DatabaseHandler->Query($sql);
             $g_view_uids = array();
             $list = array();
@@ -318,15 +318,15 @@ class ModuleObject extends MasterObject
                 $groupname = $row['g_name'];
                 $groupid = $row['gid'];
             }
-                        if ($g_view_uids) {
+            if ($g_view_uids) {
                 $options['uid'] = $g_view_uids;
             } else {
                 exit();
             }
         } else if ('mylastpublish' == $this->Code) {
             $topic_list = $this->TopicLogic->Get(" where `uid`='".MEMBER_ID."' order by `tid` desc limit 0,1 ");
-                        $no_from = false;
-                                    $ref_mod = $this->Post['ref_mod'];
+            $no_from = false;
+            $ref_mod = $this->Post['ref_mod'];
             $talk_r = $this->Post['r'];
             if($talk_r == 'answer' || $talk_r == 'talk'){
                 $tpl = 'talk_item_ajax';
@@ -352,7 +352,7 @@ class ModuleObject extends MasterObject
                 $no_mBlog_linedot2 = true;
             }
         } else if ('updatecurrent' == $this->Code) {
-                        $tid = intval($this->Post['tid']);
+            $tid = intval($this->Post['tid']);
             if (empty($tid)) {
                 exit;
             }
@@ -361,9 +361,9 @@ class ModuleObject extends MasterObject
             $tpl = 'topic_item_ajax';
             if ('topic' == $refmod && 'myfavorite' == $refcode) {
                 $sql = "SELECT TF.dateline as favorite_time , T.*
-                        FROM ".DB::table("topic_favorite")." AS TF
-                        LEFT JOIN ".DB::table("topic")." AS T
-                        ON T.tid=TF.tid where T.tid='{$tid}'";
+                    FROM ".DB::table("topic_favorite")." AS TF
+                    LEFT JOIN ".DB::table("topic")." AS T
+                    ON T.tid=TF.tid where T.tid='{$tid}'";
                 $this->Code = $refcode;
                 $topic_parent_disable = true;
             } else {
@@ -379,13 +379,13 @@ class ModuleObject extends MasterObject
             $val = $this->TopicLogic->Make($data);
             $topic_list[] = $val;
             $no_from = false;
-                        if ('vote' == $refmod && 'view' == $refcode) {
+            if ('vote' == $refmod && 'view' == $refcode) {
                 $no_from = true;
             }
-                        if ($refmod == 'qun') {
+            if ($refmod == 'qun') {
                 $this->Module = 'qun';
             }
-                        if ($refcode == 'reply_list_ajax') {
+            if ($refcode == 'reply_list_ajax') {
                 $tpl = 'topic_comment_item';
                 $topic_parent_disable = true;
                 $v = $val;
@@ -432,7 +432,7 @@ class ModuleObject extends MasterObject
         defined('NEDU_MOYO') && nlogic('feeds.app.jsg')->on_ajax_topic_request($options);
         #endif
         if (!$topic_list_get) {
-                        if($cache_time > 0 && $cache_key && !$options['tid']) {                 $options = Load::logic('topic_list', 1)->get_options($options, $cache_time, $cache_key);
+            if($cache_time > 0 && $cache_key && !$options['tid']) {                 $options = Load::logic('topic_list', 1)->get_options($options, $cache_time, $cache_key);
             }
             $info = Load::logic('topic_list', 1)->get_data($options);
             $topic_list = array();
@@ -447,8 +447,8 @@ class ModuleObject extends MasterObject
         if($topic_list) {
             $topic_list_count = count($topic_list);
             if(!$topic_parent_disable) {
-                                $parent_list = $this->TopicLogic->GetParentTopic($topic_list);
-                            }
+                $parent_list = $this->TopicLogic->GetParentTopic($topic_list);
+            }
         }
         if($tpl == 'talk_item_ajax'){
             $answer_list = array();
@@ -476,7 +476,7 @@ class ModuleObject extends MasterObject
         #endif
         include($this->TemplateHandler->Template($tpl));
     }
-        function _no_from($ref_mod, $ref_code = '')
+    function _no_from($ref_mod, $ref_code = '')
     {
         $no_from = true;
         if ($ref_mod == 'topic' || $ref_mod == 'qun' || $ref_mod == 'live' || $ref_mod == 'talk') {
@@ -489,14 +489,14 @@ class ModuleObject extends MasterObject
         if (MEMBER_ID < 1) {
             response_text("请先登录或者注册一个帐号");
         }
-                if($this->MemberHandler->HasPermission('topic', 'add')==false) {
+        if($this->MemberHandler->HasPermission('topic', 'add')==false) {
             response_text("您的角色没有发布的权限");
         }
         $content = trim(strip_tags($this->Post['content']));
         if (!$content) {
             response_text("请输入内容");
         }
-                $topic_type = $this->Post['topictype'];
+        $topic_type = $this->Post['topictype'];
         if('both' == $topic_type){
             $type = 'both';
         } elseif('reply' == $topic_type){
@@ -524,11 +524,11 @@ class ModuleObject extends MasterObject
         $longtextid = max(0, (int) $this->Post['longtextid']);
         $design = trim($this->Post['r']);
         $xiami_id = trim($this->Post['xiami_id']) ? trim($this->Post['xiami_id']) : 0;
-                $from = trim($this->Post['from']);
+        $from = trim($this->Post['from']);
         $item = trim($this->Post['item']);
         $item_id  = intval(trim($this->Post['item_id']));
         if (!empty($item_id)) {
-                        Load::functions('app');
+            Load::functions('app');
             $ret = app_check($item, $item_id);
             if (!$ret) {
                 $item = '';
@@ -546,12 +546,12 @@ class ModuleObject extends MasterObject
             'videoid'=>$videoid,
             'from'=>empty($from) ? 'web' : $from,
             'type'=>$type,
-                    'design'=>$design,
-                    'item' => $item,
+            'design'=>$design,
+            'item' => $item,
             'item_id' => $item_id,
             'touid' => $touid,
-                    'longtextid' => $longtextid,
-                    'xiami_id' => $xiami_id,
+            'longtextid' => $longtextid,
+            'xiami_id' => $xiami_id,
         );
         $return = $this->TopicLogic->Add($data);
         if (is_array($return) && $return['tid'] > 0) {
@@ -596,7 +596,7 @@ class ModuleObject extends MasterObject
         $return = $this->TopicLogic->DeleteToBox($tid);
         response_text($return . $this->js_show_msg());
     }
-        function delVerify(){
+    function delVerify(){
         $tid = (int) ($this->Post['tid'] ? $this->Post['tid'] : $this->Get['tid']);
         if ($tid < 1) {
             js_alert_output("请指定一个您要删除的话题");
@@ -609,20 +609,20 @@ class ModuleObject extends MasterObject
         if ($topic['uid']!=MEMBER_ID && 'admin'!=MEMBER_ROLE_TYPE) {
             js_alert_output("您无权删除该话题");
         }
-                if ($topic['imageid']){
+        if ($topic['imageid']){
             Load::logic('image', 1)->delete($topic['imageid']);
         }
         if ($topic['videoid']) {
-                        $sql = "select `id`,`video_img` from `" . TABLE_PREFIX .
-                    "topic_video` where `id`='" . $topic['videoid'] . "' ";
+            $sql = "select `id`,`video_img` from `" . TABLE_PREFIX .
+                "topic_video` where `id`='" . $topic['videoid'] . "' ";
             $query = $this->DatabaseHandler->Query($sql);
             $topic_video = $query->GetRow();
             Load::lib('io', 1)->DeleteFile($topic_video['video_img']);
         }
-                if($topic['longtextid']){
+        if($topic['longtextid']){
             $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."topic_longtext where id = $topic[longtextid]");
         }
-                $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."topic_verify where id = '$tid'");
+        $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."topic_verify where id = '$tid'");
         $return = ($this->Post['return'] ? $this->Post['return'] : $this->Get['return']);
         response_text($return . $this->js_show_msg());
     }
@@ -642,7 +642,7 @@ class ModuleObject extends MasterObject
             $reply_list = array();
             if($topic_info)
             {
-                                $tids = array();
+                $tids = array();
                 if($return_reply ==  'is_huifu')
                 {
                     $topic_info['roottid'] = max(0, (int) $topic_info['roottid']);
@@ -679,7 +679,7 @@ class ModuleObject extends MasterObject
         $info = array();
         if($tid > 0)
         {
-                        if($this->Config['dzbbs_enable']){
+            if($this->Config['dzbbs_enable']){
                 if(@file_exists(ROOT_PATH . 'setting/dzbbs.php')){
                     Load::logic("topic_bbs");
                     $TopicBbsLogic = new TopicBbsLogic();
@@ -716,7 +716,7 @@ class ModuleObject extends MasterObject
         $info = array();
         if($tid > 0)
         {
-                        if($this->Config['dedecms_enable']){
+            if($this->Config['dedecms_enable']){
                 if(@file_exists(ROOT_PATH . 'setting/dedecms.php')){
                     Load::logic("topic_cms");
                     $TopicCmsLogic = new TopicCmsLogic();
@@ -731,7 +731,7 @@ class ModuleObject extends MasterObject
         }
         include($this->TemplateHandler->Template('topic_view_cmsbbs_ajax'));
     }
-        function ModifyTopic()
+    function ModifyTopic()
     {
         $tid = $modify_tid = max(0, (int) $this->Post['tid']);
         if($tid < 1)
@@ -741,13 +741,13 @@ class ModuleObject extends MasterObject
         $types = ($this->Post['types'] ? $this->Post['types'] : $this->Get['types']);
         $handle_key = ($this->Post['handle_key'] ? $this->Post['handle_key'] : $this->Get['handle_key']);
         $allow_attach = ($this->Post['attach'] ? $this->Post['attach'] : $this->Get['attach']);
-                $types = $this->Post['types'];
+        $types = $this->Post['types'];
         $topiclist = $this->TopicLogic->Get($modify_tid);
         if(!$topiclist)
         {
             response_text('您要编辑的微博已经不存在了');
         }
-                if(MEMBER_ROLE_TYPE != 'admin')
+        if(MEMBER_ROLE_TYPE != 'admin')
         {
             if(MEMBER_ID != $topiclist['uid'])
             {
@@ -757,19 +757,19 @@ class ModuleObject extends MasterObject
             {
                 response_text("微博已被评论或者转发,不能编辑");
             }
-                        if($this->Config['topic_modify_time'] && (($topiclist['addtime'] ? $topiclist['addtime'] : $topiclist['dateline']) + ($this->Config['topic_modify_time'] * 60) < time()))
+            if($this->Config['topic_modify_time'] && (($topiclist['addtime'] ? $topiclist['addtime'] : $topiclist['dateline']) + ($this->Config['topic_modify_time'] * 60) < time()))
             {
                 response_text("微博已超出可编辑时间了");
             }
         }
-                if($topiclist['longtextid'] > 0) {
+        if($topiclist['longtextid'] > 0) {
             $topiclist['content'] = DB::result_first("select `longtext` from ".DB::table('topic_longtext')." where `id`='{$topiclist['longtextid']}'");
         } else {
             $row = $this->DatabaseHandler->FetchFirst("select * from ".TABLE_PREFIX."topic where `tid`='$tid'");
             $topiclist['content'] = ($row['content'] . $row['content2']);
         }
-                $topiclist['content'] = strip_tags($topiclist['content']);
-                if('both'==$topiclist['type'] || 'forward'==$topiclist['type'])
+        $topiclist['content'] = strip_tags($topiclist['content']);
+        if('both'==$topiclist['type'] || 'forward'==$topiclist['type'])
         {
             $topiclist['content'] = $this->TopicLogic->GetForwardContent($topiclist['content']);
         }
@@ -777,7 +777,7 @@ class ModuleObject extends MasterObject
         $this->item_id = $topiclist['item_id'];
         include($this->TemplateHandler->Template('modify_topic_ajax'));
     }
-        function Do_ModifyTopic()
+    function Do_ModifyTopic()
     {
         if(MEMBER_ID < 1)
         {
@@ -793,7 +793,7 @@ class ModuleObject extends MasterObject
         {
             js_alert_output("您要编辑的内容已经不存在了");
         }
-                if(MEMBER_ROLE_TYPE != 'admin')
+        if(MEMBER_ROLE_TYPE != 'admin')
         {
             if(MEMBER_ID != $topiclist['uid'])
             {
@@ -803,17 +803,17 @@ class ModuleObject extends MasterObject
             {
                 js_alert_output("微博已被评论或者转发,不能编辑");
             }
-                        if($this->Config['topic_modify_time'] && (($topiclist['addtime'] ? $topiclist['addtime'] : $topiclist['dateline']) + ($this->Config['topic_modify_time'] * 60) < time()))
+            if($this->Config['topic_modify_time'] && (($topiclist['addtime'] ? $topiclist['addtime'] : $topiclist['dateline']) + ($this->Config['topic_modify_time'] * 60) < time()))
             {
                 js_alert_output("微博已超出可编辑时间了");
             }
         }
         $content = strip_tags($this->Post['content']);
-                if(empty($content))
+        if(empty($content))
         {
             js_alert_output("微博内容不能为空");
         }
-                if('both'==$topiclist['type'] || 'forward'==$topiclist['type'])
+        if('both'==$topiclist['type'] || 'forward'==$topiclist['type'])
         {
             $content = $this->TopicLogic->GetForwardContent($content);
         }
@@ -840,7 +840,7 @@ class ModuleObject extends MasterObject
         $highlight = ($highlight ? $highlight : get_param('highlight'));
         $_GET['highlight'] = $highlight;
         $topic_info = $this->TopicLogic->Get($tid);
-                if ($topic_info['type'] == 'reply') {
+        if ($topic_info['type'] == 'reply') {
             $roottid = $topic_info['roottid'];
             $root_type = DB::result_first("SELECT type FROM ".DB::table('topic')." WHERE tid='{$roottid}'");
         } else {
@@ -855,11 +855,11 @@ class ModuleObject extends MasterObject
         {
             $total_record = $topic_info['replys'];
             $_config = array
-            (
-                'return' => 'array',
-                'extra' => 'onclick="replyList(this.title);return false;"',
-                'var' => 'p',
-            );
+                (
+                    'return' => 'array',
+                    'extra' => 'onclick="replyList(this.title);return false;"',
+                    'var' => 'p',
+                );
             $page_arr = page($total_record,$per_page_num,"index.php?mod=topic&code={$topic_info['tid']}",$_config);
             $tids = array();
             $tids = $this->TopicLogic->GetReplyIds($topic_info['tid']);
@@ -868,7 +868,7 @@ class ModuleObject extends MasterObject
                 krsort($tids);
                 $condition = "where `tid` in ('".implode("','",array_slice((array) $tids,$page_arr['offset'],$per_page_num))."') order by `dateline` asc limit {$per_page_num}";
                 $reply_list = $this->TopicLogic->Get($condition);
-                                $r_parent_list = $this->TopicLogic->GetParentTopic($reply_list, 1);
+                $r_parent_list = $this->TopicLogic->GetParentTopic($reply_list, 1);
             }
         }
         include($this->TemplateHandler->Template('topic_reply_list_ajax'));
@@ -919,7 +919,7 @@ class ModuleObject extends MasterObject
                 } else {
                     $this->_removeTopicImage($image_id);
                     list($image_width,$image_height,$image_type,$image_attr) = getimagesize($image_file);
-                                        if($image_width > 200)
+                    if($image_width > 200)
                     {
                         $p_width = 200;
                         $p_height = round(($image_height*200)/$image_width);
@@ -930,18 +930,18 @@ class ModuleObject extends MasterObject
                         @copy($image_file,$image_file_photo);
                     }
                     $result = makethumb(
-                    $image_file,
-                    $image_file_small,
-                    min($this->Config['thumbwidth'],$image_width),
-                    min($this->Config['thumbwidth'],$image_height),
-                    $this->Config['maxthumbwidth'],
-                    $this->Config['maxthumbheight']
+                        $image_file,
+                        $image_file_small,
+                        min($this->Config['thumbwidth'],$image_width),
+                        min($this->Config['thumbwidth'],$image_height),
+                        $this->Config['maxthumbwidth'],
+                        $this->Config['maxthumbheight']
                     );
                     if (!$result && !is_file($image_file_small))
                     {
                         @copy($image_file,$image_file_small);
                     }
-                                        if($this->Config['watermark_enable'])
+                    if($this->Config['watermark_enable'])
                     {
                         $arr = @getimagesize($image_file);
                         if($arr && 'image/gif' != $arr['mime'] && 'image/png' != $arr['mime'])
@@ -951,7 +951,7 @@ class ModuleObject extends MasterObject
                     }
                     $image_size = filesize($image_file);
                     $name = addslashes($_FILES[$field]['name']);
-                                        $site_url = '';
+                    $site_url = '';
                     if($this->Config['ftp_on'])
                     {
                         $site_url = ConfigHandler::get('ftp','attachurl');
@@ -1011,14 +1011,14 @@ class ModuleObject extends MasterObject
             Load::lib('io', 1)->DeleteFile(topic_image($row['id'],'original'));
         }
     }
-        function Create_Group()
+    function Create_Group()
     {
         if (MEMBER_ID < 1) {
             js_alert_output("请先登录或者注册一个帐号");
         }
         include(template('topic_group_create_ajax'));
     }
-        function Do_Group()
+    function Do_Group()
     {
         if (MEMBER_ID < 1) {
             js_alert_output("请先登录或者注册一个帐号");
@@ -1033,7 +1033,7 @@ class ModuleObject extends MasterObject
         if (preg_match('~[\~\`\!\@\#\$\%\^\&\*\(\)\=\+\[\{\]\}\;\:\'\"\,\<\.\>\/\?]~',$group_name)) {
             js_alert_output('分组不能包含特殊字符');
         }
-                $f_rets = filter($group_name);
+        $f_rets = filter($group_name);
         if($f_rets && $f_rets['error'])
         {
             js_alert_output($f_rets['msg']);
@@ -1076,7 +1076,7 @@ class ModuleObject extends MasterObject
             }
         }
     }
-        function Group_fields()
+    function Group_fields()
     {
         $uid   = MEMBER_ID;
         $g_id  =  $this->Post['gid'];
@@ -1084,28 +1084,28 @@ class ModuleObject extends MasterObject
         $sql="SELECT * FROM ".TABLE_PREFIX.'group'." WHERE uid =".MEMBER_ID." and id=".$g_id;
         $query = $this->DatabaseHandler->Query($sql);
         $group_info=$query->GetRow();
-                $sql="SELECT `uid` FROM ".TABLE_PREFIX.'members'." WHERE uid=".$touid;
+        $sql="SELECT `uid` FROM ".TABLE_PREFIX.'members'." WHERE uid=".$touid;
         $query = $this->DatabaseHandler->Query($sql);
         $member_info=$query->GetRow();
-                $sql="SELECT `touid`,`display` FROM ".TABLE_PREFIX.'groupfields'." WHERE touid ='{$touid}' and gid=".$g_id;
+        $sql="SELECT `touid`,`display` FROM ".TABLE_PREFIX.'groupfields'." WHERE touid ='{$touid}' and gid=".$g_id;
         $query = $this->DatabaseHandler->Query($sql);
         $fields_info=$query->GetRow();
         if(empty($fields_info['display']))
         {
-                        $sql = "insert into `".TABLE_PREFIX."groupfields`(`uid`, `touid`,`gid`,`g_name`,`display`) values ('".MEMBER_ID."','{$member_info['uid']}','{$group_info['id']}','{$group_info['group_name']}','1')";
+            $sql = "insert into `".TABLE_PREFIX."groupfields`(`uid`, `touid`,`gid`,`g_name`,`display`) values ('".MEMBER_ID."','{$member_info['uid']}','{$group_info['id']}','{$group_info['group_name']}','1')";
             $query = $this->DatabaseHandler->Query($sql);
         }
         else
         {
-                        $sql = "delete from `".TABLE_PREFIX."groupfields` where `touid`='{$touid}' and gid = '{$g_id}'";
+            $sql = "delete from `".TABLE_PREFIX."groupfields` where `touid`='{$touid}' and gid = '{$g_id}'";
             $this->DatabaseHandler->Query($sql);
         }
-                $sql = "select count(*) as group_count from `".TABLE_PREFIX."groupfields` where `uid`='{$uid}' and `gid`='{$g_id}'";
+        $sql = "select count(*) as group_count from `".TABLE_PREFIX."groupfields` where `uid`='{$uid}' and `gid`='{$g_id}'";
         $group_count = DB::result_first($sql);
         $sql = "update `".TABLE_PREFIX."group` set `group_count`='{$group_count}'  where `uid`='{$uid}' and `id`='{$g_id}'";
         $this->DatabaseHandler->Query($sql);
     }
-        function Group_Menu()
+    function Group_Menu()
     {
         if (MEMBER_ID < 1) {
             js_alert_output("请先登录或者注册一个帐号");
@@ -1113,19 +1113,19 @@ class ModuleObject extends MasterObject
         $uid = MEMBER_ID;
         $timestamp = time();
         $userid = (int) get_param('to_user');
-                $member = jsg_member_info($userid);
+        $member = jsg_member_info($userid);
         if(!$member) {
             js_alert_output("您要操作的用户已经不存在了");
         }
-                $buddy_info = Load::model('buddy')->info($userid, $uid);
-                $sql = "select  GF.touid , GF.g_name , GF.display , G.* from `".TABLE_PREFIX."group` G left join `".TABLE_PREFIX."groupfields` GF on G.id=GF.gid where G.uid='".MEMBER_ID." ' ";
+        $buddy_info = Load::model('buddy')->info($userid, $uid);
+        $sql = "select  GF.touid , GF.g_name , GF.display , G.* from `".TABLE_PREFIX."group` G left join `".TABLE_PREFIX."groupfields` GF on G.id=GF.gid where G.uid='".MEMBER_ID." ' ";
         $query = $this->DatabaseHandler->Query($sql);
         $group_list = array();
         while (false != ($row = $query->GetRow()))
         {
             $group_list[$row['id']] = $row;
         }
-                $sql = "select  `uid`,`gid`,`touid` from  `".TABLE_PREFIX."groupfields` where uid='".MEMBER_ID."' and touid= '{$userid}' ";
+        $sql = "select  `uid`,`gid`,`touid` from  `".TABLE_PREFIX."groupfields` where uid='".MEMBER_ID."' and touid= '{$userid}' ";
         $query = $this->DatabaseHandler->Query($sql);
         $group_set = array();
         while (false != ($row = $query->GetRow()))
@@ -1136,7 +1136,7 @@ class ModuleObject extends MasterObject
         $handle_key = get_param('handle_key');
         include($this->TemplateHandler->Template('topic_group_menu'));
     }
-        function GroupList()
+    function GroupList()
     {
         $userid = trim($this->Post['touid']);
         $sql = "select GF.gid,GF.g_name  from  `".TABLE_PREFIX."groupfields` GF  where GF.uid='".MEMBER_ID."'  and GF.touid='$userid' ";
@@ -1147,15 +1147,15 @@ class ModuleObject extends MasterObject
             echo '<a href="index.php?mod=topic&code=follow&gid='.$row['gid'].'">[ '.$row['g_name']." ]".'</a> ';
         }
     }
-        function Remark() {
+    function Remark() {
         $uid = (int) get_param('uid');
         $buddy_info = Load::model('buddy')->info($uid, MEMBER_ID);
         include($this->TemplateHandler->Template('topic_remark_ajax'));
     }
-        function Add_Remark()
+    function Add_Remark()
     {
-                $remark = $this->Post['remark'];
-                $buddyid =  (is_numeric($this->Post['buddyid']) ? $this->Post['buddyid'] : 0);
+        $remark = $this->Post['remark'];
+        $buddyid =  (is_numeric($this->Post['buddyid']) ? $this->Post['buddyid'] : 0);
         if($buddyid < 1) {
             response_text('请指定一个好友ID');
         }
@@ -1176,49 +1176,49 @@ class ModuleObject extends MasterObject
             );
             $ret = Load::model('buddy')->set_remark($p, $remark);
         }
-            }
-        function DoDelMyFans() {
+    }
+    function DoDelMyFans() {
         $buddyid = MEMBER_ID;
-                $touid = (int) $this->Post['touid'];
+        $touid = (int) $this->Post['touid'];
         if($buddyid > 0 && $touid > 0) {
-                        $is_black = $this->Post['is_black'];
+            $is_black = $this->Post['is_black'];
             if($is_black) {
-                                $this->_AddBlackList($buddyid,$touid,'add');
+                $this->_AddBlackList($buddyid,$touid,'add');
             }
             Load::model('buddy')->del_info($buddyid, $touid);
         }
         include(template('topic_fans'));
     }
-        function Follow()
+    function Follow()
     {
         $GLOBALS['disable_show_msg'] = 1;        $response = '';
-                $follow_button = $this->Post['follow_button'];
+        $follow_button = $this->Post['follow_button'];
         if(MEMBER_ID < 1) {
             js_show_login('登录后才能执行此操作');
         }
-                $uid = (int) $this->ID;
+        $uid = (int) $this->ID;
         $rets = buddy_add($this->ID, MEMBER_ID, 1);
         if($rets) {
             if($rets['error']) {
                 js_alert_output($rets['error']);
             } elseif ($rets['id'] > 0) {
-                                if($follow_button == 'xiao'){
+                if($follow_button == 'xiao'){
                     $response = follow_html2($uid, 0, 0);
                 } else {
                     $response = follow_html($uid, 0, 0);
                 }
             }
         } else {
-                        if($follow_button == 'xiao'){
+            if($follow_button == 'xiao'){
                 $response = follow_html2($uid, 1, 0);
             } else {
                 $response = follow_html($uid, 1, 0);
             }
         }
-                $response .= '<success></success>';
+        $response .= '<success></success>';
         response_text($response);
     }
-        function UserMenu()
+    function UserMenu()
     {
         if($this->Post['nickname']) {
             $member = jsg_member_info($this->Post['nickname'], 'nickname');
@@ -1227,17 +1227,17 @@ class ModuleObject extends MasterObject
         if($uid < 1) {
             exit;
         }
-                $buddy_info = Load::model('buddy')->info($uid, MEMBER_ID);
-                $blacklist_info = Load::model('buddy')->blacklist($uid, MEMBER_ID);
+        $buddy_info = Load::model('buddy')->info($uid, MEMBER_ID);
+        $blacklist_info = Load::model('buddy')->blacklist($uid, MEMBER_ID);
         $list_members = $this->TopicLogic->GetMember($uid,"`uid`,`ucuid`,`medal_id`,`username`,`nickname`,`face`,`fans_count`,`topic_count`,`validate`,`validate_category`,`aboutme`,`province`,`city`,`level`");
         $list_members['aboutme'] = cut_str($list_members['aboutme'],54);
         $follow_html = $list_members['follow_html'] = follow_html($uid, ($buddy_info ? 1 : 0));
-                $sql = "select * from `".TABLE_PREFIX."user_tag_fields` where `uid` = '{$uid}'";
+        $sql = "select * from `".TABLE_PREFIX."user_tag_fields` where `uid` = '{$uid}'";
         $query = $this->DatabaseHandler->Query($sql);
         $usertag=$query->GetAll();
         include($this->TemplateHandler->Template('topic_user_menu'));
     }
-        function Follower_choose()
+    function Follower_choose()
     {
         $nickname = get_param('nickname');
         $template = get_param('template');
@@ -1250,7 +1250,7 @@ class ModuleObject extends MasterObject
             $query = $this->DatabaseHandler->Query($sql);
             $members = $query->GetRow();
         }
-                Load::lib('form');
+        Load::lib('form');
         $FormHandler = new FormHandler();
         $query = $this->DatabaseHandler->Query("select * from ".TABLE_PREFIX."common_district where upid = 0 order by list");
         while (false != ($rsdb = $query->GetRow())){
@@ -1260,59 +1260,59 @@ class ModuleObject extends MasterObject
         $province_list = $FormHandler->Select("province",$province,''," onchange=\"changeProvince();\"");
         include($this->TemplateHandler->Template('user_follower_menu'));
     }
-        function DoAddMyBlackList()
+    function DoAddMyBlackList()
     {
-                $uid  = MEMBER_ID;
+        $uid  = MEMBER_ID;
         if ($uid < 1) {
             json_error("请先登录或者注册一个帐号");
         }
-                $touid  = (int) $this->Post['touid'];
+        $touid  = (int) $this->Post['touid'];
         if($touid < 1) {
             json_error("请指定要拉黑的用户");
         }
-                $member = $this->TopicLogic->GetMember($touid);
+        $member = $this->TopicLogic->GetMember($touid);
         if(!$member) {
             json_error("请指定一个正确的用户ID");
         }
-                $types    = $this->Post['types'];
-                $follow_html = $this->_AddBlackList($uid,$touid,$types);
-                $template    = $this->Post['template'];
+        $types    = $this->Post['types'];
+        $follow_html = $this->_AddBlackList($uid,$touid,$types);
+        $template    = $this->Post['template'];
         if($template) {
             $template = dir_safe($template);
             include($this->TemplateHandler->Template($template));
         }
     }
-        function DoDelMyBlackList()
+    function DoDelMyBlackList()
     {
-                $uid  = MEMBER_ID;
+        $uid  = MEMBER_ID;
         if ($uid < 1) {
             json_error("请先登录或者注册一个帐号");
         }
-                $touid  = (int) $this->Post['touid'];
-                $this->_AddBlackList($uid,$touid,'del');
+        $touid  = (int) $this->Post['touid'];
+        $this->_AddBlackList($uid,$touid,'del');
         include($this->TemplateHandler->Template('blacklist'));
     }
-        function Tag_Menu()
+    function Tag_Menu()
     {
         $uid  = (int) $this->Post['uid'];
         $type = $this->Post['type'];
-                if('my_tag' == $type)
+        if('my_tag' == $type)
         {
             $sql = "select `id`,`tag` as tag_name,`uid` from `".TABLE_PREFIX."tag_favorite` where `uid`='{$uid}' order by `id` desc limit 0,12 ";
             $query = $this->DatabaseHandler->Query($sql);
             $list = $query->GetAll();
             $my_tag_class = 'here';
-                    } elseif('day_tag' == $type){
+        } elseif('day_tag' == $type){
             $sql = "select `id`,`name` as tag_name,`topic_count` from `".TABLE_PREFIX."tag`  WHERE dateline>='".(time() - 86400 * 7)."' GROUP BY `tag_count` DESC limit 0,12";
             $query = $this->DatabaseHandler->Query($sql);
             $list = $query->GetAll();
             $day_tag_class = 'here';
-                    } elseif('day_hot' == $type){
+        } elseif('day_hot' == $type){
             $sql = "select `id`,`name` as tag_name,`topic_count`,`tag_count` from `".TABLE_PREFIX."tag`  WHERE dateline>='".(time() - 86400 * 7)."' GROUP BY `topic_count` DESC limit 0,12";
             $query = $this->DatabaseHandler->Query($sql);
             $list = $query->GetAll();
             $day_hot_class = 'here';
-                    } elseif('tui_tag' == $type){
+        } elseif('tui_tag' == $type){
             $hot_tag_recommend = ConfigHandler::get('hot_tag_recommend');
             $list = $hot_tag_recommend['list'];
             $tui_tag_class = 'here';
@@ -1325,13 +1325,13 @@ class ModuleObject extends MasterObject
         if ($uid < 1) {
             $msg = "请先登录或者注册一个帐号";
         } else {
-                        if($this->Post['uids']) {
+            if($this->Post['uids']) {
                 $uids = $this->Post['uids'];
             }
-                        if($this->Post['ids']) {
+            if($this->Post['ids']) {
                 $uids = $this->Post['ids'];
             }
-                        if($this->Post['media_uids_'.$this->Post['media_id']]) {
+            if($this->Post['media_uids_'.$this->Post['media_id']]) {
                 $uids =  $this->Post['media_uids_'.$this->Post['media_id']] ;
             }
             if(empty($uids)) {
@@ -1372,13 +1372,13 @@ class ModuleObject extends MasterObject
             response_text($msg);
         }
     }
-        function addFavoriteTag()
+    function addFavoriteTag()
     {
         $uid = MEMBER_ID;
         if ($uid < 1) {
             exit("请先登录或者注册一个帐号");
         }
-                $tagid = (int) $this->Post['tag'] ? $this->Post['tag'] : $this->Get['tag'];
+        $tagid = (int) $this->Post['tag'] ? $this->Post['tag'] : $this->Get['tag'];
         if(!$tagid){
             exit('请选择关注对象');
         }
@@ -1394,7 +1394,7 @@ class ModuleObject extends MasterObject
             exit($rets[$jsg_result]);
         }
     }
-        function Favorite()
+    function Favorite()
     {
         if (MEMBER_ID < 1) {
             response_text("请登录");
@@ -1410,7 +1410,7 @@ class ModuleObject extends MasterObject
         $TopicFavorite = $OtherLogic->TopicFavorite($uid,$tid,$act);
         response_text($TopicFavorite);
     }
-        function favoriteFenlei(){
+    function favoriteFenlei(){
         $id = $this->Post['id'];
         $act = $this->Post['act'];
         $time = time();
@@ -1420,7 +1420,7 @@ class ModuleObject extends MasterObject
             $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."fenlei_favorite where fid = $id");
         }
     }
-        function favoriteEvent(){
+    function favoriteEvent(){
         $id = $this->Post['id'];
         $act = $this->Post['act'];
         $time = time();
@@ -1430,7 +1430,7 @@ class ModuleObject extends MasterObject
             $this->DatabaseHandler->Query("delete from ".TABLE_PREFIX."event_favorite where type_id = $id");
         }
     }
-        function FavoriteTag()
+    function FavoriteTag()
     {
         if (MEMBER_ID < 1) {
             js_show_login("请登录");
@@ -1447,11 +1447,11 @@ class ModuleObject extends MasterObject
         if(!$tag_info) {
             js_alert_showmsg("指定的话题已经不存在了");
         }
-                $sql = "select * from `".TABLE_PREFIX."tag_favorite` where `uid`='{$uid}' and `tag`='{$tag}'";
+        $sql = "select * from `".TABLE_PREFIX."tag_favorite` where `uid`='{$uid}' and `tag`='{$tag}'";
         $query = $this->DatabaseHandler->Query($sql);
         $is_favorite = ($query->GetNumRows()>0);
         $tag_favorite = $query->GetRow();
-                if ('delete' != $this->Post['act']) {
+        if ('delete' != $this->Post['act']) {
             if($tag_favorite) {
                 js_alert_showmsg("指定的话题已经关注过了");
             }
@@ -1463,19 +1463,19 @@ class ModuleObject extends MasterObject
             $sql = "update `".TABLE_PREFIX."members` set `tag_favorite_count`='{$row['tag_favorite_count']}' where `uid`='{$uid}'";
             $this->DatabaseHandler->Query($sql);
         }
-                if ('delete' == $this->Post['act']) {
+        if ('delete' == $this->Post['act']) {
             if ($is_favorite) {
                 $id = $tag_favorite['id'];
                 $sql = "delete from `".TABLE_PREFIX."tag_favorite` where `id`='{$id}'";
                 $this->DatabaseHandler->Query($sql);
                 $sql = "update `".TABLE_PREFIX."members` set `tag_favorite_count`=if(`tag_favorite_count`>1,`tag_favorite_count`-1,0) where `uid`='{$uid}'";
                 $this->DatabaseHandler->Query($sql);
-                                $sql = "update `".TABLE_PREFIX."tag` set `tag_count`=`tag_count`-1 where `id`='{$tag_info['id']}'";
+                $sql = "update `".TABLE_PREFIX."tag` set `tag_count`=`tag_count`-1 where `id`='{$tag_info['id']}'";
                 $this->DatabaseHandler->Query($sql);
             }
             js_alert_showmsg("已取消话题关注");
         }
-                else
+        else
         {
             if(!$is_favorite) {
                 $sql = "insert into `".TABLE_PREFIX."tag_favorite` (`uid`,`tag`,`dateline`) values ('{$uid}','{$tag}','{$timestamp}')";
@@ -1483,9 +1483,9 @@ class ModuleObject extends MasterObject
                 $favorite_tag_id = $this->DatabaseHandler->Insert_ID();
                 $sql = "update `".TABLE_PREFIX."members` set `tag_favorite_count`=`tag_favorite_count`+1 where `uid`='{$uid}'";
                 $this->DatabaseHandler->Query($sql);
-                                $sql = "update `".TABLE_PREFIX."tag` set `tag_count`=`tag_count`+1 where `id`='{$tag_info['id']}'";
+                $sql = "update `".TABLE_PREFIX."tag` set `tag_count`=`tag_count`+1 where `id`='{$tag_info['id']}'";
                 $this->DatabaseHandler->Query($sql);
-                                $sql = "select * from `".TABLE_PREFIX."tag_favorite` where `uid`='{$uid}' order by `id` desc  limit 0,12";
+                $sql = "select * from `".TABLE_PREFIX."tag_favorite` where `uid`='{$uid}' order by `id` desc  limit 0,12";
                 $query = $this->DatabaseHandler->Query($sql);
                 $list = $my_favorite_tags = array();
                 while (false != ($row = $query->GetRow())) {
@@ -1503,24 +1503,24 @@ class ModuleObject extends MasterObject
             }
         }
     }
-        function Forward_Menu()
+    function Forward_Menu()
     {
         $tid = $this->Post['tid'];
         $forward_topic = $this->TopicLogic->Get($tid);
-                $returncode = $this->Post['r'];
+        $returncode = $this->Post['r'];
         if($forward_topic['roottid'])
         {
             $forward_topic = $this->TopicLogic->Get($forward_topic['roottid']);
         }
         $forward_tid         = $forward_topic['tid'];
-                include($this->TemplateHandler->Template('topic_forward_menu'));
+        include($this->TemplateHandler->Template('topic_forward_menu'));
     }
-        function Do_forward()
+    function Do_forward()
     {
         if (MEMBER_ID < 1) {
             response_text("请登录");
         }
-                if($this->MemberHandler->HasPermission('topic','do_add')==false)
+        if($this->MemberHandler->HasPermission('topic','do_add')==false)
         {
             response_text("转发失败:您的角色(禁言组)没有发布的权限");
         }
@@ -1533,7 +1533,7 @@ class ModuleObject extends MasterObject
         $item = trim($this->Post['item']);
         $item_id  = intval(trim($this->Post['item_id']));
         if (!empty($item_id)) {
-                        Load::functions('app');
+            Load::functions('app');
             $ret = app_check($item, $item_id);
             if (!$ret) {
                 $item = '';
@@ -1552,7 +1552,7 @@ class ModuleObject extends MasterObject
             'attachid'=>$attachid,
             'from'=>$from,
             'type'=>$type,
-                    'item' => $item,
+            'item' => $item,
             'item_id' => $item_id,
         );
         $return = $this->TopicLogic->Add($data);
@@ -1564,9 +1564,9 @@ class ModuleObject extends MasterObject
         {
             $return = (is_string($return) ? "[转发失败]".$return : (is_array($return) ? "[转发成功]但".implode("",$return) : "未知错误"));
             response_text("{$return}");
-                                }
+        }
     }
-        function DoReport()
+    function DoReport()
     {
         if(MEMBER_ID < 1 && !$this->Config['is_report'])
         {
@@ -1576,13 +1576,13 @@ class ModuleObject extends MasterObject
         $report_reason = $this->Post['report_reason'];
         $report_content = $this->Post['report_content'];
         $data = array(
-                'uid' => MEMBER_ID,
-                'username' => MEMBER_NICKNAME,
-                'ip' => client_ip(),
-                'reason' => (int) $report_reason,
-                'content' => strip_tags($report_content),
-                'tid' => (int) $tid,
-                'dateline' => time(),
+            'uid' => MEMBER_ID,
+            'username' => MEMBER_NICKNAME,
+            'ip' => client_ip(),
+            'reason' => (int) $report_reason,
+            'content' => strip_tags($report_content),
+            'tid' => (int) $tid,
+            'dateline' => time(),
         );
         $this->DatabaseHandler->SetTable(TABLE_PREFIX . 'report');
         $result = $this->DatabaseHandler->Insert($data);
@@ -1592,14 +1592,14 @@ class ModuleObject extends MasterObject
                 'message' => $message,
                 'to_user' => str_replace('|',',',$notice_to_admin),
             );
-                        $admin_info = DB::fetch_first('select `uid`,`username`,`nickname` from `'.TABLE_PREFIX.'members` where `uid` = 1');
+            $admin_info = DB::fetch_first('select `uid`,`username`,`nickname` from `'.TABLE_PREFIX.'members` where `uid` = 1');
             load::logic('pm');
             $PmLogic = new PmLogic();
             $PmLogic->pmSend($pm_post,$admin_info['uid'],$admin_info['username'],$admin_info['nickname']);
         }
         response_text('举报成功');
     }
-        function TopicShow()
+    function TopicShow()
     {
         $uid = MEMBER_ID;
         $sql = "select `uid` from `".TABLE_PREFIX."topic_show` where `uid` =  '{$uid}' ";
@@ -1622,7 +1622,7 @@ class ModuleObject extends MasterObject
             'isTitle'         => (int) ($this->Post['isTitle'] ? $this->Post['isTitle'] : $this->Get['isTitle']),
             'isBorder'        => (int) ($this->Post['isBorder'] ? $this->Post['isBorder'] : $this->Get['isBorder']),
         );
-                if($showlist){
+        if($showlist){
             $sql = "update `".TABLE_PREFIX."topic_show` set `stylevalue`='".serialize($styleData)."'  where `uid`='{$uid}'";
             $this->DatabaseHandler->Query($sql);
         } else{
@@ -1634,7 +1634,7 @@ class ModuleObject extends MasterObject
         echo "</script>";
         exit;
     }
-        function User_Tag()
+    function User_Tag()
     {
         $uid          = (int) MEMBER_ID;
         $tagid         = (int) $this->Post['tagid'];
@@ -1644,18 +1644,18 @@ class ModuleObject extends MasterObject
         {
             js_alert_output("请先登录或者注册一个帐号");
         }
-                $f_rets = filter($tag_name);
+        $f_rets = filter($tag_name);
         if($f_rets && $f_rets['error'])
         {
             js_alert_output($f_rets['msg']);
         }
-                $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."user_tag_fields` where `uid` = '".MEMBER_ID."'";
+        $sql = "select count(*) as `total_record` from `".TABLE_PREFIX."user_tag_fields` where `uid` = '".MEMBER_ID."'";
         $total_record = DB::result_first($sql);
         if($total_record >= 10)
         {
             js_alert_output('最多只能设置10个标签');
         }
-                if($this->Post['types'] == 'add')
+        if($this->Post['types'] == 'add')
         {
             if(empty($tag_name))
             {
@@ -1668,21 +1668,21 @@ class ModuleObject extends MasterObject
             {
                 js_alert_output($tag_name.' 标签已经打上');
             }
-                        $sql = "select * from `".TABLE_PREFIX."user_tag` where `name` = '{$tag_name}'";
+            $sql = "select * from `".TABLE_PREFIX."user_tag` where `name` = '{$tag_name}'";
             $query = $this->DatabaseHandler->Query($sql);
             $usertag = $query->GetRow();
             if(empty($usertag))
             {
-                                $sql = "insert into `".TABLE_PREFIX."user_tag`(`name`,`dateline`) values ('{$tag_name}','{$addtime}')";
+                $sql = "insert into `".TABLE_PREFIX."user_tag`(`name`,`dateline`) values ('{$tag_name}','{$addtime}')";
                 $this->DatabaseHandler->Query($sql);
                 $tag_insertid = $this->DatabaseHandler->Insert_ID();
             }
             $tag_insertid = $tag_insertid ? $tag_insertid :$usertag['id'];
-                        $sql = "insert into `".TABLE_PREFIX."user_tag_fields`(`tag_id`,`uid`,`tag_name`) values ('{$tag_insertid}','{$uid}','{$tag_name}')";
+            $sql = "insert into `".TABLE_PREFIX."user_tag_fields`(`tag_id`,`uid`,`tag_name`) values ('{$tag_insertid}','{$uid}','{$tag_name}')";
             $this->DatabaseHandler->Query($sql);
             $tag_fields_id = $this->DatabaseHandler->Insert_ID();
         }
-                if($this->Post['types'] == 'useradd')
+        if($this->Post['types'] == 'useradd')
         {
             $sql = "select `tag_name` from `".TABLE_PREFIX."user_tag_fields` where `tag_name`='{$tag_name}' and `uid` = '".MEMBER_ID."'";
             $query = $this->DatabaseHandler->Query($sql);
@@ -1698,11 +1698,11 @@ class ModuleObject extends MasterObject
         $sql = "select * from `".TABLE_PREFIX."user_tag_fields` where `id` = '{$tag_fields_id}' and `uid` = '".MEMBER_ID."' limit 0,1";
         $query = $this->DatabaseHandler->Query($sql);
         $user_tag_fields[]=$query->GetRow();
-                $sql = "update `".TABLE_PREFIX."user_tag` set `count`=`count`+1 where `id`='{$tagid}'";
+        $sql = "update `".TABLE_PREFIX."user_tag` set `count`=`count`+1 where `id`='{$tagid}'";
         $this->DatabaseHandler->Query($sql);
         include($this->TemplateHandler->Template('user_tag_ajax'));
     }
-        function Del_Tag()
+    function Del_Tag()
     {
         $uid         = (int) MEMBER_ID;
         $tag_id     = (int) get_param('tag_id');
@@ -1717,7 +1717,7 @@ class ModuleObject extends MasterObject
         }
         include($this->TemplateHandler->Template('user_tag_ajax'));
     }
-        function Del_Group()
+    function Del_Group()
     {
         $uid         = (int) MEMBER_ID;
         $group_id     = (int) get_param('group_id');
@@ -1732,14 +1732,14 @@ class ModuleObject extends MasterObject
         }
         include($this->TemplateHandler->Template('topic_follow'));
     }
-        function UploadFace()
+    function UploadFace()
     {
         if (MEMBER_ID < 1)
         {
             js_alert_output("请先登录或者注册一个帐号");
         }
         $field = 'face';
-                $temp_img_size = intval($_FILES[$field]['size']/1024);
+        $temp_img_size = intval($_FILES[$field]['size']/1024);
         if($temp_img_size >= 2048)
         {
             js_alert_output('图片文件过大,2MB以内');
@@ -1796,7 +1796,7 @@ class ModuleObject extends MasterObject
         }
         echo "</script>";
     }
-        function DoVideo()
+    function DoVideo()
     {
         $url = $this->Post['url'];
         preg_match_all('~(?:https?\:\/\/)(?:[A-Za-z0-9_\-]+\.)+[A-Za-z0-9]{2,4}(?:\/[\w\d\/=\?%\-\&_\~`@\[\]\:\+\#]*(?:[^<>\'\"\n\r\t\s])*)?~',$url,$match);
@@ -1805,29 +1805,29 @@ class ModuleObject extends MasterObject
             js_alert_output('输入正确的视频地址');
         }
         $ext = trim(strtolower(substr($url,strrpos($url,'.'))));
-                $return = array();
+        $return = array();
         if('.swf'==$ext)
         {
-                        $return = array
-            (
-                'id' => $url,
-                'host' => 'flash',
-                'url' => $url,
-                'title' => $url,
-            );
+            $return = array
+                (
+                    'id' => $url,
+                    'host' => 'flash',
+                    'url' => $url,
+                    'title' => $url,
+                );
         }
         else
         {
             $return = $this->TopicLogic->_parse_video($url);
         }
-                $return_content = (
-        $return['title'] ?
-        $return['title'] . (
-        $this->Config['video_status'] ?
+        $return_content = (
+            $return['title'] ?
+            $return['title'] . (
+                $this->Config['video_status'] ?
                 "" :
                 " $url"
-        )
-        : '分享链接  '.$url
+            )
+            : '分享链接  '.$url
         );
         if ($return)
         {
@@ -1847,9 +1847,9 @@ class ModuleObject extends MasterObject
             }
             $timestamp         = time();
             $sql = "insert into `".TABLE_PREFIX."topic_video`
-            (`uid`,`tid`,`username`,`video_hosts`,`video_link`,`video_url`,`video_img`,`video_img_url`,`dateline`)
-            values
-            ('".MEMBER_ID."','".''."','".MEMBER_NAME."','".$video_hosts."','".$video_link."','".$video_url."','".$video_img."','$video_img_url','".$timestamp."')";
+                (`uid`,`tid`,`username`,`video_hosts`,`video_link`,`video_url`,`video_img`,`video_img_url`,`dateline`)
+                values
+                ('".MEMBER_ID."','".''."','".MEMBER_NAME."','".$video_hosts."','".$video_link."','".$video_url."','".$video_img."','$video_img_url','".$timestamp."')";
             $this->DatabaseHandler->Query($sql);
             $videoid = $this->DatabaseHandler->Insert_ID();
             if($video_img) $video_img_src = $video_img_url . $video_img;
@@ -1857,7 +1857,7 @@ class ModuleObject extends MasterObject
             {
                 $video_img_src = 'images/vd.gif';
             }
-                        echo "<script language='Javascript'>";
+            echo "<script language='Javascript'>";
             echo "parent.videoid={$videoid};";
             echo "parent.document.getElementById('upload_video_list').style.display='block';";
             echo "parent.document.getElementById('add_video').style.display='none';";
@@ -1881,7 +1881,7 @@ class ModuleObject extends MasterObject
             echo "</script>";
         }
     }
-        function DeleteImage() {
+    function DeleteImage() {
         $topic_image = Load::logic('image', 1)->get_info($this->ID);
         if (!$topic_image) {
             response_text("图片已经不存在了");
@@ -1892,7 +1892,7 @@ class ModuleObject extends MasterObject
             response_text("您没有删除这张图片的权限");
         }
     }
-        function DeleteVideo()
+    function DeleteVideo()
     {
         if($this->ID > 0) {
             $sql = "select `id`,`tid`,`uid`,`video_img` from `".TABLE_PREFIX."topic_video` where `id`='".$this->ID."' ";
@@ -1915,7 +1915,7 @@ class ModuleObject extends MasterObject
             response_text("您没有删除这个视频的权限");
         }
     }
-        function DeleteMusic()
+    function DeleteMusic()
     {
         if($this->ID > 0) {
             $sql = "select * from `".TABLE_PREFIX."topic_music` where `id`='".$this->ID."' ";
@@ -1937,10 +1937,10 @@ class ModuleObject extends MasterObject
             response_text("您没有删除这个视频的权限");
         }
     }
-        function Open_Mdeal_Index()
+    function Open_Mdeal_Index()
     {
         $medalid = (int) $this->Post['medalid'];
-                $sql = "select is_index from `".TABLE_PREFIX."user_medal` where `medalid` = '{$medalid}' and uid = '".MEMBER_ID."'";
+        $sql = "select is_index from `".TABLE_PREFIX."user_medal` where `medalid` = '{$medalid}' and uid = '".MEMBER_ID."'";
         $show = $this->DatabaseHandler->ResultFirst($sql);
         if($show){
             $sql = "update `".TABLE_PREFIX."user_medal` set  `is_index`='0' where `medalid` = '{$medalid}' and uid = '".MEMBER_ID."'";
@@ -1950,20 +1950,20 @@ class ModuleObject extends MasterObject
         $this->DatabaseHandler->Query($sql);
         json_result("1");
     }
-        function Qmd()
+    function Qmd()
     {
         $uid = MEMBER_ID;
         $sql = "select `uid`,`qmd_img` from `".TABLE_PREFIX."members` where `uid`='{$uid}'";
         $query = $this->DatabaseHandler->Query($sql);
         $row = $query->GetRow();
-                $qmd_bg_path = $this->Post['qmd_bg_path'] ? $this->Post['qmd_bg_path'] : $row['qmd_img'];
+        $qmd_bg_path = $this->Post['qmd_bg_path'] ? $this->Post['qmd_bg_path'] : $row['qmd_img'];
         Load::logic('other');
         $OtherLogic = new OtherLogic();
         $qmd_return = $OtherLogic->qmd_list($uid,$qmd_bg_path);
         $sql = "update `".TABLE_PREFIX."members` set  `qmd_img`='{$qmd_bg_path}'  where `uid` = '{$uid}' ";
         $this->DatabaseHandler->Query($sql);
-            }
-        function Insert_Qmd()
+    }
+    function Insert_Qmd()
     {
         if($this->Config['is_qmd'])
         {
@@ -1971,28 +1971,28 @@ class ModuleObject extends MasterObject
             $sql = "select `uid`,`qmd_img` from `".TABLE_PREFIX."members` where `uid`='{$uid}'";
             $query = $this->DatabaseHandler->Query($sql);
             $row = $query->GetRow();
-                        $qmd_bg_path = $row['qmd_img']? $row['qmd_img'] : $this->Post['qmd_bg_path'];
+            $qmd_bg_path = $row['qmd_img']? $row['qmd_img'] : $this->Post['qmd_bg_path'];
             Load::logic('other');
             $OtherLogic = new OtherLogic();
             $qmd_return = $OtherLogic->qmd_list($uid,$qmd_bg_path);
-                    }
+        }
     }
-        function ShowLogin()
+    function ShowLogin()
     {
         include($this->TemplateHandler->Template('show_login_ajax'));
     }
-        function Do_Reg_Follow_User()
+    function Do_Reg_Follow_User()
     {
-                $follow_type = $this->Post['followType'] ;
-                $_limit = $this->Post['list_limit'] ? $this->Post['list_limit'] + 15 : '15';
+        $follow_type = $this->Post['followType'] ;
+        $_limit = $this->Post['list_limit'] ? $this->Post['list_limit'] + 15 : '15';
         $list = array();
-                if ($follow_type == 'recommend') {
+        if ($follow_type == 'recommend') {
             $day = 7;
             $time = $day * 86400;
             $limit = (int) $this->ShowConfig['reg_follow']['user'];
             if($limit < 1) $limit = 20;
             $regfollow = ConfigHandler::get('regfollow');
-                        for ($i = 0; $i < count($regfollow); $i++)
+            for ($i = 0; $i < count($regfollow); $i++)
             {
                 if($regfollow[$i] == '')
                 {
@@ -2010,10 +2010,10 @@ class ModuleObject extends MasterObject
                     $uids = $regfollow;
                 }
             } else {
-                                if (false === ($uids = cache("misc/RTU-{$day}-{$limit}",900))) {
+                if (false === ($uids = cache("misc/RTU-{$day}-{$limit}",900))) {
                     $dateline = time() - $time;
                     $sql = "SELECT DISTINCT(uid) AS uid, COUNT(tid) AS topics FROM `".TABLE_PREFIX."topic` WHERE dateline>=$dateline GROUP BY uid ORDER BY topics DESC LIMIT {$limit}";
-                                                            $query = $this->DatabaseHandler->Query($sql);
+                    $query = $this->DatabaseHandler->Query($sql);
                     $uids = array();
                     while (false != ($row = $query->GetRow()))
                     {
@@ -2023,7 +2023,7 @@ class ModuleObject extends MasterObject
                 }
             }
         }
-                elseif ($follow_type == 'huoyue') {
+        elseif ($follow_type == 'huoyue') {
             $sql = "select DISTINCT(T.username) AS username , T.uid AS uid , COUNT(T.tid) AS count from `".TABLE_PREFIX."topic` T left join `".TABLE_PREFIX."members` M on T.uid=M.uid WHERE T.dateline>='".(time() - 86400 * 7)."' and M.face!='' GROUP BY username ORDER BY count DESC LIMIT 0,{$_limit}";
             $query = $this->DatabaseHandler->Query($sql);
             $uids =  array();
@@ -2032,7 +2032,7 @@ class ModuleObject extends MasterObject
                 $uids[$row['uid']] = $row['uid'];
             }
         }
-                elseif ($follow_type == 'renqi') {
+        elseif ($follow_type == 'renqi') {
             $sql = "select DISTINCT(B.buddyid) AS buddyid , COUNT(B.uid) AS count  from `".TABLE_PREFIX."buddys` B left join `".TABLE_PREFIX."members` M on B.buddyid=M.uid WHERE B.dateline>='".(time() - 86400 * 7)."' and M.face!='' GROUP BY buddyid ORDER BY count DESC LIMIT 0,{$_limit}";
             $query = $this->DatabaseHandler->Query($sql);
             $uids = array();
@@ -2040,8 +2040,8 @@ class ModuleObject extends MasterObject
             {
                 $uids[$row['buddyid']] = $row['buddyid'];
             }
-                    }
-                elseif ($follow_type == 'yingxiang') {
+        }
+        elseif ($follow_type == 'yingxiang') {
             $sql = "select DISTINCT(T.tousername) AS username ,  COUNT(T.tid) AS count, M.face ,M.username,M.uid from `".TABLE_PREFIX."topic` T left join `".TABLE_PREFIX."members` M on T.tousername=M.username WHERE M.face !='' and  T.dateline>='".(time() - 86400 * 7)."' and T.touid > 0  GROUP BY tousername ORDER BY count DESC LIMIT 0,{$_limit}";
             $query = $this->DatabaseHandler->Query($sql);
             $uids = array();
@@ -2058,11 +2058,11 @@ class ModuleObject extends MasterObject
                     $list[$uid] = $_list[$uid];
                 }
             }
-                        $user_count = $list ? count($list) : '0';
+            $user_count = $list ? count($list) : '0';
         } else {
             ;
         }
-                if ($follow_type == 'tag')
+        if ($follow_type == 'tag')
         {
             $sql = "select * from `".TABLE_PREFIX."tag_recommend` order by `id` desc limit  0,{$_limit}";
             $query = $this->DatabaseHandler->Query($sql);
@@ -2071,7 +2071,7 @@ class ModuleObject extends MasterObject
             {
                 $tag_name[$row['name']] = $row['name'];
             }
-                        if($tag_name)
+            if($tag_name)
             {
                 $query = DB::query("SELECT `id`,`name` FROM ".DB::table('tag')." where `name` in ('".implode("','", $tag_name)."') order by `id` desc limit 0,{$_limit} ");
                 $tag_list = array();
@@ -2090,8 +2090,8 @@ class ModuleObject extends MasterObject
         if($uid < 1){
             showjsmessage("请先登录或者注册一个帐号");
         }
-                $signature = strlen(($signature = trim(strip_tags($this->Post['signature'])))) > 32 ? substr($signature,0,32) . ' ' : $signature;
-                $f_rets = filter($signature);
+        $signature = strlen(($signature = trim(strip_tags($this->Post['signature'])))) > 32 ? substr($signature,0,32) . ' ' : $signature;
+        $f_rets = filter($signature);
         if($f_rets && $f_rets['error'])
         {
             json_error($f_rets['msg']);
@@ -2112,7 +2112,7 @@ class ModuleObject extends MasterObject
                     'message' => MEMBER_NICKNAME."修改了头像进入审核，<a href='admin.php?mod=verify&code=fs_verify' target='_blank'>点击</a>进入审核。",
                     'to_user' => str_replace('|',',',$notice_to_admin),
                 );
-                                $admin_info = DB::fetch_first('select `uid`,`username`,`nickname` from `'.TABLE_PREFIX.'members` where `uid` = 1');
+                $admin_info = DB::fetch_first('select `uid`,`username`,`nickname` from `'.TABLE_PREFIX.'members` where `uid` = 1');
                 load::logic('pm');
                 $PmLogic = new PmLogic();
                 $PmLogic->pmSend($pm_post,$admin_info['uid'],$admin_info['username'],$admin_info['nickname']);
@@ -2154,7 +2154,7 @@ class ModuleObject extends MasterObject
         }
         else
         {
-                        $mask_word = (string) $watermark;
+            $mask_word = (string) $watermark;
             if (preg_match('~[\x7f-\xff][\x7f-\xff]~',$mask_word)) {
                 if(is_file(RELATIVE_ROOT_PATH . 'images/jsg.ttf')) {
                     $_thumb->setMaskFont(RELATIVE_ROOT_PATH . 'images/jsg.ttf');
@@ -2177,42 +2177,42 @@ class ModuleObject extends MasterObject
         if($touid < 0) {
             json_error("请指定一个用户ID");
         }
-                if('add' == $types) {
+        if('add' == $types) {
             if($touid == $uid) {
                 json_error('不能拉黑自己');
             }
             Load::model('buddy')->add_blacklist($touid, $uid);
         }
-                if('del' == $types) {
+        if('del' == $types) {
             Load::model('buddy')->del_blacklist($touid, $uid);
         }
         $follow_html = follow_html($touid);
         return $follow_html;
     }
-        function _recd_levels($type = 'all')
+    function _recd_levels($type = 'all')
     {
         Load::logic('topic_recommend');
         $TopicRecommendLogic = new  TopicRecommendLogic();
         $recd_levels = $TopicRecommendLogic->recd_levels($type);
         return $recd_levels;
     }
-        function recd()
+    function recd()
     {
         Load::logic('topic_recommend');
         $TopicRecommendLogic = new  TopicRecommendLogic();
         $tid = intval($this->Get['tid']);
         $tag_id = intval($this->Get['tag_id']);
-                $topic = DB::fetch_first("SELECT * FROM ".DB::table("topic")." WHERE tid='{$tid}'");
+        $topic = DB::fetch_first("SELECT * FROM ".DB::table("topic")." WHERE tid='{$tid}'");
         if (empty($topic)) {
             json_error("当前微博不存在或者已经被删除了");
         }
-                $topic_recd = $TopicRecommendLogic->get_info($tid);
+        $topic_recd = $TopicRecommendLogic->get_info($tid);
         if (!empty($topic_recd)) {
             $topic_recd['expiration'] = empty($topic_recd['expiration']) ? '' : my_date_format($topic_recd['expiration'], 'Y-m-d ');
         }
         if ('admin' != MEMBER_ROLE_TYPE) {
             if ($topic['item'] == 'qun' && $topic['item_id'] > 0) {
-                                Load::logic('qun');
+                Load::logic('qun');
                 $QunLogic = new QunLogic();
                 $tmp_perm = $QunLogic->chk_perm($topic['item_id'], MEMBER_ID);
                 if (!in_array($tmp_perm, array(1,2))) {
@@ -2224,11 +2224,11 @@ class ModuleObject extends MasterObject
                 json_error("你没有权限进行当前操作");
             }
         } else {
-                        $recd_levels = $this->_recd_levels('topic');
+            $recd_levels = $this->_recd_levels('topic');
             if (!empty($tag_id)) {
                 $count = DB::result_first("SELECT COUNT(*)
-                                           FROM ".DB::table('topic_tag')."
-                                           WHERE item_id='{$tid}' AND tag_id='{$tag_id}' ");
+                    FROM ".DB::table('topic_tag')."
+                    WHERE item_id='{$tid}' AND tag_id='{$tag_id}' ");
                 if (empty($count)) {
                     json_error("当前微博不再该话题下");
                 }
@@ -2245,22 +2245,22 @@ class ModuleObject extends MasterObject
         }
         include(template("topic_recd"));
     }
-        function do_recd()
+    function do_recd()
     {
         Load::logic('topic_recommend');
         $TopicRecommendLogic = new  TopicRecommendLogic();
         $tid = intval($this->Post['tid']);
-                $topic = DB::fetch_first("SELECT * FROM ".DB::table("topic")." WHERE tid='{$tid}'");
+        $topic = DB::fetch_first("SELECT * FROM ".DB::table("topic")." WHERE tid='{$tid}'");
         if (empty($topic)) {
             json_error("当前微博不存在或者已经被删除了");
         }
         $recd = intval($this->Post['recd']);
-                if ($recd>4 || $recd < 0) {
+        if ($recd>4 || $recd < 0) {
             json_error("推荐等级错误");
         }
         if ('admin' != MEMBER_ROLE_TYPE) {
             if ($topic['item'] == 'qun' && $topic['item_id'] > 0) {
-                                Load::logic('qun');
+                Load::logic('qun');
                 $QunLogic = new QunLogic();
                 $perm = $QunLogic->chk_perm($topic['item_id'], MEMBER_ID);
                 if (!in_array($perm, array(1,2))) {
@@ -2284,9 +2284,9 @@ class ModuleObject extends MasterObject
             $display_order = intval($this->Post['display_order']);
             $tag_id = intval($this->Post['tag_id']);
             if (!empty($tag_id)) {
-                                $count = DB::result_first("SELECT COUNT(*)
-                                           FROM ".DB::table('topic_tag')."
-                                           WHERE item_id='{$tid}' AND tag_id='{$tag_id}' ");
+                $count = DB::result_first("SELECT COUNT(*)
+                    FROM ".DB::table('topic_tag')."
+                    WHERE item_id='{$tid}' AND tag_id='{$tag_id}' ");
                 if (empty($count)) {
                     json_error("当前微博不再该话题下");
                 }
@@ -2306,14 +2306,14 @@ class ModuleObject extends MasterObject
         }
         json_result("推荐成功了");
     }
-        function publishSuccess()
+    function publishSuccess()
     {
         echo $this->js_show_msg();
         #if NEDU
         defined('NEDU_MOYO') && nlogic('feeds.app.jsg')->on_ajax_topic_published();
         #endif
     }
-        function Check_Medal_List()
+    function Check_Medal_List()
     {
         $types = 'user_type_medal';
         $uid = (int) $this->Post['uid'];
@@ -2324,13 +2324,15 @@ class ModuleObject extends MasterObject
         {
             $medalinfo = $v;
         }
-                include($this->TemplateHandler->Template('user_follower_menu'));
+        include($this->TemplateHandler->Template('user_follower_menu'));
     }
-        function Photo() {
+    function Photo() {
         $page = (int)$_POST['page'];
         $uid = max(0,(int)$_POST['uid']);
-        $photo_num = 20;         $p_ajax_num = 12;         if($page < 0){return false;}
-                $total_page = ($this->Config['total_page_default'] ? $this->Config['total_page_default'] : 100);
+        $photo_num = 20;
+        $p_ajax_num = 12;
+        if($page < 0){return false;}
+        $total_page = ($this->Config['total_page_default'] ? $this->Config['total_page_default'] : 100);
         if($page > $total_page) {
             return false;
         }
@@ -2349,7 +2351,7 @@ class ModuleObject extends MasterObject
         }
         if($topic_list){
             if($this->Config['attach_enable']){$allow_attach = 1;}else{$allow_attach = 0;}
-            include($this->TemplateHandler->Template('topic_photo_ajax'));
+                include($this->TemplateHandler->Template('topic_photo_ajax'));
         }
     }
 }
