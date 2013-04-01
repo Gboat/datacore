@@ -631,7 +631,7 @@ ul.imgList .artZoomBox{ position:static;}
 .rught_tj_box{ width:187px; padding-top:5px;background:url(../images/right_tj_t.gif) no-repeat; color:#666; float:left; margin:0 0 10px 0;}
 .rught_tj_box span{ background:#f6faea;border:#CAD1B7 1px solid; border-top:none; width:178px; float:left; padding:3px;}
 /*添加关注提示*/
-.inventLine2 {background:url(../images/inline2.gif) no-repeat 0 0 ;height:128px;width:950px;margin:0 auto 8px;position:relative;}
+.inventLine2 {background:url(../images/inline2.gif) no-repeat 0 0 ;height:128px;width:950px;margin:0 auto 8px;position:relative;display:none;}
 .inventLine2 .atxt {color:#333;left:40px;position:absolute;top:23px;}
 .inventLine2 .atxt .p_1 {color:#333;font-family:"黑体";font-size:18px;line-height:30px;}
 .inventLine2 .atxt .p_1 span {color:#333; font-weight:600; margin-right:8px;}

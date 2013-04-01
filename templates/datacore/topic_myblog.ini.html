@@ -22,7 +22,7 @@
                     right_show_ajax('{$member[uid]}','photo','photo');
                     });
 </script>
-<div class="SC">
+<div class="SC" style="display:none">
     <h3><span><a style="float:left;" href="index.php?mod=topic&code=photo&uid={$member['uid']}">关注人的图片</a></span></h3>
     <div id="{$member[uid]}_photo"></div>
 </div>
@@ -69,7 +69,7 @@
 <!--{else}-->		
 <!--认证资料-->
 <!--{if $member[vip_info]}-->
-<div class="SC S15">
+<div class="SC S15" style="display:none">
     <div class="vipBox">
 
         <div class="ico_vData"><img src="images/vip_c2.png" /></div>
@@ -125,7 +125,7 @@ function get_Right3(){
     right_show_ajax('{$member[uid]}','myfavoritetags','right_myfavoritetags');
 }
 </script>
-<div class="SC">
+<div class="SC" style="display:none">
     <h3><!--{if $member['uid']==MEMBER_ID}-->属于我的标签<!--{ELSE}-->属于{$member[gender_ta]}的标签<!--{/if}-->
         <a class="btn SC_to_user_tag" href="javascript:void(0);"></a>
     </h3>
@@ -133,8 +133,8 @@ function get_Right3(){
         <div id="{$member[uid]}_to_user_tag"></div>
     </ul>
 </div>
-
-<div class="SC">
+<!--{if $member['uid']==MEMBER_ID}-->
+<div class="SC" style="display:none">
     <h3><!--{if $member['uid']==MEMBER_ID}-->我关注的渠道<!--{ELSE}-->{$member[gender_ta]}关注的渠道<!--{/if}-->({$member[follow_count]})
         <a class="btn SC_taguanzhu" href="javascript:void(0)"></a>
     </h3>
@@ -142,6 +142,7 @@ function get_Right3(){
         <div id="{$member[uid]}_user_follow"></div>
     </ul>
 </div>
+
 <div class="SC">
     <h3><!--{if $member['uid']==MEMBER_ID}-->我关注的话题<!--{ELSE}-->{$member[gender_ta]}关注的话题<!--{/if}-->
         <a class="btn SC_woguanzhu" href="javascript:void(0);" ></a></h3>
@@ -176,6 +177,8 @@ function get_my_qun(){
         <div id="{$member[uid]}_qun_box"></div>
     </ul>
 </div>
+
+<!--{/if}-->
 <!--他的微群 End-->
 <!--{/if}-->
 <!--{template 'topic_right_common.ini'}-->

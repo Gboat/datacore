@@ -56,7 +56,7 @@
                     $(".SC_guanxingqu").click(function(){$(this).parent().toggleClass("fold_guanxingqu");$(".SC_guanxingqu_box").toggle();});
                     });
 </script>
-<div class="SC">
+<div class="SC" style="display:none">
     <h3>
         可能感兴趣的人<a class="btn SC_guanxingqu" href="javascript:void(0);"></a>
     </h3>
@@ -72,7 +72,7 @@
             $(".SC_rementuijian").click(function(){$(this).parent().toggleClass("fold_rementuijian");$(".SC_rementuijian_box").toggle();});
             });
 </script>
-<div class="SC">
+<div class="SC" style="display:none">
     <h3>热门话题推荐<a class="btn SC_rementuijian" href="javascript:void(0);"></a></h3>
     <ul class="FTL SC_rementuijian_box">
         <div id="{MEMBER_ID}_hot_tag"></div>
@@ -87,7 +87,7 @@
             $(".SC_renqituijian").click(function(){$(this).parent().toggleClass("fold_renqituijian");$(".SC_renqituijian_box").toggle();});
             });
 </script>
-<div class="SC">
+<div class="SC" style="display:none">
     <h3>人气用户推荐<a class="btn SC_renqituijian" href="javascript:void(0);"></a></h3>
     <ul class="FTL FTL3 SC_renqituijian_box">
         <div id="{MEMBER_ID}_recommend_user">
@@ -110,7 +110,7 @@
             $(".SC_guanzhuta").click(function(){$(this).parent().toggleClass("fold_guanzhuta");$(".SC_guanzhuta_box").toggle();});
             });
 </script>
-<div class="SC">
+<div class="SC" style="display:none">
     <h3>关注{$member[nickname]}的人<a class="btn SC_guanzhuta" href="javascript:void(0)"></a></h3>
     <ul class="FTL FTL2 SC_guanzhuta_box">
         <!--{loop $fans_list $val}-->

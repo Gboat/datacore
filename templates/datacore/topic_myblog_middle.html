@@ -99,7 +99,7 @@
 
     <div class="listBox">
         <!--{if $img_arr}-->
-        <div class="listBoxNav">
+        <div class="listBoxNav" style="display:none">
             <li style="float:left; font-weight:600; color:#333;">&nbsp;个人最新图片</li>
             <ul class="imglist" style="width:540px; overflow:hidden;">
                 <!--{loop $img_arr $val}-->
@@ -137,10 +137,12 @@
                 elseif('hot_reply' == $this->Get[type]) $hot_reply = 'current';
                 elseif('hot_forward' == $this->Get[type]) $hot_forward = 'current';
                 else $main_class = 'current';}-->
-                <span class="{$main_class}"><a href="index.php?mod={$member[username]}">{$_my}的微博</a></span>
+                <span class="{$main_class}"><a href="index.php?mod={$member[username]}">{$_my}发布的信息</a></span>
+                <!--
                 <span class="{$hot_reply}"><a href="index.php?mod={$member[username]}&type=hot_reply">本月热评</a></span>
                 <span class="{$hot_forward}"><a href="index.php?mod={$member[username]}&type=hot_forward">本月热转</a></span>
                 <span class="{$verify}"><a href="index.php?mod={$member[username]}&type=my_verify">等待审核</a></span>
+                -->
                 </li>
                 <!--{/if}-->
                 <!--{hook/global_index_extra2}-->

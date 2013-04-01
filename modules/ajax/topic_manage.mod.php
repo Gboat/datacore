@@ -108,7 +108,7 @@ class ModuleObject extends MasterObject
         }elseif($type == 'qun'){
             $typename = '微群';
         }else{
-            $typename = '微博';
+            $typename = '信息';
         }
         $nickname = $this->DatabaseHandler->ResultFirst("select nickname from ".TABLE_PREFIX."members where uid = '$uid' ");
         $message = "{$nickname}发布的{$typename}（{$tid}）,涉及到内容：";

@@ -1,4 +1,5 @@
 <?php 
+  
  $config=array (
   'ajax_topic_time' => '45',
   'api_enable' => 1,
@@ -11,7 +12,6 @@
   'cookie_expire' => '30',
   'cookie_path' => '/',
   'cookie_prefix' => 'yqweibo_Tzd1JU_',
-  'copyright' => '',
   'count_online_user' => '1',
   'credits_filed' => 'extcredits3',
   'datacore_founder' => '1',
@@ -24,9 +24,6 @@
   'db_user' => 'root',
   'default_module' => 'topic',
   'extcredits_enable' => 1,
-  'extra_domains' => 
-  array (
-  ),
   'follow_limit' => 2000,
   'gzip' => 1,
   'icp' => '备案申请中',
@@ -50,11 +47,6 @@
   'mobile_url' => 'http://localhost/datacore/mobile',
   'no_verify_email_role_id' => '4',
   'normal_default_role_id' => '3',
-  'notice_to_new_user' => '',
-  'notice_to_new_user_news' => '',
-  'notice_to_validatesucssee_user' => '',
-  'notice_to_waitvalidate_user' => '',
-  'only_show_vip_topic' => '1',
   'page_title' => '数据核心',
   'qmd_file_url' => './images/qmd/',
   'qqwb_enable' => 1,
@@ -74,18 +66,11 @@
   ),
   'refresh_times_banned_ip' => '10',
   'refresh_times_banned_ip_time' => '86400',
-  'reg_email_forbid' => '',
-  'reg_email_verify' => '0',
-  'regclosemessage' => '',
-  'register_invite_input' => '0',
-  'register_invite_input2' => '0',
   'regstatus' => 
   array (
     0 => 'invite',
   ),
   'safe_key' => 'rEt1GT5ZMEKcfBUC5IoGGFwc1oHXTOHs',
-  'seccode_login' => 1,
-  'seccode_register' => 0,
   'sign' => 
   array (
     'sign_enable' => '0',
@@ -105,21 +90,16 @@
   'theme_id' => 't2',
   'theme_link_color' => '#2E75BC',
   'theme_text_color' => '#333333',
-  'third_party_regstatus' => 
-  array (
-  ),
   'thumbheight' => 120,
   'thumbwidth' => 120,
   'timezone' => '8',
   'today_topic' => '#意见反馈#',
-  'tongji' => '',
   'topic_cut_length' => 140,
   'topic_input_length' => 1000,
   'topic_length' => 140,
   'topic_level_radio' => '1',
   'topic_modify_time' => '60',
   'topic_myhome_time_limit' => '30',
-  'topic_vip' => '1',
   'total_page_default' => '50',
   'upgrade_to_lock_version' => 35,
   'verify_alert' => '1',

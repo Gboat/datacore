@@ -8,8 +8,13 @@ $config['leader_list']=array (
   ),
   1 => 
   array (
-    'name' => '我的CEO',
-    'email' => 'gongming@wrud.com',
+    'name' => '王佰灵老师',
+    'email' => 'wbl@hit.edu.cn',
+  ),
+  2 => 
+  array (
+    'name' => '刘扬老师',
+    'email' => 'lyylwhhit@126.com',
   ),
 );
  ?>
