@@ -17,8 +17,9 @@ class TrackLogic
             $this->Config = & Obj::registry("config");
         }
     }
-    function Add($datas, $uid = 1)
+    function Add($key, $type, $name )
     {
+        /*
         if(is_array($datas) && count($datas))
         {
             $ks = array(
@@ -43,67 +44,36 @@ class TrackLogic
         {
             return "输入参数有误！";
         }
-        //
-        if(!empty($track)&&!empty($type)){
-            if(_check($type, $track)){
-                return "该记录已经存在！";
-            }else{
-                $this->DatabaseHandler->Query("INSERT ".TABLE_PREFIX."track (`track`) ");
-                ${$type}=$track;
-            }
+         */
+        if ('mail' === $type){
+            //检查mail
         }
-        if (!empty($mail)){
-            //获取mail到用户名，对比
-            if(1)//匹配邮箱名确定为已经添加到track user
-            {
-                //get tuid
-                //update track table
-            }
-
-        }
-        if (!empty($phone)){
+        if ('phone'=== $type){
             //获取phone的地理位置信息，用于补全用户信息
-
         }
-        if (!empty($weicart)){
+        if ('weicart' === $type){
             //获取weicart简介
         }
-        if (!empty($qq)){
+        if ('qq' === $type){
             //获取qq资料
         }
-        if (!empty($mark)){
-            //获取用户到备注，并分词检测。可能不单纯的是名字。获取到名字信息。
-            $tuid = _tuid($mark);
-            if ($tuid == 0){
-                $this->DatabaseHandler->Query("INSERT ".TABLE_PREFIX."track_member (`track`) ");
-                $tuid = $this->DatabaseHandler->LastID() ;
-            }
-            $this->DatabaseHandler->Query("update ".TABLE_PREFIX."track set ");
+        $trackid = $this->DatabaseHandler->Query("SELECT trackid FROM ".TABLE_PREFIX."track WHERE `tracktype`=$type AND `trackkey`=$key ");
+        if ($trackid < 1){
+            $this->DatabaseHandler->Query("INSERT ".TABLE_PREFIX."track (`tracktype`,`trackkey`,`username`) VALUES ('$type','$key','$name') ");
+            $trackid = 1;
+        }else{
+            $this->DatabaseHandler->Query("UPDATE ".TABLE_PREFIX."track  set lastactivity = $TIMESTAMP ");
         }
-
-        return $tuid;
     }
 
     function Modify($trackid, $mark)
     {   
-        
-        $tuid = _tuid($mark);
-        $_tuid = gettuid($trackid);
-        if ($tuid == $_tuid){
-            //更新备注名称
-            $this->DatabaseHandler->Query("update ".TABLE_PREFIX."topic set ".(implode(" , " , $sql_sets))." where `tid`='$tid'");
-        }else{
-            //检查原tuid是否有其他使用者，没有则删除
-            //有则保留
-            //修改trackid对应记录到tuid 为$tuid
-        }
-
     }
 
     function DeleteTrack($tid)
     {
-
     }
+
     function DeleteTrackUser($tuid)
     {
     }
