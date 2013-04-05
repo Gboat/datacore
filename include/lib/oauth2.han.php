@@ -37,7 +37,7 @@ class DataCoreOAuth {
         $params['client_id'] = $this->client_id;
         $params['redirect_uri'] = $url;
         $params['response_type'] = $response_type;
-                if($keys)
+        if($keys)
         {
             $ps = array('scope', 'state', 'display', );
             foreach($ps as $k)

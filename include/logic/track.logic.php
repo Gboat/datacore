@@ -8,7 +8,7 @@ class TrackLogic
     var $DatabaseHandler;
     var $Config;
     var $_cache;
-    function TopicLogic($base = null) {
+    function TrackLogic($base = null) {
         if ($base) {
             $this->DatabaseHandler = & $base->DatabaseHandler;
             $this->Config = & $base->Config;
@@ -19,44 +19,8 @@ class TrackLogic
     }
     function Add($key, $type, $name )
     {
+        $trackid = 111;
         /*
-        if(is_array($datas) && count($datas))
-        {
-            $ks = array(
-                'mail'=>1,
-                'phone'=>1,
-                'qq'=>1,
-                'weicart'=>1,
-                'track'=>1,
-                'type'=>1,
-                'mark'=>1,
-                'uid'=>1,
-            );
-            foreach($datas as $k=>$v)
-            {
-                if(isset($ks[$k]))
-                {
-                    ${$k} = $v;
-                }
-            }
-        }
-        else
-        {
-            return "输入参数有误！";
-        }
-         */
-        if ('mail' === $type){
-            //检查mail
-        }
-        if ('phone'=== $type){
-            //获取phone的地理位置信息，用于补全用户信息
-        }
-        if ('weicart' === $type){
-            //获取weicart简介
-        }
-        if ('qq' === $type){
-            //获取qq资料
-        }
         $trackid = $this->DatabaseHandler->Query("SELECT trackid FROM ".TABLE_PREFIX."track WHERE `tracktype`=$type AND `trackkey`=$key ");
         if ($trackid < 1){
             $this->DatabaseHandler->Query("INSERT ".TABLE_PREFIX."track (`tracktype`,`trackkey`,`username`) VALUES ('$type','$key','$name') ");
@@ -64,18 +28,10 @@ class TrackLogic
         }else{
             $this->DatabaseHandler->Query("UPDATE ".TABLE_PREFIX."track  set lastactivity = $TIMESTAMP ");
         }
-    }
+        return $trackid
+         */
 
-    function Modify($trackid, $mark)
-    {   
-    }
-
-    function DeleteTrack($tid)
-    {
-    }
-
-    function DeleteTrackUser($tuid)
-    {
+        return $trackid;
     }
 }
 ?>

@@ -55,14 +55,5 @@ $config['validate_category']=array (
     'num' => '0',
     'dateline' => '1324547052',
   ),
-  7 => 
-  array (
-    'id' => '7',
-    'category_id' => '1',
-    'category_name' => '采集通道',
-    'category_pic' => '',
-    'num' => '0',
-    'dateline' => '1364784636',
-  ),
 );
  ?>
