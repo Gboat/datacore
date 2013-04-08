@@ -61,25 +61,6 @@
 </li>
 
 <li class="sweibo">
-<div class="searchTool">
-    <form method="get" action="#" name="headSearchForm" id="headSearchForm" onsubmit="return headDoSearch();">
-        <input id="headSearchType" name="searchType" type="hidden" value="tagSearch">
-        <div class="selSearch">
-            <div class="nowSearch" id="headSlected" onclick="if(document.getElementById('headSel').style.display=='none'){document.getElementById('headSel').style.display='block';}else {document.getElementById('headSel').style.display='none';};return false;" onmouseout="drop_mouseout('head');">话题</div>
-            <div class="btnSel"><a href="#" onclick="if(document.getElementById('headSel').style.display=='none'){document.getElementById('headSel').style.display='block';}else {document.getElementById('headSel').style.display='none';};return false;" onmouseout="drop_mouseout('head');"></a></div>
-            <div class="clear"></div>
-            <ul class="selOption" id="headSel" style="display:none;">
-                <!--
-                <li><a href="#" onclick="return search_show('head','userSearch',this)" onmouseover="drop_mouseover('head');" onmouseout="drop_mouseout('head');">用户</a></li>
-                -->
-                <li><a href="#" onclick="return search_show('head','tagSearch',this)" onmouseover="drop_mouseover('head');" onmouseout="drop_mouseout('head');">话题</a></li>
-                <li><a href="#" onclick="return search_show('head','topicSearch',this)" onmouseover="drop_mouseover('head');" onmouseout="drop_mouseout('head');">信息</a></li>
-            </ul>
-        </div>
-        <input class="txtSearch" id="headq" name="headSearchValue" type="text" value="请输入关键字" onfocus="this.value=''"/>
-        <div class="btnSearch"> <a href="#" onclick="javascript:return headDoSearch();"><span class="lbl"></span></a></div>
-    </form>
-</div>
 </li>
 
     </ul>

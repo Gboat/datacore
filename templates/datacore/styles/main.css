@@ -40,7 +40,7 @@ a:hover{color:#0073B2;text-decoration:underline;}
 .feedP2{ white-space:nowrap;}
 .facestyle2{height:48px;width:48px; border:1px solid #ccc;float:left;}
 /*头部*/
-.header{ width:100%; height:40px;display:inline; z-index:90; margin:0 auto;background:url(../images/header_bb.png) repeat-x; position:fixed;_position:absolute; _top:expression(documentElement.scrollTop);}
+.header{ width:100%; height:40px;display:inline; z-index:90; margin:0 auto;background:url(../images/header_bb.png) repeat-x; position:fixed;_position:absolute; _top:expression(documentElement.scrollTop);border-bottom: 1px #F00 solid; }
 .headerNav{ width:950px; margin:0 auto; height:30px;}
 .headerNav ul.hleft{float:left;height:33px;line-height:32px;font-size:12px;}
 .headerNav ul.hleft li{ float:left;color:#ccc;width:52px} 
@@ -525,11 +525,11 @@ ul.tagB a{float:left; margin-right:12px; line-height:25px; white-space:nowrap;}
 .nleftL .liR2 { float:right; color:#ccc;}
 .nleftL .liLine { color:#ccc;margin:0 0;padding:0 2px;}
 .memberStep{ margin:10px auto;text-align:right;width:540px;clear:both;padding-right:5px;}
-.nleftL2 {margin:0 auto;width:540px; height:30px;clear:both;overflow:hidden;background:url(../images/selected_c4.jpg) repeat-x top;}
+.nleftL2 {margin:0 auto;width:540px; height:30px;clear:both;overflow:hidden;background:none;}
 .nleftL2 li{ width:77px; height:30px; float:left; margin-left:8px; text-align:center;}
 .nleftL2 li.current{ width:77px; height:30px; float:left;background:url(../images/selected_c2.jpg) no-repeat; }
 .nleftL2 li.current2{ width:95px; height:30px; float:left;background:url(../images/selected_c3.jpg) no-repeat; }
-.nleftL3 {margin:0 auto;width:540px; height:30px;clear:both;overflow:hidden;background:url(../images/selected_c4.jpg) repeat-x top;}
+.nleftL3 {margin:0 auto;width:540px; height:30px;clear:both;overflow:hidden;background:none;}
 .nleftL3 li{ float:left; margin-left:8px; text-align:center;}
 .mainL .listBox .listBoxNav .nleftL3 li span{ padding:0; color:#fff; margin-right:8px; float:left;}
 .nleftL3 li span.current{ width:77px; height:30px; float:left;background:url(../images/selected_c2.jpg) no-repeat; }
@@ -1157,7 +1157,7 @@ ul.A_boxrl li:hover{ background:#f2f2f2;}
 .vipBox_title{ display:block;}
 .vipBox_info{ padding:0; width:180px; float:left; display:inline;}
 .vDateBox p{ display:block;clear:both; margin-top:1px;}
-.comheader{margin:18px auto 5px;width:520px;*margin-bottom:0px;clear:both;overflow:hidden; background:#f3f3f3; height:25px; line-height:25px; padding:0 10px;}
+.comheader{margin:18px auto 5px;width:520px;*margin-bottom:0px;clear:both;overflow:hidden; background:none; height:25px; line-height:25px; padding:0 10px;}
 .viewfb{ float:left; width:55px;}
 .view_review{ display:block; width:534px;font-size:12px;}
 .one_comment .view_r{ width:540px; float:right; padding:5px 0 0;}
@@ -1627,7 +1627,6 @@ ul.boxRNav3{width:210px; overflow:hidden; margin-top:20px;}
 .boxRNav3 li.i_black a {background-position:-310px -399px;}
 /*三栏切换*/
 .t_col_logo{ width:950px;}
-.t_col_main{ width:950px;background:url(../images/rightbg2.gif) repeat-y;}
 .t_col_main_si{ display:none;width:150px; margin-bottom:50px; float:left;}
 .t_col_main_side{ display:block;}
 .t_col_foot{ width:930px;}
