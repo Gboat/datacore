@@ -21,13 +21,13 @@ class ModuleObject extends MasterObject
     function Execute()
     {
         ob_start();
-        if('mail' == $this->Code) {
+        if('other' == $this->Code) {
             $this->Mail();
-        } elseif ('phone' == $this->Code) {
+        } elseif ('other1' == $this->Code) {
             $this->Phone();
-        } elseif ('qq' == $this->Code) {
+        } elseif ('other1' == $this->Code) {
             $this->Qzone();
-        }elseif('wecart' == $this->Code) {
+        }elseif('other2' == $this->Code) {
             $this->Wecart();
         }else {
             $this->Main();
@@ -39,16 +39,18 @@ class ModuleObject extends MasterObject
     {
         die("微信通道马上就来！");
     }
-    function Phone(){
-        //die("手机通道马上就来！");
+    function Main(){
+        $type = $this->Code;
         $member = $this->_member();
         if (!$member) {
             $this->Messager("请先<a href='index.php?mod=login'>点此登录</a>或者<a href='index.php?mod=member'>点此注册</a>一个帐号",'index.php?mod=login');
         }
         $my_member = $this->_member((int) $this->Get['mod_original']);
         $gid = intval(trim($this->Get['gid']));
+        
+        //获取get参数，初始化url
         $keyword = $this->Post['nickname'] ? $this->Post['nickname'] : $this->Get['nickname'];
-        $per_page_num = 10;
+        $per_page_num = 20;
         $gets = array(
             'mod' => $_GET['mod_original'] ? get_safe_code($_GET['mod_original']) : $this->Module,
             'code' => $this->Code,//确定当前位置
@@ -59,6 +61,10 @@ class ModuleObject extends MasterObject
         $page_url = "index.php?".url_implode($gets);
         $orderBy = ' ORDER BY ';
         $orderBy .= " b.`id` DESC ";
+        if($gid){
+        }elseif($keyword){
+        }
+        //初始化分组信息
         $sql = "SELECT  GF.touid , GF.gid, GF.g_name , GF.display , G.group_name , G.id , GF.*
             FROM ".DB::table('group')." AS G
             LEFT JOIN ".DB::table('groupfields')." AS GF
@@ -72,186 +78,36 @@ class ModuleObject extends MasterObject
         $group_list = $grouplist2 = array();
         $group_list = $this->_myGroup($member['uid']);
         if($group_list) $grouplist2 = array_slice($group_list,0,min(4,count($group_list)));
-        $member_medal = $my_member ? $my_member : $member;
-        if ($member_medal['medal_id']) {
-            $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
-        }
-        $this->Title = "{$member['nickname']}的手机通讯录";
-        $phone_list = array();
+        //$member_medal = $my_member ? $my_member : $member;
+        //if ($member_medal['medal_id']) {
+        //    $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
+        //}
+        //处理track的信息
+        $this->Title = "{$member['nickname']}的TRACK信息";
+
+        $track_list = array();
+        $count = DB::result_first("SELECT COUNT(*)
+                FROM ".DB::table('track')."
+                WHERE `tracktype` = '$type' ");
+
         $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
-        $sql = "SELECT b.id, b.phone, b.remark
-                    FROM ".DB::table('buddys_phone')." AS b
-                    WHERE b.`uid`='{$member['uid']}'
+        $sql = "SELECT tk.trackid as id, tk.trackkey, tk.username
+                    FROM ".DB::table('track')." AS tk
+                    WHERE tk.`tracktype`='$type'
+                    ORDER BY tk.trackid
             {$page_arr['limit']}";
         $query = DB::query($sql);
         while ($row = DB::fetch($query)){
-            $phone_list[$row['id']] = $row;
+            $track_list[$row['id']] = $row;
         }
-        include($this->TemplateHandler->Template('track_phone'));
+        include($this->TemplateHandler->Template('track'));
     }
     function Qzone(){
-        //die("QQ通道马上就来！");
-        $member = $this->_member();
-        if (!$member) {
-            $this->Messager("请先<a href='index.php?mod=login'>点此登录</a>或者<a href='index.php?mod=member'>点此注册</a>一个帐号",'index.php?mod=login');
-        }
-        $my_member = $this->_member((int) $this->Get['mod_original']);
-        $gid = intval(trim($this->Get['gid']));
-        $keyword = $this->Post['nickname'] ? $this->Post['nickname'] : $this->Get['nickname'];
-        $per_page_num = 10;
-        $gets = array(
-            'mod' => $_GET['mod_original'] ? get_safe_code($_GET['mod_original']) : $this->Module,
-            'code' => $this->Code,//确定当前位置
-            'gid' => $this->Get['gid'],//分组
-            'nickname' => $this->Get['nickname'],//昵称
-            'type' => $this->Get['type'],//排序字段
-        );
-        $page_url = "index.php?".url_implode($gets);
-        $orderBy = ' ORDER BY ';
-        $orderBy .= " b.`id` DESC ";
-        $sql = "SELECT  GF.touid , GF.gid, GF.g_name , GF.display , G.group_name , G.id , GF.*
-            FROM ".DB::table('group')." AS G
-            LEFT JOIN ".DB::table('groupfields')." AS GF
-            ON G.id=GF.gid
-            WHERE G.uid='".MEMBER_ID." ' ";
-        $query = DB::query($sql);
-        $user_group = array();
-        while ($row = DB::fetch($query)) {
-            $user_group[$row['id']] = $row;
-        }
-        $group_list = $grouplist2 = array();
-        $group_list = $this->_myGroup($member['uid']);
-        if($group_list) $grouplist2 = array_slice($group_list,0,min(4,count($group_list)));
-        $member_medal = $my_member ? $my_member : $member;
-        if ($member_medal['medal_id']) {
-            $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
-        }
-        $this->Title = "{$member['nickname']}的QQ通讯录";
-        $qq_list = array();
-        $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
-        $sql = "SELECT b.id, b.qq, b.remark
-                    FROM ".DB::table('buddys_qq')." AS b
-                    WHERE b.`uid`='{$member['uid']}'
-            {$page_arr['limit']}";
-        $query = DB::query($sql);
-        while ($row = DB::fetch($query)){
-            $qq_list[$row['id']] = $row;
-        }
-        include($this->TemplateHandler->Template('track_qq'));
+        die("QQ通道马上就来！");
     }
     function Mail()
     {   
-        $member = $this->_member();
-        if (!$member) {
-            $this->Messager("请先<a href='index.php?mod=login'>点此登录</a>或者<a href='index.php?mod=member'>点此注册</a>一个帐号",'index.php?mod=login');
-        }
-        $my_member = $this->_member((int) $this->Get['mod_original']);
-        $gid = intval(trim($this->Get['gid']));
-        $keyword = $this->Post['nickname'] ? $this->Post['nickname'] : $this->Get['nickname'];
-        $per_page_num = 10;
-        $gets = array(
-            'mod' => $_GET['mod_original'] ? get_safe_code($_GET['mod_original']) : $this->Module,
-            'code' => $this->Code,//确定当前位置
-            'gid' => $this->Get['gid'],//分组
-            'nickname' => $this->Get['nickname'],//昵称
-            'type' => $this->Get['type'],//排序字段
-        );
-        $page_url = "index.php?".url_implode($gets);
-        $orderBy = ' ORDER BY ';
-        if("loastcon" == $this->Get['type']){
-            $orderBy .= " b.`id` DESC ";
-            //$orderBy .= " m.`lastpost` DESC ";
-        } else {
-            $orderBy .= " b.`id` DESC ";
-        }
-        $member_list = $uids = array();
-        if($gid) {
-            $group_view = DB::fetch_first("SELECT *
-                FROM ".DB::table("group")."
-                WHERE `id`='{$gid}' AND uid='".MEMBER_ID."'");
-            if (empty($group_view)) {
-                $this->Messager("这个不是你的分组，你不能查看", -1);
-            }
-            $count = DB::result_first("SELECT COUNT(*)
-                FROM ".DB::table('groupfields')."
-                WHERE gid='{$gid}' AND `uid` = '".MEMBER_ID."' ");
-            if ($count > 0) {
-                $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
-                $sql = "SELECT m.*,b.remark
-                    FROM ".DB::table('groupfields')." AS g
-                    LEFT JOIN ".DB::table('members')." AS m
-                    ON m.`uid` = g.`touid`
-                    LEFT JOIN  ".DB::table('buddys')." AS b
-                    ON b.`buddyid` = m.`uid`
-                    WHERE g.`gid`='{$gid}' AND  b.uid=".MEMBER_ID."
-            {$orderBy}
-            {$page_arr['limit']}";
-                $query = DB::query($sql);
-                while ($row = DB::fetch($query)) {
-                    if($row['uid'] > 0) {
-                        $member_list[$row['uid']] = $this->TopicLogic->MakeMember($row);
-                    }
-                    $uids[] = $row['uid'];
-                }
-            }
-        } else {
-            $count = $member['follow_count'];
-            $count = 425;
-            if ($count > 0) {
-                $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
-                $sql = "SELECT b.remark, m.*
-                    FROM ".DB::table('buddys')." AS b
-                    LEFT JOIN ".DB::table('members')." AS m
-                    ON m.`uid` = b.`buddyid`
-                    WHERE b.`uid`='{$member['uid']}'
-            {$orderBy}
-            {$page_arr['limit']}";
-                $query = DB::query($sql);
-                while (false != ($row = $query->GetRow())) {
-                    if($row['uid'] > 0) {
-                        $member_list[$row['uid']] = $this->TopicLogic->MakeMember($row);
-                    }
-                    $uids[] = $row['uid'];
-                }
-            }
-        }
-        $member_list = Load::model('buddy')->follow_html($member_list);
-
-        $sql = "SELECT  GF.touid , GF.gid, GF.g_name , GF.display , G.group_name , G.id , GF.*
-            FROM ".DB::table('group')." AS G
-            LEFT JOIN ".DB::table('groupfields')." AS GF
-            ON G.id=GF.gid
-            WHERE G.uid='".MEMBER_ID." ' ";
-        //$sql = "";
-        $query = DB::query($sql);
-        $user_group = array();
-        while ($row = DB::fetch($query)) {
-            $user_group[$row['id']] = $row;
-        }
-        $group_list = $grouplist2 = array();
-        $group_list = $this->_myGroup($member['uid']);
-        if($group_list) $grouplist2 = array_slice($group_list,0,min(4,count($group_list)));
-        $member_medal = $my_member ? $my_member : $member;
-        if ($member_medal['medal_id']) {
-            $medal_list = $this->_Medal($member_medal['medal_id'],$member_medal['uid']);
-        }
-        $this->Title = "{$member['nickname']}的邮件好友";
-        $mail_list = array();
-        $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
-        $sql = "SELECT b.id, b.email, b.remark
-                    FROM ".DB::table('buddys_mail')." AS b
-                    WHERE b.`uid`='{$member['uid']}'
-            {$page_arr['limit']}";
-        $query = DB::query($sql);
-        while ($row = DB::fetch($query)){
-            $mail_list[$row['id']] = $row;
-        }
-        
-        include($this->TemplateHandler->Template('track_mail'));
-    }
-    function Main()
-    {
-        die ("Hello World");
+        die("MAIL通道马上就来！");
     }
     function View()
     {

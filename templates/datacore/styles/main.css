@@ -480,7 +480,7 @@ ul.tagB a{float:left; margin-right:12px; line-height:25px; white-space:nowrap;}
 .followList{ margin:0 auto; padding:0 15px; width:540px;}
 .followList .from{ _margin-top:-15px;}
 .followList_m{ padding:20px 20px 0;}
-.followList li{ width:100%; float:left; padding:15px 0; border-bottom:1px dotted #E6E6E6;}
+.followList li{ width:50%; float:left; padding:15px 0; border-bottom:1px dotted #E6E6E6;}
 .followList li .fBox_l { float:left; margin:0 6px 0 1px; width:50px;}
 .followList li .fBox_l img{ height:48px;width:48px; border:1px solid #ccc;float:left;}
 .followList li .fBox_R{ float:left; width:340px; line-height:1.4em; margin:0;}
