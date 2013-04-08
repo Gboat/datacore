@@ -99,6 +99,7 @@ class ModuleObject extends MasterObject
         $query = DB::query($sql);
         while ($row = DB::fetch($query)){
             $track_list[$row['id']] = $row;
+            $track_list[$row['id']]['images'] = "./images/noavatar.gif";
         }
         include($this->TemplateHandler->Template('track'));
     }

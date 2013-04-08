@@ -4,7 +4,7 @@
    @Date:2010.10.12
 #############################*/
 body{ text-align:left;margin:0; padding:0;color:#333; font-size:12px; font-family:Arial,"宋体"; line-height:22px;}
-body{ background-color:#B0E0FA; background-repeat:no-repeat;background-position:center 0;}
+body{ background-color:#B0E0FA; background-repeat:no-repeat;background-position:center 0;background:url(../images/bg.png) repeat;}
 div,form,img,ul,ol,li,dl,dt,dd,p {border: 0; margin:0; padding:0;}
 li{list-style-type:none;}
 input{ font-family:Arial; vertical-align:middle;}
@@ -106,8 +106,8 @@ ul.t_c4_box li span,ul.t_c6_box li span{ color:#F60; font-size:10px;}
 .headerNav ul.hleft li .searchTool .btnSearch a{background:url(../images/search.png) no-repeat 1px 1px;display:block;text-decoration:none;height:22px;line-height:22px;overflow:hidden; padding:2px 5px 2px 4px;}
 .searchTool .btnSearch .lbl{cursor:pointer; color:#333;}
 /*主体框架*/
-.main{width:800px; margin:0 auto;overflow:hidden;background:url(../images/rightbg.png) repeat-y right center;}
-.mainL {float:left;padding-bottom:95px;*padding-bottom:35px;width:590px; background:#fff; min-height:700px;}
+.main{width:980px; margin:0 auto;overflow:hidden;background:url(../images/main.png) repeat #B9B9B9;}
+.mainL {float:left;padding-bottom:95px;*padding-bottom:35px;width:590px; background:#fff url(../images/main_l.png) repeat; min-height:700px;}
 .mainR {float:left;padding-bottom:10px;width:210px;}
 .footer{width:800px; margin:10px auto; text-align:center;clear:both;}
 .cp{width:800px; margin:5px auto; text-align:center; clear:both;}
@@ -935,8 +935,8 @@ ul.group_list .labelbox{margin-right:5px;vertical-align:middle;}
 .nfTagB ul li.current a:hover,.nfTagB ul li a:hover{ text-decoration:none;}
 .nfTagB ul li.current span{ display:inline-block;height:28px;line-height:28px;_line-height:29px;font-weight:bold;cursor:pointer;text-decoration:none;border-bottom:none;*font-family:宋体; float:right}
 .nfTagB ul li.MIB_line_l{ width:2px;color:#D4D5D6;padding:6px 0 0;}
-.s_fixed{ background:#fff;}
-.s_fixed .nfTagB{ background:#fff; height:35px; }
+.s_fixed{ background:none;}
+.s_fixed .nfTagB{ background:none; height:35px; }
 .s_fixed .nfTagB ul{ float:left; margin-top:7px; margin-left:9px;}
 .s_fixed .nfTagB ul li.current span{border-bottom:none;}
 .s_fixed #qun_menu_wp .wp_id{ display:block;}
@@ -1501,7 +1501,7 @@ a.create_button:hover{background:#9ec000; text-decoration:none; color:#fff;}
 .ulist6 .mark {top:-6px;left:0;width:1px;height:40px;margin:0 0 -50px;background-position:-99px -99px;}
 /*新增内容*/
 .oriTxt p{ width:100%;}
-.oriTxt p.utitle{ margin-bottom:7px; *margin-top:1px; background:#f6f6f6; padding:3px 0;}
+.oriTxt p.utitle{ margin-bottom:7px; *margin-top:1px; background:none; padding:3px 0;}
 .oriTxt p .un{ float:left; width:320px; height:20px; overflow:hidden;}
 .oriTxt p .ut{ float:right; font-size:12px;}
 .oriTxt p .ut a{ color:#666;}
