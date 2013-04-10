@@ -5,6 +5,8 @@
     <div class="list_title">
         <!--{eval if($type) $uclass='title_bg'; else $pclass='title_bg';}-->
         <a href="index.php?mod=topic&code=photo"><h3 class="fl {$pclass}">图片墙</h3></a>
+        <a href="index.php?mod=topic&code=photo&tag={$tag}"><h3 class="fl {$mclass}">美食</h3></a>
+        <a href="index.php?mod=topic&code=photo&uid={$tag}"><h3 class="fl {$nclass}">美女</h3></a>
         <a href="index.php?mod=topic&code=photo&uid={$url_uid}"><h3 class="fl {$uclass}">{$nickname}关注的人的图片</h3></a>
     </div>
     <!--列表 Begin-->

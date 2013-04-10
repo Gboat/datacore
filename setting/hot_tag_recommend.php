@@ -1,6 +1,6 @@
 <?php 
   
 $config['hot_tag_recommend']=array (
-  'time' => 1365408462,
+  'time' => 1365562307,
 );
  ?>

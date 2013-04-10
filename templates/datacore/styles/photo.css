@@ -1,6 +1,6 @@
 /* CSS Document */
 body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,label,dl,dt,dd,fieldset,img{margin:0;padding:0;border:0;list-style:none;}
-.fl{height:30px;line-height:30px;color:#000;padding:0px 10px;font-size:14px;font-weight:bold;background-color:#ffffff;float: left;}
+.fl{height:30px;line-height:30px;color:#000;padding:0px 10px;font-size:14px;font-weight:bold;background-color:#ffffff;float: left;border-right:#0088CC 3px solidborder-right:#0088CC 3px solid;; }
 .b{font-weight:bold;}
 .boutique{clear:both;overflow:hidden;width:950px;margin:0 auto;}
 .boutique_load{width:1000px;overflow:hidden;clear:both;margin:0px 0px 10px;text-align:center;background-color:#f2f2f2;color:#666666;padding:10px 0px;font-size:14px;border-top:1px solid #d9d9d9;}

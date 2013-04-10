@@ -45,9 +45,7 @@ function faceError(imgObj)
     <!--{if $this->Config[theme_bg_color]}-->
     body{ background-color:{$this->Config[theme_bg_color]};}
     <!--{/if}-->
-    <!--{if $this->Config[theme_bg_image]}-->
-    body{ background-image:url({$this->Config[theme_bg_image]});}
-    <!--{/if}-->
+    body{ background:url("images/bg.png") repeat;}
     <!--{if $this->Config[theme_bg_position]}-->
     body{ background-position:{$this->Config[theme_bg_position]};}
     <!--{/if}-->
@@ -62,12 +60,9 @@ function faceError(imgObj)
     <!--{/if}-->
     a.artZoom{ cursor:url({conf site_url}/templates/default/images/magnifier_b.cur), pointer; }
     .artZoomBox a.maxImgLink { cursor:url({conf site_url}/templates/default/images/magnifier_s.cur), pointer; }
-
     a.artZoom2{ cursor:url({conf site_url}/templates/default/images/magnifier_b.cur), pointer; }
-
     a.artZoom3{ cursor:url({conf site_url}/templates/default/images/magnifier_b.cur), pointer; }
     .artZoomBox a.maxImgLink3 { cursor:url({conf site_url}/templates/default/images/magnifier_s.cur), pointer; }
-
     a.artZoomAll{ cursor:url({conf site_url}/templates/default/images/magnifier_b.cur), pointer; }
     .artZoomBox a.maxImgLinkAll { cursor:url({conf site_url}/templates/default/images/magnifier_s.cur), pointer; }
 </style>

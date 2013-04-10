@@ -1,6 +1,7 @@
 /*###########################
    @Name:海底世界 
 #############################*/
+/*
 body{ background-color:#F5BC49; background-image:url(images/themebg.jpg);background-position:center 0px;background-repeat:repeat; background-attachment:fixed;}
 a:link{color:#2965B1;text-decoration:none;}
 a:visited{color:#2965B1;text-decoration:none;}
@@ -25,16 +26,3 @@ a:hover{color:#2965B1;text-decoration:underline;}
 .boxRNav3 li,.boxRNav3 li a{background-image:url(images/sideLb.png);}
 .boxRNav3 li.current{background-image:url(images/sideLb.png);}
 .boxRNav3 li.current a{color:#2965B1}
-/*新增侧栏部分*/
-
-.rught_tj_box{background:url(images/right_tj_t.gif) no-repeat; color:#666666;}
-.rught_tj_box span{ background:#ecf5f9;border:#B0C9D8 1px solid; border-top:none;}
-/*三栏部分*/
-.t_col_main{background:url(images/rightbg2.png) repeat-y;}
-/*三栏左边导航*/
-.t_col_main_fl .boxRNav2 li,.boxRNav2 li a{background-image:url(images/sideLb.png);}
-.t_col_main_fl .boxRNav2 li.current,.t_col_main_fl .boxRNav2 li.current:hover{background-image:url(images/sideLb.png);}
-.t_col_main_fl .sendMail{ background-image:url(images/sideLb.png)}
-.t_col_main_fl .boxRNav2 li.current a{ color:#2965B1;}
-.t_col_main_fl .blackBox{ border-color:#fff;}
-
