@@ -162,14 +162,14 @@
 <div class="SC">
     <!--{if $__my[uid]>0}-->
     <!--{if $is_favorite}-->
-    <span id="favorite_tag_id"><a href="javascript:void(0);" onclick="favoriteTag('{$tag}','delete');return false;"><img src="images/noattention.gif" /></a></span>
+    <h3 id="favorite_tag_id"><a href="javascript:void(0);" onclick="favoriteTag('{$tag}','delete');return false;">取消关注该话题</a></h3>
     <!--{else}-->
-    <span id="favorite_tag_id"><a href="javascript:void(0);" onclick="favoriteTag('{$tag}');return false;"><img src="images/attention.gif" /></a></span>
+    <h3 id="favorite_tag_id"><a href="javascript:void(0);" onclick="favoriteTag('{$tag}');return false;"> 添加关注该话题</a></h3>
     <!--{/if}-->
     <!--{/if}-->
 </div>
 <div class="SC">
-    <a href="" title="显示信息图谱"> 显示信息图谱</a> 
+    <h3><a href="" title="显示信息图谱"> 显示信息图谱</a></h3>
 </div>
 <!-- 热门话题推荐-->
 <!--{if $this->

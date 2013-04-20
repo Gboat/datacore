@@ -1,0 +1,42 @@
+<!--{template "topic_header"}-->
+<link href="templates/default/styles/photo.css" rel="stylesheet" type="text/css" />
+<!--boutique_main-->
+<div class="boutique">
+    <div class="list_title">
+        <!--{eval if($type) $uclass='title_bg'; else $pclass='title_bg';}-->
+        <a href="index.php?mod=topic&code=photo"><h3 class="fl {$pclass}">图片墙</h3></a>
+        <a href="index.php?mod=topic&code=photo&tag={$tag}"><h3 class="fl {$mclass}">美食</h3></a>
+        <a href="index.php?mod=topic&code=photo&uid={$tag}"><h3 class="fl {$nclass}">美女</h3></a>
+        <a href="index.php?mod=topic&code=photo&uid={$url_uid}"><h3 class="fl {$uclass}">{$nickname}关注的人的图片</h3></a>
+    </div>
+    <!--列表 Begin-->
+    <div class="boutique_connbody">
+        <!--{loop $topic_list $key $topiclist}-->
+        <div class="item_wrap">
+            <ul class="item_list" id="phototopic_{$key}">
+                <!--{loop $topiclist $val}-->
+                {template "topic_photo_item"}
+                <!--{/loop}-->
+            </ul>
+        </div>
+        <!--{/loop}-->
+        <div style="clear:both;height:0;"></div>
+    </div>
+    <!--列表 End-->
+    <!--正在加载-->
+    <div id="boutique_load"></div>
+    <!--/正在加载-->
+</div>
+<!--/boutique_main-->
+<script type="text/javascript">
+    <!--{if $isloading}-->var isLoading = true;<!--{else}-->var isLoading = false;<!--{/if}-->
+    var onloading = false; var uid = {$uid};
+var photopagenum = 0;var photoloadmsg = '<div class="boutique_load"><a href="javascript:;" onclick="loadphoto(uid);" class="load_link">载入更多</a></div>';
+if(isLoading){$('#boutique_load').html(photoloadmsg);}
+$(window).bind('scroll resize',function(event){if(isLoading && !onloading){var ulheight = $('#phototopic_0').height();for(var i=1;i<4;i++){if(ulheight>$('#phototopic_'+i).height()){ulheight = $('#phototopic_'+i).height();}}var bodyTop = document.documentElement.scrollTop + document.body.scrollTop;if(bodyTop+$(window).height() >= ulheight){loadphoto(uid);}}});
+</script>
+<style type="text/css">
+    .bottomLinks .bL_info{width:180px;}
+    .tagBox{ margin-left:690px;}
+</style>
+<!--{template "topic_footer"}-->

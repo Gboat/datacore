@@ -61,7 +61,22 @@ btn:{btn_bgColor:"#FFFFFF",btn_bgHoverColor:"#1072aa",btn_fontColor:"#000000",bt
     <!--{if in_array($this->Code,array('myhome','tag','qun','recd','other','bbs','cms')) || $this->Get[gid] !=''}-->
     <div class="TopicMan s_fixed">
         <div class="nfTagB">
-            <ul> 
+            <ul>
+                <!-- 
+                <!--{eval if($this->Code == 'my') $myhome= "current";}-->
+                <li class="{$my}">
+                <span id="follow_menu_wp">
+                    <a href="index.php?mod=topic&code=myhome" title="">我的信息</a>
+                </span>
+                </li>
+                <!--{eval if($this->Code == 'my') $myhome= "current";}-->
+                <li class="{$myfriend}">
+                <span id="follow_menu_wp">
+                    <a href="index.php?mod=topic&code=myhome" title="">好友信息</a>
+                </span>
+                </li>
+                -->
+
                 <!--我关注的人 Begin--> 
                 <!--{eval if($this->Code == 'myhome') $myhome= "current";}-->
                 <li class="{$myhome}">

@@ -108,7 +108,7 @@ ul.t_c4_box li span,ul.t_c6_box li span{ color:#F60; font-size:10px;}
 /*主体框架*/
 .main{width:980px; margin:0 auto;overflow:hidden;background:url(../images/main.png) repeat #B9B9B9;}
 .mainL {float:left;padding-bottom:95px;*padding-bottom:35px;width:590px; background:#fff url(../images/main_l.png) repeat; min-height:700px;}
-.mainR {float:left;padding-bottom:10px;width:210px;}
+.mainR {float:left;padding-bottom:10px;width:390px;}
 .footer{width:800px; margin:10px auto; text-align:center;clear:both;}
 .cp{width:800px; margin:5px auto; text-align:center; clear:both;}
 /*输入框样式*/
@@ -1589,16 +1589,16 @@ ul.zfti li.zfhover{ width:87px; height:29px; color:#000; font-weight:600;backgro
 #toweibo_wp{ float:left; margin:6px 0 0 -2px;}
 #toweibo_wp input{vertical-align:-2px;}
 /*新增侧边通用模块*/
-.SC{width:186px;margin:0 auto;line-height:21px; border-bottom:1px dotted #ccc;}
-.SC h3,.FTL{width:186px;overflow:hidden;*zoom:1; margin-bottom:10px; clear:both;}
+.SC{width:386px;margin:0 auto;line-height:21px; border-bottom:1px dotted #ccc;}
+.SC h3,.FTL{width:386px;overflow:hidden;*zoom:1; margin-bottom:10px; clear:both;}
 .FTL li{ float:left; *float:none; background:none;}
 .SC h3{ height:40px;padding-top:3px;line-height:39px;border-top:none; font-size:14px; margin:0; color:#0073B2;}
 .SC h3 a{z-index:2;}
 .SC .btn{background:url(../images/b1_c2.gif) no-repeat;}
 .SC a.btn{z-index:1; margin:5px 10px 5px 0; *margin:-28px 10px 5px 0px;display:block;width:10px;height:15px;background-position:right -25px; float:right;}
-.SC .followList{ width:186px;}
+.SC .followList{ width:386px;}
 .SC .followList li{ border:none;}
-.SC .cat_block{ width:186px; margin-right:0;}
+.SC .cat_block{ width:386px; margin-right:0;}
 .FTL2 li{ width:50px; float:left; margin:3px 5px;_margin:3px 4px; overflow:hidden; display:inline;}
 .FTL2 li .manface{ height:48px;width:48px; border:1px solid #ccc;float:left;} 
 .FTL2 li b{ text-align:center; overflow:hidden; width:50px; height:20px;float:left;font-weight:500;}

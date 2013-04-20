@@ -147,7 +147,6 @@ class MasterObject
     function ShowBody($body)
     {
         echo $body;
-        if (upsCtrl()->ccDSP()) echo "P"."o"."w"."e"."r"."e"."d"." b"."y"." J"."i"."s"."h"."i"."G"."o"."u";
     }
     function _topicLogicGet($ids,$fields='*',$process='Make',$table="",$prikey='tid') {
         $data = $this->TopicLogic->Get($ids,$fields,$process,$table,$prikey);
