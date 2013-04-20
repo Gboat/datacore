@@ -1,0 +1,20 @@
+<!--{template "topic_header"}-->
+<style>
+    #track { width:100%;}
+    #track li { width:140px;height:200px;float:left;border:1px dotted #666;}
+    #track a{width:140px;height:140px;}
+    #track #mail { background:#666;}
+</style>
+
+<div class="main {$t_col_main}">
+    <div class="mainL">
+        <ul id="track">
+            <li id="mail"><a href="?mod=track&code=mail" target="_self">邮件{$mail}</a></li>
+            <li id="phone"><a href="?mod=track&code=phone" target="_self">手机{$phone}</a></li>
+            <li id="qq"><a href="?mod=track&code=qq" target="_self">QQ{$qq}</a></li>
+            <li id="weibo"><a href="?mod=track&code=weibo" target="_self">微博{$weibo}</a></li>
+        </ul>
+    </div>
+
+</div>
+<!--{template "topic_footer"}-->

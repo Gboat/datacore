@@ -29,7 +29,9 @@ class ModuleObject extends MasterObject
             $this->Qzone();
         }elseif('other2' == $this->Code) {
             $this->Wecart();
-        }else {
+        }elseif('track' == $this->Code) {
+            $this->Track();
+        }else{
             $this->Main();
         }
         $body=ob_get_clean();
@@ -102,6 +104,14 @@ class ModuleObject extends MasterObject
             $track_list[$row['id']]['images'] = "./images/noavatar.gif";
         }
         include($this->TemplateHandler->Template('track'));
+    }
+    function Track(){
+        $this->Title = "Track信息总揽";
+        $mail = 100;
+        $phone = 120;
+        $qq = 149;
+        $renren = 150;
+        include($this->TemplateHandler->Template('track_index'));
     }
     function Qzone(){
         die("QQ通道马上就来！");

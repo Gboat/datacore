@@ -1,20 +1,10 @@
 <!--{template "topic_header"}-->
 <div class="main {$t_col_main}">
-
-    <!--此处三栏-->
-    <div class="t_col_main_si {$t_col_main_side}">
-        <div class="t_col_main_fl">
-            <div id="topic_index_left_ajax_list">
-                {template "topic_member_left.inc"}
-            </div>
-        </div>
-    </div>
-    <!--此处三栏-->
     <div class="mainL">
         <div class="mblogTitle2"> 
             <div class="left_s">
                 <!--{if !$pageOnOff}-->
-                <b>{$member[nickname]}的TACK信息</b>
+                <b>{$type}的TACK信息</b>
                 <!--{else}-->
                 <!--{/if}-->
             </div>
@@ -130,15 +120,12 @@
 <ul class="followList" style="overflow:hidden">
     <!--{loop $track_list $val}-->
     <li class="pane" id="{$val[id]}">
-    <div class="fBox_l">
+    <div class="fBox_l" style="display:none;">
         <img onerror="" src="{$val[images]}"/> 
     </div>
     <div id="user_user" class="layS"></div>
     <div class="fBox_R" style="width:200px">
         <p>
-        <span class="name" style="float:left;display:inline;">
-            <a>{$val[username]}</a>
-        </span>
         <!--{if $val[gender] == 1}-->
         <img src="images/user.gif"  title="{$val[nickname]}"/>
         <!--{elseif $val[gender] == 2}-->
@@ -146,6 +133,10 @@
         <!--{else}-->
         <img src="images/user.gif"  title="{$val[nickname]}"/>
         <!--{/if}-->   
+        <span class="name" style="float:left;display:inline;">
+            <a>{$val[username]}</a>
+        </span>
+
         <!--{if MEMBER_ID==$member[uid]}-->
         <span>
             <a href="javascript:void(0)" onclick="get_remark({$val[uid]});return false;">
@@ -154,7 +145,7 @@
         </span>
         <!--{/if}-->
         </p>
-        <p>{$val[trackkey]}</p>
+        <p style="font-weight:bold; font-size:18px; height:24px;">{$val[trackkey]}</p>
         <span id="group_list2_{$val[uid]}" style="display:block;">
             <!--{loop $user_group $GroupName}-->
             <!--{if $GroupName[touid] == {$val[uid]}}-->
