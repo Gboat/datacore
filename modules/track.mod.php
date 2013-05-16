@@ -31,15 +31,94 @@ class ModuleObject extends MasterObject
             $this->Wecart();
         }elseif('track' == $this->Code) {
             $this->Track();
-        }else{
+        }elseif('weibo' == $this->Code) {
+            $this->Weibo();
+        }elseif('all' == $this->Code){
+            $this->All();
+        }
+        else{
             $this->Main();
         }
         $body=ob_get_clean();
         $this->ShowBody($body);
     }
+    function All(){
+        $Title = "信息总揽-與情TRACK";
+        $mg = new Mongo("172.31.159.111:27017");
+        $db = $mg->track;
+        $query = array();
+        $fields = array();
+        $limit = array();
+        $moniter = array();
+        $uid = $this->Get['uid'];
+        $cursor = $db->moniter->find($query,$fields);
+        while($cursor->hasNext()){
+            $r = $cursor->getNext();
+            //echo $r;
+            $moniter[]=$r;
+            //var_dump($r);
+        }
+        foreach($moniter as $i){
+            echo $i['name'];
+            echo json_encode($i['day']);
+        }
+        include($this->TemplateHandler->Template('track_all'));
+        //die("ALL就来！");
+    }
     function WeCart()
     {
         die("微信通道马上就来！");
+    }
+    function Weibo(){
+        $mg = new Mongo("172.31.159.111:27017");
+        $db = $mg->track;
+        $query = array();
+        $fields = array();
+        $limit = array();
+        $Title = "人物关系分析-與情TRACK";
+        $uid = $this->Get['uid'];
+
+        if(!empty($uid)){
+            $query = array(
+                "statusuid"=>intval($uid),
+                "platform"=>"swb",
+            );
+            //echo json_encode($query);
+            //json_decode("{'statusuid':$uid,'flatfrom':'swb'}");
+            $count = $db->status->find($query,$fields)->count();
+            if($count){
+            $cursor = $db->status->find($query,$fields)->limit(10);
+            while($cursor->hasNext()){
+                $r = $cursor->getNext();
+                echo $r['content']."<br />";
+                echo $r['timestamp']."<br />";
+                //var_dump($r);
+            }
+            }
+        }
+        else
+        {
+        $count = $db->user->find($query,$fields)->count();
+        $per_page_num = 24;
+        $gets = array(
+            'mod' => $_GET['mod_original'] ? get_safe_code($_GET['mod_original']) : $this->Module,
+            'code' => $this->Code,//确定当前位置
+            'gid' => $this->Get['gid'],//分组
+            'nickname' => $this->Get['nickname'],//昵称
+            'type' => $this->Get['type'],//排序字段
+        );
+        $page_url = "index.php?".url_implode($gets);
+        $page = empty($this->Get['page'])? 1:$this->Get['page'];
+
+        $cursor = $db->user->find($query,$fields)->skip(($page-1)*$per_page_num)->limit($per_page_num);
+        $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
+        $track_list = array();
+        while($cursor->hasNext()){
+            $r = $cursor->getNext();
+            $track_list[] = $r;
+        }
+        include($this->TemplateHandler->Template('track_weibo'));
+        }
     }
     function Main(){
         $type = $this->Code;

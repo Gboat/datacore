@@ -368,7 +368,7 @@ ul.tagB a{float:left; margin-right:12px; line-height:25px; white-space:nowrap;}
 .mainL .listBox .listBoxNav .spanRight img{ vertical-align:middle;}
 .Listmain { color:#000;margin:0 auto;text-align:left;width:540px; padding-top:1px;}
 .feedCell { padding:10px 0 5px;}
-.feedCell .wb_l_face{ float:left; width:50px; display:inline;}
+.feedCell .wb_l_face{ float:left; width:50px; display:none;/*inline;*/}
 .feedCell .avatar {display:inline;float:left;height:50x;width:50px;margin-bottom:5px;text-align:center;}
 .feedCell .avatar img {height:48px;width:48px; border:1px solid #ccc;}
 .Contant { margin-left:60px;width:490px;*overflow:hidden; *width:auto;}
@@ -482,7 +482,7 @@ ul.tagB a{float:left; margin-right:12px; line-height:25px; white-space:nowrap;}
 .followList_m{ padding:20px 20px 0;}
 .followList li{ width:50%; float:left; padding:15px 0; border-bottom:1px dotted #E6E6E6;}
 .followList li .fBox_l { float:left; margin:0 6px 0 1px; width:50px;}
-.followList li .fBox_l img{ height:48px;width:48px; border:1px solid #ccc;float:left;}
+.followList li .fBox_l img{ /*height:48px;width:48px;*/ border:1px solid #ccc;float:left;}
 .followList li .fBox_R{ float:left; width:340px; line-height:1.4em; margin:0;}
 .followList li .fBox_R .ff_1{ width:140px; overflow:hidden; display:block; color:#666;}
 .followList li .fBox_R .name{ font-size:12px;}

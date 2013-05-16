@@ -1,50 +1,50 @@
 <?php
 $config['plugin']=array (
-  'modtype' =>array(
-          array (
+    'modtype' =>array(
+        array (
             'name' => '插件菜单',
             'val'  => '1',
-          ),
-           array (
+        ),
+        array (
             'name' => '顶部菜单',
             'val'  => '2',
-          ),
-           array (
+        ),
+        array (
             'name' => '个人管理中心',
             'val'  => '3',
-          ),
-           array (
+        ),
+        array (
             'name' => '插件管理中心',
             'val'  => '4',
-          ),
-           array (
+        ),
+        array (
             'name' => '页面镶入',
             'val'  => '5',
-          )),
+        )),
     'vartype' => array(
-           array(
-               'name' => '单行文本框',
+        array(
+            'name' => '单行文本框',
             'val'  => 'text',
-           ),
-            array(
-               'name' => '多行文本框',
+        ),
+        array(
+            'name' => '多行文本框',
             'val'  => 'textarea',
-           ),
-           array(
-               'name' => '下拉菜单',
+        ),
+        array(
+            'name' => '下拉菜单',
             'val'  => 'select',
-           ),
-            array(
-               'name' => '单选框',
+        ),
+        array(
+            'name' => '单选框',
             'val'  => 'radio',
-           ),
-            array(
-               'name' => '复选框',
+        ),
+        array(
+            'name' => '复选框',
             'val'  => 'checkbox',
-           ),
-           array(
-               'name' => '用户组',
+        ),
+        array(
+            'name' => '用户组',
             'val'  => 'usergroup',
-           )),
+        )),
 );
 ?>

@@ -1,0 +1,53 @@
+<!--{template "topic_header"}-->
+<div class="main {$t_col_main}">
+<!--{if $track_list}-->
+<ul class="followList" style="width: auto;overflow:hidden">
+    <!--{loop $track_list $val}-->
+    <li class="pane" id="{$val[id]}" style="width:25%;height:320px">
+    <div class="fBox_l">
+        <img onerror="" src="{$val[image]}" width="200" height="200"/> 
+    </div>
+    <div id="user_user" class="layS"></div>
+    <div class="fBox_R" style="width:200px">
+        <p>
+        <!--{if $val[gender] == 'm'}-->
+        <img src="images/user.gif"  title="{$val[nickname]}"/>
+        <!--{elseif $val[gender] == 'f'}-->
+        <img src="images/user_female.gif"  title="{$val[nickname]}"/>
+        <!--{else}-->
+        <img src="images/user.gif"  title="{$val[nickname]}"/>
+        <!--{/if}-->   
+        <span class="name" style="float:left;display:inline;">
+            <a>{$val[name]}</a>
+        </span>
+        </p>
+
+        <p style="font-weight:bold; font-size:18px; height:24px;">{$val[userid]}</p>
+        <p>{$val[location]}</p>
+        <p>{$val[description]}</p>
+        <span id="group_list2_{$val[uid]}" style="display:block;">
+            <!--{loop $user_group $GroupName}-->
+            <!--{if $GroupName[touid] == {$val[uid]}}-->
+            <span style="padding:0px;">
+                <a href="index.php?mod=topic&code=follow&gid={$GroupName[gid]}">[ {$GroupName[g_name]} ]</a>
+            </span>
+            <!--{/if}-->
+            <!--{/loop}-->
+        </span>
+        <!--{if MEMBER_ID == $member[uid]}-->
+        <p class="pclas2">
+        <a href="javascript:void(0)" onclick="get_group_choose({$val[userid]});return false;">设置分组</a> |
+        <a href="javascript:void(0)" onclick="get_remark({$val[userid]});return false;">关联信息</a> |
+        <a href="javascript:void(0)" onclick="follower_choose({$val[userid]},'{$val[name]}','lahei','topic_follow');return false;">删除</a>
+        </p>
+        <!--{/if}-->
+    </div>
+    </li>
+    <!--{/loop}-->
+    <!--{if $page_arr[html]}-->
+    <li style=" background:none; width:100%">{$page_arr[html]}</li>
+    <!--{/if}-->
+    </ul>
+<!--{/if}-->
+</div>
+<!--{template "topic_footer"}-->

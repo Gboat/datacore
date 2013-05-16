@@ -53,12 +53,13 @@
     });
 
 </script>
-<li class="t_capp"><a href="#" target="_parent" title="专题">专题</a>
+
+<li class="t_capp"><a href="index.php?mod=track&code=all" target="_parent" title="track">Track</a>
+
 <ul class="t_c1_box t_capp_box" style="display:none;">
-    <li><a href="index.php?mod=track&code=track" target="_parent">Track</a></li>
-    <li><a href="index.php?mod=topic&code=photo" target="_parent">图酷</a></li>
-    <!--<li><a href="index.php?mod=tools&code=share" target="_parent">分享</a></li>-->
-</ul>
+    <li><a href="index.php?mod=track&code=track&code=weibo" target="_parent">Track</a></li>
+    <li><a href="index.php?mod=topic&code=photo" target="_parent">图片</a></li>
+ </ul>
 </li>
 
 <li class="sweibo">
@@ -66,10 +67,12 @@
 
     </ul>
     <ul class="hright">
+        <!--
         <li class="pweibo" style="cursor:pointer;" onclick="showMainPublishBox();" title="发微博">发博
         <input type="hidden" name="check_PublishBox_uid" id="check_PublishBox_uid"  value="{MEMBER_ID}"/>
         <input type="hidden" id="verify" name="verify" value="$this->Config[verify]">
         </li>
+        -->
         <!--{if MEMBER_ID > 0}-->
         <li class="t_c4"><a href="index.php" title="{$this->Config[site_name]}">我的首页</a>
         <ul class="t_c4_box">

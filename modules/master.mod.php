@@ -282,7 +282,7 @@ class MasterObject
         if($this->MemberHandler) {
             $this->MemberHandler->UpdateSessions();
         }
-        echo "<div style=\"clear:both;text-align:center;margin:5px auto;\">Powered by DataCore © 2005 - 2012 INET Inc.</div>";
+        //echo "<div style=\"clear:both;text-align:center;margin:5px auto;\">Powered by DataCore © 2005 - 2012 INET Inc.</div>";
     }
     function js_show_msg()
     {

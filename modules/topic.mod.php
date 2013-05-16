@@ -1570,6 +1570,7 @@ class ModuleObject extends MasterObject
         return Load::model('data_block')->recommend_topic_user($day, $limit, $cache_time);
     }
     function _guestIndex() {
+        /*
         if(MEMBER_ID > 0) {
             $member = $this->_member(MEMBER_ID);
         }
@@ -1623,7 +1624,10 @@ class ModuleObject extends MasterObject
         }
         $this->MetaKeywords = $this->Config['index_meta_keywords'];
         $this->MetaDescription = $this->Config['index_meta_description'];
-        include($this->TemplateHandler->Template('topic_index_guest'));
+        */
+        //include($this->TemplateHandler->Template('topic_index_guest'));
+        $action="index.php?mod=login&code=dologin";
+        include($this->TemplateHandler->Template('global_login'));
     }
     function _myGroup($uid=0,$limit='')
     {

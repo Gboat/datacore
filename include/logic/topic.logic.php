@@ -75,10 +75,10 @@ class TopicLogic
             $is_verify = true;
         }
 
-        $topictag = Load::logic("classify",1)->TopicTag($content);
-        $content = $topictag . $content;
+        //$topictag = Load::logic("classify",1)->TopicTag($content);
+        //$content = $topictag . $content;
 
-        $trackid = Load::logic("track",1)->Add("test@zhang","mail","ceshi");
+        //$trackid = Load::logic("track",1)->Add("test@zhang","mail","ceshi");
 
         $content = $this->_content_strip($content);
         $content_length = strlen($content);
