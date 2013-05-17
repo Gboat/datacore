@@ -1,53 +1,61 @@
 <!--{template "topic_header"}-->
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
 <div class="main {$t_col_main}">
-<!--{if $track_list}-->
-<ul class="followList" style="width: auto;overflow:hidden">
-    <!--{loop $track_list $val}-->
-    <li class="pane" id="{$val[id]}" style="width:25%;height:320px">
-    <div class="fBox_l">
-        <img onerror="" src="{$val[image]}" width="200" height="200"/> 
-    </div>
-    <div id="user_user" class="layS"></div>
-    <div class="fBox_R" style="width:200px">
-        <p>
-        <!--{if $val[gender] == 'm'}-->
-        <img src="images/user.gif"  title="{$val[nickname]}"/>
-        <!--{elseif $val[gender] == 'f'}-->
-        <img src="images/user_female.gif"  title="{$val[nickname]}"/>
-        <!--{else}-->
-        <img src="images/user.gif"  title="{$val[nickname]}"/>
-        <!--{/if}-->   
-        <span class="name" style="float:left;display:inline;">
-            <a>{$val[name]}</a>
-        </span>
-        </p>
+    <script >
+        $(function () {
+            $('#container').highcharts({
+                chart: {
+                    type: 'line',
+                    marginRight: 130,
+                    marginBottom: 25
+                },
+                title: {
+                    text: "<!--{$this->Title}-->",
+                    x: -20 //center
+                },
+                subtitle: {
+                    text: '展示数据采集的整体信息',
+                    x: -20
+                },
+                //xAxis: {
+                //    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                //    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                //},
+                yAxis: {
+                    title: {
+                        text: '信息单元Info Unit (条)'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    valueSuffix: '条'
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -10,
+                    y: 100,
+                    borderWidth: 0
+                },
+                series: [
+                <!--{loop $moniter $val}-->
+                    {
+                        name: '<!--{$val[name]}-->',
+                        data: <!--{$val[datas]}-->
+                    },
+                <!--{/loop}-->
+                ]
+            });
+        });
 
-        <p style="font-weight:bold; font-size:18px; height:24px;">{$val[userid]}</p>
-        <p>{$val[location]}</p>
-        <p>{$val[description]}</p>
-        <span id="group_list2_{$val[uid]}" style="display:block;">
-            <!--{loop $user_group $GroupName}-->
-            <!--{if $GroupName[touid] == {$val[uid]}}-->
-            <span style="padding:0px;">
-                <a href="index.php?mod=topic&code=follow&gid={$GroupName[gid]}">[ {$GroupName[g_name]} ]</a>
-            </span>
-            <!--{/if}-->
-            <!--{/loop}-->
-        </span>
-        <!--{if MEMBER_ID == $member[uid]}-->
-        <p class="pclas2">
-        <a href="javascript:void(0)" onclick="get_group_choose({$val[userid]});return false;">设置分组</a> |
-        <a href="javascript:void(0)" onclick="get_remark({$val[userid]});return false;">关联信息</a> |
-        <a href="javascript:void(0)" onclick="follower_choose({$val[userid]},'{$val[name]}','lahei','topic_follow');return false;">删除</a>
-        </p>
-        <!--{/if}-->
-    </div>
-    </li>
-    <!--{/loop}-->
-    <!--{if $page_arr[html]}-->
-    <li style=" background:none; width:100%">{$page_arr[html]}</li>
-    <!--{/if}-->
-    </ul>
-<!--{/if}-->
+
+    </script>
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 </div>
 <!--{template "topic_footer"}-->

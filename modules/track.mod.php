@@ -43,7 +43,7 @@ class ModuleObject extends MasterObject
         $this->ShowBody($body);
     }
     function All(){
-        $Title = "信息总揽-與情TRACK";
+        $this->Title = "信息总揽-與情TRACK";
         $mg = new Mongo("172.31.159.111:27017");
         $db = $mg->track;
         $query = array();
@@ -54,13 +54,18 @@ class ModuleObject extends MasterObject
         $cursor = $db->moniter->find($query,$fields);
         while($cursor->hasNext()){
             $r = $cursor->getNext();
-            //echo $r;
             $moniter[]=$r;
-            //var_dump($r);
         }
+        $j=0;
         foreach($moniter as $i){
-            echo $i['name'];
-            echo json_encode($i['day']);
+            //$moniter[$j]['datas'] = json_encode(array_values($i['day']));
+            $datas = "[";
+            for ($a=0;$a<=40;$a++){
+                $day = date("Y-m-d",strtotime("-$a day"));
+                $datas .= (empty($i['day'][$day])?0:$i['day'][$day]) .",";
+            }
+            $moniter[$j]['datas'] = $datas."]";
+            $j++;
         }
         include($this->TemplateHandler->Template('track_all'));
         //die("ALL就来！");
@@ -75,7 +80,7 @@ class ModuleObject extends MasterObject
         $query = array();
         $fields = array();
         $limit = array();
-        $Title = "人物关系分析-與情TRACK";
+        $this->Title = "人物关系分析-與情TRACK";
         $uid = $this->Get['uid'];
 
         if(!empty($uid)){
@@ -87,37 +92,37 @@ class ModuleObject extends MasterObject
             //json_decode("{'statusuid':$uid,'flatfrom':'swb'}");
             $count = $db->status->find($query,$fields)->count();
             if($count){
-            $cursor = $db->status->find($query,$fields)->limit(10);
-            while($cursor->hasNext()){
-                $r = $cursor->getNext();
-                echo $r['content']."<br />";
-                echo $r['timestamp']."<br />";
-                //var_dump($r);
-            }
+                $cursor = $db->status->find($query,$fields)->limit(10);
+                while($cursor->hasNext()){
+                    $r = $cursor->getNext();
+                    echo $r['content']."<br />";
+                    echo $r['timestamp']."<br />";
+                    //var_dump($r);
+                }
             }
         }
         else
         {
-        $count = $db->user->find($query,$fields)->count();
-        $per_page_num = 24;
-        $gets = array(
-            'mod' => $_GET['mod_original'] ? get_safe_code($_GET['mod_original']) : $this->Module,
-            'code' => $this->Code,//确定当前位置
-            'gid' => $this->Get['gid'],//分组
-            'nickname' => $this->Get['nickname'],//昵称
-            'type' => $this->Get['type'],//排序字段
-        );
-        $page_url = "index.php?".url_implode($gets);
-        $page = empty($this->Get['page'])? 1:$this->Get['page'];
+            $count = $db->user->find($query,$fields)->count();
+            $per_page_num = 24;
+            $gets = array(
+                'mod' => $_GET['mod_original'] ? get_safe_code($_GET['mod_original']) : $this->Module,
+                'code' => $this->Code,//确定当前位置
+                'gid' => $this->Get['gid'],//分组
+                'nickname' => $this->Get['nickname'],//昵称
+                'type' => $this->Get['type'],//排序字段
+            );
+            $page_url = "index.php?".url_implode($gets);
+            $page = empty($this->Get['page'])? 1:$this->Get['page'];
 
-        $cursor = $db->user->find($query,$fields)->skip(($page-1)*$per_page_num)->limit($per_page_num);
-        $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
-        $track_list = array();
-        while($cursor->hasNext()){
-            $r = $cursor->getNext();
-            $track_list[] = $r;
-        }
-        include($this->TemplateHandler->Template('track_weibo'));
+            $cursor = $db->user->find($query,$fields)->skip(($page-1)*$per_page_num)->limit($per_page_num);
+            $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
+            $track_list = array();
+            while($cursor->hasNext()){
+                $r = $cursor->getNext();
+                $track_list[] = $r;
+            }
+            include($this->TemplateHandler->Template('track_weibo'));
         }
     }
     function Main(){
@@ -128,7 +133,7 @@ class ModuleObject extends MasterObject
         }
         $my_member = $this->_member((int) $this->Get['mod_original']);
         $gid = intval(trim($this->Get['gid']));
-        
+
         //获取get参数，初始化url
         $keyword = $this->Post['nickname'] ? $this->Post['nickname'] : $this->Get['nickname'];
         $per_page_num = 20;
@@ -168,15 +173,15 @@ class ModuleObject extends MasterObject
 
         $track_list = array();
         $count = DB::result_first("SELECT COUNT(*)
-                FROM ".DB::table('track')."
-                WHERE `tracktype` = '$type' ");
+            FROM ".DB::table('track')."
+            WHERE `tracktype` = '$type' ");
 
         $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
         $sql = "SELECT tk.trackid as id, tk.trackkey, tk.username
-                    FROM ".DB::table('track')." AS tk
-                    WHERE tk.`tracktype`='$type'
-                    ORDER BY tk.trackid
-            {$page_arr['limit']}";
+            FROM ".DB::table('track')." AS tk
+            WHERE tk.`tracktype`='$type'
+            ORDER BY tk.trackid
+        {$page_arr['limit']}";
         $query = DB::query($sql);
         while ($row = DB::fetch($query)){
             $track_list[$row['id']] = $row;
