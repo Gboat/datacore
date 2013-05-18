@@ -287,7 +287,9 @@ class TopicLogic
         $at_uids = $_process_result['at_uids'];
         $tags = $_process_result['tags'];
         $urls = $_process_result['urls'];
-        $longtextid = Load::logic('longtext', 1)->add($_content, $data['uid']);
+        //$longtextid = Load::logic('longtext', 1)->add($_content, $data['uid']);
+        $data['longtextid'] = $longtextid;
+        /*
         if(strlen($_content) > $this->_len) {
             $data['longtextid'] = $longtextid;
             $_content = cut_str($_content, $this->_len, '');
@@ -295,6 +297,7 @@ class TopicLogic
         } else {
             unset($data['longtextid']);
         }
+         */
         if (strlen($_content) > 255) {
             $_content = cut_str($_content, 254 * 2, '');
             $data['content'] = cut_str($_content, 255, '');

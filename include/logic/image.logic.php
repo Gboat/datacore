@@ -131,6 +131,7 @@ class ImageLogic
         Load::model('cache/db')->set($cache_id, $ret, 36000);
         return $ret;
     }
+
     function get_info($id)
     {
         $id = max(0, (int) $id);

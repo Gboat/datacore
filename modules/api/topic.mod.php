@@ -81,6 +81,11 @@ class ModuleObject extends MasterObject
         else
         {
         }
+        echo $this->Inputs['longtextid'];
+        echo $this->Inputs['attachid'];
+        echo $this->Inputs['videoid'];
+        echo $this->Inputs['imageid'];
+        
         /*
             $ks = array(
                 'tid'=>1,
@@ -99,23 +104,31 @@ class ModuleObject extends MasterObject
                 'item_id'=>1,
                 'item'=>1,
                 'postip'=>1,
-                'timestamp'=>1,
+
                 'managetype' => 1,
                 'checkfilter' =>1,
                 'verify' => 1,
                 'design' =>1,
                 'xiami_id' => 1,
             )
-         */
+        */
+        
         $datas = array(
             'content'=>$content,
             'totid'=>$totid,
             'from'=>$from,
             'type'=>$type,
             'uid'=>MEMBER_ID,
-            'item'=>'api',
-            'item_id'=>$this->app['id'],
-            );
+            //'attachid'=>max(0,(int) $this->Inputs['attachid']),
+            //'videoid'=>max(0,(int) $this->Inputs['videoid']),
+            //'imageid'=>max(0,(int) $this->Inputs['imageid']),
+            'longtextid'=>max(0,(int) $this->Inputs['longtextid']),
+            'timestamp'=>max(time(),$this->Inputs['timestamp']),
+            'tkid'=>$this->Inputs['tkid'],
+        );
+        print_r($datas);
+        //die();
+
         $add_result = $this->TopicLogic->Add($datas);
         if(is_array($add_result) &&count($add_result))
         {
