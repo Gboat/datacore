@@ -1,0 +1,11 @@
+<!--{template "topic_header"}-->
+<div class="main t_col_main">
+    <!--{if $rule}-->
+        <!--{loop $rule $val}-->
+        <a href="index.php?mod=track&code=s&q=<!--{$val[description]}-->"><!--{$val[name]}--></a>
+        <!--{/loop}-->
+    <!--{/if}-->
+    <IFRAME src="http://localhost/s/search.php?q=<!--{$q}-->" width="100%" height="700" frameborder="0"></IFRAME>
+
+</div>
+<!--{template "topic_footer"}-->

@@ -15,130 +15,101 @@
 <div class="header">
     <div class="headerNav {$t_col_header}">
         <ul class="hleft">
-
             <li class="logo2"><a href="index.php" title="{$this->Config[site_name]}"></a></li>
-<script type="text/javascript">
-    $(document).ready(function(){
-            $(".t_cnew").mouseover(function(){$(".t_cnew_box").show();$(".t_cnew").addClass("on");});
-            $(".t_cnew").mouseout(function(){$(".t_cnew_box").hide();$(".t_cnew").removeClass("on");});
-            $(".t_c2").mouseover(function(){$(".t_c2_box").show();$(".t_c2").addClass("on");});
-            $(".t_c2").mouseout(function(){$(".t_c2_box").hide();$(".t_c2").removeClass("on");});
-            $(".t_c4").mouseover(function(){$(".t_c4_box").show();$(".t_c4").addClass("on");});
-            $(".t_c4").mouseout(function(){$(".t_c4_box").hide();$(".t_c4").removeClass("on");});
-            $(".t_c5").mouseover(function(){$(".t_c5_box").show();$(".t_c5").addClass("on");});
-            $(".t_c5").mouseout(function(){$(".t_c5_box").hide();$(".t_c5").removeClass("on");});
-            $(".t_c6").mouseover(function(){$(".t_c6_box").show();$(".t_c6").addClass("on");});
-            $(".t_c6").mouseout(function(){$(".t_c6_box").hide();$(".t_c6").removeClass("on");});
-    });
-</script>
-<li class="t_cnew"><a href="#" target="_parent" title="信息">信息</a>
-<ul class="t_c1_box t_cnew_box" style="display:none;">
-    <li><a href="index.php?mod=topic&code=new" target="_parent">最新信息</a></li>
-    <li><a href="index.php?mod=tag" target="_parent">话题排行</a></li>
-</ul>
-</li>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                        $(".t_cnew").mouseover(function(){$(".t_cnew_box").show();$(".t_cnew").addClass("on");});
+                        $(".t_cnew").mouseout(function(){$(".t_cnew_box").hide();$(".t_cnew").removeClass("on");});
+                        $(".t_c6").mouseover(function(){$(".t_c6_box").show();$(".t_c6").addClass("on");});
+                        $(".t_c6").mouseout(function(){$(".t_c6_box").hide();$(".t_c6").removeClass("on");});
+                        });
+                    </script>
+                    <li class="t_cnew"><a href="#" target="_parent" title="信息">信息</a>
+                    <ul class="t_c1_box t_cnew_box" style="display:none;">
+                        <li><a href="index.php?mod=topic&code=new" target="_parent">最新信息</a></li>
+                        <li><a href="index.php?mod=tag" target="_parent">话题排行</a></li>
+                    </ul>
+                    </li>
+                    <li class="t_capp"><a href="index.php?mod=track&code=all" target="_parent" title="track">Track</a></li>
+                    <li><a href="index.php?mod=track&code=track&code=weibo" target="_parent">微博</a></li>
+                    <li><a href="index.php?mod=topic&code=photo" target="_parent">图片</a></li>
+                    <li><a href="index.php?mod=track&code=s" target="_parent">检索</a></li>
+                    <li class="sweibo"></li>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-            $(".t_capp").mouseover(function(){$(".t_capp_box").show();$(".t_capp").addClass("on");});
-            $(".t_capp").mouseout(function(){$(".t_capp_box").hide();$(".t_capp").removeClass("on");});
-            $(".t_c2").mouseover(function(){$(".t_c2_box").show();$(".t_c2").addClass("on");});
-            $(".t_c2").mouseout(function(){$(".t_c2_box").hide();$(".t_c2").removeClass("on");});
-            $(".t_c4").mouseover(function(){$(".t_c4_box").show();$(".t_c4").addClass("on");});
-            $(".t_c4").mouseout(function(){$(".t_c4_box").hide();$(".t_c4").removeClass("on");});
-            $(".t_c5").mouseover(function(){$(".t_c5_box").show();$(".t_c5").addClass("on");});
-            $(".t_c5").mouseout(function(){$(".t_c5_box").hide();$(".t_c5").removeClass("on");});
-            $(".t_c6").mouseover(function(){$(".t_c6_box").show();$(".t_c6").addClass("on");});
-            $(".t_c6").mouseout(function(){$(".t_c6_box").hide();$(".t_c6").removeClass("on");});
-    });
+                </ul>
+                <ul class="hright">
+                    <!--
+                    <li class="pweibo" style="cursor:pointer;" onclick="showMainPublishBox();" title="发微博">发博
+                    <input type="hidden" name="check_PublishBox_uid" id="check_PublishBox_uid"  value="{MEMBER_ID}"/>
+                    <input type="hidden" id="verify" name="verify" value="$this->Config[verify]">
+                    </li>
+                    -->
+                    <!--{if MEMBER_ID > 0}-->
+                    <li class="t_c4"><a href="index.php" title="{$this->Config[site_name]}">我的首页</a>
+                    <ul class="t_c4_box">
+                        <li><a href="index.php?mod=topic&code=tag">关注话题<!--{if $__my[topic_new]>0}--><span>+{$__my['topic_new']}</span><!--{/if}--></a></li>
+                        <li><a href="index.php?mod=topic&code=recd">官方推荐</a></li>
+                        <li><a href="index.php?mod=topic&code=myfavorite">我的收藏</a></li>
+                        <!--<li><a href="index.php?mod=track&code=mail">邮箱好友</a></li>
+                        <li><a href="index.php?mod=track&code=qq">QQ好友</a></li>
+                        <li><a href="index.php?mod=track&code=phone">手机通讯</a></li>-->
+                    </ul>
+                    </li>
 
-</script>
+                    <li class="t_c2" style="display:none"><a title="{MEMBER_NICKNAME}" href="index.php?mod={MEMBER_NAME}">{MEMBER_NICKNAME}</a>
+                    <ul class="t_c2_box">
+                        <li><a href="index.php?mod={MEMBER_NAME}&type=hot_forward">被热转的</a></li>
+                        <li><a href="index.php?mod=topic&code=myfavorite">我收藏的</a></li>
+                        <li><a href="index.php?mod={MEMBER_NAME}&type=my_verify">待审核的</a></li>
+                    </ul>
+                    </li>
 
-<li class="t_capp"><a href="index.php?mod=track&code=all" target="_parent" title="track">Track</a>
+                    <li class="t_c6">消息
+                    <ul class="t_c6_box">
+                        <li><a href="index.php?mod=topic&code=myat">@我的<!--{if $__my[at_new]>0}--><span>+$__my[at_new]</span><!--{/if}--></a></li>
+                        <li><a href="index.php?mod=pm&code=list">私信我的<!--{if $__my[newpm]>0}--><span>+$__my[newpm]</span><!--{/if}--></a></li>
+                    </ul>
+                    </li>
 
-<ul class="t_c1_box t_capp_box" style="display:none;">
-    <li><a href="index.php?mod=track&code=track&code=weibo" target="_parent">Track</a></li>
-    <li><a href="index.php?mod=topic&code=photo" target="_parent">图片</a></li>
- </ul>
-</li>
+                    <li class="t_c5">帐号
+                    <ul class="t_c5_box">
+                        <li><a href="index.php?mod=settings">资料设置</a></li>
+                        <li><a href="index.php?mod=settings&code=face">修改头像</a></li>
+                        <li><a href="index.php?mod=settings&code=secret">修改密码</a></li>
+                        <!--<li><a href="index.php?mod=account">账户绑定</a></li>-->
+                        <!--<li><a href="index.php?mod=other&code=wap">手机</a></li>-->
+                        <!--<li><a href="index.php?mod=skin">换肤</a></li>-->
+                        <!--<li><a href="index.php?mod=profile&code=invite">邀请关注</a></li>-->
+                        <li><a href="{conf site_url}/index.php?mod=login&code=logout" rel="nofollow">退出</a> </li>
 
-<li class="sweibo">
-</li>
+                    </ul>
+                    </li>
 
-    </ul>
-    <ul class="hright">
-        <!--
-        <li class="pweibo" style="cursor:pointer;" onclick="showMainPublishBox();" title="发微博">发博
-        <input type="hidden" name="check_PublishBox_uid" id="check_PublishBox_uid"  value="{MEMBER_ID}"/>
-        <input type="hidden" id="verify" name="verify" value="$this->Config[verify]">
-        </li>
-        -->
-        <!--{if MEMBER_ID > 0}-->
-        <li class="t_c4"><a href="index.php" title="{$this->Config[site_name]}">我的首页</a>
-        <ul class="t_c4_box">
-            <li><a href="index.php?mod=topic&code=tag">关注话题<!--{if $__my[topic_new]>0}--><span>+{$__my['topic_new']}</span><!--{/if}--></a></li>
-            <li><a href="index.php?mod=topic&code=recd">官方推荐</a></li>
-            <li><a href="index.php?mod=topic&code=myfavorite">我的收藏</a></li>
-            <!--<li><a href="index.php?mod=track&code=mail">邮箱好友</a></li>
-            <li><a href="index.php?mod=track&code=qq">QQ好友</a></li>
-            <li><a href="index.php?mod=track&code=phone">手机通讯</a></li>-->
-        </ul>
-        </li>
+                    <!--{else}-->
+                    <li><a href="javascript:viod(0)" rel="nofollow" title="登录即可分享新鲜事" onclick="ShowLoginDialog(); return false;">快捷登录</a></li>
+                    <!--{/if}-->
+                </ul>
+            </div>
 
-        <li class="t_c2" style="display:none"><a title="{MEMBER_NICKNAME}" href="index.php?mod={MEMBER_NAME}">{MEMBER_NICKNAME}</a>
-        <ul class="t_c2_box">
-            <li><a href="index.php?mod={MEMBER_NAME}&type=hot_forward">被热转的</a></li>
-            <li><a href="index.php?mod=topic&code=myfavorite">我收藏的</a></li>
-            <li><a href="index.php?mod={MEMBER_NAME}&type=my_verify">待审核的</a></li>
-        </ul>
-        </li>
-
-        <li class="t_c6">消息
-        <ul class="t_c6_box">
-            <li><a href="index.php?mod=topic&code=myat">@我的<!--{if $__my[at_new]>0}--><span>+$__my[at_new]</span><!--{/if}--></a></li>
-            <li><a href="index.php?mod=pm&code=list">私信我的<!--{if $__my[newpm]>0}--><span>+$__my[newpm]</span><!--{/if}--></a></li>
-        </ul>
-        </li>
-
-        <li class="t_c5">帐号
-        <ul class="t_c5_box">
-            <li><a href="index.php?mod=settings">资料设置</a></li>
-            <li><a href="index.php?mod=settings&code=face">修改头像</a></li>
-            <li><a href="index.php?mod=settings&code=secret">修改密码</a></li>
-            <!--<li><a href="index.php?mod=account">账户绑定</a></li>-->
-            <!--<li><a href="index.php?mod=other&code=wap">手机</a></li>-->
-            <!--<li><a href="index.php?mod=skin">换肤</a></li>-->
-            <!--<li><a href="index.php?mod=profile&code=invite">邀请关注</a></li>-->
-            <li><a href="{conf site_url}/index.php?mod=login&code=logout" rel="nofollow">退出</a> </li>
-
-        </ul>
-        </li>
-
-        <!--{else}-->
-        <li><a href="javascript:viod(0)" rel="nofollow" title="登录即可分享新鲜事" onclick="ShowLoginDialog(); return false;">快捷登录</a></li>
-        <!--{/if}-->
-    </ul>
-</div>
-
-</div>
+        </div>
 
 
-<div class="logow {$t_col_logo}">
-    <!--{if MEMBER_ID>0}-->
-    <!--{if $__my[comment_new]>0 || $__my[fans_new]>0 || $__my[at_new]>0 || $__my[newpm]>0 || $__my[favoritemy_new]>0 || $__my['vote_new']>0 || $__my['qun_new']>0 || $__my['event_new']>0 || $__my['topic_new']>0 || $__my['event_post_new']>0 || $__my['fenlei_post_new']>0}-->
-    <!--{eval $__tagBoxStyle='display:block;visibility:visible;';}-->
-    <!--{else}-->
-    <!--{eval $__tagBoxStyle='display:none;visibility:hidden;';}-->
-    <!--{/if}-->
-    <!--#if NEDU#-->
-    <!--{if defined('NEDU_MOYO')}-->
-    <!--{if nlogic('notify')->ups_haved()}-->
-    <!--{eval $__tagBoxStyle='display:block;visibility:visible;';}-->
-    <!--{/if}-->
-    <!--{/if}-->
-    <!--#endif#-->
-    <script type="text/javascript">
-        function tagBox_close()
+        <div class="logow {$t_col_logo}">
+            <!--{if MEMBER_ID>0}-->
+            <!--{if $__my[comment_new]>0 || $__my[fans_new]>0 || $__my[at_new]>0 || $__my[newpm]>0 || $__my[favoritemy_new]>0 || $__my['vote_new']>0 || $__my['qun_new']>0 || $__my['event_new']>0 || $__my['topic_new']>0 || $__my['event_post_new']>0 || $__my['fenlei_post_new']>0}-->
+            <!--{eval $__tagBoxStyle='display:block;visibility:visible;';}-->
+            <!--{else}-->
+            <!--{eval $__tagBoxStyle='display:none;visibility:hidden;';}-->
+            <!--{/if}-->
+            <!--#if NEDU#-->
+            <!--{if defined('NEDU_MOYO')}-->
+            <!--{if nlogic('notify')->ups_haved()}-->
+            <!--{eval $__tagBoxStyle='display:block;visibility:visible;';}-->
+            <!--{/if}-->
+            <!--{/if}-->
+            <!--#endif#-->
+            <script type="text/javascript">
+                function tagBox_close()
 {
     var obj = document.getElementById("tagBox_{MEMBER_ID}");
     obj.style.visibility = "hidden";

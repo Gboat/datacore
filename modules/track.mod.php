@@ -23,8 +23,8 @@ class ModuleObject extends MasterObject
         ob_start();
         if('other' == $this->Code) {
             $this->Mail();
-        } elseif ('other1' == $this->Code) {
-            $this->Phone();
+        } elseif ('s' == $this->Code) {
+            $this->Search();
         } elseif ('other1' == $this->Code) {
             $this->Qzone();
         }elseif('other2' == $this->Code) {
@@ -41,6 +41,18 @@ class ModuleObject extends MasterObject
         }
         $body=ob_get_clean();
         $this->ShowBody($body);
+    }
+    function Search(){
+        $this->Title = "全文检索";
+        $sql = "SELECT name ,description FROM ".DB::TABLE('rule');
+        $rule = array();
+        $query = DB::query($sql);
+
+        while ($row = DB::fetch($query)){
+            $rule[]=$row;
+        }
+        $q = $this->Get['q'];
+        include($this->TemplateHandler->Template('track_s'));
     }
     function All(){
         $this->Title = "信息总揽-與情TRACK";
@@ -79,26 +91,43 @@ class ModuleObject extends MasterObject
         $db = $mg->track;
         $query = array();
         $fields = array();
+        $sort = array();
         $limit = array();
         $this->Title = "人物关系分析-與情TRACK";
         $uid = $this->Get['uid'];
 
         if(!empty($uid)){
-            $query = array(
-                "statusuid"=>intval($uid),
-                "platform"=>"swb",
-            );
-            //echo json_encode($query);
-            //json_decode("{'statusuid':$uid,'flatfrom':'swb'}");
-            $count = $db->status->find($query,$fields)->count();
-            if($count){
-                $cursor = $db->status->find($query,$fields)->limit(10);
-                while($cursor->hasNext()){
-                    $r = $cursor->getNext();
-                    echo $r['content']."<br />";
-                    echo $r['timestamp']."<br />";
-                    //var_dump($r);
+            $type = $this->Get['type'];
+            if(empty($type)){
+                $query = array(
+                    "statusuid"=>new MongoInt64($uid),
+                    "platform"=>"swb",
+                );
+                //echo json_encode($query);
+                //json_decode("{'statusuid':$uid,'flatfrom':'swb'}");
+                $count = $db->status->find($query,$fields)->count();
+                if($count){
+                    $cursor = $db->status->find($query,$fields)->limit(20);
+                    while($cursor->hasNext()){
+                        $r = $cursor->getNext();
+                        echo $r['content']."<br />";
+                        echo $r['timestamp']."<br />";
+                    }
                 }
+            }else{
+                $query = array(
+                    "userid"=>new MongoInt64($uid),
+                    "platform"=>"swb",
+                );
+                $r = $db->user->findOne($query,array());
+                $datas = "[";
+                $days = "";
+                for ($a=0;$a<=90;$a++){
+                    $day = date("Y-m-d",strtotime("-$a day"));
+                    $datas .= (empty($r['statistic'][$day])?0:$r['statistic'][$day]) .",";
+                }
+                $datas .= "]";
+                include($this->TemplateHandler->Template('track_weibo_tj'));
             }
         }
         else
@@ -115,7 +144,8 @@ class ModuleObject extends MasterObject
             $page_url = "index.php?".url_implode($gets);
             $page = empty($this->Get['page'])? 1:$this->Get['page'];
 
-            $cursor = $db->user->find($query,$fields)->skip(($page-1)*$per_page_num)->limit($per_page_num);
+            $day = date("Y-m-d",strtotime("-1 day"));
+            $cursor = $db->user->find($query,$fields)->sort(array("statistic.".$day=>-1))->skip(($page-1)*$per_page_num)->limit($per_page_num);
             $page_arr = page($count, $per_page_num, $page_url, array('return' => 'array'));
             $track_list = array();
             while($cursor->hasNext()){
