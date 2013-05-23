@@ -104,7 +104,6 @@ class ModuleObject extends MasterObject
                 'item_id'=>1,
                 'item'=>1,
                 'postip'=>1,
-
                 'managetype' => 1,
                 'checkfilter' =>1,
                 'verify' => 1,
@@ -113,6 +112,7 @@ class ModuleObject extends MasterObject
             )
         */
         
+        $longtext= empty($this->Inputs['longtext'])?'':$this->Inputs['longtext'];
         $datas = array(
             'content'=>$content,
             'totid'=>$totid,
@@ -122,6 +122,9 @@ class ModuleObject extends MasterObject
             //'attachid'=>max(0,(int) $this->Inputs['attachid']),
             //'videoid'=>max(0,(int) $this->Inputs['videoid']),
             //'imageid'=>max(0,(int) $this->Inputs['imageid']),
+            'longtext'=>(empty($this->Inputs['longtext'])?'':$this->Inputs['longtext']),
+            'url'=>$this->Inputs['url'],
+            'title'=>$this->Inputs['title'],
             'longtextid'=>max(0,(int) $this->Inputs['longtextid']),
             'timestamp'=>max(time(),$this->Inputs['timestamp']),
             'tkid'=>$this->Inputs['tkid'],

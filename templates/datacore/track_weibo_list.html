@@ -1,0 +1,12 @@
+<!--{template "topic_header"}-->
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<div class="main {$t_col_main}">
+    <!--{if $weibo}-->
+    <!--{loop $weibo $val}-->
+    <p><!--{$val[content]}--><br/>
+    <!--{$val[timestamp]}--><br /></p>
+    <!--{/loop}-->
+    <!--{/if}-->
+</div>
+<!--{template "topic_footer"}-->

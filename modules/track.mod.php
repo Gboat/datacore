@@ -25,6 +25,8 @@ class ModuleObject extends MasterObject
             $this->Mail();
         } elseif ('s' == $this->Code) {
             $this->Search();
+        } elseif('log' == $this->Code){
+            $this->Log();
         } elseif ('other1' == $this->Code) {
             $this->Qzone();
         }elseif('other2' == $this->Code) {
@@ -41,6 +43,23 @@ class ModuleObject extends MasterObject
         }
         $body=ob_get_clean();
         $this->ShowBody($body);
+    }
+    function Log(){
+        $this->Title = "采集日志查看";
+        $mg = new Mongo("172.31.159.111:27017");
+        $db = $mg->track;
+        $query = array();
+        $fields = array();
+        $limit = array();
+        $log = array();
+        $uid = $this->Get['uid'];
+        $cursor = $db->statsinfo->find($query,$fields)->limit(1000);
+        while($cursor->hasNext()){
+            $r = $cursor->getNext();
+            $log[]=$r;
+            #print_r($r);
+        }
+        include($this->TemplateHandler->Template('track_log'));
     }
     function Search(){
         $this->Title = "全文检索";
@@ -105,15 +124,19 @@ class ModuleObject extends MasterObject
                 );
                 //echo json_encode($query);
                 //json_decode("{'statusuid':$uid,'flatfrom':'swb'}");
+                $weibo = array();
                 $count = $db->status->find($query,$fields)->count();
                 if($count){
                     $cursor = $db->status->find($query,$fields)->limit(20);
                     while($cursor->hasNext()){
                         $r = $cursor->getNext();
-                        echo $r['content']."<br />";
-                        echo $r['timestamp']."<br />";
+                        $weibo[] = $r;
+                        #echo $r['content']."<br />";
+                        #echo $r['timestamp']."<br />";
                     }
                 }
+                include($this->TemplateHandler->Template('track_weibo_list'));
+
             }else{
                 $query = array(
                     "userid"=>new MongoInt64($uid),

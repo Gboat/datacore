@@ -1,0 +1,44 @@
+<!--{template "topic_header"}-->
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<div class="main {$t_col_main}">
+    <table border="1px">
+        <!--{if $log}-->
+        <tr>
+        <td>任务名称</td>
+        <td>启动时间</td>
+        <td>完成时间</td>
+        <td>信息条目</td>
+        <td>请求数目</td>
+        <td>成功数目</td>
+        <td>LOG标识</td>
+        </tr>
+        <!--{loop $log $val}-->
+        <tr>
+            <td>
+                <!--{$val[name]}-->
+            </td>
+            <td>
+                <!--{$val[start_time]}-->
+            </td>
+            <td>
+                <!--{$val[finish_time]}-->
+            </td>
+            <td>
+                <!--{$val[time_scraped_count]}-->
+            </td>
+            <td>
+                <!--{$val[response_count]}-->
+            </td>
+            <td>
+                <!--{$val[response_status_count_200]}-->
+            </td>
+            <td>
+                <!--{$val[_id]}-->
+            </td>
+        </tr>
+        <!--{/loop}-->
+        <!--{/if}-->
+    </table>
+</div>
+<!--{template "topic_footer"}-->

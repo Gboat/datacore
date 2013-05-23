@@ -3,7 +3,7 @@ if(!defined('IN_DATACORE'))
 {
     exit('invalid request');
 }
-class TopicLogic
+class TopicApiLogic
 {
     var $DatabaseHandler;
     var $Config;
@@ -53,10 +53,7 @@ class TopicLogic
                 'checkfilter' =>1,
                 'verify' => 1,
                 'design' =>1,
-                'xiami_id' =>1,
-                'longtext'=>1,
-                'url'=>1,
-                'title'=>1,
+                'xiami_id' => 1,
             );
             foreach($datas as $k=>$v)
             {
@@ -76,19 +73,6 @@ class TopicLogic
             $is_verify = false;
         }elseif($this->Config['verify']){
             $is_verify = true;
-        }
-        if (!empty($longtext)){
-            //adie("longtext");
-        $arr = array(
-            'longtext' => $longtext,
-            'uid' => 1,
-            'dateline' => $timestamp,
-            'tid' => 0,
-            'views' => 0,
-            'title' => $title,
-            'url' => $url,
-        );
-            $longtextid = Load::logic('longtext', 1)->add2($arr);
         }
 
         //$topictag = Load::logic("classify",1)->TopicTag($content);
@@ -303,9 +287,7 @@ class TopicLogic
         $at_uids = $_process_result['at_uids'];
         $tags = $_process_result['tags'];
         $urls = $_process_result['urls'];
-        //$longtextid = Load::logic('longtext', 1)->add($_content, $data['uid']);
-        $data['longtextid'] = $longtextid;
-        /*
+        $longtextid = Load::logic('longtext', 1)->add($_content, $data['uid']);
         if(strlen($_content) > $this->_len) {
             $data['longtextid'] = $longtextid;
             $_content = cut_str($_content, $this->_len, '');
@@ -313,7 +295,6 @@ class TopicLogic
         } else {
             unset($data['longtextid']);
         }
-         */
         if (strlen($_content) > 255) {
             $_content = cut_str($_content, 254 * 2, '');
             $data['content'] = cut_str($_content, 255, '');

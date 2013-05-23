@@ -41,6 +41,10 @@ class LongtextLogic
         $ret = (int) (DB::insert($this->table, $arr, 1));
         return $ret;
     }
+    function add2($arr){
+        $ret = (int) (DB::insert($this->table, $arr, 1));
+        return $ret;
+    }
     function modify($tid, $longtext)
     {
         $tid = is_numeric($tid) ? $tid : 0;
